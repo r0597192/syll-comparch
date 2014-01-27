@@ -11,3 +11,22 @@ All imagery has been collected or crafted carefully, with respect to copyrights.
 
 
 
+## Usage
+
+this repository contains a windows batch file to render the syllabus to an html5 and pdf file. 
+The commands used in this file are also valid on other operating systems...
+
+### Requirements
+
+#### Asciidoctor
+
+at least version 1.5 is needed for correct rendering of the files. Especially for the docbook files, where imagery is otherwise rendered incorrectly.
+
+http://asciidoctor.org/
+
+#### FO-pub
+
+if you require pdf output, install fopub-asciidoctor
+
+https://github.com/asciidoctor/asciidoctor-fopub
+
