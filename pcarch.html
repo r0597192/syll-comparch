@@ -378,10 +378,50 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 
 </style>
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nomath|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nomath|noasciimath"
+  }
+});
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+<script>document.addEventListener('DOMContentLoaded', MathJax.Hub.TypeSet)</script>
 </head>
-<body class="book">
+<body class="book toc2 toc-left">
 <div id="header">
 <h1>Computerarchitectuur</h1>
+<span id="author" class="author">Roel Van Steenberghe</span><br>
+<span id="email" class="email"><a href="mailto:Roel.VanSteenberghe@gmail.com">Roel.VanSteenberghe@gmail.com</a></span><br>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_over_deze_cursus">Over deze cursus</a></li>
+<li><a href="#_voorwoord">Voorwoord</a></li>
+<li><a href="#_power_supply">power supply</a></li>
+<li>
+<ul class="sectlevel2">
+<li><a href="#_principe_en_werking">Principe en werking</a></li>
+<li><a href="#_eigenschappen">Eigenschappen</a></li>
+<li><a href="#_vormfactor_en_connectoren">Vormfactor en connectoren</a></li>
+<li><a href="#_vermogen">Vermogen</a></li>
+<li><a href="#_geluid">Geluid</a></li>
+<li><a href="#_rendement">Rendement</a></li>
+<li><a href="#_problemen">Problemen</a></li>
+<li><a href="#_uninterruptible_power_supply_ups">Uninterruptible Power Supply (UPS)</a></li>
+<li><a href="#_accu_s">Accu’s</a></li>
+</ul>
+</li>
+<li><a href="#_cpu">CPU</a></li>
+<li><a href="#_bibliografie">Bibliografie</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
@@ -422,7 +462,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 Voor veel mensen zijn computers, tablets, smartphones en andere devices tegenwoordig zo gewoon, dat ze bijna thuis horen in het rijtje van basisbehoeften als stromend water, elektriciteit en TV.
 Toch blijft het belangrijk om te weten wat er onder de motorkap van je devices schuilt. Die achtergrondkennis is onontbeerlijk om later efficiënt problemen op te lossen of producten (in de breedste zin van het woord) van goeie kwaliteit af te leveren. Zelfs wie zich later zal toespitsen op het ontwikkelen van software, zal efficiënter kunnen werken als hij ook snapt wat achter de schermen gebeurt.
 Deze cursus probeert je een overzicht te geven van de interne keuken van een moderne computer terwijl de cursus processorarchitectuur dan weer iets dieper ingaat op de werking van het kloppend hart ervan.
-Uiteraard zijn twaalf lessen veel te weinig om alle onderdelen tot op het bot uit te benen. Daarom kan ik enkele standaardwerken aanbevelen, die zeker een bron van inspiratie vormden voor deze cursus. De boeken van William Stallings <a href="#Stallings">[Stallings]</a> en Umakishore Ramachandran <a href="#RAMA">[RAMA]</a> verdienen zeker je aandacht.
+Uiteraard zijn twaalf lessen veel te weinig om alle onderdelen tot op het bot uit te benen. Daarom kan ik enkele standaardwerken aanbevelen, die zeker een bron van inspiratie vormden voor deze cursus. De boeken van William Stallings <a href="#STALLINGS">[STALLINGS]</a> en Umakishore Ramachandran <a href="#RAMA">[RAMA]</a> verdienen zeker je aandacht.
 Een overzicht van de werkvorm die bij dit vak gebruikt wordt, vind je terug in de ECTS fiche en de studiewijzer. Beiden zijn te vinden op Toledo.</p>
 </div>
 <div class="paragraph">
@@ -644,7 +684,7 @@ Ander nadeel is dat in gewone omstandigheden de netspanning rechtstreeks gekoppe
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch01/images/ups/Off_Line.png" alt="APC UPS">
+<img src="ch01/images/ups/Off_Line_UPS.png" alt="offline UPS">
 </div>
 <div class="title">Figure 4. Offline UPS ( &#169; Joslee 2007 GFDL)</div>
 </div>
@@ -656,9 +696,9 @@ Ander nadeel is dat in gewone omstandigheden de netspanning rechtstreeks gekoppe
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch01/images/ups/Line_interactive_UPSII.png" alt="APC UPS">
+<img src="ch01/images/ups/Line_interactive_UPSII.png" alt="line interactive UPS">
 </div>
-<div class="title">Figure 5. Line interactive UPS (  &#169;Joslee 2007 GFDL)</div>
+<div class="title">Figure 5. Line interactive UPS ( &#169; Joslee 2007 GFDL)</div>
 </div>
 </div>
 </div>
@@ -677,11 +717,10 @@ Sommige fabrikanten verkiezen echter om hun capaciteiten uit te drukken in Wh, w
 Je weet immers dat</p>
 </div>
 <div class="paragraph">
-<p>:\$0\$
-(Vermogen=Spanning x Stroom)</p>
+<p>\$P=U*I\$ (Vermogen=Spanning x Stroom)</p>
 </div>
 <div class="paragraph">
-<p>Willen we dus de I(A) kennen, dan moeten we het vermogen delen door de spanning.
+<p>Willen we dus de stroom I(A) kennen, dan moeten we het vermogen delen door de spanning.
 Nemen we onderstaand voorbeeld:</p>
 </div>
 <div class="imageblock" style="text-align: center">
@@ -692,8 +731,7 @@ Nemen we onderstaand voorbeeld:</p>
 </div>
 <div class="paragraph">
 <p>We kunnen hier dus de capaciteit in Ah bepalen door
-I/h= P/h/U= 2,4Wh/3,6V=0,666Ah
-of in mAh= 666mAh</p>
+\$I_h = P_h/U = 2,4Wh/3,6V = 0,666Ah of 666mAh\$</p>
 </div>
 </div>
 <div class="sect4">
@@ -722,13 +760,16 @@ Uit hoeveel cellen bestaat je accu-pack?</p>
 <div class="paragraph">
 <p>Tegenwoordig is dit zowat het meest voorkomende type in hoogwaardige mobiele apparatuur. Dit type onderscheidt zich door een erg hoge energiedichtheid, en het ‘memory-effect’ is niet bestaande.</p>
 </div>
-<div class="paragraph">
-<p>video 1 werking van Li-Ion accu</p>
+<div class="videoblock">
+<div class="title">video 1 werking van Li-Ion accu</div>
+<div class="content">
+<iframe src="//www.youtube.com/embed/2PjyJhe7Q1g?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
 </div>
 <div class="paragraph">
 <p>Toch zijn er enkele belangrijke eigenschappen aan dit type, die je beter kent..
 Het zwakke punt van Li-Ion: degradatie
-Wie een laptop of GSM gebruikt, kent het fenomeen: na enkele jaren is de capaciteit van de batterij slechts nog een fractie van wat ze was bij aankoop. Dit fenomeen kan je niet omkeren, maar het kan wel vertraagd worden als je de weet wat de factoren zijn die dit proces versnellen&#8230;
+Wie een laptop of GSM gebruikt, kent het fenomeen: na enkele jaren is de cyapaciteit van de batterij slechts nog een fractie van wat ze was bij aankoop. Dit fenomeen kan je niet omkeren, maar het kan wel vertraagd worden als je de weet wat de factoren zijn die dit proces versnellen&#8230;
 Een Li-ion-accu verliest zijn capaciteit het snelst als hij zich in een warme ruimte bevindt, en opgeladen is. Een volledig opgeladen Li-ion accu zal bijvoorbeeld na een jaar rusten in een ruimte waar het gemiddeld 20°C is, 20 procent van zijn capaciteit verliezen.
 Is diezelfde accu slechts half opgeladen, dan zal de capaciteit met slechts enkele procenten dalen. Het is dus niet verstandig aan Li-ion-accu voor lange tijd weg te bergen in opgeladen toestand. Ook door stockage in koele ruimtes kan de capaciteit langer bewaard blijven. Een laptop die snel erg warm wordt bij gebruik zal dus meteen ook nefast zijn voor de capaciteit van de batterij op langere termijn.
 Bij een temperatuur van iets boven het vriespunt en een lading van ongeveer 40% zal dit type batterij de langste levensduur ‘on the shelf’ hebben.</p>
@@ -740,20 +781,30 @@ Bij een temperatuur van iets boven het vriespunt en een lading van ongeveer 40% 
 <p>Gezien de enorme markt die ontstaan is voor accu’s, is er enorm veel druk om betere modellen te ontwikkelen. Daarbij worden bestaande types geperfectioneerd, maar ook nieuwe types ontwikkeld.
 Zo zijn er de LiPo (Lithium polymeer) batterijen die ongeveer 50% efficiënter zijn dan klassieke Li-Ion equivalenten, en ook de brandstofcellen (fuel cells) die mogelijks een oplossing kunnen vormen voor de steeds grotere autonomie-behoefte van toestellen. Omdat veel van deze technieken gebruik maken van erg zeldzame delfstoffen, komen ook geavanceerde technieken met courante materialen in het vizier ter optimalisatie of vervanging, zoals nanostructuren met koolstof. Deze blijven echter toekomstmuziek voor consumentenelektronica…</p>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cpu">CPU</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bibliografie">Bibliografie</h2>
+<div class="sectionbody">
 <div class="ulist bibliography">
 <ul class="bibliography">
 <li>
-<p><a id="prag"></a>[prag] Andy Hunt &amp; Dave Thomas. <em>The Pragmatic Programmer:
-From Journeyman to Master</em>. Addison-Wesley. 1999.</p>
+<p><a id="STALLINGS"></a>[STALLINGS] Andy Hunt &amp; Dave Thomas. <em>Computer Organization and architecture, Ninth edition</em>. Pearson education. 2012.</p>
 </li>
 <li>
-<p><a id="seam"></a>[seam] Dan Allen. <em>Seam in Action</em>. Manning Publications.
-2008.</p>
+<p><a id="RAMA"></a>[RAMA] Umakishura Ramachandran. <em>Computer Systems: An Integrated Approach to Architecture and Operating Systems</em>. Manning Publications.
+2010.</p>
 </li>
 </ul>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -766,7 +817,7 @@ From Journeyman to Master</em>. Addison-Wesley. 1999.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2014-01-26 18:43:53 Romance (standaardtijd)
+Last updated 2014-01-29 08:40:44 Romance (standaardtijd)
 </div>
 </div>
 </body>

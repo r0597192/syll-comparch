@@ -5,7 +5,15 @@
 <book xmlns="http://docbook.org/ns/docbook" lang="en">
 <bookinfo>
 <title>Computerarchitectuur</title>
-<date>2014-01-26</date>
+<date>2014-01-29</date>
+<author>
+<firstname>Roel</firstname>
+<othername>Van</othername>
+<surname>Steenberghe</surname>
+<email>Roel.VanSteenberghe@gmail.com</email>
+</author>
+
+<authorinitials>RVS</authorinitials>
 
 
 
@@ -33,7 +41,7 @@
 Voor veel mensen zijn computers, tablets, smartphones en andere devices tegenwoordig zo gewoon, dat ze bijna thuis horen in het rijtje van basisbehoeften als stromend water, elektriciteit en TV.
 Toch blijft het belangrijk om te weten wat er onder de motorkap van je devices schuilt. Die achtergrondkennis is onontbeerlijk om later efficiënt problemen op te lossen of producten (in de breedste zin van het woord) van goeie kwaliteit af te leveren. Zelfs wie zich later zal toespitsen op het ontwikkelen van software, zal efficiënter kunnen werken als hij ook snapt wat achter de schermen gebeurt.
 Deze cursus probeert je een overzicht te geven van de interne keuken van een moderne computer terwijl de cursus processorarchitectuur dan weer iets dieper ingaat op de werking van het kloppend hart ervan.
-Uiteraard zijn twaalf lessen veel te weinig om alle onderdelen tot op het bot uit te benen. Daarom kan ik enkele standaardwerken aanbevelen, die zeker een bron van inspiratie vormden voor deze cursus. De boeken van William Stallings <xref linkend="Stallings"/> en Umakishore Ramachandran <xref linkend="RAMA"/> verdienen zeker je aandacht.
+Uiteraard zijn twaalf lessen veel te weinig om alle onderdelen tot op het bot uit te benen. Daarom kan ik enkele standaardwerken aanbevelen, die zeker een bron van inspiratie vormden voor deze cursus. De boeken van William Stallings <xref linkend="STALLINGS"/> en Umakishore Ramachandran <xref linkend="RAMA"/> verdienen zeker je aandacht.
 Een overzicht van de werkvorm die bij dit vak gebruikt wordt, vind je terug in de ECTS fiche en de studiewijzer. Beiden zijn te vinden op Toledo.</simpara>
 <simpara>Veel succes met deze cursus!</simpara>
 <simpara>Roel Van Steenberghe</simpara>
@@ -272,9 +280,9 @@ Ander nadeel is dat in gewone omstandigheden de netspanning rechtstreeks gekoppe
 <title>Offline UPS ( &#169; Joslee 2007 GFDL)</title>
   <mediaobject>
     <imageobject>
-      <imagedata fileref="ch01/images/ups/Off_Line.png" width="50%" scalefit="1" align="center"/>
+      <imagedata fileref="ch01/images/ups/Off_Line_UPS.png" width="50%" scalefit="1" align="center"/>
     </imageobject>
-    <textobject><phrase>APC UPS</phrase></textobject>
+    <textobject><phrase>offline UPS</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -283,12 +291,12 @@ Ander nadeel is dat in gewone omstandigheden de netspanning rechtstreeks gekoppe
 <title>Line-interactive UPS</title>
 <simpara>Deze vorm van UPS vormt een hybride oplossing. In feite gaat het om een off-line UPS waar de line-feed voorzien is van aanvullende filters. Zo ben je zeker dat de spanning die aan je servers aangelegd is, gezuiverd werd van pieken en storingen. In omgevingen waar veel storing optreedt is dat geen overbodige luxe. (bijvoorbeeld fabriekshallen, gebieden met gebrekkige stroomvoorziening)</simpara>
 <figure>
-<title>Line interactive UPS (  &#169;Joslee 2007 GFDL)</title>
+<title>Line interactive UPS ( &#169; Joslee 2007 GFDL)</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="ch01/images/ups/Line_interactive_UPSII.png" width="50%" scalefit="1" align="center"/>
     </imageobject>
-    <textobject><phrase>APC UPS</phrase></textobject>
+    <textobject><phrase>line interactive UPS</phrase></textobject>
   </mediaobject>
 </figure>
 
@@ -304,9 +312,8 @@ Ander nadeel is dat in gewone omstandigheden de netspanning rechtstreeks gekoppe
 <simpara>De capaciteit van batterijen wordt meestal uitgedrukt in Ah (ampère/uur) of mAh (milliampère/uur). Met die eenheid kan je makkelijk accu-packs vergelijken. Een batterij van 6Ah zal bijvoorbeeld in staat zijn om gedurende 6 uur een stroom af te leveren van 1 Ampère, of gedurende bijvoorbeeld 2 uur een stroom van 3 Ampère.
 Sommige fabrikanten verkiezen echter om hun capaciteiten uit te drukken in Wh, wat vergelijken moeilijk kan maken. Toch kan je eenvoudig omrekenen:
 Je weet immers dat</simpara>
-<simpara>:0
-(Vermogen=Spanning x Stroom)</simpara>
-<simpara>Willen we dus de I(A) kennen, dan moeten we het vermogen delen door de spanning.
+<simpara>P=U*I (Vermogen=Spanning x Stroom)</simpara>
+<simpara>Willen we dus de stroom I(A) kennen, dan moeten we het vermogen delen door de spanning.
 Nemen we onderstaand voorbeeld:</simpara>
 <figure>
 <title>accu</title>
@@ -319,8 +326,7 @@ Nemen we onderstaand voorbeeld:</simpara>
 </figure>
 
 <simpara>We kunnen hier dus de capaciteit in Ah bepalen door
-I/h= P/h/U= 2,4Wh/3,6V=0,666Ah
-of in mAh= 666mAh</simpara>
+I_h = P_h/U = 2,4Wh/3,6V = 0,666Ah of 666mAh</simpara>
 </section>
 <section id="_aantal_cellen">
 <title>Aantal cellen</title>
@@ -340,10 +346,10 @@ Uit hoeveel cellen bestaat je accu-pack?</simpara>
 <section id="_li_ion_accu_s">
 <title>LI-ION accu’s</title>
 <simpara>Tegenwoordig is dit zowat het meest voorkomende type in hoogwaardige mobiele apparatuur. Dit type onderscheidt zich door een erg hoge energiedichtheid, en het ‘memory-effect’ is niet bestaande.</simpara>
-<simpara>video 1 werking van Li-Ion accu</simpara>
+
 <simpara>Toch zijn er enkele belangrijke eigenschappen aan dit type, die je beter kent..
 Het zwakke punt van Li-Ion: degradatie
-Wie een laptop of GSM gebruikt, kent het fenomeen: na enkele jaren is de capaciteit van de batterij slechts nog een fractie van wat ze was bij aankoop. Dit fenomeen kan je niet omkeren, maar het kan wel vertraagd worden als je de weet wat de factoren zijn die dit proces versnellen&#8230;
+Wie een laptop of GSM gebruikt, kent het fenomeen: na enkele jaren is de cyapaciteit van de batterij slechts nog een fractie van wat ze was bij aankoop. Dit fenomeen kan je niet omkeren, maar het kan wel vertraagd worden als je de weet wat de factoren zijn die dit proces versnellen&#8230;
 Een Li-ion-accu verliest zijn capaciteit het snelst als hij zich in een warme ruimte bevindt, en opgeladen is. Een volledig opgeladen Li-ion accu zal bijvoorbeeld na een jaar rusten in een ruimte waar het gemiddeld 20°C is, 20 procent van zijn capaciteit verliezen.
 Is diezelfde accu slechts half opgeladen, dan zal de capaciteit met slechts enkele procenten dalen. Het is dus niet verstandig aan Li-ion-accu voor lange tijd weg te bergen in opgeladen toestand. Ook door stockage in koele ruimtes kan de capaciteit langer bewaard blijven. Een laptop die snel erg warm wordt bij gebruik zal dus meteen ook nefast zijn voor de capaciteit van de batterij op langere termijn.
 Bij een temperatuur van iets boven het vriespunt en een lading van ongeveer 40% zal dit type batterij de langste levensduur ‘on the shelf’ hebben.</simpara>
@@ -352,19 +358,25 @@ Bij een temperatuur van iets boven het vriespunt en een lading van ongeveer 40% 
 <title>Toekomstige ontwikkelingen</title>
 <simpara>Gezien de enorme markt die ontstaan is voor accu’s, is er enorm veel druk om betere modellen te ontwikkelen. Daarbij worden bestaande types geperfectioneerd, maar ook nieuwe types ontwikkeld.
 Zo zijn er de LiPo (Lithium polymeer) batterijen die ongeveer 50% efficiënter zijn dan klassieke Li-Ion equivalenten, en ook de brandstofcellen (fuel cells) die mogelijks een oplossing kunnen vormen voor de steeds grotere autonomie-behoefte van toestellen. Omdat veel van deze technieken gebruik maken van erg zeldzame delfstoffen, komen ook geavanceerde technieken met courante materialen in het vizier ter optimalisatie of vervanging, zoals nanostructuren met koolstof. Deze blijven echter toekomstmuziek voor consumentenelektronica…</simpara>
+</section>
+</section>
+</section>
+</chapter>
+<chapter id="_cpu">
+<title>CPU</title>
+
+</chapter>
+<chapter id="_bibliografie">
+<title>Bibliografie</title>
 <bibliodiv>
 <bibliomixed>
-<bibliomisc><anchor id="prag" xreflabel="[prag]"/>[prag] Andy Hunt &amp; Dave Thomas. <emphasis>The Pragmatic Programmer:
-From Journeyman to Master</emphasis>. Addison-Wesley. 1999.</bibliomisc>
+<bibliomisc><anchor id="STALLINGS" xreflabel="[STALLINGS]"/>[STALLINGS] Andy Hunt &amp; Dave Thomas. <emphasis>Computer Organization and architecture, Ninth edition</emphasis>. Pearson education. 2012.</bibliomisc>
 </bibliomixed>
 <bibliomixed>
-<bibliomisc><anchor id="seam" xreflabel="[seam]"/>[seam] Dan Allen. <emphasis>Seam in Action</emphasis>. Manning Publications.
-2008.</bibliomisc>
+<bibliomisc><anchor id="RAMA" xreflabel="[RAMA]"/>[RAMA] Umakishura Ramachandran. <emphasis>Computer Systems: An Integrated Approach to Architecture and Operating Systems</emphasis>. Manning Publications.
+2010.</bibliomisc>
 </bibliomixed>
 </bibliodiv>
 
-</section>
-</section>
-</section>
 </chapter>
 </book>
