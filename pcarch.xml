@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
 <?asciidoc-toc?>
 <?asciidoc-numbered?>
-<book xmlns="http://docbook.org/ns/docbook" lang="en">
-<bookinfo>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+<info>
 <title>Computerarchitectuur</title>
-<date>2014-01-29</date>
+<date>2014-01-30</date>
 <author>
+<personname>
 <firstname>Roel</firstname>
 <othername>Van</othername>
 <surname>Steenberghe</surname>
+</personname>
 <email>Roel.VanSteenberghe@gmail.com</email>
 </author>
 
@@ -17,8 +18,8 @@
 
 
 
-</bookinfo>
-<preface id="_over_deze_cursus">
+</info>
+<preface xml:id="_over_deze_cursus">
 <title>Over deze cursus</title>
 <simpara>Deze cursus werd opgesteld doorheen de jaren, met wisselende auteurs. Elk van hen ben ik uiteraard dankbaar, specifiek Dhr Sven Sanders Dhr Johan Donne die de fundamenten van deze informatiebron reeds jaren geleden gelegd hebben.</simpara>
 <simpara>Er werd in deze cursus gepoogd om steeds correct om te gaan met extern bronmateriaal. Mocht je toch een stukje materiaal zonder correcte bronvermelding, dan passen we dat uiteraard ook meteen aan.</simpara>
@@ -32,10 +33,10 @@
 </listitem>
 </itemizedlist>
 
-<simpara>Concreet betekent dit dat al het materiaal onder de <ulink url="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.nl">Creative Commons Naamsvermelding-NietCommercieel-GelijkDelen 4.0 Internationaal-licentie</ulink> valt.</simpara>
+<simpara>Concreet betekent dit dat al het materiaal onder de <link xlink:href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.nl">Creative Commons Naamsvermelding-NietCommercieel-GelijkDelen 4.0 Internationaal-licentie</link> valt.</simpara>
 <simpara>Wie correcties of aanvulling aanbrengt in deze cursus, zal een vermelding krijgen op deze pagina.</simpara>
 </preface>
-<preface id="_voorwoord">
+<preface xml:id="_voorwoord">
 <title>Voorwoord</title>
 <simpara>Als iemand van de buitenwereld je de komende jaren vraagt wat je precies gestudeerd hebt, of wat je doet als werk, dan zal je antwoord vaak ‘iets met computers’ zijn. Soms is dat nu eenmaal de makkelijkste manier om je er vanaf te maken.
 Voor veel mensen zijn computers, tablets, smartphones en andere devices tegenwoordig zo gewoon, dat ze bijna thuis horen in het rijtje van basisbehoeften als stromend water, elektriciteit en TV.
@@ -46,9 +47,9 @@ Een overzicht van de werkvorm die bij dit vak gebruikt wordt, vind je terug in d
 <simpara>Veel succes met deze cursus!</simpara>
 <simpara>Roel Van Steenberghe</simpara>
 </preface>
-<chapter id="_power_supply">
+<chapter xml:id="_power_supply">
 <title>power supply</title>
-<section id="_principe_en_werking">
+<section xml:id="_principe_en_werking">
 <title>Principe en werking</title>
 <simpara>Een computer, of het nu een pc, laptop, server of smartphone is, kan enkel functioneren als de juiste elektrische spanningen aangevoerd worden. Elektronische componenten vragen een relatief lage, maar erg stabiele gelijkspanning om te functioneren.
 Deze wordt geleverd door een voeding, die de wisselspanning van het elektriciteitsnet omzet naar de nodige gelijkspanningsniveau’s. De techniek die hierbij gebruikt wordt noemt men switched mode power supply of geschakelde voeding.
@@ -72,11 +73,11 @@ Eigenlijk is de combinatie van de eerste twee stappen samen te vatten als een fr
 <simpara>Om het verbruik van een CPU uit te drukken, wordt vaak gesproken over TDP. Dat is een waarde die aanduidt hoeveel energie de CPU maximaal dissipeert. Echter dient opgemerkt te worden dat <emphasis>AMD</emphasis> en <emphasis>Intel</emphasis> hiervoor verschillende berekeningsmethodes gebruiken. De TDP geeft dus een indicatie over het maximale verbruik, maar gedetailleerde benchmarks blijven nodig om exacte waarden te kennen.</simpara>
 </note>
 </section>
-<section id="_eigenschappen">
+<section xml:id="_eigenschappen">
 <title>Eigenschappen</title>
 
 </section>
-<section id="_vormfactor_en_connectoren">
+<section xml:id="_vormfactor_en_connectoren">
 <title>Vormfactor en connectoren</title>
 <simpara>De eerste (IBM) PC beschikte over een moederbord met AT vormfactor, de bijhorende voeding was dan ook een AT voeding. In 1995 kwam er een opvolger, met name de ATX vormfactor. Ondertussen is deze specificatie ook geëvolueerd (ondertussen ATX 2.3).
 De belangrijkste verschillen situeren zich op het vlak van de spanningen die de voeding kan afgeven en de connectoren die voorzien zijn op de voeding.
@@ -105,7 +106,7 @@ Deze spanning kan je alleen wegnemen door de voeding uit te schakelen (schakelaa
 </itemizedlist>
 
 </section>
-<section id="_vermogen">
+<section xml:id="_vermogen">
 <title>Vermogen</title>
 <simpara>Een erg belangrijke eigenschap voor een voeding is het vermogen dat ze kan leveren.
 Uiteraard moet dit te leveren vermogen voldoende zijn om alle componenten in het systeem te voorzien van stroom. Het vergelijken van voedingen op dit vlak is iets complexer dan kijken naar de waarden die de fabrikant op zijn verpakking adverteert.
@@ -114,12 +115,12 @@ Als het systeem continu 450W nodig heeft, zou de eerste voeding kunnen falen. Ee
 Als de maximale stroom op de 12V rail 5A is, kan je met een 500W voeding niet voorzien in de behoeften van een computer die een vermogen van 200W nodig heeft, maar wel 6A op de 12V rail. Dit kan een belangrijke reden voor prijsverschillen in voedingen zijn. Goedkopere voedingen kunnen typisch meer stroom leveren bij de lagere spanningen en minder bij 12V. Er moet nog worden opgemerkt dat sommige voedingen verschillende rails hebben voor eenzelfde voedingsspanning. Op elk van deze rails is dan een maximale stroom vastgelegd. Het zal wel duidelijk zijn dat je dan best de verbruikers op een zo evenwichtig mogelijke manier over deze rails moet verdelen.
 Een laatste opmerking is dat het vermogen van de voeding zo goed mogelijk op het systeem moet worden afgestemd. Uiteraard betekent dit dat je voldoende piekvermogen nodig hebt, maar zomaar een voeding van 1kW aanschaffen voor een systeem dat 200W nodig heeft is niet meteen een goede keuze.</simpara>
 </section>
-<section id="_geluid">
+<section xml:id="_geluid">
 <title>Geluid</title>
 <simpara>De geluidsproductie van een computer is in verschillende gebruiksomgevingen liefst zo klein mogelijk. Een belangrijke bron van lawaai wordt gevormd door de verschillende koelingen en in het bijzonder de ventilatoren die hierbij worden gebruikt. Hier blijkt alvast het belang van het rendement van een voeding. Hoe hoger het rendement, des te minder verlies er is. Dit verlies manifesteert zich steeds onder de vorm van warmte.
 Meer warmteverlies betekent dus dat er nood is aan een groter koelvermogen. Naast het rendement is ook de grootte van de ventilator belangrijk. Een grotere ventilator zal bij lagere toerentallen voldoende kunnen koelen en daarbij minder lawaai produceren. Er bestaan ook voedingen die volledig passief (zonder ventilatoren) gekoeld worden. Deze produceren uiteraard geen lawaai, maar zijn typisch iets duurder.</simpara>
 </section>
-<section id="_rendement">
+<section xml:id="_rendement">
 <title>Rendement</title>
 <simpara>Het ‘groene’ aspect bij pc’s komt steeds meer naar voor. Het rendement van de voeding is daarbij een belangrijke factor. Je wil natuurlijk voor elke 100 Watt die je uit het stroomnet haalt, ook 100W prestaties zien. Helaas is dit niet mogelijk: voedingen hebben een rendement dat een stuk lager ligt dan de ideale 100%. Dat verlies uit zich voornamelijk in warmte, die dan weer moet afgevoerd worden. Het spreekt voor zich dan een hoger rendement meestal ook een iets hoger prijskaartje met zich zal meebrengen. Toch is dit het overwegen waard als je een kleine rekenoefening maakt.
 Een computer met scherm die niet erg zwaar belast verbruikt ongeveer 200 Watt. Als je deze pc elke werkdag 10 uur gebruikt, dan komt het verbruik op
@@ -128,7 +129,7 @@ Als je daar de prijs tegenover zet die een gemiddeld gezin (bron: VREG, oktober 
 <simpara>Het 80-plus certificatieprogramma probeert voor de consument duidelijkheid te scheppen door voedingen een label te geven naargelang de efficiëntie. De certificatie is echter geen verplichting voor fabrikanten.</simpara>
 <table frame="all"
     rowsep="1" colsep="1">
-<title>80 plus certificatie (bron: <ulink url="http://en.wikipedia.org/wiki/80_Plus">Wikipedia</ulink> )</title>
+<title>80 plus certificatie (bron: <link xlink:href="http://en.wikipedia.org/wiki/80_Plus">Wikipedia</link> )</title>
   
   <tgroup cols="7">
     
@@ -233,18 +234,18 @@ Als je daar de prijs tegenover zet die een gemiddeld gezin (bron: VREG, oktober 
 <simpara>Laptops hebben een verbruik dat typisch een flink stuk lager zit. Hoewel ze een voeding hebben die meestal een behoorlijk hoog wattage aankan om de accu op te laden, is het gemiddeld verbruik meestal slechts rond de 30Watt.
 Het matige rendement van PSU’s is voor een deel eigen aan de opbouw ervan. Omdat veel verschillende eindtrappen nodig zijn voor de verschillende spanningen, is het totale rendementsverlies een accumulatie van de kleinere verliezen bij de deeltrappen. Ondertussen verlaten sommige grote spelers om die reden de ATX standaard om met eigen oplossingen hogere rendementen te behalen. Google ontwikkelt bijvoorbeeld z’n eigen servervoedingen die door hun eenvoud een veel hoger rendement halen. Google research publiceerde een paper [2] die schat dat de energiebesparing die je heermee kan behalen op een populatie van 100 miljoen computers 13 miljard kWh betreft op jaarbasis. Dat komt, om je een idee te geven, ongeveer overeen met de opbrengst van de helft van een kerncentrale zoals die in Doel (jaarproductie 22 miljard kWh)</simpara>
 </section>
-<section id="_problemen">
+<section xml:id="_problemen">
 <title>Problemen</title>
 <simpara>Problemen met voedingen hebben altijd gevolgen voor het volledige systeem, aangezien ze dit volledige systeem van stroom moeten voorzien. Een belangrijke oorzaak van problemen is een te klein vermogen voor het systeem of onvoldoende koeling. Dit probleem uit zich meestal niet in het niet opstarten van het systeem, maar eerder in het onverwacht afsluiten (of eventueel herstarten) ervan. Dit is dan nog het meest aangename gevolg van het probleem. Het is belangrijk om bij dergelijke problemen de voeding en de koeling ervan te controleren.
 Minder aangename gevolgen kunnen zijn dat de voeding beschadigd raakt en in het meer dramatische geval dat er rook uit de computerkast komt. Deze kan dan afkomstig zijn van de voeding zelf, maar ook van andere componenten(moederbord, RAM, CPU). Een situatie die de meesten liever vermijden.
 Een voeding kan ook slijtage vertonen. In het bijzonder op het vlak van de elektrolytische condensatoren kan er veel verschil zijn tussen voedingen. Minder kwalitatieve condensatoren kunnen uitdrogen (elektrolyt dat verdampt), waardoor ze hun functie minder tot niet meer vervullen en de voeding uiteindelijk rook in plaats van gelijkspanning produceert. Dit gebeurt uiteraard pas na verloop van tijd (afhankelijk van de belasting van de computer).
 Sommige voedingen hebben een controlesysteem dat je door middel van geluidssignalen preventief waarschuwt als er problemen dreigen, zoals overbelasting of een gebrekkige koeling.</simpara>
 </section>
-<section id="_uninterruptible_power_supply_ups">
+<section xml:id="_uninterruptible_power_supply_ups">
 <title>Uninterruptible Power Supply (UPS)</title>
 <simpara>Een UPS is een toestel dat het wegvallen van de netspanning kan opvangen. Hiervoor bestaat een UPS uit een accu en een elektronische schakeling die de accuspanning kan omzetten naar een netspanning.</simpara>
 <figure>
-<title>Rack-mountable UPS (bron: <ulink url="http://www.apc.com">www.apc.com</ulink>)</title>
+<title>Rack-mountable UPS (bron: <link xlink:href="http://www.apc.com">www.apc.com</link>)</title>
   <mediaobject>
     <imageobject>
       <imagedata fileref="ch01/images/apc_ups.jpg" width="50%" scalefit="1" align="center"/>
@@ -258,7 +259,7 @@ Voor de aangesloten toestellen treedt er dus geen onderbreking op. Een UPS kan d
 De UPS zorgt dan voor de ogenblikkelijke overname van de stroomvoorziening en geeft de generator de nodige tijd om op te starten. Zodra de generator actief is, neemt deze de stroomvoorziening op zich.
 Een UPS heeft meestal ook een spanningsbeveiliging aan boord die je apparatuur kan beschermen tegen storingen op het elektriciteitsnet.
 UPS’en vind je in alle prijsklasses, wat vaak te maken heeft met de inwendige opbouw ervan. Er onderscheiden zich enkele grote types.</simpara>
-<section id="_online_ups">
+<section xml:id="_online_ups">
 <title>Online UPS</title>
 <simpara>De online UPS wordt ook wel “double conversion” ups genoemd. Alle stroom die naar de IT-apparatuur gaat, loopt door de UPS. Hierdoor is het niet nodig om te schakelen bij het uitvallen van de stroom. Met de bypass kan je evenwel de ups overbruggen. Dat kan bijvoorbeeld interessant zijn als er onderhoud nodig is. Omdat hierdoor veel gevraagd wordt van alle elektronica (die constant volledig belast wordt), is die een relatief duur concept.</simpara>
 <figure>
@@ -272,7 +273,7 @@ UPS’en vind je in alle prijsklasses, wat vaak te maken heeft met de inwendige 
 </figure>
 
 </section>
-<section id="_offline_ups">
+<section xml:id="_offline_ups">
 <title>Offline UPS</title>
 <simpara>Dit type UPS vind je voornamelijk terug bij particuliere ups’en waar kostprijs een belangrijk criterium is. Bij het wegvallen van de spanning, wordt een bypass ingeschakeld. Die procedure duurt enkele milliseconden waarbij je geen uitgangsspanning hebt, en dat moet opgevangen worden door de voeding van je computer of server. Een nadeel van dit type UPS is dat je hem ook niet zonder risico kan testen.
 Ander nadeel is dat in gewone omstandigheden de netspanning rechtstreeks gekoppeld is aan je IT-apparatuur. Als er storingen op het net zitten, zal je IT apparatuur daar hinder van ondervinden. De apparatuur is dus niet beveiligd.</simpara>
@@ -287,7 +288,7 @@ Ander nadeel is dat in gewone omstandigheden de netspanning rechtstreeks gekoppe
 </figure>
 
 </section>
-<section id="_line_interactive_ups">
+<section xml:id="_line_interactive_ups">
 <title>Line-interactive UPS</title>
 <simpara>Deze vorm van UPS vormt een hybride oplossing. In feite gaat het om een off-line UPS waar de line-feed voorzien is van aanvullende filters. Zo ben je zeker dat de spanning die aan je servers aangelegd is, gezuiverd werd van pieken en storingen. In omgevingen waar veel storing optreedt is dat geen overbodige luxe. (bijvoorbeeld fabriekshallen, gebieden met gebrekkige stroomvoorziening)</simpara>
 <figure>
@@ -302,12 +303,12 @@ Ander nadeel is dat in gewone omstandigheden de netspanning rechtstreeks gekoppe
 
 </section>
 </section>
-<section id="_accu_s">
+<section xml:id="_accu_s">
 <title>Accu’s</title>
 <simpara>Tegenwoordig kunnen we het niet meer hebben over computervoedingen zonder even uit te wijden over accu’s. In de trend naar mobiliteit (laptops, tablets, smartphones), vormen die een onmisbare schakel.</simpara>
-<section id="_belangrijke_parameters">
+<section xml:id="_belangrijke_parameters">
 <title>Belangrijke parameters</title>
-<section id="_capaciteit">
+<section xml:id="_capaciteit">
 <title>Capaciteit</title>
 <simpara>De capaciteit van batterijen wordt meestal uitgedrukt in Ah (ampère/uur) of mAh (milliampère/uur). Met die eenheid kan je makkelijk accu-packs vergelijken. Een batterij van 6Ah zal bijvoorbeeld in staat zijn om gedurende 6 uur een stroom af te leveren van 1 Ampère, of gedurende bijvoorbeeld 2 uur een stroom van 3 Ampère.
 Sommige fabrikanten verkiezen echter om hun capaciteiten uit te drukken in Wh, wat vergelijken moeilijk kan maken. Toch kan je eenvoudig omrekenen:
@@ -328,22 +329,22 @@ Nemen we onderstaand voorbeeld:</simpara>
 <simpara>We kunnen hier dus de capaciteit in Ah bepalen door
 I_h = P_h/U = 2,4Wh/3,6V = 0,666Ah of 666mAh</simpara>
 </section>
-<section id="_aantal_cellen">
+<section xml:id="_aantal_cellen">
 <title>Aantal cellen</title>
 <simpara>Een accu wordt opgebouwd uit verschillende cellen. Bijvoorbeeld bij Li-ion accu’s kunnen die elk ongeveer 3V leveren. Het spreekt voor zich dat een toename van het aantal cellen zal betekenen dat de totale capaciteit ook toeneemt.
 Oefenvragen:
 Wat is de capaciteit van je eigen laptopaccu? Stel dat je deze accu gebruikt om een lamp te doen branden die 5Watt verbruikt. Hoe lang zal de lamp branden?
 Uit hoeveel cellen bestaat je accu-pack?</simpara>
 </section>
-<section id="_laadcurve">
+<section xml:id="_laadcurve">
 <title>Laadcurve</title>
 <simpara>Om de optimale kwaliteit van de accu te garanderen over langere termijn is het nodig om de juiste laadcurve te respecteren. Een batterij zal uiteraard stroom nodig hebben om zich op te laden, maar het is niet noodzakelijk zo dat een hogere stroom zal betekenen dat de batterij sneller oplaadt. Het gebruik van de juiste en kwalitatieve adapter is hierbij erg belangrijk.</simpara>
 </section>
-<section id="_memory_effect">
+<section xml:id="_memory_effect">
 <title>Memory-effect</title>
 <simpara>Het memory-effect is een term die vaak gebruikt wordt om aan te geven dat bepaalde types batterijen, met NiCd op kop, vaak een effect vertonen waarbij het lijkt dat de batterijen snel hun capaciteit verliezen als je ze halverwege de ontlaadcyclus terug oplaadt. Dat fenomeen is eigenlijk de verzamelnaam van effecten die worden veroorzaakt door een combinatie van elektrische en chemische processen.</simpara>
 </section>
-<section id="_li_ion_accu_s">
+<section xml:id="_li_ion_accu_s">
 <title>LI-ION accu’s</title>
 <simpara>Tegenwoordig is dit zowat het meest voorkomende type in hoogwaardige mobiele apparatuur. Dit type onderscheidt zich door een erg hoge energiedichtheid, en het ‘memory-effect’ is niet bestaande.</simpara>
 
@@ -354,7 +355,7 @@ Een Li-ion-accu verliest zijn capaciteit het snelst als hij zich in een warme ru
 Is diezelfde accu slechts half opgeladen, dan zal de capaciteit met slechts enkele procenten dalen. Het is dus niet verstandig aan Li-ion-accu voor lange tijd weg te bergen in opgeladen toestand. Ook door stockage in koele ruimtes kan de capaciteit langer bewaard blijven. Een laptop die snel erg warm wordt bij gebruik zal dus meteen ook nefast zijn voor de capaciteit van de batterij op langere termijn.
 Bij een temperatuur van iets boven het vriespunt en een lading van ongeveer 40% zal dit type batterij de langste levensduur ‘on the shelf’ hebben.</simpara>
 </section>
-<section id="_toekomstige_ontwikkelingen">
+<section xml:id="_toekomstige_ontwikkelingen">
 <title>Toekomstige ontwikkelingen</title>
 <simpara>Gezien de enorme markt die ontstaan is voor accu’s, is er enorm veel druk om betere modellen te ontwikkelen. Daarbij worden bestaande types geperfectioneerd, maar ook nieuwe types ontwikkeld.
 Zo zijn er de LiPo (Lithium polymeer) batterijen die ongeveer 50% efficiënter zijn dan klassieke Li-Ion equivalenten, en ook de brandstofcellen (fuel cells) die mogelijks een oplossing kunnen vormen voor de steeds grotere autonomie-behoefte van toestellen. Omdat veel van deze technieken gebruik maken van erg zeldzame delfstoffen, komen ook geavanceerde technieken met courante materialen in het vizier ter optimalisatie of vervanging, zoals nanostructuren met koolstof. Deze blijven echter toekomstmuziek voor consumentenelektronica…</simpara>
@@ -362,9 +363,9 @@ Zo zijn er de LiPo (Lithium polymeer) batterijen die ongeveer 50% efficiënter z
 </section>
 </section>
 </chapter>
-<chapter id="_cpu">
+<chapter xml:id="_cpu">
 <title>CPU</title>
-<section id="_overzicht">
+<section xml:id="_overzicht">
 <title>Overzicht</title>
 <simpara>In onderstaande tabel worden een aantal processoren van de x86 familie weergegeven met hun belangrijkste eigenschappen. De processor die in de eerste (IBM-)PC werd gebruikt was een 8088. Eigenlijk was dit een 8086 waarvan de databus beperkt werd tot 8 bits in plaats van 16 bits. De enige reden hiervoor was dat op dat ogenblik er geen andere 16bit componenten  beschikbaar waren.
 Deze processor werd reeds uitgebreid besproken tijdens computertechniek.
@@ -771,7 +772,7 @@ Het is niet de bedoeling om hier terug te komen op programmeermodel, segmenterin
         
         <entry align="left" valign="top"><simpara>-</simpara></entry>
         
-        <entry align="left" valign="top"><simpara>3,8 Ghz.<footnote id="turbo"><simpara>deze waarden zijn niet continue en kunnen pas tijdelijk gehaald worden</simpara></footnote></simpara></entry>
+        <entry align="left" valign="top"><simpara>3,8 Ghz.<footnote xml:id="turbo"><simpara>deze waarden zijn niet continue en kunnen pas tijdelijk gehaald worden</simpara></footnote></simpara></entry>
         
         <entry align="left" valign="top"><simpara>995 (QC)</simpara></entry>
         
@@ -825,7 +826,7 @@ Het is niet de bedoeling om hier terug te komen op programmeermodel, segmenterin
 </table>
 
 </section>
-<section id="_technologie_en_functionaliteit">
+<section xml:id="_technologie_en_functionaliteit">
 <title>Technologie en functionaliteit</title>
 <simpara>Een eerste duidelijke evolutie is de toename van het aantal transistors. Volgens de wet van Moore verloopt deze stijging zelfs exponentieel. Elke vierentwintig maanden zou het aantal transistors in een processor verdubbelen . Die toename is uiteraard enkel mogelijk als de transistordichtheid kan toenemen. In het verleden werd hierbij vaak gedacht dat er technische beperkingen zouden opduiken, maar tot dusver blijven fabrikanten slagen om vast te houden aan de ontwikkelsnelheid die geponeerd werd door Gordon More, één van de oprichters van Intel.</simpara>
 <blockquote>
@@ -835,45 +836,57 @@ Gordon Moore
 </attribution>
 <simpara>The number of transistors incorporated in a chip will approximately double every 24 months</simpara>
 </blockquote>
-<formalpara>
+<figure>
 <title>Wet van Moore (CC, Wikimedia Commons)</title>
-<para>Met deze stijging van het aantal transistoren gaat uiteraard ook een toename in functionaliteit gepaard. Zo kent een x86 processor vanaf de 80286/80386 (in principe vanaf de 286, praktisch vanaf de 386) twee werkingsmodi: real mode en protected mode.
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="ch02/images/mooreslaw2011.png" width="100%" scalefit="1" align="center"/>
+    </imageobject>
+    <textobject><phrase>Bulldozer</phrase></textobject>
+  </mediaobject>
+</figure>
+
+<simpara>Met deze stijging van het aantal transistoren gaat uiteraard ook een toename in functionaliteit gepaard. Zo kent een x86 processor vanaf de 80286/80386 (in principe vanaf de 286, praktisch vanaf de 386) twee werkingsmodi: real mode en protected mode.
 In real mode heeft de cpu dezelfde functionaliteit als een 8086.
 In deze compatibiliteitsmodus gedraagt hij zich met andere woorden als een snellere versie van de 8086. In protected mode krijgt de processor extra functionaliteit. De naam protected mode komt van de extra toevoegingen op het vlak van geheugenbescherming. Daarnaast ondersteunde de processor vanaf deze modus een aantal, vandaag onmisbare, extra mogelijkheden.
 Onder andere multitasking en virtueel geheugen zijn enkel mogelijk met een protected mode processor. Hier moet nog opgemerkt worden dat processoren nog steeds opstarten in real mode. Het is de taak van het besturingssysteem (of beter de loader ervan) om de processor om te schakelen naar protected mode.
 Andere voorbeelden van extra functionaliteit zijn de integratie van functies die eerst door externe componenten werden vervuld. Bijvoorbeeld werd vanaf de 486 een floating point unit in de processor geïntegreerd. Een ander voorbeeld zijn cache geheugens. De extra functionaliteit uit zich ook op het vlak van de instructieset. Zo zijn in de loop der tijden een aantal extra instructies toegevoegd om aan bepaalde behoeften te voldoen. Een belangrijk voorbeeld zijn de instructies die het gebruik van multimedia moeten ondersteunen (bijvoorbeeld MMX,SSE, 3DNow) en de ondersteuning voor virtualisatie (bijvoorbeeld intel VT-d, amdVi).
 Software die gebruik maakt van dit soort instructies, kan uiteraard niet uitgevoerd worden op processoren die deze instructies niet ondersteunen.
-Intel, de grootste producent van x86 processoren, hanteert voor de ontwikkeling een model dat het tick/tock-model genoemd wordt. Afwisselend worden nieuwe modellen uitgebracht met nieuwe funcitonaliteit (tock) en verbeterde technologie (tick). Dit wordt duidelijk in volgende intel roadmap.</para>
-</formalpara>
+Intel, de grootste producent van x86 processoren, hanteert voor de ontwikkeling een model dat het tick/tock-model genoemd wordt. Afwisselend worden nieuwe modellen uitgebracht met nieuwe funcitonaliteit (tock) en verbeterde technologie (tick). Dit wordt duidelijk in volgende intel roadmap.</simpara>
 <figure>
 <title>Intel roadmap (copyright 2008-2012 WhiteTimberwolf GFDL )</title>
   <mediaobject>
     <imageobject>
-      <imagedata fileref="ch02/images/IntelProcessorRoadmap-2.svg" width="100%" scalefit="1" align="center"/>
+      <imagedata fileref="ch02/images/2000px-IntelProcessorRoadmap-2.svg.png" width="100%" scalefit="1" align="center"/>
     </imageobject>
     <textobject><phrase>Bulldozer</phrase></textobject>
   </mediaobject>
 </figure>
 
 </section>
-<section id="_kloksnelheid">
+<section xml:id="_kloksnelheid">
 <title>Kloksnelheid</title>
 <simpara>Een tweede evolutie is waar te nemen op het vlak van de kloksnelheid, die duidelijk toegenomen is. In de beginjaren van de pc was te zien dat CPU klok en FSB klok samen toenamen. Na verloop van tijd ontstaat er een verschil tussen de processorklok en de FSB klok, die nog wel stijgt, maar een stuk minder snel. De processor wordt met andere woorden duidelijk het snelste onderdeel in het computersysteem. Het zal erop aan komen de werkkracht van de CPU zo weinig mogelijk onbenut te laten. In het bijzonder zullen maatregelen genomen moeten worden om zo weinig mogelijk tijd te verliezen bij het wachten op tragere componenten. De trend naar steeds stijgende kloksnelheden is tijdens het laatste decennium afgenomen. Bij de Pentium 4 werd nog volop gemikt op de 4GHz grens, waar enige jaren tegenaan gebotst werd. Belangrijkste probleem bij steeds hogere kloksnelheden is de gegenereerde warmte. Die moet in de eerste plaats uiteraard afgevoerd worden, maar geeft daarnaast ook nog een hoger verbruik.
-In het bijzonder bij laptops zijn dit twee vervelende problemen: de warmteafvoer vraagt grotere (en dus zwaardere) koellichamen en ventilatoren. Extra verbruik verkleint uiteraard de autonomie van een draagbaar toestel (tijd dat op accu gewerkt kan worden).
-#	Processorarchitectuur##	Pipelining
-Naast de kloksnelheid werd ook aan de interne opbouw van de processor gesleuteld om hem sneller bepaalde taken te laten uitvoeren. Zo werken processoren instructies niet na elkaar af, maar gedeeltelijk tegelijkertijd. Dit gebeurt in een zogenaamde pipeline. Het is eenvoudig om in te beelden dat terwijl de ene instructie uit het geheugen wordt opgehaald, een andere gedecodeerd kan worden en van nog een andere het resultaat berekend kan worden. Hieronder wordt dit principe grafisch voorgesteld.
+In het bijzonder bij laptops zijn dit twee vervelende problemen: de warmteafvoer vraagt grotere (en dus zwaardere) koellichamen en ventilatoren. Extra verbruik verkleint uiteraard de autonomie van een draagbaar toestel (tijd dat op accu gewerkt kan worden).</simpara>
+</section>
+<section xml:id="_processorarchitectuur">
+<title>Processorarchitectuur</title>
+<section xml:id="_pipelining">
+<title>Pipelining</title>
+<simpara>Naast de kloksnelheid werd ook aan de interne opbouw van de processor gesleuteld om hem sneller bepaalde taken te laten uitvoeren. Zo werken processoren instructies niet na elkaar af, maar gedeeltelijk tegelijkertijd. Dit gebeurt in een zogenaamde pipeline. Het is eenvoudig om in te beelden dat terwijl de ene instructie uit het geheugen wordt opgehaald, een andere gedecodeerd kan worden en van nog een andere het resultaat berekend kan worden. Hieronder wordt dit principe grafisch voorgesteld.
 Helaas is dit principe niet zaligmakend: soms zijn instructies van andere, waardoor er een ‘bubble’ optreedt: een tijdspanne waarin de processor verplicht moet wachten.</simpara>
 <figure>
 <title>processor pipeline (CC mediawiki)</title>
   <mediaobject>
     <imageobject>
-      <imagedata fileref="ch02/images/1000px-Pipeline,_4_stage.svgwikimediacc" width="100%" scalefit="1" align="center"/>
+      <imagedata fileref="ch02/images/1000px-Pipeline4stage.png" width="100%" scalefit="1" align="center"/>
     </imageobject>
     <textobject><phrase>Sandy Bridge</phrase></textobject>
   </mediaobject>
 </figure>
 
-<section id="_superscalaire_processoren">
+</section>
+<section xml:id="_superscalaire_processoren">
 <title>Superscalaire processoren</title>
 <simpara>Als dit principe verder gedreven wordt, kunnen stappen die veel tijd in beslag nemen dubbel uitgevoerd worden. Men spreekt dan over een superscalaire processor. In afbeelding 8 en afbeelding 9 worden de blokschema’s getoond van de Ivy bridge en de Athlon Bulldozer. In deze blokschema’s is duidelijk te zien hoe er verschilllende eenheden zijn die berekeningen kunnen maken, waardoor verschillende instructies tegelijkertijd uitgevoerd kunnen worden.
 Een belangrijke uitdaging hierbij vormen voorwaardelijke sprong instructies. Aangezien pas bij de uitvoering van de instructie geweten is of de sprong uitgevoerd wordt of dat gewoon de volgende instructie wordt uitgevoerd. In het schema zijn hiervoor branch prediction eenheden voorzien.
@@ -908,13 +921,13 @@ Een simpel voorbeeldje om de beperkingen van een multicore processor aan te tone
     <imageobject>
       <imagedata fileref="ch02/images/singlethread.png" width="100%" scalefit="1" align="center"/>
     </imageobject>
-    <textobject><phrase>Bulldozer</phrase></textobject>
+    <textobject><phrase>singlethread</phrase></textobject>
   </mediaobject>
 </figure>
 
 <simpara>Het voordeel van de multi-core merk je pas als je tegelijk nog een ander programma probeert te gebruiken. Dat zal met een multi-core vlot lukken, in tegenstelling tot een single core.</simpara>
 </section>
-<section id="_cache">
+<section xml:id="_cache">
 <title>Cache</title>
 <simpara>Een andere eigenschap die plots opduikt en doorheen de processorgeschiedenis steeds toeneemt is het cache geheugen. De toename van het cache volgt de trend van alle soorten geheugens die in een pc te vinden zijn.
 Dit is een gevolg van de eerder opgemerkte trend dat de processor veruit het snelste onderdeel is in het systeem, dat zo optimaal mogelijk benut moet worden. Naarmate data en programma’s steeds groter werden, werd ook het belang van geheugen groter. Tot de intrede van de grafische interface was de belangrijkste parameter in het systeem de kloksnelheid van de processor. Met de intrede van de grafische interface was een groter geheugen soms te verkiezen boven een hogere kloksnelheid.
@@ -924,7 +937,31 @@ Zo heeft bijvoorbeeld een high-end desktop CPU (core i7) zo’n 8MB cache aan bo
 De werking van de cache wordt verder in detail besproken in het derde hoofdstuk.</simpara>
 </section>
 </section>
-<section id="_montage">
+<section xml:id="_apu_soc">
+<title>APU, SoC</title>
+<simpara>De wet van Moore impliceert dat steeds meer mogelijk is op eenzelfde oppervlakte substraat. Die ruimte wordt ingenomen door bijvoorbeeld meerdere cores te huisvesten op eenzelfde processor, maar dat is maar een deel van het verhaal.</simpara>
+<simpara>Het is namelijk ook zo dat men probeert om steeds meer functionaliteit te verzamelen op eenzelfde chip.</simpara>
+<simpara>Daar zijn een aantal goede redenen voor te bedenken:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>het aantal verschillende chips op een moederbord kan zo teruggedrongen worden</simpara>
+</listitem>
+<listitem>
+<simpara>als alle componenten dicht bij elkaar zitten, zijn geen <emphasis>trage</emphasis> bussen nodig tussen deze onderdelen</simpara>
+</listitem>
+<listitem>
+<simpara>de oppervlakte die nodig is om het systeem te bouwen verkleint zo, een belangrijk argument bij de ontwikkeling van mobile devices.</simpara>
+</listitem>
+</itemizedlist>
+
+<simpara>Bij recente processoren zit bijvoorbeeld steeds vaker een grafische chip ingebouwd. Dan spreekt men niet meer over CPU, maar over <emphasis>APU (=advanced processing unit)</emphasis> om dit verschil in de verf te zetten.</simpara>
+<simpara>Het integratieproces gaat soms zo ver dat je kan spreken van een <emphasis>System On A Chip</emphasis>: alle belangrijke onderdelen (cpu, gpu, IO) zitten dan verzameld op één enkele chip.
+De rol van secundaire chips ("de chipset") wordt dus steeds kleiner.</simpara>
+<note>
+<simpara>Op welke SoC is jouw telefoon gebaseerd?</simpara>
+</note>
+</section>
+<section xml:id="_montage">
 <title>Montage</title>
 <simpara>Bij de montage van een processor moet je enkele zaken in acht nemen.</simpara>
 <itemizedlist>
@@ -939,12 +976,19 @@ De werking van de cache wordt verder in detail besproken in het derde hoofdstuk.
 </listitem>
 </itemizedlist>
 
-<formalpara>
+<figure>
 <title>LGA2011 socket zonder processor</title>
-<para>Tweede belangrijk aandachtspunt bij de installatie van een processor is dat gezorgd moet worden voor voldoende koeling. Dit betekent dat gezorgd moet worden voor een voldoende grote koelvin en ventilator en dat er goed contact is tussen de chip en de koelvin. Hiervoor moet eventueel koelpasta aangebracht worden. Een slecht gekoelde processor kan aanleiding geven tot een instabiel werkende computer en in het meest dramatische geval tot een beschadigde processor.</para>
-</formalpara>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="ch02/images/lga2011_cooler_roundup_002.jpg" width="100%" scalefit="1" align="center"/>
+    </imageobject>
+    <textobject><phrase>singlethread</phrase></textobject>
+  </mediaobject>
+</figure>
+
+<simpara>Tweede belangrijk aandachtspunt bij de installatie van een processor is dat gezorgd moet worden voor voldoende koeling. Dit betekent dat gezorgd moet worden voor een voldoende grote koelvin en ventilator en dat er goed contact is tussen de chip en de koelvin. Hiervoor moet eventueel koelpasta aangebracht worden. Een slecht gekoelde processor kan aanleiding geven tot een instabiel werkende computer en in het meest dramatische geval tot een beschadigde processor.</simpara>
 </section>
-<section id="_processoren_van_de_toekomst">
+<section xml:id="_processoren_van_de_toekomst">
 <title>Processoren van de toekomst</title>
 <simpara>Voorspellingen maken is geen sinecure. De trends die ingezet zijn, zullen vermoedelijk nog een hele poos verder gaan, met een verdere miniaturisatie en toename van efficiëntie tot gevolg.
 Een kaper op de kust voor de x86 technologie is de ARM architectuur. Hoewel deze absoluut niet nieuw is (eerste ontwerpen midden jaren 80), biedt deze processorfamilie grote voordelen:</simpara>
@@ -956,29 +1000,32 @@ Een kaper op de kust voor de x86 technologie is de ARM architectuur. Hoewel deze
 <simpara>Deze architectuur is in licentie bij de meeste chipbakkers</simpara>
 </listitem>
 <listitem>
-<simpara>Door een RISC (Reduced instruction set computing) architectuur  van nature efficient</simpara>
+<simpara>Door een RISC (Reduced instruction set computing) architectuur van nature efficient</simpara>
 </listitem>
 </itemizedlist>
 
-<simpara>De kans dat de RISC architectuur op korte termijn succesvol wordt op de desktopmarkt is gering, en ook het omgekeerde kan gezegd worden over CISC (x86) op mobiele devices. Voor specifieke servertoepassingen zijn er wel <ulink url="http://www.anandtech.com/show/7724/it-begins-amd-announces-its-first-arm-based-server-soc-64bit8core-opteron-a1100">aankondigingen gebeurd</ulink> door bijvoorbeeld AMD, die zich hier sterk wil in specialiseren.</simpara>
-<simpara>Toch lijken deze twee werelden naar elkaar toe te groeien, en zullen de grenzen ongetwijfeld snel vervagen.
-Microsoft heeft bijvoorbeeld eind 2012 z’n RT tablet vrijgegeven, met ARM SOC.</simpara>
+<simpara>De kans dat de RISC architectuur op korte termijn succesvol wordt op de desktopmarkt is gering, en ook het omgekeerde kan gezegd worden over CISC (x86) op mobiele devices. Voor specifieke servertoepassingen zijn er wel <link xlink:href="http://www.anandtech.com/show/7724/it-begins-amd-announces-its-first-arm-based-server-soc-64bit8core-opteron-a1100">aankondigingen gebeurd</link> door bijvoorbeeld AMD, die zich hier sterk wil in specialiseren.</simpara>
+<simpara>Toch lijken deze twee werelden van gespecialiseerde ARM en meer universele x86 naar elkaar toe te groeien, en zullen de grenzen ongetwijfeld snel vervagen.
+Microsoft heeft bijvoorbeeld eind 2012 z’n RT tablet vrijgegeven, met ARM SOC. Uiteraard zal software die gecompileerd werd voor x86 op dit soort toestellen niet werken.</simpara>
+</section>
+<section xml:id="_bibliografie_bij_dit_hoofdstuk">
+<title>Bibliografie bij dit hoofdstuk</title>
 <bibliodiv>
 <bibliomixed>
-<bibliomisc><anchor id="INTEL" xreflabel="[INTEL]"/>[INTEL] Intel. <ulink url="http://www.intel.com/content/www/us/en/history/museum-gordon-moore-law.html">http://www.intel.com/content/www/us/en/history/museum-gordon-moore-law.html</ulink>.</bibliomisc>
+<bibliomisc><anchor xml:id="INTEL" xreflabel="[INTEL]"/>[INTEL] Intel. <link xlink:href="http://www.intel.com/content/www/us/en/history/museum-gordon-moore-law.html">http://www.intel.com/content/www/us/en/history/museum-gordon-moore-law.html</link>.</bibliomisc>
 </bibliomixed>
 </bibliodiv>
 
 </section>
 </chapter>
-<chapter id="_bibliografie">
-<title>Bibliografie</title>
+<chapter xml:id="_algemene_bibliografie">
+<title>Algemene bibliografie</title>
 <bibliodiv>
 <bibliomixed>
-<bibliomisc><anchor id="STALLINGS" xreflabel="[STALLINGS]"/>[STALLINGS] Andy Hunt &amp; Dave Thomas. <emphasis>Computer Organization and architecture, Ninth edition</emphasis>. Pearson education. 2012.</bibliomisc>
+<bibliomisc><anchor xml:id="STALLINGS" xreflabel="[STALLINGS]"/>[STALLINGS] Andy Hunt &amp; Dave Thomas. <emphasis>Computer Organization and architecture, Ninth edition</emphasis>. Pearson education. 2012.</bibliomisc>
 </bibliomixed>
 <bibliomixed>
-<bibliomisc><anchor id="RAMA" xreflabel="[RAMA]"/>[RAMA] Umakishura Ramachandran. <emphasis>Computer Systems: An Integrated Approach to Architecture and Operating Systems</emphasis>. Manning Publications.
+<bibliomisc><anchor xml:id="RAMA" xreflabel="[RAMA]"/>[RAMA] Umakishura Ramachandran. <emphasis>Computer Systems: An Integrated Approach to Architecture and Operating Systems</emphasis>. Manning Publications.
 2010.</bibliomisc>
 </bibliomixed>
 </bibliodiv>

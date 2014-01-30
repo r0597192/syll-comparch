@@ -424,11 +424,14 @@ MathJax.Hub.Config({
 <li><a href="#_overzicht">Overzicht</a></li>
 <li><a href="#_technologie_en_functionaliteit">Technologie en functionaliteit</a></li>
 <li><a href="#_kloksnelheid">Kloksnelheid</a></li>
+<li><a href="#_processorarchitectuur">Processorarchitectuur</a></li>
+<li><a href="#_apu_soc">APU, SoC</a></li>
 <li><a href="#_montage">Montage</a></li>
 <li><a href="#_processoren_van_de_toekomst">Processoren van de toekomst</a></li>
+<li><a href="#_bibliografie_bij_dit_hoofdstuk">Bibliografie bij dit hoofdstuk</a></li>
 </ul>
 </li>
-<li><a href="#_bibliografie">Bibliografie</a></li>
+<li><a href="#_algemene_bibliografie">Algemene bibliografie</a></li>
 </ul>
 </div>
 </div>
@@ -1050,8 +1053,13 @@ The number of transistors incorporated in a chip will approximately double every
 &#8212; Gordon Moore
 </div>
 </div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch02/images/mooreslaw2011.png" alt="Bulldozer">
+</div>
+<div class="title">Figure 7. Wet van Moore (CC, Wikimedia Commons)</div>
+</div>
 <div class="paragraph">
-<div class="title">Wet van Moore (CC, Wikimedia Commons)</div>
 <p>Met deze stijging van het aantal transistoren gaat uiteraard ook een toename in functionaliteit gepaard. Zo kent een x86 processor vanaf de 80286/80386 (in principe vanaf de 286, praktisch vanaf de 386) twee werkingsmodi: real mode en protected mode.
 In real mode heeft de cpu dezelfde functionaliteit als een 8086.
 In deze compatibiliteitsmodus gedraagt hij zich met andere woorden als een snellere versie van de 8086. In protected mode krijgt de processor extra functionaliteit. De naam protected mode komt van de extra toevoegingen op het vlak van geheugenbescherming. Daarnaast ondersteunde de processor vanaf deze modus een aantal, vandaag onmisbare, extra mogelijkheden.
@@ -1062,25 +1070,32 @@ Intel, de grootste producent van x86 processoren, hanteert voor de ontwikkeling 
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch02/images/IntelProcessorRoadmap-2.svg" alt="Bulldozer">
+<img src="ch02/images/2000px-IntelProcessorRoadmap-2.svg.png" alt="Bulldozer">
 </div>
-<div class="title">Figure 7. Intel roadmap (copyright 2008-2012 WhiteTimberwolf GFDL )</div>
+<div class="title">Figure 8. Intel roadmap (copyright 2008-2012 WhiteTimberwolf GFDL )</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_kloksnelheid">Kloksnelheid</h3>
 <div class="paragraph">
 <p>Een tweede evolutie is waar te nemen op het vlak van de kloksnelheid, die duidelijk toegenomen is. In de beginjaren van de pc was te zien dat CPU klok en FSB klok samen toenamen. Na verloop van tijd ontstaat er een verschil tussen de processorklok en de FSB klok, die nog wel stijgt, maar een stuk minder snel. De processor wordt met andere woorden duidelijk het snelste onderdeel in het computersysteem. Het zal erop aan komen de werkkracht van de CPU zo weinig mogelijk onbenut te laten. In het bijzonder zullen maatregelen genomen moeten worden om zo weinig mogelijk tijd te verliezen bij het wachten op tragere componenten. De trend naar steeds stijgende kloksnelheden is tijdens het laatste decennium afgenomen. Bij de Pentium 4 werd nog volop gemikt op de 4GHz grens, waar enige jaren tegenaan gebotst werd. Belangrijkste probleem bij steeds hogere kloksnelheden is de gegenereerde warmte. Die moet in de eerste plaats uiteraard afgevoerd worden, maar geeft daarnaast ook nog een hoger verbruik.
-In het bijzonder bij laptops zijn dit twee vervelende problemen: de warmteafvoer vraagt grotere (en dus zwaardere) koellichamen en ventilatoren. Extra verbruik verkleint uiteraard de autonomie van een draagbaar toestel (tijd dat op accu gewerkt kan worden).
-#	Processorarchitectuur##	Pipelining
-Naast de kloksnelheid werd ook aan de interne opbouw van de processor gesleuteld om hem sneller bepaalde taken te laten uitvoeren. Zo werken processoren instructies niet na elkaar af, maar gedeeltelijk tegelijkertijd. Dit gebeurt in een zogenaamde pipeline. Het is eenvoudig om in te beelden dat terwijl de ene instructie uit het geheugen wordt opgehaald, een andere gedecodeerd kan worden en van nog een andere het resultaat berekend kan worden. Hieronder wordt dit principe grafisch voorgesteld.
+In het bijzonder bij laptops zijn dit twee vervelende problemen: de warmteafvoer vraagt grotere (en dus zwaardere) koellichamen en ventilatoren. Extra verbruik verkleint uiteraard de autonomie van een draagbaar toestel (tijd dat op accu gewerkt kan worden).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_processorarchitectuur">Processorarchitectuur</h3>
+<div class="sect3">
+<h4 id="_pipelining">Pipelining</h4>
+<div class="paragraph">
+<p>Naast de kloksnelheid werd ook aan de interne opbouw van de processor gesleuteld om hem sneller bepaalde taken te laten uitvoeren. Zo werken processoren instructies niet na elkaar af, maar gedeeltelijk tegelijkertijd. Dit gebeurt in een zogenaamde pipeline. Het is eenvoudig om in te beelden dat terwijl de ene instructie uit het geheugen wordt opgehaald, een andere gedecodeerd kan worden en van nog een andere het resultaat berekend kan worden. Hieronder wordt dit principe grafisch voorgesteld.
 Helaas is dit principe niet zaligmakend: soms zijn instructies van andere, waardoor er een ‘bubble’ optreedt: een tijdspanne waarin de processor verplicht moet wachten.</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch02/images/1000px-Pipeline,_4_stage.svgwikimediacc" alt="Sandy Bridge">
+<img src="ch02/images/1000px-Pipeline4stage.png" alt="Sandy Bridge">
 </div>
-<div class="title">Figure 8. processor pipeline (CC mediawiki)</div>
+<div class="title">Figure 9. processor pipeline (CC mediawiki)</div>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_superscalaire_processoren">Superscalaire processoren</h4>
@@ -1093,13 +1108,13 @@ Meer details over hun werking en de principes van pipelining en superscalaire ar
 <div class="content">
 <img src="ch02/images/Sandy-Bridge-Microarchitecture-Small.jpg" alt="Sandy Bridge">
 </div>
-<div class="title">Figure 9. Sandy bridge microarchitectuur</div>
+<div class="title">Figure 10. Sandy bridge microarchitectuur</div>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="ch02/images/bulldozeruarch.jpg" alt="Bulldozer">
 </div>
-<div class="title">Figure 10. AMD bulldozer architectuur (copyright AnandTech)</div>
+<div class="title">Figure 11. AMD bulldozer architectuur (copyright AnandTech)</div>
 </div>
 <div class="paragraph">
 <p>Multicore processoren zijn al geruime tijd niet meer weg te denken. Hexacores en octocores zullen de komende jaren eerder regel dan uitzondering worden.
@@ -1109,9 +1124,9 @@ Een simpel voorbeeldje om de beperkingen van een multicore processor aan te tone
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch02/images/singlethread.png" alt="Bulldozer">
+<img src="ch02/images/singlethread.png" alt="singlethread">
 </div>
-<div class="title">Figure 11. single threaded applicatie op multicore processor</div>
+<div class="title">Figure 12. single threaded applicatie op multicore processor</div>
 </div>
 <div class="paragraph">
 <p>Het voordeel van de multi-core merk je pas als je tegelijk nog een ander programma probeert te gebruiken. Dat zal met een multi-core vlot lukken, in tegenstelling tot een single core.</p>
@@ -1132,6 +1147,50 @@ De werking van de cache wordt verder in detail besproken in het derde hoofdstuk.
 </div>
 </div>
 <div class="sect2">
+<h3 id="_apu_soc">APU, SoC</h3>
+<div class="paragraph">
+<p>De wet van Moore impliceert dat steeds meer mogelijk is op eenzelfde oppervlakte substraat. Die ruimte wordt ingenomen door bijvoorbeeld meerdere cores te huisvesten op eenzelfde processor, maar dat is maar een deel van het verhaal.</p>
+</div>
+<div class="paragraph">
+<p>Het is namelijk ook zo dat men probeert om steeds meer functionaliteit te verzamelen op eenzelfde chip.</p>
+</div>
+<div class="paragraph">
+<p>Daar zijn een aantal goede redenen voor te bedenken:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>het aantal verschillende chips op een moederbord kan zo teruggedrongen worden</p>
+</li>
+<li>
+<p>als alle componenten dicht bij elkaar zitten, zijn geen <em>trage</em> bussen nodig tussen deze onderdelen</p>
+</li>
+<li>
+<p>de oppervlakte die nodig is om het systeem te bouwen verkleint zo, een belangrijk argument bij de ontwikkeling van mobile devices.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Bij recente processoren zit bijvoorbeeld steeds vaker een grafische chip ingebouwd. Dan spreekt men niet meer over CPU, maar over <em>APU (=advanced processing unit)</em> om dit verschil in de verf te zetten.</p>
+</div>
+<div class="paragraph">
+<p>Het integratieproces gaat soms zo ver dat je kan spreken van een <em>System On A Chip</em>: alle belangrijke onderdelen (cpu, gpu, IO) zitten dan verzameld op één enkele chip.
+De rol van secundaire chips ("de chipset") wordt dus steeds kleiner.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="icon-note" title="Note"></i>
+</td>
+<td class="content">
+Op welke SoC is jouw telefoon gebaseerd?
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_montage">Montage</h3>
 <div class="paragraph">
 <p>Bij de montage van een processor moet je enkele zaken in acht nemen.</p>
@@ -1149,8 +1208,13 @@ De werking van de cache wordt verder in detail besproken in het derde hoofdstuk.
 </li>
 </ul>
 </div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch02/images/lga2011_cooler_roundup_002.jpg" alt="singlethread">
+</div>
+<div class="title">Figure 13. LGA2011 socket zonder processor</div>
+</div>
 <div class="paragraph">
-<div class="title">LGA2011 socket zonder processor</div>
 <p>Tweede belangrijk aandachtspunt bij de installatie van een processor is dat gezorgd moet worden voor voldoende koeling. Dit betekent dat gezorgd moet worden voor een voldoende grote koelvin en ventilator en dat er goed contact is tussen de chip en de koelvin. Hiervoor moet eventueel koelpasta aangebracht worden. Een slecht gekoelde processor kan aanleiding geven tot een instabiel werkende computer en in het meest dramatische geval tot een beschadigde processor.</p>
 </div>
 </div>
@@ -1169,7 +1233,7 @@ Een kaper op de kust voor de x86 technologie is de ARM architectuur. Hoewel deze
 <p>Deze architectuur is in licentie bij de meeste chipbakkers</p>
 </li>
 <li>
-<p>Door een RISC (Reduced instruction set computing) architectuur  van nature efficient</p>
+<p>Door een RISC (Reduced instruction set computing) architectuur van nature efficient</p>
 </li>
 </ul>
 </div>
@@ -1177,9 +1241,12 @@ Een kaper op de kust voor de x86 technologie is de ARM architectuur. Hoewel deze
 <p>De kans dat de RISC architectuur op korte termijn succesvol wordt op de desktopmarkt is gering, en ook het omgekeerde kan gezegd worden over CISC (x86) op mobiele devices. Voor specifieke servertoepassingen zijn er wel <a href="http://www.anandtech.com/show/7724/it-begins-amd-announces-its-first-arm-based-server-soc-64bit8core-opteron-a1100">aankondigingen gebeurd</a> door bijvoorbeeld AMD, die zich hier sterk wil in specialiseren.</p>
 </div>
 <div class="paragraph">
-<p>Toch lijken deze twee werelden naar elkaar toe te groeien, en zullen de grenzen ongetwijfeld snel vervagen.
-Microsoft heeft bijvoorbeeld eind 2012 z’n RT tablet vrijgegeven, met ARM SOC.</p>
+<p>Toch lijken deze twee werelden van gespecialiseerde ARM en meer universele x86 naar elkaar toe te groeien, en zullen de grenzen ongetwijfeld snel vervagen.
+Microsoft heeft bijvoorbeeld eind 2012 z’n RT tablet vrijgegeven, met ARM SOC. Uiteraard zal software die gecompileerd werd voor x86 op dit soort toestellen niet werken.</p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_bibliografie_bij_dit_hoofdstuk">Bibliografie bij dit hoofdstuk</h3>
 <div class="ulist bibliography">
 <ul class="bibliography">
 <li>
@@ -1191,7 +1258,7 @@ Microsoft heeft bijvoorbeeld eind 2012 z’n RT tablet vrijgegeven, met ARM SOC.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_bibliografie">Bibliografie</h2>
+<h2 id="_algemene_bibliografie">Algemene bibliografie</h2>
 <div class="sectionbody">
 <div class="ulist bibliography">
 <ul class="bibliography">
@@ -1218,7 +1285,7 @@ Microsoft heeft bijvoorbeeld eind 2012 z’n RT tablet vrijgegeven, met ARM SOC.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2014-01-29 08:40:44 Romance (standaardtijd)
+Last updated 2014-01-30 09:54:25 Romance (standaardtijd)
 </div>
 </div>
 </body>
