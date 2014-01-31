@@ -378,10 +378,59 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 
 </style>
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nomath|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nomath|noasciimath"
+  }
+});
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+<script>document.addEventListener('DOMContentLoaded', MathJax.Hub.TypeSet)</script>
 </head>
-<body class="book">
+<body class="book toc2 toc-left">
 <div id="header">
 <h1>Computerarchitectuur</h1>
+<span id="author" class="author">Roel Van Steenberghe</span><br>
+<span id="email" class="email"><a href="mailto:Roel.VanSteenberghe@gmail.com">Roel.VanSteenberghe@gmail.com</a></span><br>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_over_deze_cursus">Over deze cursus</a></li>
+<li><a href="#_voorwoord">Voorwoord</a></li>
+<li><a href="#_power_supply">power supply</a></li>
+<li>
+<ul class="sectlevel2">
+<li><a href="#_principe_en_werking">Principe en werking</a></li>
+<li><a href="#_eigenschappen">Eigenschappen</a></li>
+<li><a href="#_vormfactor_en_connectoren">Vormfactor en connectoren</a></li>
+<li><a href="#_vermogen">Vermogen</a></li>
+<li><a href="#_geluid">Geluid</a></li>
+<li><a href="#_rendement">Rendement</a></li>
+<li><a href="#_problemen">Problemen</a></li>
+<li><a href="#_uninterruptible_power_supply_ups">Uninterruptible Power Supply (UPS)</a></li>
+<li><a href="#_accu_s">Accu’s</a></li>
+</ul>
+</li>
+<li><a href="#_cpu">CPU</a></li>
+<li>
+<ul class="sectlevel2">
+<li><a href="#_overzicht">Overzicht</a></li>
+<li><a href="#_technologie_en_functionaliteit">Technologie en functionaliteit</a></li>
+<li><a href="#_kloksnelheid">Kloksnelheid</a></li>
+<li><a href="#_montage">Montage</a></li>
+<li><a href="#_processoren_van_de_toekomst">Processoren van de toekomst</a></li>
+</ul>
+</li>
+<li><a href="#_bibliografie">Bibliografie</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
@@ -422,7 +471,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 Voor veel mensen zijn computers, tablets, smartphones en andere devices tegenwoordig zo gewoon, dat ze bijna thuis horen in het rijtje van basisbehoeften als stromend water, elektriciteit en TV.
 Toch blijft het belangrijk om te weten wat er onder de motorkap van je devices schuilt. Die achtergrondkennis is onontbeerlijk om later efficiënt problemen op te lossen of producten (in de breedste zin van het woord) van goeie kwaliteit af te leveren. Zelfs wie zich later zal toespitsen op het ontwikkelen van software, zal efficiënter kunnen werken als hij ook snapt wat achter de schermen gebeurt.
 Deze cursus probeert je een overzicht te geven van de interne keuken van een moderne computer terwijl de cursus processorarchitectuur dan weer iets dieper ingaat op de werking van het kloppend hart ervan.
-Uiteraard zijn twaalf lessen veel te weinig om alle onderdelen tot op het bot uit te benen. Daarom kan ik enkele standaardwerken aanbevelen, die zeker een bron van inspiratie vormden voor deze cursus. De boeken van William Stallings <a href="#Stallings">[Stallings]</a> en Umakishore Ramachandran <a href="#RAMA">[RAMA]</a> verdienen zeker je aandacht.
+Uiteraard zijn twaalf lessen veel te weinig om alle onderdelen tot op het bot uit te benen. Daarom kan ik enkele standaardwerken aanbevelen, die zeker een bron van inspiratie vormden voor deze cursus. De boeken van William Stallings <a href="#STALLINGS">[STALLINGS]</a> en Umakishore Ramachandran <a href="#RAMA">[RAMA]</a> verdienen zeker je aandacht.
 Een overzicht van de werkvorm die bij dit vak gebruikt wordt, vind je terug in de ECTS fiche en de studiewijzer. Beiden zijn te vinden op Toledo.</p>
 </div>
 <div class="paragraph">
@@ -644,7 +693,7 @@ Ander nadeel is dat in gewone omstandigheden de netspanning rechtstreeks gekoppe
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch01/images/ups/Off_Line.png" alt="APC UPS">
+<img src="ch01/images/ups/Off_Line_UPS.png" alt="offline UPS">
 </div>
 <div class="title">Figure 4. Offline UPS ( &#169; Joslee 2007 GFDL)</div>
 </div>
@@ -656,9 +705,9 @@ Ander nadeel is dat in gewone omstandigheden de netspanning rechtstreeks gekoppe
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch01/images/ups/Line_interactive_UPSII.png" alt="APC UPS">
+<img src="ch01/images/ups/Line_interactive_UPSII.png" alt="line interactive UPS">
 </div>
-<div class="title">Figure 5. Line interactive UPS (  &#169;Joslee 2007 GFDL)</div>
+<div class="title">Figure 5. Line interactive UPS ( &#169; Joslee 2007 GFDL)</div>
 </div>
 </div>
 </div>
@@ -677,11 +726,10 @@ Sommige fabrikanten verkiezen echter om hun capaciteiten uit te drukken in Wh, w
 Je weet immers dat</p>
 </div>
 <div class="paragraph">
-<p>:\$0\$
-(Vermogen=Spanning x Stroom)</p>
+<p>\$P=U*I\$ (Vermogen=Spanning x Stroom)</p>
 </div>
 <div class="paragraph">
-<p>Willen we dus de I(A) kennen, dan moeten we het vermogen delen door de spanning.
+<p>Willen we dus de stroom I(A) kennen, dan moeten we het vermogen delen door de spanning.
 Nemen we onderstaand voorbeeld:</p>
 </div>
 <div class="imageblock" style="text-align: center">
@@ -692,8 +740,7 @@ Nemen we onderstaand voorbeeld:</p>
 </div>
 <div class="paragraph">
 <p>We kunnen hier dus de capaciteit in Ah bepalen door
-I/h= P/h/U= 2,4Wh/3,6V=0,666Ah
-of in mAh= 666mAh</p>
+\$I_h = P_h/U = 2,4Wh/3,6V = 0,666Ah of 666mAh\$</p>
 </div>
 </div>
 <div class="sect4">
@@ -722,13 +769,16 @@ Uit hoeveel cellen bestaat je accu-pack?</p>
 <div class="paragraph">
 <p>Tegenwoordig is dit zowat het meest voorkomende type in hoogwaardige mobiele apparatuur. Dit type onderscheidt zich door een erg hoge energiedichtheid, en het ‘memory-effect’ is niet bestaande.</p>
 </div>
-<div class="paragraph">
-<p>video 1 werking van Li-Ion accu</p>
+<div class="videoblock">
+<div class="title">video 1 werking van Li-Ion accu</div>
+<div class="content">
+<iframe src="//www.youtube.com/embed/2PjyJhe7Q1g?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
 </div>
 <div class="paragraph">
 <p>Toch zijn er enkele belangrijke eigenschappen aan dit type, die je beter kent..
 Het zwakke punt van Li-Ion: degradatie
-Wie een laptop of GSM gebruikt, kent het fenomeen: na enkele jaren is de capaciteit van de batterij slechts nog een fractie van wat ze was bij aankoop. Dit fenomeen kan je niet omkeren, maar het kan wel vertraagd worden als je de weet wat de factoren zijn die dit proces versnellen&#8230;
+Wie een laptop of GSM gebruikt, kent het fenomeen: na enkele jaren is de cyapaciteit van de batterij slechts nog een fractie van wat ze was bij aankoop. Dit fenomeen kan je niet omkeren, maar het kan wel vertraagd worden als je de weet wat de factoren zijn die dit proces versnellen&#8230;
 Een Li-ion-accu verliest zijn capaciteit het snelst als hij zich in een warme ruimte bevindt, en opgeladen is. Een volledig opgeladen Li-ion accu zal bijvoorbeeld na een jaar rusten in een ruimte waar het gemiddeld 20°C is, 20 procent van zijn capaciteit verliezen.
 Is diezelfde accu slechts half opgeladen, dan zal de capaciteit met slechts enkele procenten dalen. Het is dus niet verstandig aan Li-ion-accu voor lange tijd weg te bergen in opgeladen toestand. Ook door stockage in koele ruimtes kan de capaciteit langer bewaard blijven. Een laptop die snel erg warm wordt bij gebruik zal dus meteen ook nefast zijn voor de capaciteit van de batterij op langere termijn.
 Bij een temperatuur van iets boven het vriespunt en een lading van ongeveer 40% zal dit type batterij de langste levensduur ‘on the shelf’ hebben.</p>
@@ -740,20 +790,419 @@ Bij een temperatuur van iets boven het vriespunt en een lading van ongeveer 40% 
 <p>Gezien de enorme markt die ontstaan is voor accu’s, is er enorm veel druk om betere modellen te ontwikkelen. Daarbij worden bestaande types geperfectioneerd, maar ook nieuwe types ontwikkeld.
 Zo zijn er de LiPo (Lithium polymeer) batterijen die ongeveer 50% efficiënter zijn dan klassieke Li-Ion equivalenten, en ook de brandstofcellen (fuel cells) die mogelijks een oplossing kunnen vormen voor de steeds grotere autonomie-behoefte van toestellen. Omdat veel van deze technieken gebruik maken van erg zeldzame delfstoffen, komen ook geavanceerde technieken met courante materialen in het vizier ter optimalisatie of vervanging, zoals nanostructuren met koolstof. Deze blijven echter toekomstmuziek voor consumentenelektronica…</p>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cpu">CPU</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_overzicht">Overzicht</h3>
+<div class="paragraph">
+<p>In onderstaande tabel worden een aantal processoren van de x86 familie weergegeven met hun belangrijkste eigenschappen. De processor die in de eerste (IBM-)PC werd gebruikt was een 8088. Eigenlijk was dit een 8086 waarvan de databus beperkt werd tot 8 bits in plaats van 16 bits. De enige reden hiervoor was dat op dat ogenblik er geen andere 16bit componenten  beschikbaar waren.
+Deze processor werd reeds uitgebreid besproken tijdens computertechniek.
+Het is niet de bedoeling om hier terug te komen op programmeermodel, segmentering, &#8230;</p>
+</div>
+<div class="paragraph">
+<p>Wel zullen we de evolutie van een aantal eigenschappen bekijken.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 100%;">
+<caption class="title">Table 2. processoroverzicht</caption>
+<colgroup>
+<col style="width: 12%;">
+<col style="width: 12%;">
+<col style="width: 12%;">
+<col style="width: 12%;">
+<col style="width: 12%;">
+<col style="width: 12%;">
+<col style="width: 12%;">
+<col style="width: 12%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">type</th>
+<th class="tableblock halign-left valign-top">jaar</th>
+<th class="tableblock halign-left valign-top">data/adres-bus</th>
+<th class="tableblock halign-left valign-top">L1 cache (kB)</th>
+<th class="tableblock halign-left valign-top">FSB (Mhz)</th>
+<th class="tableblock halign-left valign-top">Clock(Mhz)</th>
+<th class="tableblock halign-left valign-top">transistoren (miljoen)</th>
+<th class="tableblock halign-left valign-top">technologie (nm)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8088</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1979</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8/20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4,77..8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4,77..8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.029</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8086</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1978</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16/20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4,77..8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4,77..8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.029</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">80286</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1980</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16/24</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6..20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6..20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.134</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1500</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">80386DX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1985</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32/32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16..33</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16..33</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.275</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1500</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">80486DX/SX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1989</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32/32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">25..50</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">25..50</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">80486DX2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1992</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32/32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">25..40</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">25..80</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">800</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">80486DX4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1994</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32/32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8+8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">25..40</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">75..120</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">600</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pentium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1993</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64/32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8+8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">60..66</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">60..200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">600</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pentium MMX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1997</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64/32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16+16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">66</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">166..233</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">350</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pentium Pro</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1995</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64/36</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8+8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">66</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">150..200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">350</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pentium II</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1997</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64/36</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16+16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">66/100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">300..450</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7.5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">250</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pentium III</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1999</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64/36</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16+16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100/133</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">450..1300</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">28</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">130</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AMD Athlon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1999</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64/36</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64+64</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">200/266</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">500..2200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">37</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">130</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pentium IV</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2001</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64/36</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8+96</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">400/533</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1400..2800</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">42</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">130</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AMD 64</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2005</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64/36</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2*512k L2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2,4GHz</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">233</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">102</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Core duo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2006</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64/36</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2*2M L2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">800</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,6GHz</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">376</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">65</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Intel Nehalem</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2008</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64/36</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32+32/core</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,2 Ghz</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">731 (QC)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">45/32</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Intel Sandy Bridge</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2011</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64/36</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32+32/core</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,8 Ghz.<span class="footnote" id="_footnote_turbo">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">995 (QC)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Intel Ivy bridge</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2012</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64/36</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32+32/core</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,9 Ghz.<span class="footnoteref">[<a class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1400 (QC)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">22</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Intel Haswell</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2013</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64/36</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32+32/core</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3,9 Ghz.<span class="footnoteref">[<a class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">22</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_technologie_en_functionaliteit">Technologie en functionaliteit</h3>
+<div class="paragraph">
+<p>Een eerste duidelijke evolutie is de toename van het aantal transistors. Volgens de wet van Moore verloopt deze stijging zelfs exponentieel. Elke vierentwintig maanden zou het aantal transistors in een processor verdubbelen . Die toename is uiteraard enkel mogelijk als de transistordichtheid kan toenemen. In het verleden werd hierbij vaak gedacht dat er technische beperkingen zouden opduiken, maar tot dusver blijven fabrikanten slagen om vast te houden aan de ontwikkelsnelheid die geponeerd werd door Gordon More, één van de oprichters van Intel.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+The number of transistors incorporated in a chip will approximately double every 24 months
+</blockquote>
+<div class="attribution">
+<cite>Electronics Magazine 1965</cite><br>
+&#8212; Gordon Moore
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Wet van Moore (CC, Wikimedia Commons)</div>
+<p>Met deze stijging van het aantal transistoren gaat uiteraard ook een toename in functionaliteit gepaard. Zo kent een x86 processor vanaf de 80286/80386 (in principe vanaf de 286, praktisch vanaf de 386) twee werkingsmodi: real mode en protected mode.
+In real mode heeft de cpu dezelfde functionaliteit als een 8086.
+In deze compatibiliteitsmodus gedraagt hij zich met andere woorden als een snellere versie van de 8086. In protected mode krijgt de processor extra functionaliteit. De naam protected mode komt van de extra toevoegingen op het vlak van geheugenbescherming. Daarnaast ondersteunde de processor vanaf deze modus een aantal, vandaag onmisbare, extra mogelijkheden.
+Onder andere multitasking en virtueel geheugen zijn enkel mogelijk met een protected mode processor. Hier moet nog opgemerkt worden dat processoren nog steeds opstarten in real mode. Het is de taak van het besturingssysteem (of beter de loader ervan) om de processor om te schakelen naar protected mode.
+Andere voorbeelden van extra functionaliteit zijn de integratie van functies die eerst door externe componenten werden vervuld. Bijvoorbeeld werd vanaf de 486 een floating point unit in de processor geïntegreerd. Een ander voorbeeld zijn cache geheugens. De extra functionaliteit uit zich ook op het vlak van de instructieset. Zo zijn in de loop der tijden een aantal extra instructies toegevoegd om aan bepaalde behoeften te voldoen. Een belangrijk voorbeeld zijn de instructies die het gebruik van multimedia moeten ondersteunen (bijvoorbeeld MMX,SSE, 3DNow) en de ondersteuning voor virtualisatie (bijvoorbeeld intel VT-d, amdVi).
+Software die gebruik maakt van dit soort instructies, kan uiteraard niet uitgevoerd worden op processoren die deze instructies niet ondersteunen.
+Intel, de grootste producent van x86 processoren, hanteert voor de ontwikkeling een model dat het tick/tock-model genoemd wordt. Afwisselend worden nieuwe modellen uitgebracht met nieuwe funcitonaliteit (tock) en verbeterde technologie (tick). Dit wordt duidelijk in volgende intel roadmap.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch02/images/IntelProcessorRoadmap-2.svg" alt="Bulldozer">
+</div>
+<div class="title">Figure 7. Intel roadmap (copyright 2008-2012 WhiteTimberwolf GFDL )</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_kloksnelheid">Kloksnelheid</h3>
+<div class="paragraph">
+<p>Een tweede evolutie is waar te nemen op het vlak van de kloksnelheid, die duidelijk toegenomen is. In de beginjaren van de pc was te zien dat CPU klok en FSB klok samen toenamen. Na verloop van tijd ontstaat er een verschil tussen de processorklok en de FSB klok, die nog wel stijgt, maar een stuk minder snel. De processor wordt met andere woorden duidelijk het snelste onderdeel in het computersysteem. Het zal erop aan komen de werkkracht van de CPU zo weinig mogelijk onbenut te laten. In het bijzonder zullen maatregelen genomen moeten worden om zo weinig mogelijk tijd te verliezen bij het wachten op tragere componenten. De trend naar steeds stijgende kloksnelheden is tijdens het laatste decennium afgenomen. Bij de Pentium 4 werd nog volop gemikt op de 4GHz grens, waar enige jaren tegenaan gebotst werd. Belangrijkste probleem bij steeds hogere kloksnelheden is de gegenereerde warmte. Die moet in de eerste plaats uiteraard afgevoerd worden, maar geeft daarnaast ook nog een hoger verbruik.
+In het bijzonder bij laptops zijn dit twee vervelende problemen: de warmteafvoer vraagt grotere (en dus zwaardere) koellichamen en ventilatoren. Extra verbruik verkleint uiteraard de autonomie van een draagbaar toestel (tijd dat op accu gewerkt kan worden).
+#	Processorarchitectuur##	Pipelining
+Naast de kloksnelheid werd ook aan de interne opbouw van de processor gesleuteld om hem sneller bepaalde taken te laten uitvoeren. Zo werken processoren instructies niet na elkaar af, maar gedeeltelijk tegelijkertijd. Dit gebeurt in een zogenaamde pipeline. Het is eenvoudig om in te beelden dat terwijl de ene instructie uit het geheugen wordt opgehaald, een andere gedecodeerd kan worden en van nog een andere het resultaat berekend kan worden. Hieronder wordt dit principe grafisch voorgesteld.
+Helaas is dit principe niet zaligmakend: soms zijn instructies van andere, waardoor er een ‘bubble’ optreedt: een tijdspanne waarin de processor verplicht moet wachten.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch02/images/1000px-Pipeline,_4_stage.svgwikimediacc" alt="Sandy Bridge">
+</div>
+<div class="title">Figure 8. processor pipeline (CC mediawiki)</div>
+</div>
+<div class="sect3">
+<h4 id="_superscalaire_processoren">Superscalaire processoren</h4>
+<div class="paragraph">
+<p>Als dit principe verder gedreven wordt, kunnen stappen die veel tijd in beslag nemen dubbel uitgevoerd worden. Men spreekt dan over een superscalaire processor. In afbeelding 8 en afbeelding 9 worden de blokschema’s getoond van de Ivy bridge en de Athlon Bulldozer. In deze blokschema’s is duidelijk te zien hoe er verschilllende eenheden zijn die berekeningen kunnen maken, waardoor verschillende instructies tegelijkertijd uitgevoerd kunnen worden.
+Een belangrijke uitdaging hierbij vormen voorwaardelijke sprong instructies. Aangezien pas bij de uitvoering van de instructie geweten is of de sprong uitgevoerd wordt of dat gewoon de volgende instructie wordt uitgevoerd. In het schema zijn hiervoor branch prediction eenheden voorzien.
+Meer details over hun werking en de principes van pipelining en superscalaire architecturen krijg je in PC Architectuur 2: "microprocessoren".</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch02/images/Sandy-Bridge-Microarchitecture-Small.jpg" alt="Sandy Bridge">
+</div>
+<div class="title">Figure 9. Sandy bridge microarchitectuur</div>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch02/images/bulldozeruarch.jpg" alt="Bulldozer">
+</div>
+<div class="title">Figure 10. AMD bulldozer architectuur (copyright AnandTech)</div>
+</div>
+<div class="paragraph">
+<p>Multicore processoren zijn al geruime tijd niet meer weg te denken. Hexacores en octocores zullen de komende jaren eerder regel dan uitzondering worden.
+Je zou dit een verder doorgedreven vorm van een superscalaire architectuur kunnen noemen. In plaats van delen van de processor te ontdubbelen, wordt een volledige processor ontdubbeld. Een grote moeilijkheid bij deze werkwijzes is om de caches op elkaar af te stemmen. Een probleem dat duidelijker zal worden in het volgende hoofdstuk.
+Net zoals een superscalaire architectuur pas voordeel geeft als de verschillende eenheden tegelijk gebruikt worden, zal een dual core pas voordeel geven als meerdere cores tegelijk werk verrichten. Dit kan als er bijvoorbeeld verschillende programma’s tegelijk actief zijn of als de software zodanig geschreven is, dat ze bestaat uit verschillende threads die naast elkaar (en dus tegelijk door verschillende processorkernen) kunnen uitgevoerd worden.
+Een simpel voorbeeldje om de beperkingen van een multicore processor aan te tonen: als je een eenvoudige toepassing een rekenintensieve opdracht laat uitvoeren, dan zal een multicore processor slechts een deel belast worden. Eén processorkern verricht namelijk al het werk.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch02/images/singlethread.png" alt="Bulldozer">
+</div>
+<div class="title">Figure 11. single threaded applicatie op multicore processor</div>
+</div>
+<div class="paragraph">
+<p>Het voordeel van de multi-core merk je pas als je tegelijk nog een ander programma probeert te gebruiken. Dat zal met een multi-core vlot lukken, in tegenstelling tot een single core.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_cache">Cache</h4>
+<div class="paragraph">
+<p>Een andere eigenschap die plots opduikt en doorheen de processorgeschiedenis steeds toeneemt is het cache geheugen. De toename van het cache volgt de trend van alle soorten geheugens die in een pc te vinden zijn.
+Dit is een gevolg van de eerder opgemerkte trend dat de processor veruit het snelste onderdeel is in het systeem, dat zo optimaal mogelijk benut moet worden. Naarmate data en programma’s steeds groter werden, werd ook het belang van geheugen groter. Tot de intrede van de grafische interface was de belangrijkste parameter in het systeem de kloksnelheid van de processor. Met de intrede van de grafische interface was een groter geheugen soms te verkiezen boven een hogere kloksnelheid.
+Het belang van cache geheugen is ook duidelijk als je de budget- en performance-processoren van fabrikanten met elkaar gaat vergelijken.</p>
+</div>
+<div class="paragraph">
+<p>In onderstaand lijstje staan enkele desktop en serverprocessoren opgelijst. Je merkt dat ze qua kloksnelheid niet voor elkaar moeten onderdoen, maar dat de hoeveelheden cache wel verschillen.
+Zo heeft bijvoorbeeld een high-end desktop CPU (core i7) zo’n 8MB cache aan boord, terwijl een serverCPU (Xeon E7) tot 32 MB cache heeft.
+De werking van de cache wordt verder in detail besproken in het derde hoofdstuk.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_montage">Montage</h3>
+<div class="paragraph">
+<p>Bij de montage van een processor moet je enkele zaken in acht nemen.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>De processor moet compatibel zijn met het moederbord. Meestal kom je dit te weten door de socket van de processor te vergelijken met die van het moederbord.</p>
+</li>
+<li>
+<p>De processor plaatsen moet gebeuren zonder het uitoefenen van kracht: de processor valt normaalgezien in z’n socket (ZIF: zero insertion force), waarna je hem kan inklemmen.</p>
+</li>
+<li>
+<p>Mobiele processoren zijn vaak vast op het moederbord gemonteerd, vervangen is dan onmogelijk.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title">LGA2011 socket zonder processor</div>
+<p>Tweede belangrijk aandachtspunt bij de installatie van een processor is dat gezorgd moet worden voor voldoende koeling. Dit betekent dat gezorgd moet worden voor een voldoende grote koelvin en ventilator en dat er goed contact is tussen de chip en de koelvin. Hiervoor moet eventueel koelpasta aangebracht worden. Een slecht gekoelde processor kan aanleiding geven tot een instabiel werkende computer en in het meest dramatische geval tot een beschadigde processor.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_processoren_van_de_toekomst">Processoren van de toekomst</h3>
+<div class="paragraph">
+<p>Voorspellingen maken is geen sinecure. De trends die ingezet zijn, zullen vermoedelijk nog een hele poos verder gaan, met een verdere miniaturisatie en toename van efficiëntie tot gevolg.
+Een kaper op de kust voor de x86 technologie is de ARM architectuur. Hoewel deze absoluut niet nieuw is (eerste ontwerpen midden jaren 80), biedt deze processorfamilie grote voordelen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Deze architectuur is steeds ontworpen voor toestellen met een laag verbruik. Het succes op de mobiele markt (iPAD2,3, nagenoeg alle android smartphones, consumer elektronica, …)</p>
+</li>
+<li>
+<p>Deze architectuur is in licentie bij de meeste chipbakkers</p>
+</li>
+<li>
+<p>Door een RISC (Reduced instruction set computing) architectuur  van nature efficient</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>De kans dat de RISC architectuur op korte termijn succesvol wordt op de desktopmarkt is gering, en ook het omgekeerde kan gezegd worden over CISC (x86) op mobiele devices. Voor specifieke servertoepassingen zijn er wel <a href="http://www.anandtech.com/show/7724/it-begins-amd-announces-its-first-arm-based-server-soc-64bit8core-opteron-a1100">aankondigingen gebeurd</a> door bijvoorbeeld AMD, die zich hier sterk wil in specialiseren.</p>
+</div>
+<div class="paragraph">
+<p>Toch lijken deze twee werelden naar elkaar toe te groeien, en zullen de grenzen ongetwijfeld snel vervagen.
+Microsoft heeft bijvoorbeeld eind 2012 z’n RT tablet vrijgegeven, met ARM SOC.</p>
+</div>
 <div class="ulist bibliography">
 <ul class="bibliography">
 <li>
-<p><a id="prag"></a>[prag] Andy Hunt &amp; Dave Thomas. <em>The Pragmatic Programmer:
-From Journeyman to Master</em>. Addison-Wesley. 1999.</p>
-</li>
-<li>
-<p><a id="seam"></a>[seam] Dan Allen. <em>Seam in Action</em>. Manning Publications.
-2008.</p>
+<p><a id="INTEL"></a>[INTEL] Intel. <a href="http://www.intel.com/content/www/us/en/history/museum-gordon-moore-law.html">http://www.intel.com/content/www/us/en/history/museum-gordon-moore-law.html</a>.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_bibliografie">Bibliografie</h2>
+<div class="sectionbody">
+<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><a id="STALLINGS"></a>[STALLINGS] Andy Hunt &amp; Dave Thomas. <em>Computer Organization and architecture, Ninth edition</em>. Pearson education. 2012.</p>
+</li>
+<li>
+<p><a id="RAMA"></a>[RAMA] Umakishura Ramachandran. <em>Computer Systems: An Integrated Approach to Architecture and Operating Systems</em>. Manning Publications.
+2010.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -763,10 +1212,13 @@ From Journeyman to Master</em>. Addison-Wesley. 1999.</p>
 <div class="footnote" id="_footnote_1">
 <a href="#_footnoteref_1">1</a>. bij titanium worden ook nog extra eisen gesteld
 </div>
+<div class="footnote" id="_footnote_2">
+<a href="#_footnoteref_2">2</a>. deze waarden zijn niet continue en kunnen pas tijdelijk gehaald worden
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2014-01-26 18:43:53 Romance (standaardtijd)
+Last updated 2014-01-29 08:40:44 Romance (standaardtijd)
 </div>
 </div>
 </body>
