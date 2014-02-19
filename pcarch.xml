@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?asciidoc-toc?>
 <?asciidoc-numbered?>
-<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" lang="en">
 <info>
 <title>Computerarchitectuur</title>
 <date>2014-01-30</date>
@@ -13,26 +13,21 @@
 </personname>
 <email>Roel.VanSteenberghe@gmail.com</email>
 </author>
-
 <authorinitials>RVS</authorinitials>
-
-
-
 </info>
 <preface xml:id="_over_deze_cursus">
 <title>Over deze cursus</title>
 <simpara>Deze cursus werd opgesteld doorheen de jaren, met wisselende auteurs. Elk van hen ben ik uiteraard dankbaar, specifiek Dhr Sven Sanders Dhr Johan Donne die de fundamenten van deze informatiebron reeds jaren geleden gelegd hebben.</simpara>
-<simpara>Er werd in deze cursus gepoogd om steeds correct om te gaan met extern bronmateriaal. Mocht je toch een stukje materiaal zonder correcte bronvermelding, dan passen we dat uiteraard ook meteen aan.</simpara>
+<simpara>Er werd in deze cursus gepoogd om steeds correct om te gaan met extern bronmateriaal. Mocht je toch een stukje materiaal zonder correcte bronvermelding, dan passen we dat uiteraard ook meteen aan. Stuur hiervoor zeker een <link xlink:href="mailto:roel.vansteenberghe@hubkaho.be">mailtje</link>.</simpara>
 <simpara>Door deze cursus in bronvorm aan te bieden op Github is er ook de hoop dat er ook door anderen toevoegingen kunnen gebeuren. Hergebruik van het materiaal is dan ook toegelaten, maar wel onder voorwaarden:</simpara>
 <itemizedlist>
 <listitem>
 <simpara>het materiaal mag niet commercieel beschikbaar gesteld worden zonder uitdrukkelijke en schriftelijke toestemming van de auteur</simpara>
 </listitem>
 <listitem>
-<simpara>het materiaal aanpassen mag, maar dan op voorwaarde dat de aanpassingen ook publiek beschikbaar worden gesteld. Bij voorkeur gebeurt dit via deze weg, zodat iedereen mee kan genieten van de verbeteringen</simpara>
+<simpara>het materiaal aanpassen mag, maar dan op voorwaarde dat de aanpassingen ook publiek beschikbaar worden gesteld. Bij voorkeur gebeurt dit via deze weg, zodat iedereen mee kan genieten van de verbeteringen.</simpara>
 </listitem>
 </itemizedlist>
-
 <simpara>Concreet betekent dit dat al het materiaal onder de <link xlink:href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.nl">Creative Commons Naamsvermelding-NietCommercieel-GelijkDelen 4.0 Internationaal-licentie</link> valt.</simpara>
 <simpara>Wie correcties of aanvulling aanbrengt in deze cursus, zal een vermelding krijgen op deze pagina.</simpara>
 </preface>
@@ -52,25 +47,24 @@ Een overzicht van de werkvorm die bij dit vak gebruikt wordt, vind je terug in d
 <section xml:id="_principe_en_werking">
 <title>Principe en werking</title>
 <simpara>Een computer, of het nu een pc, laptop, server of smartphone is, kan enkel functioneren als de juiste elektrische spanningen aangevoerd worden. Elektronische componenten vragen een relatief lage, maar erg stabiele gelijkspanning om te functioneren.
-Deze wordt geleverd door een voeding, die de wisselspanning van het elektriciteitsnet omzet naar de nodige gelijkspanningsniveau’s. De techniek die hierbij gebruikt wordt noemt men switched mode power supply of geschakelde voeding.
+Deze wordt geleverd door een voeding, die de wisselspanning van het elektriciteitsnet omzet naar de nodige gelijkspanningsniveau’s. De techniek die hierbij gebruikt wordt noemt men switched mode power supply of schakelende voeding.
 Het schema van de omzetting wordt weergegeven in onderstaande afbeelding</simpara>
 <figure>
 <title>Principe schakelende voeding</title>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="ch01/images/principe_geschakelde_voeding.png" width="100%" scalefit="1" align="center"/>
-    </imageobject>
-    <textobject><phrase>psu principe</phrase></textobject>
-  </mediaobject>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch01/images/principe_geschakelde_voeding.png" width="100%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>psu principe</phrase></textobject>
+</mediaobject>
 </figure>
-
-<simpara>Een eerste stap &#9312; is de gelijkrichter aan de ingang, waarmee de wisselspanning wordt omgezet naar een gelijkspanning. Deze gelijkspanning wordt vervolgens gefilterd, zodat de variatie in het spanningsniveau beperkt wordt.
-De tweede stap &#9313; is een stuk minder voor de hand liggend. Op basis van de gelijkgerichte en gefilterde ingangsspanning zal een invertor een blokgolf genereren. Deze wisselspanning wordt bekomen door het aan- en afschakelen van de ingangsspanning.
+<simpara>Een eerste stap &#9312; is de <literal>gelijkrichter</literal> aan de ingang, waarmee de wisselspanning wordt omgezet naar een gelijkspanning. Deze gelijkspanning wordt vervolgens gefilterd, zodat de variatie in het spanningsniveau beperkt wordt.
+De tweede stap &#9313; is een stuk minder voor de hand liggend. Op basis van de gelijkgerichte en gefilterde ingangsspanning zal een <literal>invertor</literal> een blokgolf genereren. Deze wisselspanning wordt bekomen door het aan- en afschakelen van de ingangsspanning.
 Eigenlijk is de combinatie van de eerste twee stappen samen te vatten als een frequentieomvormer. Het ingangssignaal wordt omgezet naar een hoger-frequent signaal (van 50Hz naar frequenties boven 20kHz).</simpara>
-<simpara>Het voordeel van deze omzetting is dat de transformator in de volgende stap een stuk kleiner en efficiënter kan zijn. Deze gelijkrichter en transformator &#9314; brengt de spanning naar het gewenste niveau, waarna het met de uitgangs-gelijkrichter en filter &#9315; wordt omgezet naar een stabiele gelijkspanning.</simpara>
-<simpara>In de figuur is ook te zien dat de uitgangsspanning teruggekoppeld wordt &#9316; naar de invertor. Op die manier kan de uitgangsspanning nog geregeld worden. De invertor-stap heeft immers ook invloed op de amplitude van zijn uitgang. Deze terugkoppeling gebeurt meestal met optocouplers om een galvanische scheiding te bekomen.</simpara>
+<simpara>Het voordeel van deze omzetting is dat de <literal>transformator</literal> in de volgende stap een stuk kleiner en efficiënter kan zijn. Deze gelijkrichter en transformator &#9314; brengt de spanning naar het gewenste niveau, waarna het met de uitgangs-gelijkrichter en filter &#9315; wordt omgezet naar een stabiele gelijkspanning.</simpara>
+<simpara>In de figuur is ook te zien dat de uitgangsspanning teruggekoppeld wordt &#9316; naar de invertor. Op die manier kan de uitgangsspanning nog geregeld worden. De invertor-stap heeft immers ook invloed op de amplitude van zijn uitgang. Deze <literal>terugkoppeling</literal> gebeurt meestal met optocouplers om een galvanische scheiding te bekomen.</simpara>
 <note>
-<simpara>Om het verbruik van een CPU uit te drukken, wordt vaak gesproken over TDP. Dat is een waarde die aanduidt hoeveel energie de CPU maximaal dissipeert. Echter dient opgemerkt te worden dat <emphasis>AMD</emphasis> en <emphasis>Intel</emphasis> hiervoor verschillende berekeningsmethodes gebruiken. De TDP geeft dus een indicatie over het maximale verbruik, maar gedetailleerde benchmarks blijven nodig om exacte waarden te kennen.</simpara>
+<simpara>Om het verbruik van een CPU uit te drukken, wordt vaak gesproken over <literal>TDP</literal> (Thermal Design Power). Dat is een waarde die aanduidt hoeveel energie de CPU maximaal dissipeert onder een zware, maar realistische belasting gedurende een bepaalde tijd. Echter dient opgemerkt te worden dat <emphasis>AMD</emphasis> en <emphasis>Intel</emphasis> hiervoor verschillende berekeningsmethodes gebruiken.  De TDP geeft dus een indicatie over het maximale verbruik, maar gedetailleerde benchmarks blijven nodig om exacte waarden te kennen. <footnote><simpara>meer uitleg over de berekening van TDP bij Intel vind je in <link xlink:href="http://www.intel.com/content/www/us/en/benchmarks/resources-xeon-measuring-processor-power-paper.html">deze whitepaper</link></simpara></footnote></simpara>
 </note>
 </section>
 <section xml:id="_eigenschappen">
@@ -79,10 +73,19 @@ Eigenlijk is de combinatie van de eerste twee stappen samen te vatten als een fr
 </section>
 <section xml:id="_vormfactor_en_connectoren">
 <title>Vormfactor en connectoren</title>
-<simpara>De eerste (IBM) PC beschikte over een moederbord met AT vormfactor, de bijhorende voeding was dan ook een AT voeding. In 1995 kwam er een opvolger, met name de ATX vormfactor. Ondertussen is deze specificatie ook geëvolueerd (ondertussen ATX 2.3).
-De belangrijkste verschillen situeren zich op het vlak van de spanningen die de voeding kan afgeven en de connectoren die voorzien zijn op de voeding.
-In het bijzonder is er natuurlijk een verschil tussen de verschillende connectoren die op het moederbord worden aangesloten. Een AT voeding bood een connector van tweemaal zes aansluitingen, een ATX voeding biedt daarentegen een connector met 20 aansluitingen.
-Een belangrijk verschil tussen beiden is de aanwezigheid bij ATX van een 3.3V spanning, een +5V standby en power on signaal.
+<simpara>De eerste (IBM) PC beschikte over een moederbord met AT vormfactor, de bijhorende voeding was dan ook een AT voeding. In 1995 kwam er een opvolger, met name de ATX vormfactor. Ondertussen is deze specificatie ook geëvolueerd (ondertussen ATX 2.3).</simpara>
+<simpara>De belangrijkste verschillen situeren zich op het vlak van de spanningen die de voeding kan afgeven en de connectoren die voorzien zijn op de voeding.
+In het bijzonder is er natuurlijk een verschil tussen de verschillende connectoren die op het moederbord worden aangesloten. Een AT voeding bood een connector van tweemaal zes aansluitingen, een ATX voeding biedt daarentegen een connector met 24 aansluitingen. (in de oorspronkelijke versie was dit 20, tegenwoordig is er ook steeds een vierpolige connector die twee keer twaalf volt levert aan de processor.)</simpara>
+<figure>
+<title>ATX 2.0 moederbord connector (CC Wikimedia commons)</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch01/images/1000px-ATX_PS_signals.svg.png" width="40%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>ATX 2.0</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>Een belangrijk verschil tussen beiden is de aanwezigheid bij ATX van een 3.3V spanning, een +5V standby en power on signaal.
 Deze laatste twee maken het mogelijk dat de mechanische schakelaar van de AT voeding (die rechtstreeks de voeding aanstuurde), vervangen kon worden door een elektronisch signaal van het moederbord naar de voeding. In eerste instantie kan het moederbord dit signaal sturen als het zelf een input krijgt van een drukknop. Er zijn echter ook alternatieven mogelijk, zoals wake-on-lan, speciale toetsen op een toetsenbord,&#8230;
 Hieruit kan je afleiden dat bij een computer die uitgeschakeld is, een deel van het moederbord nog steeds onder spanning staat.
 Deze spanning kan je alleen wegnemen door de voeding uit te schakelen (schakelaar op voeding, stekker uittrekken). Naast de verschillen in connectoren die op het moederbord worden aangesloten, is er ook onderscheid op het vlak van de andere connectoren. Afhankelijk van de andere apparaten (en hun voedingsaansluiting), moet je erop letten om een voeding te kiezen die de nodige connectoren aanbiedt.</simpara>
@@ -100,207 +103,152 @@ Deze spanning kan je alleen wegnemen door de voeding uit te schakelen (schakelaa
 <listitem>
 <simpara>Auxillary connectors: verschillende varianten van extra voedingsconnector en om extra vermogen te leveren</simpara>
 </listitem>
-<listitem>
-<simpara>PCI-express connector</simpara>
-</listitem>
 </itemizedlist>
-
 </section>
 <section xml:id="_vermogen">
 <title>Vermogen</title>
 <simpara>Een erg belangrijke eigenschap voor een voeding is het vermogen dat ze kan leveren.
-Uiteraard moet dit te leveren vermogen voldoende zijn om alle componenten in het systeem te voorzien van stroom. Het vergelijken van voedingen op dit vlak is iets complexer dan kijken naar de waarden die de fabrikant op zijn verpakking adverteert.
-Belangrijker dan het getal is de betekenis ervan. Aangezien er geen voorschriften zijn voor de bepaling van die vermogenswaarde, kan 500W bij de ene fabrikant betekenen dat de voeding 500W piekvermogen kan leveren bij 10°C en bij een andere een continu vermogen van 500W bij 40°C.
-Als het systeem continu 450W nodig heeft, zou de eerste voeding kunnen falen. Een tweede belangrijke opmerking is dat niet alleen het totale vermogen belangrijk is, maar ook het vermogen dat op elke voedingsspanning apart geleverd kan worden. Het is duidelijk dat een computervoeding meerdere eindtrappen moet bevatten voor de verschillende spanningen. Op elk van deze rails is er een maximale stroom die geleverd kan worden.
-Als de maximale stroom op de 12V rail 5A is, kan je met een 500W voeding niet voorzien in de behoeften van een computer die een vermogen van 200W nodig heeft, maar wel 6A op de 12V rail. Dit kan een belangrijke reden voor prijsverschillen in voedingen zijn. Goedkopere voedingen kunnen typisch meer stroom leveren bij de lagere spanningen en minder bij 12V. Er moet nog worden opgemerkt dat sommige voedingen verschillende rails hebben voor eenzelfde voedingsspanning. Op elk van deze rails is dan een maximale stroom vastgelegd. Het zal wel duidelijk zijn dat je dan best de verbruikers op een zo evenwichtig mogelijke manier over deze rails moet verdelen.
-Een laatste opmerking is dat het vermogen van de voeding zo goed mogelijk op het systeem moet worden afgestemd. Uiteraard betekent dit dat je voldoende piekvermogen nodig hebt, maar zomaar een voeding van 1kW aanschaffen voor een systeem dat 200W nodig heeft is niet meteen een goede keuze.</simpara>
+Uiteraard moet dit te leveren vermogen voldoende zijn om alle componenten in het systeem te voorzien van stroom. Het vergelijken van voedingen op dit vlak is iets complexer dan kijken naar de waarden die de fabrikant op zijn verpakking adverteert.</simpara>
+<simpara>Belangrijker dan het getal is de betekenis ervan. Aangezien er geen voorschriften zijn voor de bepaling van die vermogenswaarde, kan 500W bij de ene fabrikant betekenen dat de voeding 500W piekvermogen kan leveren bij 10°C en bij een andere een continu vermogen van 500W bij 40°C.</simpara>
+<simpara>Als het systeem continu 450W nodig heeft, zou de eerste voeding kunnen falen. Een tweede belangrijke opmerking is dat niet alleen het totale vermogen belangrijk is, maar ook het vermogen dat op elke voedingsspanning apart geleverd kan worden. Het is duidelijk dat een computervoeding meerdere eindtrappen moet bevatten voor de verschillende spanningen. Op elk van deze rails is er een maximale stroom die geleverd kan worden.</simpara>
+<simpara>Als de maximale stroom op de 12V rail 5A is, kan je met een 500W voeding niet voorzien in de behoeften van een computer die een vermogen van 200W nodig heeft, maar wel 6A op de 12V rail. Dit kan een belangrijke reden voor prijsverschillen in voedingen zijn. Goedkopere voedingen kunnen typisch meer stroom leveren bij de lagere spanningen en minder bij 12V. Er moet nog worden opgemerkt dat sommige voedingen verschillende rails hebben voor eenzelfde voedingsspanning. Op elk van deze rails is dan een maximale stroom vastgelegd. Het zal wel duidelijk zijn dat je dan best de verbruikers op een zo evenwichtig mogelijke manier over deze rails moet verdelen.</simpara>
+<simpara>Een laatste opmerking is dat het vermogen van de voeding zo goed mogelijk op het systeem moet worden afgestemd. Uiteraard betekent dit dat je voldoende piekvermogen nodig hebt, maar zomaar een voeding van 1kW aanschaffen voor een systeem dat 200W nodig heeft is niet meteen een goede keuze.</simpara>
 </section>
 <section xml:id="_geluid">
 <title>Geluid</title>
-<simpara>De geluidsproductie van een computer is in verschillende gebruiksomgevingen liefst zo klein mogelijk. Een belangrijke bron van lawaai wordt gevormd door de verschillende koelingen en in het bijzonder de ventilatoren die hierbij worden gebruikt. Hier blijkt alvast het belang van het rendement van een voeding. Hoe hoger het rendement, des te minder verlies er is. Dit verlies manifesteert zich steeds onder de vorm van warmte.
-Meer warmteverlies betekent dus dat er nood is aan een groter koelvermogen. Naast het rendement is ook de grootte van de ventilator belangrijk. Een grotere ventilator zal bij lagere toerentallen voldoende kunnen koelen en daarbij minder lawaai produceren. Er bestaan ook voedingen die volledig passief (zonder ventilatoren) gekoeld worden. Deze produceren uiteraard geen lawaai, maar zijn typisch iets duurder.</simpara>
+<simpara>De geluidsproductie van een computer is in verschillende gebruiksomgevingen liefst zo klein mogelijk. Een belangrijke bron van lawaai wordt gevormd door de verschillende koelingen en in het bijzonder de ventilatoren die hierbij worden gebruikt. Hier blijkt alvast het belang van het rendement van een voeding. Hoe hoger het rendement, des te minder verlies er is. Dit verlies manifesteert zich steeds onder de vorm van warmte.</simpara>
+<simpara>Meer warmteverlies betekent dus dat er nood is aan een groter koelvermogen. Naast het rendement is ook de grootte van de ventilator belangrijk. Een grotere ventilator zal bij lagere toerentallen voldoende kunnen koelen en daarbij minder lawaai produceren. Er bestaan ook voedingen die volledig passief (zonder ventilatoren) gekoeld worden. Deze produceren uiteraard geen lawaai, maar zijn typisch iets duurder.</simpara>
 </section>
 <section xml:id="_rendement">
 <title>Rendement</title>
-<simpara>Het ‘groene’ aspect bij pc’s komt steeds meer naar voor. Het rendement van de voeding is daarbij een belangrijke factor. Je wil natuurlijk voor elke 100 Watt die je uit het stroomnet haalt, ook 100W prestaties zien. Helaas is dit niet mogelijk: voedingen hebben een rendement dat een stuk lager ligt dan de ideale 100%. Dat verlies uit zich voornamelijk in warmte, die dan weer moet afgevoerd worden. Het spreekt voor zich dan een hoger rendement meestal ook een iets hoger prijskaartje met zich zal meebrengen. Toch is dit het overwegen waard als je een kleine rekenoefening maakt.
-Een computer met scherm die niet erg zwaar belast verbruikt ongeveer 200 Watt. Als je deze pc elke werkdag 10 uur gebruikt, dan komt het verbruik op
-0,150 kW x 10 uur per dag x 250 werkdagen= 375 kWh per jaar
-Als je daar de prijs tegenover zet die een gemiddeld gezin (bron: VREG, oktober 2012) betaald per kWh, dan kost deze pc je 375 * 0,2€ = € 75. Een voeding met een rendement dat 20% beter is zal je dus op jaarbasis makkelijk 15 Euro opleveren. Het loont dus de moeite om bij de aankoop de voeding zorgvuldig te kiezen. In een bedrijf met honderden desktops begrijp je dat dit een verkoopsargument kan zijn.</simpara>
+<simpara>Het ‘groene’ aspect bij pc’s komt steeds meer naar voor. Het rendement van de voeding is daarbij een belangrijke factor. Je wil natuurlijk voor elke 100 Watt die je uit het stroomnet haalt, ook 100W prestaties zien. Helaas is dit niet mogelijk: voedingen hebben een rendement dat een stuk lager ligt dan de ideale 100%. Dat verlies uit zich voornamelijk in warmte, die dan weer moet afgevoerd worden. Het spreekt voor zich dan een hoger rendement meestal ook een iets hoger prijskaartje met zich zal meebrengen. Toch is dit het overwegen waard als je een kleine rekenoefening maakt.</simpara>
+<example>
+<title>rekenvoorbeeld stroomverbruik</title>
+<simpara>Een computer met scherm die niet erg zwaar belast verbruikt ongeveer 200 Watt. Als je deze pc elke werkdag 10 uur gebruikt, dan komt het verbruik op</simpara>
+<simpara>0,150 kW x 10 uur per dag x 250 werkdagen= 375 kWh per jaar</simpara>
+<simpara>Als je daar de prijs tegenover zet die een gemiddeld gezin (bron: VREG, oktober 2012) betaalt per kWh, dan kost deze pc je 375 * 0,2€ = € 75. Een voeding met een rendement dat 20% beter is zal je dus op jaarbasis makkelijk 15 Euro opleveren.</simpara>
+<simpara>Het loont dus de moeite om bij de aankoop de voeding zorgvuldig te kiezen. In een bedrijf met honderden desktops begrijp je dat dit een verkoopsargument kan zijn.</simpara>
+</example>
 <simpara>Het 80-plus certificatieprogramma probeert voor de consument duidelijkheid te scheppen door voedingen een label te geven naargelang de efficiëntie. De certificatie is echter geen verplichting voor fabrikanten.</simpara>
-<table frame="all"
-    rowsep="1" colsep="1">
+<table frame="all" rowsep="1" colsep="1">
 <title>80 plus certificatie (bron: <link xlink:href="http://en.wikipedia.org/wiki/80_Plus">Wikipedia</link> )</title>
-  
-  <tgroup cols="7">
-    
-    <colspec colname="col_1" colwidth="14*"/>
-    
-    <colspec colname="col_2" colwidth="14*"/>
-    
-    <colspec colname="col_3" colwidth="14*"/>
-    
-    <colspec colname="col_4" colwidth="14*"/>
-    
-    <colspec colname="col_5" colwidth="14*"/>
-    
-    <colspec colname="col_6" colwidth="14*"/>
-    
-    <colspec colname="col_7" colwidth="14*"/>
-    
-    
-    <thead>
-      
-      <row>
-        
-        <entry align="left" valign="top"></entry>
-        
-        <entry align="left" valign="top">standaard</entry>
-        
-        <entry align="left" valign="top">brons</entry>
-        
-        <entry align="left" valign="top">zilver</entry>
-        
-        <entry align="left" valign="top">goud</entry>
-        
-        <entry align="left" valign="top">platinum</entry>
-        
-        <entry align="left" valign="top">titanium <footnote><simpara>bij titanium worden ook nog extra eisen gesteld</simpara></footnote></entry>
-        
-      </row>
-      
-    </thead>
-    
-    <tbody>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>20% belast</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>&gt;=80%</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>&gt;=82%</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>&gt;=85%</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>&gt;=87%</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>&gt;=90%</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>&gt;=94%</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>50% belast</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>&gt;=80%</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>&gt;=85%</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>&gt;=88%</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>&gt;=90%</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>&gt;=92%</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>&gt;=96</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>100% belast</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>&gt;=80%</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>&gt;=82%</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>&gt;=85%</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>&gt;=87%</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>&gt;=89%</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>&gt;=94</simpara></entry>
-        
-      </row>
-      
-    </tbody>
-    
-  </tgroup>
+<tgroup cols="7">
+<colspec colname="col_1" colwidth="14*"/>
+<colspec colname="col_2" colwidth="14*"/>
+<colspec colname="col_3" colwidth="14*"/>
+<colspec colname="col_4" colwidth="14*"/>
+<colspec colname="col_5" colwidth="14*"/>
+<colspec colname="col_6" colwidth="14*"/>
+<colspec colname="col_7" colwidth="14*"/>
+<thead>
+<row>
+<entry align="left" valign="top"></entry>
+<entry align="left" valign="top">standaard</entry>
+<entry align="left" valign="top">brons</entry>
+<entry align="left" valign="top">zilver</entry>
+<entry align="left" valign="top">goud</entry>
+<entry align="left" valign="top">platinum</entry>
+<entry align="left" valign="top">titanium <footnote><simpara>bij titanium worden ook nog extra eisen gesteld</simpara></footnote></entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara>20% belast</simpara></entry>
+<entry align="left" valign="top"><simpara>&gt;=80%</simpara></entry>
+<entry align="left" valign="top"><simpara>&gt;=82%</simpara></entry>
+<entry align="left" valign="top"><simpara>&gt;=85%</simpara></entry>
+<entry align="left" valign="top"><simpara>&gt;=87%</simpara></entry>
+<entry align="left" valign="top"><simpara>&gt;=90%</simpara></entry>
+<entry align="left" valign="top"><simpara>&gt;=94%</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>50% belast</simpara></entry>
+<entry align="left" valign="top"><simpara>&gt;=80%</simpara></entry>
+<entry align="left" valign="top"><simpara>&gt;=85%</simpara></entry>
+<entry align="left" valign="top"><simpara>&gt;=88%</simpara></entry>
+<entry align="left" valign="top"><simpara>&gt;=90%</simpara></entry>
+<entry align="left" valign="top"><simpara>&gt;=92%</simpara></entry>
+<entry align="left" valign="top"><simpara>&gt;=96</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>100% belast</simpara></entry>
+<entry align="left" valign="top"><simpara>&gt;=80%</simpara></entry>
+<entry align="left" valign="top"><simpara>&gt;=82%</simpara></entry>
+<entry align="left" valign="top"><simpara>&gt;=85%</simpara></entry>
+<entry align="left" valign="top"><simpara>&gt;=87%</simpara></entry>
+<entry align="left" valign="top"><simpara>&gt;=89%</simpara></entry>
+<entry align="left" valign="top"><simpara>&gt;=94</simpara></entry>
+</row>
+</tbody>
+</tgroup>
 </table>
-
-<simpara>Laptops hebben een verbruik dat typisch een flink stuk lager zit. Hoewel ze een voeding hebben die meestal een behoorlijk hoog wattage aankan om de accu op te laden, is het gemiddeld verbruik meestal slechts rond de 30Watt.
-Het matige rendement van PSU’s is voor een deel eigen aan de opbouw ervan. Omdat veel verschillende eindtrappen nodig zijn voor de verschillende spanningen, is het totale rendementsverlies een accumulatie van de kleinere verliezen bij de deeltrappen. Ondertussen verlaten sommige grote spelers om die reden de ATX standaard om met eigen oplossingen hogere rendementen te behalen. Google ontwikkelt bijvoorbeeld z’n eigen servervoedingen die door hun eenvoud een veel hoger rendement halen. Google research publiceerde een paper <anchor xml:id="GOOGLE" xreflabel="[GOOGLE]"/> die schat dat de energiebesparing die je heermee kan behalen op een populatie van 100 miljoen computers 13 miljard kWh betreft op jaarbasis. Dat komt, om je een idee te geven, ongeveer overeen met de opbrengst van de helft van een kerncentrale zoals die in Doel (jaarproductie 22 miljard kWh)</simpara>
+<simpara>Laptops hebben een verbruik dat typisch een flink stuk lager zit. Hoewel ze een voeding hebben die meestal een behoorlijk hoog wattage aankan om de accu op te laden, is het gemiddeld verbruik meestal slechts rond de 30Watt.</simpara>
+<simpara>Het matige rendement van PSU’s is voor een deel eigen aan de opbouw ervan. Omdat veel verschillende eindtrappen nodig zijn voor de verschillende spanningen, is het totale rendementsverlies een accumulatie van de kleinere verliezen bij de deeltrappen.</simpara>
+<simpara>Ondertussen verlaten sommige grote spelers om die reden de ATX standaard om met eigen oplossingen hogere rendementen te behalen. Google ontwikkelt bijvoorbeeld z’n eigen servervoedingen die door hun eenvoud een veel hoger rendement halen. De eenvoud bestaat erin dat ze slechts 1 spanning aanbieden aan het moederbord: 12V. Als componenten een andere voedingsspanning vereisen,  worden die waar nodig getransformeerd op het moederbord, wat veel efficiënter kan. Google research publiceerde een paper <anchor xml:id="GOOGLE" xreflabel="[GOOGLE]"/> die schat dat de energiebesparing die je heermee kan behalen op een populatie van 100 miljoen computers 13 miljard kWh betreft op jaarbasis. Dat komt, om je een idee te geven, ongeveer overeen met de opbrengst van de helft van een kerncentrale zoals die in Doel (jaarproductie 22 miljard kWh)</simpara>
 </section>
 <section xml:id="_problemen">
 <title>Problemen</title>
-<simpara>Problemen met voedingen hebben altijd gevolgen voor het volledige systeem, aangezien ze dit volledige systeem van stroom moeten voorzien. Een belangrijke oorzaak van problemen is een te klein vermogen voor het systeem of onvoldoende koeling. Dit probleem uit zich meestal niet in het niet opstarten van het systeem, maar eerder in het onverwacht afsluiten (of eventueel herstarten) ervan. Dit is dan nog het meest aangename gevolg van het probleem. Het is belangrijk om bij dergelijke problemen de voeding en de koeling ervan te controleren.
-Minder aangename gevolgen kunnen zijn dat de voeding beschadigd raakt en in het meer dramatische geval dat er rook uit de computerkast komt. Deze kan dan afkomstig zijn van de voeding zelf, maar ook van andere componenten(moederbord, RAM, CPU). Een situatie die de meesten liever vermijden.
-Een voeding kan ook slijtage vertonen. In het bijzonder op het vlak van de elektrolytische condensatoren kan er veel verschil zijn tussen voedingen. Minder kwalitatieve condensatoren kunnen uitdrogen (elektrolyt dat verdampt), waardoor ze hun functie minder tot niet meer vervullen en de voeding uiteindelijk rook in plaats van gelijkspanning produceert. Dit gebeurt uiteraard pas na verloop van tijd (afhankelijk van de belasting van de computer).
-Sommige voedingen hebben een controlesysteem dat je door middel van geluidssignalen preventief waarschuwt als er problemen dreigen, zoals overbelasting of een gebrekkige koeling.</simpara>
+<simpara>Problemen met voedingen hebben altijd gevolgen voor het volledige systeem, aangezien ze dit volledige systeem van stroom moeten voorzien. Een belangrijke oorzaak van problemen is een te klein vermogen voor het systeem of onvoldoende koeling. Dit probleem uit zich meestal niet in het niet opstarten van het systeem, maar eerder in het onverwacht afsluiten (of eventueel herstarten) ervan. Dit is dan nog het meest aangename gevolg van het probleem. Het is belangrijk om bij dergelijke problemen de voeding en de koeling ervan te controleren.</simpara>
+<simpara>Minder aangename gevolgen kunnen zijn dat de voeding beschadigd raakt en in het meer dramatische geval dat er rook uit de computerkast komt. Deze kan dan afkomstig zijn van de voeding zelf, maar ook van andere componenten(moederbord, RAM, CPU). Een situatie die de meesten liever vermijden.</simpara>
+<simpara>Een voeding kan ook slijtage vertonen. In het bijzonder op het vlak van de elektrolytische condensatoren kan er veel verschil zijn tussen voedingen. Minder kwalitatieve condensatoren kunnen uitdrogen (elektrolyt dat verdampt), waardoor ze hun functie minder tot niet meer vervullen en de voeding uiteindelijk rook in plaats van gelijkspanning produceert. Dit gebeurt uiteraard pas na verloop van tijd (afhankelijk van de belasting van de computer).</simpara>
+<simpara>Sommige voedingen hebben een controlesysteem dat je door middel van geluidssignalen preventief waarschuwt als er problemen dreigen, zoals overbelasting of een gebrekkige koeling.</simpara>
 </section>
 <section xml:id="_uninterruptible_power_supply_ups">
 <title>Uninterruptible Power Supply (UPS)</title>
 <simpara>Een UPS is een toestel dat het wegvallen van de netspanning kan opvangen. Hiervoor bestaat een UPS uit een accu en een elektronische schakeling die de accuspanning kan omzetten naar een netspanning.</simpara>
 <figure>
 <title>Rack-mountable UPS (bron: <link xlink:href="http://www.apc.com">www.apc.com</link>)</title>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="ch01/images/apc_ups.jpg" width="50%" scalefit="1" align="center"/>
-    </imageobject>
-    <textobject><phrase>APC UPS</phrase></textobject>
-  </mediaobject>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch01/images/apc_ups.jpg" width="20%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>APC UPS</phrase></textobject>
+</mediaobject>
 </figure>
-
-<simpara>Bij het wegvallen van de netspanning zal de UPS ogenblikkelijk de stroomvoorziening over nemen.
-Voor de aangesloten toestellen treedt er dus geen onderbreking op. Een UPS kan de stroom natuurlijk niet onbeperkt in de tijd overnemen. Hoe lang de UPS dit kan volhouden, hangt af van de accu’s en het gevraagde vermogen. Om te vermijden dat apparatuur plotseling en ongecontroleerd stilvalt, heeft een UPS dikwijls ook een interface naar de computer. Deze laat toe dat de UPS de computer ‘proper’ afsluit op het ogenblik dat de accu-stroom een bepaalde ondergrens bereikt. Een alternatief kan erin bestaan dat de UPS gecombineerd wordt met een dieselgenerator.
-De UPS zorgt dan voor de ogenblikkelijke overname van de stroomvoorziening en geeft de generator de nodige tijd om op te starten. Zodra de generator actief is, neemt deze de stroomvoorziening op zich.
-Een UPS heeft meestal ook een spanningsbeveiliging aan boord die je apparatuur kan beschermen tegen storingen op het elektriciteitsnet.
+<simpara>Bij het wegvallen van de netspanning zal de UPS ogenblikkelijk de stroomvoorziening overnemen.
+Voor de aangesloten toestellen treedt er dus geen onderbreking op. Een UPS kan de stroom natuurlijk niet onbeperkt in de tijd overnemen. Hoe lang de UPS dit kan volhouden, hangt af van de accu’s en het gevraagde vermogen. Om te vermijden dat apparatuur plotseling en ongecontroleerd stilvalt, heeft een UPS dikwijls ook een interface naar de computer. Deze laat toe dat de UPS de computer ‘proper’ afsluit op het ogenblik dat de accu-stroom een bepaalde ondergrens bereikt. Een alternatief kan erin bestaan dat de UPS gecombineerd wordt met een dieselgenerator.</simpara>
+<simpara>De UPS zorgt dan voor de ogenblikkelijke overname van de stroomvoorziening en geeft de generator de nodige tijd om op te starten. Zodra de generator actief is (en de uitgangsspanning gestabiliseerd is), neemt deze de stroomvoorziening op zich.</simpara>
+<simpara>Een UPS heeft meestal ook een spanningsbeveiliging aan boord die je apparatuur kan beschermen tegen storingen op het elektriciteitsnet.
 UPS’en vind je in alle prijsklasses, wat vaak te maken heeft met de inwendige opbouw ervan. Er onderscheiden zich enkele grote types.</simpara>
 <section xml:id="_online_ups">
 <title>Online UPS</title>
 <simpara>De online UPS wordt ook wel “double conversion” ups genoemd. Alle stroom die naar de IT-apparatuur gaat, loopt door de UPS. Hierdoor is het niet nodig om te schakelen bij het uitvallen van de stroom. Met de bypass kan je evenwel de ups overbruggen. Dat kan bijvoorbeeld interessant zijn als er onderhoud nodig is. Omdat hierdoor veel gevraagd wordt van alle elektronica (die constant volledig belast wordt), is die een relatief duur concept.</simpara>
 <figure>
 <title>Online UPS ( &#169; GFDL Joslee 2007 )</title>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="ch01/images/ups/Double_conversion_UPSII.png" width="50%" scalefit="1" align="center"/>
-    </imageobject>
-    <textobject><phrase>APC UPS</phrase></textobject>
-  </mediaobject>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch01/images/ups/Double_conversion_UPSII.png" width="50%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>APC UPS</phrase></textobject>
+</mediaobject>
 </figure>
-
 </section>
 <section xml:id="_offline_ups">
 <title>Offline UPS</title>
-<simpara>Dit type UPS vind je voornamelijk terug bij particuliere ups’en waar kostprijs een belangrijk criterium is. Bij het wegvallen van de spanning, wordt een bypass ingeschakeld. Die procedure duurt enkele milliseconden waarbij je geen uitgangsspanning hebt, en dat moet opgevangen worden door de voeding van je computer of server. Een nadeel van dit type UPS is dat je hem ook niet zonder risico kan testen.
-Ander nadeel is dat in gewone omstandigheden de netspanning rechtstreeks gekoppeld is aan je IT-apparatuur. Als er storingen op het net zitten, zal je IT apparatuur daar hinder van ondervinden. De apparatuur is dus niet beveiligd.</simpara>
+<simpara>Dit type UPS vind je voornamelijk terug bij particuliere ups’en waar kostprijs een belangrijk criterium is. Bij het wegvallen van de spanning, wordt een bypass ingeschakeld. Die procedure duurt enkele milliseconden waarbij je geen uitgangsspanning hebt, en dat moet opgevangen worden door de voeding van je computer of server. Een nadeel van dit type UPS is dat je hem ook niet zonder risico kan testen.</simpara>
+<simpara>Een ander nadeel is dat in gewone omstandigheden de netspanning rechtstreeks gekoppeld is aan je IT-apparatuur. Als er storingen op het net zitten, zal je IT apparatuur daar hinder van ondervinden. De apparatuur is dus niet beveiligd.</simpara>
 <figure>
 <title>Offline UPS ( &#169; Joslee 2007 GFDL)</title>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="ch01/images/ups/Off_Line_UPS.png" width="50%" scalefit="1" align="center"/>
-    </imageobject>
-    <textobject><phrase>offline UPS</phrase></textobject>
-  </mediaobject>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch01/images/ups/Off_Line_UPS.png" width="50%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>offline UPS</phrase></textobject>
+</mediaobject>
 </figure>
-
 </section>
 <section xml:id="_line_interactive_ups">
 <title>Line-interactive UPS</title>
 <simpara>Deze vorm van UPS vormt een hybride oplossing. In feite gaat het om een off-line UPS waar de line-feed voorzien is van aanvullende filters. Zo ben je zeker dat de spanning die aan je servers aangelegd is, gezuiverd werd van pieken en storingen. In omgevingen waar veel storing optreedt is dat geen overbodige luxe. (bijvoorbeeld fabriekshallen, gebieden met gebrekkige stroomvoorziening)</simpara>
 <figure>
 <title>Line interactive UPS ( &#169; Joslee 2007 GFDL)</title>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="ch01/images/ups/Line_interactive_UPSII.png" width="50%" scalefit="1" align="center"/>
-    </imageobject>
-    <textobject><phrase>line interactive UPS</phrase></textobject>
-  </mediaobject>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch01/images/ups/Line_interactive_UPSII.png" width="50%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>line interactive UPS</phrase></textobject>
+</mediaobject>
 </figure>
-
 </section>
 </section>
 <section xml:id="_accu_s">
@@ -318,23 +266,24 @@ Je weet immers dat</simpara>
 Nemen we onderstaand voorbeeld:</simpara>
 <figure>
 <title>accu</title>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="ch01/images/Battery_Capacity_Conversion.jpg" width="50%" scalefit="1" align="center"/>
-    </imageobject>
-    <textobject><phrase>accus</phrase></textobject>
-  </mediaobject>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch01/images/Battery_Capacity_Conversion.jpg" width="50%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>accus</phrase></textobject>
+</mediaobject>
 </figure>
-
-<simpara>We kunnen hier dus de capaciteit in Ah bepalen door
-I_h = P_h/U = 2,4Wh/3,6V = 0,666Ah of 666mAh</simpara>
+<simpara>We kunnen hier dus de capaciteit in Ah bepalen door</simpara>
+<simpara>I_h = P_h/U = 2,4Wh/3,6V = 0,666Ah (of 666mAh)</simpara>
 </section>
 <section xml:id="_aantal_cellen">
 <title>Aantal cellen</title>
-<simpara>Een accu wordt opgebouwd uit verschillende cellen. Bijvoorbeeld bij Li-ion accu’s kunnen die elk ongeveer 3V leveren. Het spreekt voor zich dat een toename van het aantal cellen zal betekenen dat de totale capaciteit ook toeneemt.
-Oefenvragen:
-Wat is de capaciteit van je eigen laptopaccu? Stel dat je deze accu gebruikt om een lamp te doen branden die 5Watt verbruikt. Hoe lang zal de lamp branden?
+<simpara>Een accu wordt opgebouwd uit verschillende cellen. Bijvoorbeeld bij Li-ion accu’s kunnen die elk ongeveer 3V leveren. Het spreekt voor zich dat een toename van het aantal cellen zal betekenen dat de totale capaciteit ook toeneemt.</simpara>
+<example>
+<title>Oefening</title>
+<simpara>Wat is de capaciteit van je eigen laptopaccu? Stel dat je deze accu gebruikt om een lamp te doen branden die 5Watt verbruikt. Hoe lang zal de lamp branden?
 Uit hoeveel cellen bestaat je accu-pack?</simpara>
+</example>
 </section>
 <section xml:id="_laadcurve">
 <title>Laadcurve</title>
@@ -342,501 +291,269 @@ Uit hoeveel cellen bestaat je accu-pack?</simpara>
 </section>
 <section xml:id="_memory_effect">
 <title>Memory-effect</title>
-<simpara>Het memory-effect is een term die vaak gebruikt wordt om aan te geven dat bepaalde types batterijen, met NiCd op kop, vaak een effect vertonen waarbij het lijkt dat de batterijen snel hun capaciteit verliezen als je ze halverwege de ontlaadcyclus terug oplaadt. Dat fenomeen is eigenlijk de verzamelnaam van effecten die worden veroorzaakt door een combinatie van elektrische en chemische processen.</simpara>
+<simpara>Het zogenaamd memory-effect is een term die vaak gebruikt wordt om aan te geven dat bepaalde types batterijen, met NiCd op kop, vaak een effect vertonen waarbij het lijkt dat de batterijen snel hun capaciteit verliezen als je ze halverwege de ontlaadcyclus terug oplaadt. Dat fenomeen is eigenlijk de verzamelnaam van effecten die worden veroorzaakt door een combinatie van elektrische en chemische processen.</simpara>
 </section>
 <section xml:id="_li_ion_accu_s">
 <title>LI-ION accu’s</title>
 <simpara>Tegenwoordig is dit zowat het meest voorkomende type in hoogwaardige mobiele apparatuur. Dit type onderscheidt zich door een erg hoge energiedichtheid, en het ‘memory-effect’ is niet bestaande.</simpara>
 
 <simpara>Toch zijn er enkele belangrijke eigenschappen aan dit type, die je beter kent..
-Het zwakke punt van Li-Ion: degradatie
-Wie een laptop of GSM gebruikt, kent het fenomeen: na enkele jaren is de cyapaciteit van de batterij slechts nog een fractie van wat ze was bij aankoop. Dit fenomeen kan je niet omkeren, maar het kan wel vertraagd worden als je de weet wat de factoren zijn die dit proces versnellen&#8230;
-Een Li-ion-accu verliest zijn capaciteit het snelst als hij zich in een warme ruimte bevindt, en opgeladen is. Een volledig opgeladen Li-ion accu zal bijvoorbeeld na een jaar rusten in een ruimte waar het gemiddeld 20°C is, 20 procent van zijn capaciteit verliezen.
-Is diezelfde accu slechts half opgeladen, dan zal de capaciteit met slechts enkele procenten dalen. Het is dus niet verstandig aan Li-ion-accu voor lange tijd weg te bergen in opgeladen toestand. Ook door stockage in koele ruimtes kan de capaciteit langer bewaard blijven. Een laptop die snel erg warm wordt bij gebruik zal dus meteen ook nefast zijn voor de capaciteit van de batterij op langere termijn.
+Het zwakke punt van Li-Ion: degradatie</simpara>
+<simpara>Wie een laptop of GSM gebruikt, kent het fenomeen: na enkele jaren is de cyapaciteit van de batterij slechts nog een fractie van wat ze was bij aankoop. Dit fenomeen kan je niet omkeren, maar het kan wel vertraagd worden als je de weet wat de factoren zijn die dit proces versnellen&#8230;</simpara>
+<simpara>Een Li-ion-accu verliest zijn capaciteit het snelst als hij zich in een warme ruimte bevindt, en opgeladen is. Een volledig opgeladen Li-ion accu zal bijvoorbeeld na een jaar rusten in een ruimte waar het gemiddeld 20°C is, 20 procent van zijn capaciteit verliezen.</simpara>
+<simpara><?asciidoc-br?>
 Bij een temperatuur van iets boven het vriespunt en een lading van ongeveer 40% zal dit type batterij de langste levensduur ‘on the shelf’ hebben.</simpara>
 </section>
 <section xml:id="_toekomstige_ontwikkelingen">
 <title>Toekomstige ontwikkelingen</title>
 <simpara>Gezien de enorme markt die ontstaan is voor accu’s, is er enorm veel druk om betere modellen te ontwikkelen. Daarbij worden bestaande types geperfectioneerd, maar ook nieuwe types ontwikkeld.
-Zo zijn er de LiPo (Lithium polymeer) batterijen die ongeveer 50% efficiënter zijn dan klassieke Li-Ion equivalenten, en ook de brandstofcellen (fuel cells) die mogelijks een oplossing kunnen vormen voor de steeds grotere autonomie-behoefte van toestellen. Omdat veel van deze technieken gebruik maken van erg zeldzame delfstoffen, komen ook geavanceerde technieken met courante materialen in het vizier ter optimalisatie of vervanging, zoals nanostructuren met koolstof. Deze blijven echter toekomstmuziek voor consumentenelektronica…</simpara>
+Zo zijn er de <literal>LiPo</literal> (Lithium polymeer) batterijen die ongeveer 50% efficiënter zijn dan klassieke Li-Ion equivalenten, en ook de brandstofcellen (fuel cells) die mogelijks een oplossing kunnen vormen voor de steeds grotere autonomie-behoefte van toestellen. Omdat veel van deze technieken gebruik maken van erg zeldzame delfstoffen, komen ook geavanceerde technieken met courante materialen in het vizier ter optimalisatie of vervanging, zoals nanostructuren met koolstof. Deze blijven echter toekomstmuziek voor consumentenelektronica…</simpara>
 </section>
 </section>
 </section>
 <section xml:id="_bibliografie_bij_dit_hoofdstuk">
 <title>Bibliografie bij dit hoofdstuk</title>
-<bibliodiv>
-<bibliomixed>
-<bibliomisc><anchor xml:id="GOOGLE" xreflabel="[GOOGLE]"/>[GOOGLE] Google. High efficient power supplies for home computers and servers. <link xlink:href="http://static.googleusercontent.com/media/services.google.com/nl//blog_resources/PSU_white_paper.pdf">http://static.googleusercontent.com/media/services.google.com/nl//blog_resources/PSU_white_paper.pdf</link>.</bibliomisc>
-</bibliomixed>
-</bibliodiv>
 
 </section>
 </chapter>
-<chapter xml:id="_cpu">
+<bibliography xml:id="_cpu">
 <title>CPU</title>
 <section xml:id="_overzicht">
 <title>Overzicht</title>
-<simpara>In onderstaande tabel worden een aantal processoren van de x86 familie weergegeven met hun belangrijkste eigenschappen. De processor die in de eerste (IBM-)PC werd gebruikt was een 8088. Eigenlijk was dit een 8086 waarvan de databus beperkt werd tot 8 bits in plaats van 16 bits. De enige reden hiervoor was dat op dat ogenblik er geen andere 16bit componenten  beschikbaar waren.
-Deze processor werd reeds uitgebreid besproken tijdens computertechniek.
+<simpara>In onderstaande tabel worden een aantal processoren van de x86 familie weergegeven met hun belangrijkste eigenschappen. De processor die in de eerste (IBM-)PC werd gebruikt was een 8088. Eigenlijk was dit een 8086 waarvan de databus beperkt werd tot 8 bits in plaats van 16 bits. De enige reden hiervoor was dat op dat ogenblik er geen andere 16bit componenten beschikbaar waren.
+Deze processorfamilie komt uitgebreid aan bod binnen het vak processorarchitectuur.
 Het is niet de bedoeling om hier terug te komen op programmeermodel, segmentering, &#8230;</simpara>
 <simpara>Wel zullen we de evolutie van een aantal eigenschappen bekijken.</simpara>
-<table frame="all"
-    rowsep="1" colsep="1">
+<table frame="all" rowsep="1" colsep="1">
 <title>processoroverzicht</title>
-  
-  <tgroup cols="8">
-    
-    <colspec colname="col_1" colwidth="12*"/>
-    
-    <colspec colname="col_2" colwidth="12*"/>
-    
-    <colspec colname="col_3" colwidth="12*"/>
-    
-    <colspec colname="col_4" colwidth="12*"/>
-    
-    <colspec colname="col_5" colwidth="12*"/>
-    
-    <colspec colname="col_6" colwidth="12*"/>
-    
-    <colspec colname="col_7" colwidth="12*"/>
-    
-    <colspec colname="col_8" colwidth="12*"/>
-    
-    
-    <thead>
-      
-      <row>
-        
-        <entry align="left" valign="top">type</entry>
-        
-        <entry align="left" valign="top">jaar</entry>
-        
-        <entry align="left" valign="top">data/adres-bus</entry>
-        
-        <entry align="left" valign="top">L1 cache (kB)</entry>
-        
-        <entry align="left" valign="top">FSB (Mhz)</entry>
-        
-        <entry align="left" valign="top">Clock(Mhz)</entry>
-        
-        <entry align="left" valign="top">transistoren (miljoen)</entry>
-        
-        <entry align="left" valign="top">technologie (nm)</entry>
-        
-      </row>
-      
-    </thead>
-    
-    <tbody>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>8088</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>1979</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>8/20</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>-</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>4,77..8</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>4,77..8</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>0.029</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>3000</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>8086</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>1978</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>16/20</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>-</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>4,77..8</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>4,77..8</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>0.029</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>3000</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>80286</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>1980</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>16/24</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>-</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>6..20</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>6..20</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>0.134</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>1500</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>80386DX</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>1985</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>32/32</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>-</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>16..33</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>16..33</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>0.275</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>1500</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>80486DX/SX</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>1989</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>32/32</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>8</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>25..50</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>25..50</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>1.2</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>1000</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>80486DX2</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>1992</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>32/32</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>8</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>25..40</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>25..80</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>1.2</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>800</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>80486DX4</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>1994</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>32/32</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>8+8</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>25..40</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>75..120</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>1.2</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>600</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>Pentium</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>1993</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>64/32</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>8+8</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>60..66</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>60..200</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>3</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>600</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>Pentium MMX</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>1997</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>64/32</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>16+16</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>66</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>166..233</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>4.5</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>350</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>Pentium Pro</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>1995</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>64/36</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>8+8</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>66</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>150..200</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>5.5</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>350</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>Pentium II</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>1997</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>64/36</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>16+16</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>66/100</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>300..450</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>7.5</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>250</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>Pentium III</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>1999</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>64/36</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>16+16</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>100/133</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>450..1300</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>28</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>130</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>AMD Athlon</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>1999</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>64/36</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>64+64</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>200/266</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>500..2200</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>37</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>130</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>Pentium IV</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>2001</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>64/36</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>8+96</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>400/533</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>1400..2800</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>42</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>130</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>AMD 64</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>2005</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>64/36</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>2*512k L2</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>2000</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>2,4GHz</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>233</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>102</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>Core duo</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>2006</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>64/36</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>2*2M L2</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>800</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>3,6GHz</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>376</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>65</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>Intel Nehalem</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>2008</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>64/36</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>32+32/core</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>-</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>3,2 Ghz</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>731 (QC)</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>45/32</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>Intel Sandy Bridge</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>2011</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>64/36</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>32+32/core</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>-</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>3,8 Ghz.<footnote xml:id="turbo"><simpara>deze waarden zijn niet continue en kunnen pas tijdelijk gehaald worden</simpara></footnote></simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>995 (QC)</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>32</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>Intel Ivy bridge</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>2012</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>64/36</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>32+32/core</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>-</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>3,9 Ghz.<footnoteref linkend="turbo"/></simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>1400 (QC)</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>22</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>Intel Haswell</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>2013</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>64/36</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>32+32/core</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>-</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>3,9 Ghz.<footnoteref linkend="turbo"/></simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>1400</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>22</simpara></entry>
-        
-      </row>
-      
-    </tbody>
-    
-  </tgroup>
+<tgroup cols="8">
+<colspec colname="col_1" colwidth="12*"/>
+<colspec colname="col_2" colwidth="12*"/>
+<colspec colname="col_3" colwidth="12*"/>
+<colspec colname="col_4" colwidth="12*"/>
+<colspec colname="col_5" colwidth="12*"/>
+<colspec colname="col_6" colwidth="12*"/>
+<colspec colname="col_7" colwidth="12*"/>
+<colspec colname="col_8" colwidth="12*"/>
+<thead>
+<row>
+<entry align="left" valign="top">type</entry>
+<entry align="left" valign="top">jaar</entry>
+<entry align="left" valign="top">data/adres-bus</entry>
+<entry align="left" valign="top">L1 cache (kB)</entry>
+<entry align="left" valign="top">FSB (Mhz)</entry>
+<entry align="left" valign="top">Clock(Mhz)</entry>
+<entry align="left" valign="top">transistoren (miljoen)</entry>
+<entry align="left" valign="top">technologie (nm)</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara>8088</simpara></entry>
+<entry align="left" valign="top"><simpara>1979</simpara></entry>
+<entry align="left" valign="top"><simpara>8/20</simpara></entry>
+<entry align="left" valign="top"><simpara>-</simpara></entry>
+<entry align="left" valign="top"><simpara>4,77..8</simpara></entry>
+<entry align="left" valign="top"><simpara>4,77..8</simpara></entry>
+<entry align="left" valign="top"><simpara>0.029</simpara></entry>
+<entry align="left" valign="top"><simpara>3000</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>8086</simpara></entry>
+<entry align="left" valign="top"><simpara>1978</simpara></entry>
+<entry align="left" valign="top"><simpara>16/20</simpara></entry>
+<entry align="left" valign="top"><simpara>-</simpara></entry>
+<entry align="left" valign="top"><simpara>4,77..8</simpara></entry>
+<entry align="left" valign="top"><simpara>4,77..8</simpara></entry>
+<entry align="left" valign="top"><simpara>0.029</simpara></entry>
+<entry align="left" valign="top"><simpara>3000</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>80286</simpara></entry>
+<entry align="left" valign="top"><simpara>1980</simpara></entry>
+<entry align="left" valign="top"><simpara>16/24</simpara></entry>
+<entry align="left" valign="top"><simpara>-</simpara></entry>
+<entry align="left" valign="top"><simpara>6..20</simpara></entry>
+<entry align="left" valign="top"><simpara>6..20</simpara></entry>
+<entry align="left" valign="top"><simpara>0.134</simpara></entry>
+<entry align="left" valign="top"><simpara>1500</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>80386DX</simpara></entry>
+<entry align="left" valign="top"><simpara>1985</simpara></entry>
+<entry align="left" valign="top"><simpara>32/32</simpara></entry>
+<entry align="left" valign="top"><simpara>-</simpara></entry>
+<entry align="left" valign="top"><simpara>16..33</simpara></entry>
+<entry align="left" valign="top"><simpara>16..33</simpara></entry>
+<entry align="left" valign="top"><simpara>0.275</simpara></entry>
+<entry align="left" valign="top"><simpara>1500</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>80486DX/SX</simpara></entry>
+<entry align="left" valign="top"><simpara>1989</simpara></entry>
+<entry align="left" valign="top"><simpara>32/32</simpara></entry>
+<entry align="left" valign="top"><simpara>8</simpara></entry>
+<entry align="left" valign="top"><simpara>25..50</simpara></entry>
+<entry align="left" valign="top"><simpara>25..50</simpara></entry>
+<entry align="left" valign="top"><simpara>1.2</simpara></entry>
+<entry align="left" valign="top"><simpara>1000</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>80486DX2</simpara></entry>
+<entry align="left" valign="top"><simpara>1992</simpara></entry>
+<entry align="left" valign="top"><simpara>32/32</simpara></entry>
+<entry align="left" valign="top"><simpara>8</simpara></entry>
+<entry align="left" valign="top"><simpara>25..40</simpara></entry>
+<entry align="left" valign="top"><simpara>25..80</simpara></entry>
+<entry align="left" valign="top"><simpara>1.2</simpara></entry>
+<entry align="left" valign="top"><simpara>800</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>80486DX4</simpara></entry>
+<entry align="left" valign="top"><simpara>1994</simpara></entry>
+<entry align="left" valign="top"><simpara>32/32</simpara></entry>
+<entry align="left" valign="top"><simpara>8+8</simpara></entry>
+<entry align="left" valign="top"><simpara>25..40</simpara></entry>
+<entry align="left" valign="top"><simpara>75..120</simpara></entry>
+<entry align="left" valign="top"><simpara>1.2</simpara></entry>
+<entry align="left" valign="top"><simpara>600</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Pentium</simpara></entry>
+<entry align="left" valign="top"><simpara>1993</simpara></entry>
+<entry align="left" valign="top"><simpara>64/32</simpara></entry>
+<entry align="left" valign="top"><simpara>8+8</simpara></entry>
+<entry align="left" valign="top"><simpara>60..66</simpara></entry>
+<entry align="left" valign="top"><simpara>60..200</simpara></entry>
+<entry align="left" valign="top"><simpara>3</simpara></entry>
+<entry align="left" valign="top"><simpara>600</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Pentium MMX</simpara></entry>
+<entry align="left" valign="top"><simpara>1997</simpara></entry>
+<entry align="left" valign="top"><simpara>64/32</simpara></entry>
+<entry align="left" valign="top"><simpara>16+16</simpara></entry>
+<entry align="left" valign="top"><simpara>66</simpara></entry>
+<entry align="left" valign="top"><simpara>166..233</simpara></entry>
+<entry align="left" valign="top"><simpara>4.5</simpara></entry>
+<entry align="left" valign="top"><simpara>350</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Pentium Pro</simpara></entry>
+<entry align="left" valign="top"><simpara>1995</simpara></entry>
+<entry align="left" valign="top"><simpara>64/36</simpara></entry>
+<entry align="left" valign="top"><simpara>8+8</simpara></entry>
+<entry align="left" valign="top"><simpara>66</simpara></entry>
+<entry align="left" valign="top"><simpara>150..200</simpara></entry>
+<entry align="left" valign="top"><simpara>5.5</simpara></entry>
+<entry align="left" valign="top"><simpara>350</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Pentium II</simpara></entry>
+<entry align="left" valign="top"><simpara>1997</simpara></entry>
+<entry align="left" valign="top"><simpara>64/36</simpara></entry>
+<entry align="left" valign="top"><simpara>16+16</simpara></entry>
+<entry align="left" valign="top"><simpara>66/100</simpara></entry>
+<entry align="left" valign="top"><simpara>300..450</simpara></entry>
+<entry align="left" valign="top"><simpara>7.5</simpara></entry>
+<entry align="left" valign="top"><simpara>250</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Pentium III</simpara></entry>
+<entry align="left" valign="top"><simpara>1999</simpara></entry>
+<entry align="left" valign="top"><simpara>64/36</simpara></entry>
+<entry align="left" valign="top"><simpara>16+16</simpara></entry>
+<entry align="left" valign="top"><simpara>100/133</simpara></entry>
+<entry align="left" valign="top"><simpara>450..1300</simpara></entry>
+<entry align="left" valign="top"><simpara>28</simpara></entry>
+<entry align="left" valign="top"><simpara>130</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>AMD Athlon</simpara></entry>
+<entry align="left" valign="top"><simpara>1999</simpara></entry>
+<entry align="left" valign="top"><simpara>64/36</simpara></entry>
+<entry align="left" valign="top"><simpara>64+64</simpara></entry>
+<entry align="left" valign="top"><simpara>200/266</simpara></entry>
+<entry align="left" valign="top"><simpara>500..2200</simpara></entry>
+<entry align="left" valign="top"><simpara>37</simpara></entry>
+<entry align="left" valign="top"><simpara>130</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Pentium IV</simpara></entry>
+<entry align="left" valign="top"><simpara>2001</simpara></entry>
+<entry align="left" valign="top"><simpara>64/36</simpara></entry>
+<entry align="left" valign="top"><simpara>8+96</simpara></entry>
+<entry align="left" valign="top"><simpara>400/533</simpara></entry>
+<entry align="left" valign="top"><simpara>1400..2800</simpara></entry>
+<entry align="left" valign="top"><simpara>42</simpara></entry>
+<entry align="left" valign="top"><simpara>130</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>AMD 64</simpara></entry>
+<entry align="left" valign="top"><simpara>2005</simpara></entry>
+<entry align="left" valign="top"><simpara>64/36</simpara></entry>
+<entry align="left" valign="top"><simpara>2*512k L2</simpara></entry>
+<entry align="left" valign="top"><simpara>2000</simpara></entry>
+<entry align="left" valign="top"><simpara>2,4GHz</simpara></entry>
+<entry align="left" valign="top"><simpara>233</simpara></entry>
+<entry align="left" valign="top"><simpara>102</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Core duo</simpara></entry>
+<entry align="left" valign="top"><simpara>2006</simpara></entry>
+<entry align="left" valign="top"><simpara>64/36</simpara></entry>
+<entry align="left" valign="top"><simpara>2*2M L2</simpara></entry>
+<entry align="left" valign="top"><simpara>800</simpara></entry>
+<entry align="left" valign="top"><simpara>3,6GHz</simpara></entry>
+<entry align="left" valign="top"><simpara>376</simpara></entry>
+<entry align="left" valign="top"><simpara>65</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Intel Nehalem</simpara></entry>
+<entry align="left" valign="top"><simpara>2008</simpara></entry>
+<entry align="left" valign="top"><simpara>64/36</simpara></entry>
+<entry align="left" valign="top"><simpara>32+32/core</simpara></entry>
+<entry align="left" valign="top"><simpara>-</simpara></entry>
+<entry align="left" valign="top"><simpara>3,2 Ghz</simpara></entry>
+<entry align="left" valign="top"><simpara>731 (QC)</simpara></entry>
+<entry align="left" valign="top"><simpara>45/32</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Intel Sandy Bridge</simpara></entry>
+<entry align="left" valign="top"><simpara>2011</simpara></entry>
+<entry align="left" valign="top"><simpara>64/36</simpara></entry>
+<entry align="left" valign="top"><simpara>32+32/core</simpara></entry>
+<entry align="left" valign="top"><simpara>-</simpara></entry>
+<entry align="left" valign="top"><simpara>3,8 Ghz.<footnote xml:id="turbo"><simpara>deze waarden zijn niet continue en kunnen pas tijdelijk gehaald worden</simpara></footnote></simpara></entry>
+<entry align="left" valign="top"><simpara>995 (QC)</simpara></entry>
+<entry align="left" valign="top"><simpara>32</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Intel Ivy bridge</simpara></entry>
+<entry align="left" valign="top"><simpara>2012</simpara></entry>
+<entry align="left" valign="top"><simpara>64/36</simpara></entry>
+<entry align="left" valign="top"><simpara>32+32/core</simpara></entry>
+<entry align="left" valign="top"><simpara>-</simpara></entry>
+<entry align="left" valign="top"><simpara>3,9 Ghz.<footnoteref linkend="turbo"/></simpara></entry>
+<entry align="left" valign="top"><simpara>1400 (QC)</simpara></entry>
+<entry align="left" valign="top"><simpara>22</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Intel Haswell</simpara></entry>
+<entry align="left" valign="top"><simpara>2013</simpara></entry>
+<entry align="left" valign="top"><simpara>64/36</simpara></entry>
+<entry align="left" valign="top"><simpara>32+32/core</simpara></entry>
+<entry align="left" valign="top"><simpara>-</simpara></entry>
+<entry align="left" valign="top"><simpara>3,9 Ghz.<footnoteref linkend="turbo"/></simpara></entry>
+<entry align="left" valign="top"><simpara>1400</simpara></entry>
+<entry align="left" valign="top"><simpara>22</simpara></entry>
+</row>
+</tbody>
+</tgroup>
 </table>
-
 </section>
 <section xml:id="_technologie_en_functionaliteit">
-<title>Technologie en functionaliteit</title>
+<title>Technologie en functionaliteit #</title>
 <simpara>Een eerste duidelijke evolutie is de toename van het aantal transistors. Volgens de wet van Moore verloopt deze stijging zelfs exponentieel. Elke vierentwintig maanden zou het aantal transistors in een processor verdubbelen . Die toename is uiteraard enkel mogelijk als de transistordichtheid kan toenemen. In het verleden werd hierbij vaak gedacht dat er technische beperkingen zouden opduiken, maar tot dusver blijven fabrikanten slagen om vast te houden aan de ontwikkelsnelheid die geponeerd werd door Gordon More, één van de oprichters van Intel.</simpara>
 <blockquote>
 <attribution>
@@ -847,35 +564,33 @@ Gordon Moore
 </blockquote>
 <figure>
 <title>Wet van Moore (CC, Wikimedia Commons)</title>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="ch02/images/mooreslaw2011.png" width="100%" scalefit="1" align="center"/>
-    </imageobject>
-    <textobject><phrase>Bulldozer</phrase></textobject>
-  </mediaobject>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch02/images/mooreslaw2011.png" width="100%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>Bulldozer</phrase></textobject>
+</mediaobject>
 </figure>
-
 <simpara>Met deze stijging van het aantal transistoren gaat uiteraard ook een toename in functionaliteit gepaard. Zo kent een x86 processor vanaf de 80286/80386 (in principe vanaf de 286, praktisch vanaf de 386) twee werkingsmodi: real mode en protected mode.
 In real mode heeft de cpu dezelfde functionaliteit als een 8086.
-In deze compatibiliteitsmodus gedraagt hij zich met andere woorden als een snellere versie van de 8086. In protected mode krijgt de processor extra functionaliteit. De naam protected mode komt van de extra toevoegingen op het vlak van geheugenbescherming. Daarnaast ondersteunde de processor vanaf deze modus een aantal, vandaag onmisbare, extra mogelijkheden.
+<?asciidoc-br?>
 Onder andere multitasking en virtueel geheugen zijn enkel mogelijk met een protected mode processor. Hier moet nog opgemerkt worden dat processoren nog steeds opstarten in real mode. Het is de taak van het besturingssysteem (of beter de loader ervan) om de processor om te schakelen naar protected mode.
-Andere voorbeelden van extra functionaliteit zijn de integratie van functies die eerst door externe componenten werden vervuld. Bijvoorbeeld werd vanaf de 486 een floating point unit in de processor geïntegreerd. Een ander voorbeeld zijn cache geheugens. De extra functionaliteit uit zich ook op het vlak van de instructieset. Zo zijn in de loop der tijden een aantal extra instructies toegevoegd om aan bepaalde behoeften te voldoen. Een belangrijk voorbeeld zijn de instructies die het gebruik van multimedia moeten ondersteunen (bijvoorbeeld MMX,SSE, 3DNow) en de ondersteuning voor virtualisatie (bijvoorbeeld intel VT-d, amdVi).
-Software die gebruik maakt van dit soort instructies, kan uiteraard niet uitgevoerd worden op processoren die deze instructies niet ondersteunen.
+<?asciidoc-br?>
+<?asciidoc-br?>
 Intel, de grootste producent van x86 processoren, hanteert voor de ontwikkeling een model dat het tick/tock-model genoemd wordt. Afwisselend worden nieuwe modellen uitgebracht met nieuwe funcitonaliteit (tock) en verbeterde technologie (tick). Dit wordt duidelijk in volgende intel roadmap.</simpara>
 <figure>
 <title>Intel roadmap (copyright 2008-2012 WhiteTimberwolf GFDL )</title>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="ch02/images/2000px-IntelProcessorRoadmap-2.svg.png" width="100%" scalefit="1" align="center"/>
-    </imageobject>
-    <textobject><phrase>Bulldozer</phrase></textobject>
-  </mediaobject>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch02/images/2000px-IntelProcessorRoadmap-2.svg.png" width="100%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>Bulldozer</phrase></textobject>
+</mediaobject>
 </figure>
-
 </section>
 <section xml:id="_kloksnelheid">
 <title>Kloksnelheid</title>
-<simpara>Een tweede evolutie is waar te nemen op het vlak van de kloksnelheid, die duidelijk toegenomen is. In de beginjaren van de pc was te zien dat CPU klok en FSB klok samen toenamen. Na verloop van tijd ontstaat er een verschil tussen de processorklok en de FSB klok, die nog wel stijgt, maar een stuk minder snel. De processor wordt met andere woorden duidelijk het snelste onderdeel in het computersysteem. Het zal erop aan komen de werkkracht van de CPU zo weinig mogelijk onbenut te laten. In het bijzonder zullen maatregelen genomen moeten worden om zo weinig mogelijk tijd te verliezen bij het wachten op tragere componenten. De trend naar steeds stijgende kloksnelheden is tijdens het laatste decennium afgenomen. Bij de Pentium 4 werd nog volop gemikt op de 4GHz grens, waar enige jaren tegenaan gebotst werd. Belangrijkste probleem bij steeds hogere kloksnelheden is de gegenereerde warmte. Die moet in de eerste plaats uiteraard afgevoerd worden, maar geeft daarnaast ook nog een hoger verbruik.
+<simpara><?asciidoc-br?>
 In het bijzonder bij laptops zijn dit twee vervelende problemen: de warmteafvoer vraagt grotere (en dus zwaardere) koellichamen en ventilatoren. Extra verbruik verkleint uiteraard de autonomie van een draagbaar toestel (tijd dat op accu gewerkt kan worden).</simpara>
 </section>
 <section xml:id="_processorarchitectuur">
@@ -886,74 +601,111 @@ In het bijzonder bij laptops zijn dit twee vervelende problemen: de warmteafvoer
 Helaas is dit principe niet zaligmakend: soms zijn instructies van andere, waardoor er een ‘bubble’ optreedt: een tijdspanne waarin de processor verplicht moet wachten.</simpara>
 <figure>
 <title>processor pipeline (CC mediawiki)</title>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="ch02/images/1000px-Pipeline4stage.png" width="100%" scalefit="1" align="center"/>
-    </imageobject>
-    <textobject><phrase>Sandy Bridge</phrase></textobject>
-  </mediaobject>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch02/images/1000px-Pipeline4stage.png" width="100%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>Sandy Bridge</phrase></textobject>
+</mediaobject>
 </figure>
-
 </section>
 <section xml:id="_superscalaire_processoren">
 <title>Superscalaire processoren</title>
 <simpara>Als dit principe verder gedreven wordt, kunnen stappen die veel tijd in beslag nemen dubbel uitgevoerd worden. Men spreekt dan over een superscalaire processor. In afbeelding 8 en afbeelding 9 worden de blokschema’s getoond van de Ivy bridge en de Athlon Bulldozer. In deze blokschema’s is duidelijk te zien hoe er verschilllende eenheden zijn die berekeningen kunnen maken, waardoor verschillende instructies tegelijkertijd uitgevoerd kunnen worden.
-Een belangrijke uitdaging hierbij vormen voorwaardelijke sprong instructies. Aangezien pas bij de uitvoering van de instructie geweten is of de sprong uitgevoerd wordt of dat gewoon de volgende instructie wordt uitgevoerd. In het schema zijn hiervoor branch prediction eenheden voorzien.
-Meer details over hun werking en de principes van pipelining en superscalaire architecturen krijg je in PC Architectuur 2: "microprocessoren".</simpara>
+Een belangrijke uitdaging hierbij vormen voorwaardelijke sprong instructies. Aangezien pas bij de uitvoering van de instructie geweten is of de sprong uitgevoerd wordt of dat gewoon de volgende instructie wordt uitgevoerd. In het schema zijn hiervoor branch prediction eenheden voorzien.</simpara>
+<simpara>Meer details over hun werking en de principes van pipelining en superscalaire architecturen krijg je in het vak "microprocessoren".</simpara>
 <figure>
 <title>Sandy bridge microarchitectuur</title>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="ch02/images/Sandy-Bridge-Microarchitecture-Small.jpg" width="100%" scalefit="1" align="center"/>
-    </imageobject>
-    <textobject><phrase>Sandy Bridge</phrase></textobject>
-  </mediaobject>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch02/images/Sandy-Bridge-Microarchitecture-Small.jpg" width="100%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>Sandy Bridge</phrase></textobject>
+</mediaobject>
 </figure>
-
 <figure>
 <title>AMD bulldozer architectuur (copyright AnandTech)</title>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="ch02/images/bulldozeruarch.jpg" width="100%" scalefit="1" align="center"/>
-    </imageobject>
-    <textobject><phrase>Bulldozer</phrase></textobject>
-  </mediaobject>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch02/images/bulldozeruarch.jpg" width="100%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>Bulldozer</phrase></textobject>
+</mediaobject>
 </figure>
-
 <simpara>Multicore processoren zijn al geruime tijd niet meer weg te denken. Hexacores en octocores zullen de komende jaren eerder regel dan uitzondering worden.
-Je zou dit een verder doorgedreven vorm van een superscalaire architectuur kunnen noemen. In plaats van delen van de processor te ontdubbelen, wordt een volledige processor ontdubbeld. Een grote moeilijkheid bij deze werkwijzes is om de caches op elkaar af te stemmen. Een probleem dat duidelijker zal worden in het volgende hoofdstuk.
-Net zoals een superscalaire architectuur pas voordeel geeft als de verschillende eenheden tegelijk gebruikt worden, zal een dual core pas voordeel geven als meerdere cores tegelijk werk verrichten. Dit kan als er bijvoorbeeld verschillende programma’s tegelijk actief zijn of als de software zodanig geschreven is, dat ze bestaat uit verschillende threads die naast elkaar (en dus tegelijk door verschillende processorkernen) kunnen uitgevoerd worden.
-Een simpel voorbeeldje om de beperkingen van een multicore processor aan te tonen: als je een eenvoudige toepassing een rekenintensieve opdracht laat uitvoeren, dan zal een multicore processor slechts een deel belast worden. Eén processorkern verricht namelijk al het werk.</simpara>
+Je zou dit een verder doorgedreven vorm van een superscalaire architectuur kunnen noemen. In plaats van delen van de processor te ontdubbelen, wordt een volledige processor ontdubbeld. Een grote moeilijkheid bij deze werkwijzes is om de caches op elkaar af te stemmen. Een probleem dat duidelijker zal worden in het volgende hoofdstuk.</simpara>
+<simpara>Net zoals een superscalaire architectuur pas voordeel geeft als de verschillende eenheden tegelijk gebruikt worden, zal een dual core pas voordeel geven als meerdere cores tegelijk werk verrichten. Dit kan als er bijvoorbeeld verschillende programma’s tegelijk actief zijn of als de software zodanig geschreven is, dat ze bestaat uit verschillende threads die naast elkaar (en dus tegelijk door verschillende processorkernen) kunnen uitgevoerd worden.</simpara>
+<simpara>Een simpel voorbeeldje om de beperkingen van een multicore processor aan te tonen: als je een eenvoudige toepassing een rekenintensieve opdracht laat uitvoeren, dan zal een multicore processor slechts een deel belast worden. Eén processorkern verricht namelijk al het werk.</simpara>
 <figure>
 <title>single threaded applicatie op multicore processor</title>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="ch02/images/singlethread.png" width="100%" scalefit="1" align="center"/>
-    </imageobject>
-    <textobject><phrase>singlethread</phrase></textobject>
-  </mediaobject>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch02/images/singlethread.png" width="100%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>singlethread</phrase></textobject>
+</mediaobject>
 </figure>
-
-<simpara>Het voordeel van de multi-core merk je pas als je tegelijk nog een ander programma probeert te gebruiken. Dat zal met een multi-core vlot lukken, in tegenstelling tot een single core.</simpara>
+<simpara>Het voordeel van de multi-core merk je pas als je tegelijk nog een ander programma probeert te gebruiken. Dat zal met een multi-core vlot lukken, in tegenstelling tot een single core. Het OS zal op zoek gaan naar de minst belastte core, en het nieuwe proces daarop uitvoeren.</simpara>
 </section>
 <section xml:id="_cache">
 <title>Cache</title>
 <simpara>Een andere eigenschap die plots opduikt en doorheen de processorgeschiedenis steeds toeneemt is het cache geheugen. De toename van het cache volgt de trend van alle soorten geheugens die in een pc te vinden zijn.
 Dit is een gevolg van de eerder opgemerkte trend dat de processor veruit het snelste onderdeel is in het systeem, dat zo optimaal mogelijk benut moet worden. Naarmate data en programma’s steeds groter werden, werd ook het belang van geheugen groter. Tot de intrede van de grafische interface was de belangrijkste parameter in het systeem de kloksnelheid van de processor. Met de intrede van de grafische interface was een groter geheugen soms te verkiezen boven een hogere kloksnelheid.
 Het belang van cache geheugen is ook duidelijk als je de budget- en performance-processoren van fabrikanten met elkaar gaat vergelijken.</simpara>
-<simpara>In onderstaand lijstje staan enkele desktop en serverprocessoren opgelijst. Je merkt dat ze qua kloksnelheid niet voor elkaar moeten onderdoen, maar dat de hoeveelheden cache wel verschillen.
-Zo heeft bijvoorbeeld een high-end desktop CPU (core i7) zo’n 8MB cache aan boord, terwijl een serverCPU (Xeon E7) tot 32 MB cache heeft.
-De werking van de cache wordt verder in detail besproken in het derde hoofdstuk.</simpara>
+<simpara>In onderstaand lijstje staan enkele desktop en serverprocessoren opgelijst. Je merkt dat ze qua kloksnelheid niet voor elkaar moeten onderdoen, maar dat de hoeveelheden cache wel verschillen.</simpara>
+<simpara>De werking van de cache wordt verder in detail besproken in het derde hoofdstuk.</simpara>
+<table frame="all" rowsep="1" colsep="1">
+<title>cache in desktop en serverprocessoren (actuele topmodellen, feb 2014)</title>
+<tgroup cols="5">
+<colspec colname="col_1" colwidth="20*"/>
+<colspec colname="col_2" colwidth="20*"/>
+<colspec colname="col_3" colwidth="20*"/>
+<colspec colname="col_4" colwidth="20*"/>
+<colspec colname="col_5" colwidth="20*"/>
+<thead>
+<row>
+<entry align="left" valign="top">CPU</entry>
+<entry align="left" valign="top">doel</entry>
+<entry align="left" valign="top">cache</entry>
+<entry align="left" valign="top">maxCPU</entry>
+<entry align="left" valign="top">#cores/threads</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara>Atom 7560</simpara></entry>
+<entry align="left" valign="top"><simpara>mobile</simpara></entry>
+<entry align="left" valign="top"><simpara>512KB</simpara></entry>
+<entry align="left" valign="top"><simpara>2.13 Ghz</simpara></entry>
+<entry align="left" valign="top"><simpara>1/2</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>i7-4771</simpara></entry>
+<entry align="left" valign="top"><simpara>desktop</simpara></entry>
+<entry align="left" valign="top"><simpara>8MB</simpara></entry>
+<entry align="left" valign="top"><simpara>3.50 Ghz</simpara></entry>
+<entry align="left" valign="top"><simpara>4/8</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>E7-8893v2</simpara></entry>
+<entry align="left" valign="top"><simpara>server</simpara></entry>
+<entry align="left" valign="top"><simpara>37.5MB</simpara></entry>
+<entry align="left" valign="top"><simpara>3.40 Ghz</simpara></entry>
+<entry align="left" valign="top"><simpara>15/30</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
 </section>
 </section>
 <section xml:id="_apu_soc">
 <title>APU, SoC</title>
 <simpara>De wet van Moore impliceert dat steeds meer mogelijk is op eenzelfde oppervlakte substraat. Die ruimte wordt ingenomen door bijvoorbeeld meerdere cores te huisvesten op eenzelfde processor, maar dat is maar een deel van het verhaal.</simpara>
-<simpara>Het is namelijk ook zo dat men probeert om steeds meer functionaliteit te verzamelen op eenzelfde chip.</simpara>
+<simpara>Het is namelijk ook zo dat men probeert om steeds meer functionaliteit die voorheen op andere plaatsen op het moederbord te vinden was, te verzamelen op eenzelfde chip.</simpara>
 <simpara>Daar zijn een aantal goede redenen voor te bedenken:</simpara>
 <itemizedlist>
 <listitem>
-<simpara>het aantal verschillende chips op een moederbord kan zo teruggedrongen worden</simpara>
+<simpara>het aantal verschillende chips (en dus kostprijs) op een moederbord kan zo teruggedrongen worden</simpara>
 </listitem>
 <listitem>
 <simpara>als alle componenten dicht bij elkaar zitten, zijn geen <emphasis>trage</emphasis> bussen nodig tussen deze onderdelen</simpara>
@@ -962,8 +714,10 @@ De werking van de cache wordt verder in detail besproken in het derde hoofdstuk.
 <simpara>de oppervlakte die nodig is om het systeem te bouwen verkleint zo, een belangrijk argument bij de ontwikkeling van mobile devices.</simpara>
 </listitem>
 </itemizedlist>
-
-<simpara>Bij recente processoren zit bijvoorbeeld steeds vaker een grafische chip ingebouwd. Dan spreekt men niet meer over CPU, maar over <emphasis>APU (=advanced processing unit)</emphasis> om dit verschil in de verf te zetten.</simpara>
+<sidebar>
+<simpara>testje in sidebar</simpara>
+</sidebar>
+<simpara>Bij recente processoren zit bijvoorbeeld steeds vaker een grafische chip ingebouwd. Dan spreekt men niet meer over CPU, maar over <literal>APU</literal> (=advanced processing unit) om dit verschil in de verf te zetten.</simpara>
 <simpara>Het integratieproces gaat soms zo ver dat je kan spreken van een <emphasis>System On A Chip</emphasis>: alle belangrijke onderdelen (cpu, gpu, IO) zitten dan verzameld op één enkele chip.
 De rol van secundaire chips ("de chipset") wordt dus steeds kleiner.</simpara>
 <note>
@@ -984,23 +738,21 @@ De rol van secundaire chips ("de chipset") wordt dus steeds kleiner.</simpara>
 <simpara>Mobiele processoren zijn vaak vast op het moederbord gemonteerd, vervangen is dan onmogelijk.</simpara>
 </listitem>
 </itemizedlist>
-
 <figure>
 <title>LGA2011 socket zonder processor</title>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="ch02/images/lga2011_cooler_roundup_002.jpg" width="50%" scalefit="1" align="center"/>
-    </imageobject>
-    <textobject><phrase>singlethread</phrase></textobject>
-  </mediaobject>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch02/images/lga2011_cooler_roundup_002.jpg" width="50%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>singlethread</phrase></textobject>
+</mediaobject>
 </figure>
-
 <simpara>Tweede belangrijk aandachtspunt bij de installatie van een processor is dat gezorgd moet worden voor voldoende koeling. Dit betekent dat gezorgd moet worden voor een voldoende grote koelvin en ventilator en dat er goed contact is tussen de chip en de koelvin. Hiervoor moet eventueel koelpasta aangebracht worden. Een slecht gekoelde processor kan aanleiding geven tot een instabiel werkende computer en in het meest dramatische geval tot een beschadigde processor.</simpara>
 </section>
 <section xml:id="_processoren_van_de_toekomst">
 <title>Processoren van de toekomst</title>
 <simpara>Voorspellingen maken is geen sinecure. De trends die ingezet zijn, zullen vermoedelijk nog een hele poos verder gaan, met een verdere miniaturisatie en toename van efficiëntie tot gevolg.
-Een kaper op de kust voor de x86 technologie is de ARM architectuur. Hoewel deze absoluut niet nieuw is (eerste ontwerpen midden jaren 80), biedt deze processorfamilie grote voordelen:</simpara>
+Een kaper op de kust voor de x86 technologie die momenteel monopolist is op de PC-markt, is de ARM architectuur. Hoewel deze absoluut niet nieuw is (eerste ontwerpen midden jaren 80), biedt deze processorfamilie grote voordelen:</simpara>
 <itemizedlist>
 <listitem>
 <simpara>Deze architectuur is steeds ontworpen voor toestellen met een laag verbruik. Het succes op de mobiele markt (iPAD2,3, nagenoeg alle android smartphones, consumer elektronica, …)</simpara>
@@ -1012,8 +764,7 @@ Een kaper op de kust voor de x86 technologie is de ARM architectuur. Hoewel deze
 <simpara>Door een RISC (Reduced instruction set computing) architectuur van nature efficient</simpara>
 </listitem>
 </itemizedlist>
-
-<simpara>De kans dat de RISC architectuur op korte termijn succesvol wordt op de desktopmarkt is gering, en ook het omgekeerde kan gezegd worden over CISC (x86) op mobiele devices. Voor specifieke servertoepassingen zijn er wel <link xlink:href="http://www.anandtech.com/show/7724/it-begins-amd-announces-its-first-arm-based-server-soc-64bit8core-opteron-a1100">aankondigingen gebeurd</link> door bijvoorbeeld AMD, die zich hier sterk wil in specialiseren.</simpara>
+<simpara>De kans dat de RISC architectuur op korte termijn succesvol wordt op de desktopmarkt is gering, en ook het omgekeerde kan gezegd worden over CISC (x86) op mobiele devices. Voor specifieke servertoepassingen zijn er wel <link xlink:href="http://www.anandtech.com/show/7724/it-begins-amd-announces-its-first-arm-based-server-soc-64bit8core-opteron-a1100">aankondigingen gebeurd</link> door bijvoorbeeld AMD, die zich hier sterk wil in specialiseren en profileren.</simpara>
 <simpara>Toch lijken deze twee werelden van gespecialiseerde ARM en meer universele x86 naar elkaar toe te groeien, en zullen de grenzen ongetwijfeld snel vervagen.
 Microsoft heeft bijvoorbeeld eind 2012 z’n RT tablet vrijgegeven, met ARM SOC. Uiteraard zal software die gecompileerd werd voor x86 op dit soort toestellen niet werken.</simpara>
 </section>
@@ -1024,27 +775,25 @@ Microsoft heeft bijvoorbeeld eind 2012 z’n RT tablet vrijgegeven, met ARM SOC.
 <bibliomisc><anchor xml:id="INTEL" xreflabel="[INTEL]"/>[INTEL] Intel. <link xlink:href="http://www.intel.com/content/www/us/en/history/museum-gordon-moore-law.html">http://www.intel.com/content/www/us/en/history/museum-gordon-moore-law.html</link>.</bibliomisc>
 </bibliomixed>
 </bibliodiv>
-
 </section>
-</chapter>
+</bibliography>
 <chapter xml:id="_het_geheugen">
 <title>Het Geheugen</title>
 <section xml:id="_overzicht_2">
 <title>Overzicht</title>
-<simpara>Het belang van geheugen is tijdens de cursus computertechniek al voldoende gebleken. Zoals bekend worden zowel uit te voeren instructies als data opgeslagen in dit geheugen. Dit legt twee belangrijke behoeften bloot: snelheid en grootte.
-Snelheid is belangrijk omdat het geheugen de processor moet voorzien van uit te voeren instructies. Een snelle processor met traag geheugen geeft een traag systeem.
-Grootte is belangrijk omdat zowel programma’s als de te bewerken data aanzienlijk zijn toegenomen. Bovendien moeten in een multitasking omgeving meerdere programma’s en dus ook grotere hoeveelheden data opgeslagen worden in het geheugen.
-Als de verschillende soorten geheugens bekeken worden, wordt ook wel gesproken van de geheugenpiramide (afbeelding 12). Deze term wordt gebruikt omdat de hoeveelheid geheugen afneemt naarmate je stijgt in de piramide. De reden hiervoor is dat ook de prijs per byte toeneemt naarmate je hoger gaat in de piramide.</simpara>
+<simpara>Het belang van geheugen is tijdens de cursus computertechniek al voldoende gebleken. Zoals bekend worden zowel uit te voeren instructies als data opgeslagen in dit geheugen. (cfr de <emphasis>von Neumann architectuur</emphasis>) Dit legt twee belangrijke behoeften bloot: snelheid en grootte.</simpara>
+<simpara><emphasis role="strong">Snelheid</emphasis> is belangrijk omdat het geheugen de processor moet voorzien van uit te voeren instructies. Een snelle processor met traag geheugen geeft een traag systeem.</simpara>
+<simpara><emphasis role="strong">Grootte</emphasis> is dan weer belangrijk omdat zowel programma’s als de te bewerken data aanzienlijk zijn toegenomen. Bovendien moeten in een multitasking omgeving meerdere programma’s en dus ook grotere hoeveelheden data opgeslagen worden in het geheugen.</simpara>
+<simpara>Als de verschillende soorten geheugens bekeken worden, wordt ook wel gesproken van de geheugenpiramide. Deze term wordt gebruikt omdat de hoeveelheid geheugen afneemt naarmate je stijgt in de piramide. De reden hiervoor is dat ook de prijs per byte toeneemt naarmate je hoger gaat in de piramide.</simpara>
 <figure>
-<title>afbeelding 12 geheugenpiramide</title>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="ch03/images" width="50%" scalefit="1" align="center"/>
-    </imageobject>
-    <textobject><phrase></phrase></textobject>
-  </mediaobject>
+<title>Geheugenpiramide</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch03/images/geheugenpiramide.png" width="50%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase></phrase></textobject>
+</mediaobject>
 </figure>
-
 <simpara>Daarnaast neemt de snelheid van het geheugen toe in de richting van de top van de piramide. In deze voorstelling is het begrip geheugen vrij ruim geïnterpreteerd. We zullen het in dit hoofdstuk niet hebben over registers of opslagmedia, wel over de technieken die toegepast worden om het geheugen voldoende snel en groot te maken.</simpara>
 </section>
 <section xml:id="_lokaliteitsprincipe">
@@ -1060,54 +809,57 @@ Als de verschillende soorten geheugens bekeken worden, wordt ook wel gesproken v
 <simpara>Tussen de verschillende soorten geheugens kan een onderscheid gemaakt worden op een aantal vlakken.</simpara>
 <section xml:id="_behuizing">
 <title>Behuizing</title>
-<simpara>Het meest tastbare onderscheid kan gemaakt worden op het vlak van de behuizing. Origineel gebruikte men op de PC geheugen onder de vorm van discrete chips.
+<simpara><?asciidoc-br?>
 Naarmate de capaciteit van het geheugen steeg, werd dit te duur en ging men over op geheugenmodules.
 Daarnaast spreekt men soms van het gebruik van geheugenbanken. Een geheugenbank op een moederbord bestaat uit een of meerdere sockets of geheugenvoeten (insteekplaatsen voor geheugenchips).
-Het aantal sockets per geheugenbank hangt af van de uitvoeringsvorm van het gebruikte geheugen en van de breedte van de databus. Een geheugenbank heeft dezelfde breedte als de databus die voor de aansluiting op de datalijnen zorgt.
-Niet alle geheugenbanken moeten gevuld zijn maar iedere geheugenbank waar geheugen in geplaatst werd, moet volledig gevuld zijn. In moderne systemen vult een module een volledige geheugenbank en is deze dus automatisch vervuld. Een geheugenmodule wordt gekenmerkt door het aantal contactpunten (pins), de werkspanning en het soort geheugenchip. Het is de geheugencapaciteit van alle chips samen die de capaciteit van de module bepalen.
-Langs beide zijden van een geheugenmodule bevinden zich contactpunten. Indien deze contactpunten inwendig verbonden zijn spreekt men van een SIMM (Single Inline Memory Module). Indien deze contactpunten afzonderlijk werken en niet verbonden zijn spreekt men over een DIMM (Dual Inline Memory Module).
+Het aantal sockets per geheugenbank hangt af van de uitvoeringsvorm van het gebruikte geheugen en van de breedte van de databus. Een geheugenbank heeft dezelfde breedte als de databus die voor de aansluiting op de datalijnen zorgt.</simpara>
+<simpara>Niet alle geheugenbanken moeten gevuld zijn maar iedere geheugenbank waar geheugen in geplaatst werd, moet volledig gevuld zijn. In moderne systemen vult een module een volledige geheugenbank en is deze dus automatisch vervuld. Een geheugenmodule wordt gekenmerkt door het aantal contactpunten (pins), de werkspanning en het soort geheugenchip. Het is de geheugencapaciteit van alle chips samen die de capaciteit van de module bepalen.</simpara>
+<simpara>Langs beide zijden van een geheugenmodule bevinden zich contactpunten. Indien deze contactpunten inwendig verbonden zijn spreekt men van een SIMM (Single Inline Memory Module). Indien deze contactpunten afzonderlijk werken en niet verbonden zijn spreekt men over een DIMM (Dual Inline Memory Module).
 Een DIMM biedt op dezelfde afstand veel meer contactpunten en wordt dan ook toegepast in de moderne modules, die onder andere voor de steeds breder wordende databussen extra contactpunten nodig hebben.</simpara>
 <figure>
-<title>afbeelding 13 courante DDR-dimm modules (Wikimedia public domain)</title>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="ch03/images/DDR_Memory_comparison.svg.png" width="50%" scalefit="1" align="center"/>
-    </imageobject>
-    <textobject><phrase>DDR</phrase></textobject>
-  </mediaobject>
+<title>Courante DDR-dimm modules (Wikimedia public domain)</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch03/images/DDR_Memory_comparison.svg.png" width="50%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>DDR</phrase></textobject>
+</mediaobject>
 </figure>
-
 <simpara>Een variante van DIMM is so-DIMM (small outline), een miniatuurversie van DIMM, specifiek geschikt voor mobiele apparatuur als laptops.</simpara>
 <figure>
-<title>afbeelding 14 SO-DIMM modules (Wikimedia public domain)</title>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="ch03/images/Laptop_SODIMM_DDR_Memory_Comparison_V2.svg.png" width="50%" scalefit="1" align="center"/>
-    </imageobject>
-    <textobject><phrase></phrase></textobject>
-  </mediaobject>
+<title>SO-DIMM modules (Wikimedia public domain)</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch03/images/Laptop_SODIMM_DDR_Memory_Comparison_V2.svg.png" width="50%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase></phrase></textobject>
+</mediaobject>
 </figure>
-
 </section>
 </section>
 <section xml:id="_technologie">
 <title>Technologie</title>
 <simpara>Een zeer belangrijk onderscheid tussen geheugens kan gemaakt worden op het vlak van de technologie die gebruikt werd om de geheugencellen te bouwen. Er zijn twee soorten: statisch en dynamisch geheugen. Statisch geheugen is opgebouwd uit actieve geheugencellen (flipflop schakelingen). Deze vragen een grotere complexiteit bij het IC ontwerp en zijn dus duur. Anderzijds zijn ze zeer snel. Uit deze eigenschappen kan je afleiden dat ze hoog in de piramide worden toegepast. Meer bepaald gebeurt dit bij de snelle cache geheugens.</simpara>
 <figure>
-<title>afbeelding 15 voorstelling statisch geheugen</title>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="ch03/images/406px-Square_array_of_mosfet_cels_read.png" width="50%" scalefit="1" align="center"/>
-    </imageobject>
-    <textobject><phrase>statisch geheugen</phrase></textobject>
-  </mediaobject>
+<title>voorstelling statisch geheugen</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch03/images/statisch.pdf" width="50%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>statisch geheugen</phrase></textobject>
+</mediaobject>
 </figure>
-
 <simpara>Dynamisch geheugen bestaat in essentie eigenlijk gewoon uit een condensator. Als je over een condensator een gelijkspanning aanbrengt en die vervolgens wegneemt, kan je achteraf nog meten welk spanning erop stond. Dit is een vorm van geheugen. Deze geheugens hebben twee belangrijke nadelen. Ten eerste zal een leesoperatie de condensator ontladen.</simpara>
-<formalpara>
-<title>afbeelding 16 voorstelling leescyclus  dynamisch geheugen</title>
-<para>Een leesoperatie is met andere woorden destructief. Ten tweede bestaan er geen perfecte condensatoren en vertoont dit soort geheugen dus ook een lek. Dit betekent dat mettertijd de inhoud van het geheugen verloren gaat, tenzij die ververst wordt. Bij dit soort van geheugen is dan ook een regelmatige refresh noodzakelijk. Vergeleken met statisch geheugen is dynamisch geheugen trager. Het statisch geheugen is een actieve schakeling en kan dus stroom sturen of opnemen als het gelezen wordt. Dynamisch geheugen kan niet echt stroom sturen, het is de condensator die ontladen of opgeladen wordt. Anderzijds is dynamisch geheugen dan weer goedkoper, waardoor het toegepast wordt op een lager niveau in de piramide. Meer bepaald is dit de technologie die in geheugenmodules wordt gebruikt. Deze zijn ook gangbaar bekend onder de term RAM of DRAM.</para>
-</formalpara>
+<figure>
+<title>Voorstelling leescyclus dynamisch geheugen</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch03/images/406px-Square_array_of_mosfet_cels_read.png" width="50%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>leescyclus dynamisch geheugen</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>Een leesoperatie is met andere woorden destructief. Ten tweede bestaan er geen perfecte condensatoren en vertoont dit soort geheugen dus ook een lek. Dit betekent dat mettertijd de inhoud van het geheugen verloren gaat, tenzij die ververst wordt. Bij dit soort van geheugen is dan ook een regelmatige refresh noodzakelijk. Vergeleken met statisch geheugen is dynamisch geheugen trager. Het statisch geheugen is een actieve schakeling en kan dus stroom sturen of opnemen als het gelezen wordt. Dynamisch geheugen kan niet echt stroom sturen, het is de condensator die ontladen of opgeladen wordt. Anderzijds is dynamisch geheugen dan weer goedkoper, waardoor het toegepast wordt op een lager niveau in de piramide. Meer bepaald is dit de technologie die in geheugenmodules wordt gebruikt. Deze zijn ook gangbaar bekend onder de term RAM of DRAM.</simpara>
 </section>
 <section xml:id="_dram_technologie">
 <title>DRAM technologie</title>
@@ -1127,67 +879,77 @@ De snelheid van het geheugen wordt in grote mate bepaald door de toegangstijd ta
 <simpara>Met deze kennis wordt ook duidelijk hoe een refresh georganiseerd kan worden. Op regelmatige tijdstippen zal een zogenaamde RAS-only cylcus uitgevoerd worden. Hierbij wordt eigenlijk elke rij geselecteerd, gekopieerd naar de statische rij en weer weggeschreven. Hierdoor is de originele inhoud weer op peil gebracht, op voorwaarde dat deze cyclus voldoende regelmatig herhaald wordt. Met deze manier moet niet elke cel afzonderlijk gerefreshed worden, maar wordt een volledige rij ineens hersteld.</simpara>
 <figure>
 <title>dynamisch geheugen met statische buffer</title>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="ch03/images/geheugenmetstatischbuffer.png" width="50%" scalefit="1" align="center"/>
-    </imageobject>
-    <textobject><phrase>dynamisch geheugen</phrase></textobject>
-  </mediaobject>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch03/images/geheugenmetstatischbuffer.png" width="50%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>dynamisch geheugen</phrase></textobject>
+</mediaobject>
 </figure>
-
 </section>
 <section xml:id="_bandbreedte_bij_dram">
 <title>Bandbreedte bij DRAM</title>
 <simpara>DRAM heeft, zoals je verder zal lezen, de eigenschap te werken met cyclussen. Om te berekenen wat de effectieve bandbreedte is (=geheugendebiet) hoor je steeds dezelfde benadering te maken:</simpara>
-<simpara>((Aantal bytes die getransfereerd worden bij een cyclus)/(tijdsduur van een cyclus) " " =  bandbreedte)</simpara>
+<simpara>"Aantal bytes die getransfereerd worden bij een cyclus"//"tijdsduur van een cyclus" =  "bandbreedte"</simpara>
 <simpara>Deze erg eenvoudige benadering wordt bij de verschillende types geheugen die volgen telkens toegepast.</simpara>
 </section>
 </section>
 <section xml:id="_fast_page_dram_fp_dram">
 <title>Fast Page DRAM (FP-DRAM)</title>
-<simpara>Hierboven werd reeds beschreven hoe met gemultiplexte adresklemmen eerst een rij-adres en vervolgens een kolomadres worden doorgegeven (langs dezelfde aansluitpinnen). Het voordeel hiervan is duidelijk: minder adresklemmen.
+<simpara><?asciidoc-br?>
 Het nadeel is dat een lees- of schrijfcyclus langer wordt. Het kost immers extra tijd om de adressen na elkaar door te geven. FP-DRAM verbetert de snelheid door cycli te combineren. Zoals aangehaald bij het lokaliteitsprincipe gaan opeenvolgende cycli meestal door op naburige cyclusadressen. De kans dat meer dan een byte gelezen wordt in dezelfde rij, is dus vrij groot. FP-DRAM maakt hiervan gebruik door eenmaal een rij-adres op te geven en vervolgens een kolom te selecteren en deze te lezen of te schrijven. Onmiddellijk hierna wordt een tweede kolom geselecteerd en wordt deze gelezen of beschreven, vervolgens kan een derde kolom geselecteerd worden&#8230;Op die manier worden een aantal cycli vermeden. Het zal relatief lang duren vooraleer het eerste geheugenwoord gelezen kan worden, terwijl de volgende minder tijd vragen.</simpara>
-<formalpara>
-<title>afbeelding 18 Fast page DRAM</title>
-<para>In praktijk wordt er bijna steeds gewerkt met een burst van vier leescycli waarbij aangeduid wordt hoeveel klokcycli er nodig zijn per transfert, bijvoorbeeld 5-3-3-3.
-FP-DRAM werd gebruikt tot busfrequenties van 66 MHz.
-Op een computersysteem met een 486 processor (32-bit databus) met 5-3-3-3 FP-DRAM geheugen aan 66Mhz betekent dit dat het maximale geheugendebiet gelijk is aan:
-(4bytes/transfer x 4transfers/burst x 66Mcycli/s)/(14cycli/burst)= 75MB/s</para>
-</formalpara>
+<figure>
+<title>Fast page DRAM</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch03/images/fpm.gif" width="50%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>fast page memory</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara><?asciidoc-br?>
+FP-DRAM werd gebruikt tot busfrequenties van 66 MHz.</simpara>
+<simpara>Op een computersysteem met een 486 processor (32-bit databus) met 5-3-3-3 FP-DRAM geheugen aan 66Mhz betekent dit dat het maximale geheugendebiet gelijk is aan:</simpara>
+<simpara>(4 "bytes"/"transfer" xx 4 "transfers"/"burst" xx 66 "Mcycli"/"sec")/(14 "cycli"/"burst")= 75 "MB"/"sec" </simpara>
 </section>
 <section xml:id="_edo_ram">
 <title>EDO RAM</title>
-<formalpara>
-<title>afbeelding 19 EDO-RAM</title>
-<para>Extended Data Out-RAM is een aanpassing van het Fast Page-concept. Daarbij moest de memorycontroller wachten met het aanbieden van een nieuw kolomadres tot de vorige data gelezen waren. Bij EDO-RAM blijven de data op de uitgangen van het geheugen nog een tijd langer beschikbaar (zelfs tot na het aanbieden van het volgende kolomadres). Hierdoor wint men tijd: terwijl de data gelezen worden, kan men al het volgende kolomadres aanleggen.
-EDO-RAM kon gebruikt worden tot een busklok van 75 MHz met een timing van 5-2-2-2 klokcycli. Als we EDO-RAM dan nog combineren met een 64-bit bus (Pentium) geeft dit een maximaal debiet van 218 MB/s</para>
-</formalpara>
-<simpara>(8 bytes/transfer x 4 transfers/burst x 75 Mcycli/sec)/(11 cycli/burst)=218MB/s</simpara>
+<figure>
+<title>EDO-RAM</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch03/images/edo.gif" width="50%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>fast page memory</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>Extended Data Out-RAM is een aanpassing van het Fast Page-concept. Daarbij moest de memorycontroller wachten met het aanbieden van een nieuw kolomadres tot de vorige data gelezen waren. Bij EDO-RAM blijven de data op de uitgangen van het geheugen nog een tijd langer beschikbaar (zelfs tot na het aanbieden van het volgende kolomadres). Hierdoor wint men tijd: terwijl de data gelezen worden, kan men al het volgende kolomadres aanleggen.
+EDO-RAM kon gebruikt worden tot een busklok van 75 MHz met een timing van 5-2-2-2 klokcycli. Als we EDO-RAM dan nog combineren met een 64-bit bus (Pentium) geeft dit een maximaal debiet van 218 MB/s</simpara>
+<simpara>:(8 "bytes"/"transfer" xx 4 "transfers"/"burst" xx 75 "Mcycli"/"sec")//(11 "cycli"/"burst")=218 "MB"/"sec" </simpara>
 </section>
 <section xml:id="_synchronous_dram">
 <title>Synchronous DRAM</title>
 <figure>
 <title>afbeelding 20 Leesoperatie bij SD-RAM (bron: Micron)</title>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="ch03/images" width="50%" scalefit="1" align="center"/>
-    </imageobject>
-    <textobject><phrase></phrase></textobject>
-  </mediaobject>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch03/images" width="50%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase></phrase></textobject>
+</mediaobject>
 </figure>
-
 <simpara>Bij SDRAM gaat men nog een stap verder met het lokaliteitsprincipe. In plaats van uit te gaan van het lezen van naburige kolommen, wordt nu vertrokken van het idee dat opeenvolgende kolommen uitgelezen zullen worden. In het deel over cache geheugens zal duidelijk worden dat het RAM geheugen effectief op deze manier wordt aangesproken. De cyclus kan nu aangepast worden tot het aanleggen van een rij-adres, het selecteren van een kolom en vervolgens het inlezen of naar buiten brengen van een aantal opeenvolgende kolommen. Die kunnen naar buiten gebracht worden op het tempo van de klok. Vandaar spreekt men over synchroon DRAM.
 In de afbeelding 20 krijgen we een timing van 2-1-1-1. Daarnaast is SD-RAM geschikt voor busfrequenties tot 133 MHz (PC133), wat neerkomt op een maximaal debiet van 851 MBps.</simpara>
-<simpara>(8 bytes/transfer  .4 transfers/burst  .133 Mcycli/s  )/(5 cycli /burst)  =(851 MB)/s</simpara>
+<simpara>(8 "bytes"/"transfer"  xx 4 "transfers"/"burst"  xx 133 "Mcycli"/"sec" )//(5 "cycli"/"burst") = 851 "MB"/"sec"</simpara>
 <section xml:id="_ddr_sdram_ddr2_ddr3">
 <title>DDR SDRAM - DDR2 - DDR3</title>
 <simpara>Principieel werkt DDR op dezelfde manier als SDRAM. Er wordt nog steeds een rij-adres en een kolomadres aangelegd, waarna meerdere opeenvolgende cellen worden uitgelezen. Het verschil zit in het tempo waarop dit gebeurt. Bij Double Data Rate wordt data naar buiten gebracht op stijgende en dalende flank van de klok. Om dit te kunnen bereiken wordt gebruik gemaakt van een prefetch buffer. In elke cyclus worden nu 2 bits getransfereerd naar het prefetch buffer, dat de data dan aan een dubbele snelheid naar buiten kan brengen.</simpara>
 <formalpara>
 <title>afbeelding 21 write cyclus bij DDR-RAM (bron: Micron)</title>
-<para>Het voordeel van deze werkwijze is een hogere maximale bandbreedte (datasnelheid bij het effectief overbrengen van data). Het nadeel zit in een hogere latentietijd. Tussen het aanleggen van de adressen en het naar buiten brengen van de data verloopt iets meer tijd. De snelheid van de modules wordt uitgedrukt op een aantal verschillende manieren. Een eerste manier is in de naam, waar twee verschillende mogelijkheden bestaan. DDR400 en PC3200 duiden op hetzelfde soort geheugenchips. De 400 duidt de kloksnelheid aan (2x200MHz), de 3200 duidt de maximale transfersnelheid aan.
-Op een 64-bit databus is die</para>
+<para>Het voordeel van deze werkwijze is een hogere maximale bandbreedte (datasnelheid bij het effectief overbrengen van data). Het nadeel zit in een hogere latentietijd. Tussen het aanleggen van de adressen en het naar buiten brengen van de data verloopt iets meer tijd. De snelheid van de modules wordt uitgedrukt op een aantal verschillende manieren. Een eerste manier is in de naam, waar twee verschillende mogelijkheden bestaan. DDR400 en PC3200 duiden op hetzelfde soort geheugenchips. De 400 duidt de kloksnelheid aan (2x200MHz), de 3200 duidt de maximale transfersnelheid aan.</para>
 </formalpara>
-<simpara>8bytes/transfer   (2 x 200MHz) = 3200MB/s.</simpara>
+<simpara>Op een 64-bit databus is die</simpara>
+<simpara>8 "bytes"/"transfer"  xx (2 xx 200 "MHz") = 3200 "MB"/"sec"</simpara>
 <simpara>Er kan echter nog veel verschil zijn tussen twee PC3200 modules.
 De werkelijke snelheid hangt namelijk ook af van de totale latentietijd. Die kan op verschillende manieren worden aangegeven, maar een gangbare manier is het opgeven van vier getallen: TCL-Trcd-Trp-Tras.</simpara>
 <itemizedlist>
@@ -1195,222 +957,131 @@ De werkelijke snelheid hangt namelijk ook af van de totale latentietijd. Die kan
 <simpara>TCL = CAS Latency Time: tijd tussen CAS en beschikbaar worden van data</simpara>
 </listitem>
 <listitem>
-<simpara>Trcd = DRAM RAS to CAS Delay: tijd tussen RAS en CAS (ook tijd tussen active en read/write-commando )</simpara>
+<simpara>T_rcd = DRAM RAS to CAS Delay: tijd tussen RAS en CAS (ook tijd tussen active en read/write-commando )</simpara>
 </listitem>
 <listitem>
-<simpara>Trp = DRAM RAS Precharge: tijd tussen selecteren van twee rijen</simpara>
+<simpara>T_rp = DRAM RAS Precharge: tijd tussen selecteren van twee rijen</simpara>
 </listitem>
 <listitem>
-<simpara>Tras = Precharge delay: minimale tijd tussen actief worden en precharge van volgende rij.</simpara>
+<simpara>T_ras = Precharge delay: minimale tijd tussen actief worden en precharge van volgende rij.</simpara>
 </listitem>
 </itemizedlist>
-
 <simpara>In elke leescyclus is zeker Trcd en TCL nodig. Indien bursts uit verschillende rijen nodig zijn, dan is ook Trp belangrijk.</simpara>
-<formalpara>
+<figure>
 <title>DDR-timing Tcl=2 (bron: Micron)</title>
-<para>Een voorbeeld:
-PC3200 geheugen met parameters 2-2-2-6 heeft voor een burst met vier transfers van 8 bytes 2+2+4 x 0.5=6 klokcycli van 200 MHz nodig. Dit geeft een snelheid van 1067 MB/s.Voor twee dergelijke opeenvolgende transfers zijn 2(2+2+4 x 0.5) + 2 = 14 klokcycli van 200 MHz nodig. Dit geeft 914 MBps.</para>
-</formalpara>
-<simpara>Bij DDR kan ook het aantal cellen dat in een burst gelezen wordt variëren. Hetzelfde geheugen dat in een burst 8 transfers van 8 bytes uitvoert, haalt een snelheid van 1600MBps.Tras is in dit verhaal niet naar voor gekomen. Tras bepaalt de tijd waarin de volgende rij nog niet geladen mag worden. Deze moet groot genoeg zijn om de buffer niet te overschrijven voordat het volledig getransfereerd is over de databus. Deze parameter moet minimaal Trcd + TCL + 1 bedragen. Indien de parameter te klein is gaat uiteraard data verloren.
-Opvolgers van DDR zijn DDR2 en DDR3. Behalve verbeteringen op het vlak van klokfrequenties en spanningen (DDR2 en DDR3 gebruiken telkens lagere spanningen) is het grootste verschil dat het prefetch buffer vergroot. Bij DDR2 worden vier bits gebufferd [3], bij DDR3 acht. DDR4, dat er binnenkort zit aan te komen, zal dit nogmaals verdubbelen.</simpara>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch03/images" width="50%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase></phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>Een voorbeeld:
+PC3200 geheugen met parameters 2-2-2-6 heeft voor een burst met vier transfers van 8 bytes 2+2+4 x 0.5=6 klokcycli van 200 MHz nodig. Dit geeft een snelheid van 1067 MB/s.Voor twee dergelijke opeenvolgende transfers zijn</simpara>
+<simpara>2(2+2+4 xx 0.5) + 2 = 14 klokcycli van 200 MHz nodig. Dit geeft 914 MBps.</simpara>
+<simpara>Bij DDR kan ook het aantal cellen dat in een burst gelezen wordt variëren. Hetzelfde geheugen dat in een burst 8 transfers van 8 bytes uitvoert, haalt een snelheid van 1600MBps.Tras is in dit verhaal niet naar voor gekomen. Tras bepaalt de tijd waarin de volgende rij nog niet geladen mag worden. Deze moet groot genoeg zijn om de buffer niet te overschrijven voordat het volledig getransfereerd is over de databus. Deze parameter moet minimaal Trcd + TCL + 1 bedragen. Indien de parameter te klein is gaat uiteraard data verloren.</simpara>
+<simpara>Opvolgers van DDR zijn DDR2 en DDR3. Behalve verbeteringen op het vlak van klokfrequenties en spanningen (DDR2 en DDR3 gebruiken telkens lagere spanningen) is het grootste verschil dat het prefetch buffer vergroot. Bij DDR2 worden vier bits gebufferd [3], bij DDR3 acht. DDR4, dat er binnenkort zit aan te komen, zal dit nogmaals verdubbelen.</simpara>
 <simpara>Het gevolg is dat deze geheugens nog sneller data naar buiten kunnen brengen (hogere maximale transfer), maar dat dit weer een hogere latentietijd met zich meebrengt. Hou wel in gedachten dat slechts een klein stukje van het geheugen aan deze hoge snelheid werkt. Intern wordt nog steeds een relatief lage snelheid gebruikt om de cellen te beschrijven, maar door de buffers kan data toch aan een dubbele (DDR), viervoudige (DDR2) of achtvoudige (DDR3) snelheid naar buiten gebacht worden.</simpara>
-<table frame="all"
-    rowsep="1" colsep="1">
+<table frame="all" rowsep="1" colsep="1">
 <title>DDR3 snelheden (bron: wikipedia)</title>
-  
-  <tgroup cols="4">
-    
-    <colspec colname="col_1" colwidth="25*"/>
-    
-    <colspec colname="col_2" colwidth="25*"/>
-    
-    <colspec colname="col_3" colwidth="25*"/>
-    
-    <colspec colname="col_4" colwidth="25*"/>
-    
-    
-    <thead>
-      
-      <row>
-        
-        <entry align="left" valign="top">Type geheugen</entry>
-        
-        <entry align="left" valign="top">Alternatieve naam</entry>
-        
-        <entry align="left" valign="top">kloksnelheid</entry>
-        
-        <entry align="left" valign="top">Theoretische bandbreedte</entry>
-        
-      </row>
-      
-    </thead>
-    
-    <tbody>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>PC3-10600 					DDR3 SDRAM</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>DDR3-1333</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>167 MHz</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>10.667 GB/s</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>PC3-11000 					DDR3 SDRAM</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>DDR3-1375</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>172 MHz</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>11 GB/s</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>PC3-12800 					DDR3 SDRAM</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>DDR3-1600</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>200 MHz</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>12.8 GB/s</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>PC3-13000 					DDR3 SDRAM</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>DDR3-1625</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>203 MHz</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>13 GB/s</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>PC3-14400 					DDR3 SDRAM</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>DDR3-1800</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>225 MHz</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>14.4 GB/s</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>PC3-14900 					DDR3 SDRAM</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>DDR3-1866</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>233 MHz</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>14.933 GB/s</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>PC3-15000 					DDR3 SDRAM</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>DDR3-1866</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>233 MHz</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>14.933 GB/s</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>PC3-16000 					DDR3 SDRAM</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>DDR3-2000</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>250 MHz</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>16 GB/s</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>PC3-17000 					DDR3 SDRAM</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>DDR3-2133</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>266 MHz</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>17.066 GB/s</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>PC3-17600 					DDR3 SDRAM</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>DDR3-2200</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>275 MHz</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>17.6 GB/s</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>PC3-19200 					DDR3 SDRAM</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>DDR3-2400</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>300 MHz</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>19.2 GB/s</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>PC3-21300 					DDR3 SDRAM</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>DDR3-2666</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>333 MHz</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>21.3 GB/s</simpara></entry>
-        
-      </row>
-      
-      <row>
-        
-        <entry align="left" valign="top"><simpara>PC3-24000 					DDR3 SDRAM</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>DDR3-3000</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>375 MHz</simpara></entry>
-        
-        <entry align="left" valign="top"><simpara>24 GB/s</simpara></entry>
-        
-      </row>
-      
-    </tbody>
-    
-  </tgroup>
+<tgroup cols="4">
+<colspec colname="col_1" colwidth="25*"/>
+<colspec colname="col_2" colwidth="25*"/>
+<colspec colname="col_3" colwidth="25*"/>
+<colspec colname="col_4" colwidth="25*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Type geheugen</entry>
+<entry align="left" valign="top">Alternatieve naam</entry>
+<entry align="left" valign="top">kloksnelheid</entry>
+<entry align="left" valign="top">Theoretische bandbreedte</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara>PC3-10600 					DDR3 SDRAM</simpara></entry>
+<entry align="left" valign="top"><simpara>DDR3-1333</simpara></entry>
+<entry align="left" valign="top"><simpara>167 MHz</simpara></entry>
+<entry align="left" valign="top"><simpara>10.667 GB/s</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>PC3-11000 					DDR3 SDRAM</simpara></entry>
+<entry align="left" valign="top"><simpara>DDR3-1375</simpara></entry>
+<entry align="left" valign="top"><simpara>172 MHz</simpara></entry>
+<entry align="left" valign="top"><simpara>11 GB/s</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>PC3-12800 					DDR3 SDRAM</simpara></entry>
+<entry align="left" valign="top"><simpara>DDR3-1600</simpara></entry>
+<entry align="left" valign="top"><simpara>200 MHz</simpara></entry>
+<entry align="left" valign="top"><simpara>12.8 GB/s</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>PC3-13000 					DDR3 SDRAM</simpara></entry>
+<entry align="left" valign="top"><simpara>DDR3-1625</simpara></entry>
+<entry align="left" valign="top"><simpara>203 MHz</simpara></entry>
+<entry align="left" valign="top"><simpara>13 GB/s</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>PC3-14400 					DDR3 SDRAM</simpara></entry>
+<entry align="left" valign="top"><simpara>DDR3-1800</simpara></entry>
+<entry align="left" valign="top"><simpara>225 MHz</simpara></entry>
+<entry align="left" valign="top"><simpara>14.4 GB/s</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>PC3-14900 					DDR3 SDRAM</simpara></entry>
+<entry align="left" valign="top"><simpara>DDR3-1866</simpara></entry>
+<entry align="left" valign="top"><simpara>233 MHz</simpara></entry>
+<entry align="left" valign="top"><simpara>14.933 GB/s</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>PC3-15000 					DDR3 SDRAM</simpara></entry>
+<entry align="left" valign="top"><simpara>DDR3-1866</simpara></entry>
+<entry align="left" valign="top"><simpara>233 MHz</simpara></entry>
+<entry align="left" valign="top"><simpara>14.933 GB/s</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>PC3-16000 					DDR3 SDRAM</simpara></entry>
+<entry align="left" valign="top"><simpara>DDR3-2000</simpara></entry>
+<entry align="left" valign="top"><simpara>250 MHz</simpara></entry>
+<entry align="left" valign="top"><simpara>16 GB/s</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>PC3-17000 					DDR3 SDRAM</simpara></entry>
+<entry align="left" valign="top"><simpara>DDR3-2133</simpara></entry>
+<entry align="left" valign="top"><simpara>266 MHz</simpara></entry>
+<entry align="left" valign="top"><simpara>17.066 GB/s</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>PC3-17600 					DDR3 SDRAM</simpara></entry>
+<entry align="left" valign="top"><simpara>DDR3-2200</simpara></entry>
+<entry align="left" valign="top"><simpara>275 MHz</simpara></entry>
+<entry align="left" valign="top"><simpara>17.6 GB/s</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>PC3-19200 					DDR3 SDRAM</simpara></entry>
+<entry align="left" valign="top"><simpara>DDR3-2400</simpara></entry>
+<entry align="left" valign="top"><simpara>300 MHz</simpara></entry>
+<entry align="left" valign="top"><simpara>19.2 GB/s</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>PC3-21300 					DDR3 SDRAM</simpara></entry>
+<entry align="left" valign="top"><simpara>DDR3-2666</simpara></entry>
+<entry align="left" valign="top"><simpara>333 MHz</simpara></entry>
+<entry align="left" valign="top"><simpara>21.3 GB/s</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>PC3-24000 					DDR3 SDRAM</simpara></entry>
+<entry align="left" valign="top"><simpara>DDR3-3000</simpara></entry>
+<entry align="left" valign="top"><simpara>375 MHz</simpara></entry>
+<entry align="left" valign="top"><simpara>24 GB/s</simpara></entry>
+</row>
+</tbody>
+</tgroup>
 </table>
-
 <simpara>Een belangrijke opmerking, die reeds gedeeltelijk aangehaald werd, is dat DDR, DDR2 en DDR3 gebruik maken van een andere werkspanning. Deze wordt alsmaar lager om het gedissipeerd vermogen en de bijhorende warmteontwikkeling te verkleinen, wat nodig is om hogere kloksnelheden toe te laten.
-Bovendien hebben de modules ook een verschillend aantal aansluitpinnen, waardoor het duidelijk zal zijn dat ze niet compatibel zijn.
-Om ongelukken te vermijden wordt daarom een andere behuizing gebruikt (inkeping in de module zit op een andere plaats).</simpara>
+Bovendien hebben de modules ook een verschillend aantal aansluitpinnen, waardoor het duidelijk zal zijn dat ze niet compatibel zijn.</simpara>
+<simpara>Om ongelukken te vermijden wordt daarom een andere behuizing gebruikt (inkeping in de module zit op een andere plaats).</simpara>
 </section>
 </section>
 <section xml:id="_optimalisatietechnieken">
@@ -1418,102 +1089,133 @@ Om ongelukken te vermijden wordt daarom een andere behuizing gebruikt (inkeping 
 <simpara>De evolutie in DRAM technologie is er steeds op gericht om de maximale bandbreedte te verbeteren, terwijl bijzonder weinig aan de latentietijd werd gedaan. Deze verbeterde hooguit in absolute waarde, doordat de kloksnelheid verhoogde. Relatief gezien (dus uitgedrukt in klokcycli) is de latentietijd eerder gestegen. Uit het voorgaande zou al gebleken moeten zijn dat na elke rijtoegang een hersteltijd nodig is om de bufferrij(en) vrij te maken.</simpara>
 <figure>
 <title>normale geheugentoegang</title>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="ch03/images/optimalisatie/MEMACCESS_normal.png" width="50%" scalefit="1" align="center"/>
-    </imageobject>
-    <textobject><phrase></phrase></textobject>
-  </mediaobject>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch03/images/optimalisatie/MEMACCESS_normal.png" width="50%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase></phrase></textobject>
+</mediaobject>
 </figure>
-
 <section xml:id="_interleaving">
 <title>Interleaving</title>
 <simpara>Een techniek die gebruikt kan worden om een deel van de dode tijd te vermijden, is interleaving. Meer bepaald gaat het dan om het vermijden van de tijd tussen twee rijen.
 Deze hersteltijd kan vermeden worden indien de volgende operatie doorgaat op een andere geheugenmodule. Om dit te bereiken worden bij interleaving naburige geheugenblokken verdeeld over verschillende geheugenbanken, die onafhankelijk van elkaar (en dus zonder hersteltijd) aangesproken kunnen worden. Belangrijke opmerking hierbij is dat er enkel snelheidswinst kan zijn als er gewisseld kan worden tussen banken. Het is dan ook belangrijk dat de memory controller weet of er al dan niet gewisseld kan worden tussen banken, zodat hij al dan niet rekening kan houden met de hersteltijd.</simpara>
 <figure>
 <title>Memory interleaving</title>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="ch03/images/optimalisatie/MEMACCESS_interleaving.png" width="50%" scalefit="1" align="center"/>
-    </imageobject>
-    <textobject><phrase>interleaving</phrase></textobject>
-  </mediaobject>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch03/images/optimalisatie/MEMACCESS_interleaving.png" width="50%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>interleaving</phrase></textobject>
+</mediaobject>
 </figure>
-
 </section>
 <section xml:id="_dual_channel">
 <title>Dual channel</title>
-<simpara>Een andere heel eenvoudige techniek om de snelheid te verhogen is het vergroten van de databus. Dit brengt wel een paar problemen met zich mee. Eerst en vooral moeten er extra aansluitingen voorzien worden op zowel de geheugenmodule als het moederbord en bovendien moeten de signaallijnen ook voorzien worden op het moederbord. Daarnaast zal er, zeker bij steeds toenemende kloksnelheden, een probleem ontstaan van tijdverschillen tussen de verschillende datalijnen.
-Dual channel is een techniek die probeert de datasnelheid te verhogen door de databus naar de memory controller te verdubbelen, zonder de databus van de geheugenmodules te vergroten. Dit gebeurt weer door gebruik te maken van verschillende geheugenbanken. Elke geheugenbank heeft een databus van 64 bit, maar aangezien deze niet samenvallen is er een 128 bit databus naar de memory controller. De DIMM sockets op een moederbord zijn dus fysiek verbonden met één van de twee 64 bit kanalen. Uiteraard kan je enkel voordeel halen als geheugenmodules aangesloten zijn op de twee kanalen.</simpara>
+<simpara>Een andere heel eenvoudige techniek om de snelheid te verhogen is het vergroten van de databus. Dit brengt wel een paar problemen met zich mee. Eerst en vooral moeten er extra aansluitingen voorzien worden op zowel de geheugenmodule als het moederbord en bovendien moeten de signaallijnen ook voorzien worden op het moederbord. Daarnaast zal er, zeker bij steeds toenemende kloksnelheden, een probleem ontstaan van tijdverschillen tussen de verschillende datalijnen.</simpara>
+<simpara>Dual channel is een techniek die probeert de datasnelheid te verhogen door de databus naar de memory controller te verdubbelen, zonder de databus van de geheugenmodules te vergroten. Dit gebeurt weer door gebruik te maken van verschillende geheugenbanken. Elke geheugenbank heeft een databus van 64 bit, maar aangezien deze niet samenvallen is er een 128 bit databus naar de memory controller. De DIMM sockets op een moederbord zijn dus fysiek verbonden met één van de twee 64 bit kanalen. Uiteraard kan je enkel voordeel halen als geheugenmodules aangesloten zijn op de twee kanalen.</simpara>
 <figure>
 <title>geheugentoegang met Dual Channel</title>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="ch03/images/optimalisatie/MEMACCESS_dualchannel.png" align="center"/>
-    </imageobject>
-    <textobject><phrase>dual channel</phrase></textobject>
-  </mediaobject>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch03/images/optimalisatie/MEMACCESS_dualchannel.png" align="center"/>
+</imageobject>
+<textobject><phrase>dual channel</phrase></textobject>
+</mediaobject>
 </figure>
-
 <simpara>Behalve het aanschakelen van meerdere modules is het dan ook belangrijk om ze in de juiste sockets te steken, zodat je beide kanalen gebruikt (en niet twee modules op hetzelfde kanaal). Moederborden met meerdere sockets op de kanalen, hebben overeenkomstige plaatsen op die kanalen die eenzelfde kleur hebben. Op deze manier zijn er dus matched sockets. Op deze matched sockets moet dus geheugen geïnstalleerd worden.</simpara>
 <figure>
 <title>dual channel sockets</title>
-  <mediaobject>
-    <imageobject>
-      <imagedata fileref="ch03/images/Dual-channel_DDR_memory_use_6026.jpg" width="50%" scalefit="1" align="center"/>
-    </imageobject>
-    <textobject><phrase>dual channel memory placement</phrase></textobject>
-  </mediaobject>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch03/images/Dual-channel_DDR_memory_use_6026.jpg" width="50%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>dual channel memory placement</phrase></textobject>
+</mediaobject>
 </figure>
-
-<simpara>Dit geheugen moet identiek zijn in capaciteit, anders zou een deel van het geheugen niet bereikbaar zijn in dual channel mode. Verder moeten de modules in principe niet gelijk zijn. Zelfs modules met verschillende snelheden zijn mogelijk, al zal dan tegen de traagste snelheid gewerkt worden. In principe betekent echter dat er in de praktijk wel problemen kunnen ontstaan, zodat moederbord fabrikanten het gebruik van identieke modules aanraden. Deze worden door verschillende geheugenfabrikanten ook aangeboden.
-Hoewel dual channel een veelbelovende techniek is, blijkt uit benchmarks dat de winst (ondertussen) toch marginaal is. Een deel van de verklaring hiervoor zou liggen in het cache geheugen, dat steeds groter en efficiënter wordt. Later zullen we zien dat de cache geheugens het snelheidsverschil tussen geheugen en processor moeten opvangen. Je kan trouwens zelf aan de berekeningen bij DDR al zien dat dual channel weinig invloed heeft, tenzij echt grote opeenvolgende stukken gelezen worden. Vergelijk de tijd die nodig is voor een burst van 4 transfers met die voor een burst van 8 transfers. Op een dual channel systeem zullen de bursts immers maar half zo groot zijn als bij single channel.</simpara>
+<simpara>Dit geheugen moet identiek zijn in capaciteit, anders zou een deel van het geheugen niet bereikbaar zijn in dual channel mode. Verder moeten de modules in principe niet gelijk zijn. Zelfs modules met verschillende snelheden zijn mogelijk, al zal dan tegen de traagste snelheid gewerkt worden. In principe betekent echter dat er in de praktijk wel problemen kunnen ontstaan, zodat moederbord fabrikanten het gebruik van identieke modules aanraden. Deze worden door verschillende geheugenfabrikanten ook aangeboden.</simpara>
+<simpara>Hoewel dual channel een veelbelovende techniek is, blijkt uit benchmarks dat de winst (ondertussen) toch marginaal is. Een deel van de verklaring hiervoor zou liggen in het cache geheugen, dat steeds groter en efficiënter wordt. Later zullen we zien dat de cache geheugens het snelheidsverschil tussen geheugen en processor moeten opvangen. Je kan trouwens zelf aan de berekeningen bij DDR al zien dat dual channel weinig invloed heeft, tenzij echt grote opeenvolgende stukken gelezen worden. Vergelijk de tijd die nodig is voor een burst van 4 transfers met die voor een burst van 8 transfers. Op een dual channel systeem zullen de bursts immers maar half zo groot zijn als bij single channel.</simpara>
 </section>
 <section xml:id="_buffered_registered_ram_en_foutdetectie">
 <title>Buffered/registered RAM en foutdetectie</title>
-<simpara>Een term die regelmatig terug te vinden is bij RAM geheugen is (un)buffered of registered. De termen buffered en registered hebben dezelfde betekenis. Op basis van de eerdere uitleg zou je kunnen vermoeden dat elk DRAM geheugen gebufferd is met de statische bufferrij. De term buffered slaat in dit geval niet op die statische rij, maar wel op de aanwezigheid van een extra bufferchip. Deze bufferchip doet dienst als elektrisch buffer/versterker tussen de geheugenIC’s en de rest van het systeem. Op die manier kan het bijvoorbeeld problemen met onvoldoende stroom helpen oplossen. De bufferchip is dikwijls te herkennen aan zijn dwarse plaatsing op de module.
-Twee andere termen die je kan terugvinden zijn (non)ECC en parity. Beiden houden verband met het vermogen van het geheugen om fouten te laten detecteren. In het geval van pariteit wordt per byte een pariteitsbit berekend. Dit bit wordt mee verzonden. De ontvanger herberekent de pariteitsbit en vergelijkt het resultaat van zijn berekening met het ontvangen pariteitsbit. Indien ze verschillen is er een fout geweest en moet de transfer opnieuw gebeuren.
-ECC werkt op gelijkaardige manier, maar maakt gebruik van een hash functie. Voordeel van deze manier van werken is dat meervoudige bitfouten gedetecteerd kunnen worden of dat enkelvoudige bitfouten gecorrigeerd kunnen worden. Pariteit kan enkel enkelvoudige bitfouten detecteren. Uiteraard kost deze foutcontrole ook rekenkracht en dus tijd. Door de betrouwbaarheid van moderne geheugens hebben deze technieken enkel zin in kritische toepassingen (bijvoorbeeld servers, procescontrole, &#8230;)</simpara>
+<simpara>Een term die regelmatig terug te vinden is bij RAM geheugen is (un)buffered of registered. De termen buffered en registered hebben dezelfde betekenis. Op basis van de eerdere uitleg zou je kunnen vermoeden dat elk DRAM geheugen gebufferd is met de statische bufferrij. De term buffered slaat in dit geval niet op die statische rij, maar wel op de aanwezigheid van een extra bufferchip. Deze bufferchip doet dienst als elektrisch buffer/versterker tussen de geheugenIC’s en de rest van het systeem. Op die manier kan het bijvoorbeeld problemen met onvoldoende stroom helpen oplossen. De bufferchip is dikwijls te herkennen aan zijn dwarse plaatsing op de module.</simpara>
+<simpara>Twee andere termen die je kan terugvinden zijn (non)ECC en parity. Beiden houden verband met het vermogen van het geheugen om fouten te laten detecteren. In het geval van pariteit wordt per byte een pariteitsbit berekend. Dit bit wordt mee verzonden. De ontvanger herberekent de pariteitsbit en vergelijkt het resultaat van zijn berekening met het ontvangen pariteitsbit. Indien ze verschillen is er een fout geweest en moet de transfer opnieuw gebeuren.</simpara>
+<simpara>ECC werkt op gelijkaardige manier, maar maakt gebruik van een hash functie. Voordeel van deze manier van werken is dat meervoudige bitfouten gedetecteerd kunnen worden of dat enkelvoudige bitfouten gecorrigeerd kunnen worden. Pariteit kan enkel enkelvoudige bitfouten detecteren. Uiteraard kost deze foutcontrole ook rekenkracht en dus tijd. Door de betrouwbaarheid van moderne geheugens hebben deze technieken enkel zin in kritische toepassingen (bijvoorbeeld servers, procescontrole, &#8230;)</simpara>
 </section>
 </section>
 <section xml:id="_cache_geheugen">
 <title>Cache geheugen</title>
 <simpara>Zelfs met alle optimalisatietechnieken blijft er een snelheidsprobleem. Instructies die de processor moet uitvoeren, zitten in het geheugen en als de snelheid waarmee het geheugen instructie kan leveren, vergeleken wordt met de snelheid waarmee de processor ze kan uitvoeren, blijkt die laatste een stuk sneller.
-Een belangrijk verschil, want een processor kan nu eenmaal niet sneller instructies afwerken dan dat ze door het geheugen aangeboden kunnen worden. Sneller geheugen maken, ligt voor de hand. Zoals eerder al aangehaald is statisch geheugen sneller dan dynamisch geheugen.
-Belangrijk nadeel van statisch geheugen is dat het per byte veel duurder is dan dynamisch geheugen. De hoeveelheid statisch geheugen in een computersysteem zal dus eerder klein zijn en het komt erop aan deze kleine hoeveelheid zo efficiënt mogelijk te gebruiken. Een tweede probleem is dat niet enkel de snelheid van het geheugen problemen geeft, maar ook de snelheid van de interface naar het geheugen. Om dit probleem aan te pakken was er ooit een snelle back-side bus die de verbinding met het cache geheugen verzorgde. Ondertussen zijn er al verschillende niveaus van cachegeheugens in de processor geïntegreerd, zodat de verbinding met dit geheugen ook in de processor zelf zit en daardoor veel sneller kan zijn.</simpara>
+Een belangrijk verschil, want een processor kan nu eenmaal niet sneller instructies afwerken dan dat ze door het geheugen aangeboden kunnen worden. Sneller geheugen maken, ligt voor de hand. Zoals eerder al aangehaald is statisch geheugen sneller dan dynamisch geheugen.</simpara>
+<simpara>Belangrijk nadeel van statisch geheugen is dat het per byte veel duurder is dan dynamisch geheugen. De hoeveelheid statisch geheugen in een computersysteem zal dus eerder klein zijn en het komt erop aan deze kleine hoeveelheid zo efficiënt mogelijk te gebruiken. Een tweede probleem is dat niet enkel de snelheid van het geheugen problemen geeft, maar ook de snelheid van de interface naar het geheugen. Om dit probleem aan te pakken was er ooit een snelle back-side bus die de verbinding met het cache geheugen verzorgde. Ondertussen zijn er al verschillende niveaus van cachegeheugens in de processor geïntegreerd, zodat de verbinding met dit geheugen ook in de processor zelf zit en daardoor veel sneller kan zijn.</simpara>
 <section xml:id="_werking">
 <title>Werking</title>
-<formalpara>
+<figure>
 <title>cache als buffer tussen CPU en geheugen</title>
-<para>Het cache geheugen vormt een buffer dat het snelheidsverschil tussen processor en CPU moet opvangen. Aangezien het cache geheugen een stuk kleiner zal zijn dan het dynamisch geheugen, komt het erop aan om de nodige gegevens klaar te hebben zitten in het cache geheugen.
-Om dit te realiseren wordt weer uitgegaan van het lokaliteitsprincipe. Zowel het cache geheugen als het hoofdgeheugen worden onderverdeeld in blokken van dezelfde grootte. De blokken in het cache geheugen (cache lines) kunnen een kopie bevatten van een blok uit het hoofdgeheugen.</para>
-</formalpara>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch03/images/.jpg" width="50%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase></phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>Het cache geheugen vormt een buffer dat het snelheidsverschil tussen processor en CPU moet opvangen. Aangezien het cache geheugen een stuk kleiner zal zijn dan het dynamisch geheugen, komt het erop aan om de nodige gegevens klaar te hebben zitten in het cache geheugen.</simpara>
+<simpara>Om dit te realiseren wordt weer uitgegaan van het lokaliteitsprincipe. Zowel het cache geheugen als het hoofdgeheugen worden onderverdeeld in blokken van dezelfde grootte. De blokken in het cache geheugen (cache lines) kunnen een kopie bevatten van een blok uit het hoofdgeheugen.</simpara>
 <simpara>Een leescyclus verloopt als volgt:
 * de processor vraagt een adres
 * Indien dat adres in een blok ligt dat in de cache te vinden is, wordt er gesproken van een cache-hit en heeft er een snelle leescyclus plaats vanuit de cache.
 * In het andere geval (een cache-miss) wordt via een trage leescyclus het gevraagde woord opgehaald uit het centrale geheugen terwijl ook onmiddellijk het blok waarin dit woord zich bevindt naar de cache gekopieerd wordt.</simpara>
 <simpara>Aangezien opeenvolgende geheugentoegangen meestal op naburige adressen doorgaan, is de kans groot dat een volgende toegang een cache-hit geeft en dus snel verwerkt kan worden.
-Een belangrijke parameter voor de snelheid van het cache geheugen is dus de hitrate. Dit is het percentage geheugentoegangen dat rechtstreeks via het snelle cache geheugen kan verlopen. De hitrate ligt typisch tussen 80 en 99%.
-Een schrijfcyclus kan gelijkaardig verlopen, maar er stelt zich wel een nieuw probleem.
+Een belangrijke parameter voor de snelheid van het cache geheugen is dus de hitrate. Dit is het percentage geheugentoegangen dat rechtstreeks via het snelle cache geheugen kan verlopen. De hitrate ligt typisch tussen 80 en 99%.</simpara>
+<simpara>Een schrijfcyclus kan gelijkaardig verlopen, maar er stelt zich wel een nieuw probleem.
 In het geval van een schrijfcyclus worden er immers gegevens aangepast. Indien er een cache-hit is, lijkt het logisch om de inhoud van het cache geheugen aan te passen en pas later (bij het verwijderen van de cacheline) wordt de inhoud van het hoofdgeheugen aangepast. Deze manier van werken heet write-back cache.
-Belangrijk nadeel hiervan is dat op een bepaald ogenblik de inhoud van het hoofdgeheugen niet consistent is met het cache geheugen. Dit kan bijvoorbeeld bij DMA-toegangen problemen opleveren. Tweede nadeel is dat het wegschrijven naar het geheugen gebeurt op het ogenblik dat de pagina uit het cache geheugen verwijderd wordt. Dit is het ogenblik waarop in het cache geheugen plaats gemaakt wordt voor een nieuwe pagina. Dit vertraagt dus het inladen van de nieuwe pagina.
-Een alternatief is gebruik maken van write through cache. In dit geval worden steeds zowel het hoofdgeheugen als het cache geheugen aangepast. Nadeel is duidelijk dat steeds gebruik gemaakt wordt van het tragere hoofdgeheugen.
-Dit kan gedeeltelijk opgevangen worden doordat de processor niet moet wachten tot de volledige cyclus is afgewerkt, maar bij opeenvolgende schrijfopdrachten zal het toch leiden tot vertragingen. Bij schrijfcycli zijn er nog verschillen mogelijk: write allocate en write no-allocate. Bij write allocate zal bij een cache miss het geheugenblok in het cache geheugen geladen worden, bij write no-allocate niet.
+Belangrijk nadeel hiervan is dat op een bepaald ogenblik de inhoud van het hoofdgeheugen niet consistent is met het cache geheugen. Dit kan bijvoorbeeld bij DMA-toegangen problemen opleveren. Tweede nadeel is dat het wegschrijven naar het geheugen gebeurt op het ogenblik dat de pagina uit het cache geheugen verwijderd wordt. Dit is het ogenblik waarop in het cache geheugen plaats gemaakt wordt voor een nieuwe pagina. Dit vertraagt dus het inladen van de nieuwe pagina.</simpara>
+<simpara>Een alternatief is gebruik maken van write through cache. In dit geval worden steeds zowel het hoofdgeheugen als het cache geheugen aangepast. Nadeel is duidelijk dat steeds gebruik gemaakt wordt van het tragere hoofdgeheugen.</simpara>
+<simpara>Dit kan gedeeltelijk opgevangen worden doordat de processor niet moet wachten tot de volledige cyclus is afgewerkt, maar bij opeenvolgende schrijfopdrachten zal het toch leiden tot vertragingen. Bij schrijfcycli zijn er nog verschillen mogelijk: write allocate en write no-allocate. Bij write allocate zal bij een cache miss het geheugenblok in het cache geheugen geladen worden, bij write no-allocate niet.
 Het voordeel is dat een schrijfoperatie naar het geheugen typisch sneller is dan het ophalen van een volledig blok. Bijvoorbeeld bij write-through geheugen is makkelijk in te zien dat het interessant kan zijn om het blok niet volledig in te laden.</simpara>
-<simpara>====Soorten caches</simpara>
+</section>
+<section xml:id="_soorten_caches">
+<title>Soorten caches</title>
 <simpara>Er zijn een aantal onderscheiden te maken tussen cache geheugens. Een eerste belangrijk verschil is dat tussen level 1 en level 2 caches. In principe zijn zelfs nog meer niveau’s van cache geheugens mogelijk.
-L1 cache is het cache geheugen dat het dichtst bij de processor staat. Het moet dan ook het snelste geheugen zijn, zodat het de processor kan volgen. Naarmate de snelheid van de processor toeneemt, werd het verschil in snelheid zo groot dat het interessant werd om een tweede niveau buffer in te zetten. Dit geheugen is minder kritisch op het vlak van snelheid (het moet de processor niet rechtstreeks voorzien van gegevens) en kan dus op andere vlakken geoptimaliseerd worden. Zo zal L2 cache typisch minder snel, maar wel een stuk groter zijn.
-Een ander verschil tussen cache geheugens is dat L1 cache dikwijls opgedeeld worden in data cache en instructie cache. Hiervoor zijn verschillende redenen te bedenken. Een belangrijke reden is dat met pipelining, een deel van de processor (instruction fetch unit) instructies ophaalt en tegelijkertijd een ander deel (operand fetch) gegevens ophaalt om de bewerkingen uit te voeren.
-Als beide geheugens gescheiden zijn, kunnen de twee units onafhankelijk van elkaar hun operaties uitvoeren. Anderzijds kunnen de cache geheugens ook geoptimaliseerd worden. Zo zal een processor nooit wijzigingen aanbrengen in de instructies die hij uitvoert. Voor de instructiecache moeten geen voorzieningen getroffen worden voor schrijfoperaties.</simpara>
+L1 cache is het cache geheugen dat het dichtst bij de processor staat. Het moet dan ook het snelste geheugen zijn, zodat het de processor kan volgen. Naarmate de snelheid van de processor toeneemt, werd het verschil in snelheid zo groot dat het interessant werd om een tweede niveau buffer in te zetten. Dit geheugen is minder kritisch op het vlak van snelheid (het moet de processor niet rechtstreeks voorzien van gegevens) en kan dus op andere vlakken geoptimaliseerd worden. Zo zal L2 cache typisch minder snel, maar wel een stuk groter zijn.</simpara>
+<simpara>Een ander verschil tussen cache geheugens is dat L1 cache dikwijls opgedeeld worden in data cache en instructie cache. Hiervoor zijn verschillende redenen te bedenken. Een belangrijke reden is dat met pipelining, een deel van de processor (instruction fetch unit) instructies ophaalt en tegelijkertijd een ander deel (operand fetch) gegevens ophaalt om de bewerkingen uit te voeren.</simpara>
+<simpara>Als beide geheugens gescheiden zijn, kunnen de twee units onafhankelijk van elkaar hun operaties uitvoeren. Anderzijds kunnen de cache geheugens ook geoptimaliseerd worden. Zo zal een processor nooit wijzigingen aanbrengen in de instructies die hij uitvoert. Voor de instructiecache moeten geen voorzieningen getroffen worden voor schrijfoperaties.</simpara>
 </section>
 <section xml:id="_overschrijfstrategie_n">
 <title>Overschrijfstrategieën</title>
-<simpara>Bij een cache miss zal in de meeste gevallen een volledig geheugenblok ingeladen worden. Dit betekent dat in het cache geheugen plaats zal moeten gemaakt worden. Er zal met andere woorden een lijn geselecteerd moet worden, die uit het cache geheugen verwijderd zal worden. Het selecteren van die lijn moet uiteraard doordacht gebeuren om de hit rate zo hoog mogelijk te houden. In principe is het best om de cacheline te verwijderen die het langst niet zal gebruikt worden. Het probleem met deze keuze is dat er kennis over de toekomst voor nodig is. In plaats daarvan zijn er een aantal strategieën die op een andere manier proberen de meest geschikte lijn te selecteren</simpara>
-<simpara>First In First Out (FIFO) selecteert de lijn die al het langst in het cachegeheugen zit. Het is een erg eenvoudig te implementeren techniek, aangezien de lijnen eigenlijk gewoon cyclisch overschreven worden. Deze techniek is daarentegen weinig efficiënt op het vlak van het optimaliseren van de hitrate. Een lang geleden, maar veel gebruikte lijn zal bijvoorbeeld eerder verwijderd worden dan een lijn, waar maar een keer data uit gelezen wordt, maar die wel later is ingeladen.</simpara>
-<simpara>Least Recently Used (LRU) selecteert de lijn die al het langst niet meer gebruikt wordt. De kans dat deze lijn dan plots weer gebruikt zal worden, is een stuk kleiner dan bij FIFO. Hierdoor zal deze techiek leiden tot een hogere hitrate. Nadeel is dan weer dat er een pak meer bij komt kijken om bij te houden welke lijn geselecteerd wordt. Deze berekening kost zowel geld (om te implementeren) als tijd (om de lijn te selecteren). In het bijzonder als uit een groot aantal lijnen gekozen moet worden, is het gebruik van deze techniek niet aangewezen.
-Least Frequently Used (LFU) zal de lijn selecteren die het minst frequent gebruikt wordt. De techniek haalt gelijkaardige resultaten als LRU, maar heeft ook dezelfde nadelen.</simpara>
-<simpara>Adaptive Replacement Cache (ARC) combineert zowel LRU als LFU. Hierdoor worden nog betere resultaten gehaald op het vlak van hitrate, maar de bewerkingen en de implementatie ervan worden anderzijds ook complexer.</simpara>
-<simpara>Random selecteert willekeurig een lijn. Dit is een eenvoudige te implementeren techniek, die toch aanvaarbare resultaten haalt, in het bijzonder als er een groot aantal lijnen zijn waaruit geselecteerd moet worden. Deze techniek wordt soms gecombineerd met LRU, door een bit te koppelen aan een lijn. Dit bit geeft aan of de lijn al gebruikt is. Als alle lijnen gebruikt zijn, worden alle bits weer gereset. Als dan een lijn gekozen moet worden, zal random geselecteerd worden uit alle lijnen die gemarkeerd zijn als “niet gebruikt”.</simpara>
+<simpara>Bij een cache miss zal in de meeste gevallen een volledig geheugenblok ingeladen worden. Dit betekent dat in het cache geheugen plaats zal moeten gemaakt worden. Er zal met andere woorden een lijn geselecteerd moet worden, die uit het cache geheugen verwijderd zal worden. Het selecteren van die lijn moet uiteraard doordacht gebeuren om de hit rate zo hoog mogelijk te houden. In principe is het best om de cacheline te verwijderen die het langst niet zal gebruikt worden. Het probleem met deze keuze is dat er kennis over de toekomst voor nodig is. In plaats daarvan zijn er een aantal strategieën die op een andere manier proberen de meest geschikte lijn te selecteren:</simpara>
+<variablelist>
+<varlistentry>
+<term>First In First Out (FIFO)</term>
+<listitem>
+<simpara>selecteert de lijn die al het langst in het cachegeheugen zit. Het is een erg eenvoudig te implementeren techniek, aangezien de lijnen eigenlijk gewoon cyclisch overschreven worden. Deze techniek is daarentegen weinig efficiënt op het vlak van het optimaliseren van de hitrate. Een lang geleden, maar veel gebruikte lijn zal bijvoorbeeld eerder verwijderd worden dan een lijn, waar maar een keer data uit gelezen wordt, maar die wel later is ingeladen.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Least Recently Used (LRU)</term>
+<listitem>
+<simpara>selecteert de lijn die al het langst niet meer gebruikt wordt. De kans dat deze lijn dan plots weer gebruikt zal worden, is een stuk kleiner dan bij FIFO. Hierdoor zal deze techiek leiden tot een hogere hitrate. Nadeel is dan weer dat er een pak meer bij komt kijken om bij te houden welke lijn geselecteerd wordt. Deze berekening kost zowel geld (om te implementeren) als tijd (om de lijn te selecteren). In het bijzonder als uit een groot aantal lijnen gekozen moet worden, is het gebruik van deze techniek niet aangewezen.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Least Frequently Used (LFU)</term>
+<listitem>
+<simpara>deze techniek zal de lijn selecteren die het minst frequent gebruikt wordt. De techniek haalt gelijkaardige resultaten als LRU, maar heeft ook dezelfde nadelen.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Adaptive Replacement Cache (ARC)</term>
+<listitem>
+<simpara>combineert zowel LRU als LFU. Hierdoor worden nog betere resultaten gehaald op het vlak van hitrate, maar de bewerkingen en de implementatie ervan worden anderzijds ook complexer.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Random</term>
+<listitem>
+<simpara>selecteert willekeurig een lijn. Dit is een eenvoudige te implementeren techniek, die toch aanvaarbare resultaten haalt, in het bijzonder als er een groot aantal lijnen zijn waaruit geselecteerd moet worden. Deze techniek wordt soms gecombineerd met LRU, door een bit te koppelen aan een lijn. Dit bit geeft aan of de lijn al gebruikt is. Als alle lijnen gebruikt zijn, worden alle bits weer gereset. Als dan een lijn gekozen moet worden, zal random geselecteerd worden uit alle lijnen die gemarkeerd zijn als “niet gebruikt”.</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
 </section>
 </section>
 <section xml:id="_associativiteit">
@@ -1521,49 +1223,85 @@ Least Frequently Used (LFU) zal de lijn selecteren die het minst frequent gebrui
 <simpara>De associativiteit van het cache geheugen bepaalt op welke cachelines een welbepaald geheugenblok terecht kan komen. De associativiteit bepaalt dus ook het aantal lijnen waaruit geselecteerd kan worden en bepaald dus zowel rechtstreeks (beperking van lijnen) als onrechtstreeks (welke overschrijfstrategie) mee de hitrate.</simpara>
 <section xml:id="_fully_associative_cache">
 <title>Fully Associative cache</title>
-<formalpara>
+<figure>
 <title>principe fully associative cache</title>
-<para>Bij fully associative cache kan een blok uit het geheugen terecht komen in gelijk welke cacheline. Om te kunnen bepalen welk geheugenblok in een bepaalde cacheline zit, wordt een elke cacheline een tag gekoppeld. Deze is nodig om te kunnen bepalen of het blok aanwezig is in het cache en eventueel de juiste cacheline te kunnen selecteren.</para>
-</formalpara>
-<formalpara>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch03/images/.jpg" width="50%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase></phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>Bij fully associative cache kan een blok uit het geheugen terecht komen in gelijk welke cacheline. Om te kunnen bepalen welk geheugenblok in een bepaalde cacheline zit, wordt een elke cacheline een tag gekoppeld. Deze is nodig om te kunnen bepalen of het blok aanwezig is in het cache en eventueel de juiste cacheline te kunnen selecteren.</simpara>
+<figure>
 <title>voorbeeld fully associative geheugen</title>
-<para>Een voorbeeld zie je in afbeelding 29. De processor beschikt over een 32-bit adresbus en een cache geheugen van 16kB met cachelines die 64-byte breed zijn. Om binnen elke cacheline het juiste byte te selecteren zijn er 6 bits nodig. Hiervoor worden uiteraard de minst significante gebruikt. De overige 26 bits worden gebruikt om de inhoud van de cacheline te identificeren. Je zou dit kunnen zien als het nummer van het geheugenblok. Merk immers op dat voor elk byte van een geheugenblok, deze 26 bits van het adres steeds overeenkomen. Het zijn dan ook deze bits die opgeslagen worden in de tag. Naast de cachelines en de tags die eraan gekoppeld zijn, zijn er een aantal comperatoren voorzien. Bij het begin van een cyclus worden deze comperatoren gebruikt om de bovenste 26 bits van het adres te vergelijken met de inhoud van de tags. Indien de uitkomst van een van de comperatoren een gelijkheid aangeeft, is er een cache-hit en is meteen ook de juiste cacheline geselecteerd.
-In het voorbeeld zijn er 256 tags van 26 bits elk (6656 bits) die vereist zijn naast de data-cache. Dit komt neer op bijna 5% van de cache-capaciteit.
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch03/images/vbfully.png" width="50%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase></phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>Een voorbeeld zie je in bovenstaande afbeelding. De processor beschikt over een 32-bit adresbus en een cache geheugen van 16kB met cachelines die 64-byte breed zijn. Om binnen elke cacheline het juiste byte te selecteren zijn er 6 bits nodig. Hiervoor worden uiteraard de minst significante gebruikt. De overige 26 bits worden gebruikt om de inhoud van de cacheline te identificeren. Je zou dit kunnen zien als het nummer van het geheugenblok. Merk immers op dat voor elk byte van een geheugenblok, deze 26 bits van het adres steeds overeenkomen. Het zijn dan ook deze bits die opgeslagen worden in de tag. Naast de cachelines en de tags die eraan gekoppeld zijn, zijn er een aantal comperatoren voorzien. Bij het begin van een cyclus worden deze comperatoren gebruikt om de bovenste 26 bits van het adres te vergelijken met de inhoud van de tags. Indien de uitkomst van een van de comperatoren een gelijkheid aangeeft, is er een cache-hit en is meteen ook de juiste cacheline geselecteerd.</simpara>
+<simpara>In het voorbeeld zijn er 256 tags van 26 bits elk (6656 bits) die vereist zijn naast de data-cache. Dit komt neer op bijna 5% van de cache-capaciteit.
 Vermits elke pagina uit het geheugen in om het even welke cache-line geplaatst kan worden, kan de cache optimaal benut worden. Bovendien kan gebruikt gemaakt worden van de optimale overschrijfstrategie. Het nadeel van associative cache is dat het een vrij dure implementatie is. Er is immers behoefte aan veel supersnel geheugen om de tags te implementeren.
-Daarnaast moeten ook de snelle comparatoren gerealiseerd worden. Binnen de tijd van een cyclus moet immers geweten zijn of er een cache hit is.
-Fully associative cache geeft goede resultaten. Indien deze techniek dan ook nog gecombineerd wordt met de meest complexe overschrijfstrategieën, wordt het geheel extreem complex en duur. Zoals al aangehaald bij de overschrijfstrategieën is hier het aantal lijnen meestal te groot om gebruik te maken van LRU, LFU of ARC, zonder daarvoor een andere prijs te betalen.</para>
-</formalpara>
+Daarnaast moeten ook de snelle comparatoren gerealiseerd worden. Binnen de tijd van een cyclus moet immers geweten zijn of er een cache hit is.</simpara>
+<simpara>Fully associative cache geeft goede resultaten. Indien deze techniek dan ook nog gecombineerd wordt met de meest complexe overschrijfstrategieën, wordt het geheel extreem complex en duur. Zoals al aangehaald bij de overschrijfstrategieën is hier het aantal lijnen meestal te groot om gebruik te maken van LRU, LFU of ARC, zonder daarvoor een andere prijs te betalen.</simpara>
 </section>
 <section xml:id="_direct_mapped_cache">
 <title>Direct mapped cache</title>
-<formalpara>
+<figure>
 <title>principe direct mapped cache</title>
-<para>Bij direct mapped cache kan elk geheugenblok slechts in één cacheline terecht. Dit maakt dat overschrijfstrategieën overbodig zijn, er is namelijk maar een plaats waar het geheugenblok terecht kan en de inhoud van die cacheline zal verwijderd worden. Evident nadeel is dat als er geen keuze mogelijk is, de optimale keuze niet gemaakt kan worden. Deze manier van werken heeft dus een negatief effect op de hitrate.
-Om dit te staven met een extreem voorbeeld: bij direct mapped cache is het mogelijk dat een cacheline plaats moet maken voor een andere, terwijl een deel van het cache nog niet in gebruik is. Doordat een geheugenblok maar op een lijn terecht kan, worden de tags kleiner en is er ook slechts een comparator nodig.</para>
-</formalpara>
-<formalpara>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch03/images/.jpg" width="50%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase></phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>Bij direct mapped cache kan elk geheugenblok slechts in één cacheline terecht. Dit maakt dat overschrijfstrategieën overbodig zijn, er is namelijk maar een plaats waar het geheugenblok terecht kan en de inhoud van die cacheline zal verwijderd worden. Evident nadeel is dat als er geen keuze mogelijk is, de optimale keuze niet gemaakt kan worden. Deze manier van werken heeft dus een negatief effect op de hitrate.
+Om dit te staven met een extreem voorbeeld: bij direct mapped cache is het mogelijk dat een cacheline plaats moet maken voor een andere, terwijl een deel van het cache nog niet in gebruik is. Doordat een geheugenblok maar op een lijn terecht kan, worden de tags kleiner en is er ook slechts een comparator nodig.</simpara>
+<figure>
 <title>voorbeeld direct mapped</title>
-<para>Een voorbeeld zal dit verduidelijken&#8230;
-De processor beschikt overeen 32-bit adres bus en een cache geheugen van 16kB met cachelines die 64-byte breed zijn. Naast de zes bits die nodig zijn om een byte binnen de cacheline te  selecteren, zijn er nu ook acht bits nodig om een van de 256 (=16kB/64B) lijnen te selecteren. Op die manier blijven er maar 18 bits over voor de tag. Dit soort cache-organisatie is dus veel goedkoper en eenvoudiger dan de vorige: er is slechts 1 comparator (van 18 bits) nodig, en het tag-gedeelte is ook kleiner: 256 x 18 bits (4608 bits, 3,4%). Dit soort cache wordt toegepast op plaatsen waar de snelheid minder kritisch is, met andere woorden in de caches die verder van de processor staan.</para>
-</formalpara>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch03/images/vbdirectmapped.png" width="50%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase></phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>Een voorbeeld zal dit verduidelijken&#8230;
+De processor beschikt overeen 32-bit adres bus en een cache geheugen van 16kB met cachelines die 64-byte breed zijn. Naast de zes bits die nodig zijn om een byte binnen de cacheline te  selecteren, zijn er nu ook acht bits nodig om een van de 256 (=16kB/64B) lijnen te selecteren. Op die manier blijven er maar 18 bits over voor de tag. Dit soort cache-organisatie is dus veel goedkoper en eenvoudiger dan de vorige: er is slechts 1 comparator (van 18 bits) nodig, en het tag-gedeelte is ook kleiner: 256 x 18 bits (4608 bits, 3,4%). Dit soort cache wordt toegepast op plaatsen waar de snelheid minder kritisch is, met andere woorden in de caches die verder van de processor staan.</simpara>
 </section>
 <section xml:id="_set_associative_cache">
 <title>Set-associative cache</title>
-<formalpara>
+<figure>
 <title>principe set-associative cache</title>
-<para>Set-associative cache is de tussenvorm. Hierbij worden de cachelines gegroepeerd in sets. Elk geheugenblok kan terecht in slechts een set, maar binnen die set kan het in elke cacheline terecht.</para>
-</formalpara>
-<formalpara>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch03/images/.jpg" width="50%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase></phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>Set-associative cache is de tussenvorm. Hierbij worden de cachelines gegroepeerd in sets. Elk geheugenblok kan terecht in slechts een set, maar binnen die set kan het in elke cacheline terecht.</simpara>
+<figure>
 <title>voorbeeld set associative</title>
-<para>Een voorbeeld: een processor met een 32-bit brede adresbus en 16kB 4-way set associative cache geheugen met cachelines van 64 byte. 4-way betekent dat een set bestaat uit vier cachelines. De 256 lijnen worden nu verdeeld in 256/4=64 sets.
-Zes bits zijn nog steeds nodig om een byte in de cache line te selecteren. Daarnaast zijn er nu een aantal bits nodig om een set te kiezen. Aangezien er 64 sets zijn, zijn er hiervoor zes bits nodig. De resterende bits (20) worden gebruikt voor de tag. Als nu een adres aangeboden wordt, wordt een set van vier lijnen geselecteerd en worden de vier tags vergeleken met de meest signicante bits van het adres. Als een van de tags gelijk is aan deze bits is er een cache hit.</para>
-</formalpara>
-<simpara>Rekenvoorbeeld (meer voorbeelden vind je in [4]
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch03/images/vbsetassociative.jpg" width="50%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>set associative voorbeeld</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>Een voorbeeld: een processor met een 32-bit brede adresbus en 16kB 4-way set associative cache geheugen met cachelines van 64 byte. 4-way betekent dat een set bestaat uit vier cachelines. De 256 lijnen worden nu verdeeld in 256/4=64 sets.</simpara>
+<simpara>Zes bits zijn nog steeds nodig om een byte in de cache line te selecteren. Daarnaast zijn er nu een aantal bits nodig om een set te kiezen. Aangezien er 64 sets zijn, zijn er hiervoor zes bits nodig. De resterende bits (20) worden gebruikt voor de tag. Als nu een adres aangeboden wordt, wordt een set van vier lijnen geselecteerd en worden de vier tags vergeleken met de meest signicante bits van het adres. Als één van de tags gelijk is aan deze bits is er een cache hit.</simpara>
+<simpara>Rekenvoorbeeld (meer voorbeelden vind je in [4] )
 Opgave:
 Een 4-way set associative cache heeft een grootte van 64KB. De CPU werkt met 32-bit addressering, elk geheugenwoord bevat 4 bytes. Elke cache-line bevat 16 bytes. De cache gebruikt een write-through policy.
 Bereken de totale benodigde hoeveelheid geheugen (geheugen+tags) die nodig is om dit te implementeren…
-Antwoord:
-het aantal bits is een adres is 32 (a)
+Antwoord:</simpara>
+<simpara>het aantal bits is een adres is 32 (a)
 Een cacheline omvat 16 bytes, wat betekent dat de vier (b) LSB’s niet moeten geadresseerd worden.
 Het aantal sets is dan 64KB/(4*16) = 1024 (c)
 Het aantal bits dat nodig is om deze te kunnen adresseren: log2 1024= 10 bits (d)
@@ -1573,12 +1311,14 @@ Om de totale grootte dan te berekenen kan je redeneren:
 - dit moet je met vier vermenigvuldigen (‘4’-way) en met het aantal sets (d), wat resulteert in 598016 bits.
 Het percentage overhead is dus (totaal benodigde bits)/(<emphasis>nuttige^</emphasis> bits)   of 14%</simpara>
 <simpara>REMARK: bereken aan de hand van vorig voorbeeld hoe de overhead zich gedraagt bij 8-way en 16-way cache geheugen.</simpara>
-<simpara>Zoals al gezegd is set associative de tussenvorm. Eigenlijk kan je zeggen dat fully associative cache ook set associative cache is, maar met slechts één set. Direct mapped cache is anderzijs set associative met slechts één lijn per set.
+<simpara><?asciidoc-br?>
 De eigenschappen van set associative liggen dan ook tussen de twee vormen in.
 Het laat minder mogelijkheden voor het kiezen waar een cacheline terecht kan dan fully associative, maar meer dan direct mapped. Anderzijds heeft het minder bits nodig voor de tags en ook minder comparatoren dan bij fully associative cache. Vergeleken met direct mapped is het dan weer complexer.
-Meer algemeen geldt dat naarmate de associativiteit toeneemt er meer keuze is in de cache lijnen, maar dat de kost die hieraan verbonden is ook hoger wordt. Omwille van de beperking van het aantal cachelines in een set is set-associative cache gemakkelijker te combineren met betere overschrijfstrategieën. Mede daardoor is fully associative cache een eerder zeldzame vorm van cache.
-Opmerking: in literatuur worden de termen ‘cache line’, ‘cache block’, ‘cache entry’ en ‘cache set’ vaak door elkaar gebruikt. [4]</simpara>
-<simpara>Snelheid van de cache</simpara>
+Meer algemeen geldt dat naarmate de associativiteit toeneemt er meer keuze is in de cache lijnen, maar dat de kost die hieraan verbonden is ook hoger wordt. Omwille van de beperking van het aantal cachelines in een set is set-associative cache gemakkelijker te combineren met betere overschrijfstrategieën. Mede daardoor is fully associative cache een eerder zeldzame vorm van cache.</simpara>
+<simpara>Opmerking: in literatuur worden de termen ‘cache line’, ‘cache block’, ‘cache entry’ en ‘cache set’ vaak door elkaar gebruikt. [4]</simpara>
+</section>
+<section xml:id="_snelheid_van_de_cache">
+<title>Snelheid van de cache</title>
 <simpara>In het voorgaande hebben we reeds een aantal eigenschappen aangehaald die mee de efficiëntie van het cache geheugen bepalen. Dit is uiteraard een heel belangrijke eigenschap, aangezien bij cache hits, de processor aan zijn volle snelheid kan werken.</simpara>
 <formalpara>
 <title>cache misses in functie van grootte en associativiteit (bron: wikipedia)</title>
@@ -1588,23 +1328,23 @@ Een tweede deel hangt samen met de capaciteit. Dit neemt duidelijk af naarmate h
 Een derde deel hangt samen met de associativiteit. In deze grafiek komt duidelijk naar voor dat met toenemende associativiteit het aantal missers afneemt. Naast de hitrate zijn er nog een aantal andere eigenschappen, die samen de snelheid van het volledige geheugen bepalen.</para>
 </formalpara>
 <simpara>Deze eigenschappen zijn:
-* Hit time: de tijd nodig om bij een hit de gegevens op te halen.
-*Miss time: de tijd nodig om bij een miss het nieuwe geheugenblok te laden en de gevraagde gegevens beschikbaar te maken
-* Miss penalty: de extra tijd die nodig is bij een cache miss (eigenlijk misstime-hit time)
-* Hit rate: percentage toegangen die rechtstreeks langs de cache gaan</simpara>
+Hit time:: de tijd nodig om bij een hit de gegevens op te halen.
+Miss time:: de tijd nodig om bij een miss het nieuwe geheugenblok te laden en de gevraagde gegevens beschikbaar te maken
+Miss penalty:: de extra tijd die nodig is bij een cache miss (eigenlijk misstime-hit time)
+Hit rate:: percentage toegangen die rechtstreeks langs de cache gaan</simpara>
 <simpara>De formule voor de totale toegangstijd van de gecombineerde caches is dan:</simpara>
-<simpara>t_totaal=〖HR〗_L1  x t_l1  + (1 - 〖HR〗_L1) x 〖HR〗_L2   x t_L2  + (1 - 〖HR〗_L1) x (1 - 〖HR〗_L2) x t_RAM</simpara>
-<simpara>Waarbij:
-HR=hitrate
-t= aantal cycli
-Voorbeeld:
+<simpara>"t"_"totaal"="HR"_"L1"  xx "t"_"L1"  + (1 - "HR"_"L1") xx "HR"_"L2"  xx t_"L2"  + (1 - "HR"_"L1") xx (1 - "HR"_"L2") x "t"_"RAM"</simpara>
+<simpara><?asciidoc-br?>
+<?asciidoc-br?>
+<?asciidoc-br?></simpara>
+<simpara>Voorbeeld:
 Een computer heeft een L1-cache, toegangstijd 1 ns en een hitrate van 96%. De L2 cache heeft een hitrate van 88 % bij een toegangstijd van 2 ns. Het externe geheugen heeft een toegangstijd van 8 ns.
-De gemiddelde toegangstijd wordt dan:
-0.96 * 1 ns + 0.04 * 0.88 * 2 ns + 0.04 * 0.12 * 8 ns = 1.0688 ns.
-Probeer zelf eens uit wat de invloed is van de toegangstijd van het RAM-geheugen in dit systeem. Probeer eens wat er gebeurt zonder L2 cache. De verschillende factoren worden niet op dezelfde manier beïnvloed door de eigenschappen van het cache. Bijvoorbeeld de asscociativiteit van de cache biedt meer mogelijkheden op het vlak van cachelines selecteren, waardoor de hitrate hoger kan zijn. Daar staat tegenover dat een complexere berekening nodig is om een lijn te selecteren, waardoor bij een cache miss er extra tijd verloren gaat (hogere miss time).
-Een ander voorbeeld zijn de grootte van de cachelines. Grotere cachelines geven in eerste instantie een hogere hit rate, omdat meer naburige gegevens gekopieerd worden.
-Anderzijds zijn grotere cachelines nefast voor de miss time. Bij heel grote cachelines zal bovendien zelfs de hitrate dalen, omdat lijnen te snel uit het cachegeheugen verdwijnen (omdat bij dezelfde grootte er nu eenmaal minder lijnen zijn).
-Een groter cachegeheugen geeft dan weer meer cachelines. Mits een goede overschrijfstrategie toegepast wordt en de associativiteit hoog genoeg is, kan de hit rate toenemen. Nadeel is dat de selectie van een lijn dan weer complexer wordt waardoor de miss time weer toeneemt.</simpara>
+De gemiddelde toegangstijd wordt dan:</simpara>
+<simpara>0.96 xx 1 "ns" + 0.04 xx 0.88 xx 2 "ns" + 0.04 xx 0.12 * 8 "ns" = 1.0688 "ns"</simpara>
+<simpara>Probeer zelf eens uit wat de invloed is van de toegangstijd van het RAM-geheugen in dit systeem. Probeer eens wat er gebeurt zonder L2 cache. De verschillende factoren worden niet op dezelfde manier beïnvloed door de eigenschappen van het cache. Bijvoorbeeld de asscociativiteit van de cache biedt meer mogelijkheden op het vlak van cachelines selecteren, waardoor de hitrate hoger kan zijn. Daar staat tegenover dat een complexere berekening nodig is om een lijn te selecteren, waardoor bij een cache miss er extra tijd verloren gaat (hogere miss time).</simpara>
+<simpara>Een ander voorbeeld zijn de grootte van de cachelines. Grotere cachelines geven in eerste instantie een hogere hit rate, omdat meer naburige gegevens gekopieerd worden.
+Anderzijds zijn grotere cachelines nefast voor de miss time. Bij heel grote cachelines zal bovendien zelfs de hitrate dalen, omdat lijnen te snel uit het cachegeheugen verdwijnen (omdat bij dezelfde grootte er nu eenmaal minder lijnen zijn).</simpara>
+<simpara>Een groter cachegeheugen geeft dan weer meer cachelines. Mits een goede overschrijfstrategie toegepast wordt en de associativiteit hoog genoeg is, kan de hit rate toenemen. Nadeel is dat de selectie van een lijn dan weer complexer wordt waardoor de miss time weer toeneemt.</simpara>
 </section>
 </section>
 <section xml:id="_virtueel_geheugen">
@@ -1612,41 +1352,54 @@ Een groter cachegeheugen geeft dan weer meer cachelines. Mits een goede overschr
 <simpara>Virtueel geheugen is een oplossing om het tekort aan fysiek geheugen op te lossen. Het tekort aan geheugen komt van steeds groter wordende toepassingen en bestanden die bewerkt worden. Bovendien worden ook verschillende programma’s naast elkaar uitgevoerd. Toch zijn er vandaag ook een aantal situaties waarin een computer ruim voldoende heeft met het fysieke geheugen. In dat geval biedt virtueel geheugen weinig meerwaarde.</simpara>
 <section xml:id="_werking_2">
 <title>Werking</title>
-<simpara>Virtueel geheugen zal gebruik maken van de beschikbare ruimte op een of ander medium voor massaopslag om het geheugen groter te laten lijken.
-Meestal zal het gebruikte medium een harde schijf zijn. We zullen hier in het volgende van uitgaan.
+<simpara>Virtueel geheugen zal gebruik maken van de beschikbare ruimte op een of ander medium voor massaopslag om het geheugen groter te laten lijken.</simpara>
+<simpara>Meestal zal het gebruikte medium een harde schijf zijn. We zullen hier in het volgende van uitgaan.
 Op de harde schijf zal ruimte voorzien worden die gebruikt wordt als swapruimte. Het kan een swap-file zijn of een swap-partitie. Indien de processor toegang wil tot een bepaald adres, zal aan de hand van het adres nagegaan worden of de gevraagde gegevens aanwezig zijn in het fysieke geheugen. Indien de gegevens in het fysieke geheugen zitten, worden ze opgehaald en wordt de instructie gewoon verder afgewerkt. Als de gegevens niet in het fysieke geheugen zitten, treedt er een page fault op. Dit is een speciale exceptie. De processor wordt met andere woorden onderbroken en zal de exceptieroutine uitvoeren. In dit geval gaat het om een roll-back exception. De processor zal eerst terugkeren naar de toestand vlak voor de uitvoering van de instructie, die het probleem veroorzaakte en vervolgens de exception handler uitvoeren. De exception handler zal indien nodig plaats maken en vervolgens de nodige gegevens verplaatsen naar het fysieke geheugen. Uiteraard zal het hier niet gaan over een byte, maar wel over een groter stuk geheugen. We zullen later terugkomen op de grootte van dit geheugenblok.</simpara>
-<simpara>afbeelding 35 page-faults bij opstarten software
-Na de uitvoering van de handler keert de processor terug naar de toestand bij de oproep van de handler. Dit is uiteraard de instructie die in eerste instantie het probleem veroorzaakte. Deze keer zal bij de uitvoering van die instructie blijken dat de gegevens beschikbaar zijn in RAM.
-Om virtueel geheugen te ondersteunen is, naast het opslagmedium, ook een processor nodig die de roll-back exception ondersteund. Daarnaast moet ook het besturingssysteem de nodige routines omvatten en tenslotte is er ook behoefte om bij te kunnen houden waar de gegevens zich bevinden (fysiek geheugen of swap).
+<figure>
+<title>Page-faults bij opstarten software</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch03/images/pagefaults.png" width="50%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>pagefaults</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>Na de uitvoering van de handler keert de processor terug naar de toestand bij de oproep van de handler. Dit is uiteraard de instructie die in eerste instantie het probleem veroorzaakte. Deze keer zal bij de uitvoering van die instructie blijken dat de gegevens beschikbaar zijn in RAM.</simpara>
+<simpara>Om virtueel geheugen te ondersteunen is, naast het opslagmedium, ook een processor nodig die de roll-back exception ondersteund. Daarnaast moet ook het besturingssysteem de nodige routines omvatten en tenslotte is er ook behoefte om bij te kunnen houden waar de gegevens zich bevinden (fysiek geheugen of swap).
 Belangrijk is ook dat bepaalde delen nooit mogen verdwijnen uit het fysieke geheugen. Een voorbeeld is de handler: als die op de swap staat, is er geen routine meer beschikbaar om hem naar het fysiek geheugen te verplaatsen.</simpara>
 </section>
 <section xml:id="_paging_segmenting">
 <title>Paging - segmenting</title>
 <simpara>De meest gebruikte manier om met virtueel geheugen te werken, is zowel de swap als het fysieke geheugen te verdelen in stukken van dezelfde grootte. Zo’n blok wordt dan een pagina genoemd. Voor elke pagina zou dan in een tabel opgeslagen kunnen worden waar de pagina zich bevindt. In deze tabel zou dan een bit aangeven of het fysiek dan wel virtueel aanwezig is en de andere bits zouden de locatie kunnen aanduiden. Uiteraard moet deze tabel ook ten allen tijde in het fysiek geheugen aanwezig blijven. Soms is het noodzakelijk om de grootte van deze tabel te beperken.</simpara>
-<formalpara>
+<figure>
 <title>Paging table (Wikimedia Commons, BSD)</title>
-<para>Een voorbeeld: op een 32-bit processor met pagina’s van 4kB is een tabel nodig van 4MB (op voorwaarde dat de elementen van de tabel 32 bit groot zijn).
-Om de tabellen klein te houden kan gewerkt worden met meerdere niveaus van tabellen. In het reeds aangehaalde voorbeeld zouden er 1024 tabellen van 4kB nodig zijn. Deze tabellen bevinden zich op het tweede niveau. Op het eerste niveau is er een tabel van 4kB, die toelaat een van de 1024 secundaire tabellen te selecteren.</para>
-</formalpara>
-<simpara>Een groot voordeel is dat het enkel de eerste niveau tabel aanwezig moet zijn in het fysieke geheugen. De secundaire tabellen kunnen zich in de swapruimte bevinden.
-Het alternatief voor paging is werken met segmenten. In grote lijnen is het verhaal hetzelfde, er is bijvoorbeeld ook een tabel die bijhoudt waar de segmenten zich bevinden. Het grote verschil is dat de gegevens nu niet opgedeeld worden in pagina’s van gelijke grootte. Het grootste gevolg hiervan situeert zich op het vlak van geheugenfragmentatie. Bij het vervangen van geheugenpagina’s of segmenten is er nu extra tijd (traagheid van harde schijf laat complexe berekeningen toe). Er kan dus een optimale keuze gemaakt worden. Bij segmentering kan het gebeuren dat een groot segment vervangen wordt door een veel kleiner segment, waardoor een stuk van het geheugen niet in gebruik zou zijn. Dit soort fragmentatie heet externe fragmentatie.
-Bij paging gebeurt dit uiteraard niet. Daar worden immers pagina’s van gelijke grootte vervangen. Bij paging kan wel interne fragmentatie optreden. In feite worden de gegevens van een segment verdeeld in pagina’s van 4kB. Voor een bestand van 13kB geeft dit drie volledig gevulde pagina’s en een pagina met 3kB ongebruikte ruimte.
-Snelheid en virtueel geheugen
-Virtueel geheugen heeft de reputatie om de computer te vertragen. Hoewel dit strikt genomen wel waar kan zijn, klopt dit niet helemaal. De reputatie komt namelijk van het swappen van gegevens naar de harde schijf. Aangezien de harde schijf een stuk trager is dan het RAM, gaat dit uiteraard een stuk trager dan gewoon lezen van gegevens uit het RAM.
-Dit is echter geen eerlijke vergelijking. Indien de swap ruimte niet gebruikt zou kunnen worden, zou er gewoon onvoldoende geheugen beschikbaar zijn om in deze situatie te komen. De gebruiker zou zelf bestanden of programma’s moeten afsluiten om te kunnen doen wat het swappen veroorzaakte. Het gebruik van virtueel geheugen biedt de gebruiker dus in eerste instantie extra mogelijkheden. Als die extra mogelijkheden gebruikt worden, gaat dat inderdaad trager.
-Los daarvan kan het gebruik van virtueel geheugen wel vertraging geven. Een eerste evidente reden is dat in plaats van een adres gewoon op te zoeken in het geheugen, nu het adres eerst opgezocht moet worden in twee tabellen, alvorens de eigenlijke operatie kan doorgaan. Aangezien de tabel in het geheugen zit, zijn er dus drie geheugentoegangen nodig om een gegeven te manipuleren. Dit probleem wordt grotendeels opgelost door een Translation Lookaside Buffer. Dit is een snel soort cachegeheugen in de processor waar de meest recent gebruikte fysieke adressen opgeslagen worden. De hitrate van dit buffer ligt weer bijzonder dicht bij 100%, zodat deze vertraging vrijwel geen probleem meer is.
-Een tweede vertraging kan ontstaan als het besturingssysteem onnodig voorbereidingen treft om een toekomstige swap-operatie te versnellen. Zoals daarnet vermeld is swappen een trage operatie. Bovendien moet eerst een pagina geswapt worden naar de harde schijf, waarna de gevraagde pagina in het fysieke geheugen geladen kan worden. Dit betekent tweemaal 4kB verplaatsen naar en van de harde schijf.
-Om op het ogenblik dat er gegevens uit de swap-ruimte nodig zijn, de transactie te versnellen, kan het besturingssysteem proberen om op de achtergrondpagina’s te zoeken die waarschijnlijk niet onmiddellijk gebruikt zullen worden en deze dan al naar de swap te verplaatsen.
-Als dan gegevens uit de swap nodig zijn, kan dat met een 4kB verplaatsing van de harde schijf. Het kan natuurlijk gebeuren dat de verplaatste pagina’s toch eerder nodig zijn dan dat er een swapping nodig is. In dat geval zullen de verplaatste pagina’s, wanneer ze terug nodig zijn, uit de swap moeten gehaald worden.
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch03/images/2000px-Virtual_address_space_and_physical_address_space_relationship.svg.png" width="50%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase></phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>Een voorbeeld: op een 32-bit processor met pagina’s van 4kB is een tabel nodig van 4MB (op voorwaarde dat de elementen van de tabel 32 bit groot zijn).
+Om de tabellen klein te houden kan gewerkt worden met meerdere niveaus van tabellen. In het reeds aangehaalde voorbeeld zouden er 1024 tabellen van 4kB nodig zijn. Deze tabellen bevinden zich op het tweede niveau. Op het eerste niveau is er een tabel van 4kB, die toelaat een van de 1024 secundaire tabellen te selecteren.</simpara>
+<simpara><?asciidoc-br?>
+Het alternatief voor paging is werken met segmenten. In grote lijnen is het verhaal hetzelfde, er is bijvoorbeeld ook een tabel die bijhoudt waar de segmenten zich bevinden. Het grote verschil is dat de gegevens nu niet opgedeeld worden in pagina’s van gelijke grootte. Het grootste gevolg hiervan situeert zich op het vlak van geheugenfragmentatie. Bij het vervangen van geheugenpagina’s of segmenten is er nu extra tijd (traagheid van harde schijf laat complexe berekeningen toe). Er kan dus een optimale keuze gemaakt worden. Bij segmentering kan het gebeuren dat een groot segment vervangen wordt door een veel kleiner segment, waardoor een stuk van het geheugen niet in gebruik zou zijn. Dit soort fragmentatie heet externe fragmentatie.</simpara>
+<simpara>Bij paging gebeurt dit uiteraard niet. Daar worden immers pagina’s van gelijke grootte vervangen. Bij paging kan wel interne fragmentatie optreden. In feite worden de gegevens van een segment verdeeld in pagina’s van 4kB. Voor een bestand van 13kB geeft dit drie volledig gevulde pagina’s en een pagina met 3kB ongebruikte ruimte.</simpara>
+</section>
+<section xml:id="_snelheid_en_virtueel_geheugen">
+<title>Snelheid en virtueel geheugen</title>
+<simpara>Virtueel geheugen heeft de reputatie om de computer te vertragen. Hoewel dit strikt genomen wel waar kan zijn, klopt dit niet helemaal. De reputatie komt namelijk van het swappen van gegevens naar de harde schijf. Aangezien de harde schijf een stuk trager is dan het RAM, gaat dit uiteraard een stuk trager dan gewoon lezen van gegevens uit het RAM.</simpara>
+<simpara>Dit is echter geen eerlijke vergelijking. Indien de swap ruimte niet gebruikt zou kunnen worden, zou er gewoon onvoldoende geheugen beschikbaar zijn om in deze situatie te komen. De gebruiker zou zelf bestanden of programma’s moeten afsluiten om te kunnen doen wat het swappen veroorzaakte. Het gebruik van virtueel geheugen biedt de gebruiker dus in eerste instantie extra mogelijkheden. Als die extra mogelijkheden gebruikt worden, gaat dat inderdaad trager.</simpara>
+<simpara>Los daarvan kan het gebruik van virtueel geheugen wel vertraging geven. Een eerste evidente reden is dat in plaats van een adres gewoon op te zoeken in het geheugen, nu het adres eerst opgezocht moet worden in twee tabellen, alvorens de eigenlijke operatie kan doorgaan. Aangezien de tabel in het geheugen zit, zijn er dus drie geheugentoegangen nodig om een gegeven te manipuleren. Dit probleem wordt grotendeels opgelost door een Translation Lookaside Buffer. Dit is een snel soort cachegeheugen in de processor waar de meest recent gebruikte fysieke adressen opgeslagen worden. De hitrate van dit buffer ligt weer bijzonder dicht bij 100%, zodat deze vertraging vrijwel geen probleem meer is.</simpara>
+<simpara>Een tweede vertraging kan ontstaan als het besturingssysteem onnodig voorbereidingen treft om een toekomstige swap-operatie te versnellen. Zoals daarnet vermeld is swappen een trage operatie. Bovendien moet eerst een pagina geswapt worden naar de harde schijf, waarna de gevraagde pagina in het fysieke geheugen geladen kan worden. Dit betekent tweemaal 4kB verplaatsen naar en van de harde schijf.
+Om op het ogenblik dat er gegevens uit de swap-ruimte nodig zijn, de transactie te versnellen, kan het besturingssysteem proberen om op de achtergrondpagina’s te zoeken die waarschijnlijk niet onmiddellijk gebruikt zullen worden en deze dan al naar de swap te verplaatsen.</simpara>
+<simpara>Als dan gegevens uit de swap nodig zijn, kan dat met een 4kB verplaatsing van de harde schijf. Het kan natuurlijk gebeuren dat de verplaatste pagina’s toch eerder nodig zijn dan dat er een swapping nodig is. In dat geval zullen de verplaatste pagina’s, wanneer ze terug nodig zijn, uit de swap moeten gehaald worden.
 Hierdoor reageert de computer trager dan in het geval er geen virtueel geheugen zou zijn.</simpara>
 </section>
 </section>
-<section xml:id="_bibliografie_bij_dit_hoofdstuk_3">
-<title>Bibliografie bij dit hoofdstuk</title>
-<simpara>connect server 4
-set /map1/dhcpendpt1 EnabledState=yes
-x</simpara>
-<simpara>set /map1/enetport1/lanendpt1 ipv4address=10.129.18.217 subnetmask=255.255.255.</simpara>
+<section xml:id="_bronvermelding_bij_dit_hoofdstuk">
+<title>Bronvermelding bij dit hoofdstuk</title>
+
 </section>
 </chapter>
 <chapter xml:id="_literatuurlijst">
@@ -1661,6 +1414,5 @@ x</simpara>
 2010.</bibliomisc>
 </bibliomixed>
 </bibliodiv>
-
 </chapter>
 </book>

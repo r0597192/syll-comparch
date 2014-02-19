@@ -17,4 +17,4 @@ AMD 64 ,2005, 64/36 , 2*512k L2 ,2000,"2,4GHz ", 233M ,102
 Dual Core ,2006, 64/36 , 2*2M L2 ,800,"3,6GHz ", 376M ,65
 i7 (Nehalem),2008,64/36,32+32/core,-,"3,2 Ghz",731M (QC),45/32
 Intel Sandy Bridge,2011,64/36,32+32/core,-,"3,8 Ghz  (1)",995M (QC),32
-Intel Ivy bridge,2012,64/32,32+32/core,-,"3,9 Ghz ( Deze kloksnelheden kunnen niet constant aangehouden worden. De processor kan zelf beslissen om eventjes deze ‘turbo’-modus te gebruiken op één of meerdere van z’n cores om piekbelastingen op te vangen.)",1400M (QC),22
+Intel Ivy bridge,2012,64/32,32+32/core,-,"3,9 Ghz",1400M (QC),22
