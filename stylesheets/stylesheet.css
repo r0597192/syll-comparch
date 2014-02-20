@@ -152,10 +152,10 @@ a.button span {
   height: 23px;
 }
 
-#download-zip span {
+#html5 span {
   background: transparent url(../images/zip-icon.png) 12px 50% no-repeat;
 }
-#download-tar-gz span {
+#pdf span {
   background: transparent url(../images/tar-gz-icon.png) 12px 50% no-repeat;
 }
 #view-on-github span {
