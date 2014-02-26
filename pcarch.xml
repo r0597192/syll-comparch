@@ -1792,23 +1792,32 @@ De processor beschikt overeen 32-bit adres bus en een cache geheugen van 16kB me
   </mediaobject>
 </figure>
 
+<informalexample>
 <simpara>Een voorbeeld: een processor met een 32-bit brede adresbus en 16kB 4-way set associative cache geheugen met cachelines van 64 byte. 4-way betekent dat een set bestaat uit vier cachelines. De 256 lijnen worden nu verdeeld in 256/4=64 sets.</simpara>
 <simpara>Zes bits zijn nog steeds nodig om een byte in de cache line te selecteren. Daarnaast zijn er nu een aantal bits nodig om een set te kiezen. Aangezien er 64 sets zijn, zijn er hiervoor zes bits nodig. De resterende bits (20) worden gebruikt voor de tag. Als nu een adres aangeboden wordt, wordt een set van vier lijnen geselecteerd en worden de vier tags vergeleken met de meest signicante bits van het adres. Als één van de tags gelijk is aan deze bits is er een cache hit.</simpara>
-<simpara>Rekenvoorbeeld (meer voorbeelden vind je in [4] )
-Opgave:
+</informalexample>
+
+<informalexample>
+<simpara>Rekenvoorbeeld (meer voorbeelden vind je in [4] )</simpara>
+<simpara><emphasis role="strong">Opgave:</emphasis>
 Een 4-way set associative cache heeft een grootte van 64KB. De CPU werkt met 32-bit addressering, elk geheugenwoord bevat 4 bytes. Elke cache-line bevat 16 bytes. De cache gebruikt een write-through policy.
-Bereken de totale benodigde hoeveelheid geheugen (geheugen+tags) die nodig is om dit te implementeren…
-Antwoord:</simpara>
-<simpara>het aantal bits is een adres is 32 (a)
-Een cacheline omvat 16 bytes, wat betekent dat de vier (b) LSB’s niet moeten geadresseerd worden.
-Het aantal sets is dan 64KB/(4*16) = 1024 (c)
-Het aantal bits dat nodig is om deze te kunnen adresseren: log2 1024= 10 bits (d)
-Het aantal tag bits wordt dan: 32 – 4 (b) – 10 (d) = 18 bits
-Om de totale grootte dan te berekenen kan je redeneren:
-- elke cachelijn heeft 16 bits data, en een tag van 18 bits. Dit komt op een totaal van 146 bits.
-- dit moet je met vier vermenigvuldigen (‘4’-way) en met het aantal sets (d), wat resulteert in 598016 bits.
-Het percentage overhead is dus (totaal benodigde bits)/(<emphasis>nuttige^</emphasis> bits)   of 14%</simpara>
-<simpara>REMARK: bereken aan de hand van vorig voorbeeld hoe de overhead zich gedraagt bij 8-way en 16-way cache geheugen.</simpara>
+Bereken de totale benodigde hoeveelheid geheugen (geheugen+tags) die nodig is om dit te implementeren…</simpara>
+<simpara><emphasis role="strong">Antwoord:</emphasis></simpara>
+<simpara>het aantal bits is een adres is 32 (a)<?asciidoc-br?>
+Een cacheline omvat 16 bytes, wat betekent dat de vier (b) LSB’s niet moeten geadresseerd worden.<?asciidoc-br?>
+Het aantal sets is dan 64KB/(4*16) = 1024 (c)<?asciidoc-br?>
+Het aantal bits dat nodig is om deze te kunnen adresseren: log2 1024= 10 bits (d)<?asciidoc-br?>
+Het aantal tag bits wordt dan: 32 – 4 (b) – 10 (d) = 18 bits<?asciidoc-br?></simpara>
+<simpara>Om de totale grootte dan te berekenen kan je redeneren:<?asciidoc-br?>
+*Elke cachelijn heeft 16 bits data, en een tag van 18 bits. Dit komt op een totaal van 146 bits.
+*Dit moet je met vier vermenigvuldigen (‘4’-way) en met het aantal sets (d), wat resulteert in 598016 bits.</simpara>
+<simpara>Het percentage overhead is dus (totaal benodigde bits)/(<emphasis>nuttige^</emphasis> bits)   of 14%</simpara>
+</informalexample>
+
+<tip>
+<simpara>bereken aan de hand van vorig voorbeeld hoe de overhead zich gedraagt bij 8-way en 16-way cache geheugen.</simpara>
+</tip>
+
 <simpara>Zoals al gezegd is set associative de tussenvorm. Eigenlijk kan je zeggen dat fully associative cache ook set associative cache is, maar met slechts één set. Direct mapped cache is anderzijs set associative met slechts één lijn per set.<?asciidoc-br?>
 De eigenschappen van set associative liggen dan ook tussen de twee vormen in.
 Het laat minder mogelijkheden voor het kiezen waar een cacheline terecht kan dan fully associative, maar meer dan direct mapped. Anderzijds heeft het minder bits nodig voor de tags en ook minder comparatoren dan bij fully associative cache. Vergeleken met direct mapped is het dan weer complexer.
@@ -1887,11 +1896,15 @@ Belangrijk is ook dat bepaalde delen nooit mogen verdwijnen uit het fysieke gehe
   </mediaobject>
 </figure>
 
-<simpara>Een voorbeeld: op een 32-bit processor met pagina’s van 4kB is een tabel nodig van 4MB (op voorwaarde dat de elementen van de tabel 32 bit groot zijn).
-Om de tabellen klein te houden kan gewerkt worden met meerdere niveaus van tabellen. In het reeds aangehaalde voorbeeld zouden er 1024 tabellen van 4kB nodig zijn. Deze tabellen bevinden zich op het tweede niveau. Op het eerste niveau is er een tabel van 4kB, die toelaat een van de 1024 secundaire tabellen te selecteren.</simpara>
+<example>
+<title>Voorbeeld</title>
+<simpara>Op een 32-bit processor met pagina’s van 4kB is een tabel nodig van 4MB (op voorwaarde dat de elementen van de tabel 32 bit groot zijn).</simpara>
+<simpara>Om de tabellen klein te houden kan gewerkt worden met meerdere niveaus van tabellen. In het reeds aangehaalde voorbeeld zouden er 1024 tabellen van 4kB nodig zijn. Deze tabellen bevinden zich op het tweede niveau. Op het eerste niveau is er een tabel van 4kB, die toelaat een van de 1024 secundaire tabellen te selecteren.</simpara>
 <simpara>Een groot voordeel is dat het enkel de eerste niveau tabel aanwezig moet zijn in het fysieke geheugen. De secundaire tabellen kunnen zich in de swapruimte bevinden.<?asciidoc-br?>
 Het alternatief voor paging is werken met segmenten. In grote lijnen is het verhaal hetzelfde, er is bijvoorbeeld ook een tabel die bijhoudt waar de segmenten zich bevinden. Het grote verschil is dat de gegevens nu niet opgedeeld worden in pagina’s van gelijke grootte. Het grootste gevolg hiervan situeert zich op het vlak van geheugenfragmentatie. Bij het vervangen van geheugenpagina’s of segmenten is er nu extra tijd (traagheid van harde schijf laat complexe berekeningen toe). Er kan dus een optimale keuze gemaakt worden. Bij segmentering kan het gebeuren dat een groot segment vervangen wordt door een veel kleiner segment, waardoor een stuk van het geheugen niet in gebruik zou zijn. Dit soort fragmentatie heet externe fragmentatie.</simpara>
 <simpara>Bij paging gebeurt dit uiteraard niet. Daar worden immers pagina’s van gelijke grootte vervangen. Bij paging kan wel interne fragmentatie optreden. In feite worden de gegevens van een segment verdeeld in pagina’s van 4kB. Voor een bestand van 13kB geeft dit drie volledig gevulde pagina’s en een pagina met 3kB ongebruikte ruimte.</simpara>
+</example>
+
 </section>
 <section xml:id="_snelheid_en_virtueel_geheugen">
 <title>Snelheid en virtueel geheugen</title>

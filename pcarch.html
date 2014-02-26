@@ -1629,32 +1629,57 @@ De processor beschikt overeen 32-bit adres bus en een cache geheugen van 16kB me
 </div>
 <div class="title">Figure 36. voorbeeld set associative</div>
 </div>
+<div class="exampleblock">
+<div class="content">
 <div class="paragraph">
 <p>Een voorbeeld: een processor met een 32-bit brede adresbus en 16kB 4-way set associative cache geheugen met cachelines van 64 byte. 4-way betekent dat een set bestaat uit vier cachelines. De 256 lijnen worden nu verdeeld in 256/4=64 sets.</p>
 </div>
 <div class="paragraph">
 <p>Zes bits zijn nog steeds nodig om een byte in de cache line te selecteren. Daarnaast zijn er nu een aantal bits nodig om een set te kiezen. Aangezien er 64 sets zijn, zijn er hiervoor zes bits nodig. De resterende bits (20) worden gebruikt voor de tag. Als nu een adres aangeboden wordt, wordt een set van vier lijnen geselecteerd en worden de vier tags vergeleken met de meest signicante bits van het adres. Als één van de tags gelijk is aan deze bits is er een cache hit.</p>
 </div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
 <div class="paragraph">
-<p>Rekenvoorbeeld (meer voorbeelden vind je in [4] )
-Opgave:
+<p>Rekenvoorbeeld (meer voorbeelden vind je in [4] )</p>
+</div>
+<div class="paragraph">
+<p><strong>Opgave:</strong>
 Een 4-way set associative cache heeft een grootte van 64KB. De CPU werkt met 32-bit addressering, elk geheugenwoord bevat 4 bytes. Elke cache-line bevat 16 bytes. De cache gebruikt een write-through policy.
-Bereken de totale benodigde hoeveelheid geheugen (geheugen+tags) die nodig is om dit te implementeren…
-Antwoord:</p>
+Bereken de totale benodigde hoeveelheid geheugen (geheugen+tags) die nodig is om dit te implementeren…</p>
 </div>
 <div class="paragraph">
-<p>het aantal bits is een adres is 32 (a)
-Een cacheline omvat 16 bytes, wat betekent dat de vier (b) LSB’s niet moeten geadresseerd worden.
-Het aantal sets is dan 64KB/(4*16) = 1024 (c)
-Het aantal bits dat nodig is om deze te kunnen adresseren: log2 1024= 10 bits (d)
-Het aantal tag bits wordt dan: 32 – 4 (b) – 10 (d) = 18 bits
-Om de totale grootte dan te berekenen kan je redeneren:
-- elke cachelijn heeft 16 bits data, en een tag van 18 bits. Dit komt op een totaal van 146 bits.
-- dit moet je met vier vermenigvuldigen (‘4’-way) en met het aantal sets (d), wat resulteert in 598016 bits.
-Het percentage overhead is dus (totaal benodigde bits)/(<em>nuttige^</em> bits)   of 14%</p>
+<p><strong>Antwoord:</strong></p>
 </div>
 <div class="paragraph">
-<p>REMARK: bereken aan de hand van vorig voorbeeld hoe de overhead zich gedraagt bij 8-way en 16-way cache geheugen.</p>
+<p>het aantal bits is een adres is 32 (a)<br>
+Een cacheline omvat 16 bytes, wat betekent dat de vier (b) LSB’s niet moeten geadresseerd worden.<br>
+Het aantal sets is dan 64KB/(4*16) = 1024 (c)<br>
+Het aantal bits dat nodig is om deze te kunnen adresseren: log2 1024= 10 bits (d)<br>
+Het aantal tag bits wordt dan: 32 – 4 (b) – 10 (d) = 18 bits<br></p>
+</div>
+<div class="paragraph">
+<p>Om de totale grootte dan te berekenen kan je redeneren:<br>
+*Elke cachelijn heeft 16 bits data, en een tag van 18 bits. Dit komt op een totaal van 146 bits.
+*Dit moet je met vier vermenigvuldigen (‘4’-way) en met het aantal sets (d), wat resulteert in 598016 bits.</p>
+</div>
+<div class="paragraph">
+<p>Het percentage overhead is dus (totaal benodigde bits)/(<em>nuttige^</em> bits)   of 14%</p>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+bereken aan de hand van vorig voorbeeld hoe de overhead zich gedraagt bij 8-way en 16-way cache geheugen.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Zoals al gezegd is set associative de tussenvorm. Eigenlijk kan je zeggen dat fully associative cache ook set associative cache is, maar met slechts één set. Direct mapped cache is anderzijs set associative met slechts één lijn per set.<br>
@@ -1760,9 +1785,14 @@ Belangrijk is ook dat bepaalde delen nooit mogen verdwijnen uit het fysieke gehe
 </div>
 <div class="title">Figure 39. Paging table (Wikimedia Commons, BSD)</div>
 </div>
+<div class="exampleblock">
+<div class="title">Example 3. Voorbeeld</div>
+<div class="content">
 <div class="paragraph">
-<p>Een voorbeeld: op een 32-bit processor met pagina’s van 4kB is een tabel nodig van 4MB (op voorwaarde dat de elementen van de tabel 32 bit groot zijn).
-Om de tabellen klein te houden kan gewerkt worden met meerdere niveaus van tabellen. In het reeds aangehaalde voorbeeld zouden er 1024 tabellen van 4kB nodig zijn. Deze tabellen bevinden zich op het tweede niveau. Op het eerste niveau is er een tabel van 4kB, die toelaat een van de 1024 secundaire tabellen te selecteren.</p>
+<p>Op een 32-bit processor met pagina’s van 4kB is een tabel nodig van 4MB (op voorwaarde dat de elementen van de tabel 32 bit groot zijn).</p>
+</div>
+<div class="paragraph">
+<p>Om de tabellen klein te houden kan gewerkt worden met meerdere niveaus van tabellen. In het reeds aangehaalde voorbeeld zouden er 1024 tabellen van 4kB nodig zijn. Deze tabellen bevinden zich op het tweede niveau. Op het eerste niveau is er een tabel van 4kB, die toelaat een van de 1024 secundaire tabellen te selecteren.</p>
 </div>
 <div class="paragraph">
 <p>Een groot voordeel is dat het enkel de eerste niveau tabel aanwezig moet zijn in het fysieke geheugen. De secundaire tabellen kunnen zich in de swapruimte bevinden.<br>
@@ -1770,6 +1800,8 @@ Het alternatief voor paging is werken met segmenten. In grote lijnen is het verh
 </div>
 <div class="paragraph">
 <p>Bij paging gebeurt dit uiteraard niet. Daar worden immers pagina’s van gelijke grootte vervangen. Bij paging kan wel interne fragmentatie optreden. In feite worden de gegevens van een segment verdeeld in pagina’s van 4kB. Voor een bestand van 13kB geeft dit drie volledig gevulde pagina’s en een pagina met 3kB ongebruikte ruimte.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect3">
