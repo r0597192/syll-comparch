@@ -2,27 +2,11 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="generator" content="Asciidoctor 1.5.0.preview.2">
+<meta name="generator" content="Asciidoctor 0.1.4">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="author" content="Roel Van Steenberghe">
 <title>Computerarchitectuur</title>
 <link rel="stylesheet" href="./riak.css">
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [["\\(", "\\)"]],
-    displayMath: [["\\[", "\\]"]],
-    ignoreClass: "nomath|nolatexmath"
-  },
-  asciimath2jax: {
-    delimiters: [["\\$", "\\$"]],
-    ignoreClass: "nomath|noasciimath"
-  }
-});
-</script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
-<script>document.addEventListener('DOMContentLoaded', MathJax.Hub.TypeSet)</script>
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
@@ -272,16 +256,16 @@ Uiteraard moet dit te leveren vermogen voldoende zijn om alle componenten in het
 <div class="paragraph">
 <p>Het 80-plus certificatieprogramma probeert voor de consument duidelijkheid te scheppen door voedingen een label te geven naargelang de efficiëntie. De certificatie is echter geen verplichting voor fabrikanten.</p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 100%;">
+<table class="tableblock frame-all grid-all" style="width:100%; ">
 <caption class="title">Table 1. 80 plus certificatie (bron: <a href="http://en.wikipedia.org/wiki/80_Plus">Wikipedia</a> )</caption>
 <colgroup>
-<col style="width: 14%;">
-<col style="width: 14%;">
-<col style="width: 14%;">
-<col style="width: 14%;">
-<col style="width: 14%;">
-<col style="width: 14%;">
-<col style="width: 14%;">
+<col style="width:14%;">
+<col style="width:14%;">
+<col style="width:14%;">
+<col style="width:14%;">
+<col style="width:14%;">
+<col style="width:14%;">
+<col style="width:14%;"> 
 </colgroup>
 <thead>
 <tr>
@@ -324,6 +308,7 @@ Uiteraard moet dit te leveren vermogen voldoende zijn om alle componenten in het
 </tr>
 </tbody>
 </table>
+
 <div class="paragraph">
 <p>Laptops hebben een verbruik dat typisch een flink stuk lager zit. Hoewel ze een voeding hebben die meestal een behoorlijk hoog wattage aankan om de accu op te laden, is het gemiddeld verbruik meestal slechts rond de 30Watt.</p>
 </div>
@@ -426,7 +411,7 @@ Sommige fabrikanten verkiezen echter om hun capaciteiten uit te drukken in Wh, w
 Je weet immers dat</p>
 </div>
 <div class="paragraph">
-<p>\$P=U*I\$ (Vermogen=Spanning x Stroom)</p>
+<p>math:[P=U*I] (Vermogen=Spanning x Stroom)</p>
 </div>
 <div class="paragraph">
 <p>Willen we dus de stroom I(A) kennen, dan moeten we het vermogen delen door de spanning.
@@ -442,7 +427,7 @@ Nemen we onderstaand voorbeeld:</p>
 <p>We kunnen hier dus de capaciteit in Ah bepalen door</p>
 </div>
 <div class="paragraph">
-<p>\$I_h = P_h/U = 2,4Wh/3,6V = 0,666Ah\$ (of 666mAh)</p>
+<p>math:[I_h = P_h/U = 2,4Wh/3,6V = 0,666Ah] (of 666mAh)</p>
 </div>
 </div>
 <div class="sect4">
@@ -526,17 +511,17 @@ Het is niet de bedoeling om hier terug te komen op programmeermodel, segmenterin
 <div class="paragraph">
 <p>Wel zullen we de evolutie van een aantal eigenschappen bekijken.</p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 100%;">
+<table class="tableblock frame-all grid-all" style="width:100%; ">
 <caption class="title">Table 2. processoroverzicht</caption>
 <colgroup>
-<col style="width: 12%;">
-<col style="width: 12%;">
-<col style="width: 12%;">
-<col style="width: 12%;">
-<col style="width: 12%;">
-<col style="width: 12%;">
-<col style="width: 12%;">
-<col style="width: 12%;">
+<col style="width:12%;">
+<col style="width:12%;">
+<col style="width:12%;">
+<col style="width:12%;">
+<col style="width:12%;">
+<col style="width:12%;">
+<col style="width:12%;">
+<col style="width:12%;"> 
 </colgroup>
 <thead>
 <tr>
@@ -753,6 +738,7 @@ Het is niet de bedoeling om hier terug te komen op programmeermodel, segmenterin
 </tr>
 </tbody>
 </table>
+
 </div>
 <div class="sect2">
 <h3 id="_technologie_en_functionaliteit">Technologie en functionaliteit #</h3>
@@ -866,14 +852,14 @@ Het belang van cache geheugen is ook duidelijk als je de budget- en performance-
 <div class="paragraph">
 <p>De werking van de cache wordt verder in detail besproken in het derde hoofdstuk.</p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 100%;">
+<table class="tableblock frame-all grid-all" style="width:100%; ">
 <caption class="title">Table 3. cache in desktop en serverprocessoren (actuele topmodellen, feb 2014)</caption>
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
+<col style="width:20%;">
+<col style="width:20%;">
+<col style="width:20%;">
+<col style="width:20%;">
+<col style="width:20%;"> 
 </colgroup>
 <thead>
 <tr>
@@ -908,6 +894,7 @@ Het belang van cache geheugen is ook duidelijk als je de budget- en performance-
 </tr>
 </tbody>
 </table>
+
 </div>
 </div>
 <div class="sect2">
@@ -1058,13 +1045,26 @@ Microsoft heeft bijvoorbeeld eind 2012 z’n RT tablet vrijgegeven, met ARM SOC.
 <div class="sect2">
 <h3 id="_lokaliteitsprincipe">Lokaliteitsprincipe</h3>
 <div class="paragraph">
-<p>Bij het bestuderen van de technieken die gebruikt worden om het geheugen groot en snel te maken, zullen we regelmatig beroep doen op het zogenaamde lokaliteitsprincipe. Dit principe zegt dat als het data op een bepaalde locatie wordt aangesproken, de kans groot is dat volgende geheugentoegangen op naburige adressen doorgaan.</p>
+<p>Bij het bestuderen van de technieken die gebruikt worden om het geheugen groot en snel te maken, zullen we regelmatig beroep doen op de zogenaamde lokaliteitsprincipes. Daarbij maken we een onderscheid tussen spatiale lokaliteit en temporaire lokaliteit. <a href="#PATT">[PATT]</a></p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Tijdsgebonden lokaliteit</dt>
+<dd>
+<p>Als je een bepaald item gebruikt, dan is de kans groot dat je dat binnenkort terug nodig hebt.</p>
+</dd>
+<dt class="hdlist1">Plaatsgebonden lokaliteit</dt>
+<dd>
+<p>Als je een bepaald item gebruikt, dan is de kans groot dat je binnenkort iets nodig hebt dat in de buurt voorkomt&#8230;</p>
+</dd>
+</dl>
 </div>
 <div class="paragraph">
-<p>Een paar voorbeeldjes die deze stelling moeten ondersteunen:
-* Sequentiële uitvoering van instructies in een programma
-* Lussen in code, er is een regel die zegt dat programma’s 90% van hun tijd spenderen met het uitvoeren van 10% van de code, dus worden regelmatig dezelfde stukken geheugen aangesproken
-* Bestanden op een schijf worden, indien mogelijk, in opeenvolgende clusters opgeslagen.</p>
+<p>Een paar voorbeeldjes bij deze principes:
+* Sequentiële uitvoering van instructies in een programma. (plaatsgebonden)
+* Lussen in code, er is een regel die zegt dat programma’s 90% van hun tijd spenderen met het uitvoeren van 10% van de code, dus worden regelmatig dezelfde stukken geheugen aangesproken (tijdsgebonden &amp; plaatsgebonden)
+* Bestanden op een schijf worden, indien mogelijk, in opeenvolgende clusters opgeslagen. (plaatsgebonden)
+* bij een computerprogramma zullen bepaalde variabelen erg vaak gebruikt worden (tijdsgebonden)</p>
 </div>
 </div>
 <div class="sect2">
@@ -1165,7 +1165,7 @@ De snelheid van het geheugen wordt in grote mate bepaald door de toegangstijd ta
 <p>DRAM heeft, zoals je verder zal lezen, de eigenschap te werken met cyclussen. Om te berekenen wat de effectieve bandbreedte is (=geheugendebiet) hoor je steeds dezelfde benadering te maken:</p>
 </div>
 <div class="paragraph">
-<p>\$"Aantal bytes die getransfereerd worden bij een cyclus"//"tijdsduur van een cyclus" =  "bandbreedte"\$</p>
+<p>math:["Aantal bytes die getransfereerd worden bij een cyclus"//"tijdsduur van een cyclus" =  "bandbreedte"]</p>
 </div>
 <div class="paragraph">
 <p>Deze erg eenvoudige benadering wordt bij de verschillende types geheugen die volgen telkens toegepast.</p>
@@ -1192,7 +1192,7 @@ FP-DRAM werd gebruikt tot busfrequenties van 66 MHz.</p>
 <p>Op een computersysteem met een 486 processor (32-bit databus) met 5-3-3-3 FP-DRAM geheugen aan 66Mhz betekent dit dat het maximale geheugendebiet gelijk is aan:</p>
 </div>
 <div class="paragraph">
-<p>\$(4 "bytes"/"transfer" xx 4 "transfers"/"burst" xx 66 "Mcycli"/"sec")/(14 "cycli"/"burst")= 75 "MB"/"sec" \$</p>
+<p>math:[(4 "bytes"/"transfer" xx 4 "transfers"/"burst" xx 66 "Mcycli"/"sec")/(14 "cycli"/"burst")= 75 "MB"/"sec" ]</p>
 </div>
 </div>
 <div class="sect2">
@@ -1208,7 +1208,7 @@ FP-DRAM werd gebruikt tot busfrequenties van 66 MHz.</p>
 EDO-RAM kon gebruikt worden tot een busklok van 75 MHz met een timing van 5-2-2-2 klokcycli. Als we EDO-RAM dan nog combineren met een 64-bit bus (Pentium) geeft dit een maximaal debiet van 218 MB/s</p>
 </div>
 <div class="paragraph">
-<p>:\$(8 "bytes"/"transfer" xx 4 "transfers"/"burst" xx 75 "Mcycli"/"sec")//(11 "cycli"/"burst")=218 "MB"/"sec" \$</p>
+<p>:math:[(8 "bytes"/"transfer" xx 4 "transfers"/"burst" xx 75 "Mcycli"/"sec")//(11 "cycli"/"burst")=218 "MB"/"sec" ]</p>
 </div>
 </div>
 <div class="sect2">
@@ -1224,22 +1224,27 @@ EDO-RAM kon gebruikt worden tot een busklok van 75 MHz met een timing van 5-2-2-
 In de afbeelding 20 krijgen we een timing van 2-1-1-1. Daarnaast is SD-RAM geschikt voor busfrequenties tot 133 MHz (PC133), wat neerkomt op een maximaal debiet van 851 MBps.</p>
 </div>
 <div class="paragraph">
-<p>\$(8 "bytes"/"transfer"  xx 4 "transfers"/"burst"  xx 133 "Mcycli"/"sec" )//(5 "cycli"/"burst") = 851 "MB"/"sec"\$</p>
+<p>math:[(8 "bytes"/"transfer"  xx 4 "transfers"/"burst"  xx 133 "Mcycli"/"sec" )//(5 "cycli"/"burst") = 851 "MB"/"sec"]</p>
 </div>
 <div class="sect3">
 <h4 id="_ddr_sdram_ddr2_ddr3">DDR SDRAM - DDR2 - DDR3</h4>
 <div class="paragraph">
 <p>Principieel werkt DDR op dezelfde manier als SDRAM. Er wordt nog steeds een rij-adres en een kolomadres aangelegd, waarna meerdere opeenvolgende cellen worden uitgelezen. Het verschil zit in het tempo waarop dit gebeurt. Bij Double Data Rate wordt data naar buiten gebracht op stijgende en dalende flank van de klok. Om dit te kunnen bereiken wordt gebruik gemaakt van een prefetch buffer. In elke cyclus worden nu 2 bits getransfereerd naar het prefetch buffer, dat de data dan aan een dubbele snelheid naar buiten kan brengen.</p>
 </div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch03/images/DDRwritetiming.png" alt="sd ram read">
+</div>
+<div class="title">Figure 24. Write cyclus bij DDR-RAM (bron: Micron)</div>
+</div>
 <div class="paragraph">
-<div class="title">afbeelding 21 write cyclus bij DDR-RAM (bron: Micron)</div>
 <p>Het voordeel van deze werkwijze is een hogere maximale bandbreedte (datasnelheid bij het effectief overbrengen van data). Het nadeel zit in een hogere latentietijd. Tussen het aanleggen van de adressen en het naar buiten brengen van de data verloopt iets meer tijd. De snelheid van de modules wordt uitgedrukt op een aantal verschillende manieren. Een eerste manier is in de naam, waar twee verschillende mogelijkheden bestaan. DDR400 en PC3200 duiden op hetzelfde soort geheugenchips. De 400 duidt de kloksnelheid aan (2x200MHz), de 3200 duidt de maximale transfersnelheid aan.</p>
 </div>
 <div class="paragraph">
-<p>Op een 64-bit databus is die</p>
+<p>Op een 64-bit databus is die:</p>
 </div>
 <div class="paragraph">
-<p>\$8 "bytes"/"transfer"  xx (2 xx 200 "MHz") = 3200 "MB"/"sec"\$</p>
+<p>math:[8 "bytes"/"transfer"  xx (2 xx 200 "MHz") = 3200 "MB"/"sec"]</p>
 </div>
 <div class="paragraph">
 <p>Er kan echter nog veel verschil zijn tussen twee PC3200 modules.
@@ -1266,16 +1271,16 @@ De werkelijke snelheid hangt namelijk ook af van de totale latentietijd. Die kan
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch03/images" alt="">
+<img src="ch03/images/SDRAM_read.png" alt="sd ram read">
 </div>
-<div class="title">Figure 24. DDR-timing Tcl=2 (bron: Micron)</div>
+<div class="title">Figure 25. DDR-timing Tcl=2 (bron: Micron)</div>
 </div>
 <div class="paragraph">
 <p>Een voorbeeld:
 PC3200 geheugen met parameters 2-2-2-6 heeft voor een burst met vier transfers van 8 bytes 2+2+4 x 0.5=6 klokcycli van 200 MHz nodig. Dit geeft een snelheid van 1067 MB/s.Voor twee dergelijke opeenvolgende transfers zijn</p>
 </div>
 <div class="paragraph">
-<p>\$2(2+2+4 xx 0.5) + 2 = 14 klokcycli\$ van 200 MHz nodig. Dit geeft 914 MBps.</p>
+<p>math:[2(2+2+4 xx 0.5) + 2 = 14 klokcycli] van 200 MHz nodig. Dit geeft 914 MBps.</p>
 </div>
 <div class="paragraph">
 <p>Bij DDR kan ook het aantal cellen dat in een burst gelezen wordt variëren. Hetzelfde geheugen dat in een burst 8 transfers van 8 bytes uitvoert, haalt een snelheid van 1600MBps.Tras is in dit verhaal niet naar voor gekomen. Tras bepaalt de tijd waarin de volgende rij nog niet geladen mag worden. Deze moet groot genoeg zijn om de buffer niet te overschrijven voordat het volledig getransfereerd is over de databus. Deze parameter moet minimaal Trcd + TCL + 1 bedragen. Indien de parameter te klein is gaat uiteraard data verloren.</p>
@@ -1286,13 +1291,13 @@ PC3200 geheugen met parameters 2-2-2-6 heeft voor een burst met vier transfers v
 <div class="paragraph">
 <p>Het gevolg is dat deze geheugens nog sneller data naar buiten kunnen brengen (hogere maximale transfer), maar dat dit weer een hogere latentietijd met zich meebrengt. Hou wel in gedachten dat slechts een klein stukje van het geheugen aan deze hoge snelheid werkt. Intern wordt nog steeds een relatief lage snelheid gebruikt om de cellen te beschrijven, maar door de buffers kan data toch aan een dubbele (DDR), viervoudige (DDR2) of achtvoudige (DDR3) snelheid naar buiten gebacht worden.</p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 100%;">
+<table class="tableblock frame-all grid-all" style="width:100%; ">
 <caption class="title">Table 4. DDR3 snelheden (bron: wikipedia)</caption>
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width:25%;">
+<col style="width:25%;">
+<col style="width:25%;">
+<col style="width:25%;"> 
 </colgroup>
 <thead>
 <tr>
@@ -1383,6 +1388,7 @@ PC3200 geheugen met parameters 2-2-2-6 heeft voor een burst met vier transfers v
 </tr>
 </tbody>
 </table>
+
 <div class="paragraph">
 <p>Een belangrijke opmerking, die reeds gedeeltelijk aangehaald werd, is dat DDR, DDR2 en DDR3 gebruik maken van een andere werkspanning. Deze wordt alsmaar lager om het gedissipeerd vermogen en de bijhorende warmteontwikkeling te verkleinen, wat nodig is om hogere kloksnelheden toe te laten.
 Bovendien hebben de modules ook een verschillend aantal aansluitpinnen, waardoor het duidelijk zal zijn dat ze niet compatibel zijn.</p>
@@ -1401,7 +1407,7 @@ Bovendien hebben de modules ook een verschillend aantal aansluitpinnen, waardoor
 <div class="content">
 <img src="ch03/images/optimalisatie/MEMACCESS_normal.png" alt="">
 </div>
-<div class="title">Figure 25. normale geheugentoegang</div>
+<div class="title">Figure 26. normale geheugentoegang</div>
 </div>
 <div class="sect3">
 <h4 id="_interleaving">Interleaving</h4>
@@ -1413,7 +1419,7 @@ Deze hersteltijd kan vermeden worden indien de volgende operatie doorgaat op een
 <div class="content">
 <img src="ch03/images/optimalisatie/MEMACCESS_interleaving.png" alt="interleaving">
 </div>
-<div class="title">Figure 26. Memory interleaving</div>
+<div class="title">Figure 27. Memory interleaving</div>
 </div>
 </div>
 <div class="sect3">
@@ -1428,16 +1434,16 @@ Deze hersteltijd kan vermeden worden indien de volgende operatie doorgaat op een
 <div class="content">
 <img src="ch03/images/optimalisatie/MEMACCESS_dualchannel.png" alt="dual channel">
 </div>
-<div class="title">Figure 27. geheugentoegang met Dual Channel</div>
+<div class="title">Figure 28. geheugentoegang met Dual Channel</div>
 </div>
 <div class="paragraph">
 <p>Behalve het aanschakelen van meerdere modules is het dan ook belangrijk om ze in de juiste sockets te steken, zodat je beide kanalen gebruikt (en niet twee modules op hetzelfde kanaal). Moederborden met meerdere sockets op de kanalen, hebben overeenkomstige plaatsen op die kanalen die eenzelfde kleur hebben. Op deze manier zijn er dus matched sockets. Op deze matched sockets moet dus geheugen geïnstalleerd worden.</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch03/images/Dual-channel_DDR_memory_use_6026.jpg" alt="dual channel memory placement">
+<img src="ch03/images/optimalisatie/Dual-channel_DDR_memory_use_6026.jpg" alt="dual channel memory placement">
 </div>
-<div class="title">Figure 28. dual channel sockets</div>
+<div class="title">Figure 29. dual channel sockets</div>
 </div>
 <div class="paragraph">
 <p>Dit geheugen moet identiek zijn in capaciteit, anders zou een deel van het geheugen niet bereikbaar zijn in dual channel mode. Verder moeten de modules in principe niet gelijk zijn. Zelfs modules met verschillende snelheden zijn mogelijk, al zal dan tegen de traagste snelheid gewerkt worden. In principe betekent echter dat er in de praktijk wel problemen kunnen ontstaan, zodat moederbord fabrikanten het gebruik van identieke modules aanraden. Deze worden door verschillende geheugenfabrikanten ook aangeboden.</p>
@@ -1472,9 +1478,9 @@ Een belangrijk verschil, want een processor kan nu eenmaal niet sneller instruct
 <h4 id="_werking">Werking</h4>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch03/images/.jpg" alt="">
+<img src="ch03/images/cache.png" alt="">
 </div>
-<div class="title">Figure 29. cache als buffer tussen CPU en geheugen</div>
+<div class="title">Figure 30. cache als buffer tussen CPU en geheugen</div>
 </div>
 <div class="paragraph">
 <p>Het cache geheugen vormt een buffer dat het snelheidsverschil tussen processor en CPU moet opvangen. Aangezien het cache geheugen een stuk kleiner zal zijn dan het dynamisch geheugen, komt het erop aan om de nodige gegevens klaar te hebben zitten in het cache geheugen.</p>
@@ -1484,9 +1490,9 @@ Een belangrijk verschil, want een processor kan nu eenmaal niet sneller instruct
 </div>
 <div class="paragraph">
 <p>Een leescyclus verloopt als volgt:
-* de processor vraagt een adres
-* Indien dat adres in een blok ligt dat in de cache te vinden is, wordt er gesproken van een cache-hit en heeft er een snelle leescyclus plaats vanuit de cache.
-* In het andere geval (een cache-miss) wordt via een trage leescyclus het gevraagde woord opgehaald uit het centrale geheugen terwijl ook onmiddellijk het blok waarin dit woord zich bevindt naar de cache gekopieerd wordt.</p>
+*de processor vraagt een adres
+*Indien dat adres in een blok ligt dat in de cache te vinden is, wordt er gesproken van een cache-hit en heeft er een snelle leescyclus plaats vanuit de cache.
+*In het andere geval (een cache-miss) wordt via een trage leescyclus het gevraagde woord opgehaald uit het centrale geheugen terwijl ook onmiddellijk het blok waarin dit woord zich bevindt naar de cache gekopieerd wordt.</p>
 </div>
 <div class="paragraph">
 <p>Aangezien opeenvolgende geheugentoegangen meestal op naburige adressen doorgaan, is de kans groot dat een volgende toegang een cache-hit geeft en dus snel verwerkt kan worden.
@@ -1558,18 +1564,18 @@ L1 cache is het cache geheugen dat het dichtst bij de processor staat. Het moet 
 <h4 id="_fully_associative_cache">Fully Associative cache</h4>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch03/images/.jpg" alt="">
+<img src="ch03/images/fullyPrincipe.pdf" alt="">
 </div>
-<div class="title">Figure 30. principe fully associative cache</div>
+<div class="title">Figure 31. principe fully associative cache</div>
 </div>
 <div class="paragraph">
 <p>Bij fully associative cache kan een blok uit het geheugen terecht komen in gelijk welke cacheline. Om te kunnen bepalen welk geheugenblok in een bepaalde cacheline zit, wordt een elke cacheline een tag gekoppeld. Deze is nodig om te kunnen bepalen of het blok aanwezig is in het cache en eventueel de juiste cacheline te kunnen selecteren.</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch03/images/vbfully.png" alt="">
+<img src="ch03/images/associativiteit/vbfully.png" alt="">
 </div>
-<div class="title">Figure 31. voorbeeld fully associative geheugen</div>
+<div class="title">Figure 32. voorbeeld fully associative geheugen</div>
 </div>
 <div class="paragraph">
 <p>Een voorbeeld zie je in bovenstaande afbeelding. De processor beschikt over een 32-bit adresbus en een cache geheugen van 16kB met cachelines die 64-byte breed zijn. Om binnen elke cacheline het juiste byte te selecteren zijn er 6 bits nodig. Hiervoor worden uiteraard de minst significante gebruikt. De overige 26 bits worden gebruikt om de inhoud van de cacheline te identificeren. Je zou dit kunnen zien als het nummer van het geheugenblok. Merk immers op dat voor elk byte van een geheugenblok, deze 26 bits van het adres steeds overeenkomen. Het zijn dan ook deze bits die opgeslagen worden in de tag. Naast de cachelines en de tags die eraan gekoppeld zijn, zijn er een aantal comperatoren voorzien. Bij het begin van een cyclus worden deze comperatoren gebruikt om de bovenste 26 bits van het adres te vergelijken met de inhoud van de tags. Indien de uitkomst van een van de comperatoren een gelijkheid aangeeft, is er een cache-hit en is meteen ook de juiste cacheline geselecteerd.</p>
@@ -1587,9 +1593,9 @@ Daarnaast moeten ook de snelle comparatoren gerealiseerd worden. Binnen de tijd 
 <h4 id="_direct_mapped_cache">Direct mapped cache</h4>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch03/images/.jpg" alt="">
+<img src="ch03/images/directPrincipe.pdf" alt="">
 </div>
-<div class="title">Figure 32. principe direct mapped cache</div>
+<div class="title">Figure 33. principe direct mapped cache</div>
 </div>
 <div class="paragraph">
 <p>Bij direct mapped cache kan elk geheugenblok slechts in één cacheline terecht. Dit maakt dat overschrijfstrategieën overbodig zijn, er is namelijk maar een plaats waar het geheugenblok terecht kan en de inhoud van die cacheline zal verwijderd worden. Evident nadeel is dat als er geen keuze mogelijk is, de optimale keuze niet gemaakt kan worden. Deze manier van werken heeft dus een negatief effect op de hitrate.
@@ -1597,9 +1603,9 @@ Om dit te staven met een extreem voorbeeld: bij direct mapped cache is het mogel
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch03/images/vbdirectmapped.png" alt="">
+<img src="ch03/images/associativiteit/vbdirectmapped.png" alt="">
 </div>
-<div class="title">Figure 33. voorbeeld direct mapped</div>
+<div class="title">Figure 34. voorbeeld direct mapped</div>
 </div>
 <div class="paragraph">
 <p>Een voorbeeld zal dit verduidelijken&#8230;
@@ -1610,18 +1616,18 @@ De processor beschikt overeen 32-bit adres bus en een cache geheugen van 16kB me
 <h4 id="_set_associative_cache">Set-associative cache</h4>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch03/images/.jpg" alt="">
+<img src="ch03/images/setAssociative.jpg" alt="">
 </div>
-<div class="title">Figure 34. principe set-associative cache</div>
+<div class="title">Figure 35. principe set-associative cache</div>
 </div>
 <div class="paragraph">
 <p>Set-associative cache is de tussenvorm. Hierbij worden de cachelines gegroepeerd in sets. Elk geheugenblok kan terecht in slechts een set, maar binnen die set kan het in elke cacheline terecht.</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch03/images/vbsetassociative.jpg" alt="set associative voorbeeld">
+<img src="ch03/images/associativiteit/vbsetassociative.png" alt="set associative voorbeeld">
 </div>
-<div class="title">Figure 35. voorbeeld set associative</div>
+<div class="title">Figure 36. voorbeeld set associative</div>
 </div>
 <div class="paragraph">
 <p>Een voorbeeld: een processor met een 32-bit brede adresbus en 16kB 4-way set associative cache geheugen met cachelines van 64 byte. 4-way betekent dat een set bestaat uit vier cachelines. De 256 lijnen worden nu verdeeld in 256/4=64 sets.</p>
@@ -1665,8 +1671,13 @@ Meer algemeen geldt dat naarmate de associativiteit toeneemt er meer keuze is in
 <div class="paragraph">
 <p>In het voorgaande hebben we reeds een aantal eigenschappen aangehaald die mee de efficiëntie van het cache geheugen bepalen. Dit is uiteraard een heel belangrijke eigenschap, aangezien bij cache hits, de processor aan zijn volle snelheid kan werken.</p>
 </div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch03/images/associativiteit/400px-Cache_missrate.png" alt="cash miss-rate">
+</div>
+<div class="title">Figure 37. cache misses in functie van grootte en associativiteit (bron: wikipedia)</div>
+</div>
 <div class="paragraph">
-<div class="title">cache misses in functie van grootte en associativiteit (bron: wikipedia)</div>
 <p>In bovenstaande afbeelding toont een grafiek het aandeel missers in functie van de grootte van het cache geheugen en dit voor verschillende associativiteit.
 Een deel van de missers zijn onvermijdelijk. Het zijn de zogenaamde coldstart misses, die afkomstig zijn van de eerste keer dat toegang tot een blok gezocht wordt.
 Een tweede deel hangt samen met de capaciteit. Dit neemt duidelijk af naarmate het cache geheugen groter wordt.
@@ -1683,12 +1694,12 @@ Hit rate:: percentage toegangen die rechtstreeks langs de cache gaan</p>
 <p>De formule voor de totale toegangstijd van de gecombineerde caches is dan:</p>
 </div>
 <div class="paragraph">
-<p>\$"t"_"totaal"="HR"_"L1"  xx "t"_"L1"  + (1 - "HR"_"L1") xx "HR"_"L2"  xx t_"L2"  + (1 - "HR"_"L1") xx (1 - "HR"_"L2") x "t"_"RAM"\$</p>
+<p>math:["t"<em>"totaal"="HR"</em>"L1"  xx "t"<em>"L1"  + (1 - "HR"</em>"L1") xx "HR"<em>"L2"  xx t</em>"L2"  + (1 - "HR"<em>"L1") xx (1 - "HR"</em>"L2") x "t"_"RAM"]</p>
 </div>
 <div class="paragraph">
 <p>Waarbij:<br>
-HR=hitrate<br>
-t= aantal cycli<br></p>
+HR = hitrate<br>
+t = aantal cycli<br></p>
 </div>
 <div class="paragraph">
 <p>Voorbeeld:
@@ -1696,7 +1707,7 @@ Een computer heeft een L1-cache, toegangstijd 1 ns en een hitrate van 96%. De L2
 De gemiddelde toegangstijd wordt dan:</p>
 </div>
 <div class="paragraph">
-<p>\$0.96 xx 1 "ns" + 0.04 xx 0.88 xx 2 "ns" + 0.04 xx 0.12 * 8 "ns" = 1.0688 "ns"\$</p>
+<p>math:[0.96 xx 1 "ns" + 0.04 xx 0.88 xx 2 "ns" + 0.04 xx 0.12 * 8 "ns" = 1.0688 "ns"]</p>
 </div>
 <div class="paragraph">
 <p>Probeer zelf eens uit wat de invloed is van de toegangstijd van het RAM-geheugen in dit systeem. Probeer eens wat er gebeurt zonder L2 cache. De verschillende factoren worden niet op dezelfde manier beïnvloed door de eigenschappen van het cache. Bijvoorbeeld de asscociativiteit van de cache biedt meer mogelijkheden op het vlak van cachelines selecteren, waardoor de hitrate hoger kan zijn. Daar staat tegenover dat een complexere berekening nodig is om een lijn te selecteren, waardoor bij een cache miss er extra tijd verloren gaat (hogere miss time).</p>
@@ -1728,7 +1739,7 @@ Op de harde schijf zal ruimte voorzien worden die gebruikt wordt als swapruimte.
 <div class="content">
 <img src="ch03/images/pagefaults.png" alt="pagefaults">
 </div>
-<div class="title">Figure 36. Page-faults bij opstarten software</div>
+<div class="title">Figure 38. Page-faults bij opstarten software</div>
 </div>
 <div class="paragraph">
 <p>Na de uitvoering van de handler keert de processor terug naar de toestand bij de oproep van de handler. Dit is uiteraard de instructie die in eerste instantie het probleem veroorzaakte. Deze keer zal bij de uitvoering van die instructie blijken dat de gegevens beschikbaar zijn in RAM.</p>
@@ -1747,7 +1758,7 @@ Belangrijk is ook dat bepaalde delen nooit mogen verdwijnen uit het fysieke gehe
 <div class="content">
 <img src="ch03/images/2000px-Virtual_address_space_and_physical_address_space_relationship.svg.png" alt="">
 </div>
-<div class="title">Figure 37. Paging table (Wikimedia Commons, BSD)</div>
+<div class="title">Figure 39. Paging table (Wikimedia Commons, BSD)</div>
 </div>
 <div class="paragraph">
 <p>Een voorbeeld: op een 32-bit processor met pagina’s van 4kB is een tabel nodig van 4MB (op voorwaarde dat de elementen van de tabel 32 bit groot zijn).
@@ -1784,7 +1795,9 @@ Hierdoor reageert de computer trager dan in het geval er geen virtueel geheugen 
 </div>
 <div class="sect2">
 <h3 id="_bronvermelding_bij_dit_hoofdstuk">Bronvermelding bij dit hoofdstuk</h3>
-
+<div class="paragraph">
+<p><a id="PATT"></a>[PATT]Computer Organization And Design. David A. Patterson John L. Hennessey. fifth edition. p374</p>
+</div>
 </div>
 </div>
 </div>
@@ -1822,7 +1835,7 @@ Hierdoor reageert de computer trager dan in het geval er geen virtueel geheugen 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2014-01-30 12:32:46 Romance (standaardtijd)
+Last updated 2014-02-21 15:01:11 Romance (standaardtijd)
 </div>
 </div>
 </body>
