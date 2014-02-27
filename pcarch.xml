@@ -1736,7 +1736,9 @@ L1 cache is het cache geheugen dat het dichtst bij de processor staat. Het moet 
   </mediaobject>
 </figure>
 
-<simpara>Een voorbeeld zie je in bovenstaande afbeelding. De processor beschikt over een 32-bit adresbus en een cache geheugen van 16kB met cachelines die 64-byte breed zijn. Om binnen elke cacheline het juiste byte te selecteren zijn er 6 bits nodig. Hiervoor worden uiteraard de minst significante gebruikt. De overige 26 bits worden gebruikt om de inhoud van de cacheline te identificeren. Je zou dit kunnen zien als het nummer van het geheugenblok. Merk immers op dat voor elk byte van een geheugenblok, deze 26 bits van het adres steeds overeenkomen. Het zijn dan ook deze bits die opgeslagen worden in de tag. Naast de cachelines en de tags die eraan gekoppeld zijn, zijn er een aantal comperatoren voorzien. Bij het begin van een cyclus worden deze comperatoren gebruikt om de bovenste 26 bits van het adres te vergelijken met de inhoud van de tags. Indien de uitkomst van een van de comperatoren een gelijkheid aangeeft, is er een cache-hit en is meteen ook de juiste cacheline geselecteerd.</simpara>
+<simpara>Een voorbeeld zie je in bovenstaande afbeelding.<?asciidoc-br?>
+De processor beschikt over een 32-bit adresbus en een cache geheugen van 16kB met cachelines die 64-byte breed zijn. Om binnen elke cacheline het juiste byte te selecteren zijn er 6 bits nodig.<?asciidoc-br?>
+Hiervoor worden uiteraard de minst significante gebruikt. De overige 26 bits worden gebruikt om de inhoud van de cacheline te identificeren. Je zou dit kunnen zien als het nummer van het geheugenblok. Merk immers op dat voor elk byte van een geheugenblok, deze 26 bits van het adres steeds overeenkomen. Het zijn dan ook deze bits die opgeslagen worden in de tag. Naast de cachelines en de tags die eraan gekoppeld zijn, zijn er een aantal comperatoren voorzien. Bij het begin van een cyclus worden deze comperatoren gebruikt om de bovenste 26 bits van het adres te vergelijken met de inhoud van de tags. Indien de uitkomst van een van de comperatoren een gelijkheid aangeeft, is er een cache-hit en is meteen ook de juiste cacheline geselecteerd.</simpara>
 <simpara>In het voorbeeld zijn er 256 tags van 26 bits elk (6656 bits) die vereist zijn naast de data-cache. Dit komt neer op bijna 5% van de cache-capaciteit.
 Vermits elke pagina uit het geheugen in om het even welke cache-line geplaatst kan worden, kan de cache optimaal benut worden. Bovendien kan gebruikt gemaakt worden van de optimale overschrijfstrategie. Het nadeel van associative cache is dat het een vrij dure implementatie is. Er is immers behoefte aan veel supersnel geheugen om de tags te implementeren.
 Daarnaast moeten ook de snelle comparatoren gerealiseerd worden. Binnen de tijd van een cyclus moet immers geweten zijn of er een cache hit is.</simpara>
@@ -1797,7 +1799,8 @@ De processor beschikt overeen 32-bit adres bus en een cache geheugen van 16kB me
 <simpara>Zes bits zijn nog steeds nodig om een byte in de cache line te selecteren. Daarnaast zijn er nu een aantal bits nodig om een set te kiezen. Aangezien er 64 sets zijn, zijn er hiervoor zes bits nodig. De resterende bits (20) worden gebruikt voor de tag. Als nu een adres aangeboden wordt, wordt een set van vier lijnen geselecteerd en worden de vier tags vergeleken met de meest signicante bits van het adres. Als één van de tags gelijk is aan deze bits is er een cache hit.</simpara>
 </informalexample>
 
-<informalexample>
+<example>
+<title>voorbeeld</title>
 <simpara>Rekenvoorbeeld (meer voorbeelden vind je in [4] )</simpara>
 <simpara><emphasis role="strong">Opgave:</emphasis>
 Een 4-way set associative cache heeft een grootte van 64KB. De CPU werkt met 32-bit addressering, elk geheugenwoord bevat 4 bytes. Elke cache-line bevat 16 bytes. De cache gebruikt een write-through policy.
@@ -1812,7 +1815,7 @@ Het aantal tag bits wordt dan: 32 – 4 (b) – 10 (d) = 18 bits<?asciidoc-br?><
 *Elke cachelijn heeft 16 bits data, en een tag van 18 bits. Dit komt op een totaal van 146 bits.
 *Dit moet je met vier vermenigvuldigen (‘4’-way) en met het aantal sets (d), wat resulteert in 598016 bits.</simpara>
 <simpara>Het percentage overhead is dus (totaal benodigde bits)/(<emphasis>nuttige^</emphasis> bits)   of 14%</simpara>
-</informalexample>
+</example>
 
 <tip>
 <simpara>bereken aan de hand van vorig voorbeeld hoe de overhead zich gedraagt bij 8-way en 16-way cache geheugen.</simpara>
@@ -1851,11 +1854,14 @@ Hit rate:: percentage toegangen die rechtstreeks langs de cache gaan</simpara>
 <simpara>Waarbij:<?asciidoc-br?>
 HR = hitrate<?asciidoc-br?>
 t = aantal cycli<?asciidoc-br?></simpara>
-<simpara>Voorbeeld:
-Een computer heeft een L1-cache, toegangstijd 1 ns en een hitrate van 96%. De L2 cache heeft een hitrate van 88 % bij een toegangstijd van 2 ns. Het externe geheugen heeft een toegangstijd van 8 ns.
+<example>
+<title>Voorbeeld</title>
+<simpara>Een computer heeft een L1-cache, toegangstijd 1 ns en een hitrate van 96%. De L2 cache heeft een hitrate van 88 % bij een toegangstijd van 2 ns. Het externe geheugen heeft een toegangstijd van 8 ns.
 De gemiddelde toegangstijd wordt dan:</simpara>
 <simpara>math:[0.96 xx 1 "ns" + 0.04 xx 0.88 xx 2 "ns" + 0.04 xx 0.12 * 8 "ns" = 1.0688 "ns"]</simpara>
 <simpara>Probeer zelf eens uit wat de invloed is van de toegangstijd van het RAM-geheugen in dit systeem. Probeer eens wat er gebeurt zonder L2 cache. De verschillende factoren worden niet op dezelfde manier beïnvloed door de eigenschappen van het cache. Bijvoorbeeld de asscociativiteit van de cache biedt meer mogelijkheden op het vlak van cachelines selecteren, waardoor de hitrate hoger kan zijn. Daar staat tegenover dat een complexere berekening nodig is om een lijn te selecteren, waardoor bij een cache miss er extra tijd verloren gaat (hogere miss time).</simpara>
+</example>
+
 <simpara>Een ander voorbeeld zijn de grootte van de cachelines. Grotere cachelines geven in eerste instantie een hogere hit rate, omdat meer naburige gegevens gekopieerd worden.
 Anderzijds zijn grotere cachelines nefast voor de miss time. Bij heel grote cachelines zal bovendien zelfs de hitrate dalen, omdat lijnen te snel uit het cachegeheugen verdwijnen (omdat bij dezelfde grootte er nu eenmaal minder lijnen zijn).</simpara>
 <simpara>Een groter cachegeheugen geeft dan weer meer cachelines. Mits een goede overschrijfstrategie toegepast wordt en de associativiteit hoog genoeg is, kan de hit rate toenemen. Nadeel is dat de selectie van een lijn dan weer complexer wordt waardoor de miss time weer toeneemt.</simpara>
@@ -1919,7 +1925,12 @@ Hierdoor reageert de computer trager dan in het geval er geen virtueel geheugen 
 </section>
 <section xml:id="_bronvermelding_bij_dit_hoofdstuk">
 <title>Bronvermelding bij dit hoofdstuk</title>
-<simpara><anchor xml:id="PATT" xreflabel="[PATT]"/>[PATT]Computer Organization And Design. David A. Patterson John L. Hennessey. fifth edition. p374</simpara>
+<itemizedlist mark="Bibliography">
+<listitem>
+<simpara><anchor xml:id="PATT" xreflabel="[PATT]"/>[PATT] <emphasis>Computer Organization And Design</emphasis>. David A. Patterson, John L. Hennessey. fifth edition. p374</simpara>
+</listitem>
+</itemizedlist>
+
 </section>
 </chapter>
 <chapter xml:id="_literatuurlijst">

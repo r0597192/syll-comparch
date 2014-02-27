@@ -1578,7 +1578,9 @@ L1 cache is het cache geheugen dat het dichtst bij de processor staat. Het moet 
 <div class="title">Figure 32. voorbeeld fully associative geheugen</div>
 </div>
 <div class="paragraph">
-<p>Een voorbeeld zie je in bovenstaande afbeelding. De processor beschikt over een 32-bit adresbus en een cache geheugen van 16kB met cachelines die 64-byte breed zijn. Om binnen elke cacheline het juiste byte te selecteren zijn er 6 bits nodig. Hiervoor worden uiteraard de minst significante gebruikt. De overige 26 bits worden gebruikt om de inhoud van de cacheline te identificeren. Je zou dit kunnen zien als het nummer van het geheugenblok. Merk immers op dat voor elk byte van een geheugenblok, deze 26 bits van het adres steeds overeenkomen. Het zijn dan ook deze bits die opgeslagen worden in de tag. Naast de cachelines en de tags die eraan gekoppeld zijn, zijn er een aantal comperatoren voorzien. Bij het begin van een cyclus worden deze comperatoren gebruikt om de bovenste 26 bits van het adres te vergelijken met de inhoud van de tags. Indien de uitkomst van een van de comperatoren een gelijkheid aangeeft, is er een cache-hit en is meteen ook de juiste cacheline geselecteerd.</p>
+<p>Een voorbeeld zie je in bovenstaande afbeelding.<br>
+De processor beschikt over een 32-bit adresbus en een cache geheugen van 16kB met cachelines die 64-byte breed zijn. Om binnen elke cacheline het juiste byte te selecteren zijn er 6 bits nodig.<br>
+Hiervoor worden uiteraard de minst significante gebruikt. De overige 26 bits worden gebruikt om de inhoud van de cacheline te identificeren. Je zou dit kunnen zien als het nummer van het geheugenblok. Merk immers op dat voor elk byte van een geheugenblok, deze 26 bits van het adres steeds overeenkomen. Het zijn dan ook deze bits die opgeslagen worden in de tag. Naast de cachelines en de tags die eraan gekoppeld zijn, zijn er een aantal comperatoren voorzien. Bij het begin van een cyclus worden deze comperatoren gebruikt om de bovenste 26 bits van het adres te vergelijken met de inhoud van de tags. Indien de uitkomst van een van de comperatoren een gelijkheid aangeeft, is er een cache-hit en is meteen ook de juiste cacheline geselecteerd.</p>
 </div>
 <div class="paragraph">
 <p>In het voorbeeld zijn er 256 tags van 26 bits elk (6656 bits) die vereist zijn naast de data-cache. Dit komt neer op bijna 5% van de cache-capaciteit.
@@ -1640,6 +1642,7 @@ De processor beschikt overeen 32-bit adres bus en een cache geheugen van 16kB me
 </div>
 </div>
 <div class="exampleblock">
+<div class="title">Example 3. voorbeeld</div>
 <div class="content">
 <div class="paragraph">
 <p>Rekenvoorbeeld (meer voorbeelden vind je in [4] )</p>
@@ -1726,9 +1729,11 @@ Hit rate:: percentage toegangen die rechtstreeks langs de cache gaan</p>
 HR = hitrate<br>
 t = aantal cycli<br></p>
 </div>
+<div class="exampleblock">
+<div class="title">Example 4. Voorbeeld</div>
+<div class="content">
 <div class="paragraph">
-<p>Voorbeeld:
-Een computer heeft een L1-cache, toegangstijd 1 ns en een hitrate van 96%. De L2 cache heeft een hitrate van 88 % bij een toegangstijd van 2 ns. Het externe geheugen heeft een toegangstijd van 8 ns.
+<p>Een computer heeft een L1-cache, toegangstijd 1 ns en een hitrate van 96%. De L2 cache heeft een hitrate van 88 % bij een toegangstijd van 2 ns. Het externe geheugen heeft een toegangstijd van 8 ns.
 De gemiddelde toegangstijd wordt dan:</p>
 </div>
 <div class="paragraph">
@@ -1736,6 +1741,8 @@ De gemiddelde toegangstijd wordt dan:</p>
 </div>
 <div class="paragraph">
 <p>Probeer zelf eens uit wat de invloed is van de toegangstijd van het RAM-geheugen in dit systeem. Probeer eens wat er gebeurt zonder L2 cache. De verschillende factoren worden niet op dezelfde manier beïnvloed door de eigenschappen van het cache. Bijvoorbeeld de asscociativiteit van de cache biedt meer mogelijkheden op het vlak van cachelines selecteren, waardoor de hitrate hoger kan zijn. Daar staat tegenover dat een complexere berekening nodig is om een lijn te selecteren, waardoor bij een cache miss er extra tijd verloren gaat (hogere miss time).</p>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Een ander voorbeeld zijn de grootte van de cachelines. Grotere cachelines geven in eerste instantie een hogere hit rate, omdat meer naburige gegevens gekopieerd worden.
@@ -1786,7 +1793,7 @@ Belangrijk is ook dat bepaalde delen nooit mogen verdwijnen uit het fysieke gehe
 <div class="title">Figure 39. Paging table (Wikimedia Commons, BSD)</div>
 </div>
 <div class="exampleblock">
-<div class="title">Example 3. Voorbeeld</div>
+<div class="title">Example 5. Voorbeeld</div>
 <div class="content">
 <div class="paragraph">
 <p>Op een 32-bit processor met pagina’s van 4kB is een tabel nodig van 4MB (op voorwaarde dat de elementen van de tabel 32 bit groot zijn).</p>
@@ -1827,8 +1834,12 @@ Hierdoor reageert de computer trager dan in het geval er geen virtueel geheugen 
 </div>
 <div class="sect2">
 <h3 id="_bronvermelding_bij_dit_hoofdstuk">Bronvermelding bij dit hoofdstuk</h3>
-<div class="paragraph">
-<p><a id="PATT"></a>[PATT]Computer Organization And Design. David A. Patterson John L. Hennessey. fifth edition. p374</p>
+<div class="ulist Bibliography">
+<ul class="Bibliography">
+<li>
+<p><a id="PATT"></a>[PATT] <em>Computer Organization And Design</em>. David A. Patterson, John L. Hennessey. fifth edition. p374</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
