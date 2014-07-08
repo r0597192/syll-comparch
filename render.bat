@@ -10,6 +10,7 @@ echo PUBLISH TO GHDOCS
  robocopy c:\syll-comparch\ch04 c:\syll-comparch-ghpages\syll-comparch\html5\ch04 *.png *.jpg *.jpeg /mir
  robocopy c:\syll-comparch\ch05 c:\syll-comparch-ghpages\syll-comparch\html5\ch05 *.png *.jpg *.jpeg /mir
  robocopy c:\syll-comparch\ch06 c:\syll-comparch-ghpages\syll-comparch\html5\ch06 *.png *.jpg *.jpeg /mir
+robocopy c:\syll-comparch\ch07 c:\syll-comparch-ghpages\syll-comparch\html5\ch07 *.png *.jpg *.jpeg /mir
 
  echo ...omzetting naar docbook
  call asciidoctor -b docbook45 "c:/syll-comparch/book_pcarch.asc" -o "c:/syll-comparch/pcarch.xml" 
