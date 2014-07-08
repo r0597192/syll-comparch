@@ -2070,14 +2070,15 @@ Aan EFI wordt sedert 2002 gewerkt door enkele grote firma’s. Nagenoeg elke gro
 <simpara>In dit hoofdstuk wordt een overzicht gegeven van de verschillende manieren waarop data uitgewisseld worden op het moederbord, en met de systeemapparaten.</simpara>
 <section id="_i_o_transfers">
 <title>I/O transfers</title>
-<simpara>Naast processor en geheugen vormt I/O het derde fundamenteel onderdeel van een computersysteem. Er zijn een aantal verschillende soorten manieren om data te versturen of te ontvangen van een I/O apparaat. Afhankelijk van het type I/O apparaat is een bepaald soort transfer beter geschikt dan de andere. Het is aan het besturingssysteem of aan de in het besturingssysteem geïntegreerde drivers om de I/O transfers af te handelen</simpara>
+<simpara>Naast processor en geheugen vormt I/O het derde fundamenteel onderdeel van een computersysteem. Er zijn een aantal verschillende soorten manieren om data te versturen of te ontvangen van een I/O apparaat. Afhankelijk van het type I/O apparaat is een bepaald soort transfer beter geschikt dan de andere. Het is aan het besturingssysteem of aan de in het besturingssysteem geïntegreerde drivers om de I/O transfers af te handelen.</simpara>
 <section id="_pollen">
 <title>Pollen</title>
-<simpara>Pollen staat voor bevraging (al zal dat in deze tijden van polls wel duidelijk zijn). Dit is ook exact wat de processor zal doen: de processor zal voortdurend de I/O gaan bevragen om te kijken of er een actie van de CPU gewenst is.
-Het voordeel van pollen is dat een verandering bij het I/O apparaat onmiddellijk wordt opgemerkt en de processor dus ook ogenblikkelijk kan reageren. Het belangrijkste nadeel is dat de processor voortdurend de toestand van het I/O apparaat moet controleren.
-Wanneer de processor de toestand controleert, kan hij uiteraard geen andere (nuttige) taken uitvoeren.
-Pollen vraagt dus behoorlijk wat rekenkracht, ook al is die niet echt nodig om het trage I/O apparaat aan te sturen.
-Hier kan eventueel gedeeltelijk een oplossing voor gevonden worden bij multitasking, waardoor het wachten kan afgewisseld worden met andere taken. Voorgaande maakt waarschijnlijk wel duidelijk dat pollen niet echt bruikbaar is voor invoerapparaten. Die moeten immers voortdurend gecontroleerd worden, een printer enkel wanneer er data verstuurd werd. Polling wordt niet veel meer gebruikt voor gangbare PC I/O, maar is een zeer eenvoudige techniek en is dikwijls de eerste oplossing bij het schrijven van eigen interfaces voor bijvoorbeeld microcontroller-toepassingen.</simpara>
+<simpara>Pollen staat voor bevraging (al zal dat in deze tijden van polls wel duidelijk zijn). Dit is ook exact wat de processor zal doen: de processor zal voortdurend de I/O gaan bevragen om te kijken of er een actie van de CPU gewenst is.<?asciidoc-br?>
+Het voordeel van pollen is dat een verandering bij het I/O apparaat onmiddellijk wordt opgemerkt en de processor dus ook ogenblikkelijk kan reageren. Het belangrijkste nadeel is dat de processor voortdurend de toestand van het I/O apparaat moet controleren.<?asciidoc-br?>
+Wanneer de processor de toestand controleert, kan hij uiteraard geen andere (nuttige) taken uitvoeren.<?asciidoc-br?>
+Pollen vraagt dus behoorlijk wat rekenkracht, ook al is die niet echt nodig om het trage I/O apparaat aan te sturen.<?asciidoc-br?>
+Hier kan eventueel gedeeltelijk een oplossing voor gevonden worden bij multitasking, waardoor het wachten kan afgewisseld worden met andere taken. Voorgaande maakt waarschijnlijk wel duidelijk dat pollen niet echt bruikbaar is voor invoerapparaten. Die moeten immers voortdurend gecontroleerd worden, een printer enkel wanneer er data verstuurd werd.</simpara>
+<simpara>Polling wordt niet veel meer gebruikt voor gangbare PC I/O, maar is een zeer eenvoudige techniek en is dikwijls de eerste oplossing bij het schrijven van eigen interfaces voor bijvoorbeeld microcontroller-toepassingen.</simpara>
 </section>
 <section id="_interrupts">
 <title>Interrupts</title>
@@ -2088,38 +2089,80 @@ Hier kan eventueel gedeeltelijk een oplossing voor gevonden worden bij multitask
 </section>
 <section id="_interrupt_transfer">
 <title>Interrupt transfer</title>
-<simpara>Een interrupt transfer verloopt als volgt:
-	Als een I/O apparaat data (of een toestand) wil doorgeven aan de CPU,geeft het zelf een interruptsignaal.
-	Dit interrupsignaal komt toe op de interrupt controller. Als er geen andere interrupts zijn met hogere prioriteit, dan geeft de controller het signaal onmiddellijk door naar de processor. In het andere geval wordt pas na de afhandeling van de hogere prioriteitsinterrupt het interruptsignaal doorgegeven.
-	Als de controller het INT signaal geeft aan de processor, zal deze eerst de huidige instructie afwerken en zijn context opslaan (onder andere inhoud instruction pointer en statusregister).
-	Nu de processor klaar is voor de verwerking van de interrupt geeft hij een INTA (interrupt acknowledge) signaal door aan de interruptcontroller.
-	De controller reageert hierop door over de databus een vectornummer door te geven naar de processor.
-	Op basis van het vectornummer kan de processor de juiste interrupthandler starten en de interrupt afwerken
-	Zodra de interrupt volledig is afgewerkt, kan de processor zijn werk hervatten op de plaats waar hij onderbroken werd. Hiervoor laadt hij de instruction pointer met het eerder opgeslagen adres van de eerstvolgende af te werken instructie
-Deze uiteenzetting zou duidelijk moeten maken dat de reactie van de processor op de gebeurtenis bij de I/O trager is dan bij polling. Eerst moet nog een instructie afgehandeld worden, vervolgens moet de juiste handler geladen worden en vervolgens kunnen pas de nodige acties ondernomen worden. Daar staat tegenover dat de processor alleen maar tijd moet spenderen aan de I/O op het ogenblik dat dit echt nodig is. Hierdoor zal de processor minder tijd spenderen aan de I/O operatie. Het maakt interrupts dan ook uitermate geschikt voor invoerapparaten.</simpara>
+<simpara>Een interrupt transfer verloopt als volgt:</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Als een I/O apparaat data (of een toestand) wil doorgeven aan de CPU,geeft het 	zelf een interruptsignaal.</simpara>
+</listitem>
+<listitem>
+<simpara>Dit interrupsignaal komt toe op de interrupt controller. Als er geen andere interrupts zijn met hogere prioriteit, dan geeft de controller het signaal onmiddellijk door naar de processor. In het andere geval wordt pas na de afhandeling van de hogere prioriteitsinterrupt het interruptsignaal doorgegeven.</simpara>
+</listitem>
+<listitem>
+<simpara>Als de controller het INT signaal geeft aan de processor, zal deze eerst de huidige instructie afwerken en zijn context opslaan (onder andere inhoud instruction pointer en statusregister).</simpara>
+</listitem>
+<listitem>
+<simpara>Nu de processor klaar is voor de verwerking van de interrupt geeft hij een INTA (interrupt acknowledge) signaal door aan de interruptcontroller.</simpara>
+</listitem>
+<listitem>
+<simpara>De controller reageert hierop door over de databus een vectornummer door te geven naar de processor.</simpara>
+</listitem>
+<listitem>
+<simpara>Op basis van het vectornummer kan de processor de juiste interrupthandler starten en de interrupt afwerken</simpara>
+</listitem>
+<listitem>
+<simpara>Zodra de interrupt volledig is afgewerkt, kan de processor zijn werk hervatten op de plaats waar hij onderbroken werd. Hiervoor laadt hij de instruction pointer met het eerder opgeslagen adres van de eerstvolgende af te werken instructie</simpara>
+</listitem>
+</orderedlist>
+<simpara>Deze uiteenzetting zou duidelijk moeten maken dat de reactie van de processor op de gebeurtenis bij de I/O trager is dan bij polling. Eerst moet nog een instructie afgehandeld worden, vervolgens moet de juiste handler geladen worden en vervolgens kunnen pas de nodige acties ondernomen worden. Daar staat tegenover dat de processor alleen maar tijd moet spenderen aan de I/O op het ogenblik dat dit echt nodig is. Hierdoor zal de processor minder tijd spenderen aan de I/O operatie. Het maakt interrupts dan ook uitermate geschikt voor invoerapparaten.</simpara>
 </section>
 <section id="_interrupts_op_bussystemen">
 <title>Interrupts op bussystemen</title>
-<simpara>Op de ISA bus (voorganger van PCI) waren interrupts vast gelinkt op een bepaalde IRQ. Dit moest ingesteld worden met jumpers en vroeg enige zorg, want een IRQ kon slechts door één apparaat gebruikt worden.
-Om het gebruiksgemak te verhogen werd bij de PCI bus gebruikt gemaakt van een buscontroller die de PCI bus afschermt van de processor.
-Een manier om op PCI een interrupt te genereren is het versturen van een speciaal interrupt bericht naar de bus controller. Dit bericht bevat de nodige informatie over het type en de bron van de interrupt. De bus controller vertaalt dit dan naar een IRQ voor de processor.
+<simpara>Op de ISA bus (voorganger van PCI) waren interrupts vast gelinkt op een bepaalde IRQ. Dit moest ingesteld worden met jumpers en vroeg enige zorg, want een IRQ kon slechts door één apparaat gebruikt worden.<?asciidoc-br?>
+Om het gebruiksgemak te verhogen werd bij de PCI bus gebruikt gemaakt van een buscontroller die de PCI bus afschermt van de processor. <?asciidoc-br?>
+Een manier om op PCI een interrupt te genereren is het versturen van een speciaal interrupt bericht naar de bus controller. Dit bericht bevat de nodige informatie over het type en de bron van de interrupt. De bus controller vertaalt dit dan naar een IRQ voor de processor.<?asciidoc-br?>
 Op de PCI bus kunnen ook een aantal interruptlijnen beschikbaar zijn, die gedeeld kunnen worden tussen verschillende apparaten. Een interrupt op deze lijnen wordt dan door de controller vertaald naar een signaal dat uiteindelijk doorgegeven wordt aan de processor. Op die manier kunnen apparaten ook hetzelfde IRQ nummer delen.</simpara>
-<simpara>afbeelding 55 IRQ verdeling in apparaatbeheer
-Aangezien de banen van de PCI slots wel vast op een bepaald PCI interruptkanaal zaten, waren (zeker in de begindagen van PCI) nog wel conflicten mogelijk tussen apparaten die toch niet met elkaar overweg konden. In zo’n geval kon het volstaan om een van de uitbreidingskaarten naar een ander slot te verplaatsen om het conflict op te lossen.</simpara>
+<figure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch06/images/interrupt-muis.png" contentwidth="700" width="75%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>IRQ verdeling in apparaatbeheer</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>Aangezien de banen van de PCI slots wel vast op een bepaald PCI interruptkanaal zaten, waren (zeker in de begindagen van PCI) nog wel conflicten mogelijk tussen apparaten die toch niet met elkaar overweg konden. In zo’n geval kon het volstaan om een van de uitbreidingskaarten naar een ander slot te verplaatsen om het conflict op te lossen.</simpara>
 </section>
 </section>
 <section id="_direct_memory_access_dma">
 <title>Direct Memory Access (DMA)</title>
-<simpara>Bij een Direct Memory Acces (DMA) toegang, zal het I/O apparaat rechtstreeks data uitwisselen zonder dat de processor hierbij moet tussenkomen. Hiervoor is er weer behoefte aan een DMA controller. Dit kan een aparte controller zijn, maar de functies kunnen ook geïntegreerd worden in de chipset of in de I/O controller zelf. Om het verloop van een DMA transfer duidelijk te maken, zullen we het lezen van een sector van een harde schijf bekijken als voorbeeld.
-	De DMA transfer begint met de processor die de opdracht doorgeeft aan de DMA controller. Hierbij wordt onder meer het aantal bytes en het geheugenadres doorgegeven
-	De I/O controller krijgt de nodige instructies, in dit geval dat er gelezen moet worden en op welk adres dit moet gebeuren
-	Het I/O apparaat onderneemt de nodige acties (koppen verplaatsen, lezen) om de data beschikbaar te maken in het buffer
-	Zodra de data beschikbaar is, geeft de I/O controller een DRQ (DMA-request) signaal door aan de DMA controller.
-	De DMA controller probeert nu de controle te krijgen over de bus. Dit gebeurt door een HOLD signaal door te geven aan de processor.
-	De processor werkt eventuele lopende transfers op de bus af en geeft de bus dan vrij met een HOLDA signaal.
-	De DMA controller heeft nu controle over de databus en kan nu de transfer van schijf naar geheugen sturen. Dit gebeurt door het juiste geheugenadres op de bus te plaatsen en met een DACK-signaal aan de harde schijf aan te geven dat de data op de bus geplaatst mag worden.
-	Als de data verplaatst is, worden alle stuursignalen inactief gemaakt en wordt de DMA cyclus beëindigd.
-Het belangrijkste voordeel van dit soort transfer is dat de processor niet betrokken is bij het eigenlijke verplaatsen van de gegevens. In dit voorbeeld moet de CPU enkel de nodige commando’s doorgeven aan de DMA controller. Het voordeel hiervan is uiteraard dat de processor ondertussen kan verder werken en dus niet moet wachten op de trage harde schijf. Bovendien worden de gegevens nu meteen in het geheugen geplaatst, anders zou de processor ze eerst moeten lezen van de schijf en dan naar het geheugen schrijven.Tijdens de eigenlijke overdracht van gegevens is de bus natuurlijk bezet en kan de processor daar geen gebruik van maken. Dit heet cycle stealing. De DMA controller steelt tijd van de processor op de bus. Hoewel de DMA controller toegang tot de bus aanvraagt, zal hij bijna altijd voorrang krijgen op de processor. Eens een I/O apparaat zoals een schijf op gang komt, is het belangrijk om de gegevens zo snel mogelijk te kunnen verplaatsen. Meestal zal het ook zo zijn dat de DMA controller meerdere keren de bus moet overnemen om bytes te verplaatsen.
+<simpara>Bij een Direct Memory Acces (DMA) toegang, zal het I/O apparaat rechtstreeks data uitwisselen zonder dat de processor hierbij moet tussenkomen. Hiervoor is er weer behoefte aan een DMA controller. Dit kan een aparte controller zijn, maar de functies kunnen ook geïntegreerd worden in de chipset of in de I/O controller zelf. Om het verloop van een DMA transfer duidelijk te maken, zullen we het lezen van een sector van een harde schijf bekijken als voorbeeld.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>De DMA transfer begint met de processor die de opdracht doorgeeft aan de DMA controller. Hierbij wordt onder meer het aantal bytes en het geheugenadres doorgegeven</simpara>
+</listitem>
+<listitem>
+<simpara>De I/O controller krijgt de nodige instructies, in dit geval dat er gelezen moet worden en op welk adres dit moet gebeuren</simpara>
+</listitem>
+<listitem>
+<simpara>Het I/O apparaat onderneemt de nodige acties (koppen verplaatsen, lezen) om de data beschikbaar te maken in het buffer</simpara>
+</listitem>
+<listitem>
+<simpara>Zodra de data beschikbaar is, geeft de I/O controller een DRQ (DMA-request) signaal door aan de DMA controller.</simpara>
+</listitem>
+<listitem>
+<simpara>De DMA controller probeert nu de controle te krijgen over de bus. Dit gebeurt door een HOLD signaal door te geven aan de processor.</simpara>
+</listitem>
+<listitem>
+<simpara>De processor werkt eventuele lopende transfers op de bus af en geeft de bus dan vrij met een HOLDA signaal.</simpara>
+</listitem>
+<listitem>
+<simpara>De DMA controller heeft nu controle over de databus en kan nu de transfer van schijf naar geheugen sturen. Dit gebeurt door het juiste geheugenadres op de bus te plaatsen en met een DACK-signaal aan de harde schijf aan te geven dat de data op de bus geplaatst mag worden.</simpara>
+</listitem>
+<listitem>
+<simpara>Als de data verplaatst is, worden alle stuursignalen inactief gemaakt en wordt de DMA cyclus beëindigd.</simpara>
+</listitem>
+</orderedlist>
+<simpara>Het belangrijkste voordeel van dit soort transfer is dat de processor niet betrokken is bij het eigenlijke verplaatsen van de gegevens. In dit voorbeeld moet de CPU enkel de nodige commando’s doorgeven aan de DMA controller. Het voordeel hiervan is uiteraard dat de processor ondertussen kan verder werken en dus niet moet wachten op de trage harde schijf. Bovendien worden de gegevens nu meteen in het geheugen geplaatst, anders zou de processor ze eerst moeten lezen van de schijf en dan naar het geheugen schrijven.Tijdens de eigenlijke overdracht van gegevens is de bus natuurlijk bezet en kan de processor daar geen gebruik van maken. Dit heet cycle stealing. De DMA controller steelt tijd van de processor op de bus. Hoewel de DMA controller toegang tot de bus aanvraagt, zal hij bijna altijd voorrang krijgen op de processor.</simpara>
+<simpara>Eens een I/O apparaat zoals een schijf op gang komt, is het belangrijk om de gegevens zo snel mogelijk te kunnen verplaatsen. Meestal zal het ook zo zijn dat de DMA controller meerdere keren de bus moet overnemen om bytes te verplaatsen.<?asciidoc-br?>
 Dit hangt natuurlijk ook af van de grootte van buffers en interface-snelheden.
 Het opstarten van een DMA transfer kost wel wat extra processorcycli. Alle nodige gegevens doorgeven aan de DMA controller kost nu eenmaal tijd. DMA is dan ook een transfermethode die vooral voordeel biedt als er grote hoeveelheden data verplaatst moeten worden. Dan is slechts een opdracht naar de DMA controller nodig, die vervolgens autonoom de transfer kan regelen.</simpara>
 </section>
@@ -2128,94 +2171,142 @@ Het opstarten van een DMA transfer kost wel wat extra processorcycli. Alle nodig
 <title>Bussystemen</title>
 <section id="_in_den_beginne">
 <title>In den beginne…</title>
-<simpara>In de geschiedenis van de personal computer zijn reeds een heel aantal verschillende bussystemen de revue gepasseerd.
-De eerste IBM PC gebruikte als bus de zogenaamde PC-bus. In feite was dit in grote lijnen een gebufferde versie van de processor in- en uitgangen.
-Er waren 62 signaallijnen: 20 adreslijnen, 8 datalijnen, een paar controlelijnen (I/O read/write, memory read/write) en een aantal lijnen ten behoeve van interrupts en DMA transfers. Bij de lancering van de PC/AT met 80286 stond IBM voor een dilemma. Er moest een keuze gemaakt worden voor een bussysteem, dat ofwel toeliet om de kaarten voor de PC-bus te blijven gebruiken ofwel gebruik kon maken van de extra mogelijkheden van de 80286 (24 adreslijnen, 16 datalijnen).
-De oplossing was het uitbreiden van de slots op de PC bus met een extra connector. Nieuwe kaarten konden gebruik maken van dit extra deel en dus ook van de extra mogelijkheden in het nieuwe systeem.
-Oudere kaarten konden gewoon verder gebruikt worden langs het PC-bus gedeelte, uiteraard zonder de voordelen van de nieuwe processor. Toen IBM zijn PS/2-serie uitbracht, vonden ze de tijd gekomen om een nieuwe bus te ontwikkelen. Dit was de microchannel bus. Een deel van de reden was dat de PC-bus ondertussen echt wel verouderd was, een ander deel van de reden was dat IBM een obstakel wilde opwerpen voor de kloonbouwers. Microchannel werd dan ook afgeschermd met een muur van patenten met daarachter een legertje advocaten.
-De reactie van de overige PC-bouwers was de ontwikkeling van een eigen bus, namelijk de ISA-bus (Industry Standard Architecture). Dit was in feite gewoon een AT-bus die op een hogere klokfrequentie werkte. Belangrijk voordeel was dat deze bus compatibel was met de oudere kaarten. Bovendien waren er een groot aantal fabrikanten van uitbreidingskaarten, die vrij van licentiezorgen, kaarten ontwikkeld hadden voor de AT-bus en dit konden blijven doen voor de ISA-bus.
-Gevolg was dat dit de de facto standaard werd en dat IBM in de vrij absurde situatie terecht kwam, waarin het als enige geen IBM-compatibele PC’s produceerde en het bijna volledig uit de PC-markt verdreven werd. Later werd de ISA-bus nog uitgebreid naar de 32 bit EISA (Extended ISA) versie.
+<simpara>In de geschiedenis van de personal computer zijn reeds een heel aantal verschillende bussystemen de revue gepasseerd.<?asciidoc-br?>
+De eerste IBM PC gebruikte als bus de zogenaamde PC-bus. In feite was dit in grote lijnen een gebufferde versie van de processor in- en uitgangen.<?asciidoc-br?>
+Er waren 62 signaallijnen: 20 adreslijnen, 8 datalijnen, een paar controlelijnen (I/O read/write, memory read/write) en een aantal lijnen ten behoeve van interrupts en DMA transfers. Bij de lancering van de PC/AT met 80286 stond IBM voor een dilemma. Er moest een keuze gemaakt worden voor een bussysteem, dat ofwel toeliet om de kaarten voor de PC-bus te blijven gebruiken ofwel gebruik kon maken van de extra mogelijkheden van de 80286 (24 adreslijnen, 16 datalijnen).<?asciidoc-br?>
+De oplossing was het uitbreiden van de slots op de PC bus met een extra connector. Nieuwe kaarten konden gebruik maken van dit extra deel en dus ook van de extra mogelijkheden in het nieuwe systeem.<?asciidoc-br?>
+Oudere kaarten konden gewoon verder gebruikt worden langs het PC-bus gedeelte, uiteraard zonder de voordelen van de nieuwe processor. Toen IBM zijn PS/2-serie uitbracht, vonden ze de tijd gekomen om een nieuwe bus te ontwikkelen. Dit was de microchannel bus. Een deel van de reden was dat de PC-bus ondertussen echt wel verouderd was, een ander deel van de reden was dat IBM een obstakel wilde opwerpen voor de kloonbouwers. Microchannel werd dan ook afgeschermd met een muur van patenten met daarachter een legertje advocaten.<?asciidoc-br?>
+De reactie van de overige PC-bouwers was de ontwikkeling van een eigen bus, namelijk de ISA-bus (Industry Standard Architecture). Dit was in feite gewoon een AT-bus die op een hogere klokfrequentie werkte. Belangrijk voordeel was dat deze bus compatibel was met de oudere kaarten. Bovendien waren er een groot aantal fabrikanten van uitbreidingskaarten, die vrij van licentiezorgen, kaarten ontwikkeld hadden voor de AT-bus en dit konden blijven doen voor de ISA-bus.<?asciidoc-br?>
+Gevolg was dat dit de de facto standaard werd en dat IBM in de vrij absurde situatie terecht kwam, waarin het als enige geen IBM-compatibele PC’s produceerde en het bijna volledig uit de PC-markt verdreven werd. Later werd de ISA-bus nog uitgebreid naar de 32 bit EISA (Extended ISA) versie.<?asciidoc-br?>
 Op moderne computersystemen zal je deze bussen niet meer aantreffen.</simpara>
 </section>
 <section id="_pci">
 <title>PCI</title>
-<simpara>Uit het voorgaande blijkt al dat de ISA-bus technologisch zeker niet superieur is. De belangrijkste kwaliteit was de backward compatibiliteit met oudere uitbreidingskaarten.
+<simpara>Uit het voorgaande blijkt al dat de ISA-bus technologisch zeker niet superieur is. De belangrijkste kwaliteit was de backward compatibiliteit met oudere uitbreidingskaarten.<?asciidoc-br?>
 Het gebrek aan bandbreedte werd echt een belangrijk tekort als grafische interfaces en toepassingen hun intrede deden.
-Een rekenvoorbeeld om dit duidelijk te maken: om full screen bewegende kleurbeelden weer te geven op een computerscherm van 1024*768 pixels zijn dertig beelden per seconde nodig. Als voor de kleurweergave per pixel drie bytes nodig zijn (RGB), dan is een transfersnelheid nodig van
-3B * 1024 * 768 * 30 = 70MB/s
-De EISA bus met 32 bit databus en 8,33MHz kloksnelheid, kon maximaal 33,3MB/s geven. Bovendien moet de bus nog gedeeld worden door andere apparaten, waaronder het geheugen, waarvoor deze snelheid ook onvoldoende zal blijken. De oplossing bestaat erin een nieuw bussysteem te ontwikkelen. Dit zal de PCI-bus (Peripheral Component Interconnect) worden.
+Een rekenvoorbeeld om dit duidelijk te maken: om full screen bewegende kleurbeelden weer te geven op een computerscherm van 1024*768 pixels zijn dertig beelden per seconde nodig.<?asciidoc-br?></simpara>
+<simpara>Als voor de kleurweergave per pixel drie bytes nodig zijn (RGB), dan is een transfersnelheid nodig van</simpara>
+<simpara>3B * 1024 * 768 * 30 = 70MB/s</simpara>
+<simpara>De EISA bus met 32 bit databus en 8,33MHz kloksnelheid, kon maximaal 33,3MB/s geven. Bovendien moet de bus nog gedeeld worden door andere apparaten, waaronder het geheugen, waarvoor deze snelheid ook onvoldoende zal blijken. De oplossing bestaat erin een nieuw bussysteem te ontwikkelen. Dit zal de PCI-bus (Peripheral Component Interconnect) worden.<?asciidoc-br?>
 PCI werd ontwikkeld door Intel, dat verstandig genoeg was om de patenten in het publiek domein te plaatsen, zodat alle fabrikanten randapparatuur konden bouwen, zonder hiervoor rechten te moeten betalen. Intel richtte ook de PCI Special Interest Group op, een industrieconsortium dat dat de toekomst van de PCI-bus moest regelen.
-Belangrijke eisen bij de ontwikkeling van PCI zijn onder andere:
-	zorgen voor voldoende bandbreedte, ook naar het geheugen
-	backward compatibility verzekeren
-	kleinere connector dan ISA slots
-	ondersteuning voor plug-and-play, power management (laag stroomverbruik)
-	hiërarchie van bussen
-De eerste twee eisen zijn uiteraard de belangrijkste.
+Belangrijke eisen bij de ontwikkeling van PCI zijn onder andere:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>zorgen voor voldoende bandbreedte, ook naar het geheugen</simpara>
+</listitem>
+<listitem>
+<simpara>backward compatibility verzekeren</simpara>
+</listitem>
+<listitem>
+<simpara>kleinere connector dan ISA slots</simpara>
+</listitem>
+<listitem>
+<simpara>ondersteuning voor plug-and-play, power management (laag stroomverbruik)</simpara>
+</listitem>
+<listitem>
+<simpara>hiërarchie van bussen</simpara>
+</listitem>
+</itemizedlist>
+<simpara>De eerste twee eisen zijn uiteraard de belangrijkste.
 De eerste ligt voor de hand, de tweede heeft in de PC-geschiedenis zijn belang bewezen. De oplossing voor beide ligt in de ontwikkeling van een I/O systeem, waarin verschillende bussen aanwezig zijn. Er ontstaat op die manier een bushiërarchie van snellere naar tragere bussen, waarbij over de snelle bussen data uitgewisseld kan worden zonder rekening te moeten houden met de tragere onderdelen van het computersysteem (die op een tragere bus aangesloten zijn).</simpara>
-<simpara>afbeelding 56 bussysteem
-afbeelding 56 geeft de opbouw van het bussysteem bij de ontwikkeling van de PCI-bus. De processor was via de snelle back-side bus verbonden met het cachegeheugen, dat toen nog niet (volledig) in de processor geïntegreerd was. Via de front-side bus was de processor verbonden met de PCI-bridge.
-De PCI bridge kon dan enerzijds verbinding maken met het hoofdgeheugen en anderzijds met de PCI bus. Op de PCI bus kon dan de ISA bridge aangesloten worden, die verbinding kon maken met de IDE kanalen en uiteraard ook met de ISA-bus. De compatibiliteit werd verzekerd door naast PCI slots ook een aantal ISA slots te blijven voorzien. Op de PCI bus kon dan allerhande hardware aangesloten worden, waaronder ook adapters voor andere bussystemen zoals SCSI en USB. De IC’s die de verschillende bussystemen van elkaar scheiden, vormen de chipset. Het is dit onderdeel van het computersysteem dat de ontwikkeling voor Intel zo interessant maakte. Intel wou (en zou) immers de chipsets ontwikkelen en verkopen. De namen voor de verschillende bridge chips verandert in de loop der tijden wel een aantal keer (net zoals de functies die erin geïntegreerd zijn). Gangbare, maar verouderde namen zijn North en South bridge, waarbij PCI gekoppeld was aan de south-bridge. Nieuwere versies verlaten de ‘north’ en ‘south’ terminologie. De micro-architectuur die momenteel gebruikt wordt, vind je hieronder:
- afbeelding 57 oude en moderne intel-microarchitectuur
-Het gebruik van de bridges heeft als bijkomend voordeel dat de PCI-bus eigenlijk processoronafhankelijk wordt. Hoe transfers op PCI verlopen is volledig van de processor afgeschermd door de bridge (die uiteraard wel processor-afhankelijk is).
+<figure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch06/images/busHierarchie.png" contentwidth="400" width="60%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>bussysteem</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>Bovenstaande afbeelding geeft de opbouw van het bussysteem bij de ontwikkeling van de PCI-bus. De processor was via de snelle back-side bus verbonden met het cachegeheugen, dat toen nog niet (volledig) in de processor geïntegreerd was. Via de front-side bus was de processor verbonden met de PCI-bridge.</simpara>
+<simpara>De PCI bridge kon dan enerzijds verbinding maken met het hoofdgeheugen en anderzijds met de PCI bus. Op de PCI bus kon dan de ISA bridge aangesloten worden, die verbinding kon maken met de IDE kanalen en uiteraard ook met de ISA-bus. De compatibiliteit werd verzekerd door naast PCI slots ook een aantal ISA slots te blijven voorzien. Op de PCI bus kon dan allerhande hardware aangesloten worden, waaronder ook adapters voor andere bussystemen zoals SCSI en USB. De IC’s die de verschillende bussystemen van elkaar scheiden, vormen de chipset. Het is dit onderdeel van het computersysteem dat de ontwikkeling voor Intel zo interessant maakte. Intel wou (en zou) immers de chipsets ontwikkelen en verkopen. De namen voor de verschillende bridge chips verandert in de loop der tijden wel een aantal keer (net zoals de functies die erin geïntegreerd zijn). Gangbare, maar verouderde terminologie hiervoor zijn North en South bridge, waarbij PCI gekoppeld was aan de south-bridge. Nieuwere versies verlaten de ‘north’ en ‘south’ terminologie. De micro-architectuur die momenteel gebruikt wordt, vind je hieronder:</simpara>
+<figure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch06/images/oude_en_nieuwe_microarchitectuur_intel.png" align="center"/>
+</imageobject>
+<textobject><phrase>oude en nieuwe microarchitectuur intel</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>Het gebruik van de bridges heeft als bijkomend voordeel dat de PCI-bus eigenlijk processoronafhankelijk wordt. Hoe transfers op PCI verlopen is volledig van de processor afgeschermd door de bridge (die uiteraard wel processor-afhankelijk is).
 Dit maakt PCI eigenlijk platformonafhankelijk, wat betekent dat het ook met andere processoren gebruikt werd (b.v. ultrasparc).</simpara>
 <section id="_transfers">
 <title>Transfers</title>
-<simpara>PCI is een gedeeld bussysteem. Dit betekent dat de datalijnen gebruikt worden door alle aangesloten apparaten. Dit betekent dus ook dat er enerzijds nood is aan adressering (welk apparaat moet data accepteren) en anderzijds nood aan toegangscontrole (twee apparaten mogen niet tegelijkertijd toegang krijgen tot de bus).
-Adreslijnen en datalijnen worden op de PCI-bus gemultiplext. Dit zorgt ervoor dat er eerst een adrescyclus nodig is en dat pas daarna de data getransfereerd kan worden. Dit is iets trager, maar bespaart ruimte op de connector. Er zijn verschillende manieren om toegang tot een bus te controleren. Op PCI is het zo dat elk apparaat op elk ogenblik een transfer kan starten. Elk apparaat kan initiator zijn.
-Om conflicten te vermijden is er op de PCI bus ook een arbitrator, deze functie is meestal geïntegreerd in de chipset. Een apparaat dat toegang wil tot de bus zal dit aanvragen bij de arbitrator. Indien meerdere apparaten tegelijk toegang vragen, zal de arbitrator een van de apparaten toegang verlenen via een grant-signaal. De andere moeten wachten. Het apparaat met het grant signaal wordt op dat ogenblik master op de PCI-bus. Het algoritme dat hierbij gebruikt wordt, ligt niet vast in de standaard, maar is bij voorkeur wel rechtvaardig, zodat elk apparaat aan bod komt.
-Eens een apparaat toegang tot de bus krijgt kan het dan een data transfer starten. Deze kan in principe variëren in het aantal bits dat overgebracht wordt, zodat grote blokken getransfereerd kunnen worden en de bus dus lang aan haar maximale datasnelheid kan werken. Om te vermijden dat een apparaat met een lange transfer de bus gaat monopoliseren, moet het voortdurend zijn grant-signaal in de gaten houden. Zodra een ander apparaat toegang tot de bus wil, zal de arbitrator het grant-signaal wegnemen. De data die al op de bus staat, wordt afgeleverd, waarna de bus wordt vrijgegeven. De onderbroken transfer moet uiteraard later afgewerkt worden, daarvoor zal het apparaat weer toegang vragen.</simpara>
+<simpara>PCI is een gedeeld bussysteem. Dit betekent dat de datalijnen gebruikt worden door alle aangesloten apparaten. Dit betekent dus ook dat er enerzijds nood is aan adressering (welk apparaat moet data accepteren) en anderzijds nood aan toegangscontrole (twee apparaten mogen niet tegelijkertijd toegang krijgen tot de bus).<?asciidoc-br?>
+Adreslijnen en datalijnen worden op de PCI-bus gemultiplext. Dit zorgt ervoor dat er eerst een adrescyclus nodig is en dat pas daarna de data getransfereerd kan worden. Dit is iets trager, maar bespaart ruimte op de connector. Er zijn verschillende manieren om toegang tot een bus te controleren. Op PCI is het zo dat elk apparaat op elk ogenblik een transfer kan starten. Elk apparaat kan initiator zijn.<?asciidoc-br?>
+Om conflicten te vermijden is er op de PCI bus ook een arbitrator, deze functie is meestal geïntegreerd in de chipset. Een apparaat dat toegang wil tot de bus zal dit aanvragen bij de arbitrator. Indien meerdere apparaten tegelijk toegang vragen, zal de arbitrator een van de apparaten toegang verlenen via een grant-signaal. De andere moeten wachten. Het apparaat met het grant signaal wordt op dat ogenblik master op de PCI-bus. Het algoritme dat hierbij gebruikt wordt, ligt niet vast in de standaard, maar is bij voorkeur wel rechtvaardig, zodat elk apparaat aan bod komt.</simpara>
+<simpara>Eens een apparaat toegang tot de bus krijgt kan het dan een data transfer starten. Deze kan in principe variëren in het aantal bits dat overgebracht wordt, zodat grote blokken getransfereerd kunnen worden en de bus dus lang aan haar maximale datasnelheid kan werken. Om te vermijden dat een apparaat met een lange transfer de bus gaat monopoliseren, moet het voortdurend zijn grant-signaal in de gaten houden. Zodra een ander apparaat toegang tot de bus wil, zal de arbitrator het grant-signaal wegnemen. De data die al op de bus staat, wordt afgeleverd, waarna de bus wordt vrijgegeven. De onderbroken transfer moet uiteraard later afgewerkt worden, daarvoor zal het apparaat weer toegang vragen.</simpara>
 </section>
 <section id="_snelheid">
 <title>Snelheid</title>
-<simpara>De originele PCI bus maakte gebruik van een 32 bits databus en 33MHz klokfrequentie. Dit geeft een maximale bandbreedte van 133MB/s. Belangrijke opmerking is dat deze snelheid niet voortdurend gehaald wordt. Op sommige ogenblikken moeten andere gegevens verstuurd worden over de bus(bijvoorbeeld adres). Bovendien moet deze bandbreedte verdeeld worden over alle aangesloten apparaten, zodat de gemiddelde beschikbare snelheid voor een bepaald apparaat lager zal liggen dat de vermelde 133MB/s.
-Er bestaan varianten van PCI die hogere snelheden toelaten. Dit kan ofwel door de breedte van de databus te vergroten tot 64 bit ofwel door de kloksnelheid te verhogen tot 66MHz (in beide gevallen geeft dit een verdubbeling van de snelheid tot 266MB/s) ofwel door een combinatie van beiden (533MB/s). Deze laatste variant heet PCI-X (PCI eXtended) en is nog terug te vinden in oudere servers en workstations. In een gewone desktop PC vind je deze variant niet terug.
-Ter illustratie staan in onderstaande figuur de bekende 32-bit connector.</simpara>
-<simpara>afbeelding 58 PCI slots</simpara>
+<simpara>De originele PCI bus maakte gebruik van een 32 bits databus en 33MHz klokfrequentie. Dit geeft een maximale bandbreedte van 133MB/s. Belangrijke opmerking is dat deze snelheid niet voortdurend gehaald wordt. Op sommige ogenblikken moeten andere gegevens verstuurd worden over de bus(bijvoorbeeld adres). Bovendien moet deze bandbreedte verdeeld worden over alle aangesloten apparaten, zodat de gemiddelde beschikbare snelheid voor een bepaald apparaat lager zal liggen dat de vermelde 133MB/s.</simpara>
+<simpara>Er bestaan varianten van PCI die hogere snelheden toelaten. Dit kan ofwel door de breedte van de databus te vergroten tot 64 bit ofwel door de kloksnelheid te verhogen tot 66MHz (in beide gevallen geeft dit een verdubbeling van de snelheid tot 266MB/s) ofwel door een combinatie van beiden (533MB/s). Deze laatste variant heet PCI-X (PCI eXtended) en is nog terug te vinden in oudere servers en workstations. In een gewone desktop PC vind je deze variant niet terug.</simpara>
+<simpara>Ter illustratie staan in onderstaande figuur de bekende 32-bit connectoren.</simpara>
+<figure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch06/images/Pci-slots.jpg" contentwidth="350" width="40%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>PCI slots</phrase></textobject>
+</mediaobject>
+</figure>
 </section>
 </section>
 <section id="_agp_accelerated_graphics_port">
 <title>AGP (Accelerated Graphics Port)</title>
 <simpara>Uit de eerdere berekening voor de bandbreedte voor het bekijken van videobeelden en de bandbreedte van PCI kan je afleiden dat er al snel problemen ontstonden op het vlak van beschikbare bandbreedte. Een oppervlakkige vergelijking van de cijfers leidt tot de conclusie dat de 133MB/s voldoende is voor de benodigde 70MB/s. Als je de cijfers iets nauwkeuriger gaat bekijken, dan moet je vaststellen dat de 70MB/s echt nodig zijn en de 133MB/s enkel gehaald worden op het ogenblik dat een apparaat echt data verstuurd. Als we rekening houden met andere apparaten die data moeten uitwisselen (bijvoorbeeld de harde schijf of dvd waar de film op staat), dan blijkt al snel dat PCI onvoldoende bandbreedte biedt voor de huidige eisen aan video.
-Dezelfde conclusie kan je ook trekken als je rekening houdt met hogere schermresoluties. Om dit probleem aan te pakken, werd het bussysteem uitgebreid met een extra interface (AGP). De functionaliteit voor het besturen van deze interface werd geïntegreerd in de chipset. Deze chipsets werden initieel de north bridge en south bridge genoemd.
-Merk op dat de north en south bridge ondertussen omgedoopt zijn in memory controller hub (MCH) en I/O controller hub (ICH). In de nieuwste processoren is de Northbridge zelfs helemaal opgegaan in de processor.
-De besturing van AGP bevindt zich in de MCH en de besturing van PCI in de ICH. AGP bood in zijn eerste versie (AGP 1x) een databus van 32 bit bij 66MHz, hetgeen een bandbreedte geeft van 266MB/s. Behalve de vergroting van de kloksnelheid heeft AGP nog een bijkomend voordeel dat tot een grotere datasnelheid leidt: de AGP verbinding is een punt-tot-punt verbinding en de beschikbare bandbreedte moet dus niet gedeeld worden en is ogenblikkelijk beschikbaar. Een ander voordeel van AGP is dat het voorziet in mogelijkheden om rechtstreeks uit het geheugen te lezen, door gebruik te maken van een Graphics Addressing Remapping Table.
-Een grafische kaart op PCI moest eerst de data kopiëren naar het framebuffer op de kaart. AGP komt in een aantal varianten. Het voornaamste onderscheid is de snelheid.
-Naast AGP 1x, bestaan ook 2x, 4x en 8x. Deze bieden respectievelijk 533,1066 en 2133MB/s aan over een databus van 32 bit. Het verschil tussen elk van deze varianten is dat de kloksnelheid volgens het DDR principe wordt vergroot. De basisfrequentie is steeds 66MHz, maar deze wordt op 2x verdubbeld naar 133MHz (net zoals bij DDR). Op 4x en 8x wordt ze respectievelijk verviervoudigd (zoals bij DDR2) en verachtvoudigd (zoals bij DDR3).
-Daarnaast is er ook nog variatie in voedingsspanningen (eerst 3.3V, daarna 1.5V en tenslotte 0.8V). Hierbij moet wel opgelet worden met compatibilteit. afbeelding 6.9 geeft een aantal kaart- en slotvarianten en toont welke op elkaar passen. Uiteraard kan je een kaart die enkel kan werken op 1.5V niet aansluiten op een slot dat enkel 3V kan leveren.
-De pro-versies vormen een eerder zeldzame variant, waarbij er extra stroom geleverd kan worden.</simpara>
+Dezelfde conclusie kan je ook trekken als je rekening houdt met hogere schermresoluties. Om dit probleem aan te pakken, werd het bussysteem uitgebreid met een extra interface (AGP). De functionaliteit voor het besturen van deze interface werd geïntegreerd in de chipset. Deze chipsets werden initieel de north bridge en south bridge genoemd.</simpara>
+<simpara>Merk op dat de north en south bridge ondertussen omgedoopt zijn in memory controller hub (MCH) en I/O controller hub (ICH). In de nieuwste processoren is de Northbridge zelfs helemaal opgegaan in de processor.</simpara>
+<simpara>De besturing van AGP bevindt zich in de MCH en de besturing van PCI in de ICH. AGP bood in zijn eerste versie (AGP 1x) een databus van 32 bit bij 66MHz, hetgeen een bandbreedte geeft van 266MB/s. Behalve de vergroting van de kloksnelheid heeft AGP nog een bijkomend voordeel dat tot een grotere datasnelheid leidt: de AGP verbinding is een punt-tot-punt verbinding en de beschikbare bandbreedte moet dus niet gedeeld worden en is ogenblikkelijk beschikbaar. Een ander voordeel van AGP is dat het voorziet in mogelijkheden om rechtstreeks uit het geheugen te lezen, door gebruik te maken van een Graphics Addressing Remapping Table.</simpara>
+<simpara>Een grafische kaart op PCI moest eerst de data kopiëren naar het framebuffer op de kaart. AGP komt in een aantal varianten. Het voornaamste onderscheid is de snelheid.
+Naast AGP 1x, bestaan ook 2x, 4x en 8x. Deze bieden respectievelijk 533,1066 en 2133MB/s aan over een databus van 32 bit. Het verschil tussen elk van deze varianten is dat de kloksnelheid volgens het DDR principe wordt vergroot. De basisfrequentie is steeds 66MHz, maar deze wordt op 2x verdubbeld naar 133MHz (net zoals bij DDR). Op 4x en 8x wordt ze respectievelijk verviervoudigd (zoals bij DDR2) en verachtvoudigd (zoals bij DDR3).</simpara>
+<simpara>Daarnaast is er ook nog variatie in voedingsspanningen (eerst 3.3V, daarna 1.5V en tenslotte 0.8V). Hierbij moet wel opgelet worden met compatibilteit. afbeelding 6.9 geeft een aantal kaart- en slotvarianten en toont welke op elkaar passen. Uiteraard kan je een kaart die enkel kan werken op 1.5V niet aansluiten op een slot dat enkel 3V kan leveren.</simpara>
+<simpara>De pro-versies vormen een eerder zeldzame variant, waarbij er extra stroom geleverd kan worden.</simpara>
 </section>
 <section id="_pci_express">
 <title>PCI-express</title>
 <simpara>Er komt steeds meer hardware die een te grote bandbreedte vraagt voor PCI. Een voorbeeld zijn gigabit netwerkkaarten die een bandbreedte van 125MB/s vragen, zeer dicht bij de (gedeelde bovengrens van) 133MB/s die PCI kan bieden. Een oplossing zou kunnen zijn om voor die apparaten de functie van de chipset aan te passen en een aparte poort te voorzien (zoals voor AGP). Op deze manier wordt de flexibiliteit wel beperkt en daalt ook de overzichtelijkheid van het systeem. Het zou interessanter zijn om een bus te ontwikkelen die gewoon een hogere bandbreedte haalt en bijvoorbeeld ook voldoende bandbreedte kan bieden om grafische kaarten te ondersteunen. Er zijn een aantal oplossingen ontwikkeld, maar diegene die het uiteindelijk gehaald heeft is PCI-express (PCIe) (ook hier was Intel weer een van de drijvende krachten achter de ontwikkeling).</simpara>
 <section id="_architectuur">
 <title>Architectuur</title>
-<simpara>Het ontwerp van PCIe breekt radicaal met dat van de traditionele bussystemen. In plaats van het traditionele concept van een bussysteem met een brede databus, die gedeeld wordt door meerdere apparaten, gebruikt PCIe een snelle seriële punt-tot-punt verbinding.
-Seriële verbindingen hebben als belangrijk voordeel dat problemen met looptijdverschillen en overspraak vermeden kunnen worden, waardoor een veel hogere kloksnelheid gebruikt kan worden. De topologie lijkt dan ook geweldig op die van switched ethernet.
-Centraal in het concept staat een PCIe switch, die met een aantal gepaarde seriële links verbonden is met de aanwezige hardware.</simpara>
+<simpara>Het ontwerp van PCIe breekt radicaal met dat van de traditionele bussystemen. In plaats van het traditionele concept van een bussysteem met een brede databus, die gedeeld wordt door meerdere apparaten, gebruikt PCIe een snelle seriële punt-tot-punt verbinding.</simpara>
+<simpara>Seriële verbindingen hebben als belangrijk voordeel dat problemen met looptijdverschillen en overspraak vermeden kunnen worden, waardoor een veel hogere kloksnelheid gebruikt kan worden. De topologie lijkt dan ook geweldig op die van switched ethernet.</simpara>
+<simpara>Centraal in het concept staat een PCIe switch, die met een aantal gepaarde seriële links verbonden is met de aanwezige hardware.</simpara>
 </section>
 <section id="_snelheid_2">
 <title>Snelheid</title>
-<literallayout class="monospaced"> afbeelding 59 Verschillende connectoren (bron onbekend)
-De verbinding tussen de PCIe-switch en de I/O bestaat uit een of meer paren van eenrichtingslinks. Een link bestaat dus uit een upstream en downstream-verbinding. Een dergelijke link noemt men een lane. In het eenvoudigste geval bestaat de verbinding uit een lane, maar het kunnen ook 2, 4, 8, 16 of 32 paren zijn.
-Uiteraard nemen uitbreidingsslots met meerdere lanes meer plaats in op het moederbord (afbeelding 59).
-Op elke lane wordt er snelheid gehaald van 2,5Gbps. Deze snelheid zal in de toekomst nog kunnen vergroten (PCIe2.0: 5Gbps, 3.0: 8Gbps, 4.0: 16Gbps). De vermelde snelheid is wel een brutosnelheid, dus zonder rekening te houden met extra informatie die verzonden moet worden. Vergeleken met de maximale transfer rate van PCI is de snelheid op per lane ongeveer 2,3 keer groter.</literallayout>
+<figure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch06/images/pcie_slots.jpg" contentwidth="400" width="60%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>PCIe slots</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>De verbinding tussen de PCIe-switch en de I/O bestaat uit een of meer paren van eenrichtingslinks. Een link bestaat dus uit een upstream en downstream-verbinding. Een dergelijke link noemt men een lane. In het eenvoudigste geval bestaat de verbinding uit een lane, maar het kunnen ook 2, 4, 8, 16 of 32 paren zijn.
+Uiteraard nemen uitbreidingsslots met meerdere lanes meer plaats in op het moederbord (zie bovenstaande afbeelding).</simpara>
+<simpara>Op elke lane wordt er snelheid gehaald van 2,5Gbps. Deze snelheid zal in de toekomst nog kunnen vergroten (PCIe2.0: 5Gbps, 3.0: 8Gbps, 4.0: 16Gbps). De vermelde snelheid is wel een brutosnelheid, dus zonder rekening te houden met extra informatie die verzonden moet worden. Vergeleken met de maximale transfer rate van PCI is de snelheid op per lane ongeveer 2,3 keer groter.</simpara>
 </section>
 <section id="_protocol_stack">
 <title>Protocol stack</title>
-<simpara>Gebruik maken van een snelle synchrone seriële verbinding vraagt wel dat er extra informatie verzonden wordt. Eerst en vooral moet ervoor gezorgd worden dat zender en ontvanger met elkaar gesynchroniseerd geraken. Aangezien er geen extra lijnen voorzien zijn voor een gemeenschappelijk kloksignaal of om te signaleren dat de transmissie start, moet de zender de start van een pakket aangeven en zorgen dat de bitstroom voldoende synchronisatie informatie bevat. Het eerste probleem wordt aangepakt door de te verzenden data in te pakken tussen twee gekende vlaggen, die start en einde van de data aangeven. Om twee partijen met elkaar te synchroniseren, zonder extra kloklijn, moeten er in het verzonden datapatroon regelmatig overgangen voorkomen.
-De oplossing die op PCIe gebruikt wordt (althans in versie1), is een 8b/10b codering. Dit betekent dat om acht bits te versturen er werkelijk tien verstuurd worden. De vertaling van acht bits naar tien bits is natuurlijk zodanig dat in elk mogelijk verzonden patroon voldoende overgangen zitten. Merk op hoe deze vertaling de brutosnelheid vermindert naar 2Gbps. Een nieuwigheid ten opzichte van PCI is de aanwezigheid van flow control en error control.
+<simpara>Gebruik maken van een snelle synchrone seriële verbinding vraagt wel dat er extra informatie verzonden wordt. Eerst en vooral moet ervoor gezorgd worden dat zender en ontvanger met elkaar gesynchroniseerd geraken. Aangezien er geen extra lijnen voorzien zijn voor een gemeenschappelijk kloksignaal of om te signaleren dat de transmissie start, moet de zender de start van een pakket aangeven en zorgen dat de bitstroom voldoende synchronisatie informatie bevat. Het eerste probleem wordt aangepakt door de te verzenden data in te pakken tussen twee gekende vlaggen, die start en einde van de data aangeven. Om twee partijen met elkaar te synchroniseren, zonder extra kloklijn, moeten er in het verzonden datapatroon regelmatig overgangen voorkomen.<?asciidoc-br?>
+De oplossing die op PCIe gebruikt wordt (althans in versie1), is een 8b/10b codering. Dit betekent dat om acht bits te versturen er werkelijk tien verstuurd worden. De vertaling van acht bits naar tien bits is natuurlijk zodanig dat in elk mogelijk verzonden patroon voldoende overgangen zitten. Merk op hoe deze vertaling de brutosnelheid vermindert naar 2Gbps. Een nieuwigheid ten opzichte van PCI is de aanwezigheid van flow control en error control.<?asciidoc-br?>
 Flow control moet zorgen dat de zender niet sneller data verstuurt dan de ontvanger ze kan verwerken. Het principe dat wordt toegepast is gelijkaardig aan het sliding window principe dat ook door TCP wordt toegepast: de zender krijgt een bepaald venster en kan binnen dit vensterdata versturen. Bij bevestiging van pakketten verschuift het venster en kan de zender weer pakketten versturen.
 Error control wordt verwezenlijkt door een foutdetecterende code (CRC -Cyclic Redundancy Check) toe te voegen aan het pakket. De ontvanger controleert de data op fouten en vraagt in het geval van een fout een hertransmissie aan.
 Het voordeel van deze foutcontrole is dat PCIe een stuk betrouwbaarder wordt, maar vooral dat hogere kloksnelheden mogelijk worden. Bij hogere kloksnelheden wordt de kans op bitfouten groter, maar door de aanwezigheid van foutcontrole is dit niet noodzakelijk een drama (te veel bitfouten gaan natuurlijk de netto snelheid nog meer laten afnemen).</simpara>
-<simpara>afbeelding 60 Protocol stack PCIe
-Omdat er op de seriële verbinding geen plaats is voor controlelijnen, moet alle controle-informatie verzonden worden in een header. Deze laat onder andere toe om het soort transfer aan te geven (bijvoorbeeld gewone I/O, configuratie bericht voor PnP, interrupt, &#8230;).</simpara>
+<figure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch06/images/pcie_protocolstack.png" contentwidth="700" width="80%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>protocol stack PCIe</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>Omdat er op de seriële verbinding geen plaats is voor controlelijnen, moet alle controle-informatie verzonden worden in een header. Deze laat onder andere toe om het soort transfer aan te geven (bijvoorbeeld gewone I/O, configuratie bericht voor PnP, interrupt, &#8230;).</simpara>
 </section>
 <section id="_vergelijking_met_pci">
 <title>Vergelijking met PCI</title>
-<simpara>Ten opzichte van PCI zijn er een aantal fundamentele veranderingen, waarbij de overgang naar seriële transmissie waarschijnlijk de grootste is.
-Deze verandering, gecombineerd met hogere kloksnelheden en de foutcorrectie laat veel grotere datasnelheden toe. Bovendien moet de beschikbare bandbreedte op de punt-tot-punt verbinding niet gedeeld worden. Het is wel mogelijk om een PCIe apparaat zelf te gebruiken als switch en op die manier grotere netwerken te bouwen. In dat geval wordt een deel van het pad richting centrale switch en dus ook de bandbreedte gedeeld.
-De seriële verbinding met zijn zeer beperkt aantal geleiders laat ook veel kleinere connectoren toe, wat het geschikter maakt voor bijvoorbeeld laptops. Ook andere ontwerpen van computerbehuizing (bijvoorbeeld Apple-gewijs alles in het scherm steken) worden eenvoudiger. Een minder voor de hand liggend voordeel van de minder storingsgevoelige seriële verbinding is dat de afstand tussen communicerende apparaten groter kan worden.
+<simpara>Ten opzichte van PCI zijn er een aantal fundamentele veranderingen, waarbij de overgang naar seriële transmissie waarschijnlijk de grootste is.</simpara>
+<simpara>Deze verandering, gecombineerd met hogere kloksnelheden en de foutcorrectie laat veel grotere datasnelheden toe. Bovendien moet de beschikbare bandbreedte op de punt-tot-punt verbinding niet gedeeld worden. Het is wel mogelijk om een PCIe apparaat zelf te gebruiken als switch en op die manier grotere netwerken te bouwen. In dat geval wordt een deel van het pad richting centrale switch en dus ook de bandbreedte gedeeld.
+De seriële verbinding met zijn zeer beperkt aantal geleiders laat ook veel kleinere connectoren toe, wat het geschikter maakt voor bijvoorbeeld laptops. Ook andere ontwerpen van computerbehuizing (bijvoorbeeld Apple-gewijs alles in het scherm steken) worden eenvoudiger. Een minder voor de hand liggend voordeel van de minder storingsgevoelige seriële verbinding is dat de afstand tussen communicerende apparaten groter kan worden.<?asciidoc-br?>
 Uit al deze verschillen zou duidelijk moeten blijken dat PCI Express bijzonder weinig te maken heeft met PCI. Behalve de naam (die om marketingredenen begint met PCI) hebben ze enkel gemeen dat dezelfde commando’s ondersteund worden.In tegenstelling tot wat de naam probeert te suggereren, zijn PCI en PCI express absoluut niet compatibel. Om te zorgen voor backwards compatibility worden op de moederborden (zeker de eerste jaren) nog een aantal PCI-slots voorzien. De PCI controller functionaliteit is natuurlijk terug te vinden in de ICH.</simpara>
 </section>
 </section>
@@ -2224,27 +2315,32 @@ Uit al deze verschillen zou duidelijk moeten blijken dat PCI Express bijzonder w
 <title>Bussystemen voor harde schijven</title>
 <section id="_in_den_beginne_2">
 <title>In den beginne…</title>
-<simpara>De IDE, ATA en ATAPI benamingen worden zeer vlot door elkaar gebruikt om bussystemen voor harde schijven (origineel) en optische stations aan te duiden.
+<simpara>De IDE, ATA en ATAPI benamingen worden zeer vlot door elkaar gebruikt om bussystemen voor harde schijven (origineel) en optische stations aan te duiden.+
 Op de eerste IBM PC was er optioneel een harde schijf van 10MB. De schijfcontroller zat op het moederbord en er liepen analoge signalen naar de schijf om de motoren te sturen. Naarmate de technologie zich verder ontwikkelde, werd de controller geïntegreerd op de schijf en ontstond een IDE-schijf (Integrated Drive Electronics).
 Een IDE interface had een 16-bit databus en voorzag origineel in de 20 bit CHS adressering. Transfers gebeurden volgens het polling principe (programmed I/O) en haalden snelheden van 3.3, 5.2 of 8.3 MB/s naargelang de gebruikte kloksnelheid.
-Na IDE kwam er EIDE (Extended IDE) dat voorzag in LBA met 28 bit en dus grotere schijven kon aanspreken. Een andere belangrijke verbetering was een verhoging van de datasnelheid waardoor maximaal 16.6MB/s gehaald kon worden. Bovendien deed een nieuwe transfertechniek zijn intrede: multiword DMA.
-Andere verbetering was dat een EIDE controller meerdere apparaten kon aansturen. Ze konden twee kanalen aan en op elk kanaal twee apparaten. Het ene apparaat werd master genoemd, het ander slave. Master en slave-instellingen moesten via jumpers op de schijf gedaan worden. Nadien kon de keuze ook gebeuren met de kabel (cable select). Het is een gangbaar misverstand om te denken dat de master ook effectief de transacties controleert en dus de slave aanstuurt. Het is steeds de EIDE-controller die de bus bestuurt.
+Na IDE kwam er EIDE (Extended IDE) dat voorzag in LBA met 28 bit en dus grotere schijven kon aanspreken. Een andere belangrijke verbetering was een verhoging van de datasnelheid waardoor maximaal 16.6MB/s gehaald kon worden. Bovendien deed een nieuwe transfertechniek zijn intrede: multiword DMA.<?asciidoc-br?>
+Andere verbetering was dat een EIDE controller meerdere apparaten kon aansturen. Ze konden twee kanalen aan en op elk kanaal twee apparaten. Het ene apparaat werd master genoemd, het ander slave. Master en slave-instellingen moesten via jumpers op de schijf gedaan worden. Nadien kon de keuze ook gebeuren met de kabel (cable select). Het is een gangbaar misverstand om te denken dat de master ook effectief de transacties controleert en dus de slave aanstuurt. Het is steeds de EIDE-controller die de bus bestuurt. <?asciidoc-br?>
 Master en slave zijn eerder een soort van adressen (in moderne versies van de standaard spreekt men ook van device 0 en device 1 ).
-Naarmate EIDE verder ontwikkelt werd en de controller aangesloten werd op de AT bus, duikt plotseling de naam ATA-3 op (AT attachment). De vorige twee standaarden krijgen als extra naam ATA-1 en ATA-2.
+Naarmate EIDE verder ontwikkelt werd en de controller aangesloten werd op de AT bus, duikt plotseling de naam ATA-3 op (AT attachment). De vorige twee standaarden krijgen als extra naam ATA-1 en ATA-2.<?asciidoc-br?>
 ATA-3 voegt weinig extra toe, belangrijkste bijdrage is S.M.A.R.T.
-De opvolger van ATA-3 zou logischerwijs ATA-4 zijn, maar plotseling spreekt men nu van ATA Packet Interface en dus ATAPI-4.
-Belangrijke aanpassingen zijn de ondersteuning voor optische stations en de hogere transfersnelheden(tot 33MB/s).
+De opvolger van ATA-3 zou logischerwijs ATA-4 zijn, maar plotseling spreekt men nu van ATA Packet Interface en dus ATAPI-4.<?asciidoc-br?>
+Belangrijke aanpassingen zijn de ondersteuning voor optische stations en de hogere transfersnelheden(tot 33MB/s).<?asciidoc-br?>
 Er wordt ook een nieuwe transfertechniek geïntroduceerd: ultra-DMA. Hierbij werden transfers op beide klokflanken mogelijk en werd CRC gebruikt om fouten op te sporen.ATAPI-5 ging tot 66MB/s en introduceerde hiervoor een kabel met 80 geleiders. ATA/ATAPI-6 verhoogde de snelheid tot 100MB/s en introduceerde 48 bit LBA adressering.
-ATA/ATAPI-7 introduceerde enerzijds UDMA/133 (133MB/s) en anderzijds SATA.
-Er zijn twee soorten ATA-kabels. Ze verschillen in het aantal geleiders.</simpara>
-<simpara>afbeelding 61 40-polige en 80-polige IDE-kabels
-afbeelding 61 toont een 80-polige kabel en maakt ook een vergelijking met de 40-polige kabel. Het aantal aansluitingen op de connectors is niet gewijzigd, de extra geleiders worden allemaal verbonden met de aarding. Ze komen tussen de signaalgeleiders te liggen, zodanig dat er steeds afwisselend een signaal geleider en een geaarde draad ligt. Op die manier wordt de capacitieve koppeling en de daarmee gepaard gaande overspraak tussen twee signaaldraden verminderd. Dit laat hogere datasnelheden toe. Voor transfers vanaf 66MB/s moet een 80-polige kabel gebruikt worden.
-De rest van PATA schijven kan als geschiedenis beschouwd worden.</simpara>
+ATA/ATAPI-7 introduceerde enerzijds UDMA/133 (133MB/s) en anderzijds SATA.</simpara>
+<simpara>Er zijn (waren?) twee soorten ATA-kabels.  Het aantal aansluitingen op de connectors is echter niet gewijzigd, de extra geleiders worden allemaal verbonden met de aarding. Ze komen tussen de signaalgeleiders te liggen, zodanig dat er steeds afwisselend een signaal geleider en een geaarde draad ligt. Op die manier wordt de capacitieve koppeling en de daarmee gepaard gaande overspraak tussen twee signaaldraden verminderd. Dit laat hogere datasnelheden toe. Voor transfers vanaf 66MB/s moet verplicht een 80-polige kabel gebruikt worden.</simpara>
+<simpara>De rest van PATA schijven kan als geschiedenis beschouwd worden.</simpara>
 </section>
 <section id="_sata">
 <title>SATA</title>
 <simpara>Het verhaal van de overgang van ATA (dat ondertussen ook PATA genoemd wordt) naar SATA is heel gelijkaardig aan het verhaal van PCI naar PCI-express. Ook in dit geval wordt er overgegaan van een parallelle interface naar een veel sneller geklokte seriële interface, die hogere datasnelheden toelaat.</simpara>
-<simpara>afbeelding 62 Sata connector</simpara>
+<figure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch06/images/satamobo.jpg" contentwidth="300" width="40%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>sata connector</phrase></textobject>
+</mediaobject>
+</figure>
 <section id="_compatibiliteit_sata_vs_pata">
 <title>Compatibiliteit sata vs pata</title>
 <simpara>Zoals steeds in de PC wereld moet er opgelet worden voor backward compatibility. Uit het voorgaande zal wel duidelijk gebleken zijn dat PATA en SATA niet compatibel zijn met elkaar. Om die reden worden (voorlopig) nog extra PATA connectoren voorzien.
@@ -2252,33 +2348,43 @@ PATA en SATA zijn wel software compatibel, in die zin dat de commando’s die op
 </section>
 <section id="_signalering_en_bandbreedte">
 <title>Signalering en bandbreedte</title>
-<simpara>De dataverbinding tussen schijf en moederbord bestaat uit zeven geleiders. Drie daarvan zijn ground, de andere vier vormen twee paren voor dataverkeer. Met deze kleine connector gaat uiteraard ook een veel kleinere kabel gepaard, wat de luchtstroming in de computerkast ten goede komt.
-Door de overgang van parallel naar serieel zijn hogere kloksnelheden mogelijk om de eerder vermelde redenen. Bovendien werkt SATA differentieel, dit wil zeggen dat de data verzonden wordt over paren. De geleiders van deze paren liggen dicht bij elkaar, zodat ze ongeveer op dezelfde manier gestoord worden. Aangezien het verschil tussen de geleiders de data bepaalt, is het mogelijk om een groot deel van deze storingen weg te werken. De hogere kloksnelheid bedroeg in de eerste versie van SATA 1500MHz. Hierdoor was een bitrate mogelijk van 1500Mbps. Ook hier wordt omwille van de synchronisatie een 8b/10b codering gebruikt, zodat de werkelijke bandbreedte 120MB/s wordt. Dit is eigenlijk lager dan de maximale 133MB/s, maar hoger dan de maximale transfer rates van schijven.
-Eind 2012 was de Toshiba DT01ACA100 met een maximale transfersnelheid van 185,6MB/s sequentieel lezen (gemiddeld 155MB/s). Die werkt al met SATA/600 dat bitrates van 6Gbps haalt (nuttig: 600MB/s).
-Vraag: Serial ATA 3 haalt een bitrate van 6Gbps, en toch maar een nuttige bandbreedte van 600MB/s. hoe verklaar je dat?
-Nog enkele opmerkingen bij deze bandbreedte: in tegenstelling tot PATA heeft SATA een verbinding in elke richting, zodat in principe full duplex mogelijk wordt (het is echter niet zo voor de hand liggend om tegelijk de schijf te schrijven en te lezen). Anderzijds beschikt SATA niet over controlelijnen om de commando’s door te sturen.
+<simpara>De dataverbinding tussen schijf en moederbord bestaat uit zeven geleiders. Drie daarvan zijn ground, de andere vier vormen twee paren voor dataverkeer. Met deze kleine connector gaat uiteraard ook een veel kleinere kabel gepaard, wat de luchtstroming in de computerkast ten goede komt.<?asciidoc-br?>
+Door de overgang van parallel naar serieel zijn hogere kloksnelheden mogelijk om de eerder vermelde redenen. Bovendien werkt SATA differentieel, dit wil zeggen dat de data verzonden wordt over paren. De geleiders van deze paren liggen dicht bij elkaar, zodat ze ongeveer op dezelfde manier gestoord worden. Aangezien het verschil tussen de geleiders de data bepaalt, is het mogelijk om een groot deel van deze storingen weg te werken. De hogere kloksnelheid bedroeg in de eerste versie van SATA 1500MHz. Hierdoor was een bitrate mogelijk van 1500Mbps. Ook hier wordt omwille van de synchronisatie een 8b/10b codering gebruikt, zodat de werkelijke bandbreedte 120MB/s wordt. Dit is eigenlijk lager dan de maximale 133MB/s, maar hoger dan de maximale transfer rates van schijven.</simpara>
+<simpara>Eind 2012 was de Toshiba DT01ACA100 met een maximale transfersnelheid van 185,6MB/s sequentieel lezen (gemiddeld 155MB/s). Die werkt al met SATA/600 dat bitrates van 6Gbps haalt (nuttig: 600MB/s).</simpara>
+<example>
+<title>QUESTION</title>
+<simpara>Vraag: Serial ATA 3 haalt een bitrate van 6Gbps, en toch maar een nuttige bandbreedte van 600MB/s. hoe verklaar je dat?</simpara>
+</example>
+<important>
+<simpara>In tegenstelling tot PATA heeft SATA een verbinding in elke richting, zodat in principe full duplex mogelijk wordt (het is echter niet zo voor de hand liggend om tegelijk de schijf te schrijven en te lezen). Anderzijds beschikt SATA niet over controlelijnen om de commando’s door te sturen.
 Deze moeten ook over de dataverbinding verzonden worden (wat de netto bandbreedte nog iets meer zal doen dalen), maar hier kan eventueel wel gebruik gemaakt worden van de full duplex eigenschap.</simpara>
-<simpara>afbeelding 63 Port multiplier voor Sata
-In principe is SATA een punt-tot-punt verbinding tussen de SATA controller en de schijf. Het is echter ook mogelijk om met behulp van een expansor of multiplier meerdere SATA apparaten aan te sluiten op een connector van de controller (afbeelding 63). Dit betekent dus ook dat (tenzij met expansor) de bandbreedte niet gedeeld moet worden over verschillende apparaten. Voor de signalering op de dataparen gebruikt SATA LVDS (Low Voltage Differential Signaling). In plaats van de op PATA gangbare 5V, wordt een spanningszwaai van 0.5V gebruikt. Belangrijk voordeel hiervan is een veel lager stroomverbruik. Dit wordt zoals altijd op de mobiele markt gewaardeerd, maar ook aan het andere uiterste, in bijvoorbeeld data centers, waar deze besparing bij een grote hoeveelheid schijven een groot verschil maakt.
-Een ander voordeel van SATA is dat het hot-pluggable is. Dit betekent dat de schijf vervangen kan worden terwijl het computersysteem in werking is. Dit kan bijzonder bruikbaar zijn in
-RAID configuraties.</simpara>
+</important>
+<figure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch06/images/satamultiplier.png" contentwidth="400" width="50%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>SATA multiplier</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>In principe is SATA een punt-tot-punt verbinding tussen de SATA controller en de schijf. Het is echter ook mogelijk om met behulp van een expansor of multiplier meerdere SATA apparaten aan te sluiten op een connector van de controller (afbeelding 63). Dit betekent dus ook dat (tenzij met expansor) de bandbreedte niet gedeeld moet worden over verschillende apparaten. Voor de signalering op de dataparen gebruikt SATA LVDS (Low Voltage Differential Signaling). In plaats van de op PATA gangbare 5V, wordt een spanningszwaai van 0.5V gebruikt. Belangrijk voordeel hiervan is een veel lager stroomverbruik. Dit wordt zoals altijd op de mobiele markt gewaardeerd, maar ook aan het andere uiterste, in bijvoorbeeld data centers, waar deze besparing bij een grote hoeveelheid schijven een groot verschil maakt.
+Een ander voordeel van SATA is dat het hot-pluggable is. Dit betekent dat de schijf vervangen kan worden terwijl het computersysteem in werking is. Dit kan bijzonder bruikbaar zijn in RAID configuraties.</simpara>
 </section>
 <section id="_ncq">
 <title>NCQ</title>
-<simpara>afbeelding 64 werking van Native Command Queuing
-SATA ondersteunt ook Native Command Queueing (NCQ). Als een schijf verschillend lees- of schrijfcommando’s toegestuurd krijgt, zullen die meestal doorgaan op verschillende locaties op de schijf. NCQ kan rekening houden met de locatie van de gegevens op de schijf om de gegevens zo snel mogelijk beschikbaar te maken. NCQ vraagt natuurlijk wel enige tijd om te bekijken in welke volgorde de commando’s best verwerkt kunnen worden en er moeten natuurlijk ook meerdere commando’s beschikbaar zijn. NCQ is dan ook vooral handig bij zwaarder belaste schijven (bijvoorbeeld file server).</simpara>
+<simpara>SATA ondersteunt ook Native Command Queueing (NCQ). Als een schijf verschillend lees- of schrijfcommando’s toegestuurd krijgt, zullen die meestal doorgaan op verschillende locaties op de schijf. NCQ kan rekening houden met de locatie van de gegevens op de schijf om de gegevens zo snel mogelijk beschikbaar te maken. NCQ vraagt natuurlijk wel enige tijd om te bekijken in welke volgorde de commando’s best verwerkt kunnen worden en er moeten natuurlijk ook meerdere commando’s beschikbaar zijn. NCQ is dan ook vooral handig bij zwaarder belaste schijven (bijvoorbeeld file server).</simpara>
 </section>
 </section>
 <section id="_esata">
 <title>eSATA</title>
-<simpara>External SATA is een SATA variant die de aansluiting van externe schijven mogelijk moet maken. Er zijn kleine verschillen met SATA, onder andere op het vlak van de signalering, zodat langere kabels gebruikt kunnen worden.
+<simpara>External SATA is een SATA variant die de aansluiting van externe schijven mogelijk moet maken. Er zijn kleine verschillen met SATA, onder andere op het vlak van de signalering, zodat langere kabels gebruikt kunnen worden.<?asciidoc-br?>
 eSATA treedt op het vlak van de externe opslag in concurrentie met USB, en zou dus eigenlijk even goed in het volgende hoofdstuk thuis horen, met de interfacebussen.
 Ten opzichte van deze laatste twee heeft eSATA als voordeel dat het hogere bitsnelheden kan halen. Het belangrijkste nadeel is dat de andere twee veel beter ingeburgerd zijn. Een van de voordelen (of beter doelstellingen bij het ontwerp) van USB was het uniformiseren van de aansluitingen op een computer: een connector voor allerlei soorten apparaten. Ondertussen is de specificatie van USB 3 volledig af, die het voor eSATA waarschijnlijk nog moeilijker zal maken om aan populariteit te winnen&#8230;</simpara>
 </section>
 <section id="_serial_attached_scsi_sas">
 <title>Serial Attached SCSI (SAS)</title>
-<simpara>Ondertussen zal wel duidelijk zijn dat naarmate de datasnelheid echt groot moet zijn, seriële transfers de voorkeur krijgen op parallelle (toch als een zekere afstand overbrugd moet worden). Dit komt ook naar voor als je de geschiedenis van SAS bekijkt: deze komt voort uit de SCSI standaard, die parallelle communicatie gebruikte.
-Vanzelfsprekend is er dus ook een seriële SCSI variant opgedoken, met name SAS (Serial Attached SCSI). SAS lijkt heel hard op SATA. Het is eveneens een seriële punt-tot-punt verbinding die gelijkaardige snelheden haalt. Het belangrijkste verschil is dat het zich net als het verouderde SCSI meer richt op de servermarkt, waarvoor het een iets grotere betrouwbaarheid biedt. Deze betrouwbaarheid uit zich vooral in een aantal foutcorrectie- en rapporteringmechanismen die in de loop der tijden binnen SCSI ontwikkeld zijn. Deze gaan een stuk verder dan wat met S.M.A.R.T. mogelijk is op ATA (en dus ook SATA).
+<simpara>Ondertussen zal wel duidelijk zijn dat naarmate de datasnelheid echt groot moet zijn, seriële transfers de voorkeur krijgen op parallelle (toch als een zekere afstand overbrugd moet worden). Dit komt ook naar voor als je de geschiedenis van SAS bekijkt: deze komt voort uit de SCSI standaard, die parallelle communicatie gebruikte. <?asciidoc-br?>
+Vanzelfsprekend is er dus ook een seriële SCSI variant opgedoken, met name SAS (Serial Attached SCSI). SAS lijkt heel hard op SATA. Het is eveneens een seriële punt-tot-punt verbinding die gelijkaardige snelheden haalt. Het belangrijkste verschil is dat het zich net als het verouderde SCSI meer richt op de servermarkt, waarvoor het een iets grotere betrouwbaarheid biedt. Deze betrouwbaarheid uit zich vooral in een aantal foutcorrectie- en rapporteringmechanismen die in de loop der tijden binnen SCSI ontwikkeld zijn. Deze gaan een stuk verder dan wat met S.M.A.R.T. mogelijk is op ATA (en dus ook SATA).<?asciidoc-br?>
 Daar staat dan weer tegenover dat SAS iets duurder is dan SATA.</simpara>
 </section>
 </section>
@@ -2543,7 +2649,7 @@ Bij isochrone transfers zullen er geen bevestigingen zijn, terwijl na een contro
 <figure>
 <mediaobject>
 <imageobject>
-<imagedata fileref="ch07/images/USB_pullup.png" contentwidth="800" width="50%" scalefit="1" align="center"/>
+<imagedata fileref="ch07/images/USBpullup.png" contentwidth="800" width="50%" scalefit="1" align="center"/>
 </imageobject>
 <textobject><phrase>pull-up weerstand voor detectie nieuw apparaat</phrase></textobject>
 </mediaobject>
@@ -2608,7 +2714,7 @@ De encoding gebeurt ook niet langer met NRZI, maar met 8b/10b, de methode die oo
 <figure>
 <mediaobject>
 <imageobject>
-<imagedata fileref="ch07/images/usb3-kabeldoorsnede.png" contentwidth="300" width="35%" scalefit="1" align="center"/>
+<imagedata fileref="ch07/images/usb3-kabeldoorsnede.png" contentwidth="500" width="35%" scalefit="1" align="center"/>
 </imageobject>
 <textobject><phrase>Dwarsdoorsnede USB3-kabel (bron onbekend)</phrase></textobject>
 </mediaobject>
@@ -2640,7 +2746,7 @@ De encoding gebeurt ook niet langer met NRZI, maar met 8b/10b, de methode die oo
 <figure>
 <mediaobject>
 <imageobject>
-<imagedata fileref="ch07/images/usb3_architecture.jpg" width="50%" scalefit="1" align="center"/>
+<imagedata fileref="ch07/images/usb3.0_architecture.jpg" width="50%" scalefit="1" align="center"/>
 </imageobject>
 <textobject><phrase>USB3 protocol stack (bron:onbekend</phrase></textobject>
 </mediaobject>
