@@ -1980,7 +1980,7 @@ BTFRS wordt algemeen beschouwd als de opvolger van EXT-4 in Linux. Het bestandss
 <title>Opstartroutine</title>
 <section id="_geheugens">
 <title>Geheugens.</title>
-<simpara>Merk op dat het niet mogelijk is om deze routines op te slaan op de harde schijf. Het besturingssysteem met zijn routines staat immers ook op die schijf en net om de schijf aan te kunnen spreken zijn er I/O routines nodig. De processor is er enkel op voorzien om rechtstreeks het geheugen aan te spreken en de instructies die daar opgeslagen zijn uit te voeren.
+<simpara>Merk op dat het niet mogelijk is om deze routines op te slaan op de harde schijf. Het besturingssysteem met zijn routines staat immers ook op die schijf en net om de schijf aan te kunnen spreken zijn er I/O routines nodig. De processor is er enkel op voorzien om rechtstreeks het geheugen aan te spreken en de instructies die daar opgeslagen zijn uit te voeren.<?asciidoc-br?>
 Er zijn verschillende soorten ROM geheugens die momenteel nog relevant zijn:</simpara>
 <section id="_mrom">
 <title>MROM</title>
@@ -1996,8 +1996,8 @@ Er zijn verschillende soorten ROM geheugens die momenteel nog relevant zijn:</si
 </section>
 <section id="_flash">
 <title>Flash</title>
-<simpara>Flash is net zoals EEPROM te wissen en opnieuw te beschrijven met elektrische signalen. Bovendien is voor flash geen speciaal programmeertoestel nodig. Aan de andere kant haalt het met EPROM vergelijkbare densiteiten. Bovendien is geen speciale verpakking met glas nodig.
-Het nadeel van flash is dat het minder dikwijls herschreven kon worden dan EEPROM. Voor toepassingen waar regelmatig de data moet worden aangepast, bestaat ondertussen high-endurance flash. Gewoon flash geheugen kan tussen 300.000 en 500.000 keer herschreven worden. De high-endurance variant een paar miljoen keer. Extra probleem hierbij is dat geen individuele cellen aangepast kunnen worden, maar dat steeds ganse blokken in een keer geschreven moeten worden. Hierdoor kan deze beperking nog zwaarder doorwegen (cel wordt meer beschreven dan dat ze wordt veranderd).
+<simpara>Flash is net zoals EEPROM te wissen en opnieuw te beschrijven met elektrische signalen. Bovendien is voor flash geen speciaal programmeertoestel nodig. Aan de andere kant haalt het met EPROM vergelijkbare densiteiten. Bovendien is geen speciale verpakking met glas nodig.<?asciidoc-br?>
+Het nadeel van flash is dat het minder dikwijls herschreven kon worden dan EEPROM. Voor toepassingen waar regelmatig de data moet worden aangepast, bestaat ondertussen high-endurance flash. Gewoon flash geheugen kan tussen 300.000 en 500.000 keer herschreven worden. De high-endurance variant een paar miljoen keer. Extra probleem hierbij is dat geen individuele cellen aangepast kunnen worden, maar dat steeds ganse blokken in een keer geschreven moeten worden. Hierdoor kan deze beperking nog zwaarder doorwegen (cel wordt meer beschreven dan dat ze wordt veranderd).<?asciidoc-br?>
 De BIOS routines worden nu meestal opgeslagen op flash geheugens, wat toelaat om de routines te upgraden. Bij dergelijke upgrades is het natuurlijk cruciaal dat er niets mis gaat, want dan zal de computer niet meer in staat zijn om op te starten. Sommige moederbord fabrikanten voorzien in een procedure om terug te keren naar een vorige versie wanneer een flash operatie mislukt. Als een dergelijke procedure niet voorhanden is, kan je enkel nog hopen dat de flash-IC niet vast gesoldeerd is, zodat je hem met een andere programmer kan programmeren.</simpara>
 </section>
 </section>
@@ -2016,53 +2016,109 @@ De BIOS routines worden nu meestal opgeslagen op flash geheugens, wat toelaat om
 <title>Zoeken naar BIOS-uitbreidingen</title>
 <simpara>De systeem-BIOS is niet het enige BIOS in een computer. Grafische kaarten, harde schijven, SCSI-adapters en andere hebben ook hun eigen BIOS. Het systeem-BIOS gaat daarom onmiddellijk op zoek naar de grafische kaart en laat het ingebouwde video-BIOS programma uitvoeren. Hierdoor verschijnt er informatie over de kaart op het scherm. Deze informatie is doorgaans slechts heel even op het scherm.
 De BIOS gaat vervolgens op zoek naar eventuele andere apparaten met een eigen BIOS. Elke keer dat een BIOS wordt ontdekt, worden de nodige routines uitgevoerd.
-Vervolgens toont het BIOS het opstartscherm met de volgende informatie:
-	BIOS-fabrikant en versienummer BIOS
-	datum
-	de toets om de BIOS-configuratie te starten
-	logo van de BIOS-fabrikant of de PC-fabrikant
-	het ENERGY STAR logo indien het BIOS die energiestandaard ondersteunt
-	het serienummer van het BIOS wordt onderaan het scherm getoond. Dit nummer specificeert doorgaans het type en de BIOS-versie
-Daarna voert de computer enkele tests uit op het systeem (vervolg POST): onder andere het geheugen wordt onderzocht en de geheugenplaatsen geteld. Het BIOS zal bij een defect een foutmelding geven.
-Vervolgens begint het de startroutine aan een inventarisatie waarbij de meeste klassieke randapparatuur (printerpoorten, seriële poorten, floppy- en harddisk controllers) gedetecteerd zal worden.
-Een recente BIOS zal zelfs automatisch het soort geheugen herkennen en de juiste parameters voor de harde schijf instellen.
-Meestal wordt op het scherm getoond welke apparaten, harde schijf, DVD-ROM, … gevonden en herkend worden.
-Oefening: zoek voor het moederbord van jouw pc op welke auditieve foutcodes van toepassing zijn.
-===	Plug and play configuratie
-Indien een plug and play ondersteunend bussysteem (zoals PCI) aanwezig is, zal een plug and play configuratie fase doorlopen worden: Er wordt gezocht naar P&amp;P-devices op alle aanwezige I/O bussen (PCI, PCI Xpress, AGP). Dit wordt de enumeration genoemd. Voor elk gevonden device wordt gelezen welke resources (I/O-adressen, Interrupts, DMA-kanalen, geheugenruimte) er nodig zijn. De lijst met de vorige configuratie (inclusief de vroegere toekenning van de resources) wordt uit het ESCD geladen en vergeleken met de nieuwe informatie. Het ESCD (Extended System Configuration Data) is een deel van het CMOS-RAM geheugen. Hierin wordt de P&amp;P-configuratie opgeslagen.
-Bij het opstarten controleert het BIOS deze gegevens op wijzigingen sinds de laatste start om te weten of bepaalde instellingen moeten aangepast worden. Indien er geen verandering is, gaat het opstartproces gewoon verder.
-In het andere geval begint er een herconfiguratie.
-De BIOS-setup informatie wordt geraadpleegd voor eventuele gereserveerde systeembronnen door niet Plug and Play-kaarten. Overblijvende systeembronnen worden toegekend aan de PnP-kaarten. Het ESCD wordt bijgewerkt met de mededeling “Updating ESCD&#8230; successfull”
-Het bootproces gaat verder. Wanneer het besturingssysteem opgestart is, heeft dat tenslotte nog de mogelijkheid om de Plug and Play-configuratie te controleren en eventueel te wijzigen.</simpara>
+Vervolgens toont het BIOS het opstartscherm met de volgende informatie:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>BIOS-fabrikant en versienummer BIOS</simpara>
+</listitem>
+<listitem>
+<simpara>datum</simpara>
+</listitem>
+<listitem>
+<simpara>de toets om de BIOS-configuratie te starten</simpara>
+</listitem>
+<listitem>
+<simpara>logo van de BIOS-fabrikant of de PC-fabrikant</simpara>
+</listitem>
+<listitem>
+<simpara>het ENERGY STAR logo indien het BIOS die energiestandaard ondersteunt</simpara>
+</listitem>
+<listitem>
+<simpara>het serienummer van het BIOS wordt onderaan het scherm getoond. Dit nummer specificeert doorgaans het type en de BIOS-versie</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Daarna voert de computer enkele tests uit op het systeem (vervolg POST): onder andere het geheugen wordt onderzocht en de geheugenplaatsen geteld. Het BIOS zal bij een defect een foutmelding geven.<?asciidoc-br?>
+Vervolgens begint het de startroutine aan een inventarisatie waarbij de meeste klassieke randapparatuur (printerpoorten, seriële poorten, floppy- en harddisk controllers) gedetecteerd zal worden.<?asciidoc-br?>
+Een recente BIOS zal zelfs automatisch het soort geheugen herkennen en de juiste parameters voor de harde schijf instellen.<?asciidoc-br?>
+Meestal wordt op het scherm getoond welke apparaten, harde schijf, DVD-ROM, … gevonden en herkend worden.</simpara>
+<formalpara>
+<title>Exercise</title>
+<para>
+<screen>Oefening: zoek voor het moederbord van jouw pc op welke auditieve foutcodes van toepassing zijn.</screen>
+</para>
+</formalpara>
 </section>
+</section>
+<section id="_plug_and_play_configuratie">
+<title>Plug and play configuratie</title>
+<simpara>Indien een plug and play ondersteunend bussysteem (zoals PCI) aanwezig is, zal een plug and play configuratie fase doorlopen worden: Er wordt gezocht naar P&amp;P-devices op alle aanwezige I/O bussen (PCI, PCI Xpress, AGP). Dit wordt de enumeration genoemd. Voor elk gevonden device wordt gelezen welke resources (I/O-adressen, Interrupts, DMA-kanalen, geheugenruimte) er nodig zijn. De lijst met de vorige configuratie (inclusief de vroegere toekenning van de resources) wordt uit het ESCD geladen en vergeleken met de nieuwe informatie. Het ESCD (Extended System Configuration Data) is een deel van het CMOS-RAM geheugen. Hierin wordt de P&amp;P-configuratie opgeslagen.<?asciidoc-br?>
+Bij het opstarten controleert het BIOS deze gegevens op wijzigingen sinds de laatste start om te weten of bepaalde instellingen moeten aangepast worden. Indien er geen verandering is, gaat het opstartproces gewoon verder.<?asciidoc-br?>
+In het andere geval begint er een herconfiguratie.<?asciidoc-br?>
+De BIOS-setup informatie wordt geraadpleegd voor eventuele gereserveerde systeembronnen door niet Plug and Play-kaarten. Overblijvende systeembronnen worden toegekend aan de PnP-kaarten. Het ESCD wordt bijgewerkt met de mededeling “Updating ESCD&#8230; successfull”<?asciidoc-br?>
+Het bootproces gaat verder. Wanneer het besturingssysteem opgestart is, heeft dat tenslotte nog de mogelijkheid om de Plug and Play-configuratie te controleren en eventueel te wijzigen.</simpara>
 </section>
 <section id="_extensible_firmware_interface">
 <title>Extensible Firmware Interface</title>
 <section id="_bios_op_pensioen">
 <title>BIOS op pensioen</title>
-<simpara>Het systeem van de BIOS is één van de laatste onderdelen die nog niet substantieel veranderd zijn sinds de introductie van de PC lang geleden. Hoewel er geprobeerd wordt om de technische details wat weg te stoppen voor de eindgebruiker, is het toch nog steeds een erg gebruiksonvriendelijke omgeving. Het gebrek aan ondersteuning van bijvoorbeeld muizen is daar een goed voorbeeld van.
-Aan de binnenkant van het BIOS-raderwerk was de situatie zo mogelijk nog een pak erger. Het programmeren ervan gebeurde voor een stuk in machinecode, en het toevoegen van functionaliteit was grotendeels patchwork. Slechts erg weinig mensen hebben de nodige ervaring om hieraan te programmeren. Sommige zaken zijn zelfs niet op te lossen. Een voorbeeld hiervan is de maximum grootte van de opstartpartitie, die is 2TB. Over enkele jaren zal dat ongetwijfeld te weinig zijn.
-Daarom zijn er in de loop der tijd enkele pogingen geweest om dit systeem te vervangen. Weinigen daarvan hadden veel succes. Veel had te maken met de licentie waaronder moest gecodeerd worden. Bedrijven waren immers niet bereid om de code van hun drivers vrij te geven.
-Ook Intel deed een poging om de BIOS overbodig te maken door een ander systeem. Om het project voldoende momentum te bezorgen, werd een organisatie opgebouwd rond deze technologie, met als doel ze te standaardiseren. Deze technologieën zijn verzameld rond de naar EFI (Extensible Firmware Interface).
-Deze technologie verschilt fundamenteel van de verouderde BIOS.
-	Gecodeerd in een breed gekende taal (C++)
-	Volledig modulair
-	Compatibel met de oude BIOS om de overgang mogelijk te maken.
-	Drivers kunnen opgenomen worden in deze EFI
-	De 2TB-grens voor de opstartpartitie is hier niet bestaande
-Door dit vernieuwde opzet zullen ongetwijfeld een pak nieuwe mogelijkheden toegevoegd worden aan de PC zoals we hem nu kennen. EFI laat zich nog het best vergelijken met een micro-besturingssysteem.
-Enkele voorbeelden van nieuwe toepassingen:
-	Omdat drivers kunnen geïntegreerd worden, kan het veel makkelijker worden om een nieuw besturingssysteem te installeren. Rondzeulen met driverdisks voor eenvoudige devices zou dus moeten verleden tijd worden.
-	EFI kan makkelijk uitgebreid worden met kleine toepassingen. Denk bijvoorbeeld aan een mediaplayer. Zo zou je kunnen je laptop gebruiken als mediaspeler, zelfs zonder dat die ‘echt’ opgestart is.
-	EFI zou kunnen voorzien worden van een virtualisatielaag zodat je meerdere besturingssystemen tegelijkertijd kan gebruiken.
-	Hoewel de mogelijkheden nagenoeg eindeloos zijn, is te verwachten dat de eerste gebruikte EFI’s niet veel meer functionaliteit hebben dan de vroegere BIOS’en.</simpara>
-<simpara>afbeelding 54 voorbeeld UEFI interface
-====	(U)EFI verspreiding
-Aan EFI wordt sedert 2002 gewerkt door enkele grote firma’s. Nagenoeg elke grote hardware bouwer heeft zich bij de organisatie aangesloten. Toch zal het nog een tijd duren vooraleer we het BIOS volledig kunnen naar de geschiedenis verwijzen. Een overzichtje van de ondersteuning tegenwoordig:
-	Apple: standaard op alle recente computers (met BIOS-support dmv )
-	Microsoft: standaard op vista X64 sp1 en hoger
-	Linux: reeds lange tijd standaard geïmplementeerd</simpara>
+<simpara>Het systeem van de BIOS is één van de laatste onderdelen die nog niet substantieel veranderd zijn sinds de introductie van de PC lang geleden. Hoewel er geprobeerd wordt om de technische details wat weg te stoppen voor de eindgebruiker, is het toch nog steeds een erg gebruiksonvriendelijke omgeving. Het gebrek aan ondersteuning van bijvoorbeeld muizen is daar een goed voorbeeld van.<?asciidoc-br?>
+Aan de binnenkant van het BIOS-raderwerk was de situatie zo mogelijk nog een pak erger. Het programmeren ervan gebeurde voor een stuk in machinecode, en het toevoegen van functionaliteit was grotendeels patchwork. Slechts erg weinig mensen hebben de nodige ervaring om hieraan te programmeren. Sommige zaken zijn zelfs niet op te lossen. Een voorbeeld hiervan is de maximum grootte van de opstartpartitie, die is 2TB. Over enkele jaren zal dat ongetwijfeld te weinig zijn.<?asciidoc-br?>
+Daarom zijn er in de loop der tijd enkele pogingen geweest om dit systeem te vervangen. Weinigen daarvan hadden veel succes. Veel had te maken met de licentie waaronder moest gecodeerd worden. Bedrijven waren immers niet bereid om de code van hun drivers vrij te geven.<?asciidoc-br?>
+Ook Intel deed een poging om de BIOS overbodig te maken door een ander systeem. Om het project voldoende momentum te bezorgen, werd een organisatie opgebouwd rond deze technologie, met als doel ze te standaardiseren. Deze technologieën zijn verzameld rond de naar EFI (Extensible Firmware Interface).</simpara>
+<simpara>Deze technologie verschilt fundamenteel van de verouderde BIOS.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>Gecodeerd in een breed gekende taal (C++)</simpara>
+</listitem>
+<listitem>
+<simpara>Volledig modulair</simpara>
+</listitem>
+<listitem>
+<simpara>Compatibel met de oude BIOS om de overgang mogelijk te maken.</simpara>
+</listitem>
+<listitem>
+<simpara>Drivers kunnen opgenomen worden in deze EFI</simpara>
+</listitem>
+<listitem>
+<simpara>De 2TB-grens voor de opstartpartitie is hier niet bestaande</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Door dit vernieuwde opzet zullen ongetwijfeld een pak nieuwe mogelijkheden toegevoegd worden aan de PC zoals we hem nu kennen. EFI laat zich nog het best vergelijken met een micro-besturingssysteem.
+Enkele voorbeelden van nieuwe toepassingen:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>Omdat drivers kunnen geïntegreerd worden, kan het veel makkelijker worden om een nieuw besturingssysteem te installeren. Rondzeulen met driverdisks voor eenvoudige devices zou dus moeten verleden tijd worden.</simpara>
+</listitem>
+<listitem>
+<simpara>EFI kan makkelijk uitgebreid worden met kleine toepassingen. Denk bijvoorbeeld aan een mediaplayer. Zo zou je kunnen je laptop gebruiken als mediaspeler, zelfs zonder dat die ‘echt’ opgestart is.</simpara>
+</listitem>
+<listitem>
+<simpara>EFI zou kunnen voorzien worden van een virtualisatielaag zodat je meerdere besturingssystemen tegelijkertijd kan gebruiken.</simpara>
+</listitem>
+<listitem>
+<simpara>Hoewel de mogelijkheden nagenoeg eindeloos zijn, is te verwachten dat de eerste gebruikte EFI’s niet veel meer functionaliteit hebben dan de vroegere BIOS’en.</simpara>
+</listitem>
+</itemizedlist>
+<figure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ch05/images/UEFI_01.jpg" contentwidth="500" width="500%" scalefit="1" align="center"/>
+</imageobject>
+<textobject><phrase>UEFI interface (voorbeeld)</phrase></textobject>
+</mediaobject>
+</figure>
 </section>
+<section id="__u_efi_verspreiding">
+<title>(U)EFI verspreiding</title>
+<simpara>Aan EFI wordt sedert 2002 gewerkt door enkele grote firma’s. Nagenoeg elke grote hardware bouwer heeft zich bij de organisatie aangesloten. Toch zal het nog een tijd duren vooraleer we het BIOS volledig kunnen naar de geschiedenis verwijzen. Een overzichtje van de ondersteuning tegenwoordig:
+*	Apple: standaard op alle recente computers (met BIOS-support dmv )
+*	Microsoft: standaard op vista X64 sp1 en hoger
+*	Linux: reeds lange tijd standaard geïmplementeerd</simpara>
+</section>
+</section>
+<section id="_coreboot">
+<title>Coreboot</title>
+
 </section>
 </chapter>
 <chapter id="_internal_i_o">
