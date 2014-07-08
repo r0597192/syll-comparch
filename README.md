@@ -9,12 +9,11 @@ Some images are licensed differently, appropriate licenses are always mentioned.
 
 All imagery has been collected or crafted carefully, with respect to copyrights. However, if you think there is a copyright infringement, please do not hesitate to contact me, so I can investigate and possibly remove that content.
 
-http:// [just take me to a page with the exported files]
+http://roelvs.github.io/syll-comparch/
 
 ## Usage
 
 this repository contains a windows batch file to render the syllabus to an html5 and pdf file. 
-The commands used in this file are also valid on other operating systems...
 
 ### Requirements
 
@@ -26,7 +25,6 @@ http://asciidoctor.org/
 
 #### FO-pub
 
-if you require pdf output, install fopub-asciidoctor
-
+if you want to generate ftp output, install asciidoctor-fopub:
 https://github.com/asciidoctor/asciidoctor-fopub
 
