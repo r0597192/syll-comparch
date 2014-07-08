@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.0.preview3">
+<meta name="generator" content="Asciidoctor 1.5.0.preview.8">
 <meta name="author" content="Roel Van Steenberghe">
 <title>Computerarchitectuur</title>
 <link rel="stylesheet" href="./rocket-panda.css">
@@ -1086,7 +1086,7 @@ Microsoft heeft bijvoorbeeld eind 2012 z’n RT tablet vrijgegeven, met ARM SOC.
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch03/images/geheugenpiramide.png" alt="">
+<img src="ch03/images/geheugenpiramide.png" alt="geheugenpiramide">
 </div>
 <div class="title">Figure 15. Geheugenpiramide</div>
 </div>
@@ -1661,7 +1661,7 @@ L1 cache is het cache geheugen dat het dichtst bij de processor staat. Het moet 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_overschrijfstrategie_n">Overschrijfstrategieën</h4>
+<h4 id="_overschrijfstrategieën">Overschrijfstrategieën</h4>
 <div class="paragraph">
 <p>Bij een cache miss zal in de meeste gevallen een volledig geheugenblok ingeladen worden. Dit betekent dat in het cache geheugen plaats zal moeten gemaakt worden. Er zal met andere woorden een lijn geselecteerd moet worden, die uit het cache geheugen verwijderd zal worden. Het selecteren van die lijn moet uiteraard doordacht gebeuren om de hit rate zo hoog mogelijk te houden. In principe is het best om de cacheline te verwijderen die het langst niet zal gebruikt worden. Het probleem met deze keuze is dat er kennis over de toekomst voor nodig is. In plaats daarvan zijn er een aantal strategieën die op een andere manier proberen de meest geschikte lijn te selecteren:</p>
 </div>
@@ -1974,7 +1974,7 @@ Hierdoor reageert de computer trager dan in het geval er geen virtueel geheugen 
 <div class="ulist Bibliography">
 <ul class="Bibliography">
 <li>
-<p><a id="PATT"></a>[PATT] <em>Computer Organization And Design</em>. David A. Patterson, John L. Hennessey. fifth edition. p374</p>
+<p><a id="PATT1"></a>[PATT1] <em>Computer Organization And Design</em>. David A. Patterson, John L. Hennessey. fifth edition. p374</p>
 </li>
 </ul>
 </div>
@@ -2049,14 +2049,14 @@ Na de databits volgt een foutcorrigerende code (ECC - Error Correcting Code). De
 <p>In de afbeelding zijn ook maten opgegeven voor de breedte van een spoor en de breedte van een bit in een spoor. Hoewel deze maten ondertussen al achterhaald zullen zijn, geven ze wel aan dat de bitdichtheid op een spoor groter is dan de bitdichtheid in radiale richting.</p>
 </div>
 <div class="paragraph">
-<p>De bitdichtheid is uiteraard een belangrijke parameter, waar hard aan gewerkt wordt om deze zo groot mogelijk te maken. Een grotere bitdichtheid maakt immers schijven met grotere capaciteit mogelijk of maakt het mogelijk om kleinere platters te maken met behoud van de capaciteit.
-Ondertussen botst men in het streven naar steeds grotere dichtheden op fysische limieten. Wanneer een magnetisch materiaal gemagnetiseerd wordt, worden dipool moleculen in een bepaalde richting georiënteerd. Het is niet mogelijk om de moleculen individueel te gaan draaien, het gaat steeds om een groep van moleculen die samen gericht worden. De kleinste dergelijke groep heet een magnetisch domein.
+<p>De bitdichtheid is uiteraard een belangrijke parameter, waar hard aan gewerkt wordt om deze zo groot mogelijk te maken. Een grotere bitdichtheid maakt immers schijven met grotere capaciteit mogelijk of maakt het mogelijk om kleinere platters te maken met behoud van de capaciteit.<br>
+Ondertussen botst men in het streven naar steeds grotere dichtheden op fysische limieten. Wanneer een magnetisch materiaal gemagnetiseerd wordt, worden dipool moleculen in een bepaalde richting georiënteerd. Het is niet mogelijk om de moleculen individueel te gaan draaien, het gaat steeds om een groep van moleculen die samen gericht worden. De kleinste dergelijke groep heet een magnetisch domein.<br>
 Omdat men met de dichtheden die op een spoor zitten stilaan in de buurt komt van het oriënteren van een domein en dus niet kleiner meer kan gaan in die richting, is er ondertussen een nieuwe techniek ontstaan. Deze nieuwe techniek gaat geen gebieden in de tangentiële richting gaan magnetiseren, maar gaat werken in de diepte.<br>
 Dit heet perpendicular recording (loodrechte opname).</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch04/images/2000px-Perpendicular_Recording_Diagram.svg.png" alt="">
+<img src="ch04/images/2000px-Perpendicular_Recording_Diagram.svg.png" alt="" width="300">
 </div>
 <div class="title">Figure 43. Perpendicular recording (bron: Wikipedia)</div>
 </div>
@@ -2064,10 +2064,12 @@ Dit heet perpendicular recording (loodrechte opname).</p>
 <div class="sect3">
 <h4 id="_toegangstijd">Toegangstijd</h4>
 <div class="paragraph">
-<p>De snelheid van schijven hangt van diverse factoren af. Een eerste stap is dat de schijfkop boven het juiste spoor gebracht moet worden, de kop moet in radiale richting gepositioneerd worden.
-Deze actie noemt men een seek. De seek time is dus een belangrijke parameter bij een harde schijf. Dikwijls worden twee verschillende seek times opgegeven: een track-to-track seek time en een average seek time. De eerste is de tijd nodig om de kop te bewegen tussen twee aan elkaar grenzende sporen, de tweede is de gemiddelde tijd die nodig is om de kop te verplaatsen naar een willekeurig ander spoor. Uiteraard is de eerste tijd een stuk korter dan de tweede tijd (mogelijk reeds achterhaalde richtwaarden: 1ms voor track-to-track, 10ms voor average seek time).
-Eens de kop boven het juiste spoor zweeft, is er nog een rotatiewachttijd nodig alvorens de kop boven de gewenste locatie komt. Deze rotatie wachttijd is vooral afhankelijk van de rotatiesnelheid. Gangbare snelheden zijn 5400, 7200, 10000 of 15000 toeren per minuut. De gemiddelde wachttijd (average latency) is de tijd die nodig is om de schijf een halve rotatie te laten uitvoeren. Bij de vermeldde snelheden is dit 5,56ms, 4,16ms en 3ms. Tenslotte is er nog de tijd nodig om de gegevens effectief te verwerken.
-Een moderne schijf haalt gemiddelde overdrachtssnelheden van 60MB/s (opgelet: niet vergelijken met de maximale overdrachtssnelheid die fabrikanten opgeven).
+<p>De snelheid van schijven hangt van diverse factoren af. Een eerste stap is dat de schijfkop boven het juiste spoor gebracht moet worden, de kop moet in radiale richting gepositioneerd worden.<br>
+Deze actie noemt men een seek. De seek time is dus een belangrijke parameter bij een harde schijf. Dikwijls worden twee verschillende seek times opgegeven: een track-to-track seek time en een average seek time. De eerste is de tijd nodig om de kop te bewegen tussen twee aan elkaar grenzende sporen, de tweede is de gemiddelde tijd die nodig is om de kop te verplaatsen naar een willekeurig ander spoor. Uiteraard is de eerste tijd een stuk korter dan de tweede tijd (mogelijk reeds achterhaalde richtwaarden: 1ms voor track-to-track, 10ms voor average seek time).</p>
+</div>
+<div class="paragraph">
+<p>Eens de kop boven het juiste spoor zweeft, is er nog een rotatiewachttijd nodig alvorens de kop boven de gewenste locatie komt. Deze rotatie wachttijd is vooral afhankelijk van de rotatiesnelheid. Gangbare snelheden zijn 5400, 7200, 10000 of 15000 toeren per minuut. De gemiddelde wachttijd (average latency) is de tijd die nodig is om de schijf een halve rotatie te laten uitvoeren. Bij de vermeldde snelheden is dit 5,56ms, 4,16ms en 3ms. Tenslotte is er nog de tijd nodig om de gegevens effectief te verwerken.<br>
+Een moderne schijf haalt gemiddelde overdrachtssnelheden van 60MB/s (opgelet: niet vergelijken met de maximale overdrachtssnelheid die fabrikanten opgeven).<br>
 Bij deze snelheid duurt het 8,5ms om een sector van 512 bytes te verplaatsen. Het zal dus duidelijk zijn dat de seek time en de average latency duidelijk domineren ten opzichte van de eigenlijke overdrachtstijd. Het komt er dus ook op aan om te vermijden dat willekeurige sectoren over de schijf gelezen moeten worden.</p>
 </div>
 </div>
@@ -2075,7 +2077,7 @@ Bij deze snelheid duurt het 8,5ms om een sector van 512 bytes te verplaatsen. He
 <h4 id="_invloed_van_fysieke_geometrie_op_de_performantie">Invloed van fysieke geometrie op de performantie</h4>
 <div class="paragraph">
 <p>Eerder werd al de fysieke opbouw van de harde schijf besproken. Deze fysieke geometrie bepaalt mee de snelheid die gehaald kan worden.
-Helaas zijn sommige eigenschappen tegenstrijdig met andere kwaliteiten die nagestreeft  worden, waaronder ook het goedkoop kunnen aanbieden van de schijven. Een eerste duidelijk voorbeeld is de rotatiesnelheid van de harde schijf. Hoe sneller de schijf rond draait, hoe kleiner de average latency kan zijn. Daar staat tegenover dat een sneller draaiende schijf meer energie vraagt, wat een ongewenste eigenschap is in het geval van batterijgevoede apparaten zoals laptops. Een tweede voorbeeld is het aantal platters. Meer platters betekent dat er meer gegevens beschikbaar zijn, zonder dat de leeskoppen radiaal verplaatst moeten worden. Daar staat dan weer tegenover dat de motoren krachtiger moeten zijn (grotere massa roteren of verplaatsen), met een groter verbruik tot gevolg. Door de grotere massa zullen de schijven ook trager op gang komen, waardoor het minder interessant wordt om ze uit te schakelen (wat het verbruik uiteraard nog meer negatief beïnvloed).
+Helaas zijn sommige eigenschappen tegenstrijdig met andere kwaliteiten die nagestreeft  worden, waaronder ook het goedkoop kunnen aanbieden van de schijven. Een eerste duidelijk voorbeeld is de rotatiesnelheid van de harde schijf. Hoe sneller de schijf rond draait, hoe kleiner de average latency kan zijn. Daar staat tegenover dat een sneller draaiende schijf meer energie vraagt, wat een ongewenste eigenschap is in het geval van batterijgevoede apparaten zoals laptops. Een tweede voorbeeld is het aantal platters. Meer platters betekent dat er meer gegevens beschikbaar zijn, zonder dat de leeskoppen radiaal verplaatst moeten worden. Daar staat dan weer tegenover dat de motoren krachtiger moeten zijn (grotere massa roteren of verplaatsen), met een groter verbruik tot gevolg. Door de grotere massa zullen de schijven ook trager op gang komen, waardoor het minder interessant wordt om ze uit te schakelen (wat het verbruik uiteraard nog meer negatief beïnvloed).<br>
 Bovendien geven extra platters aanleiding tot grotere trillingen en dus meer lawaai. Tenslotte moeten de platters natuurlijk fysiek in de behuizing van de schijf passen. Een laatste voorbeeld is de capaciteit van de schijf. Als de capaciteit van de schijf vergroot, terwijl alle andere parameters (aantal platters, grootte van platters) dezelfde blijven, dan vergroot de bitdichtheid. Een grotere bitdichtheid betekent dat bij dezelfde rotatiesnelheid bits sneller onder de kop passeren en dus sneller gelezen of geschreven kunnen worden.
 Omwille van de eenvoud van de omrekening werden eerst over de gehele schijf hetzelfde aantal sectoren per cilinder gebruikt. Cilinders die aan de buitenkant van de schijf lagen, hebben een grotere omtrek. Als op een grotere omtrek eenzelfde aantal sectoren ligt met eenzelfde aantal bits per sector, dan betekent dit dat de bitdichtheid aan de buitenkant kleiner is dan aan de binnenkant en dus ook kleiner dan wat technologisch haalbaar is. Op deze manier worden dus zowel snelheid als capaciteit beperkt, voldoende redenen om de schijf ook nog eens te verdelen in zones (afbeelding 4.6).</p>
 </div>
@@ -2327,68 +2329,125 @@ We zullen met andere woorden bekijken hoe de schijf toegankelijk is voor bijvoor
 </div>
 <div class="sect3">
 <h4 id="_master_boot_record_mbr_layout">Master Boot Record (MBR) layout</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>offset	lengte (bytes)	inhoud</p>
+</li>
+<li>
+<p>0	446	MBR programmacode</p>
+</li>
+<li>
+<p>446 (1BEh)	16	eerste partitie-record</p>
+</li>
+<li>
+<p>462 (1CEh)	16	tweede partitie-record</p>
+</li>
+<li>
+<p>478 (1DEh)	16	derde partitie-record</p>
+</li>
+<li>
+<p>494 (1EEh)	16	vierde partitie-record</p>
+</li>
+<li>
+<p>510 (1FEh)	2	55 AA (einde markering)</p>
+</li>
+</ul>
+</div>
 <div class="paragraph">
-<p>offset	lengte (bytes)	inhoud
-0	446	MBR programmacode
-446 (1BEh)	16	eerste partitie-record
-462 (1CEh)	16	tweede partitie-record
-478 (1DEh)	16	derde partitie-record
-494 (1EEh)	16	vierde partitie-record
-510 (1FEh)	2	55 AA (einde markering)
-Tabel 4 Inhoud Master Boot Record
-Het master boot record is de eerste fysieke sector van de harde schijf. Deze bevat twee gedeeltes: de primaire partitietabel en de MBR-programmacode.
+<p>Tabel 4 Inhoud Master Boot Record</p>
+</div>
+<div class="paragraph">
+<p>Het master boot record is de eerste fysieke sector van de harde schijf. Deze bevat twee gedeeltes: de primaire partitietabel en de MBR-programmacode.
 De MBR programmacode bevat de nodige instructies om te beslissen van welke primaire partitie opgestart moet worden, om de bootsector van de betreffende partitie in het geheugen te laden en om te starten met het laden van het betreffende besturingssysteem. In de meest eenvoudige vorm zoekt de MBR-code in de partitietabel naar de actieve partitie (zie verder), laadt de bootsector van die partitie in het geheugen en voert de code uit die daarin opgeslagen is. Soms kan de MBR-code ook meer gesofisticeerd zijn en interactie met de gebruiker mogelijk maken.<br>
 Dit is het geval bij Boot-managers als LILO (Linux Loader), grub en BootMagic.
 Partitionering is het onderverdelen van de harde schijf in verschillende blokken, met elk een bestandsysteem. Partitioneren kan interessant zijn om bijvoorbeeld verschillende soorten gegevens te groeperen (bijvoorbeeld aparte data partitie, die niet aangepast wordt als het besturingssysteem opnieuw geïnstalleerd wordt). Het kan ook gebruikt worden om bijvoorbeeld een aparte swap-partitie te voorzien of om meerdere besturingssystemen (multi-boot systeem) mogelijk te maken.
-Bij het partitioneren is het wel belangrijk om op voorhand goed na te denken wat je wil, want achteraf aanpassen van groottes van partities is (afhankelijk van het gebruikte bestandsysteem) niet altijd mogelijk en dikwijls gevaarlijk voor dataverlies.
-Hoe een schijf is onderverdeeld in partities wordt opgeslagen in een partitietabel.
+Bij het partitioneren is het wel belangrijk om op voorhand goed na te denken wat je wil, want achteraf aanpassen van groottes van partities is (afhankelijk van het gebruikte bestandsysteem) niet altijd mogelijk en dikwijls gevaarlijk voor dataverlies.<br>
+Hoe een schijf is onderverdeeld in partities wordt opgeslagen in een partitietabel.<br>
 De primaire partitietabel bevat voor elke primaire partitie een record van zestien bytes. De inhoud van zo’n record wordt weergegeven in onderstaande tabel.</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>offset	lengte (bytes)	inhoud</p>
+</li>
+<li>
+<p>0	1	80h (actieve partitie) of 00h (niet actief)</p>
+</li>
+<li>
+<p>1	3	CHS adres eerste sector van de partitie</p>
+</li>
+<li>
+<p>4	1	type partitie</p>
+</li>
+<li>
+<p>5	3	CHS adres laatste sector van partitie</p>
+</li>
+<li>
+<p>8	4	LBA adres eerste sector</p>
+</li>
+<li>
+<p>12	4	aantal sectoren in partitietabel</p>
+</li>
+</ul>
+</div>
 <div class="paragraph">
-<p>offset	lengte (bytes)	inhoud
-0	1	80h (actieve partitie) of 00h (niet actief)
-1	3	CHS adres eerste sector van de partitie
-4	1	type partitie
-5	3	CHS adres laatste sector van partitie
-8	4	LBA adres eerste sector
-12	4	aantal sectoren in partitietabel
-Tabel 5 Inhoud partitietabel-record</p>
+<p>Tabel 5 Inhoud partitietabel-record</p>
 </div>
 <div class="paragraph">
 <p>Het eerste byte duidt aan of de partitie actief is of niet. Dit kan belangrijk zijn, in het bijzonder in het geval waarbij de MBR op zoek gaat naar de actieve partitie om te booten. Daarnaast zijn er een aantal parameters die de locatie en grootte van de partitie vastleggen en er is een byte dat het type vastlegt. Met dit byte kan aangegeven worden welk bestandsysteem op de partitie staat (b.v. FAT16, FAT32, EXFAT, NTFS, EXT4, ZFS, &#8230;).</p>
 </div>
 <div class="paragraph">
 <p>Aangezien er slechts vier records zijn in de primaire partitietabel, kunnen slechts vier primaire partities gedefinieerd worden. Indien meer partities nodig zijn, moet gebruik gemaakt worden van extended of uitgebreide partities. Belangrijke opmerking hierbij is dat niet alle informatie op een extended partitie terecht mag komen. Een belangrijk voorbeeld is een partitie waar Windows op geïnstalleerd wordt. In de primaire partitietabel is er slechts een extended partitie mogelijk.
-Deze partitie krijgt een type aanduiding die aangeeft dat het gaat om een extended partitie.
+Deze partitie krijgt een type aanduiding die aangeeft dat het gaat om een extended partitie.<br>
 Op de eerste sector van de extended partitie bevindt zich een extended master boot record (EMBR). In het EMBR is er plaats voor twee partietabel-records.
-Een van de partities kan weer een uitgebreide partitie zijn.
+Een van de partities kan weer een uitgebreide partitie zijn.<br>
 Op die manier kunnen in principe oneindig veel partities aangemaakt worden (al zijn er natuurlijk wel beperkingen, zoals de eindige capaciteit van de schijf). De partities die aangemaakt worden binnen een uitgebreide partitie, noemt men logische partities.</p>
 </div>
 <div class="paragraph">
-<p>afbeelding 47 partitiestructuur (bron:Microsoft Technet)
-Meestal moet men slechts eenmaal een extended partitie aanmaken en kan men vervolgens in deze partitie logische partities definiëren. Het partitioneringsprogramma maakt automatisch de nodige EMBR’s aan. Bij het aanmaken van een extended partitie moet je goed opletten dat je voldoende ruimte voorziet voor het definiëren van alle logische partities.
-In afbeelding 48 en afbeelding 49worden twee voorbeelden gegeven van de indeling van een harde schijf.
+<div class="title">partitiestructuur (bron:Microsoft Technet)</div>
+<p>??????image::ch04/images/MBRvsGPTbrontechnet.jpg[alt="partitiestructuur", scaledwidth=50, width=400, align=center ]</p>
+</div>
+<div class="paragraph">
+<p>Meestal moet men slechts eenmaal een extended partitie aanmaken en kan men vervolgens in deze partitie logische partities definiëren. Het partitioneringsprogramma maakt automatisch de nodige EMBR’s aan. Bij het aanmaken van een extended partitie moet je goed opletten dat je voldoende ruimte voorziet voor het definiëren van alle logische partities.<br>
+In onderstaande twee afbeeldingen worden twee voorbeelden gegeven van de indeling van een harde schijf.
 Het eerste is een eenvoudig voorbeeld met een primaire en een logische DOS-partitie (Microsoft laat slechts een FAT per partitietabel toe). Het tweede voorbeeld toont een complexer voorbeeld met meerdere logische partities. Nu is te zien dat elke extended partitie een EMBR bevat waarin informatie zit voor een logische partitie en een verwijzing naar de volgende extended partitie.</p>
 </div>
-<div class="paragraph">
-<p>afbeelding 48 Voorbeeld partitietabel met uitgebreide partitie</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch04/images/partitie1.jpg" alt="partitiestructuur met uitgebreide partitie" width="400">
 </div>
-<div class="paragraph">
-<p>afbeelding 49 Partitietabel met meerdere logische partities</p>
+<div class="title">Figure 50. Voorbeeld partitietabel met uitgebreide partitie</div>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch04/images/partitie2.jpg" alt="partitiestructuur met meerdere logische partities" width="400">
+</div>
+<div class="title">Figure 51. Partitietabel met meerdere logische partities</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_gpt_layout">GPT layout</h4>
 <div class="paragraph">
-<p>De disk-layout met het MBR wordt tegenwoordig nog vaak gebruikt. Toch zijn er enkele belangrijke nadelen:
-	Partitiegrootte is beperkt tot 2TB, wat met de huidige nieuwe harde schijven problematisch wordt.
-	De partitietabel is een erg belangrijk stukje data op de schijf, maar het wordt op geen enkele manier beschermd. Als deze cluster defect is, dan is het moeilijk om de logische layout van de schijf te achterhalen.</p>
+<p>De disk-layout met het MBR wordt tegenwoordig nog vaak gebruikt. Toch zijn er enkele belangrijke nadelen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Partitiegrootte is beperkt tot 2TB, wat met de huidige nieuwe harde schijven problematisch wordt.</p>
+</li>
+<li>
+<p>De partitietabel is een erg belangrijk stukje data op de schijf, maar het wordt op geen enkele manier beschermd. Als deze cluster defect is, dan is het moeilijk om de logische layout van de schijf te achterhalen.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>De GPT layout probeert hier oplossingen voor te verzinnen. Zo staat de partitietabel ook op het einde van de schijf, zodat een defect in het begin van de schijf niet hoeft te betekenen dat je de data op de partities kwijt bent. De eerste sector van een GPT-schijf bevat een valse MBR-record (protective MBR) om oude partitioneringstools te misleiden.
-Het maximale aantal partities is bij GPT 128 stuks. De grootte voor elke partitie is geen limiet meer. (om precies te zijn: bij sectoren van 512 bytes kan je 264 *512 bits opslaan in elke partitie.)
-Elke partitie-entry bij GPT bevat volgende gegevens:
-#bytes	Naam	Beschrijving
+<p>De GPT layout probeert hier oplossingen voor te verzinnen. Zo staat de partitietabel ook op het einde van de schijf, zodat een defect in het begin van de schijf niet hoeft te betekenen dat je de data op de partities kwijt bent. De eerste sector van een GPT-schijf bevat een valse MBR-record (protective MBR) om oude partitioneringstools te misleiden.<br>
+Het maximale aantal partities is bij GPT 128 stuks. De grootte voor elke partitie is geen limiet meer. (om precies te zijn: bij sectoren van 512 bytes kan je 2^64 *512 bits opslaan in elke partitie.)
+Elke partitie-entry bij GPT bevat volgende gegevens:</p>
+</div>
+<div class="paragraph">
+<p>#bytes	Naam	Beschrijving
 16 bytes	Partition Type GUID	Bevat een GUID die zegt over welk soort partitie het gaat. Vb Linux Swap Partition, Windows Basic Data Partition, Apple HFS+ partitie, …
 16 bytes	Unique Partition GUID	Unieke GUID voor deze partitie
 8 bytes	Starting LBA	Begin van de partitie
@@ -2396,15 +2455,18 @@ Elke partitie-entry bij GPT bevat volgende gegevens:
 8 bytes	Attribute bits	Extra info over de partitie
 72 bytes	Partition name	Leesbare naam voor de partitie</p>
 </div>
-<div class="paragraph">
-<p>Tabel 6 GPT versus MBR layout (bron: Microsoft Technet)</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch04/images/MBRvsGPTbrontechnet.jpg" alt="partitiestructuur" width="400">
+</div>
+<div class="title">Figure 52. GPT versus MBR layout (bron: Microsoft Technet)</div>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_bestandssystemen">Bestandssystemen</h3>
 <div class="paragraph">
-<p>Een bestandssysteem zal de bestanden op een partitie organiseren en zorgen dat het besturingssysteem over voldoende informatie beschikt om elk bestand terug te vinden. Er zijn veel verschillende soorten bestandssystemen, we zullen ons hier beperken tot FAT16 en NTFS. Eigenschappen van andere bestandssystemen zullen in de cursus besturingssystemen nog besproken worden. Elke partitie begint met een Partition Boot Sector (PBS). Dit is dus weer de eerste fysieke sector die bij een bepaalde partitie behoort. De PBS bestaat weer uit twee delen. Helemaal vooraan staat een spronginstructie naar de eventueel aanwezige boot routine. Deze boot routine zal het besturingssysteem laden (dus op elke partitie waarop een besturingssysteem geïnstalleerd is, zullen een dergelijk programma en spronginstructie terug te vinden zijn). Daarnaast is er het BIOS Parameter Block. Dit gedeelte bevat een aantal parameters die belangrijk zijn om toegang te krijgen tot het bestandsysteem. Welke parameters hier terug te vinden zijn, hangt natuurlijk af van het type bestandssysteem.
+<p>Een bestandssysteem zal de bestanden op een partitie organiseren en zorgen dat het besturingssysteem over voldoende informatie beschikt om elk bestand terug te vinden. Er zijn veel verschillende soorten bestandssystemen, we zullen ons hier beperken tot FAT16 en NTFS. Eigenschappen van andere bestandssystemen zullen in de cursus besturingssystemen nog besproken worden. Elke partitie begint met een Partition Boot Sector (PBS). Dit is dus weer de eerste fysieke sector die bij een bepaalde partitie behoort. De PBS bestaat weer uit twee delen. Helemaal vooraan staat een spronginstructie naar de eventueel aanwezige boot routine. Deze boot routine zal het besturingssysteem laden (dus op elke partitie waarop een besturingssysteem geïnstalleerd is, zullen een dergelijk programma en spronginstructie terug te vinden zijn). Daarnaast is er het BIOS Parameter Block. Dit gedeelte bevat een aantal parameters die belangrijk zijn om toegang te krijgen tot het bestandsysteem. Welke parameters hier terug te vinden zijn, hangt natuurlijk af van het type bestandssysteem.<br>
 Twee van de meest gangbare bestandssystemen worden onder de loep genomen. NTFS, omdat het op nagenoeg elk Windows-toestel gebruikt wordt, en FAT16, omdat het door z’n eenvoud  ondanks zijn leeftijd toch nog op heel veel plaatsten gebruikt wordt. Denk daarbij bijvoorbeeld aan Flash-kaartjes in GSM’s of fototoestellen.</p>
 </div>
 <div class="sect3">
@@ -2412,104 +2474,341 @@ Twee van de meest gangbare bestandssystemen worden onder de loep genomen. NTFS, 
 <div class="paragraph">
 <p>Het FAT bestandssysteem komt voor in een aantal varianten, waarvan FAT16 (1986) en FAT32 (1996) ontegensprekelijk de bekendste zijn. Als primair bestandssysteem hebben ze allebei reeds lang afgedaan om redenen die later aan bod komen, maar ze vormen wel een ideale educatieve instap in de wereld van bestandssystemen. Recentere bestandssystemen zijn een stuk complexer, zoals we later zullen leren. FAT wordt tegenwoordig vanwege zijn eenvoud wel nog consequent gebruikt op flash disks, flash kaartjes etc.</p>
 </div>
-<div class="paragraph">
-<p>afbeelding 50 FAT organisatie
-In afbeelding 50 zie je de opbouw van een FAT16 partitie. Vooraan bevindt zich, zoals altijd, het PBS met de nodige parameters. De PBS is een van de gereserveerde sectoren vooraan de partitie. Onmiddellijk na de gereserveerde sectoren volgen een aantal File Alocation Tables (FATs). In de figuur is dit aantal gelijk aan twee, het meest voorkomende geval.
-Na de FATs komt de root folder, gevolgd door de data clusters. In deze data clusters worden uiteraard de bits opgeslagen die de bestanden vormen. Belangrijke opmerking is dat deze bits georganiseerd worden in clusters. Een cluster is een reeks sectoren die steeds bij een welbepaald bestand horen.
-Bijvoorbeeld: indien een cluster bestaat uit 16kB (32 sectoren), dan zal een bestand van 1kB 16kB schijfruimte bezetten (een sector).
-Een bestand van 20kB zal verspreid worden over twee clusters, deze clusters moeten geen opeenvolgende clusters zijn (fragmentatie).
-Soms kan je de grootte van de clusters kiezen (bij het formatteren, afhankelijk van het bestandsysteem). Grotere clusters betekent dat bestanden minder snel gefragmenteerd zullen worden, maar betekent anderzijds dat meer ruimte verloren zal gaan (door onvolledig gevulde clusters).
-Offset	beschrijving	Grootte
-00h	Jump Code + NOP	3 Bytes
-03h	OEM Name (Probably MSWIN4.1)	8 Bytes
-0Bh	Bytes Per Sector	1 Word
-0Dh	Sectors Per Cluster	1 Byte
-0Eh	Reserved Sectors	1 Word
-10h	Number of Copies of FAT	1 Byte
-11h	Maximum Root DirectoryEntries (N/A for FAT32)	1 Word
-13h	Number of Sectors inPartition Smaller than 32MB (N/A for FAT32)	1 Word
-15h	Media Descriptor (F8h forHard Disks)	1 Byte
-16h	Sectors Per FAT in Older FATSystems (N/A for FAT32)	1 Word
-18h	Sectors Per Track	1 Word
-1Ah	Number of Heads	1 Word
-1Ch	Number of Hidden Sectors inPartition	1 Double Word
-20h	Number of Sectors inPartition	1 Double Word
-24h	Number of Sectors Per FAT	1 Double Word
-28h	Flags 	1 Word
-2Ah	Version of FAT32 Drive (HighByte = Major Version, Low Byte = Minor Version)	1 Word
-2Ch	Cluster Number of the Startof the Root Directory	1 Double Word
-30h	Sector Number of the FileSystem Information Sector (See Structure Below)(Referenced from the Start of the Partition)	1 Word
-32h	Sector Number of the BackupBoot Sector (Referenced from the Start of the Partition)	1 Word
-34h	Reserved	12 Bytes
-40h	Logical Drive Number ofPartition	1 Byte
-41h	Unused (Could be High Byteof Previous Entry)	1 Byte
-42h	Extended Signature (29h)	1 Byte
-43h	Serial Number of Partition	1 Double Word
-47h	Volume Name of Partition	11 Bytes
-52h	FAT Name (FAT32)	8 Bytes
-5Ah	Executable Code	420 Bytes
-1FEh	Boot Record Signature (55hAAh)	2 Bytes</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch04/images/fatstructureBb457122.f28zs06_big(l=en-us).jpg" alt="fat organisatie" width="50">
+</div>
+<div class="title">Figure 53. FAT organisatie</div>
 </div>
 <div class="paragraph">
-<p>afbeelding 51 PBS van een FAT32 partitie
-In afbeelding 51 zie je de inhoud van de partition boot sector van een FAT32 partitie.
+<p>In bovenstaande afbeelding zie je de opbouw van een FAT16 partitie. Vooraan bevindt zich, zoals altijd, het PBS met de nodige parameters. De PBS is een van de gereserveerde sectoren vooraan de partitie. Onmiddellijk na de gereserveerde sectoren volgen een aantal File Alocation Tables (FATs). In de figuur is dit aantal gelijk aan twee, het meest voorkomende geval.<br>
+Na de FATs komt de root folder, gevolgd door de data clusters. In deze data clusters worden uiteraard de bits opgeslagen die de bestanden vormen. Belangrijke opmerking is dat deze bits georganiseerd worden in clusters. Een cluster is een reeks sectoren die steeds bij een welbepaald bestand horen.
+Bijvoorbeeld: indien een cluster bestaat uit 16kB (32 sectoren), dan zal een bestand van 1kB 16kB schijfruimte bezetten (een sector). <br>
+Een bestand van 20kB zal verspreid worden over twee clusters, deze clusters moeten geen opeenvolgende clusters zijn (fragmentatie).<br>
+Soms kan je de grootte van de clusters kiezen (bij het formatteren, afhankelijk van het bestandsysteem). Grotere clusters betekent dat bestanden minder snel gefragmenteerd zullen worden, maar betekent anderzijds dat meer ruimte verloren zal gaan (door onvolledig gevulde clusters).</p>
+</div>
+<table class="tableblock frame-topbot grid-all" style="width: 100%;">
+<caption class="title">Table 5. PBS van een FAT32 partitie</caption>
+<colgroup>
+<col style="width: 14%;">
+<col style="width: 71%;">
+<col style="width: 14%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Offset</th>
+<th class="tableblock halign-left valign-top">beschrijving</th>
+<th class="tableblock halign-left valign-top">grootte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">00h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Jump Code + NOP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3 Bytes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">03h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OEM Name (Probably MSWIN4.1)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8 Bytes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0Bh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bytes Per Sector</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 Word</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0Dh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sectors Per Cluster</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 Byte</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0Eh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reserved Sectors</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 Word</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of Copies of FAT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 Byte</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum Root DirectoryEntries (N/A for FAT32)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 Word</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">13h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of Sectors inPartition Smaller than 32MB (N/A for FAT32)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 Word</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Media Descriptor (F8h forHard Disks)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 Byte</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sectors Per FAT in Older FATSystems (N/A for FAT32)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 Word</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sectors Per Track</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 Word</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1Ah</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of Heads</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 Word</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1Ch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of Hidden Sectors inPartition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 Double Word</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of Sectors inPartition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 Double Word</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">24h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of Sectors Per FAT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 Double Word</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">28h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 Word</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2Ah</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version of FAT32 Drive (HighByte = Major Version, Low Byte = Minor Version)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 Word</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2Ch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cluster Number of the Startof the Root Directory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 Double Word</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sector Number of the FileSystem Information Sector (See Structure Below)(Referenced from the Start of the Partition)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 Word</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sector Number of the BackupBoot Sector (Referenced from the Start of the Partition)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 Word</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">34h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reserved</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12 Bytes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">40h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logical Drive Number ofPartition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 Byte</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">41h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unused (Could be High Byteof Previous Entry)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 Byte</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">42h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extended Signature (29h)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 Byte</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">43h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Serial Number of Partition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 Double Word</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">47h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volume Name of Partition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11 Bytes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">52h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FAT Name (FAT32)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8 Bytes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5Ah</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Executable Code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">420 Bytes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1FEh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boot Record Signature (55hAAh)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2 Bytes</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Hierboven zie je de inhoud van de partition boot sector van een FAT32 partitie.
 We zullen niet alle parameters aanhalen, maar wel aantonen hoe het besturingssysteem een welbepaald bestand kan terugvinden en hoe het daarbij gebruik maakt van de opgeslagen informatie.
 In afbeelding 52 zie je de PBS van een SD-kaartje dat uit een Android smartphone komt. De sector werd hexadecimaal voorgesteld met een hex-editor. Probeer enkele van de hierboven aangehaalde parameters terug te vinden. (de entries zijn gelijkaardig aan de entries voor een FAT16 partitie)</p>
 </div>
 <div class="paragraph">
 <p>afbeelding 52 hexadecimale voorstelling van de PBS van een FAT16 SD-kaart
-De root folder bevat al de informatie over bestanden en mappen die opgeslagen zijn op de root folder. Als we ons beperken tot namen die voldoen aan het 8.3 formaat, dan is elk element in de root folder 32 bytes groot. Een belangrijk deel hiervan zijn de eerste elf bytes, die de karakters van de naam bevatten.
-Indien een bestand niet in de root folder zit, maar is ondergebracht in een andere map, kan vanuit de root folder het volledige pad gevolgd worden tot we uiteindelijk in de juiste map terecht komen. Daar staat de informatie dan op gelijkaardige manier opgeslagen als in de root folder.
-Voorbeeld: zoeken van een bestand in de root folder van een FAT partitie.
-De eerste stap is het opzoeken van de root folder. Uit het PBS kunnen onder andere het aantal gereserveerde sectoren, het aantal FAT’s en het aantal sectoren per fat gehaald worden. Op basis hiervan kan het besturingssysteem bepalen op welk sectornummer de root folder start (start root = aantal gereserveerde sectoren + aantal FAT’s * aantal sectoren per FAT). Merk op dat in het PBS ook het aantal bytes per sector is opgegeven, zodat je ook het byte-adres kan berekenen (sectornummer * aantal bytes per sector).
-Zodra de root folder gevonden is kan het besturingssysteem op zoek naar de naam van het gevraagde bestand. Als dan het juiste element in de root folder gevonden is, kan de overige informatie gebruikt worden om het bestand terug te vinden. Vooral de laatste 4 bytes zijn belangrijk. Die bevatten namelijk de lengte van het bestand (in bytes) en de 16 bits daarvoor bepalen het eerste clusternummer waar er data terug te vinden is. Op basis van het clusternummer moet het besturingssysteem gaan kijken in de FAT tabel.
-De verschillende tabellen zijn in principe (tenzij er fouten optreden) kopieën van elkaar, dus maakt het in principe niet uit in welke tabel gekeken wordt. Mocht één van de FAT-tabellen defect raken, dan kan de andere nog steeds gebruikt worden.
-Bij FAT16 bestaat elk element in de FAT tabel uit 16 bits. Elk element is gelinkt met een welbepaald clusternummer (element 2 hangt samen met cluster 2, element 3 hangt samen met cluster 3, &#8230;).
-De inhoud van de twee bytes bepalen hoe een cluster samenhangt met de andere:
-0000h: 		Available Cluster
-0002h-FFEFh	used, Next Cluster in File
-FFF0h-FFF6h 	reserved Cluster
-FFF7h		BAD Cluster
-FFF8h-FFFF	Used, Last Cluster in File
-Op basis van het eerste clusternummer kan het besturingssysteem alle clusters en de volgorde waarin ze een bestand vormen terug vinden. Het komt er dan op aan om alle clusters volledig uit te lezen, behalve het laatste cluster, waarvan enkel voldoende bytes gelezen moeten worden om in totaal aan de in de root folder terug te vinden grootte te voldoen.</p>
+De root folder bevat al de informatie over bestanden en mappen die opgeslagen zijn op de root folder. Als we ons beperken tot namen die voldoen aan het 8.3 formaat, dan is elk element in de root folder 32 bytes groot. Een belangrijk deel hiervan zijn de eerste elf bytes, die de karakters van de naam bevatten.<br>
+Indien een bestand niet in de root folder zit, maar is ondergebracht in een andere map, kan vanuit de root folder het volledige pad gevolgd worden tot we uiteindelijk in de juiste map terecht komen. Daar staat de informatie dan op gelijkaardige manier opgeslagen als in de root folder.</p>
 </div>
-<div class="paragraph">
-<p>afbeelding 53 voorbeeld FAT-tabel met fragmentatie</p>
+<div class="exampleblock">
+<div class="title">Example 8. Voorbeeld: zoeken van een bestand in de op een FAT-partitie.</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>De eerste stap is het opzoeken van de root folder. Uit het partition boot sector kan je de structuur van de partitie afleiden:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>het aantal gereserveerde sectoren</p>
+</li>
+<li>
+<p>het aantal FAT’s</p>
+</li>
+<li>
+<p>het aantal sectoren per fat</p>
+</li>
+<li>
+<p>aantal bytes per sector</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Op basis hiervan kan het besturingssysteem bepalen op welk sectornummer de root folder start (start root = aantal gereserveerde sectoren + aantal FAT’s * aantal sectoren per FAT). Merk op dat in het PBS ook het aantal bytes per sector is opgegeven, zodat je ook het byte-adres kan berekenen (sectornummer * aantal bytes per sector).</p>
+</li>
+<li>
+<p>Zodra het adres van de root folder gevonden is kan het besturingssysteem op zoek naar de naam van het gevraagde bestand.</p>
+</li>
+<li>
+<p>Als dan het juiste element in de root folder gevonden is (op basis van bestandsnaam), kan de overige informatie gebruikt worden om het bestand terug te vinden op de partitie.
+Vooral de laatste 4 bytes zijn belangrijk. Die bevatten namelijk de lengte van het bestand (in bytes) en de 16 bits daarvoor bepalen het eerste clusternummer waar er data terug te vinden is.</p>
+</li>
+<li>
+<p>Op basis van het clusternummer moet het besturingssysteem gaan kijken in de FAT tabel om zo te weten te komen als het bestand bestaat uit één dan wel uit meerdere clusters.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>De verschillende FAT-tabellen zijn in principe (tenzij er fouten optreden) kopieën van elkaar, dus maakt het in principe niet uit in welke tabel gekeken wordt.</p>
+</li>
+<li>
+<p>Bij FAT16 bestaat elk element in de FAT tabel uit 16 bits. Elk element is gelinkt met een welbepaald clusternummer (element 2 hangt samen met cluster 2, element 3 hangt samen met cluster 3, &#8230;).</p>
+</li>
+<li>
+<p>De inhoud van de twee bytes bepalen hoe een cluster samenhangt met de andere:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>0000h: 		Available Cluster</p>
+</li>
+<li>
+<p>0002h-FFEFh	used, Next Cluster in File</p>
+</li>
+<li>
+<p>FFF0h-FFF6h 	reserved Cluster</p>
+</li>
+<li>
+<p>FFF7h		BAD Cluster</p>
+</li>
+<li>
+<p>FFF8h-FFFF	Used, Last Cluster in File</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Op basis van het eerste clusternummer kan het besturingssysteem alle clusters en de volgorde waarin ze een bestand vormen terug vinden. Het komt er dan op aan om alle clusters volledig uit te lezen, behalve het laatste cluster, waarvan enkel voldoende bytes gelezen moeten worden om in totaal aan de in de root folder terug te vinden grootte te voldoen.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch04/images/FAT16example.png" alt="FAT-tabel met fragmentatie" width="300">
+</div>
+<div class="title">Figure 54. voorbeeld FAT-tabel met fragmentatie</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_ntfs">NTFS</h4>
 <div class="paragraph">
-<p>NTFS is een bestandssysteem dat standaard gebruikt wordt op alle recente Windows versies.
+<p>NTFS is een bestandssysteem dat standaard gebruikt wordt op alle recente Windows versies.<br>
 NTFS werkt op een andere manier dan FAT16 en zal dus ook andere informatie opslaan in de PBS. NTFS maakt bijvoorbeeld geen gebruik van FATs, dus zal er ook geen aantal FATs of grootte van de FAT opgegeven worden in de PBS. NTFS maakt gebruik van een Master File Table (MFT), waarin alle relevante informatie over een bestand wordt opgeslagen. [3]</p>
 </div>
 <div class="paragraph">
-<p>Deze informatie is een stuk uitgebreider dan in de root folder van een FAT systeem, het is zelfs mogelijk dat voor een klein bestand de data volledig in de MFT wordt opgeslagen. Is dit niet het geval, dan is voor het opzoeken van het bestand de meest relevante informatie die in het MFT aanwezig is, de naam van het bestand en de runlist.
-Bij het opzoeken van een bestand is de eerste stap dus het terugvinden van de MFT. Hiervoor staat in het PBS het cluster nummer opgegeven waar het MFT start. Aangezien in het PBS ook het aantal sectoren per cluster terug te vinden zijn, kan weer het sector adres van de MFT teruggevonden worden. Binnen de MFT zal gezocht moeten worden op de naam van het gevraagde bestand. Als het betreffende record dan wordt teruggevonden, kan binnen dit record de runlist worden opgezocht.
-De runlist is onderdeel van het $DATA attribuut (start van dit attribuut wordt gekenmerkt door 80H), waarbinnen ook de ingenomen en werkelijke grootte van het bestand terug te vinden is. De runlist bestaat uit een aantal opeenvolgende bytes:
-Het eerste byte wordt opgesplitst in twee nibbles.
-1. Het meest significante nibble duidt aan hoeveel bytes gebruikt worden voor de offset (stel K)
-2. Het minst significante nibble geeft aan hoeveel bytes gebruikt worden voor de lengte (stel N)
-De volgende N bytes geven in little endian notatie aan hoeveel clusters na elkaar in gebruik zijn voor deze stream. De volgende K bytes geven aan op welke clusteroffset de stream begint (weer in little endian notatie).
-Indien het volgende byte 0x00 is, eindigt de runlist hier, anders moet je vanaf hier de bytes weer op dezelfde manier interpreteren.
-Een voorbeeld: runlist = 31 0A 21 23 05 00 34 &#8230;
-Het eerste byte geeft aan dat het eerstvolgende het aantal clusters bepaalt en de drie daarop volgende een offset. Daarna volgt er 00, dus verder geen data. Dus de data staat in 10 clusters te beginnen vanaf cluster 0x052321. Op deze manier is het mogelijk om verschillende reeksen clusters in de juiste volgorde te gaan lezen.
-Van de laatste cluster moeten weer net genoeg bytes gelezen worden om evenveel bytes te lezen als opgegeven bij de werkelijke grootte van het bestand.</p>
+<p>Deze informatie is een stuk uitgebreider dan in de root folder van een FAT systeem, het is zelfs mogelijk dat voor een klein bestand de data volledig in de MFT wordt opgeslagen. Is dit niet het geval, dan is voor het opzoeken van het bestand de meest relevante informatie die in het MFT aanwezig is, de naam van het bestand en de runlist.<br>
+Bij het opzoeken van een bestand is de eerste stap dus het terugvinden van de MFT. Hiervoor staat in het PBS het cluster nummer opgegeven waar het MFT start. Aangezien in het PBS ook het aantal sectoren per cluster terug te vinden zijn, kan weer het sector adres van de MFT teruggevonden worden. Binnen de MFT zal gezocht moeten worden op de naam van het gevraagde bestand. Als het betreffende record dan wordt teruggevonden, kan binnen dit record de runlist worden opgezocht.<br>
+De runlist is onderdeel van het $DATA attribuut (start van dit attribuut wordt gekenmerkt door 80H), waarbinnen ook de ingenomen en werkelijke grootte van het bestand terug te vinden is. De runlist bestaat uit een aantal opeenvolgende bytes:</p>
+</div>
+<div class="olist arabic">
+<div class="title">opbouw van een runlist</div>
+<ol class="arabic">
+<li>
+<p>Het eerste byte wordt opgesplitst in twee nibbles.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Het meest significante nibble duidt aan hoeveel bytes gebruikt worden voor de offset (stel K)</p>
+</li>
+<li>
+<p>Het minst significante nibble geeft aan hoeveel bytes gebruikt worden voor de lengte (stel N)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>De volgende N bytes geven in little endian notatie aan hoeveel clusters na elkaar in gebruik zijn voor deze stream.</p>
+</li>
+<li>
+<p>De volgende K bytes geven aan op welke clusteroffset de stream begint (weer in little endian notatie).</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Indien het volgende byte 0x00 is, eindigt de runlist hier, anders moet je vanaf hier de bytes weer op dezelfde manier interpreteren.</p>
+</div>
+<div class="exampleblock">
+<div class="title">Example 9. interpretatie van een runlist</div>
+<div class="content">
+<div class="paragraph">
+<p>runlist = 31 0A 21 23 05 00 34 &#8230;<br>
+Het eerste byte geeft aan dat het eerstvolgende het aantal clusters bepaalt en de drie daarop volgende een offset. Daarna volgt er 00, dus verder geen data. Dus de data staat in 10 clusters te beginnen vanaf cluster 0x052321. Op deze manier is het mogelijk om verschillende reeksen clusters in de juiste volgorde te gaan lezen.</p>
+</div>
+<div class="paragraph">
+<p>Van de laatste cluster moeten weer net genoeg bytes gelezen worden om evenveel bytes te lezen als opgegeven bij de werkelijke grootte van het bestand.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_bestanden_wissen_in_fat_en_ntfs">Bestanden wissen in FAT en NTFS</h4>
 <div class="paragraph">
-<p>Bestanden verwijderen van een harde schijf is soms minder eenvoudig dan het lijkt. Indien de bits herschreven worden, zijn er technologisch nog mogelijkheden die toelaten om na te gaan wat vorige waarden waren. Hier gaan we niet op die technieken in. Het is ook interessant om te weten wat er op een bestandsysteem gebeurt wanneer een bestand gewist wordt. Aan de snelheid waarmee een grote hoeveelheid of grote bestanden gewist worden kan je al merken dat niet elk byte op de schijf gewist wordt. In plaats daarvan zal de verwijzing in het bestandsysteem worden aangepast. In het geval van FAT16 wordt een speciaal karakter gebruikt om de naam in de root folder mee te beginnen en worden alle clusters die gebruikt werden, in de FAT tabel als ongebruikt gemarkeerd.
-Het is in dit geval nog mogelijk om het bestand terug te vinden, op voorwaarde dat het niet gefragmenteerd was. In geval van fragmentatie is de (gewiste) FAT tabel nodig om de juiste clusters en hun volgorde terug te vinden.
-Bij NTFS wordt enkel het MFT record aangepast, waarin een parameter zal aangeven dat het bestand gewist is. Aangezien dit anders gemarkeerde, maar niet gewiste MFT record nog steeds alle informatie bevat (via de runlist) is het nu mogelijk om ook gefragmenteerde gewiste bestanden terug te vinden. Belangrijke voorwaarde is wel dat de vrijgekomen ruimte nog niet beschreven mag zijn voor een ander bestand (en uiteraard mag het MFT record ook nog niet overschreven zijn).
-Bedenk zelf of data nog terug te vinden is als je een schijf formatteert. Bij het formatteren worden de nodige controlestructuren (PBS, FATs/MFT, &#8230;) aangebracht en worden alle preambules van de sectoren vastgelegd.</p>
+<p>Bestanden verwijderen van een harde schijf is soms minder eenvoudig dan het lijkt. Indien de bits herschreven worden, zijn er technologisch nog mogelijkheden die toelaten om na te gaan wat vorige waarden waren. Hier gaan we niet op die technieken in. Het is ook interessant om te weten wat er op een bestandsysteem gebeurt wanneer een bestand gewist wordt. Aan de snelheid waarmee een grote hoeveelheid of grote bestanden gewist worden kan je al merken dat niet elk byte op de schijf gewist wordt. In plaats daarvan zal de verwijzing in het bestandsysteem worden aangepast.<br>
+In het geval van FAT16 wordt een speciaal karakter gebruikt om de naam in de root folder mee te beginnen en worden alle clusters die gebruikt werden, in de FAT tabel als ongebruikt gemarkeerd.<br>
+Het is in dit geval nog mogelijk om het bestand terug te vinden, op voorwaarde dat het niet gefragmenteerd was. In geval van fragmentatie is de (gewiste) FAT tabel nodig om de juiste clusters en hun volgorde terug te vinden.<br>
+Bij NTFS wordt enkel het MFT record aangepast, waarin een parameter zal aangeven dat het bestand gewist is. Aangezien dit anders gemarkeerde, maar niet gewiste MFT record nog steeds alle informatie bevat (via de runlist) is het nu mogelijk om ook gefragmenteerde gewiste bestanden terug te vinden. Belangrijke voorwaarde is wel dat de vrijgekomen ruimte nog niet beschreven mag zijn voor een ander bestand (en uiteraard mag het MFT record ook nog niet overschreven zijn).</p>
+</div>
+<div class="paragraph">
+<p>Bedenk zelf of data nog terug te vinden is als je een schijf formatteert. Bij het formatteren worden de nodige controlestructuren (PBS, FATs/MFT, &#8230;) aangebracht en worden alle preambules van de sectoren vastgelegd.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_ext4">Ext4</h4>
 <div class="paragraph">
-<p>EXT staat voor Extended file system. Dit bestandssysteem bouwt verder op standaard linux file systems. Het wordt gezien als een brug tussen Ext3 en de meer geavanceerde bestandssystemen, en is tegenwoordig zowat op alle linux distributies standaard. Ook op Android is dit sinds versie 2.3 het default bestandssysteem.</p>
+<p>EXT staat voor Extended file system. Dit bestandssysteem bouwt verder op standaard linux file systems. Het wordt gezien als een brug tussen Ext3 en de meer geavanceerde bestandssystemen, en is tegenwoordig zowat op alle linux distributies standaard. (al lijkt het rijk van EXT bedreigd: bijvoorbeeld op RHEL is tegenwoordig XFS de standaard bestandsindeling. Ook op Android is EXT sinds versie 2.3 het default bestandssysteem.</p>
 </div>
 <div class="sect4">
 <h5 id="_inodes">Inodes</h5>
@@ -2518,16 +2817,27 @@ Bedenk zelf of data nog terug te vinden is als je een schijf formatteert. Bij he
 In truth, I don&#8217;t know either. It was just a term that we started to use. "Index" is my best guess, because of the slightly unusual file system structure that stored the access information of files as a flat array on the disk, with all the hierarchical directory information living aside from this. Thus the the i-number is an index in this array, the i-node is the selected element of the array. (The "i-" notation was used in the 1st edition manual; its hyphen became gradually dropped). (Dennis Ritchie) [4]</p>
 </div>
 <div class="paragraph">
-<p>Inodes komen voor in twee types:
-*Directory inodes
-Deze bevatten de info van een bepaalde map, met onder meer de subdirectories en bestanden.
-Merk op dat deze inodes ook de bestandsnaam bevatten.
-*Data file inodes
-De data file inodes bevatten de informatie over waar een bepaald bestand kan gevonden worden op de schijf. Merk op dat deze inodes de bestandsnaam NIET bevatten. Door deze werkwijze kan je in principe twee verschillende bestandsnamen gebruiken voor één fysiek bestand. In Linux heet zoiets ‘hard-linking’.
-Zo’n inode voor een bestand bevat Directe, single indirecte, double indirecte en zelfs triple indirecte verwijzigingen naar bestandslocaties. Deze constructie wordt snel duidelijker met een figuurtje:</p>
+<p>Inodes komen voor in twee types:</p>
 </div>
-<div class="paragraph">
-<p>Tabel 7 Inode structuur (bron onbekend)</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Directory inodes</dt>
+<dd>
+<p>Deze bevatten de info van een bepaalde map, met onder meer de subdirectories en bestanden.
+Merk op dat deze inodes ook de bestandsnaam bevatten.</p>
+</dd>
+<dt class="hdlist1">Data file inodes</dt>
+<dd>
+<p>De data file inodes bevatten de informatie over waar een bepaald bestand kan gevonden worden op de schijf. Merk op dat deze inodes de bestandsnaam NIET bevatten. Door deze werkwijze kan je in principe twee verschillende bestandsnamen gebruiken voor één fysiek bestand. In Linux heet zoiets ‘hard-linking’.
+Zo’n inode voor een bestand bevat Directe, single indirecte, double indirecte en zelfs triple indirecte verwijzigingen naar bestandslocaties. Deze constructie wordt snel duidelijker met een figuurtje:</p>
+</dd>
+</dl>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch04/images/unix_filesys5.png" alt="inode structuur" width="500">
+</div>
+<div class="title">Figure 55. Inode structuur (bron onbekend)</div>
 </div>
 <div class="paragraph">
 <p>Kleine bestanden zullen volledig in directe blokken passen, en dus erg snel zijn. Bestanden die niet in deze 12 blokken passen, krijgen via een link naar een indirect blok hun plaats toegewezen. Je kan met deze redenering ook voorspellen wat bedoeld wordt met dubbel indirecte en triple indirecte verwijzingen.</p>
@@ -2537,12 +2847,16 @@ Zo’n inode voor een bestand bevat Directe, single indirecte, double indirecte 
 <div class="sect3">
 <h4 id="_andere_bestandssystemen">Andere bestandssystemen</h4>
 <div class="paragraph">
-<p>Met de opgesomde bestandssystemen is de lijst uiteraard niet compleet.  Een niet limitatief overzichtje met de meest opvallende features. Deze zijn vaak niet toegankelijk met Windows, omdat Microsoft hiervoor geen drivers ontwikkelt.
-===== BTFRS
-BTFRS wordt algemeen beschouwd als de opvolger van EXT-4 in Linux. Het bestandssysteem kan reeds gebruikt worden, maar wordt niet nog stabiel genoeg geacht voor productieomgevingen. Het is momenteel nog in volle ontwikkeling, maar de featureset zal vooral in serveromgevingen gesmaakt worden:
-	Ondersteuning voor snapshots
-	Ondersteuning voor quotas
-	…</p>
+<p>Met de opgesomde bestandssystemen is de lijst uiteraard niet compleet.  Een niet limitatief overzichtje met de meest opvallende features. Deze zijn vaak niet toegankelijk met Windows, omdat Microsoft hiervoor geen drivers ontwikkelt.</p>
+</div>
+<div class="sect4">
+<h5 id="_btfrs">BTFRS</h5>
+<div class="paragraph">
+<p>BTFRS wordt algemeen beschouwd als de opvolger van EXT-4 in Linux. Het bestandssysteem kan reeds gebruikt worden, maar wordt niet nog stabiel genoeg geacht voor productieomgevingen. Het is momenteel nog in volle ontwikkeling, maar de featureset zal vooral in serveromgevingen gesmaakt worden:
+*	Ondersteuning voor snapshots
+*	Ondersteuning voor quotas
+*	…</p>
+</div>
 </div>
 <div class="sect4">
 <h5 id="_zfs">ZFS</h5>
@@ -2558,7 +2872,9 @@ BTFRS wordt algemeen beschouwd als de opvolger van EXT-4 in Linux. Het bestandss
 </div>
 <div class="sect4">
 <h5 id="_f2fs">F2FS</h5>
-
+<div class="paragraph">
+<p>Dit nieuwe bestandssysteem is speciaal opgebouwd om een hoog rendement te halen op flash disks.</p>
+</div>
 </div>
 </div>
 </div>
@@ -3127,7 +3443,7 @@ Door de overgang van parallel naar serieel zijn hogere kloksnelheden mogelijk om
 <p>Eind 2012 was de Toshiba DT01ACA100 met een maximale transfersnelheid van 185,6MB/s sequentieel lezen (gemiddeld 155MB/s). Die werkt al met SATA/600 dat bitrates van 6Gbps haalt (nuttig: 600MB/s).</p>
 </div>
 <div class="exampleblock">
-<div class="title">Example 8. QUESTION</div>
+<div class="title">Example 10. QUESTION</div>
 <div class="content">
 <div class="paragraph">
 <p>Vraag: Serial ATA 3 haalt een bitrate van 6Gbps, en toch maar een nuttige bandbreedte van 600MB/s. hoe verklaar je dat?</p>
