@@ -422,6 +422,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .show-for-print{display:inherit !important}}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.4.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
@@ -858,7 +872,7 @@ Sommige fabrikanten verkiezen echter om hun capaciteiten uit te drukken in Wh, w
 Je weet immers dat</p>
 </div>
 <div class="paragraph">
-<p>math:[P=U*I] (Vermogen=Spanning x Stroom)</p>
+<p>\$P=U*I\$ (Vermogen = Spanning x Stroom)</p>
 </div>
 <div class="paragraph">
 <p>Willen we dus de stroom I(A) kennen, dan moeten we het vermogen delen door de spanning.
@@ -874,7 +888,7 @@ Nemen we onderstaand voorbeeld:</p>
 <p>We kunnen hier dus de capaciteit in Ah bepalen door</p>
 </div>
 <div class="paragraph">
-<p>math:[I_h = P_h/U = 2,4Wh/3,6V = 0,666Ah] (of 666mAh)</p>
+<p>\$I_h = P_h/U = 2,4Wh/3,6V = 0,666Ah\$ (of 666mAh)</p>
 </div>
 </div>
 <div class="sect4">
@@ -1695,7 +1709,7 @@ De snelheid van het geheugen wordt in grote mate bepaald door de toegangstijd ta
 <p>DRAM heeft, zoals je verder zal lezen, de eigenschap te werken met cyclussen. Om te berekenen wat de effectieve bandbreedte is (=geheugendebiet) hoor je steeds dezelfde benadering te maken:</p>
 </div>
 <div class="paragraph">
-<p>math:["Aantal bytes die getransfereerd worden bij een cyclus"//"tijdsduur van een cyclus" =  "bandbreedte"]</p>
+<p>\$"Aantal bytes die getransfereerd worden bij een cyclus"//"tijdsduur van een cyclus" =  "bandbreedte"\$</p>
 </div>
 <div class="paragraph">
 <p>Deze erg eenvoudige benadering wordt bij de verschillende types geheugen die volgen telkens toegepast.</p>
@@ -1722,7 +1736,7 @@ FP-DRAM werd gebruikt tot busfrequenties van 66 MHz.</p>
 <p>Op een computersysteem met een 486 processor (32-bit databus) met 5-3-3-3 FP-DRAM geheugen aan 66Mhz betekent dit dat het maximale geheugendebiet gelijk is aan:</p>
 </div>
 <div class="paragraph">
-<p>math:[(4 "bytes"/"transfer" xx 4 "transfers"/"burst" xx 66 "Mcycli"/"sec")/(14 "cycli"/"burst")= 75 "MB"/"sec" ]</p>
+<p>\$(4 "bytes"/"transfer" xx 4 "transfers"/"burst" xx 66 "Mcycli"/"sec")/(14 "cycli"/"burst")= 75 "MB"/"sec" \$</p>
 </div>
 </div>
 <div class="sect2">
@@ -1738,7 +1752,7 @@ FP-DRAM werd gebruikt tot busfrequenties van 66 MHz.</p>
 EDO-RAM kon gebruikt worden tot een busklok van 75 MHz met een timing van 5-2-2-2 klokcycli. Als we EDO-RAM dan nog combineren met een 64-bit bus (Pentium) geeft dit een maximaal debiet van 218 MB/s</p>
 </div>
 <div class="paragraph">
-<p>:math:[(8 "bytes"/"transfer" xx 4 "transfers"/"burst" xx 75 "Mcycli"/"sec")//(11 "cycli"/"burst")=218 "MB"/"sec" ]</p>
+<p>\$(8 "bytes"/"transfer" xx 4 "transfers"/"burst" xx 75 "Mcycli"/"sec")//(11 "cycli"/"burst")=218 "MB"/"sec" \$</p>
 </div>
 </div>
 <div class="sect2">
@@ -1754,7 +1768,7 @@ EDO-RAM kon gebruikt worden tot een busklok van 75 MHz met een timing van 5-2-2-
 In de afbeelding 20 krijgen we een timing van 2-1-1-1. Daarnaast is SD-RAM geschikt voor busfrequenties tot 133 MHz (PC133), wat neerkomt op een maximaal debiet van 851 MBps.</p>
 </div>
 <div class="paragraph">
-<p>math:[(8 "bytes"/"transfer"  xx 4 "transfers"/"burst"  xx 133 "Mcycli"/"sec" )//(5 "cycli"/"burst") = 851 "MB"/"sec"]</p>
+<p>\$(8 "bytes"/"transfer"  xx 4 "transfers"/"burst"  xx 133 "Mcycli"/"sec" )//(5 "cycli"/"burst") = 851 "MB"/"sec"\$</p>
 </div>
 <div class="sect3">
 <h4 id="_ddr_sdram_ddr2_ddr3">5.8.1. DDR SDRAM - DDR2 - DDR3</h4>
@@ -1774,7 +1788,7 @@ In de afbeelding 20 krijgen we een timing van 2-1-1-1. Daarnaast is SD-RAM gesch
 <p>Op een 64-bit databus is die:</p>
 </div>
 <div class="paragraph">
-<p>math:[8 "bytes"/"transfer"  xx (2 xx 200 "MHz") = 3200 "MB"/"sec"]</p>
+<p>\$8 "bytes"/"transfer"  xx (2 xx 200 "MHz") = 3200 "MB"/"sec"\$</p>
 </div>
 <div class="paragraph">
 <p>Er kan echter nog veel verschil zijn tussen twee PC3200 modules.
@@ -1810,7 +1824,7 @@ De werkelijke snelheid hangt namelijk ook af van de totale latentietijd. Die kan
 PC3200 geheugen met parameters 2-2-2-6 heeft voor een burst met vier transfers van 8 bytes 2+2+4 x 0.5=6 klokcycli van 200 MHz nodig. Dit geeft een snelheid van 1067 MB/s.Voor twee dergelijke opeenvolgende transfers zijn</p>
 </div>
 <div class="paragraph">
-<p>math:[2(2+2+4 xx 0.5) + 2 = 14 klokcycli] van 200 MHz nodig. Dit geeft 914 MBps.</p>
+<p>\$2(2+2+4 xx 0.5) + 2 = 14 klokcycli\$ van 200 MHz nodig. Dit geeft 914 MBps.</p>
 </div>
 <div class="paragraph">
 <p>Bij DDR kan ook het aantal cellen dat in een burst gelezen wordt variëren. Hetzelfde geheugen dat in een burst 8 transfers van 8 bytes uitvoert, haalt een snelheid van 1600MBps.Tras is in dit verhaal niet naar voor gekomen. Tras bepaalt de tijd waarin de volgende rij nog niet geladen mag worden. Deze moet groot genoeg zijn om de buffer niet te overschrijven voordat het volledig getransfereerd is over de databus. Deze parameter moet minimaal Trcd + TCL + 1 bedragen. Indien de parameter te klein is gaat uiteraard data verloren.</p>
@@ -2252,7 +2266,7 @@ Hit rate:: percentage toegangen die rechtstreeks langs de cache gaan</p>
 <p>De formule voor de totale toegangstijd van de gecombineerde caches is dan:</p>
 </div>
 <div class="paragraph">
-<p>math:["t"<em>"totaal"="HR"</em>"L1"  xx "t"<em>"L1"  + (1 - "HR"</em>"L1") xx "HR"<em>"L2"  xx t</em>"L2"  + (1 - "HR"<em>"L1") xx (1 - "HR"</em>"L2") x "t"_"RAM"]</p>
+<p>\$"t"_"totaal"="HR"_"L1"  xx "t"_"L1"  + (1 - "HR"_"L1") xx "HR"_"L2"  xx t_"L2"  + (1 - "HR"_"L1") xx (1 - "HR"_"L2") x "t"_"RAM"\$</p>
 </div>
 <div class="paragraph">
 <p>Waarbij:<br>
@@ -2267,7 +2281,7 @@ t = aantal cycli<br></p>
 De gemiddelde toegangstijd wordt dan:</p>
 </div>
 <div class="paragraph">
-<p>math:[0.96 xx 1 "ns" + 0.04 xx 0.88 xx 2 "ns" + 0.04 xx 0.12 * 8 "ns" = 1.0688 "ns"]</p>
+<p>\$0.96 xx 1 "ns" + 0.04 xx 0.88 xx 2 "ns" + 0.04 xx 0.12 * 8 "ns" = 1.0688 "ns"\$</p>
 </div>
 <div class="paragraph">
 <p>Probeer zelf eens uit wat de invloed is van de toegangstijd van het RAM-geheugen in dit systeem. Probeer eens wat er gebeurt zonder L2 cache. De verschillende factoren worden niet op dezelfde manier beïnvloed door de eigenschappen van het cache. Bijvoorbeeld de asscociativiteit van de cache biedt meer mogelijkheden op het vlak van cachelines selecteren, waardoor de hitrate hoger kan zijn. Daar staat tegenover dat een complexere berekening nodig is om een lijn te selecteren, waardoor bij een cache miss er extra tijd verloren gaat (hogere miss time).</p>
@@ -4818,7 +4832,7 @@ Criticasters hekelen de veiligheid van Thunderbolt, net omdat je rechtstreeks ve
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2014-07-09 16:54:04 Romance (zomertijd)
+Last updated 2014-08-11 15:53:06 Romance (zomertijd)
 </div>
 </div>
 </body>

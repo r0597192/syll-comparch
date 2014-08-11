@@ -5,7 +5,7 @@
 <book lang="en">
 <bookinfo>
 <title>Computerarchitectuur</title>
-<date>2014-07-09</date>
+<date>2014-08-11</date>
 <author>
 <firstname>Roel</firstname>
 <othername>Van</othername>
@@ -260,7 +260,7 @@ UPS’en vind je in alle prijsklasses, wat vaak te maken heeft met de inwendige 
 <simpara>De capaciteit van batterijen wordt meestal uitgedrukt in Ah (ampère/uur) of mAh (milliampère/uur). Met die eenheid kan je makkelijk accu-packs vergelijken. Een batterij van 6Ah zal bijvoorbeeld in staat zijn om gedurende 6 uur een stroom af te leveren van 1 Ampère, of gedurende bijvoorbeeld 2 uur een stroom van 3 Ampère.
 Sommige fabrikanten verkiezen echter om hun capaciteiten uit te drukken in Wh, wat vergelijken moeilijk kan maken. Toch kan je eenvoudig omrekenen:
 Je weet immers dat</simpara>
-<simpara>math:[P=U*I] (Vermogen=Spanning x Stroom)</simpara>
+<simpara>P=U*I (Vermogen = Spanning x Stroom)</simpara>
 <simpara>Willen we dus de stroom I(A) kennen, dan moeten we het vermogen delen door de spanning.
 Nemen we onderstaand voorbeeld:</simpara>
 <figure>
@@ -273,7 +273,7 @@ Nemen we onderstaand voorbeeld:</simpara>
 </mediaobject>
 </figure>
 <simpara>We kunnen hier dus de capaciteit in Ah bepalen door</simpara>
-<simpara>math:[I_h = P_h/U = 2,4Wh/3,6V = 0,666Ah] (of 666mAh)</simpara>
+<simpara>I_h = P_h/U = 2,4Wh/3,6V = 0,666Ah (of 666mAh)</simpara>
 </section>
 <section id="_aantal_cellen">
 <title>Aantal cellen</title>
@@ -974,7 +974,7 @@ De snelheid van het geheugen wordt in grote mate bepaald door de toegangstijd ta
 <section id="_bandbreedte_bij_dram">
 <title>Bandbreedte bij DRAM</title>
 <simpara>DRAM heeft, zoals je verder zal lezen, de eigenschap te werken met cyclussen. Om te berekenen wat de effectieve bandbreedte is (=geheugendebiet) hoor je steeds dezelfde benadering te maken:</simpara>
-<simpara>math:["Aantal bytes die getransfereerd worden bij een cyclus"//"tijdsduur van een cyclus" =  "bandbreedte"]</simpara>
+<simpara>"Aantal bytes die getransfereerd worden bij een cyclus"//"tijdsduur van een cyclus" =  "bandbreedte"</simpara>
 <simpara>Deze erg eenvoudige benadering wordt bij de verschillende types geheugen die volgen telkens toegepast.</simpara>
 </section>
 </section>
@@ -994,7 +994,7 @@ Het nadeel is dat een lees- of schrijfcyclus langer wordt. Het kost immers extra
 <simpara>In praktijk wordt er bijna steeds gewerkt met een burst van vier leescycli waarbij aangeduid wordt hoeveel klokcycli er nodig zijn per transfert, bijvoorbeeld 5-3-3-3.<?asciidoc-br?>
 FP-DRAM werd gebruikt tot busfrequenties van 66 MHz.</simpara>
 <simpara>Op een computersysteem met een 486 processor (32-bit databus) met 5-3-3-3 FP-DRAM geheugen aan 66Mhz betekent dit dat het maximale geheugendebiet gelijk is aan:</simpara>
-<simpara>math:[(4 "bytes"/"transfer" xx 4 "transfers"/"burst" xx 66 "Mcycli"/"sec")/(14 "cycli"/"burst")= 75 "MB"/"sec" ]</simpara>
+<simpara>(4 "bytes"/"transfer" xx 4 "transfers"/"burst" xx 66 "Mcycli"/"sec")/(14 "cycli"/"burst")= 75 "MB"/"sec" </simpara>
 </section>
 <section id="_edo_ram">
 <title>EDO RAM</title>
@@ -1009,7 +1009,7 @@ FP-DRAM werd gebruikt tot busfrequenties van 66 MHz.</simpara>
 </figure>
 <simpara>Extended Data Out-RAM is een aanpassing van het Fast Page-concept. Daarbij moest de memorycontroller wachten met het aanbieden van een nieuw kolomadres tot de vorige data gelezen waren. Bij EDO-RAM blijven de data op de uitgangen van het geheugen nog een tijd langer beschikbaar (zelfs tot na het aanbieden van het volgende kolomadres). Hierdoor wint men tijd: terwijl de data gelezen worden, kan men al het volgende kolomadres aanleggen.
 EDO-RAM kon gebruikt worden tot een busklok van 75 MHz met een timing van 5-2-2-2 klokcycli. Als we EDO-RAM dan nog combineren met een 64-bit bus (Pentium) geeft dit een maximaal debiet van 218 MB/s</simpara>
-<simpara>:math:[(8 "bytes"/"transfer" xx 4 "transfers"/"burst" xx 75 "Mcycli"/"sec")//(11 "cycli"/"burst")=218 "MB"/"sec" ]</simpara>
+<simpara>(8 "bytes"/"transfer" xx 4 "transfers"/"burst" xx 75 "Mcycli"/"sec")//(11 "cycli"/"burst")=218 "MB"/"sec" </simpara>
 </section>
 <section id="_synchronous_dram">
 <title>Synchronous DRAM</title>
@@ -1024,7 +1024,7 @@ EDO-RAM kon gebruikt worden tot een busklok van 75 MHz met een timing van 5-2-2-
 </figure>
 <simpara>Bij SDRAM gaat men nog een stap verder met het lokaliteitsprincipe. In plaats van uit te gaan van het lezen van naburige kolommen, wordt nu vertrokken van het idee dat opeenvolgende kolommen uitgelezen zullen worden. In het deel over cache geheugens zal duidelijk worden dat het RAM geheugen effectief op deze manier wordt aangesproken. De cyclus kan nu aangepast worden tot het aanleggen van een rij-adres, het selecteren van een kolom en vervolgens het inlezen of naar buiten brengen van een aantal opeenvolgende kolommen. Die kunnen naar buiten gebracht worden op het tempo van de klok. Vandaar spreekt men over synchroon DRAM.
 In de afbeelding 20 krijgen we een timing van 2-1-1-1. Daarnaast is SD-RAM geschikt voor busfrequenties tot 133 MHz (PC133), wat neerkomt op een maximaal debiet van 851 MBps.</simpara>
-<simpara>math:[(8 "bytes"/"transfer"  xx 4 "transfers"/"burst"  xx 133 "Mcycli"/"sec" )//(5 "cycli"/"burst") = 851 "MB"/"sec"]</simpara>
+<simpara>(8 "bytes"/"transfer"  xx 4 "transfers"/"burst"  xx 133 "Mcycli"/"sec" )//(5 "cycli"/"burst") = 851 "MB"/"sec"</simpara>
 <section id="_ddr_sdram_ddr2_ddr3">
 <title>DDR SDRAM - DDR2 - DDR3</title>
 <simpara>Principieel werkt DDR op dezelfde manier als SDRAM. Er wordt nog steeds een rij-adres en een kolomadres aangelegd, waarna meerdere opeenvolgende cellen worden uitgelezen. Het verschil zit in het tempo waarop dit gebeurt. Bij Double Data Rate wordt data naar buiten gebracht op stijgende en dalende flank van de klok. Om dit te kunnen bereiken wordt gebruik gemaakt van een prefetch buffer. In elke cyclus worden nu 2 bits getransfereerd naar het prefetch buffer, dat de data dan aan een dubbele snelheid naar buiten kan brengen.</simpara>
@@ -1039,7 +1039,7 @@ In de afbeelding 20 krijgen we een timing van 2-1-1-1. Daarnaast is SD-RAM gesch
 </figure>
 <simpara>Het voordeel van deze werkwijze is een hogere maximale bandbreedte (datasnelheid bij het effectief overbrengen van data). Het nadeel zit in een hogere latentietijd. Tussen het aanleggen van de adressen en het naar buiten brengen van de data verloopt iets meer tijd. De snelheid van de modules wordt uitgedrukt op een aantal verschillende manieren. Een eerste manier is in de naam, waar twee verschillende mogelijkheden bestaan. DDR400 en PC3200 duiden op hetzelfde soort geheugenchips. De 400 duidt de kloksnelheid aan (2x200MHz), de 3200 duidt de maximale transfersnelheid aan.</simpara>
 <simpara>Op een 64-bit databus is die:</simpara>
-<simpara>math:[8 "bytes"/"transfer"  xx (2 xx 200 "MHz") = 3200 "MB"/"sec"]</simpara>
+<simpara>8 "bytes"/"transfer"  xx (2 xx 200 "MHz") = 3200 "MB"/"sec"</simpara>
 <simpara>Er kan echter nog veel verschil zijn tussen twee PC3200 modules.
 De werkelijke snelheid hangt namelijk ook af van de totale latentietijd. Die kan op verschillende manieren worden aangegeven, maar een gangbare manier is het opgeven van vier getallen: TCL-Trcd-Trp-Tras.</simpara>
 <itemizedlist>
@@ -1068,7 +1068,7 @@ De werkelijke snelheid hangt namelijk ook af van de totale latentietijd. Die kan
 </figure>
 <simpara>Een voorbeeld:
 PC3200 geheugen met parameters 2-2-2-6 heeft voor een burst met vier transfers van 8 bytes 2+2+4 x 0.5=6 klokcycli van 200 MHz nodig. Dit geeft een snelheid van 1067 MB/s.Voor twee dergelijke opeenvolgende transfers zijn</simpara>
-<simpara>math:[2(2+2+4 xx 0.5) + 2 = 14 klokcycli] van 200 MHz nodig. Dit geeft 914 MBps.</simpara>
+<simpara>2(2+2+4 xx 0.5) + 2 = 14 klokcycli van 200 MHz nodig. Dit geeft 914 MBps.</simpara>
 <simpara>Bij DDR kan ook het aantal cellen dat in een burst gelezen wordt variëren. Hetzelfde geheugen dat in een burst 8 transfers van 8 bytes uitvoert, haalt een snelheid van 1600MBps.Tras is in dit verhaal niet naar voor gekomen. Tras bepaalt de tijd waarin de volgende rij nog niet geladen mag worden. Deze moet groot genoeg zijn om de buffer niet te overschrijven voordat het volledig getransfereerd is over de databus. Deze parameter moet minimaal Trcd + TCL + 1 bedragen. Indien de parameter te klein is gaat uiteraard data verloren.</simpara>
 <simpara>Opvolgers van DDR zijn DDR2 en DDR3. Behalve verbeteringen op het vlak van klokfrequenties en spanningen (DDR2 en DDR3 gebruiken telkens lagere spanningen) is het grootste verschil dat het prefetch buffer vergroot. Bij DDR2 worden vier bits gebufferd [3], bij DDR3 acht. DDR4, dat er binnenkort zit aan te komen, zal dit nogmaals verdubbelen.</simpara>
 <simpara>Het gevolg is dat deze geheugens nog sneller data naar buiten kunnen brengen (hogere maximale transfer), maar dat dit weer een hogere latentietijd met zich meebrengt. Hou wel in gedachten dat slechts een klein stukje van het geheugen aan deze hoge snelheid werkt. Intern wordt nog steeds een relatief lage snelheid gebruikt om de cellen te beschrijven, maar door de buffers kan data toch aan een dubbele (DDR), viervoudige (DDR2) of achtvoudige (DDR3) snelheid naar buiten gebacht worden.</simpara>
@@ -1439,7 +1439,7 @@ Miss time:: de tijd nodig om bij een miss het nieuwe geheugenblok te laden en de
 Miss penalty:: de extra tijd die nodig is bij een cache miss (eigenlijk misstime-hit time)
 Hit rate:: percentage toegangen die rechtstreeks langs de cache gaan</simpara>
 <simpara>De formule voor de totale toegangstijd van de gecombineerde caches is dan:</simpara>
-<simpara>math:["t"<emphasis>"totaal"="HR"</emphasis>"L1"  xx "t"<emphasis>"L1"  + (1 - "HR"</emphasis>"L1") xx "HR"<emphasis>"L2"  xx t</emphasis>"L2"  + (1 - "HR"<emphasis>"L1") xx (1 - "HR"</emphasis>"L2") x "t"_"RAM"]</simpara>
+<simpara>"t"_"totaal"="HR"_"L1"  xx "t"_"L1"  + (1 - "HR"_"L1") xx "HR"_"L2"  xx t_"L2"  + (1 - "HR"_"L1") xx (1 - "HR"_"L2") x "t"_"RAM"</simpara>
 <simpara>Waarbij:<?asciidoc-br?>
 HR = hitrate<?asciidoc-br?>
 t = aantal cycli<?asciidoc-br?></simpara>
@@ -1447,7 +1447,7 @@ t = aantal cycli<?asciidoc-br?></simpara>
 <title>Voorbeeld</title>
 <simpara>Een computer heeft een L1-cache, toegangstijd 1 ns en een hitrate van 96%. De L2 cache heeft een hitrate van 88 % bij een toegangstijd van 2 ns. Het externe geheugen heeft een toegangstijd van 8 ns.
 De gemiddelde toegangstijd wordt dan:</simpara>
-<simpara>math:[0.96 xx 1 "ns" + 0.04 xx 0.88 xx 2 "ns" + 0.04 xx 0.12 * 8 "ns" = 1.0688 "ns"]</simpara>
+<simpara>0.96 xx 1 "ns" + 0.04 xx 0.88 xx 2 "ns" + 0.04 xx 0.12 * 8 "ns" = 1.0688 "ns"</simpara>
 <simpara>Probeer zelf eens uit wat de invloed is van de toegangstijd van het RAM-geheugen in dit systeem. Probeer eens wat er gebeurt zonder L2 cache. De verschillende factoren worden niet op dezelfde manier beïnvloed door de eigenschappen van het cache. Bijvoorbeeld de asscociativiteit van de cache biedt meer mogelijkheden op het vlak van cachelines selecteren, waardoor de hitrate hoger kan zijn. Daar staat tegenover dat een complexere berekening nodig is om een lijn te selecteren, waardoor bij een cache miss er extra tijd verloren gaat (hogere miss time).</simpara>
 </example>
 <simpara>Een ander voorbeeld zijn de grootte van de cachelines. Grotere cachelines geven in eerste instantie een hogere hit rate, omdat meer naburige gegevens gekopieerd worden.
