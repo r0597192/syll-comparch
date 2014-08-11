@@ -2,10 +2,10 @@
 <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
 <?asciidoc-toc?>
 <?asciidoc-numbered?>
-<book xmlns="http://docbook.org/ns/docbook" lang="en">
+<book lang="en">
 <bookinfo>
 <title>Computerarchitectuur</title>
-<date>2014-07-07</date>
+<date>2014-07-09</date>
 <author>
 <firstname>Roel</firstname>
 <othername>Van</othername>
@@ -57,13 +57,13 @@ Het schema van de omzetting wordt weergegeven in onderstaande afbeelding</simpar
 <textobject><phrase>psu principe</phrase></textobject>
 </mediaobject>
 </figure>
-<simpara>Een eerste stap &#9312; is de <literal>gelijkrichter</literal> aan de ingang, waarmee de wisselspanning wordt omgezet naar een gelijkspanning. Deze gelijkspanning wordt vervolgens gefilterd, zodat de variatie in het spanningsniveau beperkt wordt.
-De tweede stap &#9313; is een stuk minder voor de hand liggend. Op basis van de gelijkgerichte en gefilterde ingangsspanning zal een <literal>invertor</literal> een blokgolf genereren. Deze wisselspanning wordt bekomen door het aan- en afschakelen van de ingangsspanning.
+<simpara>Een eerste stap &#9312; is de gelijkrichter aan de ingang, waarmee de wisselspanning wordt omgezet naar een gelijkspanning. Deze gelijkspanning wordt vervolgens gefilterd, zodat de variatie in het spanningsniveau beperkt wordt.
+De tweede stap &#9313; is een stuk minder voor de hand liggend. Op basis van de gelijkgerichte en gefilterde ingangsspanning zal een invertor een blokgolf genereren. Deze wisselspanning wordt bekomen door het aan- en afschakelen van de ingangsspanning.
 Eigenlijk is de combinatie van de eerste twee stappen samen te vatten als een frequentieomvormer. Het ingangssignaal wordt omgezet naar een hoger-frequent signaal (van 50Hz naar frequenties boven 20kHz).</simpara>
-<simpara>Het voordeel van deze omzetting is dat de <literal>transformator</literal> in de volgende stap een stuk kleiner en efficiënter kan zijn. Deze gelijkrichter en transformator &#9314; brengt de spanning naar het gewenste niveau, waarna het met de uitgangs-gelijkrichter en filter &#9315; wordt omgezet naar een stabiele gelijkspanning.</simpara>
-<simpara>In de figuur is ook te zien dat de uitgangsspanning teruggekoppeld wordt &#9316; naar de invertor. Op die manier kan de uitgangsspanning nog geregeld worden. De invertor-stap heeft immers ook invloed op de amplitude van zijn uitgang. Deze <literal>terugkoppeling</literal> gebeurt meestal met optocouplers om een galvanische scheiding te bekomen.</simpara>
+<simpara>Het voordeel van deze omzetting is dat de transformator in de volgende stap een stuk kleiner en efficiënter kan zijn. Deze gelijkrichter en transformator &#9314; brengt de spanning naar het gewenste niveau, waarna het met de uitgangs-gelijkrichter en filter &#9315; wordt omgezet naar een stabiele gelijkspanning.</simpara>
+<simpara>In de figuur is ook te zien dat de uitgangsspanning teruggekoppeld wordt &#9316; naar de invertor. Op die manier kan de uitgangsspanning nog geregeld worden. De invertor-stap heeft immers ook invloed op de amplitude van zijn uitgang. Deze terugkoppeling gebeurt meestal met optocouplers om een galvanische scheiding te bekomen.</simpara>
 <note>
-<simpara>Om het verbruik van een CPU uit te drukken, wordt vaak gesproken over <literal>TDP</literal> (Thermal Design Power). Dat is een waarde die aanduidt hoeveel energie de CPU maximaal dissipeert onder een zware, maar realistische belasting gedurende een bepaalde tijd. Echter dient opgemerkt te worden dat <emphasis>AMD</emphasis> en <emphasis>Intel</emphasis> hiervoor verschillende berekeningsmethodes gebruiken.  De TDP geeft dus een indicatie over het maximale verbruik, maar gedetailleerde benchmarks blijven nodig om exacte waarden te kennen. <footnote><simpara>meer uitleg over de berekening van TDP bij Intel vind je in <ulink url="http://www.intel.com/content/www/us/en/benchmarks/resources-xeon-measuring-processor-power-paper.html">deze whitepaper</ulink></simpara></footnote></simpara>
+<simpara>Om het verbruik van een CPU uit te drukken, wordt vaak gesproken over 0 (Thermal Design Power). Dat is een waarde die aanduidt hoeveel energie de CPU maximaal dissipeert onder een zware, maar realistische belasting gedurende een bepaalde tijd. Echter dient opgemerkt te worden dat 'AMD' en 'Intel' hiervoor verschillende berekeningsmethodes gebruiken.  De TDP geeft dus een indicatie over het maximale verbruik, maar gedetailleerde benchmarks blijven nodig om exacte waarden te kennen. <footnote><simpara>meer uitleg over de berekening van TDP bij Intel vind je in <ulink url="http://www.intel.com/content/www/us/en/benchmarks/resources-xeon-measuring-processor-power-paper.html">deze whitepaper</ulink></simpara></footnote></simpara>
 </note>
 </section>
 <section id="_eigenschappen">
@@ -79,13 +79,13 @@ In het bijzonder is er natuurlijk een verschil tussen de verschillende connector
 <title>ATX 2.0 moederbord connector (CC Wikimedia commons)</title>
 <mediaobject>
 <imageobject>
-<imagedata fileref="ch01/images/1000px-ATX_PS_signals.svg.png" width="40%" scalefit="1" align="center"/>
+<imagedata fileref="ch01/images/1000px-ATX_PS_signals.svg.png" contentwidth="300" width="40%" scalefit="1" align="center"/>
 </imageobject>
 <textobject><phrase>ATX 2.0</phrase></textobject>
 </mediaobject>
 </figure>
 <simpara>Een belangrijk verschil tussen beiden is de aanwezigheid bij ATX van een 3.3V spanning, een +5V standby en power on signaal.
-Deze laatste twee maken het mogelijk dat de mechanische schakelaar van de AT voeding (die rechtstreeks de voeding aanstuurde), vervangen kon worden door een elektronisch signaal van het moederbord naar de voeding. In eerste instantie kan het moederbord dit signaal sturen als het zelf een input krijgt van een drukknop. Er zijn echter ook alternatieven mogelijk, zoals wake-on-lan, speciale toetsen op een toetsenbord,&#8230;
+Deze laatste twee maken het mogelijk dat de mechanische schakelaar van de AT voeding (die rechtstreeks de voeding aanstuurde), vervangen kon worden door een elektronisch signaal van het moederbord naar de voeding. In eerste instantie kan het moederbord dit signaal sturen als het zelf een input krijgt van een drukknop. Er zijn echter ook alternatieven mogelijk, zoals wake-on-lan, speciale toetsen op een toetsenbord,&#8230;&#8203;
 Hieruit kan je afleiden dat bij een computer die uitgeschakeld is, een deel van het moederbord nog steeds onder spanning staat.
 Deze spanning kan je alleen wegnemen door de voeding uit te schakelen (schakelaar op voeding, stekker uittrekken). Naast de verschillen in connectoren die op het moederbord worden aangesloten, is er ook onderscheid op het vlak van de andere connectoren. Afhankelijk van de andere apparaten (en hun voedingsaansluiting), moet je erop letten om een voeding te kiezen die de nodige connectoren aanbiedt.</simpara>
 <simpara>Enkele belangrijke connectoren zijn:</simpara>
@@ -199,7 +199,7 @@ Uiteraard moet dit te leveren vermogen voldoende zijn om alle componenten in het
 <title>Rack-mountable UPS (bron: <ulink url="http://www.apc.com">www.apc.com</ulink>)</title>
 <mediaobject>
 <imageobject>
-<imagedata fileref="ch01/images/apc_ups.jpg" width="20%" scalefit="1" align="center"/>
+<imagedata fileref="ch01/images/apc_ups.jpg" contentwidth="300" width="20%" scalefit="1" align="center"/>
 </imageobject>
 <textobject><phrase>APC UPS</phrase></textobject>
 </mediaobject>
@@ -260,7 +260,7 @@ UPS’en vind je in alle prijsklasses, wat vaak te maken heeft met de inwendige 
 <simpara>De capaciteit van batterijen wordt meestal uitgedrukt in Ah (ampère/uur) of mAh (milliampère/uur). Met die eenheid kan je makkelijk accu-packs vergelijken. Een batterij van 6Ah zal bijvoorbeeld in staat zijn om gedurende 6 uur een stroom af te leveren van 1 Ampère, of gedurende bijvoorbeeld 2 uur een stroom van 3 Ampère.
 Sommige fabrikanten verkiezen echter om hun capaciteiten uit te drukken in Wh, wat vergelijken moeilijk kan maken. Toch kan je eenvoudig omrekenen:
 Je weet immers dat</simpara>
-<simpara>P=U*I (Vermogen=Spanning x Stroom)</simpara>
+<simpara>math:[P=U*I] (Vermogen=Spanning x Stroom)</simpara>
 <simpara>Willen we dus de stroom I(A) kennen, dan moeten we het vermogen delen door de spanning.
 Nemen we onderstaand voorbeeld:</simpara>
 <figure>
@@ -273,7 +273,7 @@ Nemen we onderstaand voorbeeld:</simpara>
 </mediaobject>
 </figure>
 <simpara>We kunnen hier dus de capaciteit in Ah bepalen door</simpara>
-<simpara>I_h = P_h/U = 2,4Wh/3,6V = 0,666Ah (of 666mAh)</simpara>
+<simpara>math:[I_h = P_h/U = 2,4Wh/3,6V = 0,666Ah] (of 666mAh)</simpara>
 </section>
 <section id="_aantal_cellen">
 <title>Aantal cellen</title>
@@ -298,7 +298,7 @@ Uit hoeveel cellen bestaat je accu-pack?</simpara>
 
 <simpara>Toch zijn er enkele belangrijke eigenschappen aan dit type, die je beter kent..
 Het zwakke punt van Li-Ion: degradatie</simpara>
-<simpara>Wie een laptop of GSM gebruikt, kent het fenomeen: na enkele jaren is de cyapaciteit van de batterij slechts nog een fractie van wat ze was bij aankoop. Dit fenomeen kan je niet omkeren, maar het kan wel vertraagd worden als je de weet wat de factoren zijn die dit proces versnellen&#8230;</simpara>
+<simpara>Wie een laptop of GSM gebruikt, kent het fenomeen: na enkele jaren is de cyapaciteit van de batterij slechts nog een fractie van wat ze was bij aankoop. Dit fenomeen kan je niet omkeren, maar het kan wel vertraagd worden als je de weet wat de factoren zijn die dit proces versnellen&#8230;&#8203;</simpara>
 <simpara>Een Li-ion-accu verliest zijn capaciteit het snelst als hij zich in een warme ruimte bevindt, en opgeladen is. Een volledig opgeladen Li-ion accu zal bijvoorbeeld na een jaar rusten in een ruimte waar het gemiddeld 20°C is, 20 procent van zijn capaciteit verliezen.</simpara>
 <simpara>Is diezelfde accu slechts half opgeladen, dan zal de capaciteit met slechts enkele procenten dalen. Het is dus niet verstandig aan Li-ion-accu voor lange tijd weg te bergen in opgeladen toestand. Ook door stockage in koele ruimtes kan de capaciteit langer bewaard blijven. Een laptop die snel erg warm wordt bij gebruik zal dus meteen ook nefast zijn voor de capaciteit van de batterij op langere termijn.<?asciidoc-br?>
 Bij een temperatuur van iets boven het vriespunt en een lading van ongeveer 40% zal dit type batterij de langste levensduur ‘on the shelf’ hebben.</simpara>
@@ -306,7 +306,7 @@ Bij een temperatuur van iets boven het vriespunt en een lading van ongeveer 40% 
 <section id="_toekomstige_ontwikkelingen">
 <title>Toekomstige ontwikkelingen</title>
 <simpara>Gezien de enorme markt die ontstaan is voor accu’s, is er enorm veel druk om betere modellen te ontwikkelen. Daarbij worden bestaande types geperfectioneerd, maar ook nieuwe types ontwikkeld.
-Zo zijn er de <literal>LiPo</literal> (Lithium polymeer) batterijen die ongeveer 50% efficiënter zijn dan klassieke Li-Ion equivalenten, en ook de brandstofcellen (fuel cells) die mogelijks een oplossing kunnen vormen voor de steeds grotere autonomie-behoefte van toestellen. Omdat veel van deze technieken gebruik maken van erg zeldzame delfstoffen, komen ook geavanceerde technieken met courante materialen in het vizier ter optimalisatie of vervanging, zoals nanostructuren met koolstof. Deze blijven echter toekomstmuziek voor consumentenelektronica…</simpara>
+Zo zijn er de LiPo (Lithium polymeer) batterijen die ongeveer 50% efficiënter zijn dan klassieke Li-Ion equivalenten, en ook de brandstofcellen (fuel cells) die mogelijks een oplossing kunnen vormen voor de steeds grotere autonomie-behoefte van toestellen. Omdat veel van deze technieken gebruik maken van erg zeldzame delfstoffen, komen ook geavanceerde technieken met courante materialen in het vizier ter optimalisatie of vervanging, zoals nanostructuren met koolstof. Deze blijven echter toekomstmuziek voor consumentenelektronica…</simpara>
 </section>
 </section>
 </section>
@@ -321,7 +321,7 @@ Zo zijn er de <literal>LiPo</literal> (Lithium polymeer) batterijen die ongeveer
 <title>Overzicht</title>
 <simpara>In onderstaande tabel worden een aantal processoren van de x86 familie weergegeven met hun belangrijkste eigenschappen. De processor die in de eerste (IBM-)PC werd gebruikt was een 8088. Eigenlijk was dit een 8086 waarvan de databus beperkt werd tot 8 bits in plaats van 16 bits. De enige reden hiervoor was dat op dat ogenblik er geen andere 16bit componenten beschikbaar waren.
 Deze processorfamilie komt uitgebreid aan bod binnen het vak processorarchitectuur.
-Het is niet de bedoeling om hier terug te komen op programmeermodel, segmentering, &#8230;</simpara>
+Het is niet de bedoeling om hier terug te komen op programmeermodel, segmentering, &#8230;&#8203;</simpara>
 <simpara>Wel zullen we de evolutie van een aantal eigenschappen bekijken.</simpara>
 <table frame="all" rowsep="1" colsep="1">
 <title>processoroverzicht</title>
@@ -551,8 +551,8 @@ Het is niet de bedoeling om hier terug te komen op programmeermodel, segmenterin
 </tgroup>
 </table>
 </section>
-<section id="_technologie_en_functionaliteit">
-<title>Technologie en functionaliteit #</title>
+<section id="_technologie_en_functionaliteit_emphasis_role_marked_emphasis">
+<title>Technologie en functionaliteit <emphasis role="marked">#</emphasis></title>
 <simpara>Een eerste duidelijke evolutie is de toename van het aantal transistors. Volgens de wet van Moore verloopt deze stijging zelfs exponentieel. Elke vierentwintig maanden zou het aantal transistors in een processor verdubbelen . Die toename is uiteraard enkel mogelijk als de transistordichtheid kan toenemen. In het verleden werd hierbij vaak gedacht dat er technische beperkingen zouden opduiken, maar tot dusver blijven fabrikanten slagen om vast te houden aan de ontwikkelsnelheid die geponeerd werd door Gordon More, één van de oprichters van Intel.</simpara>
 <blockquote>
 <attribution>
@@ -707,7 +707,7 @@ Het belang van cache geheugen is ook duidelijk als je de budget- en performance-
 <simpara>het aantal verschillende chips (en dus kostprijs) op een moederbord kan zo teruggedrongen worden</simpara>
 </listitem>
 <listitem>
-<simpara>als alle componenten dicht bij elkaar zitten, zijn geen <emphasis>trage</emphasis> bussen nodig tussen deze onderdelen</simpara>
+<simpara>als alle componenten dicht bij elkaar zitten, zijn geen 'trage' bussen nodig tussen deze onderdelen</simpara>
 </listitem>
 <listitem>
 <simpara>de oppervlakte die nodig is om het systeem te bouwen verkleint zo, een belangrijk argument bij de ontwikkeling van mobile devices.</simpara>
@@ -716,7 +716,7 @@ Het belang van cache geheugen is ook duidelijk als je de budget- en performance-
 <sidebar>
 <simpara>testje in sidebar</simpara>
 </sidebar>
-<simpara>Bij recente processoren zit bijvoorbeeld steeds vaker een grafische chip ingebouwd. Dan spreekt men niet meer over CPU, maar over <literal>APU</literal> (=advanced processing unit) om dit verschil in de verf te zetten.</simpara>
+<simpara>Bij recente processoren zit bijvoorbeeld steeds vaker een grafische chip ingebouwd. Dan spreekt men niet meer over CPU, maar over APU (=advanced processing unit) om dit verschil in de verf te zetten.</simpara>
 <simpara>Het integratieproces gaat soms zo ver dat je kan spreken van een <emphasis>System On A Chip</emphasis>: alle belangrijke onderdelen (cpu, gpu, IO) zitten dan verzameld op één enkele chip.
 De rol van secundaire chips ("de chipset") wordt dus steeds kleiner.</simpara>
 <note>
@@ -780,7 +780,7 @@ Microsoft heeft bijvoorbeeld eind 2012 z’n RT tablet vrijgegeven, met ARM SOC.
 <title>Het Geheugen</title>
 <section id="_overzicht_2">
 <title>Overzicht</title>
-<simpara>Het belang van geheugen is tijdens de cursus computertechniek al voldoende gebleken. Zoals bekend worden zowel uit te voeren instructies als data opgeslagen in dit geheugen. (cfr de <emphasis>von Neumann architectuur</emphasis>) Dit legt twee belangrijke behoeften bloot: snelheid en grootte.</simpara>
+<simpara>Het belang van geheugen is tijdens de cursus computertechniek al voldoende gebleken. Zoals bekend worden zowel uit te voeren instructies als data opgeslagen in dit geheugen. (cfr de 'von Neumann architectuur') Dit legt twee belangrijke behoeften bloot: snelheid en grootte.</simpara>
 <simpara><emphasis role="strong">Snelheid</emphasis> is belangrijk omdat het geheugen de processor moet voorzien van uit te voeren instructies. Een snelle processor met traag geheugen geeft een traag systeem.</simpara>
 <simpara><emphasis role="strong">Grootte</emphasis> is dan weer belangrijk omdat zowel programma’s als de te bewerken data aanzienlijk zijn toegenomen. Bovendien moeten in een multitasking omgeving meerdere programma’s en dus ook grotere hoeveelheden data opgeslagen worden in het geheugen.</simpara>
 <simpara>Als de verschillende soorten geheugens bekeken worden, wordt ook wel gesproken van de geheugenpiramide. Deze term wordt gebruikt omdat de hoeveelheid geheugen afneemt naarmate je stijgt in de piramide. De reden hiervoor is dat ook de prijs per byte toeneemt naarmate je hoger gaat in de piramide.</simpara>
@@ -808,7 +808,7 @@ Microsoft heeft bijvoorbeeld eind 2012 z’n RT tablet vrijgegeven, met ARM SOC.
 <varlistentry>
 <term>Plaatsgebonden lokaliteit</term>
 <listitem>
-<simpara>Als je een bepaald item gebruikt, dan is de kans groot dat je binnenkort iets nodig hebt dat in de buurt voorkomt&#8230;</simpara>
+<simpara>Als je een bepaald item gebruikt, dan is de kans groot dat je binnenkort iets nodig hebt dat in de buurt voorkomt&#8230;&#8203;</simpara>
 </listitem>
 </varlistentry>
 </variablelist>
@@ -974,14 +974,14 @@ De snelheid van het geheugen wordt in grote mate bepaald door de toegangstijd ta
 <section id="_bandbreedte_bij_dram">
 <title>Bandbreedte bij DRAM</title>
 <simpara>DRAM heeft, zoals je verder zal lezen, de eigenschap te werken met cyclussen. Om te berekenen wat de effectieve bandbreedte is (=geheugendebiet) hoor je steeds dezelfde benadering te maken:</simpara>
-<simpara>"Aantal bytes die getransfereerd worden bij een cyclus"//"tijdsduur van een cyclus" =  "bandbreedte"</simpara>
+<simpara>math:["Aantal bytes die getransfereerd worden bij een cyclus"//"tijdsduur van een cyclus" =  "bandbreedte"]</simpara>
 <simpara>Deze erg eenvoudige benadering wordt bij de verschillende types geheugen die volgen telkens toegepast.</simpara>
 </section>
 </section>
 <section id="_fast_page_dram_fp_dram">
 <title>Fast Page DRAM (FP-DRAM)</title>
 <simpara>Hierboven werd reeds beschreven hoe met gemultiplexte adresklemmen eerst een rij-adres en vervolgens een kolomadres worden doorgegeven (langs dezelfde aansluitpinnen). Het voordeel hiervan is duidelijk: minder adresklemmen.<?asciidoc-br?>
-Het nadeel is dat een lees- of schrijfcyclus langer wordt. Het kost immers extra tijd om de adressen na elkaar door te geven. FP-DRAM verbetert de snelheid door cycli te combineren. Zoals aangehaald bij het lokaliteitsprincipe gaan opeenvolgende cycli meestal door op naburige cyclusadressen. De kans dat meer dan een byte gelezen wordt in dezelfde rij, is dus vrij groot. FP-DRAM maakt hiervan gebruik door eenmaal een rij-adres op te geven en vervolgens een kolom te selecteren en deze te lezen of te schrijven. Onmiddellijk hierna wordt een tweede kolom geselecteerd en wordt deze gelezen of beschreven, vervolgens kan een derde kolom geselecteerd worden&#8230;Op die manier worden een aantal cycli vermeden. Het zal relatief lang duren vooraleer het eerste geheugenwoord gelezen kan worden, terwijl de volgende minder tijd vragen.</simpara>
+Het nadeel is dat een lees- of schrijfcyclus langer wordt. Het kost immers extra tijd om de adressen na elkaar door te geven. FP-DRAM verbetert de snelheid door cycli te combineren. Zoals aangehaald bij het lokaliteitsprincipe gaan opeenvolgende cycli meestal door op naburige cyclusadressen. De kans dat meer dan een byte gelezen wordt in dezelfde rij, is dus vrij groot. FP-DRAM maakt hiervan gebruik door eenmaal een rij-adres op te geven en vervolgens een kolom te selecteren en deze te lezen of te schrijven. Onmiddellijk hierna wordt een tweede kolom geselecteerd en wordt deze gelezen of beschreven, vervolgens kan een derde kolom geselecteerd worden&#8230;&#8203;Op die manier worden een aantal cycli vermeden. Het zal relatief lang duren vooraleer het eerste geheugenwoord gelezen kan worden, terwijl de volgende minder tijd vragen.</simpara>
 <figure>
 <title>Fast page DRAM</title>
 <mediaobject>
@@ -994,7 +994,7 @@ Het nadeel is dat een lees- of schrijfcyclus langer wordt. Het kost immers extra
 <simpara>In praktijk wordt er bijna steeds gewerkt met een burst van vier leescycli waarbij aangeduid wordt hoeveel klokcycli er nodig zijn per transfert, bijvoorbeeld 5-3-3-3.<?asciidoc-br?>
 FP-DRAM werd gebruikt tot busfrequenties van 66 MHz.</simpara>
 <simpara>Op een computersysteem met een 486 processor (32-bit databus) met 5-3-3-3 FP-DRAM geheugen aan 66Mhz betekent dit dat het maximale geheugendebiet gelijk is aan:</simpara>
-<simpara>(4 "bytes"/"transfer" xx 4 "transfers"/"burst" xx 66 "Mcycli"/"sec")/(14 "cycli"/"burst")= 75 "MB"/"sec" </simpara>
+<simpara>math:[(4 "bytes"/"transfer" xx 4 "transfers"/"burst" xx 66 "Mcycli"/"sec")/(14 "cycli"/"burst")= 75 "MB"/"sec" ]</simpara>
 </section>
 <section id="_edo_ram">
 <title>EDO RAM</title>
@@ -1009,7 +1009,7 @@ FP-DRAM werd gebruikt tot busfrequenties van 66 MHz.</simpara>
 </figure>
 <simpara>Extended Data Out-RAM is een aanpassing van het Fast Page-concept. Daarbij moest de memorycontroller wachten met het aanbieden van een nieuw kolomadres tot de vorige data gelezen waren. Bij EDO-RAM blijven de data op de uitgangen van het geheugen nog een tijd langer beschikbaar (zelfs tot na het aanbieden van het volgende kolomadres). Hierdoor wint men tijd: terwijl de data gelezen worden, kan men al het volgende kolomadres aanleggen.
 EDO-RAM kon gebruikt worden tot een busklok van 75 MHz met een timing van 5-2-2-2 klokcycli. Als we EDO-RAM dan nog combineren met een 64-bit bus (Pentium) geeft dit een maximaal debiet van 218 MB/s</simpara>
-<simpara>:(8 "bytes"/"transfer" xx 4 "transfers"/"burst" xx 75 "Mcycli"/"sec")//(11 "cycli"/"burst")=218 "MB"/"sec" </simpara>
+<simpara>:math:[(8 "bytes"/"transfer" xx 4 "transfers"/"burst" xx 75 "Mcycli"/"sec")//(11 "cycli"/"burst")=218 "MB"/"sec" ]</simpara>
 </section>
 <section id="_synchronous_dram">
 <title>Synchronous DRAM</title>
@@ -1024,7 +1024,7 @@ EDO-RAM kon gebruikt worden tot een busklok van 75 MHz met een timing van 5-2-2-
 </figure>
 <simpara>Bij SDRAM gaat men nog een stap verder met het lokaliteitsprincipe. In plaats van uit te gaan van het lezen van naburige kolommen, wordt nu vertrokken van het idee dat opeenvolgende kolommen uitgelezen zullen worden. In het deel over cache geheugens zal duidelijk worden dat het RAM geheugen effectief op deze manier wordt aangesproken. De cyclus kan nu aangepast worden tot het aanleggen van een rij-adres, het selecteren van een kolom en vervolgens het inlezen of naar buiten brengen van een aantal opeenvolgende kolommen. Die kunnen naar buiten gebracht worden op het tempo van de klok. Vandaar spreekt men over synchroon DRAM.
 In de afbeelding 20 krijgen we een timing van 2-1-1-1. Daarnaast is SD-RAM geschikt voor busfrequenties tot 133 MHz (PC133), wat neerkomt op een maximaal debiet van 851 MBps.</simpara>
-<simpara>(8 "bytes"/"transfer"  xx 4 "transfers"/"burst"  xx 133 "Mcycli"/"sec" )//(5 "cycli"/"burst") = 851 "MB"/"sec"</simpara>
+<simpara>math:[(8 "bytes"/"transfer"  xx 4 "transfers"/"burst"  xx 133 "Mcycli"/"sec" )//(5 "cycli"/"burst") = 851 "MB"/"sec"]</simpara>
 <section id="_ddr_sdram_ddr2_ddr3">
 <title>DDR SDRAM - DDR2 - DDR3</title>
 <simpara>Principieel werkt DDR op dezelfde manier als SDRAM. Er wordt nog steeds een rij-adres en een kolomadres aangelegd, waarna meerdere opeenvolgende cellen worden uitgelezen. Het verschil zit in het tempo waarop dit gebeurt. Bij Double Data Rate wordt data naar buiten gebracht op stijgende en dalende flank van de klok. Om dit te kunnen bereiken wordt gebruik gemaakt van een prefetch buffer. In elke cyclus worden nu 2 bits getransfereerd naar het prefetch buffer, dat de data dan aan een dubbele snelheid naar buiten kan brengen.</simpara>
@@ -1039,7 +1039,7 @@ In de afbeelding 20 krijgen we een timing van 2-1-1-1. Daarnaast is SD-RAM gesch
 </figure>
 <simpara>Het voordeel van deze werkwijze is een hogere maximale bandbreedte (datasnelheid bij het effectief overbrengen van data). Het nadeel zit in een hogere latentietijd. Tussen het aanleggen van de adressen en het naar buiten brengen van de data verloopt iets meer tijd. De snelheid van de modules wordt uitgedrukt op een aantal verschillende manieren. Een eerste manier is in de naam, waar twee verschillende mogelijkheden bestaan. DDR400 en PC3200 duiden op hetzelfde soort geheugenchips. De 400 duidt de kloksnelheid aan (2x200MHz), de 3200 duidt de maximale transfersnelheid aan.</simpara>
 <simpara>Op een 64-bit databus is die:</simpara>
-<simpara>8 "bytes"/"transfer"  xx (2 xx 200 "MHz") = 3200 "MB"/"sec"</simpara>
+<simpara>math:[8 "bytes"/"transfer"  xx (2 xx 200 "MHz") = 3200 "MB"/"sec"]</simpara>
 <simpara>Er kan echter nog veel verschil zijn tussen twee PC3200 modules.
 De werkelijke snelheid hangt namelijk ook af van de totale latentietijd. Die kan op verschillende manieren worden aangegeven, maar een gangbare manier is het opgeven van vier getallen: TCL-Trcd-Trp-Tras.</simpara>
 <itemizedlist>
@@ -1068,7 +1068,7 @@ De werkelijke snelheid hangt namelijk ook af van de totale latentietijd. Die kan
 </figure>
 <simpara>Een voorbeeld:
 PC3200 geheugen met parameters 2-2-2-6 heeft voor een burst met vier transfers van 8 bytes 2+2+4 x 0.5=6 klokcycli van 200 MHz nodig. Dit geeft een snelheid van 1067 MB/s.Voor twee dergelijke opeenvolgende transfers zijn</simpara>
-<simpara>2(2+2+4 xx 0.5) + 2 = 14 klokcycli van 200 MHz nodig. Dit geeft 914 MBps.</simpara>
+<simpara>math:[2(2+2+4 xx 0.5) + 2 = 14 klokcycli] van 200 MHz nodig. Dit geeft 914 MBps.</simpara>
 <simpara>Bij DDR kan ook het aantal cellen dat in een burst gelezen wordt variëren. Hetzelfde geheugen dat in een burst 8 transfers van 8 bytes uitvoert, haalt een snelheid van 1600MBps.Tras is in dit verhaal niet naar voor gekomen. Tras bepaalt de tijd waarin de volgende rij nog niet geladen mag worden. Deze moet groot genoeg zijn om de buffer niet te overschrijven voordat het volledig getransfereerd is over de databus. Deze parameter moet minimaal Trcd + TCL + 1 bedragen. Indien de parameter te klein is gaat uiteraard data verloren.</simpara>
 <simpara>Opvolgers van DDR zijn DDR2 en DDR3. Behalve verbeteringen op het vlak van klokfrequenties en spanningen (DDR2 en DDR3 gebruiken telkens lagere spanningen) is het grootste verschil dat het prefetch buffer vergroot. Bij DDR2 worden vier bits gebufferd [3], bij DDR3 acht. DDR4, dat er binnenkort zit aan te komen, zal dit nogmaals verdubbelen.</simpara>
 <simpara>Het gevolg is dat deze geheugens nog sneller data naar buiten kunnen brengen (hogere maximale transfer), maar dat dit weer een hogere latentietijd met zich meebrengt. Hou wel in gedachten dat slechts een klein stukje van het geheugen aan deze hoge snelheid werkt. Intern wordt nog steeds een relatief lage snelheid gebruikt om de cellen te beschrijven, maar door de buffers kan data toch aan een dubbele (DDR), viervoudige (DDR2) of achtvoudige (DDR3) snelheid naar buiten gebacht worden.</simpara>
@@ -1230,7 +1230,7 @@ Deze hersteltijd kan vermeden worden indien de volgende operatie doorgaat op een
 <title>Buffered/registered RAM en foutdetectie</title>
 <simpara>Een term die regelmatig terug te vinden is bij RAM geheugen is (un)buffered of registered. De termen buffered en registered hebben dezelfde betekenis. Op basis van de eerdere uitleg zou je kunnen vermoeden dat elk DRAM geheugen gebufferd is met de statische bufferrij. De term buffered slaat in dit geval niet op die statische rij, maar wel op de aanwezigheid van een extra bufferchip. Deze bufferchip doet dienst als elektrisch buffer/versterker tussen de geheugenIC’s en de rest van het systeem. Op die manier kan het bijvoorbeeld problemen met onvoldoende stroom helpen oplossen. De bufferchip is dikwijls te herkennen aan zijn dwarse plaatsing op de module.</simpara>
 <simpara>Twee andere termen die je kan terugvinden zijn (non)ECC en parity. Beiden houden verband met het vermogen van het geheugen om fouten te laten detecteren. In het geval van pariteit wordt per byte een pariteitsbit berekend. Dit bit wordt mee verzonden. De ontvanger herberekent de pariteitsbit en vergelijkt het resultaat van zijn berekening met het ontvangen pariteitsbit. Indien ze verschillen is er een fout geweest en moet de transfer opnieuw gebeuren.</simpara>
-<simpara>ECC werkt op gelijkaardige manier, maar maakt gebruik van een hash functie. Voordeel van deze manier van werken is dat meervoudige bitfouten gedetecteerd kunnen worden of dat enkelvoudige bitfouten gecorrigeerd kunnen worden. Pariteit kan enkel enkelvoudige bitfouten detecteren. Uiteraard kost deze foutcontrole ook rekenkracht en dus tijd. Door de betrouwbaarheid van moderne geheugens hebben deze technieken enkel zin in kritische toepassingen (bijvoorbeeld servers, procescontrole, &#8230;)</simpara>
+<simpara>ECC werkt op gelijkaardige manier, maar maakt gebruik van een hash functie. Voordeel van deze manier van werken is dat meervoudige bitfouten gedetecteerd kunnen worden of dat enkelvoudige bitfouten gecorrigeerd kunnen worden. Pariteit kan enkel enkelvoudige bitfouten detecteren. Uiteraard kost deze foutcontrole ook rekenkracht en dus tijd. Door de betrouwbaarheid van moderne geheugens hebben deze technieken enkel zin in kritische toepassingen (bijvoorbeeld servers, procescontrole, &#8230;&#8203;)</simpara>
 </section>
 </section>
 <section id="_cache_geheugen">
@@ -1362,7 +1362,7 @@ Om dit te staven met een extreem voorbeeld: bij direct mapped cache is het mogel
 <textobject><phrase></phrase></textobject>
 </mediaobject>
 </figure>
-<simpara>Een voorbeeld zal dit verduidelijken&#8230;
+<simpara>Een voorbeeld zal dit verduidelijken&#8230;&#8203;
 De processor beschikt overeen 32-bit adres bus en een cache geheugen van 16kB met cachelines die 64-byte breed zijn. Naast de zes bits die nodig zijn om een byte binnen de cacheline te  selecteren, zijn er nu ook acht bits nodig om een van de 256 (=16kB/64B) lijnen te selecteren. Op die manier blijven er maar 18 bits over voor de tag. Dit soort cache-organisatie is dus veel goedkoper en eenvoudiger dan de vorige: er is slechts 1 comparator (van 18 bits) nodig, en het tag-gedeelte is ook kleiner: 256 x 18 bits (4608 bits, 3,4%). Dit soort cache wordt toegepast op plaatsen waar de snelheid minder kritisch is, met andere woorden in de caches die verder van de processor staan.</simpara>
 </section>
 <section id="_set_associative_cache">
@@ -1406,7 +1406,7 @@ Het aantal tag bits wordt dan: 32 – 4 (b) – 10 (d) = 18 bits<?asciidoc-br?><
 <simpara>Om de totale grootte dan te berekenen kan je redeneren:<?asciidoc-br?>
 *Elke cachelijn heeft 16 bits data, en een tag van 18 bits. Dit komt op een totaal van 146 bits.
 *Dit moet je met vier vermenigvuldigen (‘4’-way) en met het aantal sets (d), wat resulteert in 598016 bits.</simpara>
-<simpara>Het percentage overhead is dus (totaal benodigde bits)/(<emphasis>nuttige^</emphasis> bits)   of 14%</simpara>
+<simpara>Het percentage overhead is dus (totaal benodigde bits)/('nuttige^' bits)   of 14%</simpara>
 </example>
 <tip>
 <simpara>bereken aan de hand van vorig voorbeeld hoe de overhead zich gedraagt bij 8-way en 16-way cache geheugen.</simpara>
@@ -1439,7 +1439,7 @@ Miss time:: de tijd nodig om bij een miss het nieuwe geheugenblok te laden en de
 Miss penalty:: de extra tijd die nodig is bij een cache miss (eigenlijk misstime-hit time)
 Hit rate:: percentage toegangen die rechtstreeks langs de cache gaan</simpara>
 <simpara>De formule voor de totale toegangstijd van de gecombineerde caches is dan:</simpara>
-<simpara>"t"_"totaal"="HR"_"L1"  xx "t"_"L1"  + (1 - "HR"_"L1") xx "HR"_"L2"  xx t_"L2"  + (1 - "HR"_"L1") xx (1 - "HR"_"L2") x "t"_"RAM"</simpara>
+<simpara>math:["t"<emphasis>"totaal"="HR"</emphasis>"L1"  xx "t"<emphasis>"L1"  + (1 - "HR"</emphasis>"L1") xx "HR"<emphasis>"L2"  xx t</emphasis>"L2"  + (1 - "HR"<emphasis>"L1") xx (1 - "HR"</emphasis>"L2") x "t"_"RAM"]</simpara>
 <simpara>Waarbij:<?asciidoc-br?>
 HR = hitrate<?asciidoc-br?>
 t = aantal cycli<?asciidoc-br?></simpara>
@@ -1447,7 +1447,7 @@ t = aantal cycli<?asciidoc-br?></simpara>
 <title>Voorbeeld</title>
 <simpara>Een computer heeft een L1-cache, toegangstijd 1 ns en een hitrate van 96%. De L2 cache heeft een hitrate van 88 % bij een toegangstijd van 2 ns. Het externe geheugen heeft een toegangstijd van 8 ns.
 De gemiddelde toegangstijd wordt dan:</simpara>
-<simpara>0.96 xx 1 "ns" + 0.04 xx 0.88 xx 2 "ns" + 0.04 xx 0.12 * 8 "ns" = 1.0688 "ns"</simpara>
+<simpara>math:[0.96 xx 1 "ns" + 0.04 xx 0.88 xx 2 "ns" + 0.04 xx 0.12 * 8 "ns" = 1.0688 "ns"]</simpara>
 <simpara>Probeer zelf eens uit wat de invloed is van de toegangstijd van het RAM-geheugen in dit systeem. Probeer eens wat er gebeurt zonder L2 cache. De verschillende factoren worden niet op dezelfde manier beïnvloed door de eigenschappen van het cache. Bijvoorbeeld de asscociativiteit van de cache biedt meer mogelijkheden op het vlak van cachelines selecteren, waardoor de hitrate hoger kan zijn. Daar staat tegenover dat een complexere berekening nodig is om een lijn te selecteren, waardoor bij een cache miss er extra tijd verloren gaat (hogere miss time).</simpara>
 </example>
 <simpara>Een ander voorbeeld zijn de grootte van de cachelines. Grotere cachelines geven in eerste instantie een hogere hit rate, omdat meer naburige gegevens gekopieerd worden.
@@ -1512,13 +1512,14 @@ Hierdoor reageert de computer trager dan in het geval er geen virtueel geheugen 
 <title>Bronvermelding bij dit hoofdstuk</title>
 <itemizedlist mark="Bibliography">
 <listitem>
-<simpara><anchor id="PATT1" xreflabel="[PATT1]"/>[PATT1] <emphasis>Computer Organization And Design</emphasis>. David A. Patterson, John L. Hennessey. fifth edition. p374</simpara>
+<simpara><anchor id="PATT1" xreflabel="[PATT1]"/>[PATT1] 'Computer Organization And Design'. David A. Patterson, John L. Hennessey. fifth edition. p374</simpara>
 </listitem>
 </itemizedlist>
 </section>
 </chapter>
 <chapter id="_opslagmedia">
 <title>Opslagmedia</title>
+<simpara>In dit hoofdstuk duiken we onder de motorkap van het secundair geheugen. Heel vaak wordt dit geïmplementeerd met HDD&#8217;s of SSD&#8217;s. Naast de fysieke eigenschappen bespreken we ook de logica die softwarematig een managementlaag (=bestandssysteem) voorziet voor gebruik door het besturingssysteem.</simpara>
 <section id="_harde_schijf">
 <title>Harde schijf</title>
 <section id="_fysieke_opbouw">
@@ -1635,6 +1636,73 @@ Bovendien startte de nummering van de eerste sector (vermoedelijk door een fout 
 <simpara>Ondertussen blijkt ook dit ontoereikend en is er al een nieuwe adressering die 48 bits gebruikt en dus 128PB (petabyte) toelaat. Hiervan wordt vermoed dat dit voldoende zal zijn tot 2035. De gebruikte adressering is belangrijk omdat ze ervoor kan zorgen dat niet de volledige capaciteit van de harde schijf beschikbaar is.
 In het bijzonder kan dit een probleem zijn indien de BIOS nog een oudere vorm van adressering gebruikt. De bios moet immers bij het opstarten van de computer de schijf aanspreken om het besturingssysteem te laden. Dan moeten de relevante gegevens zich wel bevinden binnen de beperkingen van de adressering van de BIOS. Eens het besturingssystemen is opgestart, neemt dit de taken van de bios over en bepalen de mogelijkheden van het besturingssysteem in hoeverre de schijf volledig aangesproken kan worden.</simpara>
 </section>
+<section id="_scheduling">
+<title>scheduling</title>
+<simpara>Gezien de werking van een schijf zal de tijd nodig om een bepaalde sector te lezen bestaan uit drie componenten:</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>de tijd nodig om de kop boven een bepaald spoor te positioneren (seek time)</simpara>
+</listitem>
+<listitem>
+<simpara>de tijd totdat de gewenste sector zich onder de kop bevindt (latency time)</simpara>
+</listitem>
+<listitem>
+<simpara>de tijd nodig om de gegevens fysiek te transfereren (transfer time)</simpara>
+</listitem>
+</orderedlist>
+<simpara>Om de totale verloren tijd zoveel mogelijk te beperken zal men de sectoren meestal niet één per één van de schijf lezen, maar in blokken of clusters. Een dergelijk blok zal minstens één sector moeten bevatten. Vaak zal een blok 4 tot 8 kB zijn terwijl een sector typisch 512 bytes is. Hoe groter de blokken, des te efficiënter de gegevensoverdracht, maar ook des te groter de interne fragmentatie gezien een blok de kleinste hoeveelheid schijfruimte is die gealloceerd kan worden. De blokgrootte kan bij de generatie van het bestandensysteem gekozen worden en zal afhangen van de kenmerken van de bestanden op de schijf. Indien men louter met zeer grote bestanden werkt, kan men de voorkeur geven aan vrij grote blokken.<?asciidoc-br?>
+Voortaan zullen we ervan uitgaan dat alle interactie met de harde schijf in blokken gebeurt.</simpara>
+<simpara>Indien er verschillende schijfoperaties staan te wachten op de schijf kunnen we, door de volgorde ervan te veranderen de prestaties van de schijf verbeteren. Deze strategie zal enkel een verschil opleveren op het ogenblik dat de schijf effectief zwaar belast wordt (en er dus keuze is).
+Schijfstrategieën kunnen door het besturingssysteem geïmplementeerd worden (rekening houdend met de kenmerken van het besturingssysteem), of (meer en meer) ook door de schijfregelaar (rekening houdend met de kenmerken van de schijf).
+Wanneer het in de harde schijf zelf gebeurt wordt het ook wel NCQ genoemd (Native Command Queuing). Indien NCQ niet ondersteund wordt door de schijf dan zorgt enkel het besturingssysteem voor de scheduling, indien wel is het een combinatie van beide wat voor minder processorbelasting zorgt in de computer.</simpara>
+<simpara>In de nu volgende bespreking wordt verondersteld dat de volgorde van sporen waarnaar gelezen of geschreven moet worden is: 98, 183, 37, 122, 14, 124, 65, 67 en dat de kop initieel op positie 53 staat.</simpara>
+</section>
+<section id="_fcfs_first_come_first_served">
+<title>FCFS: First-Come First-Served</title>
+<simpara>Deze strategie is de eenvoudigste, en bovendien is ze eerlijk omdat schijfoperaties niet oneindig lang kunnen uitgesteld worden. Ze kan echter niet de beste prestatie van de schijf garanderen omdat opeenvolgende schijfoperaties kunnen plaatsvinden op totaal verschillende delen van de schijf waardoor er dus veel tijd verloren gaat aan het zoeken van de sporen.</simpara>
+<formalpara>
+<title>First-Come First-Served Disk Scheduling</title>
+<para>oab/images/fcfs</para>
+</formalpara>
+</section>
+<section id="_sstf_shortest_seek_time_first">
+<title>SSTF: Shortest Seek Time First</title>
+<simpara>Om te vermijden dat de lees/schrijfkop zich wild heen en weer gaat bewegen over de harde schijf indien FCFS gebruikt wordt kan men de voorkeur geven aan die schijfoperaties die in de onmiddellijke nabijheid van de huidige koppositie moeten doorgevoerd worden. Het voordeel van deze strategie is dat de zoektijden hierdoor zullen afnemen, maar anderzijds is deze strategie niet langer gegarandeerd eerlijk, omdat bij een zware belasting er blijvend aanvragen kunnen binnenkomen voor een bepaald deel van de schijf waardoor verder afgelegen delen van de schijf niet bediend worden. In tegenstelling met SJF is SSTF geen optimaal algoritme. In de afbeelding zou het bijvoorbeeld efficiënter zijn om eerst naar cilinder 37 te gaan en dan pas SSTF toe te passen.</simpara>
+<formalpara>
+<title>Shortest Seek Time First Disk Scheduling</title>
+<para>oab/images/sstf</para>
+</formalpara>
+<simpara>====SCAN: Scannen
+Dit algoritme tracht de voordelen van SSTF te combineren met een eerlijk gedrag. Het overloopt de schijf van het eerste tot het laatste spoor en omgekeerd hierbij alle operaties uitvoerend `en passant'. Dit garandeert dat alle schijfoperaties finaal zullen uitgevoerd geraken en is te vergelijken met een bus die op zijn heen- en terugweg bij alle haltes stopt waar personen staan te wachten.</simpara>
+<formalpara>
+<title>Scan Disk Scheduling</title>
+<para>oab/images/scan</para>
+</formalpara>
+<simpara>====C-SCAN: Cirkulair Scannen
+Dit is een verbetering van de SCAN strategie. Op zijn terugweg zal de kop in het begin nauwelijks of geen operaties ontmoeten (deze sporen werden immers pas net bediend). Indien er dan toch al operaties zijn, zullen ze alle zeer recent zijn. De operaties aan de overzijde van de schijf staan echter reeds geruime tijd te wachten. Daarom zal C-SCAN op zijn terugweg geen sporen bedienen maar meteen bij spoor 0 herbeginnen (zie figuur \ref{cscan}). Hier zullen de gemiddeld oudere aanvragen eerst bediend worden. Dit algoritme is in zekere zin eerlijker dan SCAN, maar geeft wel een slechtere doorvoercapaciteit omdat de terugweg onderbenut wordt. Deze strategie zal zich bijzonder slecht gedragen indien de sporen sequentieel van rechts naar links moeten gelezen worden.</simpara>
+<simpara>\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.7]{oab/images/cscan}
+\caption{Cirkular Scan Disk Scheduling}
+\label{cscan}
+\end{figure}</simpara>
+</section>
+<section id="_look_c_look_aangepaste_scan_c_scan">
+<title>LOOK \+ C-LOOK: Aangepaste SCAN + C-SCAN</title>
+<simpara>In de praktijk zal men de kop van de schijf niet tussen de twee uiterste uiteinden van de schijf laten bewegen, maar wel tussen die twee uiterste sporen waarvoor er aanvragen zijn (vergelijkbaar met een lift)</simpara>
+<simpara>\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.7]{oab/images/look}
+\caption{Look Disk Scheduling}
+\label{look}
+\end{figure}</simpara>
+<simpara>\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.7]{oab/images/clook}
+\caption{Cirkular Look Disk Scheduling}
+\label{clook}
+\end{figure}</simpara>
+</section>
 <section id="_schijfcontroller">
 <title>Schijfcontroller</title>
 <simpara>Een laatste belangrijk onderdeel van de harde schijf is de schijfcontroller. Deze stuurt enerzijds de motoren en leeskoppen aan, zodat de juiste gegevens bereikt worden, anderzijds verzorgt hij de communicatie met de buitenwereld.</simpara>
@@ -1660,13 +1728,25 @@ Deze oplossing is dus vooral interessant als het fysieke geheugen niet uitgebrei
 Veel fabrikanten werken aan drives met flash geheugen. Deze technologie is een stuk goedkoper en verliest zijn inhoud niet bij het wegvallen van de stroom. Hoewel flash nog steeds een stuk duurder is dan magnetische opslag, lijkt deze technologie toch een alternatief te kunnen vormen voor magnetische harde schijven.<?asciidoc-br?>
 Recente productlanceringen lijken erop te wijzen dat deze technologie heel snel matuur wordt.<?asciidoc-br?>
 Eind 2012 lijkt de SSD de magische grens van 1USD/GB doorbroken te hebben [3], en de trend is nog steeds dalend.</simpara>
-<simpara>De meeste voordelen volgen uit het ontbreken van mechanische onderdelen:
-*De schijf moet niet draaien en moet dus ook niet opstarten, geen kop die bewogen moet worden, dus willekeurige toegang kan sneller.
-*Fragmentatie van bestanden wordt minder belangrijk
-*Geen bewegende onderdelen, dus geen lawaai
-*Stroomverbruik ligt lager dan bij conventionele schijven
-*Beter bestand tegen schokken, temperatuur, hoge hoogte tenzij voor high-end schijven, ligt het verbruik lager</simpara>
-<simpara>Uiteraard zijn er ook nadelen. Zoals al vermeld is er voorlopig nog de kostprijs. Daarnaast is er ook de specifieke eigenschap van flash dat het slechts een beperkt aantal keer beschrijfbaar is.
+<simpara>De meeste voordelen volgen uit het ontbreken van mechanische onderdelen:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>De schijf moet niet draaien en moet dus ook niet opstarten, geen kop die bewogen moet worden, dus willekeurige toegang kan sneller.</simpara>
+</listitem>
+<listitem>
+<simpara>Fragmentatie van bestanden wordt minder belangrijk</simpara>
+</listitem>
+<listitem>
+<simpara>Geen bewegende onderdelen, dus geen lawaai</simpara>
+</listitem>
+<listitem>
+<simpara>Stroomverbruik ligt lager dan bij conventionele schijven</simpara>
+</listitem>
+<listitem>
+<simpara>Beter bestand tegen schokken, temperatuur, hoge hoogte tenzij voor high-end schijven, ligt het verbruik lager</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Uiteraard zijn er ook nadelen. Zoals al vermeld is er voorlopig nog de kostprijs. Daarnaast is er ook de specifieke eigenschap van flash dat het slechts een beperkt aantal keer beschrijfbaar is.<?asciidoc-br?>
 Door recente ontwikkelingen valt dit nadeel echter bijna volledig weg. Tegenwoordig zijn cellen in SSD-schijven meer dan 1 000 000 keer herschrijfbaar, en dat zou voldoende moeten zijn om bij normaal gebruik vele jaren correct te functioneren. Behalve bij erg specifieke schrijfintensieve taken (vb logging server) zal deze limiet nooit een probleem vormen.<?asciidoc-br?>
 Een belangrijke rol hierbij is weggelegd voor de controller, het intelligente hart van de SSD-schijf. Die zal ervoor zorgen dat elk deel van het geheugen ongeveer evenveel beschreven wordt, zodat de slijtage over het hele geheugenbereik ongeveer gelijk is.<?asciidoc-br?>
 Aangezien verspreidde bestanden toch geen invloed hebben op de snelheid, veroorzaakt dit geen performantieverlies.<?asciidoc-br?>
@@ -1724,7 +1804,7 @@ Vanwege die nood aan precisie zal MLC dus trager gelezen en beschreven kunnen wo
 </section>
 <section id="_optimalisatie_van_flash">
 <title>Optimalisatie van Flash</title>
-<simpara>De SSD-technologie staat nog in zijn kinderschoenen. De recentste types kampen dan ook vaak nog met problemen. Zeker als ze zwaar belast worden vallen ze vaak door de mand. Ook het besturingssysteem vervult hierin een belangrijke rol. Enkele van de problematieken&#8230;</simpara>
+<simpara>De SSD-technologie staat nog in zijn kinderschoenen. De recentste types kampen dan ook vaak nog met problemen. Zeker als ze zwaar belast worden vallen ze vaak door de mand. Ook het besturingssysteem vervult hierin een belangrijke rol. Enkele van de problematieken&#8230;&#8203;</simpara>
 <section id="_buffering">
 <title>Buffering</title>
 <simpara>Het concept van cache/buffering is jullie uiteraard niet onbekend. Een bijzonderheid van flashgeheugen is dat je voor het schrijven eerst de benodigde blokken moet wissen. Bij reeds gewiste cellen is dit uiteraard niet nodig. Je begrijpt dat deze werkwijze flink wat tijd vraagt. Een cache zal dan ook de schrijfacties bufferen. Als de cache te klein is, zal na een periode van continu schrijven de prestatie sterk degraderen.</simpara>
@@ -1783,10 +1863,16 @@ De fabrikanten die getroffen werden door dit gênant verschijnsel bakten daarom 
 <section id="_logische_indeling_opslagmedia">
 <title>Logische indeling opslagmedia</title>
 <simpara>In het voorgaande werd de harde schijf voornamelijk bekeken vanuit zijn fysieke kenmerken. In wat volgt zullen we de logische indeling van de schijf bekijken.
-We zullen met andere woorden bekijken hoe de schijf toegankelijk is voor bijvoorbeeld het besturingssysteem. Harde schijven worden in de eerste plaats verdeeld in één of meerdere partities, terwijl elke partitie dan georganiseerd wordt volgens de regels van een welbepaald bestandsysteem.</simpara>
+We zullen met andere woorden bekijken hoe de schijf toegankelijk is voor bijvoorbeeld het besturingssysteem. Harde schijven worden in de eerste plaats verdeeld in één of meerdere partities (= fysieke formatering), terwijl elke partitie dan georganiseerd wordt volgens de regels van een welbepaald bestandsysteem. (=logische formatering)</simpara>
+<simpara>Sommige toepassingen die zeer intensief gebruik maken van secundair geheugen (zoals gegevensbanken) vereisen dat een schijf(-partitie) niet logisch geformateerd wordt. Zij gebruiken de `raw disk' en gebruiken hun eigen logische formatering. Hetzelfde geldt voor de swapruimte op een aantal systemen. De bedoeling is steeds om de overhead van het bestandensysteem te omzeilen.</simpara>
+<section id="_boot_blok">
+<title>Boot blok</title>
+<simpara>Bij het opstarten van een computer is het niet duidelijk wat die computer precies zal moeten uitvoeren (Linux, MS-DOS, Windows). De keuze van het besturingssysteem zal onder andere gemaakt worden door de inhoud van de schijf die als `systeemschijf' bekend staat. Het opstarten van een computersysteem staat bekend onder de naam `bootstrappen'. Na het aanleggen van de spanning begint de processor code uit te voeren op een bepaalde vaste plaats in het geheugen. Door op die plaats een ROM-geheugen aan te brengen (geheugen met een voorgedefinieerde vaste inhoud), zal een programma beginnen uitvoeren. Dit (kleine) generische programma gaat na of de hardware van de computer zich gedraagt zoals het hoort, en gaat dan op zoek naar de systeemschijf en tracht daar één of meerdere sectoren te lezen (de zogenaamde boot sectoren). Deze sectoren bevatten de code die nodig is om andere delen van het besturingssysteem in te lezen. Deze code zal op zijn beurt het volledige besturingssysteem inladen, de configuratiebestanden lezen en de controle overleveren aan het besturingssysteem. Het proces van bootstrappen is dus een proces waarbij stap voor stap complexere software van de schijf ingeladen wordt en er gaandeweg meer en meer functies van het besturingssysteem ter beschikking komen.</simpara>
+</section>
 <section id="_master_boot_record_mbr_layout">
 <title>Master Boot Record (MBR) layout</title>
 <itemizedlist>
+<title>Inhoud Master Boot Record</title>
 <listitem>
 <simpara>offset	lengte (bytes)	inhoud</simpara>
 </listitem>
@@ -1809,7 +1895,6 @@ We zullen met andere woorden bekijken hoe de schijf toegankelijk is voor bijvoor
 <simpara>510 (1FEh)	2	55 AA (einde markering)</simpara>
 </listitem>
 </itemizedlist>
-<simpara>Tabel 4 Inhoud Master Boot Record</simpara>
 <simpara>Het master boot record is de eerste fysieke sector van de harde schijf. Deze bevat twee gedeeltes: de primaire partitietabel en de MBR-programmacode.
 De MBR programmacode bevat de nodige instructies om te beslissen van welke primaire partitie opgestart moet worden, om de bootsector van de betreffende partitie in het geheugen te laden en om te starten met het laden van het betreffende besturingssysteem. In de meest eenvoudige vorm zoekt de MBR-code in de partitietabel naar de actieve partitie (zie verder), laadt de bootsector van die partitie in het geheugen en voert de code uit die daarin opgeslagen is. Soms kan de MBR-code ook meer gesofisticeerd zijn en interactie met de gebruiker mogelijk maken.<?asciidoc-br?>
 Dit is het geval bij Boot-managers als LILO (Linux Loader), grub en BootMagic.
@@ -1841,7 +1926,7 @@ De primaire partitietabel bevat voor elke primaire partitie een record van zesti
 </listitem>
 </itemizedlist>
 <simpara>Tabel 5 Inhoud partitietabel-record</simpara>
-<simpara>Het eerste byte duidt aan of de partitie actief is of niet. Dit kan belangrijk zijn, in het bijzonder in het geval waarbij de MBR op zoek gaat naar de actieve partitie om te booten. Daarnaast zijn er een aantal parameters die de locatie en grootte van de partitie vastleggen en er is een byte dat het type vastlegt. Met dit byte kan aangegeven worden welk bestandsysteem op de partitie staat (b.v. FAT16, FAT32, EXFAT, NTFS, EXT4, ZFS, &#8230;).</simpara>
+<simpara>Het eerste byte duidt aan of de partitie actief is of niet. Dit kan belangrijk zijn, in het bijzonder in het geval waarbij de MBR op zoek gaat naar de actieve partitie om te booten. Daarnaast zijn er een aantal parameters die de locatie en grootte van de partitie vastleggen en er is een byte dat het type vastlegt. Met dit byte kan aangegeven worden welk bestandsysteem op de partitie staat (b.v. FAT16, FAT32, EXFAT, NTFS, EXT4, ZFS, &#8230;&#8203;).</simpara>
 <simpara>Aangezien er slechts vier records zijn in de primaire partitietabel, kunnen slechts vier primaire partities gedefinieerd worden. Indien meer partities nodig zijn, moet gebruik gemaakt worden van extended of uitgebreide partities. Belangrijke opmerking hierbij is dat niet alle informatie op een extended partitie terecht mag komen. Een belangrijk voorbeeld is een partitie waar Windows op geïnstalleerd wordt. In de primaire partitietabel is er slechts een extended partitie mogelijk.
 Deze partitie krijgt een type aanduiding die aangeeft dat het gaat om een extended partitie.<?asciidoc-br?>
 Op de eerste sector van de extended partitie bevindt zich een extended master boot record (EMBR). In het EMBR is er plaats voor twee partietabel-records.
@@ -1885,7 +1970,7 @@ Het eerste is een eenvoudig voorbeeld met een primaire en een logische DOS-parti
 </listitem>
 </itemizedlist>
 <simpara>De GPT layout probeert hier oplossingen voor te verzinnen. Zo staat de partitietabel ook op het einde van de schijf, zodat een defect in het begin van de schijf niet hoeft te betekenen dat je de data op de partities kwijt bent. De eerste sector van een GPT-schijf bevat een valse MBR-record (protective MBR) om oude partitioneringstools te misleiden.<?asciidoc-br?>
-Het maximale aantal partities is bij GPT 128 stuks. De grootte voor elke partitie is geen limiet meer. (om precies te zijn: bij sectoren van 512 bytes kan je 2^64 *512 bits opslaan in elke partitie.)
+Het maximale aantal partities is bij GPT 128 stuks. De grootte voor elke partitie is geen limiet meer. (om precies te zijn: bij sectoren van 512 bytes kan je 2^64 *512 bits opslaan in elke partitie.)+
 Elke partitie-entry bij GPT bevat volgende gegevens:</simpara>
 <simpara>#bytes	Naam	Beschrijving
 16 bytes	Partition Type GUID	Bevat een GUID die zegt over welk soort partitie het gaat. Vb Linux Swap Partition, Windows Basic Data Partition, Apple HFS+ partitie, …
@@ -1903,14 +1988,182 @@ Elke partitie-entry bij GPT bevat volgende gegevens:</simpara>
 <textobject><phrase>partitiestructuur</phrase></textobject>
 </mediaobject>
 </figure>
+<section id="_bestanden">
+<title>bestanden</title>
+<simpara>Het probleem van de allocatie van bestanden betreft de vraag op welke manier de blokken of clusters van de schijf samengevoegd kunnen worden tot een bestand. Er zijn verschillende mogelijkheiden: contigu, gelinkt, gebaseerd op een allocatietabel, en gebaseerd op een indextabel.</simpara>
+<simpara>De keuze van een bepaalde methode zal onder meer afhangen van de manier waarop de gegevens van een schijf gebruikt zullen worden: sequentieel, direct of ge\"indexeerd, en van de prestaties die men van de schijf verwacht. Doordat de schijf zeer traag is in vergelijking met de processor, zal men doorgaans trachten om het aantal toegangen naar de schijf zoveel mogelijk te beperken door bepaalde tabellen in het geheugen te houden, door gegevens intelligent over de schijf/schijven te verdelen zodat de kopbewegingen beperkt worden, enz. Vaak kan het de moeite lonen om de processor een complexer algoritme te laten uitvoeren indien dit het gebruik van de schijf kan verminderen.
+Contigue allocatie:: Contigue allocatie is de eenvoudigste allocatiemethode Een bestand bestaande uit \textit{n} blokken zal \textit{n} opeenvolgende fysieke blokken op de schijf innemen. De verplaatsingen van de lees/schrijfkop zullen hierdoor minimaal zijn: bij het sequentieel lezen zal de kop enkel op het einde van het laatste spoor van een cilinder moeten veranderen naar een volgende cilinder en ook bij directe toegang zullen de verplaatsingen van de kop minimaal zijn. Contigue allocatie is hierdoor de snelste allocatiemethode.</simpara>
+<simpara>\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.8]{oab/images/contigue}
+\caption{Contigue allocatie}
+\label{contigue}
+\end{figure}</simpara>
+<simpara>Ze heeft echter ook heel wat nadelen. Vooreerst is er het probleem van de externe fragmentatie. Doordat het schijfgeheugen dat gealloceerd moet worden contigu moet zijn heeft men in werkelijkheid stukken geheugen van ongelijke lengte waarvoor het geheugenbeheer relatief moeilijk is. Compactering kan hier een oplossing brengen, maar meestal zal het bestandssysteem tijdens het compacteren onbruikbaar zijn. Dit is niet steeds aanvaardbaar.</simpara>
+<simpara>Ten tweede is er het probleem dat men nog vóór de creatie van een bestand moet weten hoe groot het zal worden. Schat men de werkelijke grootte te hoog, dan krijgt men een aanzienlijke interne fragmentatie, schat men het te klein, dan zal het programma dat het bestand aanmaakt afgebroken worden. Dit laatste kan vermeden worden door in dat geval het bestand te copi\"eren naar een grotere vrije ruimte en daar de uitvoering verder te zetten. Het hoeft geen betoog dat dit de turn around time van een proces negatief zal beïvloeden. Langzaam groeiende bestanden zoals log-bestanden zijn vrij moeilijk efficiënt te implementeren.</simpara>
+<simpara>Sommige systemen laten daarom toe om de contigue allocatie stuksgewijs te ondersteunen. Men begint dan met een bestand met een gegeven grootte, en indien het te klein zou blijken te zijn, kan men een bijkomende uitbreiding toevoegen. De grootte van deze uitbreiding moet ook op voorhand vastgelegd worden. Ofschoon deze oplossing effici\"enter is dan het volledig kopi\"en van het bestand, heeft ze ook te lijden onder het probleem van de externe fragmentatie.</simpara>
+<variablelist>
+<varlistentry>
+<term>Gelinkte allocatie</term>
+<listitem>
+<simpara>Deze allocatiemethode lost alle externe-fragmentatieproblemen van de contigue allocatie op. In de plaats van alle blokken contigu op de schijf op te slaan worden de blokken op de schijf met elkaar gelinkt (zie figuur \ref{gelinkte}). Zolang er vrije blokken zijn, kan een bestand blijven groeien. Ofschoon deze methode het probleem van de externe fragmentatie effectief oplost, heeft ze ook haar problemen. Vooreerst wordt directe toegang nagenoeg onmogelijk omdat steeds de lijst van blokken moet afgelopen worden. Ten tweede kan het sequentieel lezen van een bestand zeer traag worden omdat er per nieuw in te lezen blok in principe een verplaatsing van de kop kan nodig zijn. Ten derde zullen de blokken nu een beetje kleiner zijn omdat de link naar het volgende blok ook moet opgenomen worden. Tenslotte is gelinkte allocatie ook niet zeer betrouwbaar omdat van zodra er \'e'en blok corrupt wordt de hele schijf onbetrouwbaar wordt.</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+<simpara>\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.8]{oab/images/gelinkte}
+\caption{Gelinkte allocatie}
+\label{gelinkte}
+\end{figure}</simpara>
+<simpara>Om het sequentieel lezen te versnellen kan men bij de allocatie van de blokken er trachten voor te zorgen dat ze toch zoveel mogelijk sequentieel op de schijf staan zodat de bewegingen van de lees/schrijfkop beperkt worden. Bijgevolg kan de contigu\"iteit en dus de snelheid door regelmatig te compacteren verbeterd worden.</simpara>
+<simpara>Het derde probleem kan minder erg gemaakt worden door de blokgrootte te vergroten. Gezien er slechts \'e'en link per blok opgeslagen wordt, verkleint hierdoor het percentage aan links.</simpara>
+<variablelist>
+<varlistentry>
+<term>allocatietabel</term>
+<listitem>
+<simpara>De overige problemen kunnen opgelost worden door alle wijzers naar de blokken bij te houden in afzonderlijke blokken, de zogenaamde FAT of file allocation table (zie figuur \ref{allocatietabel}). Deze tabel bevat een wijzer per blok. In de plaats van de wijzers fysiek in de blokken te schrijven worden ze nu in de FAT geschreven. Dit heeft als voordelen dat men om een bestand af te lopen slechts een paar blokken van de schijf moet lezen (de FAT), dat er geen wijzers meer in de gegevensblokken moeten opgeslagen worden, dat men de FAT meer dan eens kan opslaan op de schijf om beperkte schijfdefecten te kunnen opvangen. Vrije blokken kunnen teruggevonden worden door een speciaal teken op de plaats van de wijzer in de FAT. MS-DOS en OS/2 maken gebruik van een FAT.</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+<simpara>Meestal bewaart men een kopie van de FAT (of delen ervan) in het geheugen om snel een blok op de schijf terug te kunnen vinden. Indien de FAT niet in het geheugen bijgehouden wordt, zal het telkens heen en terug swingen tussen de FAT-blokken en de werkelijke gegevens een aanzienlijke extra belasting van de schijf vormen.</simpara>
+<simpara>\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.8]{oab/images/allocatietabel}
+\caption{Allocatietabel}
+\label{allocatietabel}
+\end{figure}</simpara>
+<variablelist>
+<varlistentry>
+<term>Indextabel</term>
+<listitem>
+<simpara>Gelinkte allocatie of allocatietabellen zijn een afdoende oplossing voor het probleem van de externe fragmentatie, maar laten geen effici\"ente directe toegang tot een bestand toe omdat de links sequentieel moeten afgelopen worden. Geïndexeerde allocatie laat dit wel toe. Het idee is dat alle wijzers naar de gealloceerde blokken sequentieel opgenomen worden in een zogenaamd indexblok. Dit indexblok kan dan gebruikt worden om een gegevensblok rechtstreeks terug te vinden .</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+<simpara>\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.8]{oab/images/indextabel}
+\caption{Ge\"indexeerde allocatie}
+\label{indextabel}
+\end{figure}</simpara>
+<simpara>Om niet beperkt te zijn tot bestanden met een te kleine maximale lengte kan men ofwel de indexblokken linken, ofwel verschillende niveaus van indexblokken cre\"eren. Het topniveau verwijst dan naar indexblokken die op hun beurt verwijzen naar de gegevensblokken. Gecombineerde systemen komen ook voor.</simpara>
+<simpara>Ge\"indexeerde allocatie maakt doorgaans minder effici\"ent gebruik van de schijfruimte dan gelinkte allocatie. De meeste indexblokken zullen immers maar gedeeltelijk gevuld zijn. Bovendien zal men voor kleine bestanden i.p.v. een paar wijzers in de gegevensblokken zelf, een volledige indexblok moeten alloceren.</simpara>
+<simpara>\item[Inodes] In Unix maakt men gebruik van een gecombineerd systeem (zie figuur \ref{inodes}) waarbij een vast aantal indices opgenomen wordt als attributen van een bestand in de zogenaamde inode (dit is een gegevensstructuur die zich tussen de directory-entry en het fysiek bestand bevindt. Per fysiek bestand is er slechts 1 inode, maar kunnen er verschillende directory-entries zijn. De inode houdt o.m. bij hoeveel harde links er naar een bestand bestaan). Naast dit beperkt aantal directe indices (bv. 12) die zullen volstaan voor de bestanden kleiner dan bv. 48 Kb, is er nog een wijzer naar een indexblok van niveau 1, en ook nog een wijzer naar een indexblok van niveau 2 (en zelfs naar niveau 3).</simpara>
+<simpara>\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.8]{oab/images/inodes}
+\caption{Inodes}
+\label{inodes}
+\end{figure}</simpara>
+<simpara>Deze oplossing laat toe om (i) snel directe toegang te hebben tot kleine bestanden, redelijk snel tot de middelgrote bestanden, en aanvaardbaar voor de echt grote bestanden waarbij de grootte van de bestanden niet beperkt wordt door de implementatie van het bestandssysteem, maar door de grootte van de schijf. Dit is prima omdat in de praktijk toch blijkt dat minder dan 5\% van alle bestanden groter zijn dan 48KB en dus een indexblok nodig hebben. Alle andere kunnen het stellen zonder afzonderlijk indexblok.</simpara>
+<note>
+<title>Opmerking: optimalisatie</title>
+<simpara>De bovenstaande methodes zijn enkel de basisprincipes voor het beheer van bestanden op een schijf. In de praktijk zijn er veel variaties mogelijk om een snellere werking van het bestandssysteem te verkrijgen.
+In het bijzonder zal het nuttig blijken om:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>De blokken zo groot mogelijk te nemen, rekening houdend met de interne fragmentatie dat dit met zich mee zal brengen. BSD Unix verandert de grootte van de blokken zelfs naarmate het bestand groter wordt. Dit laat toe om het percentage interne fragmentatie toch nog laag te houden.</simpara>
+</listitem>
+<listitem>
+<simpara>De dynamische informatie in de directories beperkt te houden. Het bijhouden van het tijdstip waarop een bestand voor het laatst gebruikt werd zal een schrijfoperatie veroorzaken ook indien het bestand enkel gelezen werd.</simpara>
+</listitem>
+<listitem>
+<simpara>Zoveel mogelijk blokken van de schijf in het geheugen te bewaren om meer dan eens lezen te vermijden. Sommige schijfregelaars zullen i.p.v. een sector steeds een volledig spoor inlezen omdat zij ervan uitgaan dat door de lokaliteit meer dan één sector zal gelezen worden. De meeste besturingssystemen hebben ook voorzieningen voor \textit{disk caches}. Solaris en Linux zal al het ongebruikte interne geheugen ter beschikking stellen als disk cache (zowel voor bestands-IO als voor paginering).</simpara>
+</listitem>
+<listitem>
+<simpara>Free-behind - Read-ahead zijn twee methodes die naast LRU gebruikt kunnen worden om de disk cache beter te beheren bij sequenti\"ele toegang. Free-behind zal een blok vrijgeven van zodra een volgend blok ingelezen werd, en read-ahead zal ervoor zorgen dat er steeds 1 blok verder ingelezen wordt in een blokbuffer om de wachttijden bij het effectief opvragen van gegevens uit dat blok te beperken.</simpara>
+</listitem>
+<listitem>
+<simpara>Om de schijfcapaciteit beter te benutten kan men de gegevens gecomprimeerd op de schijf plaatsen. Afhankelijk van het soort van gegevens dat men wil opslaan kan de hoeveelheid die men op deze manier kan opslaan een veelvoud zijn van de originele schijfcapaciteit. Bovendien kan de bandbreedte naar de schijf hierdoor in sommige gevallen vergroot worden omdat er minder gegevensuitwisseling zal zijn met de schijf terwijl het comprimeren en decomprimeren vrij snel kan gaan. Deze compressie is totaal transparant voor de gebruiker.</simpara>
+</listitem>
+</itemizedlist>
+</note>
+</section>
+<section id="_mappen_directories">
+<title>mappen (directories)</title>
+<simpara>Tegenwoordige hebben de meeste bestandssystemen een boomvormige directorystructuur waarbij alle gebruikers voorkomen als deelbomen van de boomstructuur die geassocieerd wordt met het volume. In deze vorm heeft de gebruiker beschikking over subdirectories die op hun beurt bestanden en subdirectories kunnen bevatten. Bestanden hebben nu niet enkel een naam, maar ook een pad, dit is een opeenvolging van de namen van subdirectories. Het pad en de bestandsnaam vormen dan een eenduidige specificatie van een bestand. Doordat alle gebruikers opgenomen zijn in dezelfde boomstructuur is het ook mogelijk om naar bestanden van andere gebruikers te refereren door zowel hun padnaam als hun bestandsnaam op te geven.</simpara>
+<simpara>Padnamen kunnen zowel absoluut (ten opzichte van de root-directory), als relatief (ten opzichte van de huidige directory) zijn. Absolute padnamen hebben als voordeel dat ze in alle omstandigheden verwijzen naar dezelfde directory, maar ze kunnen hierbij wel aardig lang worden (100 tekens zijn geen uitzondering). Relatieve padnamen hebben als voordeel dat ze korter kunnen zijn, en dat ze in zekere zin `positie-onafhankelijk' zijn, dit wil zeggen dat ze binnen een bepaalde boomstructuur geldig blijven, ook wanneer de totale boom verplaatst wordt.</simpara>
+<simpara>Boomvormige directorystructuren hebben echter ook hun nadelen:
+. men zal het concept van `huidige directory' moeten invoeren om te weten in welke directory men aan het werken is,
+. om bestanden terug te vinden kan men in verscheidene directories moeten gaan kijken, en soms wil men hierbij een bepaalde volgorde kiezen (PATH),
+. er moeten voorzieningen getroffen worden om bepaalde bestanden in meer dan één directory op te nemen zonder deze te moeten kopi\"en of telkens opnieuw de volledige padnaam te moeten ingeven.</simpara>
+<simpara>Om aan dit euvel te verhelpen bestaan er directorystructuren die kunnen voorgesteld worden door een acyclische graaf die zal toelaten dat een bepaald bestand in twee subdirectories voorkomt.</simpara>
+<simpara>Om dit te realiseren kan men gebruik maken van zogenaamde links of shortcuts. Unix onderscheidt twee soorten links: symbolische links en harde links. Een symbolische link is gewoon een verwijzing naar een ander bestand. Uitwendig ziet een symbolische link eruit als een gewoon bestand, maar het is wel een bestand van een speciaal type, en het bevat geen gegevens, enkel de naam van het bestand waarnaar het wijst. Als het bestand waarnaar gewezen wordt verdwijnt, dan zal de symbolische link blijven bestaan, maar verwijzen naar een niet langer bestaand bestand.</simpara>
+<simpara>De tweede soort link is de harde link. Deze is te vergelijken met het delen van geheugen door dezelfde frame-adressen op te nemen in twee paginatabellen. In dit geval zullen twee entries in de directorytabel wijzen naar hetzelfde fysieke bestand. Hierbij wordt een teller bijgehouden met het aantal links die verwijzen naar het bestand. Het wissen van een harde link zal enkel het wissen van het bestand tot gevolg hebben indien deze link de laatste link met een bestand was. Dit verklaart meteen waarom het wissen van een bestand in Unix soms ook unlink genoemd wordt. Voorbeelden van harde links zijn de bestanden `.' en `..' in de directories. Zij komen zowel voor in de huidige directory als in de ouderdirectory.</simpara>
+<simpara>Het gebruik van links zorgt ervoor dat een directorystructuur niet langer een boomstructuur is maar een graaf. Indien er geen lussen voorkomen in de graaf spreekt men van een acyclische graaf. Een probleem met grafen is dat het doorzoeken van een graaf op zoek naar bepaalde informatie (bv. een bestand) complexer is dan het doorzoeken van een boom omdat men moet vermijden tweemaal hetzelfde deel van een graaf te doorzoeken. Bij acyclische grafen heeft het meermaals doorzoeken van een graaf enkel een effect op de snelheid waarmee een algoritme uitgevoerd wordt. Bij cyclische grafen kan dit aanleiding geven tot oneindige lussen, en dus een niet-terminerend algoritme.</simpara>
+</section>
+<section id="_swapruimte">
+<title>swapruimte</title>
+<simpara>Zoals aangetoond wordt in het hoofdstuk over geheugenbeheer is het effect van een paginafout op de uitvoeringssnelheid van een programma dramatisch en moet men dan ook al het mogelijke doen om de interactie met de swapruimte zo effici\"ent mogelijk te maken. We hebben gezien dat een virtueel-geheugensysteem gebruik maakt van pagina&#8217;s en dat deze pagina&#8217;s in paginering op aanvraag moeten kunnen uitgewisseld worden met de swapruimte.</simpara>
+<simpara>Deze pagina&#8217;s zullen direct moeten kunnen geadresseerd worden. Met de technieken die gebruikt worden bij het klassieke bestandsbeheer zal deze directe toegang soms het lezen van meer dan \'e'en blok tot gevolg hebben. Bovendien zijn de blokken van het bestandssysteem niet steeds even groot als de pagina&#8217;s en de frames.</simpara>
+<simpara>Men zal dan ook meestal verkiezen om de swapruimte onder te brengen in een afzonderlijke partitie met een eigen beheerssysteem waardoor het aantal schijftoegangen absoluut minimaal gehouden wordt bij het pagineren. Het voornaamste nadeel van deze aanpak is dat de swapruimte bij de generatie van het besturingssysteem moet vastgelegd worden (in de vorm van een partitie). Naderhand uitbreiden (als gevolg van het vergroten van het intern geheugen) is moeilijk omdat het het uitbreiden van een schijfpartitie betreft. Anderzijds zal bij een overdimensionering van de swapruimte de ongebruikte ruimte niet gebruikt kunnen worden voor bestandsopslag. Deze oplossing, ofschoon efficiënt, is heel wat minder flexibel dan het gebruik van een gegevensbestand als swapruimte.</simpara>
+<simpara>Sommige systemen zoals Windows alloceren de swapruimte als een contigu bestand. Het voornaamste voordeel van deze aanpak is de eenvoud en het feit dat de swapruimte gemakkelijk kan uitgebreid worden. Het nadeel van deze aanpak is de traagheid omdat elke toegang tot de swapruimte via het bestandssysteem moet gaan.</simpara>
+<simpara>De keuze tussen beide is een compromis tussen gewenste snelheid en gebruikersgemak.</simpara>
+</section>
+<section id="_vrije_ruimte">
+<title>Vrije ruimte</title>
+<simpara>De vrije ruimte op een schijf moet op een effici\"ente manier kunnen bijgehouden worden om snel een vrij blok te kunnen terugvinden. Een aantal gebruikelijke methoden wordt hier besproken.
+\begin{description}
+\item[Bitmap.] Er wordt een bitrij bijgehouden waarbij elk bitje een blok voorstelt. Een vrij blok kan dan voorgesteld worden door 1, en een blok dat in gebruik is door een 0. Voor grote schijven kunnen de bitmaps ook een aanzienlijke ruimte in het geheugen gaan innemen. Ze moeten nu en dan op de schijf bewaard worden als beveiliging. Na een systeemcrash zal deze lijst opnieuw moeten opgebouwd worden uitgaande van de bestanden die op de schijf teruggevonden worden.
+\item[Gelinkte lijst.] Gezien de vrije blokken toch niet gebruikt worden, kan een deel van elk blok gebruikt worden om ze met elkaar te linken. De kop van de lijst wijst steeds naar een vrij blok indien er een aanwezig is. Nadeel van deze methode is dat indien er bijvoorbeeld 100 blokken moeten gealloceerd worden, er ook 100 schijftoegangen nodig zijn om de gelinkte lijst af te lopen.
+\item[Wijzerblok.] Net zoals bij de gelinkte allocatie kunnen ook de vrije blokken in indexblokken opgenomen worden. In dit geval zal men meestal kiezen voor gelinkte indexblokken i.p.v. voor verschillende niveaus. Het voordeel van deze methode is dat men verschillende blokken ineens kan alloceren.
+\end{description}</simpara>
+</section>
+<section id="_fragmentatie">
+<title>Fragmentatie</title>
+<simpara>Welke allocatiemethode men ook gebruikt na verloop van tijd zal de vrije ruimte geen aaneengesloten blok meer vormen, maar verspreid geraken over de volledige schijf. Het gevolg van deze versnippering zal zijn dat bestanden opgebouwd zullen worden uit blokken die zich op verschillende plaatsen op de schijf bevinden (behalve bij contigue allocatie). Doordat de kop van de schijf zich verschillende keren zal moeten verplaatsen om een dergelijk bestand te lezen, zal de prestatie van het bestandssysteem sterk dalen. Dit probleem is gekend, en wordt fragmentatie van de schijf genoemd.</simpara>
+<simpara>Het probleem kan opgelost worden door de bestanden op de schijf te herschikken (defragmentatie en compactering). Hierbij zullen alle bestanden contigu gemaakt worden en wordt ook de vrije ruimte samengebracht. Deze techniek heeft zijn aanhangers en zijn tegenstanders. Aanhangers claimen dat de fragmentatie van de bestanden weggewerkt wordt hetgeen nuttig is voor de prestatie. Tegenstanders argumenteren dat door de compactie de volgorde van bestanden gewijzigd wordt, en dat dit een negatieve impact kan hebben op de prestatie. Indien men een pakket installeert op een nagenoeg lege schijf, is de kans groot dat alle bestanden van het pakket na elkaar op de schijf zullen komen te staan. Bij het opstarten van het pakket kunnen de bestanden dan \'e'en na \'e'en ingelezen worden, zonder dat de kop zich veel moet verplaatsen. Na compactering kunnen deze bestanden verspreid geraken over heel de schijf waardoor er tijd verloren wordt bij het springen van het ene bestand naar het andere.</simpara>
+</section>
 </section>
 </section>
 <section id="_bestandssystemen">
 <title>Bestandssystemen</title>
-<simpara>Een bestandssysteem zal de bestanden op een partitie organiseren en zorgen dat het besturingssysteem over voldoende informatie beschikt om elk bestand terug te vinden. Er zijn veel verschillende soorten bestandssystemen, we zullen ons hier beperken tot FAT16 en NTFS. Eigenschappen van andere bestandssystemen zullen in de cursus besturingssystemen nog besproken worden. Elke partitie begint met een Partition Boot Sector (PBS). Dit is dus weer de eerste fysieke sector die bij een bepaalde partitie behoort. De PBS bestaat weer uit twee delen. Helemaal vooraan staat een spronginstructie naar de eventueel aanwezige boot routine. Deze boot routine zal het besturingssysteem laden (dus op elke partitie waarop een besturingssysteem geïnstalleerd is, zullen een dergelijk programma en spronginstructie terug te vinden zijn). Daarnaast is er het BIOS Parameter Block. Dit gedeelte bevat een aantal parameters die belangrijk zijn om toegang te krijgen tot het bestandsysteem. Welke parameters hier terug te vinden zijn, hangt natuurlijk af van het type bestandssysteem.<?asciidoc-br?>
-Twee van de meest gangbare bestandssystemen worden onder de loep genomen. NTFS, omdat het op nagenoeg elk Windows-toestel gebruikt wordt, en FAT16, omdat het door z’n eenvoud  ondanks zijn leeftijd toch nog op heel veel plaatsten gebruikt wordt. Denk daarbij bijvoorbeeld aan Flash-kaartjes in GSM’s of fototoestellen.</simpara>
-<section id="_fat">
-<title>FAT</title>
+<section id="_inleiding">
+<title>inleiding</title>
+<simpara>Een bestandssysteem bestaat uit verschillende lagen die elk van de diensten van de onderliggende lagen gebruik maken.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Op het bovenste niveau is er het \textbf{logische bestandssysteem}. Dit is het niveau waarmee de gebruiker in contact komt. Hier wordt er met bestandsnamen, protecties, enz. gewerkt. Dit niveau beheert ook de directories die als speciale gegevensbestanden beschouwd worden.</simpara>
+</listitem>
+<listitem>
+<simpara>Het logische bestandssysteem maakt gebruik van de <emphasis role="strong">bestandsorganisatie</emphasis> die de verbinding vormt tussen het logische en het fysieke niveau. Hier wordt aan het beheer van de vrije schijfruimte gedaan, hier worden de bestandsnamen omgezet naar de logische schijfadressen.</simpara>
+</listitem>
+<listitem>
+<simpara>Het fysieke bestandssysteem krijgt van de bestandsorganisatie de logische schijfadressen binnen en vertaalt deze naar fysieke schijfadressen voor de betreffende schijven.</simpara>
+</listitem>
+<listitem>
+<simpara>IO-controle: dit zijn de drivers voor de schijven. Deze drivers verbergen alle details van de schijfhardware voor de bovenliggende lagen.</simpara>
+</listitem>
+</orderedlist>
+<simpara>Een bestandssysteem zal de bestanden op een partitie organiseren en zorgen dat het besturingssysteem over voldoende informatie beschikt om elk bestand terug te vinden. Er zijn veel verschillende soorten bestandssystemen, we zullen ons hier beperken tot FAT16 en NTFS. Eigenschappen van andere bestandssystemen zullen in de cursus besturingssystemen nog besproken worden. Elke partitie begint met een Partition Boot Sector (PBS). Dit is dus weer de eerste fysieke sector die bij een bepaalde partitie behoort. De PBS bestaat weer uit twee delen. Helemaal vooraan staat een spronginstructie naar de eventueel aanwezige boot routine. Deze boot routine zal het besturingssysteem laden (dus op elke partitie waarop een besturingssysteem geïnstalleerd is, zullen een dergelijk programma en spronginstructie terug te vinden zijn). Daarnaast is er het BIOS Parameter Block. Dit gedeelte bevat een aantal parameters die belangrijk zijn om toegang te krijgen tot het bestandsysteem. Welke parameters hier terug te vinden zijn, hangt natuurlijk af van het type bestandssysteem.</simpara>
+</section>
+<section id="_een_bestandssysteem_mounten">
+<title>een bestandssysteem 'mounten'</title>
+<simpara>Het secundair geheugen van een computersysteem kan uit verscheidene schijven bestaan. Deze schijven kunnen op verschillende manieren aan de gebruiker aangeboden worden. Ofwel krijgen ze een naam zoals in Windows: A: B: C: enz. waardoor ze expliciet zichtbaar blijven, ofwel worden ze opgenomen als subdirectory in een bestandssysteem waardoor ze transparant worden voor de gebruiker. (zoals bij unix/linux het geval is)</simpara>
+<simpara>Men kan de directories van een bestandssysteem verdelen over de schijven, of met andere woorden, een schijf met haar eigen bestandssysteem (of systemen) wordt als subdirectory van het bestandssysteem van een andere schijf beschouwd. Dit laat toe om bestandssystemen te creëren die groter zijn dan één fysiek volume. Indien een schijf niet fysiek aanwezig is (bij DVD-stations bijvoorbeeld), zal deze subdirectory gewoon leeg zijn; indien de schijf aanwezig is, zal men in deze directory gegevens kunnen opvragen en bewaren. Eenmaal geconfigureerd is dit totaal transparant voor de gebruiker.</simpara>
+</section>
+<section id="_types_journaling_file_systems">
+<title>types: journaling file systems</title>
+<simpara>Bestandssystemen zijn meestal grote datastructuren, veranderingen eraan veroorzaken meestal meerdere schrijfoperaties aan bestanden en directories. Dit introduceert een race-conditie, waarbij een onderbreking (zoals een stroomstoring of systeemcrash) kan leiden tot een inconsistente toestand.</simpara>
+<simpara>Bijvoorbeeld, het wissen van een bestand op een UNIX systeem veroorzaakt twee stappen:</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>het verwijderen van de directory-ingang</simpara>
+</listitem>
+<listitem>
+<simpara>item het aanduiden van de bestandsinode als vrij ruimte</simpara>
+</listitem>
+</orderedlist>
+<simpara>Als stap 1 uitgevoerd wordt net voor een crash dan zal er een inode als wees achterblijven.
+Omgekeerd als stap 2 als eerste voor de crach uitgevoerd wordt dan wordt de inode als vrije ruimte aangeduid en kan overgeschreven worden.</simpara>
+<simpara>Een manier tot herstel is om de complete datastructuren van het bestandssysteem te doorlopen bij een volgende aankoppeling zodat onvolkomenheden kunnen gedetecteerd worden. Dit kan zeer traag verlopen voor grote bestandssystemen.</simpara>
+<simpara>Een andere manier tot herstel is om een logbestand (journaal) bij te houden met alle veranderingen die moeten gemaakt worden.
+Herstellen kan dan eenvoudig door het logbestand te doornemen en alle onvolkomenheden te herstellen.</simpara>
+<simpara>Enkele voorbeelden van journalizing bestandssystemen zijn JFS, EXT3/4, ReiserFS en NTF</simpara>
+</section>
+<section id="_case_study_1_fat_file_system">
+<title>Case study 1: FAT file system</title>
 <simpara>Het FAT bestandssysteem komt voor in een aantal varianten, waarvan FAT16 (1986) en FAT32 (1996) ontegensprekelijk de bekendste zijn. Als primair bestandssysteem hebben ze allebei reeds lang afgedaan om redenen die later aan bod komen, maar ze vormen wel een ideale educatieve instap in de wereld van bestandssystemen. Recentere bestandssystemen zijn een stuk complexer, zoals we later zullen leren. FAT wordt tegenwoordig vanwege zijn eenvoud wel nog consequent gebruikt op flash disks, flash kaartjes etc.</simpara>
 <figure>
 <title>FAT organisatie</title>
@@ -2089,11 +2342,28 @@ Soms kan je de grootte van de clusters kiezen (bij het formatteren, afhankelijk 
 </tgroup>
 </table>
 <simpara>Hierboven zie je de inhoud van de partition boot sector van een FAT32 partitie.
-We zullen niet alle parameters aanhalen, maar wel aantonen hoe het besturingssysteem een welbepaald bestand kan terugvinden en hoe het daarbij gebruik maakt van de opgeslagen informatie.
-In afbeelding 52 zie je de PBS van een SD-kaartje dat uit een Android smartphone komt. De sector werd hexadecimaal voorgesteld met een hex-editor. Probeer enkele van de hierboven aangehaalde parameters terug te vinden. (de entries zijn gelijkaardig aan de entries voor een FAT16 partitie)</simpara>
-<simpara>afbeelding 52 hexadecimale voorstelling van de PBS van een FAT16 SD-kaart
-De root folder bevat al de informatie over bestanden en mappen die opgeslagen zijn op de root folder. Als we ons beperken tot namen die voldoen aan het 8.3 formaat, dan is elk element in de root folder 32 bytes groot. Een belangrijk deel hiervan zijn de eerste elf bytes, die de karakters van de naam bevatten.<?asciidoc-br?>
-Indien een bestand niet in de root folder zit, maar is ondergebracht in een andere map, kan vanuit de root folder het volledige pad gevolgd worden tot we uiteindelijk in de juiste map terecht komen. Daar staat de informatie dan op gelijkaardige manier opgeslagen als in de root folder.</simpara>
+We zullen niet alle parameters aanhalen, maar wel aantonen hoe het besturingssysteem een welbepaald bestand kan terugvinden en hoe het daarbij gebruik maakt van de opgeslagen informatie.</simpara>
+<simpara>FAT32 heeft de volgende voordelen tegenover FAT16:</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>FAT32 kan met grotere harde schijven (max. 2 Terabyte) werken dan FAT16 (max. 2 GB).</simpara>
+</listitem>
+<listitem>
+<simpara>In FAT16 zijn er maar 512 entries mogelijk in de hoofddirectory. Met lange bestandsnamen die meerdere entries innemen kan dit al snel problemen geven. Daarom wordt de hoofddirectory in FAT32 opgeslagen zoals een gewone directory, zodat er een onbeperkt aantal entries in kunnen.</simpara>
+</listitem>
+<listitem>
+<simpara>FAT32 gebruikt kleinere clusters, zodat er minder slack is. Dit is vooral van belang voor grotere schijven. Op een schijf van 2 GB kan je bijvoorbeeld gemakkelijk 200 tot 300 MB winnen met FAT32 (dat is 10 tot 15\%).</simpara>
+</listitem>
+<listitem>
+<simpara>De beide FAT-tabellen staan niet meer in het begin van de schijf, zodat ze minder snel beschadigd worden.</simpara>
+</listitem>
+</orderedlist>
+<simpara>In onderstaande afbeelding zie je de PBS van een SD-kaartje dat uit een Android smartphone komt. De sector werd hexadecimaal voorgesteld met een hex-editor. Probeer enkele van de eerder aangehaalde parameters terug te vinden. (de entries zijn gelijkaardig aan de entries voor een FAT16 partitie)</simpara>
+<formalpara>
+<title>hexadecimale voorstelling van de PBS van een FAT16 SD-kaart</title>
+<para>De root folder bevat al de informatie over bestanden en mappen die opgeslagen zijn op de root folder. Als we ons beperken tot namen die voldoen aan het 8.3 formaat, dan is elk element in de root folder 32 bytes groot. Een belangrijk deel hiervan zijn de eerste elf bytes, die de karakters van de naam bevatten.<?asciidoc-br?>
+Indien een bestand niet in de root folder zit, maar is ondergebracht in een andere map, kan vanuit de root folder het volledige pad gevolgd worden tot we uiteindelijk in de juiste map terecht komen. Daar staat de informatie dan op gelijkaardige manier opgeslagen als in de root folder.</para>
+</formalpara>
 <example>
 <title>Voorbeeld: zoeken van een bestand in de op een FAT-partitie.</title>
 <orderedlist numeration="arabic">
@@ -2131,7 +2401,7 @@ Vooral de laatste 4 bytes zijn belangrijk. Die bevatten namelijk de lengte van h
 <simpara>De verschillende FAT-tabellen zijn in principe (tenzij er fouten optreden) kopieën van elkaar, dus maakt het in principe niet uit in welke tabel gekeken wordt.</simpara>
 </listitem>
 <listitem>
-<simpara>Bij FAT16 bestaat elk element in de FAT tabel uit 16 bits. Elk element is gelinkt met een welbepaald clusternummer (element 2 hangt samen met cluster 2, element 3 hangt samen met cluster 3, &#8230;).</simpara>
+<simpara>Bij FAT16 bestaat elk element in de FAT tabel uit 16 bits. Elk element is gelinkt met een welbepaald clusternummer (element 2 hangt samen met cluster 2, element 3 hangt samen met cluster 3, &#8230;&#8203;).</simpara>
 </listitem>
 <listitem>
 <simpara>De inhoud van de twee bytes bepalen hoe een cluster samenhangt met de andere:</simpara>
@@ -2170,9 +2440,9 @@ Vooral de laatste 4 bytes zijn belangrijk. Die bevatten namelijk de lengte van h
 </mediaobject>
 </figure>
 </section>
-<section id="_ntfs">
-<title>NTFS</title>
-<simpara>NTFS is een bestandssysteem dat standaard gebruikt wordt op alle recente Windows versies.<?asciidoc-br?>
+<section id="_case_study2_ntfs">
+<title>Case study2: NTFS</title>
+<simpara>NTFS is een bestandssysteem dat standaard gebruikt wordt op alle recente Windows versies. Het is een gesloten systeem, ontstaan door een doorontwikkeling van HPFS, een samenwerking tussen IBM en Microsoft.<?asciidoc-br?>
 NTFS werkt op een andere manier dan FAT16 en zal dus ook andere informatie opslaan in de PBS. NTFS maakt bijvoorbeeld geen gebruik van FATs, dus zal er ook geen aantal FATs of grootte van de FAT opgegeven worden in de PBS. NTFS maakt gebruik van een Master File Table (MFT), waarin alle relevante informatie over een bestand wordt opgeslagen. [3]</simpara>
 <simpara>Deze informatie is een stuk uitgebreider dan in de root folder van een FAT systeem, het is zelfs mogelijk dat voor een klein bestand de data volledig in de MFT wordt opgeslagen. Is dit niet het geval, dan is voor het opzoeken van het bestand de meest relevante informatie die in het MFT aanwezig is, de naam van het bestand en de runlist.<?asciidoc-br?>
 Bij het opzoeken van een bestand is de eerste stap dus het terugvinden van de MFT. Hiervoor staat in het PBS het cluster nummer opgegeven waar het MFT start. Aangezien in het PBS ook het aantal sectoren per cluster terug te vinden zijn, kan weer het sector adres van de MFT teruggevonden worden. Binnen de MFT zal gezocht moeten worden op de naam van het gevraagde bestand. Als het betreffende record dan wordt teruggevonden, kan binnen dit record de runlist worden opgezocht.<?asciidoc-br?>
@@ -2200,26 +2470,17 @@ De runlist is onderdeel van het $DATA attribuut (start van dit attribuut wordt g
 <simpara>Indien het volgende byte 0x00 is, eindigt de runlist hier, anders moet je vanaf hier de bytes weer op dezelfde manier interpreteren.</simpara>
 <example>
 <title>interpretatie van een runlist</title>
-<simpara>runlist = 31 0A 21 23 05 00 34 &#8230;<?asciidoc-br?>
-Het eerste byte geeft aan dat het eerstvolgende het aantal clusters bepaalt en de drie daarop volgende een offset. Daarna volgt er 00, dus verder geen data. Dus de data staat in 10 clusters te beginnen vanaf cluster 0x052321. Op deze manier is het mogelijk om verschillende reeksen clusters in de juiste volgorde te gaan lezen.</simpara>
+<simpara>runlist = <emphasis>31 0A 21 23 05 00 34</emphasis> &#8230;&#8203;</simpara>
+<simpara>Het eerste byte geeft aan dat het eerstvolgende het aantal clusters bepaalt en de drie daarop volgende een offset. Daarna volgt er 00, dus verder geen data. Dus de data staat in 10 clusters te beginnen vanaf cluster 0x052321. Op deze manier is het mogelijk om verschillende reeksen clusters in de juiste volgorde te gaan lezen.</simpara>
 <simpara>Van de laatste cluster moeten weer net genoeg bytes gelezen worden om evenveel bytes te lezen als opgegeven bij de werkelijke grootte van het bestand.</simpara>
 </example>
 </section>
-<section id="_bestanden_wissen_in_fat_en_ntfs">
-<title>Bestanden wissen in FAT en NTFS</title>
-<simpara>Bestanden verwijderen van een harde schijf is soms minder eenvoudig dan het lijkt. Indien de bits herschreven worden, zijn er technologisch nog mogelijkheden die toelaten om na te gaan wat vorige waarden waren. Hier gaan we niet op die technieken in. Het is ook interessant om te weten wat er op een bestandsysteem gebeurt wanneer een bestand gewist wordt. Aan de snelheid waarmee een grote hoeveelheid of grote bestanden gewist worden kan je al merken dat niet elk byte op de schijf gewist wordt. In plaats daarvan zal de verwijzing in het bestandsysteem worden aangepast.<?asciidoc-br?>
-In het geval van FAT16 wordt een speciaal karakter gebruikt om de naam in de root folder mee te beginnen en worden alle clusters die gebruikt werden, in de FAT tabel als ongebruikt gemarkeerd.<?asciidoc-br?>
-Het is in dit geval nog mogelijk om het bestand terug te vinden, op voorwaarde dat het niet gefragmenteerd was. In geval van fragmentatie is de (gewiste) FAT tabel nodig om de juiste clusters en hun volgorde terug te vinden.<?asciidoc-br?>
-Bij NTFS wordt enkel het MFT record aangepast, waarin een parameter zal aangeven dat het bestand gewist is. Aangezien dit anders gemarkeerde, maar niet gewiste MFT record nog steeds alle informatie bevat (via de runlist) is het nu mogelijk om ook gefragmenteerde gewiste bestanden terug te vinden. Belangrijke voorwaarde is wel dat de vrijgekomen ruimte nog niet beschreven mag zijn voor een ander bestand (en uiteraard mag het MFT record ook nog niet overschreven zijn).</simpara>
-<simpara>Bedenk zelf of data nog terug te vinden is als je een schijf formatteert. Bij het formatteren worden de nodige controlestructuren (PBS, FATs/MFT, &#8230;) aangebracht en worden alle preambules van de sectoren vastgelegd.</simpara>
-</section>
-<section id="_ext4">
-<title>Ext4</title>
+<section id="_case_study_3_ext4">
+<title>case study 3: Ext4</title>
 <simpara>EXT staat voor Extended file system. Dit bestandssysteem bouwt verder op standaard linux file systems. Het wordt gezien als een brug tussen Ext3 en de meer geavanceerde bestandssystemen, en is tegenwoordig zowat op alle linux distributies standaard. (al lijkt het rijk van EXT bedreigd: bijvoorbeeld op RHEL is tegenwoordig XFS de standaard bestandsindeling. Ook op Android is EXT sinds versie 2.3 het default bestandssysteem.</simpara>
 <section id="_inodes">
 <title>Inodes</title>
-<simpara>EXT maakt gebruik van iNodes. Waar de ‘i’ in i-nodes vandaan komt, lijkt niemand te weten, getuige dit antwoord van UNIX-pionier Dennis Ritchie op een vraag daarover:
-In truth, I don&#8217;t know either. It was just a term that we started to use. "Index" is my best guess, because of the slightly unusual file system structure that stored the access information of files as a flat array on the disk, with all the hierarchical directory information living aside from this. Thus the the i-number is an index in this array, the i-node is the selected element of the array. (The "i-" notation was used in the 1st edition manual; its hyphen became gradually dropped). (Dennis Ritchie) [4]</simpara>
+<simpara>EXT maakt gebruik van iNodes. Waar de ‘i’ in i-nodes vandaan komt, lijkt niemand te weten, en speelt verder ook weinig rol.</simpara>
 <simpara>Inodes komen voor in twee types:</simpara>
 <variablelist>
 <varlistentry>
@@ -2233,7 +2494,7 @@ Merk op dat deze inodes ook de bestandsnaam bevatten.</simpara>
 <term>Data file inodes</term>
 <listitem>
 <simpara>De data file inodes bevatten de informatie over waar een bepaald bestand kan gevonden worden op de schijf. Merk op dat deze inodes de bestandsnaam NIET bevatten. Door deze werkwijze kan je in principe twee verschillende bestandsnamen gebruiken voor één fysiek bestand. In Linux heet zoiets ‘hard-linking’.
-Zo’n inode voor een bestand bevat Directe, single indirecte, double indirecte en zelfs triple indirecte verwijzigingen naar bestandslocaties. Deze constructie wordt snel duidelijker met een figuurtje:</simpara>
+Zo’n inode voor een bestand bevat Directe, single indirecte, double indirecte en zelfs triple indirecte verwijzigingen naar bestandslocaties. Deze constructie wordt snel duidelijker met een afbeelding:</simpara>
 </listitem>
 </varlistentry>
 </variablelist>
@@ -2254,10 +2515,19 @@ Zo’n inode voor een bestand bevat Directe, single indirecte, double indirecte 
 <simpara>Met de opgesomde bestandssystemen is de lijst uiteraard niet compleet.  Een niet limitatief overzichtje met de meest opvallende features. Deze zijn vaak niet toegankelijk met Windows, omdat Microsoft hiervoor geen drivers ontwikkelt.</simpara>
 <section id="_btfrs">
 <title>BTFRS</title>
-<simpara>BTFRS wordt algemeen beschouwd als de opvolger van EXT-4 in Linux. Het bestandssysteem kan reeds gebruikt worden, maar wordt niet nog stabiel genoeg geacht voor productieomgevingen. Het is momenteel nog in volle ontwikkeling, maar de featureset zal vooral in serveromgevingen gesmaakt worden:
-*	Ondersteuning voor snapshots
-*	Ondersteuning voor quotas
-*	…</simpara>
+<simpara>BTFRS wordt algemeen beschouwd als de opvolger van EXT4 in Linux. Het bestandssysteem kan reeds gebruikt worden, maar wordt niet nog stabiel genoeg geacht voor productieomgevingen. Bij elke nieuwe versie van de Linuxkernel worden nieuwe features toegevoegd en bugs geplet.</simpara>
+<simpara>Features:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>Ondersteuning voor snapshots</simpara>
+</listitem>
+<listitem>
+<simpara>Ondersteuning voor quotas</simpara>
+</listitem>
+<listitem>
+<simpara>…</simpara>
+</listitem>
+</itemizedlist>
 </section>
 <section id="_zfs">
 <title>ZFS</title>
@@ -2272,12 +2542,20 @@ Zo’n inode voor een bestand bevat Directe, single indirecte, double indirecte 
 <simpara>Dit nieuwe bestandssysteem is speciaal opgebouwd om een hoog rendement te halen op flash disks.</simpara>
 </section>
 </section>
+<section id="_bestanden_wissen">
+<title>Bestanden wissen</title>
+<simpara>Bestanden verwijderen van een harde schijf is soms minder eenvoudig dan het lijkt. Indien de bits herschreven worden, zijn er technologisch nog mogelijkheden die toelaten om na te gaan wat vorige waarden waren. Hier gaan we niet op die technieken in. Het is ook interessant om te weten wat er op een bestandsysteem gebeurt wanneer een bestand gewist wordt. Aan de snelheid waarmee een grote hoeveelheid of grote bestanden gewist worden kan je al merken dat niet elk byte op de schijf gewist wordt. In plaats daarvan zal de verwijzing in het bestandsysteem worden aangepast.<?asciidoc-br?>
+In het geval van FAT16 wordt een speciaal karakter gebruikt om de naam in de root folder mee te beginnen en worden alle clusters die gebruikt werden, in de FAT tabel als ongebruikt gemarkeerd.<?asciidoc-br?>
+Het is in dit geval nog mogelijk om het bestand terug te vinden, op voorwaarde dat het niet gefragmenteerd was. In geval van fragmentatie is de (gewiste) FAT tabel nodig om de juiste clusters en hun volgorde terug te vinden.<?asciidoc-br?>
+Bij NTFS wordt enkel het MFT record aangepast, waarin een parameter zal aangeven dat het bestand gewist is. Aangezien dit anders gemarkeerde, maar niet gewiste MFT record nog steeds alle informatie bevat (via de runlist) is het nu mogelijk om ook gefragmenteerde gewiste bestanden terug te vinden. Belangrijke voorwaarde is wel dat de vrijgekomen ruimte nog niet beschreven mag zijn voor een ander bestand (en uiteraard mag het MFT record ook nog niet overschreven zijn).</simpara>
+<simpara>Bedenk zelf of data nog terug te vinden is als je een schijf formatteert. Bij het formatteren worden de nodige controlestructuren (PBS, FATs/MFT, &#8230;&#8203;) aangebracht en worden alle preambules van de sectoren vastgelegd.</simpara>
+</section>
 </section>
 <section id="_bronvermelding_bij_dit_hoofdstuk_2">
 <title>Bronvermelding bij dit hoofdstuk</title>
 <itemizedlist mark="Bibliography">
 <listitem>
-<simpara><anchor id="PATT" xreflabel="[PATT]"/>[PATT] <emphasis>Computer Organization And Design</emphasis>. David A. Patterson, John L. Hennessey. fifth edition. p374</simpara>
+<simpara><anchor id="PATT" xreflabel="[PATT]"/>[PATT] 'Computer Organization And Design'. David A. Patterson, John L. Hennessey. fifth edition. p374</simpara>
 </listitem>
 </itemizedlist>
 </section>
@@ -2360,7 +2638,7 @@ Meestal wordt op het scherm getoond welke apparaten, harde schijf, DVD-ROM, … 
 <simpara>Indien een plug and play ondersteunend bussysteem (zoals PCI) aanwezig is, zal een plug and play configuratie fase doorlopen worden: Er wordt gezocht naar P&amp;P-devices op alle aanwezige I/O bussen (PCI, PCI Xpress, AGP). Dit wordt de enumeration genoemd. Voor elk gevonden device wordt gelezen welke resources (I/O-adressen, Interrupts, DMA-kanalen, geheugenruimte) er nodig zijn. De lijst met de vorige configuratie (inclusief de vroegere toekenning van de resources) wordt uit het ESCD geladen en vergeleken met de nieuwe informatie. Het ESCD (Extended System Configuration Data) is een deel van het CMOS-RAM geheugen. Hierin wordt de P&amp;P-configuratie opgeslagen.<?asciidoc-br?>
 Bij het opstarten controleert het BIOS deze gegevens op wijzigingen sinds de laatste start om te weten of bepaalde instellingen moeten aangepast worden. Indien er geen verandering is, gaat het opstartproces gewoon verder.<?asciidoc-br?>
 In het andere geval begint er een herconfiguratie.<?asciidoc-br?>
-De BIOS-setup informatie wordt geraadpleegd voor eventuele gereserveerde systeembronnen door niet Plug and Play-kaarten. Overblijvende systeembronnen worden toegekend aan de PnP-kaarten. Het ESCD wordt bijgewerkt met de mededeling “Updating ESCD&#8230; successfull”<?asciidoc-br?>
+De BIOS-setup informatie wordt geraadpleegd voor eventuele gereserveerde systeembronnen door niet Plug and Play-kaarten. Overblijvende systeembronnen worden toegekend aan de PnP-kaarten. Het ESCD wordt bijgewerkt met de mededeling “Updating ESCD&#8230;&#8203; successfull”<?asciidoc-br?>
 Het bootproces gaat verder. Wanneer het besturingssysteem opgestart is, heeft dat tenslotte nog de mogelijkheid om de Plug and Play-configuratie te controleren en eventueel te wijzigen.</simpara>
 </section>
 <section id="_extensible_firmware_interface">
@@ -2405,14 +2683,14 @@ Enkele voorbeelden van nieuwe toepassingen:</simpara>
 <simpara>Hoewel de mogelijkheden nagenoeg eindeloos zijn, is te verwachten dat de eerste gebruikte EFI’s niet veel meer functionaliteit hebben dan de vroegere BIOS’en.</simpara>
 </listitem>
 </itemizedlist>
-<figure>
+<informalfigure>
 <mediaobject>
 <imageobject>
 <imagedata fileref="ch05/images/UEFI_01.jpg" contentwidth="500" width="500%" scalefit="1" align="center"/>
 </imageobject>
 <textobject><phrase>UEFI interface (voorbeeld)</phrase></textobject>
 </mediaobject>
-</figure>
+</informalfigure>
 </section>
 <section id="__u_efi_verspreiding">
 <title>(U)EFI verspreiding</title>
@@ -2483,14 +2761,14 @@ Hier kan eventueel gedeeltelijk een oplossing voor gevonden worden bij multitask
 Om het gebruiksgemak te verhogen werd bij de PCI bus gebruikt gemaakt van een buscontroller die de PCI bus afschermt van de processor. <?asciidoc-br?>
 Een manier om op PCI een interrupt te genereren is het versturen van een speciaal interrupt bericht naar de bus controller. Dit bericht bevat de nodige informatie over het type en de bron van de interrupt. De bus controller vertaalt dit dan naar een IRQ voor de processor.<?asciidoc-br?>
 Op de PCI bus kunnen ook een aantal interruptlijnen beschikbaar zijn, die gedeeld kunnen worden tussen verschillende apparaten. Een interrupt op deze lijnen wordt dan door de controller vertaald naar een signaal dat uiteindelijk doorgegeven wordt aan de processor. Op die manier kunnen apparaten ook hetzelfde IRQ nummer delen.</simpara>
-<figure>
+<informalfigure>
 <mediaobject>
 <imageobject>
 <imagedata fileref="ch06/images/interrupt-muis.png" contentwidth="700" width="75%" scalefit="1" align="center"/>
 </imageobject>
 <textobject><phrase>IRQ verdeling in apparaatbeheer</phrase></textobject>
 </mediaobject>
-</figure>
+</informalfigure>
 <simpara>Aangezien de banen van de PCI slots wel vast op een bepaald PCI interruptkanaal zaten, waren (zeker in de begindagen van PCI) nog wel conflicten mogelijk tussen apparaten die toch niet met elkaar overweg konden. In zo’n geval kon het volstaan om een van de uitbreidingskaarten naar een ander slot te verplaatsen om het conflict op te lossen.</simpara>
 </section>
 </section>
@@ -2571,24 +2849,24 @@ Belangrijke eisen bij de ontwikkeling van PCI zijn onder andere:</simpara>
 </itemizedlist>
 <simpara>De eerste twee eisen zijn uiteraard de belangrijkste.
 De eerste ligt voor de hand, de tweede heeft in de PC-geschiedenis zijn belang bewezen. De oplossing voor beide ligt in de ontwikkeling van een I/O systeem, waarin verschillende bussen aanwezig zijn. Er ontstaat op die manier een bushiërarchie van snellere naar tragere bussen, waarbij over de snelle bussen data uitgewisseld kan worden zonder rekening te moeten houden met de tragere onderdelen van het computersysteem (die op een tragere bus aangesloten zijn).</simpara>
-<figure>
+<informalfigure>
 <mediaobject>
 <imageobject>
 <imagedata fileref="ch06/images/busHierarchie.png" contentwidth="400" width="60%" scalefit="1" align="center"/>
 </imageobject>
 <textobject><phrase>bussysteem</phrase></textobject>
 </mediaobject>
-</figure>
+</informalfigure>
 <simpara>Bovenstaande afbeelding geeft de opbouw van het bussysteem bij de ontwikkeling van de PCI-bus. De processor was via de snelle back-side bus verbonden met het cachegeheugen, dat toen nog niet (volledig) in de processor geïntegreerd was. Via de front-side bus was de processor verbonden met de PCI-bridge.</simpara>
 <simpara>De PCI bridge kon dan enerzijds verbinding maken met het hoofdgeheugen en anderzijds met de PCI bus. Op de PCI bus kon dan de ISA bridge aangesloten worden, die verbinding kon maken met de IDE kanalen en uiteraard ook met de ISA-bus. De compatibiliteit werd verzekerd door naast PCI slots ook een aantal ISA slots te blijven voorzien. Op de PCI bus kon dan allerhande hardware aangesloten worden, waaronder ook adapters voor andere bussystemen zoals SCSI en USB. De IC’s die de verschillende bussystemen van elkaar scheiden, vormen de chipset. Het is dit onderdeel van het computersysteem dat de ontwikkeling voor Intel zo interessant maakte. Intel wou (en zou) immers de chipsets ontwikkelen en verkopen. De namen voor de verschillende bridge chips verandert in de loop der tijden wel een aantal keer (net zoals de functies die erin geïntegreerd zijn). Gangbare, maar verouderde terminologie hiervoor zijn North en South bridge, waarbij PCI gekoppeld was aan de south-bridge. Nieuwere versies verlaten de ‘north’ en ‘south’ terminologie. De micro-architectuur die momenteel gebruikt wordt, vind je hieronder:</simpara>
-<figure>
+<informalfigure>
 <mediaobject>
 <imageobject>
 <imagedata fileref="ch06/images/oude_en_nieuwe_microarchitectuur_intel.png" align="center"/>
 </imageobject>
 <textobject><phrase>oude en nieuwe microarchitectuur intel</phrase></textobject>
 </mediaobject>
-</figure>
+</informalfigure>
 <simpara>Het gebruik van de bridges heeft als bijkomend voordeel dat de PCI-bus eigenlijk processoronafhankelijk wordt. Hoe transfers op PCI verlopen is volledig van de processor afgeschermd door de bridge (die uiteraard wel processor-afhankelijk is).
 Dit maakt PCI eigenlijk platformonafhankelijk, wat betekent dat het ook met andere processoren gebruikt werd (b.v. ultrasparc).</simpara>
 <section id="_transfers">
@@ -2603,14 +2881,14 @@ Om conflicten te vermijden is er op de PCI bus ook een arbitrator, deze functie 
 <simpara>De originele PCI bus maakte gebruik van een 32 bits databus en 33MHz klokfrequentie. Dit geeft een maximale bandbreedte van 133MB/s. Belangrijke opmerking is dat deze snelheid niet voortdurend gehaald wordt. Op sommige ogenblikken moeten andere gegevens verstuurd worden over de bus(bijvoorbeeld adres). Bovendien moet deze bandbreedte verdeeld worden over alle aangesloten apparaten, zodat de gemiddelde beschikbare snelheid voor een bepaald apparaat lager zal liggen dat de vermelde 133MB/s.</simpara>
 <simpara>Er bestaan varianten van PCI die hogere snelheden toelaten. Dit kan ofwel door de breedte van de databus te vergroten tot 64 bit ofwel door de kloksnelheid te verhogen tot 66MHz (in beide gevallen geeft dit een verdubbeling van de snelheid tot 266MB/s) ofwel door een combinatie van beiden (533MB/s). Deze laatste variant heet PCI-X (PCI eXtended) en is nog terug te vinden in oudere servers en workstations. In een gewone desktop PC vind je deze variant niet terug.</simpara>
 <simpara>Ter illustratie staan in onderstaande figuur de bekende 32-bit connectoren.</simpara>
-<figure>
+<informalfigure>
 <mediaobject>
 <imageobject>
 <imagedata fileref="ch06/images/Pci-slots.jpg" contentwidth="350" width="40%" scalefit="1" align="center"/>
 </imageobject>
 <textobject><phrase>PCI slots</phrase></textobject>
 </mediaobject>
-</figure>
+</informalfigure>
 </section>
 </section>
 <section id="_agp_accelerated_graphics_port">
@@ -2635,14 +2913,14 @@ Naast AGP 1x, bestaan ook 2x, 4x en 8x. Deze bieden respectievelijk 533,1066 en 
 </section>
 <section id="_snelheid_2">
 <title>Snelheid</title>
-<figure>
+<informalfigure>
 <mediaobject>
 <imageobject>
 <imagedata fileref="ch06/images/pcie_slots.jpg" contentwidth="400" width="60%" scalefit="1" align="center"/>
 </imageobject>
 <textobject><phrase>PCIe slots</phrase></textobject>
 </mediaobject>
-</figure>
+</informalfigure>
 <simpara>De verbinding tussen de PCIe-switch en de I/O bestaat uit een of meer paren van eenrichtingslinks. Een link bestaat dus uit een upstream en downstream-verbinding. Een dergelijke link noemt men een lane. In het eenvoudigste geval bestaat de verbinding uit een lane, maar het kunnen ook 2, 4, 8, 16 of 32 paren zijn.
 Uiteraard nemen uitbreidingsslots met meerdere lanes meer plaats in op het moederbord (zie bovenstaande afbeelding).</simpara>
 <simpara>Op elke lane wordt er snelheid gehaald van 2,5Gbps. Deze snelheid zal in de toekomst nog kunnen vergroten (PCIe2.0: 5Gbps, 3.0: 8Gbps, 4.0: 16Gbps). De vermelde snelheid is wel een brutosnelheid, dus zonder rekening te houden met extra informatie die verzonden moet worden. Vergeleken met de maximale transfer rate van PCI is de snelheid op per lane ongeveer 2,3 keer groter.</simpara>
@@ -2654,15 +2932,15 @@ De oplossing die op PCIe gebruikt wordt (althans in versie1), is een 8b/10b code
 Flow control moet zorgen dat de zender niet sneller data verstuurt dan de ontvanger ze kan verwerken. Het principe dat wordt toegepast is gelijkaardig aan het sliding window principe dat ook door TCP wordt toegepast: de zender krijgt een bepaald venster en kan binnen dit vensterdata versturen. Bij bevestiging van pakketten verschuift het venster en kan de zender weer pakketten versturen.
 Error control wordt verwezenlijkt door een foutdetecterende code (CRC -Cyclic Redundancy Check) toe te voegen aan het pakket. De ontvanger controleert de data op fouten en vraagt in het geval van een fout een hertransmissie aan.
 Het voordeel van deze foutcontrole is dat PCIe een stuk betrouwbaarder wordt, maar vooral dat hogere kloksnelheden mogelijk worden. Bij hogere kloksnelheden wordt de kans op bitfouten groter, maar door de aanwezigheid van foutcontrole is dit niet noodzakelijk een drama (te veel bitfouten gaan natuurlijk de netto snelheid nog meer laten afnemen).</simpara>
-<figure>
+<informalfigure>
 <mediaobject>
 <imageobject>
 <imagedata fileref="ch06/images/pcie_protocolstack.png" contentwidth="700" width="80%" scalefit="1" align="center"/>
 </imageobject>
 <textobject><phrase>protocol stack PCIe</phrase></textobject>
 </mediaobject>
-</figure>
-<simpara>Omdat er op de seriële verbinding geen plaats is voor controlelijnen, moet alle controle-informatie verzonden worden in een header. Deze laat onder andere toe om het soort transfer aan te geven (bijvoorbeeld gewone I/O, configuratie bericht voor PnP, interrupt, &#8230;).</simpara>
+</informalfigure>
+<simpara>Omdat er op de seriële verbinding geen plaats is voor controlelijnen, moet alle controle-informatie verzonden worden in een header. Deze laat onder andere toe om het soort transfer aan te geven (bijvoorbeeld gewone I/O, configuratie bericht voor PnP, interrupt, &#8230;&#8203;).</simpara>
 </section>
 <section id="_vergelijking_met_pci">
 <title>Vergelijking met PCI</title>
@@ -2695,14 +2973,14 @@ ATA/ATAPI-7 introduceerde enerzijds UDMA/133 (133MB/s) en anderzijds SATA.</simp
 <section id="_sata">
 <title>SATA</title>
 <simpara>Het verhaal van de overgang van ATA (dat ondertussen ook PATA genoemd wordt) naar SATA is heel gelijkaardig aan het verhaal van PCI naar PCI-express. Ook in dit geval wordt er overgegaan van een parallelle interface naar een veel sneller geklokte seriële interface, die hogere datasnelheden toelaat.</simpara>
-<figure>
+<informalfigure>
 <mediaobject>
 <imageobject>
 <imagedata fileref="ch06/images/satamobo.jpg" contentwidth="300" width="40%" scalefit="1" align="center"/>
 </imageobject>
 <textobject><phrase>sata connector</phrase></textobject>
 </mediaobject>
-</figure>
+</informalfigure>
 <section id="_compatibiliteit_sata_vs_pata">
 <title>Compatibiliteit sata vs pata</title>
 <simpara>Zoals steeds in de PC wereld moet er opgelet worden voor backward compatibility. Uit het voorgaande zal wel duidelijk gebleken zijn dat PATA en SATA niet compatibel zijn met elkaar. Om die reden worden (voorlopig) nog extra PATA connectoren voorzien.
@@ -2721,14 +2999,14 @@ Door de overgang van parallel naar serieel zijn hogere kloksnelheden mogelijk om
 <simpara>In tegenstelling tot PATA heeft SATA een verbinding in elke richting, zodat in principe full duplex mogelijk wordt (het is echter niet zo voor de hand liggend om tegelijk de schijf te schrijven en te lezen). Anderzijds beschikt SATA niet over controlelijnen om de commando’s door te sturen.
 Deze moeten ook over de dataverbinding verzonden worden (wat de netto bandbreedte nog iets meer zal doen dalen), maar hier kan eventueel wel gebruik gemaakt worden van de full duplex eigenschap.</simpara>
 </important>
-<figure>
+<informalfigure>
 <mediaobject>
 <imageobject>
 <imagedata fileref="ch06/images/satamultiplier.png" contentwidth="400" width="50%" scalefit="1" align="center"/>
 </imageobject>
 <textobject><phrase>SATA multiplier</phrase></textobject>
 </mediaobject>
-</figure>
+</informalfigure>
 <simpara>In principe is SATA een punt-tot-punt verbinding tussen de SATA controller en de schijf. Het is echter ook mogelijk om met behulp van een expansor of multiplier meerdere SATA apparaten aan te sluiten op een connector van de controller (afbeelding 63). Dit betekent dus ook dat (tenzij met expansor) de bandbreedte niet gedeeld moet worden over verschillende apparaten. Voor de signalering op de dataparen gebruikt SATA LVDS (Low Voltage Differential Signaling). In plaats van de op PATA gangbare 5V, wordt een spanningszwaai van 0.5V gebruikt. Belangrijk voordeel hiervan is een veel lager stroomverbruik. Dit wordt zoals altijd op de mobiele markt gewaardeerd, maar ook aan het andere uiterste, in bijvoorbeeld data centers, waar deze besparing bij een grote hoeveelheid schijven een groot verschil maakt.
 Een ander voordeel van SATA is dat het hot-pluggable is. Dit betekent dat de schijf vervangen kan worden terwijl het computersysteem in werking is. Dit kan bijzonder bruikbaar zijn in RAID configuraties.</simpara>
 </section>
@@ -2741,7 +3019,7 @@ Een ander voordeel van SATA is dat het hot-pluggable is. Dit betekent dat de sch
 <title>eSATA</title>
 <simpara>External SATA is een SATA variant die de aansluiting van externe schijven mogelijk moet maken. Er zijn kleine verschillen met SATA, onder andere op het vlak van de signalering, zodat langere kabels gebruikt kunnen worden.<?asciidoc-br?>
 eSATA treedt op het vlak van de externe opslag in concurrentie met USB, en zou dus eigenlijk even goed in het volgende hoofdstuk thuis horen, met de interfacebussen.
-Ten opzichte van deze laatste twee heeft eSATA als voordeel dat het hogere bitsnelheden kan halen. Het belangrijkste nadeel is dat de andere twee veel beter ingeburgerd zijn. Een van de voordelen (of beter doelstellingen bij het ontwerp) van USB was het uniformiseren van de aansluitingen op een computer: een connector voor allerlei soorten apparaten. Ondertussen is de specificatie van USB 3 volledig af, die het voor eSATA waarschijnlijk nog moeilijker zal maken om aan populariteit te winnen&#8230;</simpara>
+Ten opzichte van deze laatste twee heeft eSATA als voordeel dat het hogere bitsnelheden kan halen. Het belangrijkste nadeel is dat de andere twee veel beter ingeburgerd zijn. Een van de voordelen (of beter doelstellingen bij het ontwerp) van USB was het uniformiseren van de aansluitingen op een computer: een connector voor allerlei soorten apparaten. Ondertussen is de specificatie van USB 3 volledig af, die het voor eSATA waarschijnlijk nog moeilijker zal maken om aan populariteit te winnen&#8230;&#8203;</simpara>
 </section>
 <section id="_serial_attached_scsi_sas">
 <title>Serial Attached SCSI (SAS)</title>
@@ -2760,20 +3038,20 @@ Daar staat dan weer tegenover dat SAS iets duurder is dan SATA.</simpara>
 De klassieke printerpoort of Centronics poort is er zo eentje. Deze parallelle poort zoals ze ook genoemd werd, is primair ontworpen voor het aansturen van printers. Getuige daarvan zijn de specifieke controlelijnen om aan te geven als bijvoorbeeld het papier uitgeput is. Deze poort werd later ook nog veelvuldig gebruikt, omdat ze erg eenvoudig is van opbouw, en daardoor makkelijk te gebruiken voor kleinere elektronicaprojectjes. Tegenwoordig is deze poort slechts zelden nog te vinden op een pc.<?asciidoc-br?>
 Ook de seriële poort is stilaan in z’n bestaan bedreigd. Enkel voor heel specifieke toepassingen (vb configuratie van apparatuur als routers) wordt ze nog gebruikt, maar ook daar moet ze stilaan plaats ruimen voor USB.</simpara>
 <simpara>De COM poort (zoals de seriële poort ook genoemd werd) laat asynchrone seriële communicatie toe. Dit betekent relatief lage bitsnelheden (minimum 50bps, standaard 9600bps, maximum115kbps).
-Deze vorm van communicatie wordt gebruikt voor tragere I/O, zoals barcodescanners, modems, &#8230;<?asciidoc-br?>
+Deze vorm van communicatie wordt gebruikt voor tragere I/O, zoals barcodescanners, modems, &#8230;&#8203;<?asciidoc-br?>
 Omwille van de eenvoud en de ondersteuning op tal van microcontrollers wordt ze dikwijls gebruikt bij embedded systemen.<?asciidoc-br?></simpara>
 <simpara>Firewire is een andere IO mogelijkheid die vooral door Apple gepromoot werd, maar die stilaan in onbruik geraakt is.</simpara>
 </section>
 <section id="_ps_2">
 <title>PS/2</title>
-<figure>
+<informalfigure>
 <mediaobject>
 <imageobject>
 <imagedata fileref="ch07/images/ps2port.jpg" align="center"/>
 </imageobject>
 <textobject><phrase>ps/2 connector</phrase></textobject>
 </mediaobject>
-</figure>
+</informalfigure>
 <simpara>De PS/2 interface duikt in de PC wereld op met de introductie van de IBM PS/2 (Personal System 2), ondertussen enkele decennia geleden. Het is een interface die dient voor het aansluiten van toetsenborden en muizen. Er bestaan twee connectoren die identiek zijn, op hun kleur na. De paarse connector dient voor een toetsenbord, de groene voor een muis. Aangezien beiden gebruik maken van een ander protocol is het aangewezen om de kleurcode te respecteren. Met name het BIOS kan problemen maken van een toetsenbord dat op de verkeerde poort is aangesloten, zodat bij het opstarten geen opdrachten doorgegeven kunnen worden via het toetsenbord. Een tweede mogelijk verrassend feit, is dat PS/2 niet hot pluggable is.<?asciidoc-br?>
 Dit komt door het elektronisch ontwerp. De pinnen van de connector zijn rechtstreeks verbonden met de pinnen van de microcontroller die beschadigd kan worden door hot swapping. Anderzijds is er ook geen ondersteuning voor het herkennen van een nieuw aangesloten apparaat. In moderne interfaces worden de contacten naar de microcontroller robuuster uitgevoerd, zodat er minder kans op beschadiging is. Bij het gebruik van standaardapparaten is de herkenning van het nieuw aangesloten apparaat ook geen probleem, zodat hot swapping soms wel succesvol aflopen, maar absoluut niet aan te raden is.<?asciidoc-br?></simpara>
 <simpara>PS/2 is ondertussen technologisch al lang achterhaald, maar blijft desondanks (backward compatibility) toch aanwezig aan de achterkant van vele PC’s en servers. De opvolger van PS/2 is USB, dat tevens een aantal andere interfaces moet vervangen, met als belangrijke pluspunt een uniforme aansluiting voor alle soorten apparaten.</simpara>
@@ -2807,14 +3085,14 @@ Dit komt door het elektronisch ontwerp. De pinnen van de connector zijn rechtstr
 <simpara>In de originele specificatie (USB 1.1) is er sprake van twee mogelijke transmissiesnelheden:</simpara>
 <itemizedlist>
 <listitem>
-<simpara>Low Speed: 1,5 Mbps, bedoeld voor I/O met een beperkt datadebiet: muis, toetsenbord, joystick, &#8230;</simpara>
+<simpara>Low Speed: 1,5 Mbps, bedoeld voor I/O met een beperkt datadebiet: muis, toetsenbord, joystick, &#8230;&#8203;</simpara>
 </listitem>
 <listitem>
-<simpara>Full Speed: 12 Mbps, bedoeld voor hogere debieten: audio, printers, scanners, processorcommunicatie&#8230;
+<simpara>Full Speed: 12 Mbps, bedoeld voor hogere debieten: audio, printers, scanners, processorcommunicatie&#8230;&#8203;
 In een latere revisie (USB 2.0) is er een derde mogelijkheid bijgekomen:</simpara>
 </listitem>
 <listitem>
-<simpara>High Speed: 480 Mbps, bedoeld voor video, externe harde schijven, DVD of CD-romspelers, &#8230;
+<simpara>High Speed: 480 Mbps, bedoeld voor video, externe harde schijven, DVD of CD-romspelers, &#8230;&#8203;
 De nieuwste revisie (USB 3.0) krikt de snelheid verder op:</simpara>
 </listitem>
 <listitem>
@@ -2842,25 +3120,25 @@ De USB-bus is gebaseerd op het master/slave principe: de host (de computer) is v
 </itemizedlist>
 <simpara>In het geval van Full- of High Speed USB heeft het datapaar een afzonderlijke afscherming. Om grotere afstanden te overbruggen of meer apparaten aan te sluiten kan de installatie uitgebreid worden door gebruik te maken van externe USB-Hubs. In totaal mogen er maximaal 4 externe hubs achter elkaar geschakeld worden (geeft een maximum afstand van 30 m) en mogen er maximaal 127 apparaten aangesloten worden op een USB-bus. Er zijn twee types connectoren. Type A wordt gebruikt voor de aansluiting aan de hub (of op de computer). Type B wordt gebruikt voor de aansluiting.<?asciidoc-br?>
 Er bestaan ook mini en micro varianten van de connectoren. Volgende figuur toont een aantal voorbeelden.</simpara>
-<figure>
+<informalfigure>
 <mediaobject>
 <imageobject>
 <imagedata fileref="ch07/images/2000px-Types-usb_th1.svg.png" contentwidth="500" align="center"/>
 </imageobject>
 <textobject><phrase>USB connectoren (bron: wikipedia)</phrase></textobject>
 </mediaobject>
-</figure>
+</informalfigure>
 <simpara>Als een randapparaat geen al te groot stroomverbruik heeft, kan het gevoed worden vanuit de USB-kabel: stromen tot 500 mA zijn toegestaan bij een spanning van 5V (vanwege spanningsverlies over de kabel kan deze spanning zakken tot minimaal 4 V bij het randapparaat). Voor grotere vermogens moet het randapparaat een eigen voeding voorzien.</simpara>
 <simpara>De USB-bus verstuurt de data serieel met NRZI-codering (Non Return on Zero Inverted) via een differentieel signaal (D+, D-). Een overgang in het datasignaal stelt een 0 voor, terwijl een ongewijzigd signaal een 1 voorstelt.<?asciidoc-br?>
 Opdat de ontvanger synchroon zou blijven lopen met de zender (er is geen afzonderlijk kloksignaal), is het nodig dat er regelmatig een overgang in het signaal optreedt. In het geval dat er meer dan 6 opeenvolgende bits op 1 staan, wordt na het 6e bit automatisch een 0 ingevoegd (bit-stuffing) door de zender. Dat extra 0-bit moet door de ontvanger uiteraard weer verwijderd worden. Op deze manier wordt een betrouwbare gegevensoverdracht verzorgd, die nog aangevuld wordt met een CRC-foutcontrole per pakket.</simpara>
-<figure>
+<informalfigure>
 <mediaobject>
 <imageobject>
 <imagedata fileref="ch07/images/nrzi.png" contentwidth="500" width="70%" scalefit="1" align="center"/>
 </imageobject>
 <textobject><phrase>voorbeeld NRZI-codering met bitstuffing</phrase></textobject>
 </mediaobject>
-</figure>
+</informalfigure>
 <simpara>De communicatie in de twee richtingen (host&lt;&#8594;device) gebeurt over hetzelfde draadpaar. Dit is dus vergelijkbaar met half-duplex.</simpara>
 </section>
 <section id="_communicatie_over_usb">
@@ -2869,14 +3147,14 @@ Opdat de ontvanger synchroon zou blijven lopen met de zender (er is geen afzonde
 <section id="_frames_pakketten">
 <title>Frames, pakketten</title>
 <simpara>De host verdeelt de tijd in frames met een vaste lengte (1 msec voor Low- en Full-speed, 125 µsec voor High-speed). Elk frame wordt op zijn beurt opgedeeld in een aantal pakketten (lengte kan variëren) waarvan het eerste een SOF (Start-Of-Frame) pakket is, bedoeld voor frame synchronisatie tussen de verschillende apparaten. Elk pakket is gekoppeld aan een apparaat en daarbinnen aan een endpoint (vergelijkbaar met een TCP-poortnummer).</simpara>
-<figure>
+<informalfigure>
 <mediaobject>
 <imageobject>
 <imagedata fileref="ch07/images/USB_frames.png" contentwidth="500" align="center"/>
 </imageobject>
 <textobject><phrase>USB frames (bron onbekend)</phrase></textobject>
 </mediaobject>
-</figure>
+</informalfigure>
 <simpara>Binnen een pakket vind je enkele belangrijke velden:</simpara>
 <variablelist>
 <varlistentry>
@@ -2888,7 +3166,7 @@ Opdat de ontvanger synchroon zou blijven lopen met de zender (er is geen afzonde
 <varlistentry>
 <term>De Packet-ID (of PID)</term>
 <listitem>
-<simpara>geeft het type van het pakket weer (Token, Data, Handshake, Special, &#8230;).</simpara>
+<simpara>geeft het type van het pakket weer (Token, Data, Handshake, Special, &#8230;&#8203;).</simpara>
 </listitem>
 </varlistentry>
 <varlistentry>
@@ -2963,7 +3241,7 @@ Een uitzondering op die regel: endpoint 0 is bedoeld voor controle van de verbin
 </section>
 <section id="_types_van_transfers">
 <title>Types van transfers</title>
-<simpara>USB is ontworpen om verschillende soorten apparaten te bedienen, elk met zijn eigen specificaties (gegevensdebiet, reactietijd, foutcorrectie,&#8230;). Om aan alle mogelijke situaties tegemoet te komen zijn er vier soorten transfers voorzien:</simpara>
+<simpara>USB is ontworpen om verschillende soorten apparaten te bedienen, elk met zijn eigen specificaties (gegevensdebiet, reactietijd, foutcorrectie,&#8230;&#8203;). Om aan alle mogelijke situaties tegemoet te komen zijn er vier soorten transfers voorzien:</simpara>
 <variablelist>
 <varlistentry>
 <term>CONTROL transfers</term>
@@ -2974,7 +3252,7 @@ Een uitzondering op die regel: endpoint 0 is bedoeld voor controle van de verbin
 <varlistentry>
 <term>BULK transfers</term>
 <listitem>
-<simpara>zijn bedoeld voor situaties waar veel gegevens moeten doorgestuurd worden, maar waarbij de snelheid niet kritisch is: disk, printers, scanners,&#8230; Als de USB bezet is met verkeer dat een gegarandeerde bandbreedte vereist (isochrone transfers), dan zal een bulktransfer moeten wachten. Wanneer er daarbuiten weinig verkeer is, zal een bulk-transfer zeer snel verlopen.</simpara>
+<simpara>zijn bedoeld voor situaties waar veel gegevens moeten doorgestuurd worden, maar waarbij de snelheid niet kritisch is: disk, printers, scanners,&#8230;&#8203; Als de USB bezet is met verkeer dat een gegarandeerde bandbreedte vereist (isochrone transfers), dan zal een bulktransfer moeten wachten. Wanneer er daarbuiten weinig verkeer is, zal een bulk-transfer zeer snel verlopen.</simpara>
 </listitem>
 </varlistentry>
 <varlistentry>
@@ -2993,14 +3271,14 @@ In een frame komen eerst de isochrone transfers aan bod. Vervolgens worden de in
 </variablelist>
 <section id="_verloop_van_een_transfer">
 <title>Verloop van een transfer.</title>
-<figure>
+<informalfigure>
 <mediaobject>
 <imageobject>
 <imagedata fileref="ch07/images/transint.png" contentwidth="400" width="50%" scalefit="1" align="center"/>
 </imageobject>
 <textobject><phrase>voorbeeld van een interrupt transfer (bron: beyondlogic.org)</phrase></textobject>
 </mediaobject>
-</figure>
+</informalfigure>
 <simpara>De transfer begint met de host controller die aangeeft in welke richting de data zal gaan: in-token voor data van apparaat naar host controller, out-token voor de omgekeerde inrichting. Vervolgens wordt de data verzonden (afhankelijk van de richting gebeurt dit door het apparaat of de host controller). In het geval van een transfer richting host controller, kan het apparaat ook reageren met een NAK. Dit betekent dat er geen data te versturen is. Geen reactie op het token bericht betekent dat dit token een fout bevatte. Na de data volgt nog een bevestiging, die aangeeft dat de data correct ontvangen is. In het geval van een transfer richting apparaat kan dit ook bevestigen met een NAK. Dit betekent dat het apparaat de inkomende data op dat ogenblik niet kan verwerken. Andere transfers verlopen op gelijkaardige manier.<?asciidoc-br?>
 Bij isochrone transfers zullen er geen bevestigingen zijn, terwijl na een controle transfer nog een extra statusfase zal volgen waarbij de verwerking van een commando wordt bevestigd.</simpara>
 </section>
@@ -3008,14 +3286,14 @@ Bij isochrone transfers zullen er geen bevestigingen zijn, terwijl na een contro
 <section id="_enumeratie_en_p_p">
 <title>Enumeratie en P&amp;P</title>
 <simpara>Zoals bij de inleiding al vermeld, is USB ontworpen met het oog op een volledige integratie met het Plug&amp;Play gebeuren. De bedoeling is dan ook dat een gebruiker een USB-apparaat aansluit, dat het automatisch herkend wordt door het besturingssysteem, dat de juiste drivers geladen worden waarna het apparaat gebruikt kan worden, zonder dat die gebruiker iets moet configureren. Om dit mogelijk te maken zijn er wel een aantal stappen nodig: detectie van nieuwe apparatuur en snelheid daarvan.</simpara>
-<figure>
+<informalfigure>
 <mediaobject>
 <imageobject>
 <imagedata fileref="ch07/images/USBpullup.png" contentwidth="800" width="50%" scalefit="1" align="center"/>
 </imageobject>
 <textobject><phrase>pull-up weerstand voor detectie nieuw apparaat</phrase></textobject>
 </mediaobject>
-</figure>
+</informalfigure>
 <simpara>Langs de kant van de host (of hub) zijn de twee datalijnen via 2 pull-down weerstanden (15 k) verbonden met de massa. Daardoor ziet de host een laag niveau op beide datalijnen (D+ en D-).<?asciidoc-br?>
 Een Low-speed device heeft van zijn kant een pull-up weerstand van 1,5k tussen de voedingsspanning en D- (bij de full- en high-speed apparaten is dat naar de D+ lijn).<?asciidoc-br?>
 Wanneer een apparaat aangesloten wordt, zal langs de kant van de host (hub)een van beide D-lijnen naar een hoog niveau getrokken worden. Hierdoor detecteert deze dat er een nieuw apparaat op de bus aanwezig is en ook of dit al dan niet een low-speed device is. Elke hub heeft een interrupt IN-pipe waardoor de nieuwe aansluiting doorgegeven wordt naar de host.</simpara>
@@ -3047,7 +3325,7 @@ Op basis van die Vendor-en Product- ID’s  en de informatie die in de descripto
 <simpara>Communication devices (modems)</simpara>
 </listitem>
 <listitem>
-<simpara>Printers Still image capture devices (scanner, camera,&#8230;)</simpara>
+<simpara>Printers Still image capture devices (scanner, camera,&#8230;&#8203;)</simpara>
 </listitem>
 <listitem>
 <simpara>HID (Human interface devices)</simpara>
@@ -3060,27 +3338,27 @@ Een belangrijke groep is de HID-class: deze is origineel bedoeld voor I/O appara
 <title>USB 3.0</title>
 <simpara>De USB standaard versie 3 verzekert de toekomst van deze technologie. Om deze hoge snelheden te kunnen halen, waren wel enkele compromissen nodig.
 Zo was dezelfde connector niet langer bruikbaar. Alles is gelukkig backwards compatibel, maar een USB3 connector zal je makkelijk kunnen herkennen aan de blauwe kleur van de binnenkant van de connector.</simpara>
-<figure>
+<informalfigure>
 <mediaobject>
 <imageobject>
 <imagedata fileref="ch07/images/USB3connector.jpg" contentwidth="300" align="center"/>
 </imageobject>
 <textobject><phrase>USB3-connector</phrase></textobject>
 </mediaobject>
-</figure>
+</informalfigure>
 <simpara>Ondanks de fysieke compatibiliteit zijn er een flink aantal verschillen te bespeuren in de nieuwe versie. Kijk je bijvoorbeeld naar een dwarsdoorsnede van een USB3.0-kabel, dan merk je een groot verschil. Het data-paar van USB2.0 is nog steeds aanwezig, maar is enkel daar om compatibiliteit te garanderen.
 De snelle data zal verplaatst worden over twee Shielded Differential Pairs.<?asciidoc-br?>
 Deze geïsoleerde geleiders  zorgen er uiteraard voor dat deze kabels een stuk minder soepel zullen zijn dan hun voorgangers.<?asciidoc-br?>
 Een ander interessant detail is dat deze standaard voorziet in een grotere stroomlevering aan apparaten: 900mA ten opzichte van 500mA bij de huidige (2.0) standaard.<?asciidoc-br?>
 De encoding gebeurt ook niet langer met NRZI, maar met 8b/10b, de methode die ook gebruikt wordt bij SATA, SAS, PCI Express.</simpara>
-<figure>
+<informalfigure>
 <mediaobject>
 <imageobject>
 <imagedata fileref="ch07/images/usb3-kabeldoorsnede.png" contentwidth="500" width="35%" scalefit="1" align="center"/>
 </imageobject>
 <textobject><phrase>Dwarsdoorsnede USB3-kabel (bron onbekend)</phrase></textobject>
 </mediaobject>
-</figure>
+</informalfigure>
 <section id="_signalering">
 <title>Signalering</title>
 <simpara>Ook de signalering is bij USB 3.0 op de schop genomen. Het typerende polling-concept is niet meer zo sterk aanwezig. Dat geeft voordelen naar zuinigheid van de apparaten. Ze moeten immers niet constant actief zijn.<?asciidoc-br?></simpara>
@@ -3105,14 +3383,14 @@ De encoding gebeurt ook niet langer met NRZI, maar met 8b/10b, de methode die oo
 <simpara>door complexiteit is de maximale kabellengte beperkt tot ongeveer 3 meter.</simpara>
 </listitem>
 </itemizedlist>
-<figure>
+<informalfigure>
 <mediaobject>
 <imageobject>
 <imagedata fileref="ch07/images/usb3.0_architecture.jpg" width="50%" scalefit="1" align="center"/>
 </imageobject>
 <textobject><phrase>USB3 protocol stack (bron:onbekend</phrase></textobject>
 </mediaobject>
-</figure>
+</informalfigure>
 </section>
 </section>
 </section>
@@ -3122,14 +3400,14 @@ De encoding gebeurt ook niet langer met NRZI, maar met 8b/10b, de methode die oo
 De eerste apparaten die hiermee werden uitgerust, werden uitgebracht in februari 2011 (Macbook Pro). Mondjesmaat wordt extra randapparatuur uitgebracht die dit ondersteunt. De standaard probeert nog universeler te zijn dan USB door de kracht van displayport (zie verder) en PCIx te combineren in één enkele poort.</simpara>
 <section id="_architectuur_2">
 <title>Architectuur</title>
-<figure>
+<informalfigure>
 <mediaobject>
 <imageobject>
 <imagedata fileref="ch07/images/Thunderbolt_Technology_model_1_E.png" contentwidth="500" width="40%" scalefit="1" align="center"/>
 </imageobject>
 <textobject><phrase>Thunderbolt architectuur (bron: Intel)</phrase></textobject>
 </mediaobject>
-</figure>
+</informalfigure>
 <simpara>Thunderbolt is in staat om 10Gpbs te transfereren over een koperverbinding. Initieel had Intel de bedoeling om  de bekabeling met glasvezels te produceren, maar voorlopig is dat niet het geval. De bouw ervan was te duur, en een bijkomend probleem was dat op die manier geen stroomvoorziening kan gebeuren voor de randapparaten. Er wordt echter nog steeds ontwikkeld, dus misschien duikt dit alsnog op in een volgende versie.<?asciidoc-br?>
 De architectuur van Thunderbolt  zet alles in op performantie. Daarvoor wordt de PCH  via een PCIe 4x poort verbonden met de Thunderbolt controller, en is die laatste ook verbonden met het interne grafisch systeem van de computer. Het resultaat is dat over deze verbinding een PCIx verbinding en een Displayport gebundeld zijn. Daarnaast ondersteunt Thunderbolt ook daisy chaining tot maximaal zeven apparaten. Dat betekent dat je Thunderbolt-compatibele apparaten kan doorlussen.<?asciidoc-br?>
 Een goed voorbeeld van hoe dit gebruikt wordt, vind je bijvoorbeeld in het Apple Thunderbolt Display. Dat is een scherm dat bedoeld is voor de apple macbook pro’s als tweede scherm. Met een enkele Thunderbolt kabel naar dat schem wordt echter veel mogelijk:</simpara>
@@ -3162,10 +3440,10 @@ Een goed voorbeeld van hoe dit gebruikt wordt, vind je bijvoorbeeld in het Apple
 <simpara>Onderstaande werken bevatten een stuk diepgaandere informatie over deze materie. Ze kunnen dan ook een ideaal vertrekpunt vormen voor een verdere studie van de computerarchitectuur.</simpara>
 <bibliodiv>
 <bibliomixed>
-<bibliomisc><anchor id="STALLINGS" xreflabel="[STALLINGS]"/>[STALLINGS] Andy Hunt &amp; Dave Thomas. <emphasis>Computer Organization and architecture, Ninth edition</emphasis>. Pearson education. 2012.</bibliomisc>
+<bibliomisc><anchor id="STALLINGS" xreflabel="[STALLINGS]"/>[STALLINGS] Andy Hunt &amp; Dave Thomas. 'Computer Organization and architecture, Ninth edition'. Pearson education. 2012.</bibliomisc>
 </bibliomixed>
 <bibliomixed>
-<bibliomisc><anchor id="RAMA" xreflabel="[RAMA]"/>[RAMA] Umakishura Ramachandran. <emphasis>Computer Systems: An Integrated Approach to Architecture and Operating Systems</emphasis>. Manning Publications.
+<bibliomisc><anchor id="RAMA" xreflabel="[RAMA]"/>[RAMA] Umakishura Ramachandran. 'Computer Systems: An Integrated Approach to Architecture and Operating Systems'. Manning Publications.
 2010.</bibliomisc>
 </bibliomixed>
 </bibliodiv>

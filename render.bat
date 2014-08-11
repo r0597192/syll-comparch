@@ -1,5 +1,7 @@
 echo ...omzetting naar html
-call asciidoctor "c:/syll-comparch/book_pcarch.asc" -o "c:/syll-comparch/pcarch.html" -a stylesheet="rocket-panda.css" -a linkcss
+call asciidoctor "c:/syll-comparch/book_pcarch.asc" -o "c:/syll-comparch/pcarch.html" 
+
+; -a stylesheet="rocket-panda.css" -a linkcss
 echo ...omzetting naar html: done!
 
 echo PUBLISH TO GHDOCS
