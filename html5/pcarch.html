@@ -4,17 +4,19 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.0.rc.6">
+<meta name="generator" content="Asciidoctor 1.5.0">
 <meta name="author" content="Roel Van Steenberghe">
 <title>Computerarchitectuur</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic|Noto+Serif:400,400italic,700,700italic|Droid+Sans+Mono:400">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
+/* Remove the comments around the @import statement below when using this as a custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic|Noto+Serif:400,400italic,700,700italic|Droid+Sans+Mono:400";*/
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}
 audio,canvas,video{display:inline-block}
 audio:not([controls]){display:none;height:0}
 [hidden],template{display:none}
-script{display:none !important}
+script{display:none!important}
 html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
 body{margin:0}
 a{background:transparent}
@@ -22,7 +24,7 @@ a:focus{outline:thin dotted}
 a:active,a:hover{outline:0}
 h1{font-size:2em;margin:.67em 0}
 abbr[title]{border-bottom:1px dotted}
-b,strong{font-weight:700}
+b,strong{font-weight:bold}
 dfn{font-style:italic}
 hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
 mark{background:#ff0;color:#000}
@@ -51,18 +53,18 @@ textarea{overflow:auto;vertical-align:top}
 table{border-collapse:collapse;border-spacing:0}
 *,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
 html,body{font-size:100%}
-body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:'Noto Serif','DejaVu Serif',serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto}
 a:hover{cursor:pointer}
 img,object,embed{max-width:100%;height:auto}
 object,embed{height:100%}
 img{-ms-interpolation-mode:bicubic}
-#map_canvas img,#map_canvas embed,#map_canvas object,.map_canvas img,.map_canvas embed,.map_canvas object{max-width:none !important}
-.left{float:left !important}
-.right{float:right !important}
-.text-left{text-align:left !important}
-.text-right{text-align:right !important}
-.text-center{text-align:center !important}
-.text-justify{text-align:justify !important}
+#map_canvas img,#map_canvas embed,#map_canvas object,.map_canvas img,.map_canvas embed,.map_canvas object{max-width:none!important}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
 .hide{display:none}
 .antialiased,body{-webkit-font-smoothing:antialiased}
 img{display:inline-block;vertical-align:middle}
@@ -76,7 +78,7 @@ a:hover,a:focus{color:#1d4b8f}
 a img{border:none}
 p{font-family:inherit;font-weight:400;font-size:1em;line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
 p aside{font-size:.875em;line-height:1.35;font-style:italic}
-h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:'Open Sans','DejaVu Sans',sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
 h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
 h1{font-size:2.125em}
 h2{font-size:1.6875em}
@@ -85,9 +87,9 @@ h4,h5{font-size:1.125em}
 h6{font-size:1em}
 hr{border:solid #ddddd8;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em;height:0}
 em,i{font-style:italic;line-height:inherit}
-strong,b{font-weight:700;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
 small{font-size:60%;line-height:inherit}
-code{font-family:'Droid Sans Mono','DejaVu Sans Mono',monospace;font-weight:400;color:rgba(0,0,0,.9)}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
 ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
 ul,ol,ul.no-bullet,ol.no-bullet{margin-left:1.5em}
 ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
@@ -97,7 +99,7 @@ ul.circle{list-style-type:circle}
 ul.disc{list-style-type:disc}
 ul.no-bullet{list-style:none}
 ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
-dl dt{margin-bottom:.3125em;font-weight:700}
+dl dt{margin-bottom:.3125em;font-weight:bold}
 dl dd{margin-bottom:1.25em}
 abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
 abbr{text-transform:none}
@@ -111,16 +113,17 @@ h1{font-size:2.75em}
 h2{font-size:2.3125em}
 h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
 h4{font-size:1.4375em}}table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
-table thead,table tfoot{background:#f7f8f7;font-weight:700}
+table thead,table tfoot{background:#f7f8f7;font-weight:bold}
 table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
 table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
 table tr.even,table tr.alt,table tr:nth-of-type(even){background:#f8f8f7}
 table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
-h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
 .clearfix:before,.clearfix:after,.float-group:before,.float-group:after{content:" ";display:table}
 .clearfix:after,.float-group:after{clear:both}
-*:not(pre)>code{font-size:.9375em;font-style:normal !important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background-color:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
-pre,pre>code{line-height:1.45;color:rgba(0,0,0,.9);font-family:'Droid Sans Mono','DejaVu Sans Mono',monospace;font-weight:400;text-rendering:optimizeSpeed}
+*:not(pre)>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background-color:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+pre,pre>code{line-height:1.45;color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;text-rendering:optimizeSpeed}
 .keyseq{color:rgba(51,51,51,.8)}
 kbd{display:inline-block;color:rgba(0,0,0,.8);font-size:.75em;line-height:1.4;background-color:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:-.15em .15em 0 .15em;padding:.2em .6em .2em .5em;vertical-align:middle;white-space:nowrap}
 .keyseq kbd:first-child{margin-left:0}
@@ -133,32 +136,32 @@ p a>code:hover{color:rgba(0,0,0,.9)}
 #header,#content,#footnotes,#footer{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
 #header:before,#header:after,#content:before,#content:after,#footnotes:before,#footnotes:after,#footer:before,#footer:after{content:" ";display:table}
 #header:after,#content:after,#footnotes:after,#footer:after{clear:both}
+#content{margin-top:1.25em}
 #content:before{content:none}
-#header{margin-bottom:1.875em}
-#header>h1:first-child{color:rgba(0,0,0,.85);font-weight:300;margin-bottom:0}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
 #header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #ddddd8}
 #header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #ddddd8;padding-bottom:8px}
 #header .details{border-bottom:1px solid #ddddd8;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap}
-#header .details span:first-child{margin-left:-.25em}
+#header .details span:first-child{margin-left:-.125em}
 #header .details span.email a{color:rgba(0,0,0,.85)}
 #header .details br{display:none}
 #header .details br+span:before{content:"\00a0\2013\00a0"}
 #header .details br+span.author:before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
-#header .details br+span#revremark:before{content:"\00a0:\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark:before{content:"\00a0|\00a0"}
 #header #revnumber{text-transform:capitalize}
 #header #revnumber:after{content:"\00a0"}
-#content>h1:first-child{color:rgba(0,0,0,.85);font-weight:300;border-bottom:1px solid #ddddd8;padding-bottom:.1em}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #ddddd8;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
 #toc{border-bottom:1px solid #efefed;padding-bottom:.5em}
 #toc>ul{margin-left:.125em}
 #toc ul.sectlevel0>li>a{font-style:italic}
 #toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
-#toc ul{font-family:'Open Sans','DejaVu Sans',sans-serif;list-style-type:none}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
 #toc a{text-decoration:none}
 #toc a:active{text-decoration:underline}
 #toctitle{color:#7a2518;font-size:1.2em}
 @media only screen and (min-width:768px){#toctitle{font-size:1.375em}
 body.toc2{padding-left:15em;padding-right:0}
-#toc.toc2{margin-top:0 !important;background-color:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #efefed;border-top-width:0 !important;border-bottom-width:0 !important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2{margin-top:0!important;background-color:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #efefed;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
 #toc.toc2 #toctitle{margin-top:0;font-size:1.2em}
 #toc.toc2>ul{font-size:.9em;margin-bottom:0}
 #toc.toc2 ul ul{margin-left:0;padding-left:1em}
@@ -176,21 +179,21 @@ body.toc2.toc-right{padding-left:0;padding-right:20em}}#content #toc{border-styl
 #footer-text{color:rgba(255,255,255,.8);line-height:1.44}
 .sect1{padding-bottom:.625em}
 @media only screen and (min-width:768px){.sect1{padding-bottom:1.25em}}.sect1+.sect1{border-top:1px solid #efefed}
-#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none !important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
 #content h1>a.anchor:before,h2>a.anchor:before,h3>a.anchor:before,#toctitle>a.anchor:before,.sidebarblock>.content>.title>a.anchor:before,h4>a.anchor:before,h5>a.anchor:before,h6>a.anchor:before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
 #content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
 #content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
 #content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
 .audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
-.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:'Noto Serif','DejaVu Serif',serif;font-size:1rem;font-style:italic}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
 table.tableblock>caption.title{white-space:nowrap;overflow:visible;max-width:0}
 .paragraph.lead>p,#preamble>.sectionbody>.paragraph:first-of-type p{color:rgba(0,0,0,.85)}
 table.tableblock #preamble>.sectionbody>.paragraph:first-of-type p{font-size:inherit}
-.admonitionblock>table{border:0;background:none;width:100%}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
 .admonitionblock>table td.icon{text-align:center;width:80px}
 .admonitionblock>table td.icon img{max-width:none}
-.admonitionblock>table td.icon .title{font-weight:300;text-transform:uppercase}
-.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #ddddd8;color:rgba(0,0,0,.6);text-rendering:optimizeLegibility}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #ddddd8;color:rgba(0,0,0,.6)}
 .admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
 .exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
 .exampleblock>.content>:first-child{margin-top:0}
@@ -198,52 +201,40 @@ table.tableblock #preamble>.sectionbody>.paragraph:first-of-type p{font-size:inh
 .sidebarblock{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
 .sidebarblock>:first-child{margin-top:0}
 .sidebarblock>:last-child{margin-bottom:0}
-.sidebarblock>.content>.title{color:#7a2518;line-height:1.4;margin-top:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
 .exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
-.literalblock pre,.listingblock pre:not([class]),.listingblock pre[class="highlight"],.listingblock pre[class^="highlight "],.listingblock pre[class="nowrap"],.listingblock .CodeRay,.listingblock .prettyprint{background:#f7f7f8}
-.sidebarblock .literalblock pre,.sidebarblock .listingblock pre:not([class]),.sidebarblock .listingblock pre[class="highlight"],.sidebarblock .listingblock pre[class^="highlight "],.sidebarblock .listingblock pre[class="nowrap"],.sidebarblock .listingblock .CodeRay,.sidebarblock .listingblock .prettyprint{background:#f2f1f1}
-.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{-webkit-border-radius:4px;border-radius:4px;padding:1em;word-wrap:break-word;font-size:.8125em}
+.literalblock pre,.listingblock pre:not(.highlight),.listingblock pre[class="highlight"],.listingblock pre[class^="highlight "],.listingblock pre.CodeRay,.listingblock pre.prettyprint{background:#f7f7f8}
+.sidebarblock .literalblock pre,.sidebarblock .listingblock pre:not(.highlight),.sidebarblock .listingblock pre[class="highlight"],.sidebarblock .listingblock pre[class^="highlight "],.sidebarblock .listingblock pre.CodeRay,.sidebarblock .listingblock pre.prettyprint{background:#f2f1f1}
+.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;padding:1em;font-size:.8125em}
 .literalblock pre.nowrap,.literalblock pre[class].nowrap,.listingblock pre.nowrap,.listingblock pre[class].nowrap{overflow-x:auto;white-space:pre;word-wrap:normal}
-@media only screen and (min-width:768px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:.9375em}}@media only screen and (min-width:1280px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:1em}}.literalblock.output pre{color:#f7f7f8;background-color:rgba(0,0,0,.9)}
+@media only screen and (min-width:768px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:.90625em}}@media only screen and (min-width:1280px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:1em}}.literalblock.output pre{color:#f7f7f8;background-color:rgba(0,0,0,.9)}
 .listingblock pre.highlightjs{padding:0}
-.listingblock pre.highlightjs>code{display:block;padding:1em;-webkit-border-radius:4px;border-radius:4px}
+.listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
 .listingblock pre.prettyprint{border-width:0}
 .listingblock>.content{position:relative}
-.listingblock:hover code[class*=" language-"]:before{position:absolute;font-size:.75em;top:.5rem;right:.5rem;line-height:1;text-transform:uppercase;color:#999}
-.listingblock:hover code.asciidoc:before{content:"asciidoc"}
-.listingblock:hover code.clojure:before{content:"clojure"}
-.listingblock:hover code.css:before{content:"css"}
-.listingblock:hover code.go:before{content:"go"}
-.listingblock:hover code.groovy:before{content:"groovy"}
-.listingblock:hover code.html:before{content:"html"}
-.listingblock:hover code.java:before{content:"java"}
-.listingblock:hover code.javascript:before{content:"javascript"}
-.listingblock:hover code.python:before{content:"python"}
-.listingblock:hover code.ruby:before{content:"ruby"}
-.listingblock:hover code.sass:before{content:"sass"}
-.listingblock:hover code.scss:before{content:"scss"}
-.listingblock:hover code.xml:before{content:"xml"}
-.listingblock:hover code.yaml:before{content:"yaml"}
+.listingblock code[data-lang]:before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:#999}
+.listingblock:hover code[data-lang]:before{display:block}
 .listingblock.terminal pre .command:before{content:attr(data-prompt);padding-right:.5em;color:#999}
 .listingblock.terminal pre .command:not([data-prompt]):before{content:"$"}
-table.pyhltable{border:0;margin-bottom:0;background:transparent}
+table.pyhltable{border-collapse:separate;border:0;margin-bottom:0;background:none}
 table.pyhltable td{vertical-align:top;padding-top:0;padding-bottom:0}
 table.pyhltable td.code{padding-left:.75em;padding-right:0}
-.pygments.highlight .lineno,table.pyhltable td:not(.code){color:#999;padding-left:0;padding-right:.5em;border-right:1px solid #ddddd8}
-.pygments.highlight .lineno{display:inline-block;margin-right:.25em}
-table.pyhltable .linenodiv{background-color:transparent !important;padding-right:0 !important}
+pre.pygments .lineno,table.pyhltable td:not(.code){color:#999;padding-left:0;padding-right:.5em;border-right:1px solid #ddddd8}
+pre.pygments .lineno{display:inline-block;margin-right:.25em}
+table.pyhltable .linenodiv{background:none!important;padding-right:0!important}
 .quoteblock{margin:0 1em 1.25em 1.5em;display:table}
 .quoteblock>.title{margin-left:-1.5em;margin-bottom:.75em}
 .quoteblock blockquote,.quoteblock blockquote p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
-.quoteblock blockquote{margin:0;padding:0;border:none}
-.quoteblock blockquote:before{content:"\201c";float:left;font-size:2.75em;font-weight:700;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote:before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
 .quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
 .quoteblock .attribution{margin-top:.5em;margin-right:.5ex;text-align:right}
 .quoteblock .quoteblock{margin-left:0;margin-right:0;padding:.5em 0;border-left:3px solid rgba(0,0,0,.6)}
 .quoteblock .quoteblock blockquote{padding:0 0 0 .75em}
 .quoteblock .quoteblock blockquote:before{display:none}
 .verseblock{margin:0 1em 1.25em 1em}
-.verseblock pre{font-family:'Open Sans',Sans,sans;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
 .verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
 .quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
 .quoteblock .attribution br,.verseblock .attribution br{display:none}
@@ -271,9 +262,9 @@ th.halign-center,td.halign-center{text-align:center}
 th.valign-top,td.valign-top{vertical-align:top}
 th.valign-bottom,td.valign-bottom{vertical-align:bottom}
 th.valign-middle,td.valign-middle{vertical-align:middle}
-table thead th,table tfoot th{font-weight:700}
+table thead th,table tfoot th{font-weight:bold}
 tbody tr th{display:table-cell;line-height:1.6;background:#f7f8f7}
-tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:700}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
 p.tableblock>code:only-child{background:none;padding:0}
 p.tableblock{font-size:1em}
 td>div.verse{white-space:pre}
@@ -299,7 +290,7 @@ ol.upperroman{list-style-type:upper-roman}
 ol.lowergreek{list-style-type:lower-greek}
 .hdlist>table,.colist>table{border:0;background:none}
 .hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
-td.hdlist1{padding-right:.75em;font-weight:700}
+td.hdlist1{padding-right:.75em;font-weight:bold}
 td.hdlist1,td.hdlist2{vertical-align:top}
 .literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
 .colist>table tr>td:first-of-type{padding:0 .75em;line-height:1}
@@ -320,10 +311,10 @@ span.footnote a:active,span.footnoteref a:active{text-decoration:underline}
 #footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
 #footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em 0;border-width:1px 0 0 0}
 #footnotes .footnote{padding:0 .375em;line-height:1.3;font-size:.875em;margin-left:1.2em;text-indent:-1.2em;margin-bottom:.2em}
-#footnotes .footnote a:first-of-type{font-weight:700;text-decoration:none}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none}
 #footnotes .footnote:last-of-type{margin-bottom:0}
 #content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
-.gist .file-data>table{border:none;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
 .gist .file-data>table td.line-data{width:99%}
 div.unbreakable{page-break-inside:avoid}
 .big{font-size:larger}
@@ -370,58 +361,69 @@ span.icon>.fa{cursor:default}
 .admonitionblock td.icon .icon-warning:before{content:"\f071";color:#bf6900}
 .admonitionblock td.icon .icon-caution:before{content:"\f06d";color:#bf3400}
 .admonitionblock td.icon .icon-important:before{content:"\f06a";color:#bf0000}
-.conum[data-value]{display:inline-block;color:#fff !important;background-color:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:'Open Sans','DejaVu Sans',sans-serif;font-style:normal;font-weight:700}
-.conum[data-value] *{color:#fff !important}
+.conum[data-value]{display:inline-block;color:#fff!important;background-color:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
 .conum[data-value]+b{display:none}
 .conum[data-value]:after{content:attr(data-value)}
 pre .conum[data-value]{position:relative;top:-.125em}
-b.conum *{color:inherit !important}
+b.conum *{color:inherit!important}
 .conum:not([data-value]):empty{display:none}
-h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{word-spacing:-.05em}
 h1,h2{letter-spacing:-.01em}
 dt,th.tableblock,td.content{text-rendering:optimizeLegibility}
 p,td.content{letter-spacing:-.01em}
-p b,p strong,td.content b,td.content strong{letter-spacing:-.005em}
+p strong,td.content strong{letter-spacing:-.005em}
 p,blockquote,dt,td.content{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
 .sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
 .exampleblock>.content{background-color:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
-.print-only{display:none !important}
+.print-only{display:none!important}
 @media print{@page{margin:1.25cm .75cm}
-*{-webkit-box-shadow:none !important;box-shadow:none !important;text-shadow:none !important}
-a,a:visited{color:inherit !important;text-decoration:underline !important}
-a[href^="http:"]:after,a[href^="https:"]:after{content:" (" attr(href) ")"}
-a[href^="#"],a[href^="#"]:visited,a[href^="mailto:"],a[href^="mailto:"]:visited{text-decoration:none !important}
+*{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare):after,a[href^="https:"]:not(.bare):after,a[href^="mailto:"]:not(.bare):after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
 abbr[title]:after{content:" (" attr(title) ")"}
-pre,blockquote{page-break-inside:avoid}
-code{color:rgba(0,0,0,.9)}
+pre,blockquote,tr,img{page-break-inside:avoid}
 thead{display:table-header-group}
-tr,img{page-break-inside:avoid}
-img{max-width:100% !important}
-p{orphans:3;widows:3}
+img{max-width:100%!important}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
 h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
-#toc,.sidebarblock{background:none !important}
-#toc{border-bottom:1px solid #ddddd8 !important;padding-bottom:0 !important}
-.sect1{padding-bottom:0 !important}
-.sect1+.sect1{border:none !important}
-#header>h1:first-child{margin:.5em 0 0 0}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #ddddd8!important;padding-bottom:0!important}
+.sect1{padding-bottom:0!important}
+.sect1+.sect1{border:0!important}
+#header>h1:first-child{margin-top:1.25rem}
 body.book #header{text-align:center}
-body.book #header>h1:first-child{border:none !important;margin:2.5em 0 1em 0}
-body.book #header .details{border:none !important;display:block;padding:0 !important}
-body.book #header .details span:first-child{margin-left:0 !important}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em 0}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
 body.book #header .details br{display:block}
-body.book #header .details br+span:before{content:none !important}
-body.book #toc{border:none !important;text-align:left !important;padding:0 !important;margin:0 !important}
+body.book #header .details br+span:before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
 body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
-.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{background:#f7f7f7 !important;padding:1em !important}
-.listingblock pre.highlightjs>code{padding:0 !important;background:none !important}
-#footer{background:none !important;padding:0 .9375em}
-#footer-text{color:rgba(0,0,0,.6) !important;font-size:.9em}
-.hide-on-print{display:none !important}
-.print-only{display:block !important}
-.hide-for-print{display:none !important}
-.show-for-print{display:inherit !important}}
+.listingblock code[data-lang]:before{display:block}
+#footer{background:none!important;padding:0 .9375em}
+#footer-text{color:rgba(0,0,0,.6)!important;font-size:.9em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.4.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
@@ -439,14 +441,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_principe_en_werking">3.1. Principe en werking</a></li>
 <li><a href="#_eigenschappen">3.2. Eigenschappen</a></li>
-<li><a href="#_vormfactor_en_connectoren">3.3. Vormfactor en connectoren</a></li>
-<li><a href="#_vermogen">3.4. Vermogen</a></li>
-<li><a href="#_geluid">3.5. Geluid</a></li>
-<li><a href="#_rendement">3.6. Rendement</a></li>
-<li><a href="#_problemen">3.7. Problemen</a></li>
-<li><a href="#_uninterruptible_power_supply_ups">3.8. Uninterruptible Power Supply (UPS)</a></li>
-<li><a href="#_accu_s">3.9. Accu’s</a></li>
-<li><a href="#_bibliografie_bij_dit_hoofdstuk">3.10. Bibliografie bij dit hoofdstuk</a></li>
+<li><a href="#_accu_s">3.3. Accu’s</a></li>
+<li><a href="#_uninterruptible_power_supply_ups">3.4. Uninterruptible Power Supply (UPS)</a></li>
+<li><a href="#_bibliografie_bij_dit_hoofdstuk">3.5. Bibliografie bij dit hoofdstuk</a></li>
 </ul>
 </li>
 <li><a href="#_cpu">4. CPU</a>
@@ -504,15 +501,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_bussystemen_voor_harde_schijven">8.3. Bussystemen voor harde schijven</a></li>
 </ul>
 </li>
-<li><a href="#_externe_i_o">9. Externe I/O</a>
-<ul class="sectlevel2">
-<li><a href="#_in_den_beginne_3">9.1. In den beginne</a></li>
-<li><a href="#_ps_2">9.2. PS/2</a></li>
-<li><a href="#_usb">9.3. USB</a></li>
-<li><a href="#_thunderbolt">9.4. Thunderbolt</a></li>
-</ul>
-</li>
-<li><a href="#_literatuurlijst">10. Literatuurlijst</a></li>
+<li><a href="#_literatuurlijst">9. Literatuurlijst</a></li>
 </ul>
 </div>
 </div>
@@ -521,7 +510,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_over_deze_cursus">1. Over deze cursus</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Deze cursus werd opgesteld doorheen de jaren, met wisselende auteurs. Elk van hen ben ik uiteraard dankbaar, specifiek Dhr Sven Sanders Dhr Johan Donne die de fundamenten van deze informatiebron reeds jaren geleden gelegd hebben.</p>
+<p>Dit lesmateriaal werd opgesteld doorheen de jaren, met wisselende auteurs. Elk van hen ben ik uiteraard dankbaar, specifiek Dhr Sven Sanders Dhr Johan Donne die de fundamenten van deze informatiebron reeds jaren geleden gelegd hebben.</p>
 </div>
 <div class="paragraph">
 <p>Er werd in deze cursus gepoogd om steeds correct om te gaan met extern bronmateriaal. Mocht je toch een stukje materiaal zonder correcte bronvermelding, dan passen we dat uiteraard ook meteen aan. Stuur hiervoor zeker een <a href="mailto:roel.vansteenberghe@hubkaho.be">mailtje</a>.</p>
@@ -572,7 +561,7 @@ Een overzicht van de werkvorm die bij dit vak gebruikt wordt, vind je terug in d
 <div class="sect2">
 <h3 id="_principe_en_werking">3.1. Principe en werking</h3>
 <div class="paragraph">
-<p>Een computer, of het nu een pc, laptop, server of smartphone is, kan enkel functioneren als de juiste elektrische spanningen aangevoerd worden. Elektronische componenten vragen een relatief lage, maar erg stabiele gelijkspanning om te functioneren.
+<p>Een computer, of het nu een pc, laptop, server of smartphone is, kan enkel functioneren als de juiste elektrische spanningen aangebracht worden. Elektronische componenten vragen een relatief lage, maar erg stabiele gelijkspanning om te functioneren.
 Deze wordt geleverd door een voeding, die de wisselspanning van het elektriciteitsnet omzet naar de nodige gelijkspanningsniveau’s. De techniek die hierbij gebruikt wordt noemt men switched mode power supply of schakelende voeding.
 Het schema van de omzetting wordt weergegeven in onderstaande afbeelding</p>
 </div>
@@ -583,15 +572,15 @@ Het schema van de omzetting wordt weergegeven in onderstaande afbeelding</p>
 <div class="title">Figure 1. Principe schakelende voeding</div>
 </div>
 <div class="paragraph">
-<p>Een eerste stap &#9312; is de gelijkrichter aan de ingang, waarmee de wisselspanning wordt omgezet naar een gelijkspanning. Deze gelijkspanning wordt vervolgens gefilterd, zodat de variatie in het spanningsniveau beperkt wordt.
+<p>Een eerste stap &#9312; is de <strong>gelijkrichter</strong> aan de ingang, waarmee de wisselspanning wordt omgezet naar een gelijkspanning. Deze gelijkspanning wordt vervolgens gefilterd, zodat de variatie in het spanningsniveau beperkt wordt.
 De tweede stap &#9313; is een stuk minder voor de hand liggend. Op basis van de gelijkgerichte en gefilterde ingangsspanning zal een invertor een blokgolf genereren. Deze wisselspanning wordt bekomen door het aan- en afschakelen van de ingangsspanning.
 Eigenlijk is de combinatie van de eerste twee stappen samen te vatten als een frequentieomvormer. Het ingangssignaal wordt omgezet naar een hoger-frequent signaal (van 50Hz naar frequenties boven 20kHz).</p>
 </div>
 <div class="paragraph">
-<p>Het voordeel van deze omzetting is dat de transformator in de volgende stap een stuk kleiner en efficiënter kan zijn. Deze gelijkrichter en transformator &#9314; brengt de spanning naar het gewenste niveau, waarna het met de uitgangs-gelijkrichter en filter &#9315; wordt omgezet naar een stabiele gelijkspanning.</p>
+<p>Het voordeel van deze omzetting is dat de <strong>transformator</strong> in de volgende stap een stuk kleiner en efficiënter kan zijn. Deze gelijkrichter en transformator &#9314; brengt de spanning naar het gewenste niveau, waarna het met de uitgangs-gelijkrichter en filter &#9315; wordt omgezet naar een stabiele gelijkspanning.</p>
 </div>
 <div class="paragraph">
-<p>In de figuur is ook te zien dat de uitgangsspanning teruggekoppeld wordt &#9316; naar de invertor. Op die manier kan de uitgangsspanning nog geregeld worden. De invertor-stap heeft immers ook invloed op de amplitude van zijn uitgang. Deze terugkoppeling gebeurt meestal met optocouplers om een galvanische scheiding te bekomen.</p>
+<p>In de figuur is ook te zien dat de uitgangsspanning teruggekoppeld wordt &#9316; naar de invertor. Op die manier kan de uitgangsspanning nog geregeld worden. De invertor-stap heeft immers ook invloed op de amplitude van zijn uitgang. Deze <strong>terugkoppeling</strong> gebeurt meestal met optocouplers om een galvanische scheiding te bekomen.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -600,7 +589,7 @@ Eigenlijk is de combinatie van de eerste twee stappen samen te vatten als een fr
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Om het verbruik van een CPU uit te drukken, wordt vaak gesproken over 0 (Thermal Design Power). Dat is een waarde die aanduidt hoeveel energie de CPU maximaal dissipeert onder een zware, maar realistische belasting gedurende een bepaalde tijd. Echter dient opgemerkt te worden dat 'AMD' en 'Intel' hiervoor verschillende berekeningsmethodes gebruiken.  De TDP geeft dus een indicatie over het maximale verbruik, maar gedetailleerde benchmarks blijven nodig om exacte waarden te kennen. <span class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</span>
+Om het verbruik van een CPU uit te drukken, wordt vaak gesproken over <strong>TDP</strong> (Thermal Design Power). Dat is een waarde die aanduidt hoeveel energie de CPU maximaal dissipeert onder een zware, maar realistische belasting gedurende een bepaalde tijd. Echter dient opgemerkt te worden dat 'AMD' en 'Intel' hiervoor verschillende berekeningsmethodes gebruiken.  De TDP geeft dus een indicatie over het maximale verbruik, maar gedetailleerde benchmarks blijven nodig om exacte waarden te kennen. <span class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</span>
 </td>
 </tr>
 </table>
@@ -608,16 +597,14 @@ Om het verbruik van een CPU uit te drukken, wordt vaak gesproken over 0 (The
 </div>
 <div class="sect2">
 <h3 id="_eigenschappen">3.2. Eigenschappen</h3>
-
-</div>
-<div class="sect2">
-<h3 id="_vormfactor_en_connectoren">3.3. Vormfactor en connectoren</h3>
+<div class="sect3">
+<h4 id="_vormfactor_en_connectoren">3.2.1. Vormfactor en connectoren</h4>
 <div class="paragraph">
 <p>De eerste (IBM) PC beschikte over een moederbord met AT vormfactor, de bijhorende voeding was dan ook een AT voeding. In 1995 kwam er een opvolger, met name de ATX vormfactor. Ondertussen is deze specificatie ook geëvolueerd (ondertussen ATX 2.3).</p>
 </div>
 <div class="paragraph">
 <p>De belangrijkste verschillen situeren zich op het vlak van de spanningen die de voeding kan afgeven en de connectoren die voorzien zijn op de voeding.
-In het bijzonder is er natuurlijk een verschil tussen de verschillende connectoren die op het moederbord worden aangesloten. Een AT voeding bood een connector van tweemaal zes aansluitingen, een ATX voeding biedt daarentegen een connector met 24 aansluitingen. (in de oorspronkelijke versie was dit 20, tegenwoordig is er ook steeds een vierpolige connector die twee keer twaalf volt levert aan de processor.)</p>
+In het bijzonder is er natuurlijk een verschil tussen de verschillende connectoren die op het moederbord worden aangesloten. Een AT voeding bood een connector van tweemaal zes aansluitingen, een ATX voeding biedt daarentegen een connector met 24 aansluitingen. (in de oorspronkelijke versie was dit 20, tegenwoordig is er ook steeds een vierpolige connector die twee keer twaalf Volt levert aan de processor.)</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -627,9 +614,14 @@ In het bijzonder is er natuurlijk een verschil tussen de verschillende connector
 </div>
 <div class="paragraph">
 <p>Een belangrijk verschil tussen beiden is de aanwezigheid bij ATX van een 3.3V spanning, een +5V standby en power on signaal.
-Deze laatste twee maken het mogelijk dat de mechanische schakelaar van de AT voeding (die rechtstreeks de voeding aanstuurde), vervangen kon worden door een elektronisch signaal van het moederbord naar de voeding. In eerste instantie kan het moederbord dit signaal sturen als het zelf een input krijgt van een drukknop. Er zijn echter ook alternatieven mogelijk, zoals wake-on-lan, speciale toetsen op een toetsenbord,&#8230;&#8203;
-Hieruit kan je afleiden dat bij een computer die uitgeschakeld is, een deel van het moederbord nog steeds onder spanning staat.
-Deze spanning kan je alleen wegnemen door de voeding uit te schakelen (schakelaar op voeding, stekker uittrekken). Naast de verschillen in connectoren die op het moederbord worden aangesloten, is er ook onderscheid op het vlak van de andere connectoren. Afhankelijk van de andere apparaten (en hun voedingsaansluiting), moet je erop letten om een voeding te kiezen die de nodige connectoren aanbiedt.</p>
+Deze laatste twee maken het mogelijk dat de mechanische schakelaar van de AT voeding (die rechtstreeks de voeding aanstuurde), vervangen kon worden door een elektronisch signaal van het moederbord naar de voeding. In eerste instantie kan het moederbord dit signaal sturen als het zelf een input krijgt van een drukknop. Er zijn echter ook alternatieven mogelijk, zoals wake-on-lan, speciale toetsen op een toetsenbord,&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>Hieruit kan je afleiden dat bij een computer die uitgeschakeld is, een deel van het moederbord nog steeds onder spanning staat.
+Deze spanning kan je alleen wegnemen door de voeding uit te schakelen (schakelaar op voeding, stekker uittrekken).</p>
+</div>
+<div class="paragraph">
+<p>Naast de verschillen in connectoren die op het moederbord worden aangesloten, is er ook onderscheid op het vlak van de andere connectoren. Afhankelijk van de andere apparaten (en hun voedingsaansluiting), moet je erop letten om een voeding te kiezen die de nodige connectoren aanbiedt.</p>
 </div>
 <div class="paragraph">
 <p>Enkele belangrijke connectoren zijn:</p>
@@ -637,7 +629,7 @@ Deze spanning kan je alleen wegnemen door de voeding uit te schakelen (schakelaa
 <div class="ulist">
 <ul>
 <li>
-<p>Moederbordconnector: afhankelijk van vormfactor</p>
+<p>ATX power connector (ook wel moederbord connector genoemd)</p>
 </li>
 <li>
 <p>4-pin connector (molex): o.a. voor (ATA) schijven, optische drives</p>
@@ -651,17 +643,18 @@ Deze spanning kan je alleen wegnemen door de voeding uit te schakelen (schakelaa
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_vermogen">3.4. Vermogen</h3>
+<div class="sect3">
+<h4 id="_vermogen">3.2.2. Vermogen</h4>
 <div class="paragraph">
 <p>Een erg belangrijke eigenschap voor een voeding is het vermogen dat ze kan leveren.
 Uiteraard moet dit te leveren vermogen voldoende zijn om alle componenten in het systeem te voorzien van stroom. Het vergelijken van voedingen op dit vlak is iets complexer dan kijken naar de waarden die de fabrikant op zijn verpakking adverteert.</p>
 </div>
 <div class="paragraph">
-<p>Belangrijker dan het getal is de betekenis ervan. Aangezien er geen voorschriften zijn voor de bepaling van die vermogenswaarde, kan 500W bij de ene fabrikant betekenen dat de voeding 500W piekvermogen kan leveren bij 10°C en bij een andere een continu vermogen van 500W bij 40°C.</p>
+<p>Belangrijker dan het getal is de betekenis ervan. Aangezien er geen voorschriften zijn voor de bepaling van die vermogenswaarde, kan 500W bij de ene fabrikant betekenen dat de voeding 500W piekvermogen kan leveren bij 10°C en bij een andere een continu vermogen van 500W bij 40°C.
+Als het systeem continu 450W nodig heeft, zou de eerste voeding kunnen falen.</p>
 </div>
 <div class="paragraph">
-<p>Als het systeem continu 450W nodig heeft, zou de eerste voeding kunnen falen. Een tweede belangrijke opmerking is dat niet alleen het totale vermogen belangrijk is, maar ook het vermogen dat op elke voedingsspanning apart geleverd kan worden. Het is duidelijk dat een computervoeding meerdere eindtrappen moet bevatten voor de verschillende spanningen. Op elk van deze rails is er een maximale stroom die geleverd kan worden.</p>
+<p>Een tweede belangrijke opmerking is dat niet alleen het totale vermogen belangrijk is, maar ook het vermogen dat op elke voedingsspanning apart geleverd kan worden. Het is duidelijk dat een computervoeding meerdere eindtrappen moet bevatten voor de verschillende spanningen. Op elk van deze rails is er een maximale stroom die geleverd kan worden.</p>
 </div>
 <div class="paragraph">
 <p>Als de maximale stroom op de 12V rail 5A is, kan je met een 500W voeding niet voorzien in de behoeften van een computer die een vermogen van 200W nodig heeft, maar wel 6A op de 12V rail. Dit kan een belangrijke reden voor prijsverschillen in voedingen zijn. Goedkopere voedingen kunnen typisch meer stroom leveren bij de lagere spanningen en minder bij 12V. Er moet nog worden opgemerkt dat sommige voedingen verschillende rails hebben voor eenzelfde voedingsspanning. Op elk van deze rails is dan een maximale stroom vastgelegd. Het zal wel duidelijk zijn dat je dan best de verbruikers op een zo evenwichtig mogelijke manier over deze rails moet verdelen.</p>
@@ -670,25 +663,25 @@ Uiteraard moet dit te leveren vermogen voldoende zijn om alle componenten in het
 <p>Een laatste opmerking is dat het vermogen van de voeding zo goed mogelijk op het systeem moet worden afgestemd. Uiteraard betekent dit dat je voldoende piekvermogen nodig hebt, maar zomaar een voeding van 1kW aanschaffen voor een systeem dat 200W nodig heeft is niet meteen een goede keuze.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_geluid">3.5. Geluid</h3>
+<div class="sect3">
+<h4 id="_rendement">3.2.3. Rendement</h4>
+<div class="paragraph">
+<p>Het ‘groene’ aspect bij pc’s komt steeds meer naar voor. Het rendement van de voeding is daarbij een belangrijke factor. Je wil natuurlijk voor elke 100 Watt die je uit het stroomnet haalt, ook 100W prestaties zien. Helaas is dit niet mogelijk: voedingen hebben een rendement dat een stuk lager ligt dan de ideale 100%. Dat verlies uit zich voornamelijk in warmte, die dan weer moet afgevoerd worden. Het spreekt voor zich dan een hoger rendement meestal ook een iets hoger prijskaartje met zich zal meebrengen. Toch is dit het overwegen waard als je een kleine rekenoefening maakt.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_geluid">3.2.4. Geluid</h4>
 <div class="paragraph">
 <p>De geluidsproductie van een computer is in verschillende gebruiksomgevingen liefst zo klein mogelijk. Een belangrijke bron van lawaai wordt gevormd door de verschillende koelingen en in het bijzonder de ventilatoren die hierbij worden gebruikt. Hier blijkt alvast het belang van het rendement van een voeding. Hoe hoger het rendement, des te minder verlies er is. Dit verlies manifesteert zich steeds onder de vorm van warmte.</p>
 </div>
 <div class="paragraph">
-<p>Meer warmteverlies betekent dus dat er nood is aan een groter koelvermogen. Naast het rendement is ook de grootte van de ventilator belangrijk. Een grotere ventilator zal bij lagere toerentallen voldoende kunnen koelen en daarbij minder lawaai produceren. Er bestaan ook voedingen die volledig passief (zonder ventilatoren) gekoeld worden. Deze produceren uiteraard geen lawaai, maar zijn typisch iets duurder.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_rendement">3.6. Rendement</h3>
-<div class="paragraph">
-<p>Het ‘groene’ aspect bij pc’s komt steeds meer naar voor. Het rendement van de voeding is daarbij een belangrijke factor. Je wil natuurlijk voor elke 100 Watt die je uit het stroomnet haalt, ook 100W prestaties zien. Helaas is dit niet mogelijk: voedingen hebben een rendement dat een stuk lager ligt dan de ideale 100%. Dat verlies uit zich voornamelijk in warmte, die dan weer moet afgevoerd worden. Het spreekt voor zich dan een hoger rendement meestal ook een iets hoger prijskaartje met zich zal meebrengen. Toch is dit het overwegen waard als je een kleine rekenoefening maakt.</p>
+<p>Naast het rendement is ook de grootte van de ventilator belangrijk. Een grotere ventilator zal bij lagere toerentallen voldoende kunnen koelen en daarbij minder lawaai produceren. Er bestaan ook voedingen die volledig passief (zonder ventilatoren) gekoeld worden. Deze produceren uiteraard geen lawaai, maar zijn typisch iets duurder.</p>
 </div>
 <div class="exampleblock">
 <div class="title">Example 1. rekenvoorbeeld stroomverbruik</div>
 <div class="content">
 <div class="paragraph">
-<p>Een computer met scherm die niet erg zwaar belast verbruikt ongeveer 200 Watt. Als je deze pc elke werkdag 10 uur gebruikt, dan komt het verbruik op</p>
+<p>Een computer (inclusief scherm) die niet erg zwaar belast wordt, verbruikt ongeveer 200 Watt. Als je deze pc elke werkdag 10 uur gebruikt, dan komt het verbruik op</p>
 </div>
 <div class="paragraph">
 <p>0,150 kW x 10 uur per dag x 250 werkdagen= 375 kWh per jaar</p>
@@ -697,12 +690,12 @@ Uiteraard moet dit te leveren vermogen voldoende zijn om alle componenten in het
 <p>Als je daar de prijs tegenover zet die een gemiddeld gezin (bron: VREG, oktober 2012) betaalt per kWh, dan kost deze pc je 375 * 0,2€ = € 75. Een voeding met een rendement dat 20% beter is zal je dus op jaarbasis makkelijk 15 Euro opleveren.</p>
 </div>
 <div class="paragraph">
-<p>Het loont dus de moeite om bij de aankoop de voeding zorgvuldig te kiezen. In een bedrijf met honderden desktops begrijp je dat dit een verkoopsargument kan zijn.</p>
+<p>Het loont dus de moeite om bij de aankoop de voeding zorgvuldig te kiezen. De meerprijs voor een duurdere PSU kan dus zeker renderen. In een bedrijf met honderden desktops begrijp je dat dit een verkoopsargument kan zijn.</p>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>Het 80-plus certificatieprogramma probeert voor de consument duidelijkheid te scheppen door voedingen een label te geven naargelang de efficiëntie. De certificatie is echter geen verplichting voor fabrikanten.</p>
+<p><strong>Het 80-plus certificatieprogramma</strong> probeert voor de consument duidelijkheid te scheppen door voedingen een label te geven naargelang de efficiëntie. De certificatie is echter geen verplichting voor fabrikanten.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 1. 80 plus certificatie (bron: <a href="http://en.wikipedia.org/wiki/80_Plus">Wikipedia</a> )</caption>
@@ -757,17 +750,18 @@ Uiteraard moet dit te leveren vermogen voldoende zijn om alle componenten in het
 </tbody>
 </table>
 <div class="paragraph">
-<p>Laptops hebben een verbruik dat typisch een flink stuk lager zit. Hoewel ze een voeding hebben die meestal een behoorlijk hoog wattage aankan om de accu op te laden, is het gemiddeld verbruik meestal slechts rond de 30Watt.</p>
+<p>Laptops hebben een verbruik dat typisch een flink stuk lager zit. Hoewel ze een voeding hebben die meestal een behoorlijk hoog wattage aankan om de accu snel op te laden, is het gemiddeld verbruik meestal slechts rond de 30Watt.
+Nieuwere toestellen die een hoge autonomie tot hun belangrijkste verkoopsargumenten rekenen, zoals chromebooks, kunnen zelfs onder maximale belasting onder de grens van 15 Watt blijven. <a href="#ANAND">[ANAND]</a></p>
 </div>
 <div class="paragraph">
 <p>Het matige rendement van PSU’s is voor een deel eigen aan de opbouw ervan. Omdat veel verschillende eindtrappen nodig zijn voor de verschillende spanningen, is het totale rendementsverlies een accumulatie van de kleinere verliezen bij de deeltrappen.</p>
 </div>
 <div class="paragraph">
-<p>Ondertussen verlaten sommige grote spelers om die reden de ATX standaard om met eigen oplossingen hogere rendementen te behalen. Google ontwikkelt bijvoorbeeld z’n eigen servervoedingen die door hun eenvoud een veel hoger rendement halen. De eenvoud bestaat erin dat ze slechts 1 spanning aanbieden aan het moederbord: 12V. Als componenten een andere voedingsspanning vereisen,  worden die waar nodig getransformeerd op het moederbord, wat veel efficiënter kan. Google research publiceerde een paper <a id="GOOGLE"></a> die schat dat de energiebesparing die je heermee kan behalen op een populatie van 100 miljoen computers 13 miljard kWh betreft op jaarbasis. Dat komt, om je een idee te geven, ongeveer overeen met de opbrengst van de helft van een kerncentrale zoals die in Doel (jaarproductie 22 miljard kWh)</p>
+<p>Ondertussen verlaten sommige grote spelers om die reden de ATX standaard om met eigen oplossingen hogere rendementen te behalen. Google ontwikkelt bijvoorbeeld z’n eigen servervoedingen die door hun eenvoud een veel hoger rendement halen. De eenvoud bestaat erin dat ze slechts 1 spanning aanbieden aan het moederbord: 12V. Als componenten een andere voedingsspanning vereisen,  worden die waar nodig getransformeerd op het moederbord, wat veel efficiënter kan. Google research publiceerde een paper <a href="#GOOGLE">[GOOGLE]</a> die schat dat de energiebesparing die je hiermee kan behalen op een populatie van 100 miljoen computers 13 miljard kWh betreft op jaarbasis. Dat komt, om je een idee te geven, ongeveer overeen met de opbrengst van de helft van een kerncentrale zoals die in Doel (jaarproductie 22 miljard kWh)</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_problemen">3.7. Problemen</h3>
+<div class="sect3">
+<h4 id="_problemen_met_voedingen">3.2.5. Problemen met voedingen</h4>
 <div class="paragraph">
 <p>Problemen met voedingen hebben altijd gevolgen voor het volledige systeem, aangezien ze dit volledige systeem van stroom moeten voorzien. Een belangrijke oorzaak van problemen is een te klein vermogen voor het systeem of onvoldoende koeling. Dit probleem uit zich meestal niet in het niet opstarten van het systeem, maar eerder in het onverwacht afsluiten (of eventueel herstarten) ervan. Dit is dan nog het meest aangename gevolg van het probleem. Het is belangrijk om bij dergelijke problemen de voeding en de koeling ervan te controleren.</p>
 </div>
@@ -781,84 +775,25 @@ Uiteraard moet dit te leveren vermogen voldoende zijn om alle componenten in het
 <p>Sommige voedingen hebben een controlesysteem dat je door middel van geluidssignalen preventief waarschuwt als er problemen dreigen, zoals overbelasting of een gebrekkige koeling.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_uninterruptible_power_supply_ups">3.8. Uninterruptible Power Supply (UPS)</h3>
-<div class="paragraph">
-<p>Een UPS is een toestel dat het wegvallen van de netspanning kan opvangen. Hiervoor bestaat een UPS uit een accu en een elektronische schakeling die de accuspanning kan omzetten naar een netspanning.</p>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="ch01/images/apc_ups.jpg" alt="APC UPS" width="300">
-</div>
-<div class="title">Figure 3. Rack-mountable UPS (bron: <a href="http://www.apc.com">www.apc.com</a>)</div>
-</div>
-<div class="paragraph">
-<p>Bij het wegvallen van de netspanning zal de UPS ogenblikkelijk de stroomvoorziening overnemen.
-Voor de aangesloten toestellen treedt er dus geen onderbreking op. Een UPS kan de stroom natuurlijk niet onbeperkt in de tijd overnemen. Hoe lang de UPS dit kan volhouden, hangt af van de accu’s en het gevraagde vermogen. Om te vermijden dat apparatuur plotseling en ongecontroleerd stilvalt, heeft een UPS dikwijls ook een interface naar de computer. Deze laat toe dat de UPS de computer ‘proper’ afsluit op het ogenblik dat de accu-stroom een bepaalde ondergrens bereikt. Een alternatief kan erin bestaan dat de UPS gecombineerd wordt met een dieselgenerator.</p>
-</div>
-<div class="paragraph">
-<p>De UPS zorgt dan voor de ogenblikkelijke overname van de stroomvoorziening en geeft de generator de nodige tijd om op te starten. Zodra de generator actief is (en de uitgangsspanning gestabiliseerd is), neemt deze de stroomvoorziening op zich.</p>
-</div>
-<div class="paragraph">
-<p>Een UPS heeft meestal ook een spanningsbeveiliging aan boord die je apparatuur kan beschermen tegen storingen op het elektriciteitsnet.
-UPS’en vind je in alle prijsklasses, wat vaak te maken heeft met de inwendige opbouw ervan. Er onderscheiden zich enkele grote types.</p>
-</div>
-<div class="sect3">
-<h4 id="_online_ups">3.8.1. Online UPS</h4>
-<div class="paragraph">
-<p>De online UPS wordt ook wel “double conversion” ups genoemd. Alle stroom die naar de IT-apparatuur gaat, loopt door de UPS. Hierdoor is het niet nodig om te schakelen bij het uitvallen van de stroom. Met de bypass kan je evenwel de ups overbruggen. Dat kan bijvoorbeeld interessant zijn als er onderhoud nodig is. Omdat hierdoor veel gevraagd wordt van alle elektronica (die constant volledig belast wordt), is die een relatief duur concept.</p>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="ch01/images/ups/Double_conversion_UPSII.png" alt="APC UPS">
-</div>
-<div class="title">Figure 4. Online UPS ( &#169; GFDL Joslee 2007 )</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_offline_ups">3.8.2. Offline UPS</h4>
-<div class="paragraph">
-<p>Dit type UPS vind je voornamelijk terug bij particuliere ups’en waar kostprijs een belangrijk criterium is. Bij het wegvallen van de spanning, wordt een bypass ingeschakeld. Die procedure duurt enkele milliseconden waarbij je geen uitgangsspanning hebt, en dat moet opgevangen worden door de voeding van je computer of server. Een nadeel van dit type UPS is dat je hem ook niet zonder risico kan testen.</p>
-</div>
-<div class="paragraph">
-<p>Een ander nadeel is dat in gewone omstandigheden de netspanning rechtstreeks gekoppeld is aan je IT-apparatuur. Als er storingen op het net zitten, zal je IT apparatuur daar hinder van ondervinden. De apparatuur is dus niet beveiligd.</p>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="ch01/images/ups/Off_Line_UPS.png" alt="offline UPS">
-</div>
-<div class="title">Figure 5. Offline UPS ( &#169; Joslee 2007 GFDL)</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_line_interactive_ups">3.8.3. Line-interactive UPS</h4>
-<div class="paragraph">
-<p>Deze vorm van UPS vormt een hybride oplossing. In feite gaat het om een off-line UPS waar de line-feed voorzien is van aanvullende filters. Zo ben je zeker dat de spanning die aan je servers aangelegd is, gezuiverd werd van pieken en storingen. In omgevingen waar veel storing optreedt is dat geen overbodige luxe. (bijvoorbeeld fabriekshallen, gebieden met gebrekkige stroomvoorziening)</p>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="ch01/images/ups/Line_interactive_UPSII.png" alt="line interactive UPS">
-</div>
-<div class="title">Figure 6. Line interactive UPS ( &#169; Joslee 2007 GFDL)</div>
-</div>
-</div>
 </div>
 <div class="sect2">
-<h3 id="_accu_s">3.9. Accu’s</h3>
+<h3 id="_accu_s">3.3. Accu’s</h3>
 <div class="paragraph">
 <p>Tegenwoordig kunnen we het niet meer hebben over computervoedingen zonder even uit te wijden over accu’s. In de trend naar mobiliteit (laptops, tablets, smartphones), vormen die een onmisbare schakel.</p>
 </div>
 <div class="sect3">
-<h4 id="_belangrijke_parameters">3.9.1. Belangrijke parameters</h4>
+<h4 id="_eigenschappen_2">3.3.1. Eigenschappen</h4>
 <div class="sect4">
 <h5 id="_capaciteit">Capaciteit</h5>
 <div class="paragraph">
-<p>De capaciteit van batterijen wordt meestal uitgedrukt in Ah (ampère/uur) of mAh (milliampère/uur). Met die eenheid kan je makkelijk accu-packs vergelijken. Een batterij van 6Ah zal bijvoorbeeld in staat zijn om gedurende 6 uur een stroom af te leveren van 1 Ampère, of gedurende bijvoorbeeld 2 uur een stroom van 3 Ampère.
-Sommige fabrikanten verkiezen echter om hun capaciteiten uit te drukken in Wh, wat vergelijken moeilijk kan maken. Toch kan je eenvoudig omrekenen:
+<p>De capaciteit van batterijen wordt meestal uitgedrukt in Ah (ampère/uur) of mAh (milliampère/uur). Met die eenheid kan je makkelijk accu-packs vergelijken. Een batterij van 6Ah zal theoretisch bijvoorbeeld in staat zijn om gedurende 6 uur een stroom af te leveren van 1 Ampère, of gedurende bijvoorbeeld 2 uur een stroom van 3 Ampère. Uiteraard zijn er realiteit door de fabrikant maxima gedefinieerd zodat de levensduur van de accu niet bedreigd wordt.</p>
+</div>
+<div class="paragraph">
+<p>Sommige fabrikanten verkiezen echter om hun capaciteiten uit te drukken in Wh, wat vergelijken lastiger kan maken. Toch kan je eenvoudig omrekenen bij gelijkstroom:
 Je weet immers dat</p>
 </div>
 <div class="paragraph">
-<p>math:[P=U*I] (Vermogen = Spanning x Stroom)</p>
+<p>\$P=U*I\$ (Vermogen = Spanning x Stroom)</p>
 </div>
 <div class="paragraph">
 <p>Willen we dus de stroom I(A) kennen, dan moeten we het vermogen delen door de spanning.
@@ -866,15 +801,15 @@ Nemen we onderstaand voorbeeld:</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch01/images/Battery_Capacity_Conversion.jpg" alt="accus">
+<img src="ch01/images/Battery_Capacity_Conversion.JPG" alt="accus">
 </div>
-<div class="title">Figure 7. accu</div>
+<div class="title">Figure 3. accu</div>
 </div>
 <div class="paragraph">
 <p>We kunnen hier dus de capaciteit in Ah bepalen door</p>
 </div>
 <div class="paragraph">
-<p>math:[I_h = P_h/U = 2,4Wh/3,6V = 0,666Ah] (of 666mAh)</p>
+<p>\$I_h = P_h/U = 2,4Wh/3,6V = 0,666Ah\$ (of 666mAh)</p>
 </div>
 </div>
 <div class="sect4">
@@ -886,8 +821,13 @@ Nemen we onderstaand voorbeeld:</p>
 <div class="title">Example 2. Oefening</div>
 <div class="content">
 <div class="paragraph">
-<p>Wat is de capaciteit van je eigen laptopaccu? Stel dat je deze accu gebruikt om een lamp te doen branden die 5Watt verbruikt. Hoe lang zal de lamp branden?
-Uit hoeveel cellen bestaat je accu-pack?</p>
+<p>Wat is de capaciteit van je eigen laptopaccu?</p>
+</div>
+<div class="paragraph">
+<p>Stel dat je deze accu gebruikt om een lamp (bijvoorbeeld een powerLED) te doen branden die 5 Watt verbruikt. Hoe lang zal de lamp branden?</p>
+</div>
+<div class="paragraph">
+<p>Uit hoeveel cellen bestaat je accu-pack?</p>
 </div>
 </div>
 </div>
@@ -934,14 +874,85 @@ Bij een temperatuur van iets boven het vriespunt en een lading van ongeveer 40% 
 <h5 id="_toekomstige_ontwikkelingen">Toekomstige ontwikkelingen</h5>
 <div class="paragraph">
 <p>Gezien de enorme markt die ontstaan is voor accu’s, is er enorm veel druk om betere modellen te ontwikkelen. Daarbij worden bestaande types geperfectioneerd, maar ook nieuwe types ontwikkeld.
-Zo zijn er de LiPo (Lithium polymeer) batterijen die ongeveer 50% efficiënter zijn dan klassieke Li-Ion equivalenten, en ook de brandstofcellen (fuel cells) die mogelijks een oplossing kunnen vormen voor de steeds grotere autonomie-behoefte van toestellen. Omdat veel van deze technieken gebruik maken van erg zeldzame delfstoffen, komen ook geavanceerde technieken met courante materialen in het vizier ter optimalisatie of vervanging, zoals nanostructuren met koolstof. Deze blijven echter toekomstmuziek voor consumentenelektronica…</p>
+Zo zijn er de <strong>LiPo</strong> (Lithium polymeer) batterijen die ongeveer 50% efficiënter zijn dan klassieke Li-Ion equivalenten, en ook de brandstofcellen (fuel cells) die mogelijks een oplossing kunnen vormen voor de steeds grotere autonomie-behoefte van toestellen. Omdat veel van deze technieken gebruik maken van erg zeldzame delfstoffen, komen ook geavanceerde technieken met courante materialen in het vizier ter optimalisatie of vervanging, zoals nanostructuren met koolstof. Deze blijven echter toekomstmuziek voor consumentenelektronica…</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_bibliografie_bij_dit_hoofdstuk">3.10. Bibliografie bij dit hoofdstuk</h3>
-
+<h3 id="_uninterruptible_power_supply_ups">3.4. Uninterruptible Power Supply (UPS)</h3>
+<div class="paragraph">
+<p>Een UPS is een toestel dat het wegvallen van de netspanning kan opvangen. Hiervoor bestaat een UPS uit een accu en een elektronische schakeling die de accuspanning kan omzetten naar een netspanning.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch01/images/ups/apc_ups.jpg" alt="APC UPS" width="300">
+</div>
+<div class="title">Figure 4. Rack-mountable UPS (bron: <a href="http://www.apc.com">www.apc.com</a>)</div>
+</div>
+<div class="paragraph">
+<p>Bij het wegvallen van de netspanning zal de UPS ogenblikkelijk de stroomvoorziening overnemen.
+Voor de aangesloten toestellen treedt er dus geen onderbreking op. Een UPS kan de stroom natuurlijk niet onbeperkt in de tijd overnemen. Hoe lang de UPS dit kan volhouden, hangt af van de accu’s en het gevraagde vermogen. Om te vermijden dat apparatuur plotseling en ongecontroleerd stilvalt, heeft een UPS dikwijls ook een interface naar de computer. Deze laat toe dat de UPS de computer ‘proper’ afsluit op het ogenblik dat de accu-stroom een bepaalde ondergrens bereikt. Een alternatief kan erin bestaan dat de UPS gecombineerd wordt met een dieselgenerator.</p>
+</div>
+<div class="paragraph">
+<p>De UPS zorgt dan voor de ogenblikkelijke overname van de stroomvoorziening en geeft de generator de nodige tijd om op te starten. Zodra de generator actief is (en de uitgangsspanning gestabiliseerd is), neemt deze de stroomvoorziening op zich.</p>
+</div>
+<div class="paragraph">
+<p>Een UPS heeft meestal ook een spanningsbeveiliging aan boord die je apparatuur kan beschermen tegen storingen op het elektriciteitsnet.
+UPS’en vind je in alle prijsklasses, wat vaak te maken heeft met de inwendige opbouw ervan. Er onderscheiden zich enkele grote types.</p>
+</div>
+<div class="sect3">
+<h4 id="_online_ups">3.4.1. Online UPS</h4>
+<div class="paragraph">
+<p>De online UPS wordt ook wel “double conversion” ups genoemd. Alle stroom die naar de IT-apparatuur gaat, loopt door de UPS. Hierdoor is het niet nodig om te schakelen bij het uitvallen van de stroom. Met de bypass kan je evenwel de ups overbruggen. Dat kan bijvoorbeeld interessant zijn als er onderhoud nodig is. Omdat hierdoor veel gevraagd wordt van alle elektronica (die constant volledig belast wordt), is die een relatief duur concept.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch01/images/ups/Double_conversion_UPSII.png" alt="APC UPS">
+</div>
+<div class="title">Figure 5. Online UPS ( &#169; GFDL Joslee 2007 )</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_offline_ups">3.4.2. Offline UPS</h4>
+<div class="paragraph">
+<p>Dit type UPS vind je voornamelijk terug bij particuliere ups’en waar kostprijs een belangrijk criterium is. Bij het wegvallen van de spanning, wordt een bypass ingeschakeld. Die procedure duurt enkele milliseconden waarbij je geen uitgangsspanning hebt, en dat moet opgevangen worden door de voeding van je computer of server. Een nadeel van dit type UPS is dat je hem ook niet zonder risico kan testen.</p>
+</div>
+<div class="paragraph">
+<p>Een ander nadeel is dat in gewone omstandigheden de netspanning rechtstreeks gekoppeld is aan je IT-apparatuur. Als er storingen op het net zitten, zal je IT apparatuur daar hinder van ondervinden. De apparatuur is dus niet beveiligd.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch01/images/ups/Off_line_ups.png" alt="offline UPS">
+</div>
+<div class="title">Figure 6. Offline UPS ( &#169; Joslee 2007 GFDL)</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_line_interactive_ups">3.4.3. Line-interactive UPS</h4>
+<div class="paragraph">
+<p>Deze vorm van UPS vormt een hybride oplossing. In feite gaat het om een off-line UPS waar de line-feed voorzien is van aanvullende filters. Zo ben je zeker dat de spanning die aan je servers aangelegd is, gezuiverd werd van pieken en storingen. In omgevingen waar veel storing optreedt is dat geen overbodige luxe. (bijvoorbeeld fabriekshallen, gebieden met gebrekkige stroomvoorziening)</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch01/images/ups/Line_interactive_UPSII.png" alt="line interactive UPS">
+</div>
+<div class="title">Figure 7. Line interactive UPS ( &#169; Joslee 2007 GFDL)</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bibliografie_bij_dit_hoofdstuk">3.5. Bibliografie bij dit hoofdstuk</h3>
+<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><a id="GOOGLE"></a>[GOOGLE] Google. High efficient power supplies for home computers and servers. <a href="http://static.googleusercontent.com/media/services.google.com/nl//blog_resources/PSU_white_paper.pdf" class="bare">http://static.googleusercontent.com/media/services.google.com/nl//blog_resources/PSU_white_paper.pdf</a>.</p>
+</li>
+<li>
+<p><a id="ANAND"></a>[ANAND] AnandTech. Samsung Chromebook Review. <a href="http://www.anandtech.com/show/6422/samsung-chromebook-xe303-review-testing-arms-cortex-a15/7" class="bare">http://www.anandtech.com/show/6422/samsung-chromebook-xe303-review-testing-arms-cortex-a15/7</a></p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
@@ -1366,13 +1377,6 @@ Het belang van cache geheugen is ook duidelijk als je de budget- en performance-
 </li>
 </ul>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="paragraph">
-<p>testje in sidebar</p>
-</div>
-</div>
-</div>
 <div class="paragraph">
 <p>Bij recente processoren zit bijvoorbeeld steeds vaker een grafische chip ingebouwd. Dan spreekt men niet meer over CPU, maar over APU (=advanced processing unit) om dit verschil in de verf te zetten.</p>
 </div>
@@ -1453,7 +1457,7 @@ Microsoft heeft bijvoorbeeld eind 2012 z’n RT tablet vrijgegeven, met ARM SOC.
 <div class="ulist bibliography">
 <ul class="bibliography">
 <li>
-<p><a id="INTEL"></a>[INTEL] Intel. <a href="http://www.intel.com/content/www/us/en/history/museum-gordon-moore-law.html">http://www.intel.com/content/www/us/en/history/museum-gordon-moore-law.html</a>.</p>
+<p><a id="INTEL"></a>[INTEL] Intel. <a href="http://www.intel.com/content/www/us/en/history/museum-gordon-moore-law.html" class="bare">http://www.intel.com/content/www/us/en/history/museum-gordon-moore-law.html</a>.</p>
 </li>
 </ul>
 </div>
@@ -1516,7 +1520,7 @@ Microsoft heeft bijvoorbeeld eind 2012 z’n RT tablet vrijgegeven, met ARM SOC.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="java language-java">public class Vermenigvuldigingstafels {
+<pre class="highlight"><code class="language-java" data-lang="java">public class Vermenigvuldigingstafels {
 	int score;										<i class="conum" data-value="1"></i><b>(1)</b>
 
 	public void test() {
@@ -1569,7 +1573,7 @@ Microsoft heeft bijvoorbeeld eind 2012 z’n RT tablet vrijgegeven, met ARM SOC.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="ASM language-ASM">; x86 ASM code
+<pre class="highlight"><code class="language-ASM" data-lang="ASM">; x86 ASM code
 
 .model small
 .stack
@@ -1695,7 +1699,7 @@ De snelheid van het geheugen wordt in grote mate bepaald door de toegangstijd ta
 <p>DRAM heeft, zoals je verder zal lezen, de eigenschap te werken met cyclussen. Om te berekenen wat de effectieve bandbreedte is (=geheugendebiet) hoor je steeds dezelfde benadering te maken:</p>
 </div>
 <div class="paragraph">
-<p>math:["Aantal bytes die getransfereerd worden bij een cyclus"//"tijdsduur van een cyclus" =  "bandbreedte"]</p>
+<p>\$"Aantal bytes die getransfereerd worden bij een cyclus"//"tijdsduur van een cyclus" =  "bandbreedte"\$</p>
 </div>
 <div class="paragraph">
 <p>Deze erg eenvoudige benadering wordt bij de verschillende types geheugen die volgen telkens toegepast.</p>
@@ -1722,7 +1726,7 @@ FP-DRAM werd gebruikt tot busfrequenties van 66 MHz.</p>
 <p>Op een computersysteem met een 486 processor (32-bit databus) met 5-3-3-3 FP-DRAM geheugen aan 66Mhz betekent dit dat het maximale geheugendebiet gelijk is aan:</p>
 </div>
 <div class="paragraph">
-<p>math:[(4 "bytes"/"transfer" xx 4 "transfers"/"burst" xx 66 "Mcycli"/"sec")/(14 "cycli"/"burst")= 75 "MB"/"sec" ]</p>
+<p>\$(4 "bytes"/"transfer" xx 4 "transfers"/"burst" xx 66 "Mcycli"/"sec")/(14 "cycli"/"burst")= 75 "MB"/"sec" \$</p>
 </div>
 </div>
 <div class="sect2">
@@ -1738,23 +1742,21 @@ FP-DRAM werd gebruikt tot busfrequenties van 66 MHz.</p>
 EDO-RAM kon gebruikt worden tot een busklok van 75 MHz met een timing van 5-2-2-2 klokcycli. Als we EDO-RAM dan nog combineren met een 64-bit bus (Pentium) geeft dit een maximaal debiet van 218 MB/s</p>
 </div>
 <div class="paragraph">
-<p>:math:[(8 "bytes"/"transfer" xx 4 "transfers"/"burst" xx 75 "Mcycli"/"sec")//(11 "cycli"/"burst")=218 "MB"/"sec" ]</p>
+<p>\$(8 "bytes"/"transfer" xx 4 "transfers"/"burst" xx 75 "Mcycli"/"sec")//(11 "cycli"/"burst")=218 "MB"/"sec" \$</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_synchronous_dram">5.8. Synchronous DRAM</h3>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="ch03/images" alt="">
-</div>
-<div class="title">Figure 23. afbeelding 20 Leesoperatie bij SD-RAM (bron: Micron)</div>
+<div class="paragraph">
+<div class="title">afbeelding 20 Leesoperatie bij SD-RAM (bron: Micron)</div>
+<p>image::[alt="", align="center", scaledwidth="50"]</p>
 </div>
 <div class="paragraph">
 <p>Bij SDRAM gaat men nog een stap verder met het lokaliteitsprincipe. In plaats van uit te gaan van het lezen van naburige kolommen, wordt nu vertrokken van het idee dat opeenvolgende kolommen uitgelezen zullen worden. In het deel over cache geheugens zal duidelijk worden dat het RAM geheugen effectief op deze manier wordt aangesproken. De cyclus kan nu aangepast worden tot het aanleggen van een rij-adres, het selecteren van een kolom en vervolgens het inlezen of naar buiten brengen van een aantal opeenvolgende kolommen. Die kunnen naar buiten gebracht worden op het tempo van de klok. Vandaar spreekt men over synchroon DRAM.
 In de afbeelding 20 krijgen we een timing van 2-1-1-1. Daarnaast is SD-RAM geschikt voor busfrequenties tot 133 MHz (PC133), wat neerkomt op een maximaal debiet van 851 MBps.</p>
 </div>
 <div class="paragraph">
-<p>math:[(8 "bytes"/"transfer"  xx 4 "transfers"/"burst"  xx 133 "Mcycli"/"sec" )//(5 "cycli"/"burst") = 851 "MB"/"sec"]</p>
+<p>\$(8 "bytes"/"transfer"  xx 4 "transfers"/"burst"  xx 133 "Mcycli"/"sec" )//(5 "cycli"/"burst") = 851 "MB"/"sec"\$</p>
 </div>
 <div class="sect3">
 <h4 id="_ddr_sdram_ddr2_ddr3">5.8.1. DDR SDRAM - DDR2 - DDR3</h4>
@@ -1765,7 +1767,7 @@ In de afbeelding 20 krijgen we een timing van 2-1-1-1. Daarnaast is SD-RAM gesch
 <div class="content">
 <img src="ch03/images/DDRwritetiming.png" alt="sd ram read">
 </div>
-<div class="title">Figure 24. Write cyclus bij DDR-RAM (bron: Micron)</div>
+<div class="title">Figure 23. Write cyclus bij DDR-RAM (bron: Micron)</div>
 </div>
 <div class="paragraph">
 <p>Het voordeel van deze werkwijze is een hogere maximale bandbreedte (datasnelheid bij het effectief overbrengen van data). Het nadeel zit in een hogere latentietijd. Tussen het aanleggen van de adressen en het naar buiten brengen van de data verloopt iets meer tijd. De snelheid van de modules wordt uitgedrukt op een aantal verschillende manieren. Een eerste manier is in de naam, waar twee verschillende mogelijkheden bestaan. DDR400 en PC3200 duiden op hetzelfde soort geheugenchips. De 400 duidt de kloksnelheid aan (2x200MHz), de 3200 duidt de maximale transfersnelheid aan.</p>
@@ -1774,7 +1776,7 @@ In de afbeelding 20 krijgen we een timing van 2-1-1-1. Daarnaast is SD-RAM gesch
 <p>Op een 64-bit databus is die:</p>
 </div>
 <div class="paragraph">
-<p>math:[8 "bytes"/"transfer"  xx (2 xx 200 "MHz") = 3200 "MB"/"sec"]</p>
+<p>\$8 "bytes"/"transfer"  xx (2 xx 200 "MHz") = 3200 "MB"/"sec"\$</p>
 </div>
 <div class="paragraph">
 <p>Er kan echter nog veel verschil zijn tussen twee PC3200 modules.
@@ -1803,14 +1805,14 @@ De werkelijke snelheid hangt namelijk ook af van de totale latentietijd. Die kan
 <div class="content">
 <img src="ch03/images/SDRAM_read.png" alt="sd ram read">
 </div>
-<div class="title">Figure 25. DDR-timing Tcl=2 (bron: Micron)</div>
+<div class="title">Figure 24. DDR-timing Tcl=2 (bron: Micron)</div>
 </div>
 <div class="paragraph">
 <p>Een voorbeeld:
 PC3200 geheugen met parameters 2-2-2-6 heeft voor een burst met vier transfers van 8 bytes 2+2+4 x 0.5=6 klokcycli van 200 MHz nodig. Dit geeft een snelheid van 1067 MB/s.Voor twee dergelijke opeenvolgende transfers zijn</p>
 </div>
 <div class="paragraph">
-<p>math:[2(2+2+4 xx 0.5) + 2 = 14 klokcycli] van 200 MHz nodig. Dit geeft 914 MBps.</p>
+<p>\$2(2+2+4 xx 0.5) + 2 = 14 klokcycli\$ van 200 MHz nodig. Dit geeft 914 MBps.</p>
 </div>
 <div class="paragraph">
 <p>Bij DDR kan ook het aantal cellen dat in een burst gelezen wordt variëren. Hetzelfde geheugen dat in een burst 8 transfers van 8 bytes uitvoert, haalt een snelheid van 1600MBps.Tras is in dit verhaal niet naar voor gekomen. Tras bepaalt de tijd waarin de volgende rij nog niet geladen mag worden. Deze moet groot genoeg zijn om de buffer niet te overschrijven voordat het volledig getransfereerd is over de databus. Deze parameter moet minimaal Trcd + TCL + 1 bedragen. Indien de parameter te klein is gaat uiteraard data verloren.</p>
@@ -1936,7 +1938,7 @@ Bovendien hebben de modules ook een verschillend aantal aansluitpinnen, waardoor
 <div class="content">
 <img src="ch03/images/optimalisatie/MEMACCESS_normal.png" alt="">
 </div>
-<div class="title">Figure 26. normale geheugentoegang</div>
+<div class="title">Figure 25. normale geheugentoegang</div>
 </div>
 <div class="sect3">
 <h4 id="_interleaving">5.9.1. Interleaving</h4>
@@ -1948,7 +1950,7 @@ Deze hersteltijd kan vermeden worden indien de volgende operatie doorgaat op een
 <div class="content">
 <img src="ch03/images/optimalisatie/MEMACCESS_interleaving.png" alt="interleaving">
 </div>
-<div class="title">Figure 27. Memory interleaving</div>
+<div class="title">Figure 26. Memory interleaving</div>
 </div>
 </div>
 <div class="sect3">
@@ -1963,7 +1965,7 @@ Deze hersteltijd kan vermeden worden indien de volgende operatie doorgaat op een
 <div class="content">
 <img src="ch03/images/optimalisatie/MEMACCESS_dualchannel.png" alt="dual channel">
 </div>
-<div class="title">Figure 28. geheugentoegang met Dual Channel</div>
+<div class="title">Figure 27. geheugentoegang met Dual Channel</div>
 </div>
 <div class="paragraph">
 <p>Behalve het aanschakelen van meerdere modules is het dan ook belangrijk om ze in de juiste sockets te steken, zodat je beide kanalen gebruikt (en niet twee modules op hetzelfde kanaal). Moederborden met meerdere sockets op de kanalen, hebben overeenkomstige plaatsen op die kanalen die eenzelfde kleur hebben. Op deze manier zijn er dus matched sockets. Op deze matched sockets moet dus geheugen geïnstalleerd worden.</p>
@@ -1972,7 +1974,7 @@ Deze hersteltijd kan vermeden worden indien de volgende operatie doorgaat op een
 <div class="content">
 <img src="ch03/images/optimalisatie/Dual-channel_DDR_memory_use_6026.jpg" alt="dual channel memory placement">
 </div>
-<div class="title">Figure 29. dual channel sockets</div>
+<div class="title">Figure 28. dual channel sockets</div>
 </div>
 <div class="paragraph">
 <p>Dit geheugen moet identiek zijn in capaciteit, anders zou een deel van het geheugen niet bereikbaar zijn in dual channel mode. Verder moeten de modules in principe niet gelijk zijn. Zelfs modules met verschillende snelheden zijn mogelijk, al zal dan tegen de traagste snelheid gewerkt worden. In principe betekent echter dat er in de praktijk wel problemen kunnen ontstaan, zodat moederbord fabrikanten het gebruik van identieke modules aanraden. Deze worden door verschillende geheugenfabrikanten ook aangeboden.</p>
@@ -2009,7 +2011,7 @@ Een belangrijk verschil, want een processor kan nu eenmaal niet sneller instruct
 <div class="content">
 <img src="ch03/images/cache.png" alt="">
 </div>
-<div class="title">Figure 30. cache als buffer tussen CPU en geheugen</div>
+<div class="title">Figure 29. cache als buffer tussen CPU en geheugen</div>
 </div>
 <div class="paragraph">
 <p>Het cache geheugen vormt een buffer dat het snelheidsverschil tussen processor en CPU moet opvangen. Aangezien het cache geheugen een stuk kleiner zal zijn dan het dynamisch geheugen, komt het erop aan om de nodige gegevens klaar te hebben zitten in het cache geheugen.</p>
@@ -2095,7 +2097,7 @@ L1 cache is het cache geheugen dat het dichtst bij de processor staat. Het moet 
 <div class="content">
 <img src="ch03/images/fullyPrincipe.pdf" alt="">
 </div>
-<div class="title">Figure 31. principe fully associative cache</div>
+<div class="title">Figure 30. principe fully associative cache</div>
 </div>
 <div class="paragraph">
 <p>Bij fully associative cache kan een blok uit het geheugen terecht komen in gelijk welke cacheline. Om te kunnen bepalen welk geheugenblok in een bepaalde cacheline zit, wordt een elke cacheline een tag gekoppeld. Deze is nodig om te kunnen bepalen of het blok aanwezig is in het cache en eventueel de juiste cacheline te kunnen selecteren.</p>
@@ -2104,7 +2106,7 @@ L1 cache is het cache geheugen dat het dichtst bij de processor staat. Het moet 
 <div class="content">
 <img src="ch03/images/associativiteit/vbfully.png" alt="">
 </div>
-<div class="title">Figure 32. voorbeeld fully associative geheugen</div>
+<div class="title">Figure 31. voorbeeld fully associative geheugen</div>
 </div>
 <div class="paragraph">
 <p>Een voorbeeld zie je in bovenstaande afbeelding.<br>
@@ -2126,7 +2128,7 @@ Daarnaast moeten ook de snelle comparatoren gerealiseerd worden. Binnen de tijd 
 <div class="content">
 <img src="ch03/images/directPrincipe.pdf" alt="">
 </div>
-<div class="title">Figure 33. principe direct mapped cache</div>
+<div class="title">Figure 32. principe direct mapped cache</div>
 </div>
 <div class="paragraph">
 <p>Bij direct mapped cache kan elk geheugenblok slechts in één cacheline terecht. Dit maakt dat overschrijfstrategieën overbodig zijn, er is namelijk maar een plaats waar het geheugenblok terecht kan en de inhoud van die cacheline zal verwijderd worden. Evident nadeel is dat als er geen keuze mogelijk is, de optimale keuze niet gemaakt kan worden. Deze manier van werken heeft dus een negatief effect op de hitrate.
@@ -2136,7 +2138,7 @@ Om dit te staven met een extreem voorbeeld: bij direct mapped cache is het mogel
 <div class="content">
 <img src="ch03/images/associativiteit/vbdirectmapped.png" alt="">
 </div>
-<div class="title">Figure 34. voorbeeld direct mapped</div>
+<div class="title">Figure 33. voorbeeld direct mapped</div>
 </div>
 <div class="paragraph">
 <p>Een voorbeeld zal dit verduidelijken&#8230;&#8203;
@@ -2149,7 +2151,7 @@ De processor beschikt overeen 32-bit adres bus en een cache geheugen van 16kB me
 <div class="content">
 <img src="ch03/images/setAssociative.jpg" alt="">
 </div>
-<div class="title">Figure 35. principe set-associative cache</div>
+<div class="title">Figure 34. principe set-associative cache</div>
 </div>
 <div class="paragraph">
 <p>Set-associative cache is de tussenvorm. Hierbij worden de cachelines gegroepeerd in sets. Elk geheugenblok kan terecht in slechts een set, maar binnen die set kan het in elke cacheline terecht.</p>
@@ -2158,7 +2160,7 @@ De processor beschikt overeen 32-bit adres bus en een cache geheugen van 16kB me
 <div class="content">
 <img src="ch03/images/associativiteit/vbsetassociative.png" alt="set associative voorbeeld">
 </div>
-<div class="title">Figure 36. voorbeeld set associative</div>
+<div class="title">Figure 35. voorbeeld set associative</div>
 </div>
 <div class="exampleblock">
 <div class="title">Example 3. voorbeeld</div>
@@ -2233,7 +2235,7 @@ Meer algemeen geldt dat naarmate de associativiteit toeneemt er meer keuze is in
 <div class="content">
 <img src="ch03/images/associativiteit/400px-Cache_missrate.png" alt="cash miss-rate">
 </div>
-<div class="title">Figure 37. cache misses in functie van grootte en associativiteit (bron: wikipedia)</div>
+<div class="title">Figure 36. cache misses in functie van grootte en associativiteit (bron: wikipedia)</div>
 </div>
 <div class="paragraph">
 <p>In bovenstaande afbeelding toont een grafiek het aandeel missers in functie van de grootte van het cache geheugen en dit voor verschillende associativiteit.
@@ -2252,7 +2254,7 @@ Hit rate:: percentage toegangen die rechtstreeks langs de cache gaan</p>
 <p>De formule voor de totale toegangstijd van de gecombineerde caches is dan:</p>
 </div>
 <div class="paragraph">
-<p>math:["t"<em>"totaal"="HR"</em>"L1"  xx "t"<em>"L1"  + (1 - "HR"</em>"L1") xx "HR"<em>"L2"  xx t</em>"L2"  + (1 - "HR"<em>"L1") xx (1 - "HR"</em>"L2") x "t"_"RAM"]</p>
+<p>\$"t"_"totaal"="HR"_"L1"  xx "t"_"L1"  + (1 - "HR"_"L1") xx "HR"_"L2"  xx t_"L2"  + (1 - "HR"_"L1") xx (1 - "HR"_"L2") x "t"_"RAM"\$</p>
 </div>
 <div class="paragraph">
 <p>Waarbij:<br>
@@ -2267,7 +2269,7 @@ t = aantal cycli<br></p>
 De gemiddelde toegangstijd wordt dan:</p>
 </div>
 <div class="paragraph">
-<p>math:[0.96 xx 1 "ns" + 0.04 xx 0.88 xx 2 "ns" + 0.04 xx 0.12 * 8 "ns" = 1.0688 "ns"]</p>
+<p>\$0.96 xx 1 "ns" + 0.04 xx 0.88 xx 2 "ns" + 0.04 xx 0.12 * 8 "ns" = 1.0688 "ns"\$</p>
 </div>
 <div class="paragraph">
 <p>Probeer zelf eens uit wat de invloed is van de toegangstijd van het RAM-geheugen in dit systeem. Probeer eens wat er gebeurt zonder L2 cache. De verschillende factoren worden niet op dezelfde manier beïnvloed door de eigenschappen van het cache. Bijvoorbeeld de asscociativiteit van de cache biedt meer mogelijkheden op het vlak van cachelines selecteren, waardoor de hitrate hoger kan zijn. Daar staat tegenover dat een complexere berekening nodig is om een lijn te selecteren, waardoor bij een cache miss er extra tijd verloren gaat (hogere miss time).</p>
@@ -2301,7 +2303,7 @@ Op de harde schijf zal ruimte voorzien worden die gebruikt wordt als swapruimte.
 <div class="content">
 <img src="ch03/images/pagefaults.png" alt="pagefaults">
 </div>
-<div class="title">Figure 38. Page-faults bij opstarten software</div>
+<div class="title">Figure 37. Page-faults bij opstarten software</div>
 </div>
 <div class="paragraph">
 <p>Na de uitvoering van de handler keert de processor terug naar de toestand bij de oproep van de handler. Dit is uiteraard de instructie die in eerste instantie het probleem veroorzaakte. Deze keer zal bij de uitvoering van die instructie blijken dat de gegevens beschikbaar zijn in RAM.</p>
@@ -2320,7 +2322,7 @@ Belangrijk is ook dat bepaalde delen nooit mogen verdwijnen uit het fysieke gehe
 <div class="content">
 <img src="ch03/images/2000px-Virtual_address_space_and_physical_address_space_relationship.svg.png" alt="">
 </div>
-<div class="title">Figure 39. Paging table (Wikimedia Commons, BSD)</div>
+<div class="title">Figure 38. Paging table (Wikimedia Commons, BSD)</div>
 </div>
 <div class="exampleblock">
 <div class="title">Example 6. Voorbeeld</div>
@@ -2388,7 +2390,7 @@ Hierdoor reageert de computer trager dan in het geval er geen virtueel geheugen 
 <div class="content">
 <img src="ch04/images/harddiskfysiekeopbouw.png" alt="hdd fysieke opbouw">
 </div>
-<div class="title">Figure 40. Fysieke opbouw harde schijf</div>
+<div class="title">Figure 39. Fysieke opbouw harde schijf</div>
 </div>
 <div class="paragraph">
 <p>Bovenstaande afbeelding toont de fysieke opbouw van een harde schijf.<br>
@@ -2413,7 +2415,7 @@ Op die manier beweegt de schijfkop over het oppervlak.</p>
 <div class="content">
 <img src="ch04/images/logischeopbouw.jpg" alt="">
 </div>
-<div class="title">Figure 41. logische indeling van een schijf (bron: technet.microsoft.com)</div>
+<div class="title">Figure 40. logische indeling van een schijf (bron: technet.microsoft.com)</div>
 </div>
 <div class="paragraph">
 <p>Door het ronddraaien van de schijf bewegen de koppen over een cilinder. De verplaatsing naar een andere cilinder gebeurt door een axiale verplaatsing van de arm, waarop alle koppen bevestigd zijn.</p>
@@ -2428,7 +2430,7 @@ Op die manier beweegt de schijfkop over het oppervlak.</p>
 <div class="content">
 <img src="ch04/images/sector.png" alt="">
 </div>
-<div class="title">Figure 42. Onderverdeling van tracks in sectors en bits</div>
+<div class="title">Figure 41. Onderverdeling van tracks in sectors en bits</div>
 </div>
 <div class="paragraph">
 <p>Bovenstaande afbeelding toont de onderverdeling van tracks in sectors en sectors in bits. Een track is opgebouwd uit een aantal sectoren met tussen de sectoren een tussenruimte.
@@ -2454,7 +2456,7 @@ Dit heet perpendicular recording (loodrechte opname).</p>
 <div class="content">
 <img src="ch04/images/2000px-Perpendicular_Recording_Diagram.svg.png" alt="" width="300">
 </div>
-<div class="title">Figure 43. Perpendicular recording (bron: Wikipedia)</div>
+<div class="title">Figure 42. Perpendicular recording (bron: Wikipedia)</div>
 </div>
 </div>
 <div class="sect3">
@@ -2481,7 +2483,7 @@ Omwille van de eenvoud van de omrekening werden eerst over de gehele schijf hetz
 <div class="content">
 <img src="ch04/images/zones.png" alt="">
 </div>
-<div class="title">Figure 44. HDD opdeling in zones</div>
+<div class="title">Figure 43. HDD opdeling in zones</div>
 </div>
 <div class="paragraph">
 <p>Cilinders die binnen eenzelfde zone liggen hebben hetzelfde aantal sectoren per cilinder. In de figuur is te zien dat het aantal sectoren toeneemt naar de buitenkant van de schijf toe.</p>
@@ -2505,7 +2507,7 @@ Hoe lang duurt het om 10 random sectoren te lezen?</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Op <a href="http://en.wikipedia.org/wiki/Hard_disk_drive">http://en.wikipedia.org/wiki/Hard_disk_drive</a> vind je een aanvullend educatief filmpje over de werking van de harde schijf.</p>
+<p>Op <a href="http://en.wikipedia.org/wiki/Hard_disk_drive" class="bare">http://en.wikipedia.org/wiki/Hard_disk_drive</a> vind je een aanvullend educatief filmpje over de werking van de harde schijf.</p>
 </div>
 </div>
 <div class="sect3">
@@ -2650,7 +2652,7 @@ Dit is een verbetering van de SCAN strategie. Op zijn terugweg zal de kop in het
 <div class="content">
 <img src="ch04/images/zones.png" alt="">
 </div>
-<div class="title">Figure 45. SSD drive zonder behuizing</div>
+<div class="title">Figure 44. SSD drive zonder behuizing</div>
 </div>
 <div class="paragraph">
 <p>In plaats van een magnetische schijf wordt in een SSD gebruik gemaakt van DRAM of flash geheugen om de gegevens op te slaan. DRAM heeft uiteraard als nadeel dat met het wegvallen van de stroom ook de gegevens verdwijnen.<br>
@@ -2704,7 +2706,7 @@ Ook voor specifieke servertoepassingen wordt de SSD stilaan een interessant alte
 <div class="content">
 <img src="ch04/images/slc.png" alt="">
 </div>
-<div class="title">Figure 46. SLC geheugen</div>
+<div class="title">Figure 45. SLC geheugen</div>
 </div>
 </div>
 <div class="sect4">
@@ -2716,7 +2718,7 @@ Ook voor specifieke servertoepassingen wordt de SSD stilaan een interessant alte
 <div class="content">
 <img src="ch04/images/mlc.png" alt="">
 </div>
-<div class="title">Figure 47. MLC geheugen</div>
+<div class="title">Figure 46. MLC geheugen</div>
 </div>
 <div class="paragraph">
 <p>Iedere cel zal dus in staat zijn om bijvoorbeeld vier verschillende spanningsniveaus te bewaren. Je ziet dat MLC gevoeliger zal zijn voor fouten: als er een klein beetje van het spanningsniveau is weggelekt zal je de data niet meer juist uitlezen.<br>
@@ -2733,7 +2735,7 @@ Vanwege die nood aan precisie zal MLC dus trager gelezen en beschreven kunnen wo
 <div class="content">
 <img src="ch04/images/flash_write.png" alt="">
 </div>
-<div class="title">Figure 48. Schrijfcyclus Flash</div>
+<div class="title">Figure 47. Schrijfcyclus Flash</div>
 </div>
 <div class="paragraph">
 <p>De verschillende stappen die nodig zijn gaan als volgt:
@@ -2770,7 +2772,7 @@ De fabrikanten die getroffen werden door dit gênant verschijnsel bakten daarom 
 <div class="content">
 <img src="ch04/images/flash_garbage_collection.png" alt="">
 </div>
-<div class="title">Figure 49. Garbage collection bij Flash Memory</div>
+<div class="title">Figure 48. Garbage collection bij Flash Memory</div>
 </div>
 <div class="paragraph">
 <p>Een bijkomende manier om hetzelfde probleem te verhelpen is het besturingssysteem laten communiceren met de SSD door middel van het ATA-Trim commando. Het besturingssysteem zal met dit commando aan de schijf vertellen welke data niet meer nodig is. (bijvoorbeeld bestanden die door NTFS als verwijderd staan aangeduid) Dit commando werd geïntroduceerd bij Windows 7 en is ingebakken in Linux kernels vanaf 2.6.28. Zo wordt vermeden dat sectoren verplaatst worden op de SSD, die door NTFS reeds lang als verwijderd werden aangeduid.</p>
@@ -2916,7 +2918,7 @@ Op die manier kunnen in principe oneindig veel partities aangemaakt worden (al z
 </div>
 <div class="paragraph">
 <div class="title">partitiestructuur (bron:Microsoft Technet)</div>
-<p>??????image::ch04/images/MBRvsGPTbrontechnet.jpg[alt="partitiestructuur", scaledwidth=50, width=400, align=center ]</p>
+<p>??????image::MBRvsGPTbrontechnet.jpg[alt="partitiestructuur", scaledwidth=50, width=400, align=center ]</p>
 </div>
 <div class="paragraph">
 <p>Meestal moet men slechts eenmaal een extended partitie aanmaken en kan men vervolgens in deze partitie logische partities definiëren. Het partitioneringsprogramma maakt automatisch de nodige EMBR’s aan. Bij het aanmaken van een extended partitie moet je goed opletten dat je voldoende ruimte voorziet voor het definiëren van alle logische partities.<br>
@@ -2927,13 +2929,13 @@ Het eerste is een eenvoudig voorbeeld met een primaire en een logische DOS-parti
 <div class="content">
 <img src="ch04/images/partitie1.jpg" alt="partitiestructuur met uitgebreide partitie" width="400">
 </div>
-<div class="title">Figure 50. Voorbeeld partitietabel met uitgebreide partitie</div>
+<div class="title">Figure 49. Voorbeeld partitietabel met uitgebreide partitie</div>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="ch04/images/partitie2.jpg" alt="partitiestructuur met meerdere logische partities" width="400">
 </div>
-<div class="title">Figure 51. Partitietabel met meerdere logische partities</div>
+<div class="title">Figure 50. Partitietabel met meerdere logische partities</div>
 </div>
 </div>
 <div class="sect3">
@@ -2969,7 +2971,7 @@ Elke partitie-entry bij GPT bevat volgende gegevens:</p>
 <div class="content">
 <img src="ch04/images/MBRvsGPTbrontechnet.jpg" alt="partitiestructuur" width="400">
 </div>
-<div class="title">Figure 52. GPT versus MBR layout (bron: Microsoft Technet)</div>
+<div class="title">Figure 51. GPT versus MBR layout (bron: Microsoft Technet)</div>
 </div>
 <div class="sect4">
 <h5 id="_bestanden">bestanden</h5>
@@ -3255,7 +3257,7 @@ Herstellen kan dan eenvoudig door het logbestand te doornemen en alle onvolkomen
 <div class="content">
 <img src="ch04/images/fatstructureBb457122.f28zs06_big(l=en-us).jpg" alt="fat organisatie" width="50">
 </div>
-<div class="title">Figure 53. FAT organisatie</div>
+<div class="title">Figure 52. FAT organisatie</div>
 </div>
 <div class="paragraph">
 <p>In bovenstaande afbeelding zie je de opbouw van een FAT16 partitie. Vooraan bevindt zich, zoals altijd, het PBS met de nodige parameters. De PBS is een van de gereserveerde sectoren vooraan de partitie. Onmiddellijk na de gereserveerde sectoren volgen een aantal File Alocation Tables (FATs). In de figuur is dit aantal gelijk aan twee, het meest voorkomende geval.<br>
@@ -3537,7 +3539,7 @@ Vooral de laatste 4 bytes zijn belangrijk. Die bevatten namelijk de lengte van h
 <div class="content">
 <img src="ch04/images/FAT16example.png" alt="FAT-tabel met fragmentatie" width="300">
 </div>
-<div class="title">Figure 54. voorbeeld FAT-tabel met fragmentatie</div>
+<div class="title">Figure 53. voorbeeld FAT-tabel met fragmentatie</div>
 </div>
 </div>
 <div class="sect3">
@@ -3624,7 +3626,7 @@ Zo’n inode voor een bestand bevat Directe, single indirecte, double indirecte 
 <div class="content">
 <img src="ch04/images/unix_filesys5.png" alt="inode structuur" width="500">
 </div>
-<div class="title">Figure 55. Inode structuur (bron onbekend)</div>
+<div class="title">Figure 54. Inode structuur (bron onbekend)</div>
 </div>
 <div class="paragraph">
 <p>Kleine bestanden zullen volledig in directe blokken passen, en dus erg snel zijn. Bestanden die niet in deze 12 blokken passen, krijgen via een link naar een indirect blok hun plaats toegewezen. Je kan met deze redenering ook voorspellen wat bedoeld wordt met dubbel indirecte en triple indirecte verwijzingen.</p>
@@ -4309,483 +4311,15 @@ Ten opzichte van deze laatste twee heeft eSATA als voordeel dat het hogere bitsn
 Vanzelfsprekend is er dus ook een seriële SCSI variant opgedoken, met name SAS (Serial Attached SCSI). SAS lijkt heel hard op SATA. Het is eveneens een seriële punt-tot-punt verbinding die gelijkaardige snelheden haalt. Het belangrijkste verschil is dat het zich net als het verouderde SCSI meer richt op de servermarkt, waarvoor het een iets grotere betrouwbaarheid biedt. Deze betrouwbaarheid uit zich vooral in een aantal foutcorrectie- en rapporteringmechanismen die in de loop der tijden binnen SCSI ontwikkeld zijn. Deze gaan een stuk verder dan wat met S.M.A.R.T. mogelijk is op ATA (en dus ook SATA).<br>
 Daar staat dan weer tegenover dat SAS iets duurder is dan SATA.</p>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_externe_i_o">9. Externe I/O</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>In dit hoofdstuk komen een aantal veel voorkomende interfaces voor randapparatuur voor. Een aantal hiervan worden uitgebreider besproken in de cursus “interfacing &amp; microcontrollers”.</p>
-</div>
-<div class="sect2">
-<h3 id="_in_den_beginne_3">9.1. In den beginne</h3>
-<div class="paragraph">
-<p>Dit hoofdstuk heeft niet de pretentie om alle mogelijke interfacebussen op te lijsten. Een aantal van die bussen worden niet meer gebruikt of raken stilaan in onbruik.
-De klassieke printerpoort of Centronics poort is er zo eentje. Deze parallelle poort zoals ze ook genoemd werd, is primair ontworpen voor het aansturen van printers. Getuige daarvan zijn de specifieke controlelijnen om aan te geven als bijvoorbeeld het papier uitgeput is. Deze poort werd later ook nog veelvuldig gebruikt, omdat ze erg eenvoudig is van opbouw, en daardoor makkelijk te gebruiken voor kleinere elektronicaprojectjes. Tegenwoordig is deze poort slechts zelden nog te vinden op een pc.<br>
-Ook de seriële poort is stilaan in z’n bestaan bedreigd. Enkel voor heel specifieke toepassingen (vb configuratie van apparatuur als routers) wordt ze nog gebruikt, maar ook daar moet ze stilaan plaats ruimen voor USB.</p>
-</div>
-<div class="paragraph">
-<p>De COM poort (zoals de seriële poort ook genoemd werd) laat asynchrone seriële communicatie toe. Dit betekent relatief lage bitsnelheden (minimum 50bps, standaard 9600bps, maximum115kbps).
-Deze vorm van communicatie wordt gebruikt voor tragere I/O, zoals barcodescanners, modems, &#8230;&#8203;<br>
-Omwille van de eenvoud en de ondersteuning op tal van microcontrollers wordt ze dikwijls gebruikt bij embedded systemen.<br></p>
-</div>
-<div class="paragraph">
-<p>Firewire is een andere IO mogelijkheid die vooral door Apple gepromoot werd, maar die stilaan in onbruik geraakt is.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_ps_2">9.2. PS/2</h3>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="ch07/images/ps2port.jpg" alt="ps/2 connector">
-</div>
-</div>
-<div class="paragraph">
-<p>De PS/2 interface duikt in de PC wereld op met de introductie van de IBM PS/2 (Personal System 2), ondertussen enkele decennia geleden. Het is een interface die dient voor het aansluiten van toetsenborden en muizen. Er bestaan twee connectoren die identiek zijn, op hun kleur na. De paarse connector dient voor een toetsenbord, de groene voor een muis. Aangezien beiden gebruik maken van een ander protocol is het aangewezen om de kleurcode te respecteren. Met name het BIOS kan problemen maken van een toetsenbord dat op de verkeerde poort is aangesloten, zodat bij het opstarten geen opdrachten doorgegeven kunnen worden via het toetsenbord. Een tweede mogelijk verrassend feit, is dat PS/2 niet hot pluggable is.<br>
-Dit komt door het elektronisch ontwerp. De pinnen van de connector zijn rechtstreeks verbonden met de pinnen van de microcontroller die beschadigd kan worden door hot swapping. Anderzijds is er ook geen ondersteuning voor het herkennen van een nieuw aangesloten apparaat. In moderne interfaces worden de contacten naar de microcontroller robuuster uitgevoerd, zodat er minder kans op beschadiging is. Bij het gebruik van standaardapparaten is de herkenning van het nieuw aangesloten apparaat ook geen probleem, zodat hot swapping soms wel succesvol aflopen, maar absoluut niet aan te raden is.<br></p>
-</div>
-<div class="paragraph">
-<p>PS/2 is ondertussen technologisch al lang achterhaald, maar blijft desondanks (backward compatibility) toch aanwezig aan de achterkant van vele PC’s en servers. De opvolger van PS/2 is USB, dat tevens een aantal andere interfaces moet vervangen, met als belangrijke pluspunt een uniforme aansluiting voor alle soorten apparaten.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_usb">9.3. USB</h3>
-<div class="sect3">
-<h4 id="_overzicht_3">9.3.1. Overzicht</h4>
-<div class="paragraph">
-<p>Om een oplossing te vinden voor de problemen bij het gebruik en vooral de configuratie van de klassieke (legacy) I/O-interfaces zoals de Centronics Interface en RS232, werd onder andere onder impuls van Intel een werkgroep opgericht met als doel het ontwikkelen van een nieuwe interface standaard. Dit werd de Universal Serial Bus (USB). USB is een snelle en flexibele interface om randapparatuur te verbinden met een computer. Ze is ontworpen met als doel het gebruiksgemak en betrouwbaarheid te verhogen.</p>
-</div>
-<div class="paragraph">
-<p>Doelstellingen:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>eenvoudige en betrouwbare aansluiting geschikt voor alle soorten randapparatuur</p>
-</li>
-<li>
-<p>immuun voor problemen met systeemresources als interrupt- of DMA-conflict</p>
-</li>
-<li>
-<p>automatische detectie en configuratie van aangesloten apparaten</p>
-</li>
-<li>
-<p>goedkoop te realiseren</p>
-</li>
-<li>
-<p>laag stroomverbruik</p>
-</li>
-<li>
-<p>hot-pluggable</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>In de originele specificatie (USB 1.1) is er sprake van twee mogelijke transmissiesnelheden:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Low Speed: 1,5 Mbps, bedoeld voor I/O met een beperkt datadebiet: muis, toetsenbord, joystick, &#8230;&#8203;</p>
-</li>
-<li>
-<p>Full Speed: 12 Mbps, bedoeld voor hogere debieten: audio, printers, scanners, processorcommunicatie&#8230;&#8203;
-In een latere revisie (USB 2.0) is er een derde mogelijkheid bijgekomen:</p>
-</li>
-<li>
-<p>High Speed: 480 Mbps, bedoeld voor video, externe harde schijven, DVD of CD-romspelers, &#8230;&#8203;
-De nieuwste revisie (USB 3.0) krikt de snelheid verder op:</p>
-</li>
-<li>
-<p>Superspeed: 4,8 Gbps, bedoeld om extra hoge snelheden te halen, zoals voor SSD. 	De nieuwe mogelijkheden van deze versie van de standaard komen op het eind van 		dit hoofdstuk aan bod.
-De USB-bus is gebaseerd op het master/slave principe: de host (de computer) is verantwoordelijk voor het beheer en de coördinatie van de activiteit op de bus. Er kan dus enkel communicatie gebeuren op initiatief van de host. Deze bevat hiervoor een zogenaamde USB Host-controller.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_mechanische_en_elektrische_opbouw">9.3.2. Mechanische en elektrische opbouw</h4>
-<div class="paragraph">
-<p>De USB-bus werkt met relatief korte kabels (maximum 5 m.) voor punt-tot punt verbindingen: er wordt telkens een apparaat verbonden met een poort van een USB-hub. Ook de aansluitingen op een computer maken deel uit van één of (soms) meerdere hubs. Een USB2-kabel bevat vier geleiders:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Rood: +5V</p>
-</li>
-<li>
-<p>Zwart: Gnd</p>
-</li>
-<li>
-<p>Wit: Data</p>
-</li>
-<li>
-<p>Groen: Data+</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>In het geval van Full- of High Speed USB heeft het datapaar een afzonderlijke afscherming. Om grotere afstanden te overbruggen of meer apparaten aan te sluiten kan de installatie uitgebreid worden door gebruik te maken van externe USB-Hubs. In totaal mogen er maximaal 4 externe hubs achter elkaar geschakeld worden (geeft een maximum afstand van 30 m) en mogen er maximaal 127 apparaten aangesloten worden op een USB-bus. Er zijn twee types connectoren. Type A wordt gebruikt voor de aansluiting aan de hub (of op de computer). Type B wordt gebruikt voor de aansluiting.<br>
-Er bestaan ook mini en micro varianten van de connectoren. Volgende figuur toont een aantal voorbeelden.</p>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="ch07/images/2000px-Types-usb_th1.svg.png" alt="USB connectoren (bron: wikipedia)" width="500">
-</div>
-</div>
-<div class="paragraph">
-<p>Als een randapparaat geen al te groot stroomverbruik heeft, kan het gevoed worden vanuit de USB-kabel: stromen tot 500 mA zijn toegestaan bij een spanning van 5V (vanwege spanningsverlies over de kabel kan deze spanning zakken tot minimaal 4 V bij het randapparaat). Voor grotere vermogens moet het randapparaat een eigen voeding voorzien.</p>
-</div>
-<div class="paragraph">
-<p>De USB-bus verstuurt de data serieel met NRZI-codering (Non Return on Zero Inverted) via een differentieel signaal (D+, D-). Een overgang in het datasignaal stelt een 0 voor, terwijl een ongewijzigd signaal een 1 voorstelt.<br>
-Opdat de ontvanger synchroon zou blijven lopen met de zender (er is geen afzonderlijk kloksignaal), is het nodig dat er regelmatig een overgang in het signaal optreedt. In het geval dat er meer dan 6 opeenvolgende bits op 1 staan, wordt na het 6e bit automatisch een 0 ingevoegd (bit-stuffing) door de zender. Dat extra 0-bit moet door de ontvanger uiteraard weer verwijderd worden. Op deze manier wordt een betrouwbare gegevensoverdracht verzorgd, die nog aangevuld wordt met een CRC-foutcontrole per pakket.</p>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="ch07/images/nrzi.png" alt="voorbeeld NRZI-codering met bitstuffing" width="500">
-</div>
-</div>
-<div class="paragraph">
-<p>De communicatie in de twee richtingen (host&lt;&#8594;device) gebeurt over hetzelfde draadpaar. Dit is dus vergelijkbaar met half-duplex.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_communicatie_over_usb">9.3.3. Communicatie over USB</h4>
-<div class="paragraph">
-<p>Zoals de naam al aangeeft, wordt het medium bij de Universal Serial Bus gedeeld over alle aangesloten apparaten (shared bandwidth). Daarnaast wordt er gebruik gemaakt van het master/slave principe zodat de host-controller(de master) de volledige controle heeft over de communicatie via de USB-bus.</p>
-</div>
-<div class="sect4">
-<h5 id="_frames_pakketten">Frames, pakketten</h5>
-<div class="paragraph">
-<p>De host verdeelt de tijd in frames met een vaste lengte (1 msec voor Low- en Full-speed, 125 µsec voor High-speed). Elk frame wordt op zijn beurt opgedeeld in een aantal pakketten (lengte kan variëren) waarvan het eerste een SOF (Start-Of-Frame) pakket is, bedoeld voor frame synchronisatie tussen de verschillende apparaten. Elk pakket is gekoppeld aan een apparaat en daarbinnen aan een endpoint (vergelijkbaar met een TCP-poortnummer).</p>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="ch07/images/USB_frames.png" alt="USB frames (bron onbekend)" width="500">
-</div>
-</div>
-<div class="paragraph">
-<p>Binnen een pakket vind je enkele belangrijke velden:</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">De Sync-vlag (00000001)</dt>
-<dd>
-<p>is bedoeld voor bit- en byte-synchronisatie.</p>
-</dd>
-<dt class="hdlist1">De Packet-ID (of PID)</dt>
-<dd>
-<p>geeft het type van het pakket weer (Token, Data, Handshake, Special, &#8230;&#8203;).</p>
-</dd>
-<dt class="hdlist1">Het Data-veld</dt>
-<dd>
-<p>bevat naast eventuele gegevens ook het adres van het apparaat waaraan het pakket gekoppeld is en het endpoint.</p>
-</dd>
-</dl>
-</div>
-<div class="paragraph">
-<p>Gedurende het EOP-gedeelte worden de twee datalijnen beide laag gehouden gedurende een bittijd. Hierdoor detecteren alle aangesloten apparaten het einde van het pakket.
-Een volledige transfer tussen de host en een apparaat zal opgebouwd worden door verschillende pakketten die eventueel in verschillende frames kunnen zitten.</p>
-</div>
-<div class="paragraph">
-<p>Er onderscheiden zich vier types van pakketten.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Start-of-frame: geeft het begin aan van een nieuw frame inclusief een 11 bit frame nummer.</p>
-</li>
-<li>
-<p>Token: het token geeft de richting aan van de pakketten.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>IN:: informeert het toestel dat de host iets wil ontvangen</p>
-</li>
-<li>
-<p>OUT:: informeert het toestel dat de host iets wil versturen</p>
-</li>
-<li>
-<p>SETUP:: wordt gebruikt om een transfer te starten.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Handshake</p>
-<div class="ulist">
-<ul>
-<li>
-<p>ACK:: geeft een bevestiging dat de info correct werd ontvangen</p>
-</li>
-<li>
-<p>NAK:: geeft aan dat het toestel eventjes geen data kan zenden of ontvangen, of dat er geen data beschikbaar is op dit moment.</p>
-</li>
-<li>
-<p>STALL:: het toestel bevindt zich in een staat waarin de host actie moet ondernemen.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Data: bevat maximum 1024 bytes aan data. Er zijn ook verschillende subtypes:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Data0</p>
-</li>
-<li>
-<p>Data1</p>
-</li>
-<li>
-<p>Data2 (enkel bij high-speed)</p>
-</li>
-<li>
-<p>MDATA (enkel bij high-speed)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Aanvullende uitleg en verdere verduidelijking vind je op <a href="http://www.beyondlogic.org/usbnutshell/usb3.shtml#USBPacketTypes">http://www.beyondlogic.org/usbnutshell/usb3.shtml#USBPacketTypes</a></p>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_endpoints">9.3.4. Endpoints</h4>
-<div class="paragraph">
-<p>Voor de communicatie met de host, beschikt elk USB-device over een aantal endpoints (maximaal 16): dit zijn meestal kleine databuffers in het geheugen van de microcontroller van het randapparaat. Die buffers worden gebruikt om de informatie uit een pakket op te slaan.<br>
-Om gegevens uit te wisselen tussen de host en een USB-apparaat wordt een verbinding opgezet (pipe genaamd) tussen een endpoint en de host. De richting wordt gespecificeerd vanuit het standpunt van de host: Een IN-endpoint stuurt data van het apparaat naar de computer. Bij een OUT-endpoint ontvangt het apparaat data van de computer.<br>
-Een uitzondering op die regel: endpoint 0 is bedoeld voor controle van de verbinding en laat communicatie in de twee richtingen toe (is eigenlijk een combinatie van een IN- en een OUT-endpoint, beide met hetzelfde nummer).</p>
-</div>
-<div class="paragraph">
-<p>images::ch07/images/endpoint.gif[align="center", scaledwitdth="40", alt="USB endpoints (bron: beyondlogic.org",width="500"]</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_types_van_transfers">9.3.5. Types van transfers</h4>
-<div class="paragraph">
-<p>USB is ontworpen om verschillende soorten apparaten te bedienen, elk met zijn eigen specificaties (gegevensdebiet, reactietijd, foutcorrectie,&#8230;&#8203;). Om aan alle mogelijke situaties tegemoet te komen zijn er vier soorten transfers voorzien:</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">CONTROL transfers</dt>
-<dd>
-<p>worden gebruikt voor het beheer van de USB. Via control transfers over de control-pipe (naar endpoint 0) leest de host informatie over een apparaat en ontvangt het apparaat configuratie-informatie (zoals een device-adres). Elk USB-apparaat moet controltransfers ondersteunen.</p>
-</dd>
-<dt class="hdlist1">BULK transfers</dt>
-<dd>
-<p>zijn bedoeld voor situaties waar veel gegevens moeten doorgestuurd worden, maar waarbij de snelheid niet kritisch is: disk, printers, scanners,&#8230;&#8203; Als de USB bezet is met verkeer dat een gegarandeerde bandbreedte vereist (isochrone transfers), dan zal een bulktransfer moeten wachten. Wanneer er daarbuiten weinig verkeer is, zal een bulk-transfer zeer snel verlopen.</p>
-</dd>
-<dt class="hdlist1">INTERRUPT transfers</dt>
-<dd>
-<p>worden gebruikt wanneer een apparaat op regelmatige tijdstippen de gelegenheid moet krijgen om gegevens te verzenden of ontvangen. Voorbeelden hiervan zijn een toetsenbord, een joystick, een muis: hierbij wordt een limiet vereist op de reactietijd van de computer. In tegenstelling tot wat je uit de naam zou verwachten, is een interrupttransfer gebaseerd op regelmatige polling door de host-controller. Vermits USB een puur master/slave systeem is, zijn er geen interrupt-mogelijkheden voor de USB-apparaten.</p>
-</dd>
-<dt class="hdlist1">ISOCHRONE transfers</dt>
-<dd>
-<p>garanderen een gevraagde bandbreedte, maar voorzien geen foutcorrectie. Wanneer geluid of video over USB wordt doorgestuurd, zal men gebruik maken van isochrone transfers. Hierbij zorgt de host-controller ervoor dat alle toegestane transfers goed verlopen. Wanneer software een aanvraag doet om bijvoorbeeld een isochrone transfer op te zetten met een bepaald apparaat, wordt eerst nagegaan of er nog voldoende bandbreedte over is op de bus (of er in elk frame nog voldoende plaats vrij is). Voldoende plaats betekent dat steeds voldoende ruimte moet overblijven voor noodzakelijke controle transfers.
-In een frame komen eerst de isochrone transfers aan bod. Vervolgens worden de interrupt apparaten gepold (en wordt eventueel de nodige interrupt data getransfereerd). Op deze manier komen alle apparaten die een bepaalde bandbreedte of een bepaalde korte reactietijd nodig hebben steeds aan bod. Wat overblijft van de tijd in een frame, kan ingenomen worden door bulktransfers. Dit is minimaal de nog niet toegekende tijd, maar kan ook niet gebruikte tijd voor controle of interrupt transfers zijn.</p>
-</dd>
-</dl>
-</div>
-<div class="sect4">
-<h5 id="_verloop_van_een_transfer">Verloop van een transfer.</h5>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="ch07/images/transint.png" alt="voorbeeld van een interrupt transfer (bron: beyondlogic.org)" width="400">
-</div>
-</div>
-<div class="paragraph">
-<p>De transfer begint met de host controller die aangeeft in welke richting de data zal gaan: in-token voor data van apparaat naar host controller, out-token voor de omgekeerde inrichting. Vervolgens wordt de data verzonden (afhankelijk van de richting gebeurt dit door het apparaat of de host controller). In het geval van een transfer richting host controller, kan het apparaat ook reageren met een NAK. Dit betekent dat er geen data te versturen is. Geen reactie op het token bericht betekent dat dit token een fout bevatte. Na de data volgt nog een bevestiging, die aangeeft dat de data correct ontvangen is. In het geval van een transfer richting apparaat kan dit ook bevestigen met een NAK. Dit betekent dat het apparaat de inkomende data op dat ogenblik niet kan verwerken. Andere transfers verlopen op gelijkaardige manier.<br>
-Bij isochrone transfers zullen er geen bevestigingen zijn, terwijl na een controle transfer nog een extra statusfase zal volgen waarbij de verwerking van een commando wordt bevestigd.</p>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_enumeratie_en_p_p">9.3.6. Enumeratie en P&amp;P</h4>
-<div class="paragraph">
-<p>Zoals bij de inleiding al vermeld, is USB ontworpen met het oog op een volledige integratie met het Plug&amp;Play gebeuren. De bedoeling is dan ook dat een gebruiker een USB-apparaat aansluit, dat het automatisch herkend wordt door het besturingssysteem, dat de juiste drivers geladen worden waarna het apparaat gebruikt kan worden, zonder dat die gebruiker iets moet configureren. Om dit mogelijk te maken zijn er wel een aantal stappen nodig: detectie van nieuwe apparatuur en snelheid daarvan.</p>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="ch07/images/USBpullup.png" alt="pull-up weerstand voor detectie nieuw apparaat" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>Langs de kant van de host (of hub) zijn de twee datalijnen via 2 pull-down weerstanden (15 k) verbonden met de massa. Daardoor ziet de host een laag niveau op beide datalijnen (D+ en D-).<br>
-Een Low-speed device heeft van zijn kant een pull-up weerstand van 1,5k tussen de voedingsspanning en D- (bij de full- en high-speed apparaten is dat naar de D+ lijn).<br>
-Wanneer een apparaat aangesloten wordt, zal langs de kant van de host (hub)een van beide D-lijnen naar een hoog niveau getrokken worden. Hierdoor detecteert deze dat er een nieuw apparaat op de bus aanwezig is en ook of dit al dan niet een low-speed device is. Elke hub heeft een interrupt IN-pipe waardoor de nieuwe aansluiting doorgegeven wordt naar de host.</p>
-</div>
-<div class="sect4">
-<h5 id="_enumeratie">Enumeratie</h5>
-<div class="paragraph">
-<p>Bij het opstarten van de computer en telkens er een nieuw apparaat gedetecteerd wordt, zal er een procedure doorlopen worden: de zogenaamde enumeratie. Hierbij is het de bedoeling dat het apparaat een uniek adres toegewezen krijgt, dat het besturingssysteem informatie opvraagt over het apparaat en dat het weet welke drivers er eventueel geladen moeten worden.<br>
-Wanneer een nieuw device gedetecteerd wordt (Windows XP/Vista geeft hiervan een melding in de system-tray), zal de host een aanvraag voor informatie sturen naar endpoint 0 (de controle-endpoint) van device-adres 0 (geen enkel actief apparaat heeft adres 0). Die informatie bestaat uit een aantal descriptors: records met vooraf bepaalde velden die alle nodige informatie bevatten die de host-controller nodig heeft. In een volgende stap kent de host een USB-adres toe aan het nieuwe apparaat (verschillend van 0), waarna nog wat informatie uitgewisseld wordt tussen host en apparaat.<br>
-In de ontvangen device-descriptor staat onder andere een veld dat de fabrikant van het apparaat identificeert (zoals bij een netwerkkaart, aan te vragen bij het USB-consortium) en een veld dat door die fabrikant toegekend wordt om het model van het apparaat te identificeren. Bij die configuratie worden ook andere configuratieparameters (configuration-descriptor) uitgewisseld waarin onder meer bepaald wordt hoeveel stroom het apparaat nodig zal hebben.<br>
-Daarna zullen ook nog interface descriptors uitgewisseld worden. Deze bevatten informatie over het aantal endpoints dat het device nodig heeft, en welke device classes ondersteund worden.<br>
-Tot slot worden ook nog endpoint descriptors doorgestuurd. Daarin staat per endpoint beschreven hoe het verkeer zal georganiseerd worden (bulk, interrupt, …), hoe vaak er moet gepold worden in het geval van interrupt transfer, de richting van de endpoint (IN/OUT), …<br>
-Op basis van die Vendor-en Product- ID’s  en de informatie die in de descriptors gevonden wordt, zal het besturingssysteem in de beschikbare INF-bestanden zoeken naar een geschikte driver. Als die niet gevonden wordt zal bijvoorbeeld Windows 8 online op zoek gaan. De pas geladen driver zal bij zijn initialisatie zelf het USB-apparaat (of beter de controller daarin) verder configureren, waarna het toestel gebruikt kan worden.</p>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_device_classes_drivers">9.3.7. Device Classes, Drivers</h4>
-<div class="paragraph">
-<p>Bij het overlopen van alle mogelijke randapparaten voor een computer kunnen die in een aantal grote groepen ingedeeld worden. Bij het ontwerp van de USB-standaard zijn een aantal device-classes en subclasses gedefinieerd. Elk toestel moet bij de enumeratie in de device-descriptor ook meegeven tot welke groep het behoort. Voor elke vastgelegde class en subclass is ook de structuur van de driver vastgelegd samen met de vereisten voor de firmware van het apparaat zelf (een soort API).</p>
-</div>
-<div class="paragraph">
-<p>Enkele voorbeelden van classes:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Audio devices</p>
-</li>
-<li>
-<p>Mass Storage devices</p>
-</li>
-<li>
-<p>Monitors</p>
-</li>
-<li>
-<p>Communication devices (modems)</p>
-</li>
-<li>
-<p>Printers Still image capture devices (scanner, camera,&#8230;&#8203;)</p>
-</li>
-<li>
-<p>HID (Human interface devices)</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Een mordern besturingssysteem bevat drivers voor een aantal veel voorkomende classes. Voor apparaten uit die groepen hoeft de fabrikant geen eigen drivers meer te schrijven (tenzij er extra functionaliteit gevraagd wordt).<br>
-Een belangrijke groep is de HID-class: deze is origineel bedoeld voor I/O apparatuur als toetsenbord, muis en dergelijke. De vereisten voor deze toestellen zijn zeer beperkt, zodat het vrij gemakkelijk is om een toestel (en de bijhorende firmware) te ontwerpen dat binnen deze groep past, met als voordeel dat daarvoor geen drivers geschreven hoeven te worden (ze zijn immers al binnen het besturingssysteem aanwezig).</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_usb_3_0">9.3.8. USB 3.0</h4>
-<div class="paragraph">
-<p>De USB standaard versie 3 verzekert de toekomst van deze technologie. Om deze hoge snelheden te kunnen halen, waren wel enkele compromissen nodig.
-Zo was dezelfde connector niet langer bruikbaar. Alles is gelukkig backwards compatibel, maar een USB3 connector zal je makkelijk kunnen herkennen aan de blauwe kleur van de binnenkant van de connector.</p>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="ch07/images/USB3connector.jpg" alt="USB3-connector" width="300">
-</div>
-</div>
-<div class="paragraph">
-<p>Ondanks de fysieke compatibiliteit zijn er een flink aantal verschillen te bespeuren in de nieuwe versie. Kijk je bijvoorbeeld naar een dwarsdoorsnede van een USB3.0-kabel, dan merk je een groot verschil. Het data-paar van USB2.0 is nog steeds aanwezig, maar is enkel daar om compatibiliteit te garanderen.
-De snelle data zal verplaatst worden over twee Shielded Differential Pairs.<br>
-Deze geïsoleerde geleiders  zorgen er uiteraard voor dat deze kabels een stuk minder soepel zullen zijn dan hun voorgangers.<br>
-Een ander interessant detail is dat deze standaard voorziet in een grotere stroomlevering aan apparaten: 900mA ten opzichte van 500mA bij de huidige (2.0) standaard.<br>
-De encoding gebeurt ook niet langer met NRZI, maar met 8b/10b, de methode die ook gebruikt wordt bij SATA, SAS, PCI Express.</p>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="ch07/images/usb3-kabeldoorsnede.png" alt="Dwarsdoorsnede USB3-kabel (bron onbekend)" width="500">
-</div>
-</div>
-<div class="sect4">
-<h5 id="_signalering">Signalering</h5>
-<div class="paragraph">
-<p>Ook de signalering is bij USB 3.0 op de schop genomen. Het typerende polling-concept is niet meer zo sterk aanwezig. Dat geeft voordelen naar zuinigheid van de apparaten. Ze moeten immers niet constant actief zijn.<br></p>
-</div>
-<div class="paragraph">
-<p>Andere significante wijzigingen:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>verkeer is nu full duplex ten opzichte van half-duplex in USB 1 en 2.</p>
-</li>
-<li>
-<p>de protocolstack is een stuk complexer</p>
-</li>
-<li>
-<p>bulk streams is een nieuwe, vijfde transfermethode</p>
-</li>
-<li>
-<p>toevoegen van een link layer</p>
-</li>
-<li>
-<p>fel verbeterd power management</p>
-</li>
-<li>
-<p>door complexiteit is de maximale kabellengte beperkt tot ongeveer 3 meter.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="ch07/images/usb3.0_architecture.jpg" alt="USB3 protocol stack (bron:onbekend">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_thunderbolt">9.4. Thunderbolt</h3>
-<div class="paragraph">
-<p>De Thunderbolt interface is te vinden op alle nieuwe MAC-hardware, en heeft z’n reden.  De standaard werd ontwikkeld door Intel in samenwerking met Apple.<br>
-De eerste apparaten die hiermee werden uitgerust, werden uitgebracht in februari 2011 (Macbook Pro). Mondjesmaat wordt extra randapparatuur uitgebracht die dit ondersteunt. De standaard probeert nog universeler te zijn dan USB door de kracht van displayport (zie verder) en PCIx te combineren in één enkele poort.</p>
-</div>
-<div class="sect3">
-<h4 id="_architectuur_2">9.4.1. Architectuur</h4>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="ch07/images/Thunderbolt_Technology_model_1_E.png" alt="Thunderbolt architectuur (bron: Intel)" width="500">
-</div>
-</div>
-<div class="paragraph">
-<p>Thunderbolt is in staat om 10Gpbs te transfereren over een koperverbinding. Initieel had Intel de bedoeling om  de bekabeling met glasvezels te produceren, maar voorlopig is dat niet het geval. De bouw ervan was te duur, en een bijkomend probleem was dat op die manier geen stroomvoorziening kan gebeuren voor de randapparaten. Er wordt echter nog steeds ontwikkeld, dus misschien duikt dit alsnog op in een volgende versie.<br>
-De architectuur van Thunderbolt  zet alles in op performantie. Daarvoor wordt de PCH  via een PCIe 4x poort verbonden met de Thunderbolt controller, en is die laatste ook verbonden met het interne grafisch systeem van de computer. Het resultaat is dat over deze verbinding een PCIx verbinding en een Displayport gebundeld zijn. Daarnaast ondersteunt Thunderbolt ook daisy chaining tot maximaal zeven apparaten. Dat betekent dat je Thunderbolt-compatibele apparaten kan doorlussen.<br>
-Een goed voorbeeld van hoe dit gebruikt wordt, vind je bijvoorbeeld in het Apple Thunderbolt Display. Dat is een scherm dat bedoeld is voor de apple macbook pro’s als tweede scherm. Met een enkele Thunderbolt kabel naar dat schem wordt echter veel mogelijk:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>een 27” scherm met 2560-by-1440 resolutie krijgt z’n beelden door deze kabel</p>
-</li>
-<li>
-<p>er is een camera ingebouwd</p>
-</li>
-<li>
-<p>er is HD audio voorzien</p>
-</li>
-<li>
-<p>er is een connector voor Gigabit Ethernet voorzien</p>
-</li>
-<li>
-<p>er is een Firewire 800 connector voorzien.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Dat alles gebeurt met deze enkele Thunderbolt kabel.</p>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-Criticasters hekelen de veiligheid van Thunderbolt, net omdat je rechtstreeks verbonden bent als een PCIx poort, en je dus ook toegang hebt tot het geheugen van het host-apparaat. Bedenk zelf de risico’s die daarmee gepaard gaan…
-</td>
-</tr>
-</table>
+<p>Unresolved directive in book_pcarch.asc - include::ch07/ch07_externalIO.asc[]</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_literatuurlijst">10. Literatuurlijst</h2>
+<h2 id="_literatuurlijst">9. Literatuurlijst</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Onderstaande werken bevatten een stuk diepgaandere informatie over deze materie. Ze kunnen dan ook een ideaal vertrekpunt vormen voor een verdere studie van de computerarchitectuur.</p>
@@ -4818,7 +4352,7 @@ Criticasters hekelen de veiligheid van Thunderbolt, net omdat je rechtstreeks ve
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2014-07-09 16:54:04 Romance (zomertijd)
+Last updated 2014-08-12 15:17:38 Romance (zomertijd)
 </div>
 </div>
 </body>
