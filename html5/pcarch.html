@@ -946,7 +946,7 @@ UPS’en vind je in alle prijsklasses, wat vaak te maken heeft met de inwendige 
 <div class="ulist bibliography">
 <ul class="bibliography">
 <li>
-<p><a id="GOOGLE"></a>[GOOGLE] Google. High efficient power supplies for home computers and servers. <a href="http://static.googleusercontent.com/media/services.google.com/nl//blog_resources/PSU_white_paper.pdf" class="bare">http://static.googleusercontent.com/media/services.google.com/nl//blog_resources/PSU_white_paper.pdf</a>.</p>
+<p><a id="GOOGLE"></a>[GOOGLE] Google. High efficient power supplies for home computers and servers. 2006.  <a href="http://static.googleusercontent.com/media/services.google.com/nl//blog_resources/PSU_white_paper.pdf" class="bare">http://static.googleusercontent.com/media/services.google.com/nl//blog_resources/PSU_white_paper.pdf</a></p>
 </li>
 <li>
 <p><a id="ANAND"></a>[ANAND] AnandTech. Samsung Chromebook Review. <a href="http://www.anandtech.com/show/6422/samsung-chromebook-xe303-review-testing-arms-cortex-a15/7" class="bare">http://www.anandtech.com/show/6422/samsung-chromebook-xe303-review-testing-arms-cortex-a15/7</a></p>
@@ -1623,7 +1623,7 @@ Een DIMM biedt op dezelfde afstand veel meer contactpunten en wordt dan ook toeg
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch03/images/DDR_Memory_comparison.svg.png" alt="DDR">
+<img src="ch03/images/DDR_Memory_comparison.svg.png" alt="DDR" width="300">
 </div>
 <div class="title">Figure 16. Courante DDR-dimm modules (Wikimedia public domain)</div>
 </div>
@@ -1632,7 +1632,7 @@ Een DIMM biedt op dezelfde afstand veel meer contactpunten en wordt dan ook toeg
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch03/images/Laptop_SODIMM_DDR_Memory_Comparison_V2.svg.png" alt="">
+<img src="ch03/images/Laptop_SODIMM_DDR_Memory_Comparison_V2.svg.png" alt="" width="300">
 </div>
 <div class="title">Figure 17. SO-DIMM modules (Wikimedia public domain)</div>
 </div>
@@ -2397,9 +2397,11 @@ Hierdoor reageert de computer trager dan in het geval er geen virtueel geheugen 
 Een harde schijf bestaat uit een aantal aluminium schijven, die men platters noemt. De keuze voor aluminium is ingegeven door de mechanische eigenschappen van dit materiaal. Aluminium is licht en toch voldoende stijf. Belangrijk nadeel van aluminium is dat het een niet magnetisch materiaal is, zodat het niet bruikbaar is voor magnetische opslag.</p>
 </div>
 <div class="paragraph">
-<p>Dit probleem wordt verholpen door de platter te voorzien van een dun laagje magnetisch materiaal. Uiteraard kan een dergelijk laagje langs beide kanten van de platter voorzien worden.
-Vlak boven (en meestal ook onder) het schijfoppervlak zweeft een schijfkop (head).
-Voor een goed functionerende schijf is het dus belangrijk dat de lucht rond de platters zuiver is. Daarom worden schijven bij de productie luchtdicht verpakt. De platters zitten allemaal op eenzelfde as, die door een motor aan hoge snelheid wordt rondgedraaid.
+<p>Dit probleem wordt verholpen door de platter te voorzien van een dun laagje magnetisch materiaal. Uiteraard kan een dergelijk laagje langs beide kanten van de platter voorzien worden.<br>
+Vlak boven (en meestal ook onder) het schijfoppervlak zweeft een schijfkop (head).</p>
+</div>
+<div class="paragraph">
+<p>Voor een goed functionerende schijf is het dus belangrijk dat de lucht rond de platters zuiver is. Daarom worden schijven bij de productie luchtdicht verpakt. De platters zitten allemaal op eenzelfde as, die door een motor aan hoge snelheid wordt rondgedraaid.<br>
 Op die manier beweegt de schijfkop over het oppervlak.</p>
 </div>
 <div class="paragraph">
@@ -2413,7 +2415,7 @@ Op die manier beweegt de schijfkop over het oppervlak.</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch04/images/logischeopbouw.jpg" alt="">
+<img src="ch04/images/logischeopbouw.jpg" alt="" width="450">
 </div>
 <div class="title">Figure 40. logische indeling van een schijf (bron: technet.microsoft.com)</div>
 </div>
@@ -2433,11 +2435,11 @@ Op die manier beweegt de schijfkop over het oppervlak.</p>
 <div class="title">Figure 41. Onderverdeling van tracks in sectors en bits</div>
 </div>
 <div class="paragraph">
-<p>Bovenstaande afbeelding toont de onderverdeling van tracks in sectors en sectors in bits. Een track is opgebouwd uit een aantal sectoren met tussen de sectoren een tussenruimte.
+<p>Bovenstaande afbeelding toont de onderverdeling van tracks in sectors en sectors in bits. Een track is opgebouwd uit een aantal sectoren met tussen de sectoren een tussenruimte.<br>
 De sectoren zelf beginnen met een preamble. Dit is een vastgelegd patroon waaraan de schijfcontroller de start van een sector kan herkennen.</p>
 </div>
 <div class="paragraph">
-<p>Vervolgens volgen een aantal databits. Dit aantal kan variëren, maar zal bijna altijd gelijk zijn aan 4096 of 512 bytes. Bij recente schijven wordt steevast een sector size verkozen van 4096 bytes. Door een verminderde overhead kan zo ongeveer 13% meer nuttige ruimte op een harde schijf ontstaan. [6]
+<p>Vervolgens volgen een aantal databits. Dit aantal kan variëren, maar zal bijna altijd gelijk zijn aan 4096 of 512 bytes. Bij recente schijven wordt steevast een sector size verkozen van 4096 bytes. (dit wordt Advanced Format genoemd) Door een verminderde overhead kan zo ongeveer 13% meer nuttige ruimte op een harde schijf ontstaan. <a href="#MANGAN">[MANGAN]</a><br>
 Na de databits volgt een foutcorrigerende code (ECC - Error Correcting Code). Deze laat toe om fouten in de databits te herstellen. Meestal is dit een Reed-Solomon code. Ook deze eigenschappen werden verbeterd door het 4k advanced format van sectoren.</p>
 </div>
 <div class="paragraph">
@@ -2467,17 +2469,19 @@ Deze actie noemt men een seek. De seek time is dus een belangrijke parameter bij
 </div>
 <div class="paragraph">
 <p>Eens de kop boven het juiste spoor zweeft, is er nog een rotatiewachttijd nodig alvorens de kop boven de gewenste locatie komt. Deze rotatie wachttijd is vooral afhankelijk van de rotatiesnelheid. Gangbare snelheden zijn 5400, 7200, 10000 of 15000 toeren per minuut. De gemiddelde wachttijd (average latency) is de tijd die nodig is om de schijf een halve rotatie te laten uitvoeren. Bij de vermeldde snelheden is dit 5,56ms, 4,16ms en 3ms. Tenslotte is er nog de tijd nodig om de gegevens effectief te verwerken.<br>
-Een moderne schijf haalt gemiddelde overdrachtssnelheden van 60MB/s (opgelet: niet vergelijken met de maximale overdrachtssnelheid die fabrikanten opgeven).<br>
+Een moderne schijf haalt gemiddelde overdrachtssnelheden van ongeveer 60MB/s (opgelet: niet vergelijken met de maximale overdrachtssnelheid die fabrikanten opgeven).<br>
 Bij deze snelheid duurt het 8,5ms om een sector van 512 bytes te verplaatsen. Het zal dus duidelijk zijn dat de seek time en de average latency duidelijk domineren ten opzichte van de eigenlijke overdrachtstijd. Het komt er dus ook op aan om te vermijden dat willekeurige sectoren over de schijf gelezen moeten worden.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_invloed_van_fysieke_geometrie_op_de_performantie">6.1.4. Invloed van fysieke geometrie op de performantie</h4>
 <div class="paragraph">
-<p>Eerder werd al de fysieke opbouw van de harde schijf besproken. Deze fysieke geometrie bepaalt mee de snelheid die gehaald kan worden.
+<p>Eerder werd al de fysieke opbouw van de harde schijf besproken. Deze fysieke geometrie bepaalt mee de snelheid die gehaald kan worden.<br>
 Helaas zijn sommige eigenschappen tegenstrijdig met andere kwaliteiten die nagestreeft  worden, waaronder ook het goedkoop kunnen aanbieden van de schijven. Een eerste duidelijk voorbeeld is de rotatiesnelheid van de harde schijf. Hoe sneller de schijf rond draait, hoe kleiner de average latency kan zijn. Daar staat tegenover dat een sneller draaiende schijf meer energie vraagt, wat een ongewenste eigenschap is in het geval van batterijgevoede apparaten zoals laptops. Een tweede voorbeeld is het aantal platters. Meer platters betekent dat er meer gegevens beschikbaar zijn, zonder dat de leeskoppen radiaal verplaatst moeten worden. Daar staat dan weer tegenover dat de motoren krachtiger moeten zijn (grotere massa roteren of verplaatsen), met een groter verbruik tot gevolg. Door de grotere massa zullen de schijven ook trager op gang komen, waardoor het minder interessant wordt om ze uit te schakelen (wat het verbruik uiteraard nog meer negatief beïnvloed).<br>
-Bovendien geven extra platters aanleiding tot grotere trillingen en dus meer lawaai. Tenslotte moeten de platters natuurlijk fysiek in de behuizing van de schijf passen. Een laatste voorbeeld is de capaciteit van de schijf. Als de capaciteit van de schijf vergroot, terwijl alle andere parameters (aantal platters, grootte van platters) dezelfde blijven, dan vergroot de bitdichtheid. Een grotere bitdichtheid betekent dat bij dezelfde rotatiesnelheid bits sneller onder de kop passeren en dus sneller gelezen of geschreven kunnen worden.
-Omwille van de eenvoud van de omrekening werden eerst over de gehele schijf hetzelfde aantal sectoren per cilinder gebruikt. Cilinders die aan de buitenkant van de schijf lagen, hebben een grotere omtrek. Als op een grotere omtrek eenzelfde aantal sectoren ligt met eenzelfde aantal bits per sector, dan betekent dit dat de bitdichtheid aan de buitenkant kleiner is dan aan de binnenkant en dus ook kleiner dan wat technologisch haalbaar is. Op deze manier worden dus zowel snelheid als capaciteit beperkt, voldoende redenen om de schijf ook nog eens te verdelen in zones (afbeelding 4.6).</p>
+Bovendien geven extra platters aanleiding tot grotere trillingen en dus meer lawaai. Tenslotte moeten de platters natuurlijk fysiek in de behuizing van de schijf passen. Een laatste voorbeeld is de capaciteit van de schijf. Als de capaciteit van de schijf vergroot, terwijl alle andere parameters (aantal platters, grootte van platters) dezelfde blijven, dan vergroot de bitdichtheid. Een grotere bitdichtheid betekent dat bij dezelfde rotatiesnelheid bits sneller onder de kop passeren en dus sneller gelezen of geschreven kunnen worden.</p>
+</div>
+<div class="paragraph">
+<p>Omwille van de eenvoud van de omrekening werden eerst over de gehele schijf hetzelfde aantal sectoren per cilinder gebruikt. Cilinders die aan de buitenkant van de schijf lagen, hebben een grotere omtrek. Als op een grotere omtrek eenzelfde aantal sectoren ligt met eenzelfde aantal bits per sector, dan betekent dit dat de bitdichtheid aan de buitenkant kleiner is dan aan de binnenkant en dus ook kleiner dan wat technologisch haalbaar is. Op deze manier worden dus zowel snelheid als capaciteit beperkt, voldoende redenen om de schijf ook nog eens te verdelen in zones.</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -2513,8 +2517,10 @@ Hoe lang duurt het om 10 random sectoren te lezen?</p>
 <div class="sect3">
 <h4 id="_adressering">6.1.5. Adressering</h4>
 <div class="paragraph">
-<p>Origineel gebruikte men voor harde schijven een bijzonder logische Cylinder Head Sector (CHS)-adressering. Elke willekeurige sector wordt uniek gekenmerkt door een (kant van een) platter te kiezen (head), op die platter een cilinder (radiale positie kop boven schijf) en een sector op het geselecteerde spoor (tangentiële positie kop boven schijf).
-De oorspronkelijke CHS adressering gebruikte tien bits voor de cilinder, vier bits voor de kop en 6 bits voor de sector. Merk op hoe opeenvolgende adressen zich eerst op hetzelfde spoor bevinden, vervolgens op verschillende platters en tenslotte pas de cilinder wijzigt. Zolang bestanden dus op opeenvolgende locaties staan, kunnen ze met minimale verplaatsingen (en dus minimale seek en latency times) verwerkt worden. De originele adressering had twee belangrijke nadelen.</p>
+<p>Origineel gebruikte men voor harde schijven een bijzonder logische Cylinder Head Sector (CHS)-adressering. Elke willekeurige sector wordt uniek gekenmerkt door een (kant van een) platter te kiezen (head), op die platter een cilinder (radiale positie kop boven schijf) en een sector op het geselecteerde spoor (tangentiële positie kop boven schijf).</p>
+</div>
+<div class="paragraph">
+<p>De oorspronkelijke CHS adressering gebruikte tien bits voor de cilinder, vier bits voor de kop en 6 bits voor de sector. Merk op hoe opeenvolgende adressen zich eerst op hetzelfde spoor bevinden, vervolgens op verschillende platters en tenslotte pas de cilinder wijzigt. Zolang bestanden dus op opeenvolgende locaties staan, kunnen ze met minimale verplaatsingen (en dus minimale seek en latency times) verwerkt worden. De originele adressering had twee belangrijke nadelen.</p>
 </div>
 <div class="paragraph">
 <p>Een eerste belangrijk nadeel is dat er slechts twintig bits beschikbaar zijn voor het adres van een sector.
@@ -2530,7 +2536,7 @@ Bovendien startte de nummering van de eerste sector (vermoedelijk door een fout 
 <p>Om het tweede probleem te omzeilen begonnen schijfcontrollers te liegen. Ze maakten de computer wijs dat ze een andere geometrie hadden dan de werkelijke fysieke opbouw en vertaalden het CHS-adres naar een fysiek adres op de schijf. De oplossing voor de capaciteit van de schijf kan enkel zijn dat er meer bits werden voorzien om de sectoren te adresseren. Een eerste uitbreiding gebruikte 10 bits voor de cilinder, 8 voor de kop en 6 voor de sector. Wat een capaciteit gaf van 8GB. Bij verdere uitbreiding van dit aantal bits koos men meteen ook voor een ander soort adressering, die niet rechtstreeks aan de geometrie van de harde schijf gelinkt was. Deze vorm van adressering werd dan Logical Block Addressing (LBA). Hierbij krijgt elke sector gewoon een volgnummer, dat dan op de schijf zelf omgezet werd naar een fysiek CHS-adres. Dit laatste CHS adres wordt enkel op de schijf zelf gebruikt en kan dus volledig aan de fysieke geometrie van de schijf worden aangepast.</p>
 </div>
 <div class="paragraph">
-<p>Bij de eerste versie van LBA werden 28 bits voorzien voor het adresseren van een sector. Dit geeft een maximale grootte van 512  228 = 128GB.</p>
+<p>Bij de eerste versie van LBA werden 28 bits voorzien voor het adresseren van een sector. Dit geeft een maximale grootte van 512 * 2<sup>28</sup> = 128GB.</p>
 </div>
 <div class="paragraph">
 <p>Ondertussen blijkt ook dit ontoereikend en is er al een nieuwe adressering die 48 bits gebruikt en dus 128PB (petabyte) toelaat. Hiervan wordt vermoed dat dit voldoende zal zijn tot 2035. De gebruikte adressering is belangrijk omdat ze ervoor kan zorgen dat niet de volledige capaciteit van de harde schijf beschikbaar is.
@@ -2538,7 +2544,7 @@ In het bijzonder kan dit een probleem zijn indien de BIOS nog een oudere vorm va
 </div>
 </div>
 <div class="sect3">
-<h4 id="_scheduling">6.1.6. scheduling</h4>
+<h4 id="_scheduling">6.1.6. Scheduling</h4>
 <div class="paragraph">
 <p>Gezien de werking van een schijf zal de tijd nodig om een bepaalde sector te lezen bestaan uit drie componenten:</p>
 </div>
@@ -2560,22 +2566,26 @@ In het bijzonder kan dit een probleem zijn indien de BIOS nog een oudere vorm va
 Voortaan zullen we ervan uitgaan dat alle interactie met de harde schijf in blokken gebeurt.</p>
 </div>
 <div class="paragraph">
-<p>Indien er verschillende schijfoperaties staan te wachten op de schijf kunnen we, door de volgorde ervan te veranderen de prestaties van de schijf verbeteren. Deze strategie zal enkel een verschil opleveren op het ogenblik dat de schijf effectief zwaar belast wordt (en er dus keuze is).
-Schijfstrategieën kunnen door het besturingssysteem geïmplementeerd worden (rekening houdend met de kenmerken van het besturingssysteem), of (meer en meer) ook door de schijfregelaar (rekening houdend met de kenmerken van de schijf).
+<p>Indien er verschillende schijfoperaties staan te wachten op de schijf kunnen we, door de volgorde ervan te veranderen de prestaties van de schijf verbeteren. Deze strategie zal enkel een verschil opleveren op het ogenblik dat de schijf effectief zwaar belast wordt (en er dus keuze is).</p>
+</div>
+<div class="paragraph">
+<p>Schijfstrategieën kunnen door het besturingssysteem geïmplementeerd worden (rekening houdend met de kenmerken van het besturingssysteem), of (meer en meer) ook door de schijfregelaar (rekening houdend met de kenmerken van de schijf).
 Wanneer het in de harde schijf zelf gebeurt wordt het ook wel NCQ genoemd (Native Command Queuing). Indien NCQ niet ondersteund wordt door de schijf dan zorgt enkel het besturingssysteem voor de scheduling, indien wel is het een combinatie van beide wat voor minder processorbelasting zorgt in de computer.</p>
 </div>
 <div class="paragraph">
-<p>In de nu volgende bespreking wordt verondersteld dat de volgorde van sporen waarnaar gelezen of geschreven moet worden is: 98, 183, 37, 122, 14, 124, 65, 67 en dat de kop initieel op positie 53 staat.</p>
+<p>In de nu volgende bespreking wordt verondersteld dat de volgorde van sporen waarnaar gelezen of geschreven moet worden is: <strong>98, 183, 37, 122, 14, 124, 65, 67</strong> en dat de kop initieel op positie <strong>53</strong> staat.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_fcfs_first_come_first_served">6.1.7. FCFS: First-Come First-Served</h4>
+<h4 id="_fcfs_first_come_first_serve">6.1.7. FCFS: First-Come First-Serve</h4>
 <div class="paragraph">
 <p>Deze strategie is de eenvoudigste, en bovendien is ze eerlijk omdat schijfoperaties niet oneindig lang kunnen uitgesteld worden. Ze kan echter niet de beste prestatie van de schijf garanderen omdat opeenvolgende schijfoperaties kunnen plaatsvinden op totaal verschillende delen van de schijf waardoor er dus veel tijd verloren gaat aan het zoeken van de sporen.</p>
 </div>
-<div class="paragraph">
-<div class="title">First-Come First-Served Disk Scheduling</div>
-<p>oab/images/fcfs</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch04/images/scheduling/fcfs.jpg" alt="fcfs" width="400">
+</div>
+<div class="title">Figure 44. First-Come First-Served Disk Scheduling</div>
 </div>
 </div>
 <div class="sect3">
@@ -2583,55 +2593,57 @@ Wanneer het in de harde schijf zelf gebeurt wordt het ook wel NCQ genoemd (Nativ
 <div class="paragraph">
 <p>Om te vermijden dat de lees/schrijfkop zich wild heen en weer gaat bewegen over de harde schijf indien FCFS gebruikt wordt kan men de voorkeur geven aan die schijfoperaties die in de onmiddellijke nabijheid van de huidige koppositie moeten doorgevoerd worden. Het voordeel van deze strategie is dat de zoektijden hierdoor zullen afnemen, maar anderzijds is deze strategie niet langer gegarandeerd eerlijk, omdat bij een zware belasting er blijvend aanvragen kunnen binnenkomen voor een bepaald deel van de schijf waardoor verder afgelegen delen van de schijf niet bediend worden. In tegenstelling met SJF is SSTF geen optimaal algoritme. In de afbeelding zou het bijvoorbeeld efficiënter zijn om eerst naar cilinder 37 te gaan en dan pas SSTF toe te passen.</p>
 </div>
-<div class="paragraph">
-<div class="title">Shortest Seek Time First Disk Scheduling</div>
-<p>oab/images/sstf</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch04/images/scheduling/sstf.jpg" alt="sstf" width="400">
 </div>
-<div class="paragraph">
-<p>====SCAN: Scannen
-Dit algoritme tracht de voordelen van SSTF te combineren met een eerlijk gedrag. Het overloopt de schijf van het eerste tot het laatste spoor en omgekeerd hierbij alle operaties uitvoerend `en passant'. Dit garandeert dat alle schijfoperaties finaal zullen uitgevoerd geraken en is te vergelijken met een bus die op zijn heen- en terugweg bij alle haltes stopt waar personen staan te wachten.</p>
-</div>
-<div class="paragraph">
-<div class="title">Scan Disk Scheduling</div>
-<p>oab/images/scan</p>
-</div>
-<div class="paragraph">
-<p>====C-SCAN: Cirkulair Scannen
-Dit is een verbetering van de SCAN strategie. Op zijn terugweg zal de kop in het begin nauwelijks of geen operaties ontmoeten (deze sporen werden immers pas net bediend). Indien er dan toch al operaties zijn, zullen ze alle zeer recent zijn. De operaties aan de overzijde van de schijf staan echter reeds geruime tijd te wachten. Daarom zal C-SCAN op zijn terugweg geen sporen bedienen maar meteen bij spoor 0 herbeginnen (zie figuur \ref{cscan}). Hier zullen de gemiddeld oudere aanvragen eerst bediend worden. Dit algoritme is in zekere zin eerlijker dan SCAN, maar geeft wel een slechtere doorvoercapaciteit omdat de terugweg onderbenut wordt. Deze strategie zal zich bijzonder slecht gedragen indien de sporen sequentieel van rechts naar links moeten gelezen worden.</p>
-</div>
-<div class="paragraph">
-<p>\begin{figure}[htb]
-\centering
-\includegraphics[scale=0.7]{oab/images/cscan}
-\caption{Cirkular Scan Disk Scheduling}
-\label{cscan}
-\end{figure}</p>
+<div class="title">Figure 45. Shortest Seek Time First Disk Scheduling</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_look_c_look_aangepaste_scan_c_scan">6.1.9. LOOK \+ C-LOOK: Aangepaste SCAN + C-SCAN</h4>
+<h4 id="_scan_scannen">6.1.9. SCAN: Scannen</h4>
+<div class="paragraph">
+<p>Dit algoritme tracht de voordelen van SSTF te combineren met een eerlijk gedrag. Het overloopt de schijf van het eerste tot het laatste spoor en omgekeerd hierbij alle operaties uitvoerend `en passant'. Dit garandeert dat alle schijfoperaties finaal zullen uitgevoerd geraken en is te vergelijken met een bus die op zijn heen- en terugweg bij alle haltes stopt waar personen staan te wachten.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch04/images/scheduling/scan.jpg" alt="scan" width="400">
+</div>
+<div class="title">Figure 46. Scan Disk Scheduling</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_scan_cirkulair_scannen">6.1.10. C-SCAN: Cirkulair Scannen</h4>
+<div class="paragraph">
+<p>Dit is een verbetering van de SCAN strategie. Op zijn terugweg zal de kop in het begin nauwelijks of geen operaties ontmoeten (deze sporen werden immers pas net bediend). Indien er dan toch al operaties zijn, zullen ze alle zeer recent zijn. De operaties aan de overzijde van de schijf staan echter reeds geruime tijd te wachten. Daarom zal C-SCAN op zijn terugweg geen sporen bedienen maar meteen bij spoor 0 herbeginnen (zie figuur). Hier zullen de gemiddeld oudere aanvragen eerst bediend worden. Dit algoritme is in zekere zin eerlijker dan SCAN, maar geeft wel een slechtere doorvoercapaciteit omdat de terugweg onderbenut wordt. Deze strategie zal zich bijzonder slecht gedragen indien de sporen sequentieel van rechts naar links moeten gelezen worden.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch04/images/scheduling/cscan.jpg" alt="cscan" width="400">
+</div>
+<div class="title">Figure 47. Circular Scan Disk Scheduling</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_look_c_look_aangepaste_scan_c_scan">6.1.11. LOOK + C-LOOK: Aangepaste SCAN + C-SCAN</h4>
 <div class="paragraph">
 <p>In de praktijk zal men de kop van de schijf niet tussen de twee uiterste uiteinden van de schijf laten bewegen, maar wel tussen die twee uiterste sporen waarvoor er aanvragen zijn (vergelijkbaar met een lift)</p>
 </div>
-<div class="paragraph">
-<p>\begin{figure}[htb]
-\centering
-\includegraphics[scale=0.7]{oab/images/look}
-\caption{Look Disk Scheduling}
-\label{look}
-\end{figure}</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch04/images/scheduling/look.jpg" alt="look" width="400">
 </div>
-<div class="paragraph">
-<p>\begin{figure}[htb]
-\centering
-\includegraphics[scale=0.7]{oab/images/clook}
-\caption{Cirkular Look Disk Scheduling}
-\label{clook}
-\end{figure}</p>
+<div class="title">Figure 48. Look Disk Scheduling</div>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch04/images/scheduling/clook.png" alt="clook" width="400">
+</div>
+<div class="title">Figure 49. Cirkular Look Disk Scheduling</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_schijfcontroller">6.1.10. Schijfcontroller</h4>
+<h4 id="_schijfcontroller">6.1.12. Schijfcontroller</h4>
 <div class="paragraph">
 <p>Een laatste belangrijk onderdeel van de harde schijf is de schijfcontroller. Deze stuurt enerzijds de motoren en leeskoppen aan, zodat de juiste gegevens bereikt worden, anderzijds verzorgt hij de communicatie met de buitenwereld.</p>
 </div>
@@ -2652,7 +2664,7 @@ Dit is een verbetering van de SCAN strategie. Op zijn terugweg zal de kop in het
 <div class="content">
 <img src="ch04/images/zones.png" alt="">
 </div>
-<div class="title">Figure 44. SSD drive zonder behuizing</div>
+<div class="title">Figure 50. SSD drive zonder behuizing</div>
 </div>
 <div class="paragraph">
 <p>In plaats van een magnetische schijf wordt in een SSD gebruik gemaakt van DRAM of flash geheugen om de gegevens op te slaan. DRAM heeft uiteraard als nadeel dat met het wegvallen van de stroom ook de gegevens verdwijnen.<br>
@@ -2660,7 +2672,7 @@ Daarom worden dergelijke ‘schijven’ uitgerust met een batterij, die toelaat 
 Deze oplossing is dus vooral interessant als het fysieke geheugen niet uitgebreid kan worden (bijvoorbeeld maximum 4GB met 32-bit processor).<br>
 Veel fabrikanten werken aan drives met flash geheugen. Deze technologie is een stuk goedkoper en verliest zijn inhoud niet bij het wegvallen van de stroom. Hoewel flash nog steeds een stuk duurder is dan magnetische opslag, lijkt deze technologie toch een alternatief te kunnen vormen voor magnetische harde schijven.<br>
 Recente productlanceringen lijken erop te wijzen dat deze technologie heel snel matuur wordt.<br>
-Eind 2012 lijkt de SSD de magische grens van 1USD/GB doorbroken te hebben [3], en de trend is nog steeds dalend.</p>
+In 2014 lijkt de SSD-prijs te stabiliseren rond 0.8USD/GB <a href="#PCPART">[PCPART]</a>, en de trend is nog steeds dalend.</p>
 </div>
 <div class="paragraph">
 <p>De meeste voordelen volgen uit het ontbreken van mechanische onderdelen:</p>
@@ -2706,7 +2718,7 @@ Ook voor specifieke servertoepassingen wordt de SSD stilaan een interessant alte
 <div class="content">
 <img src="ch04/images/slc.png" alt="">
 </div>
-<div class="title">Figure 45. SLC geheugen</div>
+<div class="title">Figure 51. SLC geheugen</div>
 </div>
 </div>
 <div class="sect4">
@@ -2718,7 +2730,7 @@ Ook voor specifieke servertoepassingen wordt de SSD stilaan een interessant alte
 <div class="content">
 <img src="ch04/images/mlc.png" alt="">
 </div>
-<div class="title">Figure 46. MLC geheugen</div>
+<div class="title">Figure 52. MLC geheugen</div>
 </div>
 <div class="paragraph">
 <p>Iedere cel zal dus in staat zijn om bijvoorbeeld vier verschillende spanningsniveaus te bewaren. Je ziet dat MLC gevoeliger zal zijn voor fouten: als er een klein beetje van het spanningsniveau is weggelekt zal je de data niet meer juist uitlezen.<br>
@@ -2733,9 +2745,9 @@ Vanwege die nood aan precisie zal MLC dus trager gelezen en beschreven kunnen wo
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch04/images/flash_write.png" alt="">
+<img src="ch04/images/flash_write.png" alt="" width="500">
 </div>
-<div class="title">Figure 47. Schrijfcyclus Flash</div>
+<div class="title">Figure 53. Schrijfcyclus Flash</div>
 </div>
 <div class="paragraph">
 <p>De verschillende stappen die nodig zijn gaan als volgt:
@@ -2772,7 +2784,7 @@ De fabrikanten die getroffen werden door dit gênant verschijnsel bakten daarom 
 <div class="content">
 <img src="ch04/images/flash_garbage_collection.png" alt="">
 </div>
-<div class="title">Figure 48. Garbage collection bij Flash Memory</div>
+<div class="title">Figure 54. Garbage collection bij Flash Memory</div>
 </div>
 <div class="paragraph">
 <p>Een bijkomende manier om hetzelfde probleem te verhelpen is het besturingssysteem laten communiceren met de SSD door middel van het ATA-Trim commando. Het besturingssysteem zal met dit commando aan de schijf vertellen welke data niet meer nodig is. (bijvoorbeeld bestanden die door NTFS als verwijderd staan aangeduid) Dit commando werd geïntroduceerd bij Windows 7 en is ingebakken in Linux kernels vanaf 2.6.28. Zo wordt vermeden dat sectoren verplaatst worden op de SSD, die door NTFS reeds lang als verwijderd werden aangeduid.</p>
@@ -2843,32 +2855,53 @@ We zullen met andere woorden bekijken hoe de schijf toegankelijk is voor bijvoor
 </div>
 <div class="sect3">
 <h4 id="_master_boot_record_mbr_layout">6.4.2. Master Boot Record (MBR) layout</h4>
-<div class="ulist">
-<div class="title">Inhoud Master Boot Record</div>
-<ul>
-<li>
-<p>offset	lengte (bytes)	inhoud</p>
-</li>
-<li>
-<p>0	446	MBR programmacode</p>
-</li>
-<li>
-<p>446 (1BEh)	16	eerste partitie-record</p>
-</li>
-<li>
-<p>462 (1CEh)	16	tweede partitie-record</p>
-</li>
-<li>
-<p>478 (1DEh)	16	derde partitie-record</p>
-</li>
-<li>
-<p>494 (1EEh)	16	vierde partitie-record</p>
-</li>
-<li>
-<p>510 (1FEh)	2	55 AA (einde markering)</p>
-</li>
-</ul>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 5. Inhoud Master Boot Record</caption>
+<colgroup>
+<col style="width: 33%;">
+<col style="width: 33%;">
+<col style="width: 33%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">offset</th>
+<th class="tableblock halign-left valign-top">lengte (bytes)</th>
+<th class="tableblock halign-left valign-top">inhoud</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">446</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MBR programmacode</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">446 (1BEh)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eerste partitie-record</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">462 (1CEh)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tweede partitie-record</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">478 (1DEh)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">derde partitie-record</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">494 (1EEh)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vierde partitie-record</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">510 (1FEh)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">55 AA (einde markering)</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p>Het master boot record is de eerste fysieke sector van de harde schijf. Deze bevat twee gedeeltes: de primaire partitietabel en de MBR-programmacode.
 De MBR programmacode bevat de nodige instructies om te beslissen van welke primaire partitie opgestart moet worden, om de bootsector van de betreffende partitie in het geheugen te laden en om te starten met het laden van het betreffende besturingssysteem. In de meest eenvoudige vorm zoekt de MBR-code in de partitietabel naar de actieve partitie (zie verder), laadt de bootsector van die partitie in het geheugen en voert de code uit die daarin opgeslagen is. Soms kan de MBR-code ook meer gesofisticeerd zijn en interactie met de gebruiker mogelijk maken.<br>
@@ -2878,34 +2911,53 @@ Bij het partitioneren is het wel belangrijk om op voorhand goed na te denken wat
 Hoe een schijf is onderverdeeld in partities wordt opgeslagen in een partitietabel.<br>
 De primaire partitietabel bevat voor elke primaire partitie een record van zestien bytes. De inhoud van zo’n record wordt weergegeven in onderstaande tabel.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>offset	lengte (bytes)	inhoud</p>
-</li>
-<li>
-<p>0	1	80h (actieve partitie) of 00h (niet actief)</p>
-</li>
-<li>
-<p>1	3	CHS adres eerste sector van de partitie</p>
-</li>
-<li>
-<p>4	1	type partitie</p>
-</li>
-<li>
-<p>5	3	CHS adres laatste sector van partitie</p>
-</li>
-<li>
-<p>8	4	LBA adres eerste sector</p>
-</li>
-<li>
-<p>12	4	aantal sectoren in partitietabel</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Tabel 5 Inhoud partitietabel-record</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 6. Inhoud partitietabel-record</caption>
+<colgroup>
+<col style="width: 33%;">
+<col style="width: 33%;">
+<col style="width: 33%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">offset</th>
+<th class="tableblock halign-left valign-top">lengte (bytes)</th>
+<th class="tableblock halign-left valign-top">inhoud</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">80h (actieve partitie) of 00h (niet actief)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CHS adres eerste sector van de partitie</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type partitie</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CHS adres laatste sector van partitie</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LBA adres eerste sector</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aantal sectoren in partitietabel</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p>Het eerste byte duidt aan of de partitie actief is of niet. Dit kan belangrijk zijn, in het bijzonder in het geval waarbij de MBR op zoek gaat naar de actieve partitie om te booten. Daarnaast zijn er een aantal parameters die de locatie en grootte van de partitie vastleggen en er is een byte dat het type vastlegt. Met dit byte kan aangegeven worden welk bestandsysteem op de partitie staat (b.v. FAT16, FAT32, EXFAT, NTFS, EXT4, ZFS, &#8230;&#8203;).</p>
 </div>
@@ -2916,9 +2968,11 @@ Op de eerste sector van de extended partitie bevindt zich een extended master bo
 Een van de partities kan weer een uitgebreide partitie zijn.<br>
 Op die manier kunnen in principe oneindig veel partities aangemaakt worden (al zijn er natuurlijk wel beperkingen, zoals de eindige capaciteit van de schijf). De partities die aangemaakt worden binnen een uitgebreide partitie, noemt men logische partities.</p>
 </div>
-<div class="paragraph">
-<div class="title">partitiestructuur (bron:Microsoft Technet)</div>
-<p>??????image::MBRvsGPTbrontechnet.jpg[alt="partitiestructuur", scaledwidth=50, width=400, align=center ]</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch04/images/MBRvsGPTbrontechnet.jpg" alt="partitiestructuur" width="400">
+</div>
+<div class="title">Figure 55. partitiestructuur (bron:Microsoft Technet)</div>
 </div>
 <div class="paragraph">
 <p>Meestal moet men slechts eenmaal een extended partitie aanmaken en kan men vervolgens in deze partitie logische partities definiëren. Het partitioneringsprogramma maakt automatisch de nodige EMBR’s aan. Bij het aanmaken van een extended partitie moet je goed opletten dat je voldoende ruimte voorziet voor het definiëren van alle logische partities.<br>
@@ -2927,15 +2981,15 @@ Het eerste is een eenvoudig voorbeeld met een primaire en een logische DOS-parti
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch04/images/partitie1.jpg" alt="partitiestructuur met uitgebreide partitie" width="400">
+<img src="ch04/images/partitie1.png" alt="partitiestructuur met uitgebreide partitie" width="400">
 </div>
-<div class="title">Figure 49. Voorbeeld partitietabel met uitgebreide partitie</div>
+<div class="title">Figure 56. Voorbeeld partitietabel met uitgebreide partitie</div>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch04/images/partitie2.jpg" alt="partitiestructuur met meerdere logische partities" width="400">
+<img src="ch04/images/partitie2.png" alt="partitiestructuur met meerdere logische partities" width="400">
 </div>
-<div class="title">Figure 50. Partitietabel met meerdere logische partities</div>
+<div class="title">Figure 57. Partitietabel met meerdere logische partities</div>
 </div>
 </div>
 <div class="sect3">
@@ -2958,37 +3012,92 @@ Het eerste is een eenvoudig voorbeeld met een primaire en een logische DOS-parti
 Het maximale aantal partities is bij GPT 128 stuks. De grootte voor elke partitie is geen limiet meer. (om precies te zijn: bij sectoren van 512 bytes kan je 2^64 *512 bits opslaan in elke partitie.)+
 Elke partitie-entry bij GPT bevat volgende gegevens:</p>
 </div>
-<div class="paragraph">
-<p>#bytes	Naam	Beschrijving
-16 bytes	Partition Type GUID	Bevat een GUID die zegt over welk soort partitie het gaat. Vb Linux Swap Partition, Windows Basic Data Partition, Apple HFS+ partitie, …
-16 bytes	Unique Partition GUID	Unieke GUID voor deze partitie
-8 bytes	Starting LBA	Begin van de partitie
-8 bytes	Ending LBA	Einde van de partitie
-8 bytes	Attribute bits	Extra info over de partitie
-72 bytes	Partition name	Leesbare naam voor de partitie</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33%;">
+<col style="width: 33%;">
+<col style="width: 33%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">#bytes</th>
+<th class="tableblock halign-left valign-top">Naam</th>
+<th class="tableblock halign-left valign-top">Beschrijving</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Partition Type GUID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bevat een GUID die zegt over welk soort partitie het gaat. Vb Linux Swap Partition, Windows Basic Data Partition, Apple HFS+ partitie, …</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique Partition GUID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unieke GUID voor deze partitie</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Starting LBA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Begin van de partitie</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ending LBA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Einde van de partitie</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Attribute bits</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extra info over de partitie</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">72 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Partition name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Leesbare naam voor de partitie</p></td>
+</tr>
+</tbody>
+</table>
 <div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="ch04/images/MBRvsGPTbrontechnet.jpg" alt="partitiestructuur" width="400">
 </div>
-<div class="title">Figure 51. GPT versus MBR layout (bron: Microsoft Technet)</div>
+<div class="title">Figure 58. GPT versus MBR layout (bron: Microsoft Technet)</div>
 </div>
 <div class="sect4">
-<h5 id="_bestanden">bestanden</h5>
+<h5 id="_bestanden">Bestanden</h5>
 <div class="paragraph">
-<p>Het probleem van de allocatie van bestanden betreft de vraag op welke manier de blokken of clusters van de schijf samengevoegd kunnen worden tot een bestand. Er zijn verschillende mogelijkheiden: contigu, gelinkt, gebaseerd op een allocatietabel, en gebaseerd op een indextabel.</p>
+<p>Het probleem van de allocatie van bestanden betreft de vraag op welke manier de blokken of clusters van de schijf samengevoegd kunnen worden tot een bestand. Er zijn verschillende mogelijkheden:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Contigu</p>
+</li>
+<li>
+<p>Gelinkt</p>
+</li>
+<li>
+<p>Gebaseerd op een allocatietabel</p>
+</li>
+<li>
+<p>Gebaseerd op een indextabel.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>De keuze van een bepaalde methode zal onder meer afhangen van de manier waarop de gegevens van een schijf gebruikt zullen worden: sequentieel, direct of ge\"indexeerd, en van de prestaties die men van de schijf verwacht. Doordat de schijf zeer traag is in vergelijking met de processor, zal men doorgaans trachten om het aantal toegangen naar de schijf zoveel mogelijk te beperken door bepaalde tabellen in het geheugen te houden, door gegevens intelligent over de schijf/schijven te verdelen zodat de kopbewegingen beperkt worden, enz. Vaak kan het de moeite lonen om de processor een complexer algoritme te laten uitvoeren indien dit het gebruik van de schijf kan verminderen.
-Contigue allocatie:: Contigue allocatie is de eenvoudigste allocatiemethode Een bestand bestaande uit \textit{n} blokken zal \textit{n} opeenvolgende fysieke blokken op de schijf innemen. De verplaatsingen van de lees/schrijfkop zullen hierdoor minimaal zijn: bij het sequentieel lezen zal de kop enkel op het einde van het laatste spoor van een cilinder moeten veranderen naar een volgende cilinder en ook bij directe toegang zullen de verplaatsingen van de kop minimaal zijn. Contigue allocatie is hierdoor de snelste allocatiemethode.</p>
+<p>De keuze van een bepaalde methode zal onder meer afhangen van de manier waarop de gegevens van een schijf gebruikt zullen worden: sequentieel, direct of geïndexeerd, en van de prestaties die men van de schijf verwacht. Doordat de schijf zeer traag is in vergelijking met de processor, zal men doorgaans trachten om het aantal toegangen naar de schijf zoveel mogelijk te beperken door bepaalde tabellen in het geheugen te houden, door gegevens intelligent over de schijf/schijven te verdelen zodat de kopbewegingen beperkt worden, enz. Vaak kan het de moeite lonen om de processor een complexer algoritme te laten uitvoeren indien dit het gebruik van de schijf kan verminderen.</p>
 </div>
+<div class="sect5">
+<h6 id="_contigue_allocatie">Contigue allocatie</h6>
 <div class="paragraph">
-<p>\begin{figure}[htb]
-\centering
-\includegraphics[scale=0.8]{oab/images/contigue}
-\caption{Contigue allocatie}
-\label{contigue}
-\end{figure}</p>
+<p>Contigue allocatie is de eenvoudigste allocatiemethode Een bestand bestaande uit n blokken zal n opeenvolgende fysieke blokken op de schijf innemen. De verplaatsingen van de lees/schrijfkop zullen hierdoor minimaal zijn: bij het sequentieel lezen zal de kop enkel op het einde van het laatste spoor van een cilinder moeten veranderen naar een volgende cilinder en ook bij directe toegang zullen de verplaatsingen van de kop minimaal zijn. Contigue allocatie is hierdoor de snelste allocatiemethode.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch04/images/allocatie/contigue.jpg" alt="contigue allocatie" width="400">
+</div>
+<div class="title">Figure 59. Contigue allocatie</div>
 </div>
 <div class="paragraph">
 <p>Ze heeft echter ook heel wat nadelen. Vooreerst is er het probleem van de externe fragmentatie. Doordat het schijfgeheugen dat gealloceerd moet worden contigu moet zijn heeft men in werkelijkheid stukken geheugen van ongelijke lengte waarvoor het geheugenbeheer relatief moeilijk is. Compactering kan hier een oplossing brengen, maar meestal zal het bestandssysteem tijdens het compacteren onbruikbaar zijn. Dit is niet steeds aanvaardbaar.</p>
@@ -2997,84 +3106,70 @@ Contigue allocatie:: Contigue allocatie is de eenvoudigste allocatiemethode Een 
 <p>Ten tweede is er het probleem dat men nog vóór de creatie van een bestand moet weten hoe groot het zal worden. Schat men de werkelijke grootte te hoog, dan krijgt men een aanzienlijke interne fragmentatie, schat men het te klein, dan zal het programma dat het bestand aanmaakt afgebroken worden. Dit laatste kan vermeden worden door in dat geval het bestand te copi\"eren naar een grotere vrije ruimte en daar de uitvoering verder te zetten. Het hoeft geen betoog dat dit de turn around time van een proces negatief zal beïvloeden. Langzaam groeiende bestanden zoals log-bestanden zijn vrij moeilijk efficiënt te implementeren.</p>
 </div>
 <div class="paragraph">
-<p>Sommige systemen laten daarom toe om de contigue allocatie stuksgewijs te ondersteunen. Men begint dan met een bestand met een gegeven grootte, en indien het te klein zou blijken te zijn, kan men een bijkomende uitbreiding toevoegen. De grootte van deze uitbreiding moet ook op voorhand vastgelegd worden. Ofschoon deze oplossing effici\"enter is dan het volledig kopi\"en van het bestand, heeft ze ook te lijden onder het probleem van de externe fragmentatie.</p>
+<p>Sommige systemen laten daarom toe om de contigue allocatie stuksgewijs te ondersteunen. Men begint dan met een bestand met een gegeven grootte, en indien het te klein zou blijken te zijn, kan men een bijkomende uitbreiding toevoegen. De grootte van deze uitbreiding moet ook op voorhand vastgelegd worden. Ofschoon deze oplossing efficiënter is dan het volledig kopi\"en van het bestand, heeft ze ook te lijden onder het probleem van de externe fragmentatie.</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Gelinkte allocatie</dt>
-<dd>
-<p>Deze allocatiemethode lost alle externe-fragmentatieproblemen van de contigue allocatie op. In de plaats van alle blokken contigu op de schijf op te slaan worden de blokken op de schijf met elkaar gelinkt (zie figuur \ref{gelinkte}). Zolang er vrije blokken zijn, kan een bestand blijven groeien. Ofschoon deze methode het probleem van de externe fragmentatie effectief oplost, heeft ze ook haar problemen. Vooreerst wordt directe toegang nagenoeg onmogelijk omdat steeds de lijst van blokken moet afgelopen worden. Ten tweede kan het sequentieel lezen van een bestand zeer traag worden omdat er per nieuw in te lezen blok in principe een verplaatsing van de kop kan nodig zijn. Ten derde zullen de blokken nu een beetje kleiner zijn omdat de link naar het volgende blok ook moet opgenomen worden. Tenslotte is gelinkte allocatie ook niet zeer betrouwbaar omdat van zodra er \'e'en blok corrupt wordt de hele schijf onbetrouwbaar wordt.</p>
-</dd>
-</dl>
+</div>
+<div class="sect5">
+<h6 id="_gelinkte_allocatie">Gelinkte allocatie</h6>
+<div class="paragraph">
+<p>Deze allocatiemethode lost alle externe-fragmentatieproblemen van de contigue allocatie op. In de plaats van alle blokken contigu op de schijf op te slaan worden de blokken op de schijf met elkaar gelinkt (zie figuur \ref{gelinkte}). Zolang er vrije blokken zijn, kan een bestand blijven groeien. Ofschoon deze methode het probleem van de externe fragmentatie effectief oplost, heeft ze ook haar problemen. Vooreerst wordt directe toegang nagenoeg onmogelijk omdat steeds de lijst van blokken moet afgelopen worden. Ten tweede kan het sequentieel lezen van een bestand zeer traag worden omdat er per nieuw in te lezen blok in principe een verplaatsing van de kop kan nodig zijn. Ten derde zullen de blokken nu een beetje kleiner zijn omdat de link naar het volgende blok ook moet opgenomen worden. Tenslotte is gelinkte allocatie ook niet zeer betrouwbaar omdat van zodra er één blok corrupt wordt de hele schijf onbetrouwbaar wordt.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch04/images/allocatie/gelinkte.jpg" alt="gelinkte allocatie" width="400">
+</div>
+<div class="title">Figure 60. Gelinkte allocatie</div>
 </div>
 <div class="paragraph">
-<p>\begin{figure}[htb]
-\centering
-\includegraphics[scale=0.8]{oab/images/gelinkte}
-\caption{Gelinkte allocatie}
-\label{gelinkte}
-\end{figure}</p>
+<p>Om het sequentieel lezen te versnellen kan men bij de allocatie van de blokken er trachten voor te zorgen dat ze toch zoveel mogelijk sequentieel op de schijf staan zodat de bewegingen van de lees/schrijfkop beperkt worden. Bijgevolg kan de contiguïteit en dus de snelheid door regelmatig te compacteren verbeterd worden.</p>
 </div>
 <div class="paragraph">
-<p>Om het sequentieel lezen te versnellen kan men bij de allocatie van de blokken er trachten voor te zorgen dat ze toch zoveel mogelijk sequentieel op de schijf staan zodat de bewegingen van de lees/schrijfkop beperkt worden. Bijgevolg kan de contigu\"iteit en dus de snelheid door regelmatig te compacteren verbeterd worden.</p>
+<p>Het derde probleem kan minder erg gemaakt worden door de blokgrootte te vergroten. Gezien er slechts één link per blok opgeslagen wordt, verkleint hierdoor het percentage aan links.</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_allocatietabel">Allocatietabel</h6>
+<div class="paragraph">
+<p>De overige problemen kunnen opgelost worden door alle wijzers naar de blokken bij te houden in afzonderlijke blokken, de zogenaamde FAT of file allocation table.</p>
 </div>
 <div class="paragraph">
-<p>Het derde probleem kan minder erg gemaakt worden door de blokgrootte te vergroten. Gezien er slechts \'e'en link per blok opgeslagen wordt, verkleint hierdoor het percentage aan links.</p>
+<p>Deze tabel bevat een wijzer per blok. In de plaats van de wijzers fysiek in de blokken te schrijven worden ze nu in de FAT geschreven.</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">allocatietabel</dt>
-<dd>
-<p>De overige problemen kunnen opgelost worden door alle wijzers naar de blokken bij te houden in afzonderlijke blokken, de zogenaamde FAT of file allocation table (zie figuur \ref{allocatietabel}). Deze tabel bevat een wijzer per blok. In de plaats van de wijzers fysiek in de blokken te schrijven worden ze nu in de FAT geschreven. Dit heeft als voordelen dat men om een bestand af te lopen slechts een paar blokken van de schijf moet lezen (de FAT), dat er geen wijzers meer in de gegevensblokken moeten opgeslagen worden, dat men de FAT meer dan eens kan opslaan op de schijf om beperkte schijfdefecten te kunnen opvangen. Vrije blokken kunnen teruggevonden worden door een speciaal teken op de plaats van de wijzer in de FAT. MS-DOS en OS/2 maken gebruik van een FAT.</p>
-</dd>
-</dl>
+<div class="paragraph">
+<p>Dit heeft als voordelen:
+*  om een bestand te zoeken moet men slechts een paar blokken van de schijf lezen(de FAT)
+* er moeten geen wijzers meer in de gegevensblokken opgeslagen worden
+* men kan de FAT meer dan eens kan opslaan op de schijf om beperkte schijfdefecten op te vangen.</p>
+</div>
+<div class="paragraph">
+<p>Vrije blokken kunnen teruggevonden worden door een speciaal teken op de plaats van de wijzer in de FAT. MS-DOS en OS/2 maken gebruik van een FAT.</p>
 </div>
 <div class="paragraph">
 <p>Meestal bewaart men een kopie van de FAT (of delen ervan) in het geheugen om snel een blok op de schijf terug te kunnen vinden. Indien de FAT niet in het geheugen bijgehouden wordt, zal het telkens heen en terug swingen tussen de FAT-blokken en de werkelijke gegevens een aanzienlijke extra belasting van de schijf vormen.</p>
 </div>
-<div class="paragraph">
-<p>\begin{figure}[htb]
-\centering
-\includegraphics[scale=0.8]{oab/images/allocatietabel}
-\caption{Allocatietabel}
-\label{allocatietabel}
-\end{figure}</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch04/images/allocatie/allocatietabel.jpg" alt="tabel voor allocatie" width="400">
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Indextabel</dt>
-<dd>
-<p>Gelinkte allocatie of allocatietabellen zijn een afdoende oplossing voor het probleem van de externe fragmentatie, maar laten geen effici\"ente directe toegang tot een bestand toe omdat de links sequentieel moeten afgelopen worden. Geïndexeerde allocatie laat dit wel toe. Het idee is dat alle wijzers naar de gealloceerde blokken sequentieel opgenomen worden in een zogenaamd indexblok. Dit indexblok kan dan gebruikt worden om een gegevensblok rechtstreeks terug te vinden .</p>
-</dd>
-</dl>
+<div class="title">Figure 61. Allocatietabel</div>
 </div>
+</div>
+<div class="sect5">
+<h6 id="_indextabel">Indextabel</h6>
 <div class="paragraph">
-<p>\begin{figure}[htb]
-\centering
-\includegraphics[scale=0.8]{oab/images/indextabel}
-\caption{Ge\"indexeerde allocatie}
-\label{indextabel}
-\end{figure}</p>
+<p>Gelinkte allocatie of allocatietabellen zijn een afdoende oplossing voor het probleem van de externe fragmentatie, maar laten geen efficiënte directe toegang tot een bestand toe omdat de links sequentieel moeten afgelopen worden. Geïndexeerde allocatie laat dit wel toe. Het idee is dat alle wijzers naar de gealloceerde blokken sequentieel opgenomen worden in een zogenaamd indexblok. Dit indexblok kan dan gebruikt worden om een gegevensblok rechtstreeks terug te vinden.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch04/images/allocatie/indextabel.jpg" alt="index voor allocatie" width="400">
+</div>
+<div class="title">Figure 62. Geïndexeerde allocatie</div>
 </div>
 <div class="paragraph">
-<p>Om niet beperkt te zijn tot bestanden met een te kleine maximale lengte kan men ofwel de indexblokken linken, ofwel verschillende niveaus van indexblokken cre\"eren. Het topniveau verwijst dan naar indexblokken die op hun beurt verwijzen naar de gegevensblokken. Gecombineerde systemen komen ook voor.</p>
+<p>Om niet beperkt te zijn tot bestanden met een te kleine maximale lengte kan men ofwel de indexblokken linken, ofwel verschillende niveaus van indexblokken creëren. Het topniveau verwijst dan naar indexblokken die op hun beurt verwijzen naar de gegevensblokken. Gecombineerde systemen komen ook voor.</p>
 </div>
 <div class="paragraph">
-<p>Ge\"indexeerde allocatie maakt doorgaans minder effici\"ent gebruik van de schijfruimte dan gelinkte allocatie. De meeste indexblokken zullen immers maar gedeeltelijk gevuld zijn. Bovendien zal men voor kleine bestanden i.p.v. een paar wijzers in de gegevensblokken zelf, een volledige indexblok moeten alloceren.</p>
-</div>
-<div class="paragraph">
-<p>\item[Inodes] In Unix maakt men gebruik van een gecombineerd systeem (zie figuur \ref{inodes}) waarbij een vast aantal indices opgenomen wordt als attributen van een bestand in de zogenaamde inode (dit is een gegevensstructuur die zich tussen de directory-entry en het fysiek bestand bevindt. Per fysiek bestand is er slechts 1 inode, maar kunnen er verschillende directory-entries zijn. De inode houdt o.m. bij hoeveel harde links er naar een bestand bestaan). Naast dit beperkt aantal directe indices (bv. 12) die zullen volstaan voor de bestanden kleiner dan bv. 48 Kb, is er nog een wijzer naar een indexblok van niveau 1, en ook nog een wijzer naar een indexblok van niveau 2 (en zelfs naar niveau 3).</p>
-</div>
-<div class="paragraph">
-<p>\begin{figure}[htb]
-\centering
-\includegraphics[scale=0.8]{oab/images/inodes}
-\caption{Inodes}
-\label{inodes}
-\end{figure}</p>
-</div>
-<div class="paragraph">
-<p>Deze oplossing laat toe om (i) snel directe toegang te hebben tot kleine bestanden, redelijk snel tot de middelgrote bestanden, en aanvaardbaar voor de echt grote bestanden waarbij de grootte van de bestanden niet beperkt wordt door de implementatie van het bestandssysteem, maar door de grootte van de schijf. Dit is prima omdat in de praktijk toch blijkt dat minder dan 5\% van alle bestanden groter zijn dan 48KB en dus een indexblok nodig hebben. Alle andere kunnen het stellen zonder afzonderlijk indexblok.</p>
+<p>Geïndexeerde allocatie maakt doorgaans minder efficiënt gebruik van de schijfruimte dan gelinkte allocatie. De meeste indexblokken zullen immers maar gedeeltelijk gevuld zijn. Bovendien zal men voor kleine bestanden i.p.v. een paar wijzers in de gegevensblokken zelf, een volledige indexblok moeten alloceren.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -3112,8 +3207,9 @@ In het bijzonder zal het nuttig blijken om:</p>
 </table>
 </div>
 </div>
+</div>
 <div class="sect4">
-<h5 id="_mappen_directories">mappen (directories)</h5>
+<h5 id="_mappen_directories">Mappen (directories)</h5>
 <div class="paragraph">
 <p>Tegenwoordige hebben de meeste bestandssystemen een boomvormige directorystructuur waarbij alle gebruikers voorkomen als deelbomen van de boomstructuur die geassocieerd wordt met het volume. In deze vorm heeft de gebruiker beschikking over subdirectories die op hun beurt bestanden en subdirectories kunnen bevatten. Bestanden hebben nu niet enkel een naam, maar ook een pad, dit is een opeenvolging van de namen van subdirectories. Het pad en de bestandsnaam vormen dan een eenduidige specificatie van een bestand. Doordat alle gebruikers opgenomen zijn in dezelfde boomstructuur is het ook mogelijk om naar bestanden van andere gebruikers te refereren door zowel hun padnaam als hun bestandsnaam op te geven.</p>
 </div>
@@ -3140,12 +3236,12 @@ In het bijzonder zal het nuttig blijken om:</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_swapruimte">swapruimte</h5>
+<h5 id="_swapruimte">Swapruimte</h5>
 <div class="paragraph">
-<p>Zoals aangetoond wordt in het hoofdstuk over geheugenbeheer is het effect van een paginafout op de uitvoeringssnelheid van een programma dramatisch en moet men dan ook al het mogelijke doen om de interactie met de swapruimte zo effici\"ent mogelijk te maken. We hebben gezien dat een virtueel-geheugensysteem gebruik maakt van pagina&#8217;s en dat deze pagina&#8217;s in paginering op aanvraag moeten kunnen uitgewisseld worden met de swapruimte.</p>
+<p>Zoals aangetoond wordt in het hoofdstuk over geheugenbeheer is het effect van een paginafout op de uitvoeringssnelheid van een programma dramatisch en moet men dan ook al het mogelijke doen om de interactie met de swapruimte zo efficiënt mogelijk te maken. We hebben gezien dat een virtueel-geheugensysteem gebruik maakt van pagina&#8217;s en dat deze pagina&#8217;s in paginering op aanvraag moeten kunnen uitgewisseld worden met de swapruimte.</p>
 </div>
 <div class="paragraph">
-<p>Deze pagina&#8217;s zullen direct moeten kunnen geadresseerd worden. Met de technieken die gebruikt worden bij het klassieke bestandsbeheer zal deze directe toegang soms het lezen van meer dan \'e'en blok tot gevolg hebben. Bovendien zijn de blokken van het bestandssysteem niet steeds even groot als de pagina&#8217;s en de frames.</p>
+<p>Deze pagina&#8217;s zullen direct moeten kunnen geadresseerd worden. Met de technieken die gebruikt worden bij het klassieke bestandsbeheer zal deze directe toegang soms het lezen van meer dan één blok tot gevolg hebben. Bovendien zijn de blokken van het bestandssysteem niet steeds even groot als de pagina&#8217;s en de frames.</p>
 </div>
 <div class="paragraph">
 <p>Men zal dan ook meestal verkiezen om de swapruimte onder te brengen in een afzonderlijke partitie met een eigen beheerssysteem waardoor het aantal schijftoegangen absoluut minimaal gehouden wordt bij het pagineren. Het voornaamste nadeel van deze aanpak is dat de swapruimte bij de generatie van het besturingssysteem moet vastgelegd worden (in de vorm van een partitie). Naderhand uitbreiden (als gevolg van het vergroten van het intern geheugen) is moeilijk omdat het het uitbreiden van een schijfpartitie betreft. Anderzijds zal bij een overdimensionering van de swapruimte de ongebruikte ruimte niet gebruikt kunnen worden voor bestandsopslag. Deze oplossing, ofschoon efficiënt, is heel wat minder flexibel dan het gebruik van een gegevensbestand als swapruimte.</p>
@@ -3160,12 +3256,23 @@ In het bijzonder zal het nuttig blijken om:</p>
 <div class="sect4">
 <h5 id="_vrije_ruimte">Vrije ruimte</h5>
 <div class="paragraph">
-<p>De vrije ruimte op een schijf moet op een effici\"ente manier kunnen bijgehouden worden om snel een vrij blok te kunnen terugvinden. Een aantal gebruikelijke methoden wordt hier besproken.
-\begin{description}
-\item[Bitmap.] Er wordt een bitrij bijgehouden waarbij elk bitje een blok voorstelt. Een vrij blok kan dan voorgesteld worden door 1, en een blok dat in gebruik is door een 0. Voor grote schijven kunnen de bitmaps ook een aanzienlijke ruimte in het geheugen gaan innemen. Ze moeten nu en dan op de schijf bewaard worden als beveiliging. Na een systeemcrash zal deze lijst opnieuw moeten opgebouwd worden uitgaande van de bestanden die op de schijf teruggevonden worden.
-\item[Gelinkte lijst.] Gezien de vrije blokken toch niet gebruikt worden, kan een deel van elk blok gebruikt worden om ze met elkaar te linken. De kop van de lijst wijst steeds naar een vrij blok indien er een aanwezig is. Nadeel van deze methode is dat indien er bijvoorbeeld 100 blokken moeten gealloceerd worden, er ook 100 schijftoegangen nodig zijn om de gelinkte lijst af te lopen.
-\item[Wijzerblok.] Net zoals bij de gelinkte allocatie kunnen ook de vrije blokken in indexblokken opgenomen worden. In dit geval zal men meestal kiezen voor gelinkte indexblokken i.p.v. voor verschillende niveaus. Het voordeel van deze methode is dat men verschillende blokken ineens kan alloceren.
-\end{description}</p>
+<p>De vrije ruimte op een schijf moet op een efficiënte manier kunnen bijgehouden worden om snel een vrij blok te kunnen terugvinden. Een aantal gebruikelijke methoden wordt hier besproken.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Bitmap</dt>
+<dd>
+<p>Er wordt een bitrij bijgehouden waarbij elk bitje een blok voorstelt. Een vrij blok kan dan voorgesteld worden door 1, en een blok dat in gebruik is door een 0. Voor grote schijven kunnen de bitmaps ook een aanzienlijke ruimte in het geheugen gaan innemen. Ze moeten nu en dan op de schijf bewaard worden als beveiliging. Na een systeemcrash zal deze lijst opnieuw moeten opgebouwd worden uitgaande van de bestanden die op de schijf teruggevonden worden.</p>
+</dd>
+<dt class="hdlist1">Gelinkte lijst</dt>
+<dd>
+<p>Gezien de vrije blokken toch niet gebruikt worden, kan een deel van elk blok gebruikt worden om ze met elkaar te linken. De kop van de lijst wijst steeds naar een vrij blok indien er een aanwezig is. Nadeel van deze methode is dat indien er bijvoorbeeld 100 blokken moeten gealloceerd worden, er ook 100 schijftoegangen nodig zijn om de gelinkte lijst af te lopen.</p>
+</dd>
+<dt class="hdlist1">Wijzerblok</dt>
+<dd>
+<p>Net zoals bij de gelinkte allocatie kunnen ook de vrije blokken in indexblokken opgenomen worden. In dit geval zal men meestal kiezen voor gelinkte indexblokken i.p.v. voor verschillende niveaus. Het voordeel van deze methode is dat men verschillende blokken ineens kan alloceren.</p>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect4">
@@ -3174,7 +3281,7 @@ In het bijzonder zal het nuttig blijken om:</p>
 <p>Welke allocatiemethode men ook gebruikt na verloop van tijd zal de vrije ruimte geen aaneengesloten blok meer vormen, maar verspreid geraken over de volledige schijf. Het gevolg van deze versnippering zal zijn dat bestanden opgebouwd zullen worden uit blokken die zich op verschillende plaatsen op de schijf bevinden (behalve bij contigue allocatie). Doordat de kop van de schijf zich verschillende keren zal moeten verplaatsen om een dergelijk bestand te lezen, zal de prestatie van het bestandssysteem sterk dalen. Dit probleem is gekend, en wordt fragmentatie van de schijf genoemd.</p>
 </div>
 <div class="paragraph">
-<p>Het probleem kan opgelost worden door de bestanden op de schijf te herschikken (defragmentatie en compactering). Hierbij zullen alle bestanden contigu gemaakt worden en wordt ook de vrije ruimte samengebracht. Deze techniek heeft zijn aanhangers en zijn tegenstanders. Aanhangers claimen dat de fragmentatie van de bestanden weggewerkt wordt hetgeen nuttig is voor de prestatie. Tegenstanders argumenteren dat door de compactie de volgorde van bestanden gewijzigd wordt, en dat dit een negatieve impact kan hebben op de prestatie. Indien men een pakket installeert op een nagenoeg lege schijf, is de kans groot dat alle bestanden van het pakket na elkaar op de schijf zullen komen te staan. Bij het opstarten van het pakket kunnen de bestanden dan \'e'en na \'e'en ingelezen worden, zonder dat de kop zich veel moet verplaatsen. Na compactering kunnen deze bestanden verspreid geraken over heel de schijf waardoor er tijd verloren wordt bij het springen van het ene bestand naar het andere.</p>
+<p>Het probleem kan opgelost worden door de bestanden op de schijf te herschikken (defragmentatie en compactering). Hierbij zullen alle bestanden contigu gemaakt worden en wordt ook de vrije ruimte samengebracht. Deze techniek heeft zijn aanhangers en zijn tegenstanders. Aanhangers claimen dat de fragmentatie van de bestanden weggewerkt wordt hetgeen nuttig is voor de prestatie. Tegenstanders argumenteren dat door de compactie de volgorde van bestanden gewijzigd wordt, en dat dit een negatieve impact kan hebben op de prestatie. Indien men een pakket installeert op een nagenoeg lege schijf, is de kans groot dat alle bestanden van het pakket na elkaar op de schijf zullen komen te staan. Bij het opstarten van het pakket kunnen de bestanden dan één na één ingelezen worden, zonder dat de kop zich veel moet verplaatsen. Na compactering kunnen deze bestanden verspreid geraken over heel de schijf waardoor er tijd verloren wordt bij het springen van het ene bestand naar het andere.</p>
 </div>
 </div>
 </div>
@@ -3234,44 +3341,44 @@ In het bijzonder zal het nuttig blijken om:</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>Als stap 1 uitgevoerd wordt net voor een crash dan zal er een inode als wees achterblijven.
+<p>Als stap 1 uitgevoerd wordt net voor een crash dan zal er een inode als wees achterblijven.<br>
 Omgekeerd als stap 2 als eerste voor de crach uitgevoerd wordt dan wordt de inode als vrije ruimte aangeduid en kan overgeschreven worden.</p>
 </div>
 <div class="paragraph">
 <p>Een manier tot herstel is om de complete datastructuren van het bestandssysteem te doorlopen bij een volgende aankoppeling zodat onvolkomenheden kunnen gedetecteerd worden. Dit kan zeer traag verlopen voor grote bestandssystemen.</p>
 </div>
 <div class="paragraph">
-<p>Een andere manier tot herstel is om een logbestand (journaal) bij te houden met alle veranderingen die moeten gemaakt worden.
+<p>Een andere manier tot herstel is om een logbestand (journaal) bij te houden met alle veranderingen die moeten gemaakt worden.<br>
 Herstellen kan dan eenvoudig door het logbestand te doornemen en alle onvolkomenheden te herstellen.</p>
 </div>
 <div class="paragraph">
-<p>Enkele voorbeelden van journalizing bestandssystemen zijn JFS, EXT3/4, ReiserFS en NTF</p>
+<p>Enkele voorbeelden van journalizing bestandssystemen zijn JFS, EXT3/4, ReiserFS en NTFS</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_case_study_1_fat_file_system">6.5.4. Case study 1: FAT file system</h4>
 <div class="paragraph">
-<p>Het FAT bestandssysteem komt voor in een aantal varianten, waarvan FAT16 (1986) en FAT32 (1996) ontegensprekelijk de bekendste zijn. Als primair bestandssysteem hebben ze allebei reeds lang afgedaan om redenen die later aan bod komen, maar ze vormen wel een ideale educatieve instap in de wereld van bestandssystemen. Recentere bestandssystemen zijn een stuk complexer, zoals we later zullen leren. FAT wordt tegenwoordig vanwege zijn eenvoud wel nog consequent gebruikt op flash disks, flash kaartjes etc.</p>
+<p>Het FAT bestandssysteem komt voor in een aantal varianten, waarvan FAT16 (1986) en FAT32 (1996) ontegensprekelijk de bekendste zijn. Als primair bestandssysteem hebben ze allebei reeds lang afgedaan om redenen die later aan bod komen, maar ze vormen wel een ideale educatieve instap in de wereld van bestandssystemen. Recentere bestandssystemen zijn een stuk complexer, zoals we later zullen leren. FAT wordt tegenwoordig vanwege zijn eenvoud wel nog gebruikt op USB dongles, flash kaartjes etc.</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch04/images/fatstructureBb457122.f28zs06_big(l=en-us).jpg" alt="fat organisatie" width="50">
+<img src="ch04/images/fatstructureBb457122.f28zs06_big(l=en-us).jpg" alt="fat organisatie" width="500">
 </div>
-<div class="title">Figure 52. FAT organisatie</div>
+<div class="title">Figure 63. FAT organisatie</div>
 </div>
 <div class="paragraph">
 <p>In bovenstaande afbeelding zie je de opbouw van een FAT16 partitie. Vooraan bevindt zich, zoals altijd, het PBS met de nodige parameters. De PBS is een van de gereserveerde sectoren vooraan de partitie. Onmiddellijk na de gereserveerde sectoren volgen een aantal File Alocation Tables (FATs). In de figuur is dit aantal gelijk aan twee, het meest voorkomende geval.<br>
-Na de FATs komt de root folder, gevolgd door de data clusters. In deze data clusters worden uiteraard de bits opgeslagen die de bestanden vormen. Belangrijke opmerking is dat deze bits georganiseerd worden in clusters. Een cluster is een reeks sectoren die steeds bij een welbepaald bestand horen.
+Na de FATs komt de root folder, gevolgd door de data clusters. In deze data clusters worden uiteraard de bits opgeslagen die de bestanden vormen. Belangrijke opmerking is dat deze bits georganiseerd worden in clusters. Een cluster is een reeks sectoren die steeds bij een welbepaald bestand horen.<br>
 Bijvoorbeeld: indien een cluster bestaat uit 16kB (32 sectoren), dan zal een bestand van 1kB 16kB schijfruimte bezetten (een sector). <br>
 Een bestand van 20kB zal verspreid worden over twee clusters, deze clusters moeten geen opeenvolgende clusters zijn (fragmentatie).<br>
 Soms kan je de grootte van de clusters kiezen (bij het formatteren, afhankelijk van het bestandsysteem). Grotere clusters betekent dat bestanden minder snel gefragmenteerd zullen worden, maar betekent anderzijds dat meer ruimte verloren zal gaan (door onvolledig gevulde clusters).</p>
 </div>
-<table class="tableblock frame-topbot grid-all spread">
-<caption class="title">Table 5. PBS van een FAT32 partitie</caption>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 7. PBS van een FAT32 partitie</caption>
 <colgroup>
-<col style="width: 14%;">
-<col style="width: 71%;">
-<col style="width: 14%;">
+<col style="width: 33%;">
+<col style="width: 33%;">
+<col style="width: 33%;">
 </colgroup>
 <thead>
 <tr>
@@ -3539,7 +3646,7 @@ Vooral de laatste 4 bytes zijn belangrijk. Die bevatten namelijk de lengte van h
 <div class="content">
 <img src="ch04/images/FAT16example.png" alt="FAT-tabel met fragmentatie" width="300">
 </div>
-<div class="title">Figure 53. voorbeeld FAT-tabel met fragmentatie</div>
+<div class="title">Figure 64. voorbeeld FAT-tabel met fragmentatie</div>
 </div>
 </div>
 <div class="sect3">
@@ -3603,7 +3710,7 @@ De runlist is onderdeel van het $DATA attribuut (start van dit attribuut wordt g
 <div class="sect4">
 <h5 id="_inodes">Inodes</h5>
 <div class="paragraph">
-<p>EXT maakt gebruik van iNodes. Waar de ‘i’ in i-nodes vandaan komt, lijkt niemand te weten, en speelt verder ook weinig rol.</p>
+<p>In Unix maakt men gebruik van een gecombineerd systeem met inodes.</p>
 </div>
 <div class="paragraph">
 <p>Inodes komen voor in twee types:</p>
@@ -3622,14 +3729,17 @@ Zo’n inode voor een bestand bevat Directe, single indirecte, double indirecte 
 </dd>
 </dl>
 </div>
+<div class="paragraph">
+<p>Hierbij wordt een vast aantal indices opgenomen als attributen van een bestand in de zogenaamde inode (dit is een gegevensstructuur die zich tussen de directory-entry en het fysiek bestand bevindt. Per fysiek bestand is er slechts 1 inode, maar kunnen er verschillende directory-entries zijn. De inode houdt o.m. bij hoeveel harde links er naar een bestand bestaan). Naast dit beperkt aantal directe indices (bv. 12) die zullen volstaan voor de bestanden kleiner dan bv. 48 Kb, is er nog een wijzer naar een indexblok van niveau 1, en ook nog een wijzer naar een indexblok van niveau 2 (en zelfs naar niveau 3).</p>
+</div>
+<div class="paragraph">
+<p>Deze oplossing laat toe om snel directe toegang te hebben tot kleine bestanden, redelijk snel tot de middelgrote bestanden, en aanvaardbaar voor de echt grote bestanden waarbij de grootte van de bestanden niet beperkt wordt door de implementatie van het bestandssysteem, maar door de grootte van de schijf. Dit is prima omdat in de praktijk toch blijkt dat minder dan 5% van alle bestanden groter zijn dan 48KB en dus een indexblok nodig hebben. Alle andere kunnen het stellen zonder afzonderlijk indexblok.</p>
+</div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="ch04/images/unix_filesys5.png" alt="inode structuur" width="500">
 </div>
-<div class="title">Figure 54. Inode structuur (bron onbekend)</div>
-</div>
-<div class="paragraph">
-<p>Kleine bestanden zullen volledig in directe blokken passen, en dus erg snel zijn. Bestanden die niet in deze 12 blokken passen, krijgen via een link naar een indirect blok hun plaats toegewezen. Je kan met deze redenering ook voorspellen wat bedoeld wordt met dubbel indirecte en triple indirecte verwijzingen.</p>
+<div class="title">Figure 65. Inode structuur (bron onbekend)</div>
 </div>
 </div>
 </div>
@@ -3697,7 +3807,10 @@ Bij NTFS wordt enkel het MFT record aangepast, waarin een parameter zal aangeven
 <div class="ulist Bibliography">
 <ul class="Bibliography">
 <li>
-<p><a id="PATT"></a>[PATT] 'Computer Organization And Design'. David A. Patterson, John L. Hennessey. fifth edition. p374</p>
+<p><a id="MANGAN"></a>[MANGAN] 'Advanced format 4K disk drives and performance'. Tim Mangan, <a href="http://www.brianmadden.com/blogs/timmangan/archive/2010/08/16/advanced-format-4k-disk-drives-and-performance.aspx" class="bare">http://www.brianmadden.com/blogs/timmangan/archive/2010/08/16/advanced-format-4k-disk-drives-and-performance.aspx</a></p>
+</li>
+<li>
+<p><a id="PCPART"></a>[PCPART] 'storage trends'. <a href="https://pcpartpicker.com/trends/internal-hard-drive/" class="bare">https://pcpartpicker.com/trends/internal-hard-drive/</a> . accessed 27/08/2014</p>
 </li>
 </ul>
 </div>
