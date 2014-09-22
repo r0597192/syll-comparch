@@ -19,9 +19,10 @@ echo PUBLISH TO GHDOCS
 echo ...omzetting naar docbook:done!
  echo ...omzetting naar PDF
  c:\fopub\asciidoctor-fopub\fopub c:\syll-comparch\pcarch.xml
+ copy c:\syll-comparch\pcarch.pdf c:\syll-comparch-ghpages\syll-comparch\pdf\pcarch.pdf
  echo ... volledig klaar!
 
-
+ sleep 5
 
 
 pause
