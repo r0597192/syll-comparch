@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.0">
+<meta name="generator" content="Asciidoctor 1.5.1">
 <meta name="author" content="Roel Van Steenberghe">
 <title>Computerarchitectuur</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic|Noto+Serif:400,400italic,700,700italic|Droid+Sans+Mono:400">
@@ -381,7 +381,7 @@ p{margin-bottom:1.25rem}
 *{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
 a{color:inherit!important;text-decoration:underline!important}
 a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
-a[href^="http:"]:not(.bare):after,a[href^="https:"]:not(.bare):after,a[href^="mailto:"]:not(.bare):after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+a[href^="http:"]:not(.bare):after,a[href^="https:"]:not(.bare):after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
 abbr[title]:after{content:" (" attr(title) ")"}
 pre,blockquote,tr,img{page-break-inside:avoid}
 thead{display:table-header-group}
@@ -465,15 +465,14 @@ MathJax.Hub.Config({
 <li><a href="#_lokaliteitsprincipes">6.2. Lokaliteitsprincipes</a></li>
 <li><a href="#_soorten_geheugens">6.3. Soorten geheugens</a></li>
 <li><a href="#_technologie">6.4. Technologie</a></li>
-<li><a href="#_dram_technologie">6.5. DRAM technologie</a></li>
-<li><a href="#_fast_page_dram_fp_dram">6.6. Fast Page DRAM (FP-DRAM)</a></li>
-<li><a href="#_edo_ram">6.7. EDO RAM</a></li>
-<li><a href="#_synchronous_dram">6.8. Synchronous DRAM</a></li>
-<li><a href="#_optimalisatietechnieken">6.9. Optimalisatietechnieken</a></li>
-<li><a href="#_cache_geheugen">6.10. Cache geheugen</a></li>
-<li><a href="#_associativiteit">6.11. Associativiteit</a></li>
-<li><a href="#_virtueel_geheugen">6.12. Virtueel geheugen</a></li>
-<li><a href="#_bronvermelding_bij_dit_hoofdstuk">6.13. Bronvermelding bij dit hoofdstuk</a></li>
+<li><a href="#_fast_page_dram_fp_dram">6.5. Fast Page DRAM (FP-DRAM)</a></li>
+<li><a href="#_edo_ram">6.6. EDO RAM</a></li>
+<li><a href="#_synchronous_dram">6.7. Synchronous DRAM</a></li>
+<li><a href="#_optimalisatietechnieken">6.8. Optimalisatietechnieken</a></li>
+<li><a href="#_cache_geheugen">6.9. Cache geheugen</a></li>
+<li><a href="#_associativiteit">6.10. Associativiteit</a></li>
+<li><a href="#_virtueel_geheugen">6.11. Virtueel geheugen</a></li>
+<li><a href="#_bronvermelding_bij_dit_hoofdstuk">6.12. Bronvermelding bij dit hoofdstuk</a></li>
 </ul>
 </li>
 <li><a href="#_opslagmedia">7. Opslagmedia</a>
@@ -586,8 +585,8 @@ Stuur hiervoor zeker een <a href="mailto:roel.vansteenberghe@hubkaho.be">mailtje
 <div class="sect2">
 <h3 id="_principe_en_werking">4.1. Principe en werking</h3>
 <div class="paragraph">
-<p>Een computer, of het nu een pc, laptop, server of smartphone is, kan enkel functioneren als de juiste elektrische spanningen aangebracht worden. Elektronische componenten vragen een relatief lage, maar erg stabiele gelijkspanning om te functioneren.
-Deze wordt geleverd door een voeding, die de wisselspanning van het elektriciteitsnet omzet naar de nodige gelijkspanningsniveau’s. De techniek die hierbij gebruikt wordt noemt men switched mode power supply of schakelende voeding.
+<p>Een computer, of het nu een PC, laptop, server of smartphone is, kan enkel functioneren als de juiste elektrische spanningen aangebracht worden. Elektronische componenten vragen een relatief lage, maar erg stabiele gelijkspanning om te functioneren.
+Deze wordt geleverd door een voeding, die de wisselspanning van het elektriciteitsnet omzet naar de nodige gelijkspanningsniveaus. De techniek die hierbij gebruikt wordt noemt men switched mode power supply of schakelende voeding.
 Het schema van de omzetting wordt weergegeven in onderstaande afbeelding</p>
 </div>
 <div class="imageblock" style="text-align: center">
@@ -663,7 +662,7 @@ Deze spanning kan je alleen wegnemen door de voeding uit te schakelen (schakelaa
 <p>SATA voedingsconnector</p>
 </li>
 <li>
-<p>Auxillary connectors: verschillende varianten van extra voedingsconnector en om extra vermogen te leveren</p>
+<p>Auxiliary connectors: verschillende varianten van extra voedingsconnector en om extra vermogen te leveren</p>
 </li>
 </ul>
 </div>
@@ -691,7 +690,7 @@ Als het systeem continu 450W nodig heeft, zou de eerste voeding kunnen falen.</p
 <div class="sect3">
 <h4 id="_rendement">4.2.3. Rendement</h4>
 <div class="paragraph">
-<p>Het ‘groene’ aspect bij pc’s komt steeds meer naar voor. Het rendement van de voeding is daarbij een belangrijke factor. Je wil natuurlijk voor elke 100 Watt die je uit het stroomnet haalt, ook 100W prestaties zien. Helaas is dit niet mogelijk: voedingen hebben een rendement dat een stuk lager ligt dan de ideale 100%. Dat verlies uit zich voornamelijk in warmte, die dan weer moet afgevoerd worden. Het spreekt voor zich dan een hoger rendement meestal ook een iets hoger prijskaartje met zich zal meebrengen. Toch is dit het overwegen waard als je een kleine rekenoefening maakt.</p>
+<p>Het ‘groene’ aspect bij computers komt steeds meer naar voor. Het rendement van de voeding is daarbij een belangrijke factor. Je wil natuurlijk voor elke 100 Watt die je uit het stroomnet haalt, ook 100W prestaties zien. Helaas is dit niet mogelijk: voedingen hebben een rendement dat een stuk lager ligt dan de ideale 100%. Dat verlies uit zich voornamelijk in warmte, die dan weer moet afgevoerd worden. Het spreekt voor zich dan een hoger rendement meestal ook een iets hoger prijskaartje met zich zal meebrengen. Toch is dit het overwegen waard als je een kleine rekenoefening maakt.</p>
 </div>
 </div>
 <div class="sect3">
@@ -715,7 +714,7 @@ Als het systeem continu 450W nodig heeft, zou de eerste voeding kunnen falen.</p
 <p>Als je daar de prijs tegenover zet die een gemiddeld gezin (bron: VREG, oktober 2012) betaalt per kWh, dan kost deze pc je 375 * 0,2€ = € 75. Een voeding met een rendement dat 20% beter is zal je dus op jaarbasis makkelijk 15 Euro opleveren.</p>
 </div>
 <div class="paragraph">
-<p>Het loont dus de moeite om bij de aankoop de voeding zorgvuldig te kiezen. De meerprijs voor een duurdere PSU kan dus zeker renderen. In een bedrijf met honderden desktops begrijp je dat dit een verkoopsargument kan zijn.</p>
+<p>Het loont dus de moeite om bij de aankoop de voeding zorgvuldig te kiezen. De meerprijs voor een duurdere PSU (Power Supply Unit) kan dus zeker renderen. In een bedrijf met honderden desktops begrijp je dat dit een verkoopsargument kan zijn.</p>
 </div>
 </div>
 </div>
@@ -761,7 +760,7 @@ Als het systeem continu 450W nodig heeft, zou de eerste voeding kunnen falen.</p
 <td class="tableblock halign-left valign-top"><p class="tableblock">&gt;=88%</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&gt;=90%</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&gt;=92%</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&gt;=96</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&gt;=96%</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">100% belast</p></td>
@@ -770,19 +769,19 @@ Als het systeem continu 450W nodig heeft, zou de eerste voeding kunnen falen.</p
 <td class="tableblock halign-left valign-top"><p class="tableblock">&gt;=85%</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&gt;=87%</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&gt;=89%</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&gt;=94</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&gt;=94%</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
 <p>Laptops hebben een verbruik dat typisch een flink stuk lager zit. Hoewel ze een voeding hebben die meestal een behoorlijk hoog wattage aankan om de accu snel op te laden, is het gemiddeld verbruik meestal slechts rond de 30Watt.
-Nieuwere toestellen die een hoge autonomie tot hun belangrijkste verkoopsargumenten rekenen, zoals chromebooks, kunnen zelfs onder maximale belasting onder de grens van 15 Watt blijven. <a href="#ANAND">[ANAND]</a></p>
+Nieuwere toestellen die een hoge autonomie tot hun belangrijkste verkoopargumenten rekenen, zoals chromebooks, kunnen zelfs onder maximale belasting onder de grens van 15 Watt blijven. <a href="#ANAND">[ANAND]</a></p>
 </div>
 <div class="paragraph">
 <p>Het matige rendement van PSU’s is voor een deel eigen aan de opbouw ervan. Omdat veel verschillende eindtrappen nodig zijn voor de verschillende spanningen, is het totale rendementsverlies een accumulatie van de kleinere verliezen bij de deeltrappen.</p>
 </div>
 <div class="paragraph">
-<p>Ondertussen verlaten sommige grote spelers om die reden de ATX standaard om met eigen oplossingen hogere rendementen te behalen. Google ontwikkelt bijvoorbeeld z’n eigen servervoedingen die door hun eenvoud een veel hoger rendement halen. De eenvoud bestaat erin dat ze slechts 1 spanning aanbieden aan het moederbord: 12V. Als componenten een andere voedingsspanning vereisen,  worden die waar nodig getransformeerd op het moederbord, wat veel efficiënter kan. Google research publiceerde een paper <a href="#GOOGLE">[GOOGLE]</a> die schat dat de energiebesparing die je hiermee kan behalen op een populatie van 100 miljoen computers 13 miljard kWh betreft op jaarbasis. Dat komt, om je een idee te geven, ongeveer overeen met de opbrengst van de helft van een kerncentrale zoals die in Doel (jaarproductie 22 miljard kWh)</p>
+<p>Ondertussen verlaten sommige grote spelers om die reden de ATX standaard om met eigen oplossingen hogere rendementen te behalen. Google ontwikkelt bijvoorbeeld z’n eigen servervoedingen die door hun eenvoud een veel hoger rendement halen. De eenvoud bestaat erin dat ze slechts 1 spanning aanbieden aan het moederbord: 12V. Als componenten een andere voedingsspanning vereisen,  worden die waar nodig getransformeerd op het moederbord, wat veel efficiënter kan. Google research publiceerde een paper <a href="#GOOGLE">[GOOGLE]</a> die schat dat de energiebesparing die je hiermee kan behalen op een populatie van 100 miljoen computers 13 miljard kWh betreft op jaarbasis. Dat komt, om je een idee te geven, ongeveer overeen met de opbrengst van de helft van een kerncentrale zoals die in Doel (jaarproductie 22 miljard kWh).</p>
 </div>
 </div>
 <div class="sect3">
@@ -811,7 +810,7 @@ Nieuwere toestellen die een hoge autonomie tot hun belangrijkste verkoopsargumen
 <div class="sect4">
 <h5 id="_capaciteit">Capaciteit</h5>
 <div class="paragraph">
-<p>De capaciteit van batterijen wordt meestal uitgedrukt in Ah (ampère/uur) of mAh (milliampère/uur). Met die eenheid kan je makkelijk accu-packs vergelijken. Een batterij van 6Ah zal theoretisch bijvoorbeeld in staat zijn om gedurende 6 uur een stroom af te leveren van 1 Ampère, of gedurende bijvoorbeeld 2 uur een stroom van 3 Ampère. Uiteraard zijn er realiteit door de fabrikant maxima gedefinieerd zodat de levensduur van de accu niet bedreigd wordt.</p>
+<p>De capaciteit van batterijen wordt meestal uitgedrukt in Ah (ampère/uur) of mAh (milliampère/uur). Met die eenheid kan je makkelijk accu-packs vergelijken. Een batterij van 6Ah zal theoretisch bijvoorbeeld in staat zijn om gedurende 6 uur een stroom af te leveren van 1 Ampère, of gedurende bijvoorbeeld 2 uur een stroom van 3 Ampère. Uiteraard zijn er in realiteit door de fabrikant maxima gedefinieerd zodat de levensduur van de accu niet bedreigd wordt.</p>
 </div>
 <div class="paragraph">
 <p>Sommige fabrikanten verkiezen echter om hun capaciteiten uit te drukken in Wh, wat vergelijken lastiger kan maken. Toch kan je eenvoudig omrekenen bij gelijkstroom:
@@ -866,7 +865,7 @@ Nemen we onderstaand voorbeeld:</p>
 <div class="sect4">
 <h5 id="_memory_effect">Memory-effect</h5>
 <div class="paragraph">
-<p>Het zogenaamd memory-effect is een term die vaak gebruikt wordt om aan te geven dat bepaalde types batterijen, met NiCd op kop, vaak een effect vertonen waarbij het lijkt dat de batterijen snel hun capaciteit verliezen als je ze halverwege de ontlaadcyclus terug oplaadt. Dat fenomeen is eigenlijk de verzamelnaam van effecten die worden veroorzaakt door een combinatie van elektrische en chemische processen.</p>
+<p>Het zogenaamd memory-effect is een term die vaak gebruikt wordt om aan te geven dat bepaalde types batterijen, met NiCd (Nikkel-Cadmium) op kop, vaak een effect vertonen waarbij het lijkt dat de batterijen snel hun capaciteit verliezen als je ze halverwege de ontlaadcyclus terug oplaadt. Dat fenomeen is eigenlijk de verzamelnaam van effecten die worden veroorzaakt door een combinatie van elektrische en chemische processen.</p>
 </div>
 </div>
 <div class="sect4">
@@ -885,13 +884,13 @@ Nemen we onderstaand voorbeeld:</p>
 Het zwakke punt van Li-Ion: degradatie</p>
 </div>
 <div class="paragraph">
-<p>Wie een laptop of GSM gebruikt, kent het fenomeen: na enkele jaren is de cyapaciteit van de batterij slechts nog een fractie van wat ze was bij aankoop. Dit fenomeen kan je niet omkeren, maar het kan wel vertraagd worden als je de weet wat de factoren zijn die dit proces versnellen&#8230;&#8203;</p>
+<p>Wie een laptop of gsm gebruikt, kent het fenomeen: na enkele jaren is de capaciteit van de batterij slechts nog een fractie van wat ze was bij aankoop. Dit fenomeen kan je niet omkeren, maar het kan wel vertraagd worden als je weet wat de factoren zijn die dit proces versnellen&#8230;&#8203;</p>
 </div>
 <div class="paragraph">
 <p>Een Li-ion-accu verliest zijn capaciteit het snelst als hij zich in een warme ruimte bevindt, en opgeladen is. Een volledig opgeladen Li-ion accu zal bijvoorbeeld na een jaar rusten in een ruimte waar het gemiddeld 20°C is, 20 procent van zijn capaciteit verliezen.</p>
 </div>
 <div class="paragraph">
-<p>Is diezelfde accu slechts half opgeladen, dan zal de capaciteit met slechts enkele procenten dalen. Het is dus niet verstandig aan Li-ion-accu voor lange tijd weg te bergen in opgeladen toestand. Ook door stockage in koele ruimtes kan de capaciteit langer bewaard blijven. Een laptop die snel erg warm wordt bij gebruik zal dus meteen ook nefast zijn voor de capaciteit van de batterij op langere termijn.<br>
+<p>Is diezelfde accu slechts half opgeladen, dan zal de capaciteit met slechts enkele procenten dalen. Het is dus niet verstandig een Li-ion-accu voor lange tijd weg te bergen in opgeladen toestand. Ook door stockage in koele ruimtes kan de capaciteit langer bewaard blijven. Een laptop die snel erg warm wordt bij gebruik zal dus meteen ook nefast zijn voor de capaciteit van de batterij op langere termijn.<br>
 Bij een temperatuur van iets boven het vriespunt en een lading van ongeveer 40% zal dit type batterij de langste levensduur ‘on the shelf’ hebben.</p>
 </div>
 </div>
@@ -924,12 +923,12 @@ Voor de aangesloten toestellen treedt er dus geen onderbreking op. Een UPS kan d
 </div>
 <div class="paragraph">
 <p>Een UPS heeft meestal ook een spanningsbeveiliging aan boord die je apparatuur kan beschermen tegen storingen op het elektriciteitsnet.
-UPS’en vind je in alle prijsklasses, wat vaak te maken heeft met de inwendige opbouw ervan. Er onderscheiden zich enkele grote types.</p>
+UPS’en vind je in alle prijsklassen, wat vaak te maken heeft met de inwendige opbouw ervan. Er onderscheiden zich enkele grote types.</p>
 </div>
 <div class="sect3">
 <h4 id="_online_ups">4.4.1. Online UPS</h4>
 <div class="paragraph">
-<p>De online UPS wordt ook wel “double conversion” ups genoemd. Alle stroom die naar de IT-apparatuur gaat, loopt door de UPS. Hierdoor is het niet nodig om te schakelen bij het uitvallen van de stroom. Met de bypass kan je evenwel de ups overbruggen. Dat kan bijvoorbeeld interessant zijn als er onderhoud nodig is. Omdat hierdoor veel gevraagd wordt van alle elektronica (die constant volledig belast wordt), is die een relatief duur concept.</p>
+<p>De online UPS wordt ook wel “double conversion” UPS genoemd. Alle stroom die naar de IT-apparatuur gaat, loopt door de UPS. Hierdoor is het niet nodig om over te schakelen bij het uitvallen van de stroom. Met de bypass kan je evenwel de ups overbruggen. Dat kan bijvoorbeeld interessant zijn als er onderhoud nodig is. Omdat hierdoor veel gevraagd wordt van alle elektronica (die constant volledig belast wordt), is dit een relatief duur concept.</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -1508,7 +1507,7 @@ Microsoft heeft bijvoorbeeld eind 2012 z’n RT tablet vrijgegeven, met ARM SOC.
 <p>Het belang van geheugen is tijdens de cursus computertechniek al voldoende gebleken. Zoals bekend worden zowel uit te voeren instructies als data opgeslagen in dit geheugen. (cfr de 'von Neumann architectuur') Dit legt twee belangrijke behoeften bloot: snelheid en grootte.</p>
 </div>
 <div class="paragraph">
-<p><strong>Snelheid</strong> is belangrijk omdat het geheugen de processor moet voorzien van uit te voeren instructies. Een snelle processor met traag geheugen geeft een traag systeem.</p>
+<p><strong>Snelheid</strong> is erg belangrijk omdat het geheugen de processor moet voorzien van uit te voeren instructies. Een snelle processor met traag geheugen geeft een traag systeem.</p>
 </div>
 <div class="paragraph">
 <p><strong>Grootte</strong> is dan weer belangrijk omdat zowel programma’s als de te bewerken data aanzienlijk zijn toegenomen. Bovendien moeten in een multitasking omgeving meerdere programma’s en dus ook grotere hoeveelheden data opgeslagen worden in het geheugen.</p>
@@ -1529,7 +1528,7 @@ Microsoft heeft bijvoorbeeld eind 2012 z’n RT tablet vrijgegeven, met ARM SOC.
 <div class="sect2">
 <h3 id="_lokaliteitsprincipes">6.2. Lokaliteitsprincipes</h3>
 <div class="paragraph">
-<p>Bij het bestuderen van de technieken die gebruikt worden om het geheugen groot en snel te maken, zullen we regelmatig beroep doen op de zogenaamde lokaliteitsprincipes. Daarbij maken we een onderscheid tussen plaatsgebonden lokaliteit en tijdsgebonden lokaliteit. <a href="#PATT">[PATT]</a></p>
+<p>Bij het bestuderen van de technieken die gebruikt worden om het geheugen groot en snel te maken, zullen we regelmatig beroep doen op de zogenaamde lokaliteitsprincipes. Daarbij maken we een onderscheid tussen plaatsgebonden lokaliteit en tijdsgebonden lokaliteit. <a href="#PATT1">[PATT1]</a></p>
 </div>
 <div class="dlist">
 <dl>
@@ -1707,7 +1706,7 @@ Een DIMM biedt op dezelfde afstand veel meer contactpunten en wordt dan ook toeg
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch03/images/statisch.png" alt="statisch geheugen" width="300">
+<img src="ch03/images/statisch.jpg" alt="statisch geheugen" width="300">
 </div>
 <div class="title">Figure 18. voorstelling statisch geheugen</div>
 </div>
@@ -1721,13 +1720,11 @@ Een DIMM biedt op dezelfde afstand veel meer contactpunten en wordt dan ook toeg
 <div class="title">Figure 19. Voorstelling leescyclus dynamisch geheugen</div>
 </div>
 <div class="paragraph">
-<p>Een leesoperatie is met andere woorden destructief. Ten tweede bestaan er geen perfecte condensatoren en vertoont dit soort geheugen dus ook een lek. Dit betekent dat mettertijd de inhoud van het geheugen verloren gaat, tenzij die ververst wordt. Bij dit soort van geheugen is dan ook een regelmatige refresh noodzakelijk. Vergeleken met statisch geheugen is dynamisch geheugen trager. Het statisch geheugen is een actieve schakeling en kan dus stroom sturen of opnemen als het gelezen wordt. Dynamisch geheugen kan niet echt stroom sturen, het is de condensator die ontladen of opgeladen wordt. Anderzijds is dynamisch geheugen dan weer goedkoper, waardoor het toegepast wordt op een lager niveau in de piramide. Meer bepaald is dit de technologie die in geheugenmodules wordt gebruikt. Deze zijn ook gangbaar bekend onder de term RAM of DRAM.</p>
+<p>Een leesoperatie is met andere woorden destructief. Ten tweede bestaan er geen perfecte condensatoren en vertoont dit soort geheugen dus ook een lek. Dit betekent dat mettertijd de inhoud van het geheugen verloren gaat, tenzij die ververst wordt. Bij dit soort van geheugen is dan ook een regelmatige refresh noodzakelijk. Vergeleken met statisch geheugen is dynamisch geheugen trager. Het statisch geheugen is een actieve schakeling en kan dus stroom sturen of opnemen als het gelezen wordt. Dynamisch geheugen kan niet echt stroom sturen, het is de condensator die ontladen of opgeladen wordt. Anderzijds is dynamisch geheugen dan weer goedkoper, waardoor het toegepast wordt op een lager niveau in de piramide. Meer bepaald is dit de technologie die in geheugenmodules wordt gebruikt. Deze zijn ook gangbaar bekend onder de term RAM of DRAM.
+=== DRAM technologie</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_dram_technologie">6.5. DRAM technologie</h3>
 <div class="sect3">
-<h4 id="_gemultiplexte_adresklemmen">6.5.1. Gemultiplexte adresklemmen</h4>
+<h4 id="_gemultiplexte_adresklemmen">6.4.1. Gemultiplexte adresklemmen</h4>
 <div class="paragraph">
 <p>Dynamische RAMs hebben vanwege de grote densiteit meestal ook een grote capaciteit op de chip (tegenwoordig tot 16 Gbit per chip). Een dergelijke capaciteit betekent ook dat er heel wat adressignalen noodzakelijk zijn om een welbepaalde geheugencel te selecteren. Wanneer elk signaal op een aparte pin zou aangesloten worden, zou het noodzakelijk zijn om zeer grote behuizingen te gebruiken.
 Om dit probleem te omzeilen, wordt gebruik gemaakt van gemultiplexte adreslijnen: het volledige adres wordt opgesplitst in een Column Address een Row Address.</p>
@@ -1738,13 +1735,13 @@ De snelheid van het geheugen wordt in grote mate bepaald door de toegangstijd ta
 </div>
 </div>
 <div class="sect3">
-<h4 id="_destructieve_leescyclus">6.5.2. Destructieve leescyclus</h4>
+<h4 id="_destructieve_leescyclus">6.4.2. Destructieve leescyclus</h4>
 <div class="paragraph">
 <p>Eerder werd al aangegeven hoe een leescyclus de data op de condensatoren zal vernietigen. Dit is uiteraard een onaanvaardbare situatie. De oplossing ligt voor de hand. Als data gelezen is, wordt dezelfde data nadien terug weggeschreven, zodat de originele toestand hersteld wordt. Uiteraard is het niet verstandig deze taak aan de processor toe te wijzen, het is iets wat in de geheugenchips zelf geregeld moet worden. Het geheugen is, zoals in vorige paragraaf werd aangegeven, opgebouwd als een matrix van rijen met een welbepaald aantal kolommen. Naast deze matrix van dynamische geheugencellen is er ook een rij van statische geheugencellen. Op het ogenblik dat een rij-adres aangelegd wordt, zal de dynamische rij gekopieerd worden naar de statische rij. Hierbij verliest de dynamische rij dus haar inhoud. Vervolgens kan de gewenste cel gelezen worden en daarna wordt de inhoud van de statische rij weer naar de matrix gekopieerd. Hierdoor wordt de inhoud van het geheugen hersteld.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_refresh">6.5.3. Refresh</h4>
+<h4 id="_refresh">6.4.3. Refresh</h4>
 <div class="paragraph">
 <p>Met deze kennis wordt ook duidelijk hoe een refresh georganiseerd kan worden. Op regelmatige tijdstippen zal een zogenaamde RAS-only cylcus uitgevoerd worden. Hierbij wordt eigenlijk elke rij geselecteerd, gekopieerd naar de statische rij en weer weggeschreven. Hierdoor is de originele inhoud weer op peil gebracht, op voorwaarde dat deze cyclus voldoende regelmatig herhaald wordt. Met deze manier moet niet elke cel afzonderlijk gerefreshed worden, maar wordt een volledige rij ineens hersteld.</p>
 </div>
@@ -1756,7 +1753,7 @@ De snelheid van het geheugen wordt in grote mate bepaald door de toegangstijd ta
 </div>
 </div>
 <div class="sect3">
-<h4 id="_bandbreedte_bij_dram">6.5.4. Bandbreedte bij DRAM</h4>
+<h4 id="_bandbreedte_bij_dram">6.4.4. Bandbreedte bij DRAM</h4>
 <div class="paragraph">
 <p>DRAM heeft, zoals je verder zal lezen, de eigenschap te werken met cyclussen. Om te berekenen wat de effectieve bandbreedte is (=geheugendebiet) hoor je steeds dezelfde benadering te maken:</p>
 </div>
@@ -1769,7 +1766,7 @@ De snelheid van het geheugen wordt in grote mate bepaald door de toegangstijd ta
 </div>
 </div>
 <div class="sect2">
-<h3 id="_fast_page_dram_fp_dram">6.6. Fast Page DRAM (FP-DRAM)</h3>
+<h3 id="_fast_page_dram_fp_dram">6.5. Fast Page DRAM (FP-DRAM)</h3>
 <div class="paragraph">
 <p>Hierboven werd reeds beschreven hoe met gemultiplexte adresklemmen eerst een rij-adres en vervolgens een kolomadres worden doorgegeven (langs dezelfde aansluitpinnen). Het voordeel hiervan is duidelijk: minder adresklemmen.<br>
 Het nadeel is dat een lees- of schrijfcyclus langer wordt. Het kost immers extra tijd om de adressen na elkaar door te geven. FP-DRAM verbetert de snelheid door cycli te combineren.</p>
@@ -1795,7 +1792,7 @@ FP-DRAM werd gebruikt tot busfrequenties van 66 MHz.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_edo_ram">6.7. EDO RAM</h3>
+<h3 id="_edo_ram">6.6. EDO RAM</h3>
 <div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="ch03/images/edo.gif" alt="fast page memory">
@@ -1811,7 +1808,7 @@ EDO-RAM kon gebruikt worden tot een busklok van 75 MHz met een timing van 5-2-2-
 </div>
 </div>
 <div class="sect2">
-<h3 id="_synchronous_dram">6.8. Synchronous DRAM</h3>
+<h3 id="_synchronous_dram">6.7. Synchronous DRAM</h3>
 <div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="ch03/images/timing/SDRAM_read.png" alt="">
@@ -1826,7 +1823,7 @@ In de afbeelding krijgen we een timing van 2-1-1-1. Daarnaast is SD-RAM geschikt
 <p>\$(8 "bytes"/"transfer"  xx 4 "transfers"/"burst"  xx 133 "Mcycli"/"sec" )//(5 "cycli"/"burst") = 851 "MB"/"sec"\$</p>
 </div>
 <div class="sect3">
-<h4 id="_ddr_sdram_ddr2_ddr3">6.8.1. DDR SDRAM - DDR2 - DDR3</h4>
+<h4 id="_ddr_sdram_ddr2_ddr3">6.7.1. DDR SDRAM - DDR2 - DDR3</h4>
 <div class="paragraph">
 <p>Principieel werkt DDR op dezelfde manier als SDRAM. Er wordt nog steeds een rij-adres en een kolomadres aangelegd, waarna meerdere opeenvolgende cellen worden uitgelezen. Het verschil zit in het tempo waarop dit gebeurt. Bij Double Data Rate wordt data naar buiten gebracht op stijgende en dalende flank van de klok. Om dit te kunnen bereiken wordt gebruik gemaakt van een prefetch buffer. In elke cyclus worden nu 2 bits getransfereerd naar het prefetch buffer, dat de data dan aan een dubbele snelheid naar buiten kan brengen.</p>
 </div>
@@ -1998,7 +1995,7 @@ Bovendien hebben de modules ook een verschillend aantal aansluitpinnen, waardoor
 </div>
 </div>
 <div class="sect2">
-<h3 id="_optimalisatietechnieken">6.9. Optimalisatietechnieken</h3>
+<h3 id="_optimalisatietechnieken">6.8. Optimalisatietechnieken</h3>
 <div class="paragraph">
 <p>De evolutie in DRAM technologie is er steeds op gericht om de maximale bandbreedte te verbeteren, terwijl bijzonder weinig aan de latentietijd werd gedaan. Deze verbeterde hooguit in absolute waarde, doordat de kloksnelheid verhoogde. Relatief gezien (dus uitgedrukt in klokcycli) is de latentietijd eerder gestegen. Uit het voorgaande zou al gebleken moeten zijn dat na elke rijtoegang een hersteltijd nodig is om de bufferrij(en) vrij te maken.</p>
 </div>
@@ -2009,7 +2006,7 @@ Bovendien hebben de modules ook een verschillend aantal aansluitpinnen, waardoor
 <div class="title">Figure 26. normale geheugentoegang</div>
 </div>
 <div class="sect3">
-<h4 id="_interleaving">6.9.1. Interleaving</h4>
+<h4 id="_interleaving">6.8.1. Interleaving</h4>
 <div class="paragraph">
 <p>Een techniek die gebruikt kan worden om een deel van de dode tijd te vermijden, is interleaving. Meer bepaald gaat het dan om het vermijden van de tijd tussen twee rijen.
 Deze hersteltijd kan vermeden worden indien de volgende operatie doorgaat op een andere geheugenmodule. Om dit te bereiken worden bij interleaving naburige geheugenblokken verdeeld over verschillende geheugenbanken, die onafhankelijk van elkaar (en dus zonder hersteltijd) aangesproken kunnen worden. Belangrijke opmerking hierbij is dat er enkel snelheidswinst kan zijn als er gewisseld kan worden tussen banken. Het is dan ook belangrijk dat de memory controller weet of er al dan niet gewisseld kan worden tussen banken, zodat hij al dan niet rekening kan houden met de hersteltijd.</p>
@@ -2022,7 +2019,7 @@ Deze hersteltijd kan vermeden worden indien de volgende operatie doorgaat op een
 </div>
 </div>
 <div class="sect3">
-<h4 id="_dual_channel">6.9.2. Dual channel</h4>
+<h4 id="_dual_channel">6.8.2. Dual channel</h4>
 <div class="paragraph">
 <p>Een andere heel eenvoudige techniek om de snelheid te verhogen is het vergroten van de databus. Dit brengt wel een paar problemen met zich mee. Eerst en vooral moeten er extra aansluitingen voorzien worden op zowel de geheugenmodule als het moederbord en bovendien moeten de signaallijnen ook voorzien worden op het moederbord. Daarnaast zal er, zeker bij steeds toenemende kloksnelheden, een probleem ontstaan van tijdverschillen tussen de verschillende datalijnen.</p>
 </div>
@@ -2052,7 +2049,7 @@ Deze hersteltijd kan vermeden worden indien de volgende operatie doorgaat op een
 </div>
 </div>
 <div class="sect3">
-<h4 id="_buffered_registered_ram_en_foutdetectie">6.9.3. Buffered/registered RAM en foutdetectie</h4>
+<h4 id="_buffered_registered_ram_en_foutdetectie">6.8.3. Buffered/registered RAM en foutdetectie</h4>
 <div class="paragraph">
 <p>Een term die regelmatig terug te vinden is bij RAM geheugen is (un)buffered of registered. De termen buffered en registered hebben dezelfde betekenis. Op basis van de eerdere uitleg zou je kunnen vermoeden dat elk DRAM geheugen gebufferd is met de statische bufferrij. De term buffered slaat in dit geval niet op die statische rij, maar wel op de aanwezigheid van een extra bufferchip. Deze bufferchip doet dienst als elektrisch buffer/versterker tussen de geheugenIC’s en de rest van het systeem. Op die manier kan het bijvoorbeeld problemen met onvoldoende stroom helpen oplossen. De bufferchip is dikwijls te herkennen aan zijn dwarse plaatsing op de module.</p>
 </div>
@@ -2065,7 +2062,7 @@ Deze hersteltijd kan vermeden worden indien de volgende operatie doorgaat op een
 </div>
 </div>
 <div class="sect2">
-<h3 id="_cache_geheugen">6.10. Cache geheugen</h3>
+<h3 id="_cache_geheugen">6.9. Cache geheugen</h3>
 <div class="paragraph">
 <p>Zelfs met alle optimalisatietechnieken blijft er een snelheidsprobleem. Instructies die de processor moet uitvoeren, zitten in het geheugen en als de snelheid waarmee het geheugen instructie kan leveren, vergeleken wordt met de snelheid waarmee de processor ze kan uitvoeren, blijkt die laatste een stuk sneller.
 Een belangrijk verschil, want een processor kan nu eenmaal niet sneller instructies afwerken dan dat ze door het geheugen aangeboden kunnen worden. Sneller geheugen maken, ligt voor de hand. Zoals eerder al aangehaald is statisch geheugen sneller dan dynamisch geheugen.</p>
@@ -2074,12 +2071,12 @@ Een belangrijk verschil, want een processor kan nu eenmaal niet sneller instruct
 <p>Belangrijk nadeel van statisch geheugen is dat het per byte veel duurder is dan dynamisch geheugen. De hoeveelheid statisch geheugen in een computersysteem zal dus eerder klein zijn en het komt erop aan deze kleine hoeveelheid zo efficiënt mogelijk te gebruiken. Een tweede probleem is dat niet enkel de snelheid van het geheugen problemen geeft, maar ook de snelheid van de interface naar het geheugen. Om dit probleem aan te pakken was er ooit een snelle back-side bus die de verbinding met het cache geheugen verzorgde. Ondertussen zijn er al verschillende niveaus van cachegeheugens in de processor geïntegreerd, zodat de verbinding met dit geheugen ook in de processor zelf zit en daardoor veel sneller kan zijn.</p>
 </div>
 <div class="sect3">
-<h4 id="_werking">6.10.1. Werking</h4>
+<h4 id="_werking">6.9.1. Werking</h4>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch03/images/cache.png" alt="">
+<img src="ch03/images/cache.png" alt="cache als buffer" width="300">
 </div>
-<div class="title">Figure 30. cache als buffer tussen CPU en geheugen</div>
+<div class="title">Figure 30. Cache als buffer tussen CPU en geheugen</div>
 </div>
 <div class="paragraph">
 <p>Het cache geheugen vormt een buffer dat het snelheidsverschil tussen processor en CPU moet opvangen. Aangezien het cache geheugen een stuk kleiner zal zijn dan het dynamisch geheugen, komt het erop aan om de nodige gegevens klaar te hebben zitten in het cache geheugen.</p>
@@ -2088,17 +2085,19 @@ Een belangrijk verschil, want een processor kan nu eenmaal niet sneller instruct
 <p>Om dit te realiseren wordt weer uitgegaan van het lokaliteitsprincipe. Zowel het cache geheugen als het hoofdgeheugen worden onderverdeeld in blokken van dezelfde grootte. De blokken in het cache geheugen (cache lines) kunnen een kopie bevatten van een blok uit het hoofdgeheugen.</p>
 </div>
 <div class="paragraph">
-<p>Een leescyclus verloopt als volgt:
-*de processor vraagt een adres
-*Indien dat adres in een blok ligt dat in de cache te vinden is, wordt er gesproken van een cache-hit en heeft er een snelle leescyclus plaats vanuit de cache.
-*In het andere geval (een cache-miss) wordt via een trage leescyclus het gevraagde woord opgehaald uit het centrale geheugen terwijl ook onmiddellijk het blok waarin dit woord zich bevindt naar de cache gekopieerd wordt.</p>
+<p>Een leescyclus verloopt als volgt:</p>
 </div>
 <div class="paragraph">
-<p>Aangezien opeenvolgende geheugentoegangen meestal op naburige adressen doorgaan, is de kans groot dat een volgende toegang een cache-hit geeft en dus snel verwerkt kan worden.
+<p>#de processor vraagt een adres
+#Indien dat adres in een blok ligt dat in de cache te vinden is, wordt er gesproken van een cache-hit en heeft er een snelle leescyclus plaats vanuit de cache.
+#In het andere geval (een cache-miss) wordt via een trage leescyclus het gevraagde woord opgehaald uit het centrale geheugen terwijl ook onmiddellijk het blok waarin dit woord zich bevindt naar de cache gekopieerd wordt.</p>
+</div>
+<div class="paragraph">
+<p>Aangezien opeenvolgende geheugentoegangen meestal op naburige adressen doorgaan, is de kans groot dat een volgende toegang een cache-hit geeft en dus snel verwerkt kan worden.<br>
 Een belangrijke parameter voor de snelheid van het cache geheugen is dus de hitrate. Dit is het percentage geheugentoegangen dat rechtstreeks via het snelle cache geheugen kan verlopen. De hitrate ligt typisch tussen 80 en 99%.</p>
 </div>
 <div class="paragraph">
-<p>Een schrijfcyclus kan gelijkaardig verlopen, maar er stelt zich wel een nieuw probleem.
+<p>Een schrijfcyclus kan gelijkaardig verlopen, maar er stelt zich wel een nieuw probleem.+
 In het geval van een schrijfcyclus worden er immers gegevens aangepast. Indien er een cache-hit is, lijkt het logisch om de inhoud van het cache geheugen aan te passen en pas later (bij het verwijderen van de cacheline) wordt de inhoud van het hoofdgeheugen aangepast. Deze manier van werken heet write-back cache.
 Belangrijk nadeel hiervan is dat op een bepaald ogenblik de inhoud van het hoofdgeheugen niet consistent is met het cache geheugen. Dit kan bijvoorbeeld bij DMA-toegangen problemen opleveren. Tweede nadeel is dat het wegschrijven naar het geheugen gebeurt op het ogenblik dat de pagina uit het cache geheugen verwijderd wordt. Dit is het ogenblik waarop in het cache geheugen plaats gemaakt wordt voor een nieuwe pagina. Dit vertraagt dus het inladen van de nieuwe pagina.</p>
 </div>
@@ -2106,12 +2105,14 @@ Belangrijk nadeel hiervan is dat op een bepaald ogenblik de inhoud van het hoofd
 <p>Een alternatief is gebruik maken van write through cache. In dit geval worden steeds zowel het hoofdgeheugen als het cache geheugen aangepast. Nadeel is duidelijk dat steeds gebruik gemaakt wordt van het tragere hoofdgeheugen.</p>
 </div>
 <div class="paragraph">
-<p>Dit kan gedeeltelijk opgevangen worden doordat de processor niet moet wachten tot de volledige cyclus is afgewerkt, maar bij opeenvolgende schrijfopdrachten zal het toch leiden tot vertragingen. Bij schrijfcycli zijn er nog verschillen mogelijk: write allocate en write no-allocate. Bij write allocate zal bij een cache miss het geheugenblok in het cache geheugen geladen worden, bij write no-allocate niet.
-Het voordeel is dat een schrijfoperatie naar het geheugen typisch sneller is dan het ophalen van een volledig blok. Bijvoorbeeld bij write-through geheugen is makkelijk in te zien dat het interessant kan zijn om het blok niet volledig in te laden.</p>
+<p>Dit kan gedeeltelijk opgevangen worden doordat de processor niet moet wachten tot de volledige cyclus is afgewerkt, maar bij opeenvolgende schrijfopdrachten zal het toch leiden tot vertragingen. Bij schrijfcycli zijn er nog verschillen mogelijk: write allocate en write no-allocate. Bij write allocate zal bij een cache miss het geheugenblok in het cache geheugen geladen worden, bij write no-allocate niet.</p>
+</div>
+<div class="paragraph">
+<p>Het voordeel is dat een schrijfoperatie naar het geheugen typisch sneller is dan het ophalen van een volledig blok. Bijvoorbeeld bij write-through geheugen is makkelijk in te zien dat het interessant kan zijn om het blok niet volledig in te laden.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_soorten_caches">6.10.2. Soorten caches</h4>
+<h4 id="_soorten_caches">6.9.2. Soorten caches</h4>
 <div class="paragraph">
 <p>Er zijn een aantal onderscheiden te maken tussen cache geheugens. Een eerste belangrijk verschil is dat tussen level 1 en level 2 caches. In principe zijn zelfs nog meer niveau’s van cache geheugens mogelijk.
 L1 cache is het cache geheugen dat het dichtst bij de processor staat. Het moet dan ook het snelste geheugen zijn, zodat het de processor kan volgen. Naarmate de snelheid van de processor toeneemt, werd het verschil in snelheid zo groot dat het interessant werd om een tweede niveau buffer in te zetten. Dit geheugen is minder kritisch op het vlak van snelheid (het moet de processor niet rechtstreeks voorzien van gegevens) en kan dus op andere vlakken geoptimaliseerd worden. Zo zal L2 cache typisch minder snel, maar wel een stuk groter zijn.</p>
@@ -2124,7 +2125,7 @@ L1 cache is het cache geheugen dat het dichtst bij de processor staat. Het moet 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_overschrijfstrategieën">6.10.3. Overschrijfstrategieën</h4>
+<h4 id="_overschrijfstrategieën">6.9.3. Overschrijfstrategieën</h4>
 <div class="paragraph">
 <p>Bij een cache miss zal in de meeste gevallen een volledig geheugenblok ingeladen worden. Dit betekent dat in het cache geheugen plaats zal moeten gemaakt worden. Er zal met andere woorden een lijn geselecteerd moet worden, die uit het cache geheugen verwijderd zal worden. Het selecteren van die lijn moet uiteraard doordacht gebeuren om de hit rate zo hoog mogelijk te houden. In principe is het best om de cacheline te verwijderen die het langst niet zal gebruikt worden. Het probleem met deze keuze is dat er kennis over de toekomst voor nodig is. In plaats daarvan zijn er een aantal strategieën die op een andere manier proberen de meest geschikte lijn te selecteren:</p>
 </div>
@@ -2155,15 +2156,15 @@ L1 cache is het cache geheugen dat het dichtst bij de processor staat. Het moet 
 </div>
 </div>
 <div class="sect2">
-<h3 id="_associativiteit">6.11. Associativiteit</h3>
+<h3 id="_associativiteit">6.10. Associativiteit</h3>
 <div class="paragraph">
 <p>De associativiteit van het cache geheugen bepaalt op welke cachelines een welbepaald geheugenblok terecht kan komen. De associativiteit bepaalt dus ook het aantal lijnen waaruit geselecteerd kan worden en bepaald dus zowel rechtstreeks (beperking van lijnen) als onrechtstreeks (welke overschrijfstrategie) mee de hitrate.</p>
 </div>
 <div class="sect3">
-<h4 id="_fully_associative_cache">6.11.1. Fully Associative cache</h4>
+<h4 id="_fully_associative_cache">6.10.1. Fully Associative cache</h4>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch03/images/fullyPrincipe.pdf" alt="">
+<img src="ch03/images/fullyPrincipe.png" alt="">
 </div>
 <div class="title">Figure 31. principe fully associative cache</div>
 </div>
@@ -2191,10 +2192,10 @@ Daarnaast moeten ook de snelle comparatoren gerealiseerd worden. Binnen de tijd 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_direct_mapped_cache">6.11.2. Direct mapped cache</h4>
+<h4 id="_direct_mapped_cache">6.10.2. Direct mapped cache</h4>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch03/images/directPrincipe.pdf" alt="">
+<img src="ch03/images/directPrincipe.png" alt="">
 </div>
 <div class="title">Figure 33. principe direct mapped cache</div>
 </div>
@@ -2214,7 +2215,7 @@ De processor beschikt overeen 32-bit adres bus en een cache geheugen van 16kB me
 </div>
 </div>
 <div class="sect3">
-<h4 id="_set_associative_cache">6.11.3. Set-associative cache</h4>
+<h4 id="_set_associative_cache">6.10.3. Set-associative cache</h4>
 <div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="ch03/images/setAssociative.jpg" alt="">
@@ -2295,7 +2296,7 @@ Meer algemeen geldt dat naarmate de associativiteit toeneemt er meer keuze is in
 </div>
 </div>
 <div class="sect3">
-<h4 id="_snelheid_van_de_cache">6.11.4. Snelheid van de cache</h4>
+<h4 id="_snelheid_van_de_cache">6.10.4. Snelheid van de cache</h4>
 <div class="paragraph">
 <p>In het voorgaande hebben we reeds een aantal eigenschappen aangehaald die mee de efficiëntie van het cache geheugen bepalen. Dit is uiteraard een heel belangrijke eigenschap, aangezien bij cache hits, de processor aan zijn volle snelheid kan werken.</p>
 </div>
@@ -2354,12 +2355,12 @@ Anderzijds zijn grotere cachelines nefast voor de miss time. Bij heel grote cach
 </div>
 </div>
 <div class="sect2">
-<h3 id="_virtueel_geheugen">6.12. Virtueel geheugen</h3>
+<h3 id="_virtueel_geheugen">6.11. Virtueel geheugen</h3>
 <div class="paragraph">
 <p>Virtueel geheugen is een oplossing om het tekort aan fysiek geheugen op te lossen. Het tekort aan geheugen komt van steeds groter wordende toepassingen en bestanden die bewerkt worden. Bovendien worden ook verschillende programma’s naast elkaar uitgevoerd. Toch zijn er vandaag ook een aantal situaties waarin een computer ruim voldoende heeft met het fysieke geheugen. In dat geval biedt virtueel geheugen weinig meerwaarde.</p>
 </div>
 <div class="sect3">
-<h4 id="_werking_2">6.12.1. Werking</h4>
+<h4 id="_werking_2">6.11.1. Werking</h4>
 <div class="paragraph">
 <p>Virtueel geheugen zal gebruik maken van de beschikbare ruimte op een of ander medium voor massaopslag om het geheugen groter te laten lijken.</p>
 </div>
@@ -2382,7 +2383,7 @@ Belangrijk is ook dat bepaalde delen nooit mogen verdwijnen uit het fysieke gehe
 </div>
 </div>
 <div class="sect3">
-<h4 id="_paging_segmenting">6.12.2. Paging - segmenting</h4>
+<h4 id="_paging_segmenting">6.11.2. Paging - segmenting</h4>
 <div class="paragraph">
 <p>De meest gebruikte manier om met virtueel geheugen te werken, is zowel de swap als het fysieke geheugen te verdelen in stukken van dezelfde grootte. Zo’n blok wordt dan een pagina genoemd. Voor elke pagina zou dan in een tabel opgeslagen kunnen worden waar de pagina zich bevindt. In deze tabel zou dan een bit aangeven of het fysiek dan wel virtueel aanwezig is en de andere bits zouden de locatie kunnen aanduiden. Uiteraard moet deze tabel ook ten allen tijde in het fysiek geheugen aanwezig blijven. Soms is het noodzakelijk om de grootte van deze tabel te beperken.</p>
 </div>
@@ -2412,7 +2413,7 @@ Het alternatief voor paging is werken met segmenten. In grote lijnen is het verh
 </div>
 </div>
 <div class="sect3">
-<h4 id="_snelheid_en_virtueel_geheugen">6.12.3. Snelheid en virtueel geheugen</h4>
+<h4 id="_snelheid_en_virtueel_geheugen">6.11.3. Snelheid en virtueel geheugen</h4>
 <div class="paragraph">
 <p>Virtueel geheugen heeft de reputatie om de computer te vertragen. Hoewel dit strikt genomen wel waar kan zijn, klopt dit niet helemaal. De reputatie komt namelijk van het swappen van gegevens naar de harde schijf. Aangezien de harde schijf een stuk trager is dan het RAM, gaat dit uiteraard een stuk trager dan gewoon lezen van gegevens uit het RAM.</p>
 </div>
@@ -2433,7 +2434,7 @@ Hierdoor reageert de computer trager dan in het geval er geen virtueel geheugen 
 </div>
 </div>
 <div class="sect2">
-<h3 id="_bronvermelding_bij_dit_hoofdstuk">6.13. Bronvermelding bij dit hoofdstuk</h3>
+<h3 id="_bronvermelding_bij_dit_hoofdstuk">6.12. Bronvermelding bij dit hoofdstuk</h3>
 <div class="ulist Bibliography">
 <ul class="Bibliography">
 <li>
@@ -5049,7 +5050,7 @@ Criticasters hekelen de veiligheid van Thunderbolt, net omdat je rechtstreeks ve
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2014-08-31 11:17:13 Romance (zomertijd)
+Last updated 2014-09-27 13:42:31 CEST
 </div>
 </div>
 </body>
