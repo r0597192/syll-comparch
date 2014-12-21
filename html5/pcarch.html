@@ -519,7 +519,7 @@ MathJax.Hub.Config({
 </div>
 <div class="paragraph">
 <p>Er werd in deze cursus gepoogd om steeds correct om te gaan met materiaal van externe bronnen, inzake copyrights en bronvermelding. Mocht je toch een fragment of afbeelding vinden zonder correcte bronvermelding, geef dat dan zeker door.<br>
-Stuur hiervoor zeker een <a href="mailto:roel.vansteenberghe@hubkaho.be">mailtje</a>. Er zal meteen het nodige gedaan worden om de situatie recht te zetten.</p>
+Stuur hiervoor zeker een <a href="mailto:roel.vansteenberghe@odisee.be">mailtje</a>. Er zal meteen het nodige gedaan worden om de situatie recht te zetten.</p>
 </div>
 <div class="paragraph">
 <p>Dit lesmateriaal is een collectieve inspanning geworden. Talloze studenten dienden reeds verbeteringen of aanvullingen in, en hopelijk kan dat ook in de toekomst blijven gebeuren. Als je niet goed weet hoe je daar aan begint, bekijk dan zeker dit videootje eens:</p>
@@ -527,7 +527,7 @@ Stuur hiervoor zeker een <a href="mailto:roel.vansteenberghe@hubkaho.be">mailtje
 <div class="videoblock">
 <div class="title">video met uitleg over toevoegingen aan deze cursus</div>
 <div class="content">
-<iframe src="//www.youtube.com/embed/km0_pgpPMeM?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="480" height="360" src="//www.youtube.com/embed/km0_pgpPMeM?rel=0" frameborder="0" allowfullscreen></iframe>
 </div>
 </div>
 <div class="paragraph">
@@ -642,7 +642,7 @@ Om het verbruik van een CPU uit te drukken, wordt vaak gesproken over <strong>TD
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch01/images/1000px-ATX_PS_signals.svg.png" alt="ATX 2.0" width="300">
+<img src="ch01/images/1000px-ATX_PS_signals.svg.png" alt="ATX 2.0">
 </div>
 <div class="title">Figure 2. ATX 2.0 moederbord connector (CC Wikimedia commons)</div>
 </div>
@@ -1319,7 +1319,7 @@ Helaas is dit principe niet zaligmakend: soms zijn instructies afhankelijk van a
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch02/images/1000px-Pipeline4stage.png" alt="Sandy Bridge" width="700">
+<img src="ch02/images/1000px-Pipeline4stage.jpg" alt="pipeline">
 </div>
 <div class="title">Figure 10. processor pipeline (CC mediawiki)</div>
 </div>
@@ -1608,39 +1608,39 @@ Microsoft heeft bijvoorbeeld eind 2012 z’n RT tablet vrijgegeven, met ARM SOC.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public class Vermenigvuldigingstafels {
-	int score;<i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">Vermenigvuldigingstafels</span> <span class="tok-o">{</span>
+	<span class="tok-kt">int</span> <span class="tok-n">score</span><span class="tok-o">;</span><i class="conum" data-value="1"></i><b>(1)</b>
 
-	public void test() {
-		for (int i = 1; i &lt;= 10; i++) {
-			vraagEnAntwoord();<i class="conum" data-value="2"></i><b>(2)</b>
-		}
+	<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">test</span><span class="tok-o">()</span> <span class="tok-o">{</span>
+		<span class="tok-k">for</span> <span class="tok-o">(</span><span class="tok-kt">int</span> <span class="tok-n">i</span> <span class="tok-o">=</span> <span class="tok-mi">1</span><span class="tok-o">;</span> <span class="tok-n">i</span> <span class="tok-o">&lt;=</span> <span class="tok-mi">10</span><span class="tok-o">;</span> <span class="tok-n">i</span><span class="tok-o">++)</span> <span class="tok-o">{</span>
+			<span class="tok-n">vraagEnAntwoord</span><span class="tok-o">();</span><i class="conum" data-value="2"></i><b>(2)</b>
+		<span class="tok-o">}</span>
 
-		drukResultaat();
-	}
+		<span class="tok-n">drukResultaat</span><span class="tok-o">();</span>
+	<span class="tok-o">}</span>
 
-	public void vraagEnAntwoord() {
-		int getal1 = (int)(Math.random() * 11);<i class="conum" data-value="3"></i><b>(3)</b>
-		int getal2 = (int)(Math.random() * 11);
+	<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">vraagEnAntwoord</span><span class="tok-o">()</span> <span class="tok-o">{</span>
+		<span class="tok-kt">int</span> <span class="tok-n">getal1</span> <span class="tok-o">=</span> <span class="tok-o">(</span><span class="tok-kt">int</span><span class="tok-o">)(</span><span class="tok-n">Math</span><span class="tok-o">.</span><span class="tok-na">random</span><span class="tok-o">()</span> <span class="tok-o">*</span> <span class="tok-mi">11</span><span class="tok-o">);</span><i class="conum" data-value="3"></i><b>(3)</b>
+		<span class="tok-kt">int</span> <span class="tok-n">getal2</span> <span class="tok-o">=</span> <span class="tok-o">(</span><span class="tok-kt">int</span><span class="tok-o">)(</span><span class="tok-n">Math</span><span class="tok-o">.</span><span class="tok-na">random</span><span class="tok-o">()</span> <span class="tok-o">*</span> <span class="tok-mi">11</span><span class="tok-o">);</span>
 
-		System.out.print(getal1 + " * " + getal2 + " = ");
+		<span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">print</span><span class="tok-o">(</span><span class="tok-n">getal1</span> <span class="tok-o">+</span> <span class="tok-s">&quot; * &quot;</span> <span class="tok-o">+</span> <span class="tok-n">getal2</span> <span class="tok-o">+</span> <span class="tok-s">&quot; = &quot;</span><span class="tok-o">);</span>
 
-		if (Input.readInt() == getal1 * getal2) {
-			score++;
-		} else {
-			System.out.println("fout");
-		}
-	}
+		<span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">Input</span><span class="tok-o">.</span><span class="tok-na">readInt</span><span class="tok-o">()</span> <span class="tok-o">==</span> <span class="tok-n">getal1</span> <span class="tok-o">*</span> <span class="tok-n">getal2</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+			<span class="tok-n">score</span><span class="tok-o">++;</span>
+		<span class="tok-o">}</span> <span class="tok-k">else</span> <span class="tok-o">{</span>
+			<span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-s">&quot;fout&quot;</span><span class="tok-o">);</span>
+		<span class="tok-o">}</span>
+	<span class="tok-o">}</span>
 
-	public void drukResultaat() {
-		System.out.println("Je score: " + score + "/10");
-	}
+	<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">drukResultaat</span><span class="tok-o">()</span> <span class="tok-o">{</span>
+		<span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-s">&quot;Je score: &quot;</span> <span class="tok-o">+</span> <span class="tok-n">score</span> <span class="tok-o">+</span> <span class="tok-s">&quot;/10&quot;</span><span class="tok-o">);</span>
+	<span class="tok-o">}</span>
 
-	public static void main (String args[]) {
-			Vermenigvuldigingstafels tafels = new Vermenigvuldigingstafels();
-			tafels.test();
-	}
-}</code></pre>
+	<span class="tok-kd">public</span> <span class="tok-kd">static</span> <span class="tok-kt">void</span> <span class="tok-nf">main</span> <span class="tok-o">(</span><span class="tok-n">String</span> <span class="tok-n">args</span><span class="tok-o">[])</span> <span class="tok-o">{</span>
+			<span class="tok-n">Vermenigvuldigingstafels</span> <span class="tok-n">tafels</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-nf">Vermenigvuldigingstafels</span><span class="tok-o">();</span>
+			<span class="tok-n">tafels</span><span class="tok-o">.</span><span class="tok-na">test</span><span class="tok-o">();</span>
+	<span class="tok-o">}</span>
+<span class="tok-o">}</span></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1669,7 +1669,7 @@ Microsoft heeft bijvoorbeeld eind 2012 z’n RT tablet vrijgegeven, met ARM SOC.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-assembly" data-lang="assembly">; x86 ASM code
+<pre class="pygments highlight"><code data-lang="assembly">; x86 ASM code
 
 .model small
 .stack
@@ -2125,7 +2125,7 @@ Een belangrijk verschil, want een processor kan nu eenmaal niet sneller instruct
 <h4 id="_werking">6.10.1. Werking</h4>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch03/images/cache.png" alt="cache als buffer" width="300">
+<img src="ch03/images/cache.png" alt="cache als buffer">
 </div>
 <div class="title">Figure 30. Cache als buffer tussen CPU en geheugen</div>
 </div>
@@ -2232,7 +2232,7 @@ L1 cache is het cache geheugen dat het dichtst bij de processor staat. Het moet 
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch03/images/associativiteit/vbfully.png" alt="" width="800">
+<img src="ch03/images/associativiteit/vbfully.png" alt="">
 </div>
 <div class="title">Figure 32. voorbeeld fully associative geheugen</div>
 </div>
@@ -2264,7 +2264,7 @@ Om dit te staven met een extreem voorbeeld: bij direct mapped cache is het mogel
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch03/images/associativiteit/vbdirectmapped.png" alt="" width="800">
+<img src="ch03/images/associativiteit/vbdirectmapped.png" alt="">
 </div>
 <div class="title">Figure 34. voorbeeld direct mapped</div>
 </div>
@@ -2286,7 +2286,7 @@ De processor beschikt overeen 32-bit adres bus en een cache geheugen van 16kB me
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch03/images/associativiteit/vbsetassociative.png" alt="set associative voorbeeld" width="800">
+<img src="ch03/images/associativiteit/vbsetassociative.png" alt="set associative voorbeeld">
 </div>
 <div class="title">Figure 36. voorbeeld set associative</div>
 </div>
@@ -2922,7 +2922,7 @@ Vanwege die nood aan precisie zal MLC dus trager gelezen en beschreven kunnen wo
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch04/images/flash_write.png" alt="" width="500">
+<img src="ch04/images/flash_write.png" alt="">
 </div>
 <div class="title">Figure 54. Schrijfcyclus Flash</div>
 </div>
@@ -3724,8 +3724,13 @@ We zullen niet alle parameters aanhalen, maar wel aantonen hoe het besturingssys
 <div class="paragraph">
 <p>In onderstaande afbeelding zie je de PBS van een SD-kaartje dat uit een Android smartphone komt. De sector werd hexadecimaal voorgesteld met een hex-editor. Probeer enkele van de eerder aangehaalde parameters terug te vinden. (de entries zijn gelijkaardig aan de entries voor een FAT16 partitie)</p>
 </div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="ch04/images/hexviewpbs.png" alt="hexviewpbs" width="700">
+</div>
+<div class="title">Figure 65. hexadecimale voorstelling van de PBS van een FAT16 SD-kaart</div>
+</div>
 <div class="paragraph">
-<div class="title">hexadecimale voorstelling van de PBS van een FAT16 SD-kaart</div>
 <p>De root folder bevat al de informatie over bestanden en mappen die opgeslagen zijn op de root folder. Als we ons beperken tot namen die voldoen aan het 8.3 formaat, dan is elk element in de root folder 32 bytes groot. Een belangrijk deel hiervan zijn de eerste elf bytes, die de karakters van de naam bevatten.<br>
 Indien een bestand niet in de root folder zit, maar is ondergebracht in een andere map, kan vanuit de root folder het volledige pad gevolgd worden tot we uiteindelijk in de juiste map terecht komen. Daar staat de informatie dan op gelijkaardige manier opgeslagen als in de root folder.</p>
 </div>
@@ -3809,7 +3814,7 @@ Vooral de laatste 4 bytes zijn belangrijk. Die bevatten namelijk de lengte van h
 <div class="content">
 <img src="ch04/images/FAT16example.png" alt="FAT-tabel met fragmentatie" width="500">
 </div>
-<div class="title">Figure 65. voorbeeld FAT-tabel met fragmentatie</div>
+<div class="title">Figure 66. voorbeeld FAT-tabel met fragmentatie</div>
 </div>
 </div>
 <div class="sect3">
@@ -3902,7 +3907,7 @@ Zo’n inode voor een bestand bevat Directe, single indirecte, double indirecte 
 <div class="content">
 <img src="ch04/images/unix_filesys5.png" alt="inode structuur" width="500">
 </div>
-<div class="title">Figure 66. Inode structuur (bron onbekend)</div>
+<div class="title">Figure 67. Inode structuur (bron onbekend)</div>
 </div>
 </div>
 </div>
@@ -4358,9 +4363,9 @@ Op de PCI bus kunnen ook een aantal interruptlijnen beschikbaar zijn, die gedeel
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch06/images/resources-dma.jpg" alt="DMA" width="600">
+<img src="ch06/images/resources-dma.jpg" alt="DMA request">
 </div>
-<div class="title">Figure 67. DMA request (bron:http://www.talktoanit.com/)</div>
+<div class="title">Figure 68. DMA request (bron:http://www.talktoanit.com/)</div>
 </div>
 <div class="paragraph">
 <p>Het belangrijkste voordeel van dit soort transfer is dat de processor niet betrokken is bij het eigenlijke verplaatsen van de gegevens. In dit voorbeeld moet de CPU enkel de nodige commando’s doorgeven aan de DMA controller. Het voordeel hiervan is uiteraard dat de processor ondertussen kan verder werken en dus niet moet wachten op de trage harde schijf. Bovendien worden de gegevens nu meteen in het geheugen geplaatst, anders zou de processor ze eerst moeten lezen van de schijf en dan naar het geheugen schrijven.Tijdens de eigenlijke overdracht van gegevens is de bus natuurlijk bezet en kan de processor daar geen gebruik van maken. Dit heet cycle stealing. De DMA controller steelt tijd van de processor op de bus. Hoewel de DMA controller toegang tot de bus aanvraagt, zal hij bijna altijd voorrang krijgen op de processor.</p>
@@ -4447,7 +4452,7 @@ De eerste ligt voor de hand, de tweede heeft in de PC-geschiedenis zijn belang b
 <div class="content">
 <img src="ch06/images/oude_en_nieuwe_microarchitectuur_intel.png" alt="oude en nieuwe microarchitectuur intel" width="600">
 </div>
-<div class="title">Figure 68. Oude en nieuwe microarchitectuur</div>
+<div class="title">Figure 69. Oude en nieuwe microarchitectuur</div>
 </div>
 <div class="paragraph">
 <p>Het gebruik van de bridges heeft als bijkomend voordeel dat de PCI-bus eigenlijk processoronafhankelijk wordt. Hoe transfers op PCI verlopen is volledig van de processor afgeschermd door de bridge (die uiteraard wel processor-afhankelijk is).
@@ -4481,7 +4486,7 @@ Adreslijnen en datalijnen worden op de PCI-bus gemultiplext. Dit zorgt ervoor da
 <div class="content">
 <img src="ch06/images/Pci-slots.jpg" alt="PCI slots" width="350">
 </div>
-<div class="title">Figure 69. PCI slots</div>
+<div class="title">Figure 70. PCI slots</div>
 </div>
 </div>
 </div>
@@ -4531,7 +4536,7 @@ Naast AGP 1x, bestaan ook 2x, 4x en 8x. Deze boden respectievelijk 533,1066 en 2
 <div class="content">
 <img src="ch06/images/pcie_slots.jpg" alt="PCIe slots" width="400">
 </div>
-<div class="title">Figure 70. PCIe slots</div>
+<div class="title">Figure 71. PCIe slots</div>
 </div>
 <div class="paragraph">
 <p>De verbinding tussen de PCIe-switch en de I/O bestaat uit een of meer paren van eenrichtingslinks. Een link bestaat dus uit een upstream en downstream-verbinding. Een dergelijke link noemt men een lane. In het eenvoudigste geval bestaat de verbinding uit een lane, maar het kunnen ook 2, 4, 8, 16 of 32 paren zijn.
@@ -4552,9 +4557,9 @@ Het voordeel van deze foutcontrole is dat PCIe een stuk betrouwbaarder wordt, ma
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch06/images/pcie_protocolstack.png" alt="protocol stack PCIe" width="700">
+<img src="ch06/images/pcie_protocolstack.png" alt="protocol stack PCIe">
 </div>
-<div class="title">Figure 71. PCIe protocolstack</div>
+<div class="title">Figure 72. PCIe protocolstack</div>
 </div>
 <div class="paragraph">
 <p>Omdat er op de seriële verbinding geen plaats is voor controlelijnen, moet alle controle-informatie verzonden worden in een header. Deze laat onder andere toe om het soort transfer aan te geven (bijvoorbeeld gewone I/O, configuratie bericht voor PnP, interrupt, &#8230;&#8203;).</p>
@@ -4613,7 +4618,7 @@ ATA/ATAPI-7 introduceerde enerzijds UDMA/133 (133MB/s) en anderzijds SATA.</p>
 <div class="content">
 <img src="ch06/images/satamobo.jpg" alt="sata connector" width="300">
 </div>
-<div class="title">Figure 72. sata connector</div>
+<div class="title">Figure 73. sata connector</div>
 </div>
 <div class="sect4">
 <h5 id="_compatibiliteit_sata_vs_pata">Compatibiliteit sata vs pata</h5>
@@ -4657,7 +4662,7 @@ Deze moeten ook over de dataverbinding verzonden worden (wat de netto bandbreedt
 <div class="content">
 <img src="ch06/images/satamultiplier.png" alt="SATA multiplier" width="400">
 </div>
-<div class="title">Figure 73. sata multiplier</div>
+<div class="title">Figure 74. sata multiplier</div>
 </div>
 <div class="paragraph">
 <p>In principe is SATA een punt-tot-punt verbinding tussen de SATA controller en de schijf. Het is echter ook mogelijk om met behulp van een expansor of multiplier meerdere SATA apparaten aan te sluiten op een connector van de controller (afbeelding 63). Dit betekent dus ook dat (tenzij met expansor) de bandbreedte niet gedeeld moet worden over verschillende apparaten. Voor de signalering op de dataparen gebruikt SATA LVDS (Low Voltage Differential Signaling). In plaats van de op PATA gangbare 5V, wordt een spanningszwaai van 0.5V gebruikt. Belangrijk voordeel hiervan is een veel lager stroomverbruik. Dit wordt zoals altijd op de mobiele markt gewaardeerd, maar ook aan het andere uiterste, in bijvoorbeeld data centers, waar deze besparing bij een grote hoeveelheid schijven een groot verschil maakt.</p>
@@ -4703,7 +4708,7 @@ Daar staat dan weer tegenover dat SAS iets duurder is dan SATA.</p>
 <div class="sect2">
 <h3 id="_in_den_beginne_3">10.1. In den beginne</h3>
 <div class="paragraph">
-<p>Dit hoofdstuk heeft niet de pretentie om alle mogelijke interfacebussen op te lijsten. Een aantal van die bussen worden niet meer gebruikt of raken stilaan in onbruik.
+<p>Dit hoofdstuk heeft niet de pretentie om alle mogelijke interfacebussen op te lijsten. Een aantal van die bussen worden niet meer gebruikt of raken stilaan in onbruik.<br>
 De klassieke printerpoort of Centronics-poort is er zo eentje. Deze parallelle poort zoals ze ook genoemd werd, is primair ontworpen voor het aansturen van printers. Getuige daarvan zijn de specifieke controlelijnen om aan te geven als bijvoorbeeld het papier uitgeput is. Deze poort werd later ook nog veelvuldig gebruikt, omdat ze erg eenvoudig is van opbouw, en daardoor makkelijk te gebruiken voor kleinere elektronicaprojectjes. Tegenwoordig is deze poort slechts zelden nog te vinden op een pc.<br>
 Ook de seriële poort is stilaan in z’n bestaan bedreigd. Enkel voor heel specifieke toepassingen (vb configuratie van apparatuur als routers) wordt ze nog gebruikt, maar ook daar moet ze stilaan plaats ruimen voor USB.</p>
 </div>
@@ -4813,7 +4818,7 @@ Er bestaan ook mini en micro varianten van de connectoren. Volgende figuur toont
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch07/images/2000px-Types-usb_th1.svg.png" alt="USB connectoren (bron: wikipedia)" width="500">
+<img src="ch07/images/2000px-Types-usb_th1.svg.png" alt="USB connectoren (bron: wikipedia)">
 </div>
 </div>
 <div class="paragraph">
@@ -4944,7 +4949,7 @@ Om gegevens uit te wisselen tussen de host en een USB-apparaat wordt een verbind
 Een uitzondering op die regel: endpoint 0 is bedoeld voor controle van de verbinding en laat communicatie in de twee richtingen toe (is eigenlijk een combinatie van een IN- en een OUT-endpoint, beide met hetzelfde nummer).</p>
 </div>
 <div class="paragraph">
-<p>images:endpoint.gif[align="center", scaledwitdth="40", alt="USB endpoints (bron: beyondlogic.org",width="500"]</p>
+<p><span class="image"><img src="ch07/images/endpoint.png" alt="USB endpoints (bron: beyondlogic.org" width="500"></span></p>
 </div>
 </div>
 <div class="sect3">
@@ -4993,8 +4998,9 @@ Bij isochrone transfers zullen er geen bevestigingen zijn, terwijl na een contro
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch07/images/USBpullup.png" alt="pull-up weerstand voor detectie nieuw apparaat" width="800">
+<img src="ch07/images/USBpullup.png" alt="pull-up weerstand voor detectie nieuw apparaat">
 </div>
+<div class="title">Figure 75. pull-up weerstand voor detectie van nieuwe apparaten</div>
 </div>
 <div class="paragraph">
 <p>Langs de kant van de host (of hub) zijn de twee datalijnen via 2 pull-down weerstanden (15 k) verbonden met de massa. Daardoor ziet de host een laag niveau op beide datalijnen (D+ en D-).<br>
@@ -5005,11 +5011,19 @@ Wanneer een apparaat aangesloten wordt, zal langs de kant van de host (hub)een v
 <h5 id="_enumeratie">Enumeratie</h5>
 <div class="paragraph">
 <p>Bij het opstarten van de computer en telkens er een nieuw apparaat gedetecteerd wordt, zal er een procedure doorlopen worden: de zogenaamde enumeratie. Hierbij is het de bedoeling dat het apparaat een uniek adres toegewezen krijgt, dat het besturingssysteem informatie opvraagt over het apparaat en dat het weet welke drivers er eventueel geladen moeten worden.<br>
-Wanneer een nieuw device gedetecteerd wordt (Windows XP/Vista geeft hiervan een melding in de system-tray), zal de host een aanvraag voor informatie sturen naar endpoint 0 (de controle-endpoint) van device-adres 0 (geen enkel actief apparaat heeft adres 0). Die informatie bestaat uit een aantal descriptors: records met vooraf bepaalde velden die alle nodige informatie bevatten die de host-controller nodig heeft. In een volgende stap kent de host een USB-adres toe aan het nieuwe apparaat (verschillend van 0), waarna nog wat informatie uitgewisseld wordt tussen host en apparaat.<br>
-In de ontvangen device-descriptor staat onder andere een veld dat de fabrikant van het apparaat identificeert (zoals bij een netwerkkaart, aan te vragen bij het USB-consortium) en een veld dat door die fabrikant toegekend wordt om het model van het apparaat te identificeren. Bij die configuratie worden ook andere configuratieparameters (configuration-descriptor) uitgewisseld waarin onder meer bepaald wordt hoeveel stroom het apparaat nodig zal hebben.<br>
-Daarna zullen ook nog interface descriptors uitgewisseld worden. Deze bevatten informatie over het aantal endpoints dat het device nodig heeft, en welke device classes ondersteund worden.<br>
-Tot slot worden ook nog endpoint descriptors doorgestuurd. Daarin staat per endpoint beschreven hoe het verkeer zal georganiseerd worden (bulk, interrupt, …), hoe vaak er moet gepold worden in het geval van interrupt transfer, de richting van de endpoint (IN/OUT), …<br>
-Op basis van die Vendor-en Product- ID’s  en de informatie die in de descriptors gevonden wordt, zal het besturingssysteem in de beschikbare INF-bestanden zoeken naar een geschikte driver. Als die niet gevonden wordt zal bijvoorbeeld Windows 8 online op zoek gaan. De pas geladen driver zal bij zijn initialisatie zelf het USB-apparaat (of beter de controller daarin) verder configureren, waarna het toestel gebruikt kan worden.</p>
+Wanneer een nieuw device gedetecteerd wordt (Windows XP/Vista geeft hiervan een melding in de system-tray), zal de host een aanvraag voor informatie sturen naar endpoint 0 (de controle-endpoint) van device-adres 0 (geen enkel actief apparaat heeft adres 0). Die informatie bestaat uit een aantal descriptors: records met vooraf bepaalde velden die alle nodige informatie bevatten die de host-controller nodig heeft. In een volgende stap kent de host een USB-adres toe aan het nieuwe apparaat (verschillend van 0), waarna nog wat informatie uitgewisseld wordt tussen host en apparaat.</p>
+</div>
+<div class="paragraph">
+<p>In de ontvangen device-descriptor staat onder andere een veld dat de fabrikant van het apparaat identificeert (zoals bij een netwerkkaart, aan te vragen bij het USB-consortium) en een veld dat door die fabrikant toegekend wordt om het model van het apparaat te identificeren. Bij die configuratie worden ook andere configuratieparameters (configuration-descriptor) uitgewisseld waarin onder meer bepaald wordt hoeveel stroom het apparaat nodig zal hebben.</p>
+</div>
+<div class="paragraph">
+<p>Daarna zullen ook nog interface descriptors uitgewisseld worden. Deze bevatten informatie over het aantal endpoints dat het device nodig heeft, en welke device classes ondersteund worden.<br></p>
+</div>
+<div class="paragraph">
+<p>Tot slot worden ook nog endpoint descriptors doorgestuurd. Daarin staat per endpoint beschreven hoe het verkeer zal georganiseerd worden (bulk, interrupt, …), hoe vaak er moet gepold worden in het geval van interrupt transfer, de richting van de endpoint (IN/OUT), …<br></p>
+</div>
+<div class="paragraph">
+<p>Op basis van die Vendor-en Product- ID’s  en de informatie die in de descriptors gevonden wordt, zal het besturingssysteem in de beschikbare INF-bestanden zoeken naar een geschikte driver. Als die niet gevonden wordt zal bijvoorbeeld Windows 8 online op zoek gaan. De pas geladen driver zal bij zijn initialisatie zelf het USB-apparaat (of beter de controller daarin) verder configureren, waarna het toestel gebruikt kan worden.</p>
 </div>
 </div>
 </div>
@@ -5056,7 +5070,7 @@ Zo was dezelfde connector niet langer bruikbaar. Alles is gelukkig backwards com
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch07/images/USB3connector.jpg" alt="USB3-connector" width="300">
+<img src="ch07/images/USB3connector.jpg" alt="USB3-connector">
 </div>
 </div>
 <div class="paragraph">
@@ -5068,7 +5082,7 @@ De encoding gebeurt ook niet langer met NRZI, maar met 8b/10b, de methode die oo
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch07/images/usb3-kabeldoorsnede.png" alt="Dwarsdoorsnede USB3-kabel (bron onbekend)" width="500">
+<img src="ch07/images/usb3-kabeldoorsnede.png" alt="Dwarsdoorsnede USB3-kabel (bron onbekend)">
 </div>
 </div>
 <div class="sect4">
@@ -5119,8 +5133,9 @@ De eerste apparaten die hiermee werden uitgerust, werden uitgebracht in februari
 <h4 id="_architectuur_2">10.4.1. Architectuur</h4>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="ch07/images/Thunderbolt_Technology_model_1_E.png" alt="Thunderbolt architectuur (bron: Intel)" width="500">
+<img src="ch07/images/Thunderbolt_Technology_model_1_E.png" alt="Thunderbolt architectuur (bron: Intel)">
 </div>
+<div class="title">Figure 76. Thunderbolt architectuur (bron:Intel)</div>
 </div>
 <div class="paragraph">
 <p>Thunderbolt is in staat om 10Gpbs te transfereren over een koperverbinding. Initieel had Intel de bedoeling om  de bekabeling met glasvezels te produceren, maar voorlopig is dat niet het geval. De bouw ervan was te duur, en een bijkomend probleem was dat op die manier geen stroomvoorziening kan gebeuren voor de randapparaten. Er wordt echter nog steeds ontwikkeld, dus misschien duikt dit alsnog op in een volgende versie.<br>
@@ -5149,17 +5164,19 @@ Een goed voorbeeld van hoe dit gebruikt wordt, vind je bijvoorbeeld in het Apple
 <div class="paragraph">
 <p>Dat alles gebeurt met deze enkele Thunderbolt-kabel.</p>
 </div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-Criticasters hekelen de veiligheid van Thunderbolt, net omdat je rechtstreeks verbonden bent als een PCIx-poort, en je dus ook toegang hebt tot het geheugen van het host-apparaat. Bedenk zelf de risico’s die daarmee gepaard gaan…
-</td>
-</tr>
-</table>
+</div>
+<div class="sect3">
+<h4 id="_veiligheid">10.4.2. Veiligheid</h4>
+<div class="paragraph">
+<p>Criticasters hekelen de veiligheid van Thunderbolt, net omdat je rechtstreeks verbonden bent als een PCIx-poort, en je dus ook toegang hebt tot het geheugen van het host-apparaat. Bedenk zelf de risico’s die daarmee gepaard gaan…</p>
+</div>
+<div class="paragraph">
+<p>Welke technische verklaring kan je dus (aan de hand van dit hoofdstuk) geven aan onderstaand filmpje?</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe width="360" height="240" src="//www.youtube.com/embed/tsb6ojxa3ik?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
 </div>
 </div>
 </div>
@@ -5202,7 +5219,7 @@ Criticasters hekelen de veiligheid van Thunderbolt, net omdat je rechtstreeks ve
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2014-12-20 16:49:13 CET
+Last updated 2014-12-21 15:00:43 CET
 </div>
 </div>
 </body>
