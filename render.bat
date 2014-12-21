@@ -15,7 +15,7 @@ echo PUBLISH TO GHDOCS
  robocopy c:\syll-comparch\ch07 c:\syll-comparch-ghpages\syll-comparch\html5\ch07 *.png *.jpg *.jpeg /mir
 
  echo ...omzetting naar docbook
- call asciidoctor -b docbook45 "c:/syll-comparch/book_pcarch.asc" -o "c:/syll-comparch/pcarch.xml" 
+ call asciidoctor -b docbook "c:/syll-comparch/book_pcarch.asc" -o "c:/syll-comparch/pcarch.xml" 
 echo ...omzetting naar docbook:done!
  echo ...omzetting naar PDF
  c:\fopub\asciidoctor-fopub\fopub c:\syll-comparch\pcarch.xml
